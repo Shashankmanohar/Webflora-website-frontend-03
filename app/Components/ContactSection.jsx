@@ -1,0 +1,274 @@
+// components/ContactSection.jsx
+"use client";
+
+import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
+import API_BASE_URL from "../config";
+
+const BRAND = "#ff3b00";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.12,
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+export default function ContactSection() {
+  return (
+    <section
+      id="contact"
+      className="relative py-32 px-6 overflow-hidden bg-neutral-950"
+    >
+      {/* Animated gradient background */}
+      <motion.div
+        animate={{ opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute top-0 right-0 w-1/3 h-full pointer-events-none blur-2xl"
+        style={{
+          background: `linear-gradient(to left, ${BRAND}33, transparent)`,
+        }}
+      />
+
+      {/* Floating glow orbs */}
+      <motion.div
+        animate={{ y: [0, -30, 0] }}
+        transition={{ duration: 10, repeat: Infinity }}
+        className="absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl"
+        style={{ backgroundColor: `${BRAND}1a` }}
+      />
+      <motion.div
+        animate={{ y: [0, 40, 0] }}
+        transition={{ duration: 12, repeat: Infinity }}
+        className="absolute bottom-0 right-0 w-80 h-80 rounded-full blur-3xl"
+        style={{ backgroundColor: `${BRAND}1a` }}
+      />
+
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 relative z-10">
+        {/* Left */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="lg:w-1/2"
+        >
+          <motion.h2
+            custom={1}
+            variants={fadeUp}
+            className="font-bold text-4xl md:text-7xl text-white tracking-tight mb-6 leading-tight"
+          >
+            LET&apos;S CREATE <br />
+            <span style={{ color: BRAND }}>EXTRAORDINARY</span>
+          </motion.h2>
+
+          <motion.p
+            custom={2}
+            variants={fadeUp}
+            className="text-gray-400 text-lg mb-12"
+          >
+            Ready to start? Tell us about your project, timeline, and
+            budget. We typically reply within 24 hours.
+          </motion.p>
+
+          <div className="space-y-8">
+            {[
+              {
+                icon: "solar:map-point-linear",
+                title: "LOCATION",
+                value: "Patna, Bihar, India",
+              },
+              {
+                icon: "solar:phone-linear",
+                title: "PHONE",
+                value: "+91 85408 14729",
+                link: "tel:+918540814729",
+              },
+              {
+                icon: "solar:letter-linear",
+                title: "EMAIL",
+                value: "hello.webflora@gmail.com",
+                link: "mailto:hello.webflora@gmail.com",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                custom={i + 3}
+                variants={fadeUp}
+                className="flex items-start gap-4 group"
+              >
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center mt-1 transition-transform duration-300 group-hover:scale-110"
+                  style={{
+                    backgroundColor: `${BRAND}1a`,
+                    color: BRAND,
+                  }}
+                >
+                  <Icon icon={item.icon} width={20} />
+                </div>
+
+                <div>
+                  <h4 className="text-white font-bold mb-1">
+                    {item.title}
+                  </h4>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-gray-400">{item.value}</p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Right */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:w-1/2"
+        >
+          <div
+            className="relative p-[1px] rounded-3xl"
+            style={{
+              background: `linear-gradient(135deg, ${BRAND}66, rgba(255,255,255,0.1), ${BRAND}66)`,
+            }}
+          >
+            <form 
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const data = {
+                  name: formData.get("name"),
+                  email: formData.get("email"),
+                  service: formData.get("service"),
+                  message: formData.get("message"),
+                };
+
+                try {
+                  const res = await fetch(`${API_BASE_URL}/api/public/inquiry`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                  });
+                  if (res.ok) {
+                    alert("Message sent successfully!");
+                    e.target.reset();
+                  } else {
+                    alert("Failed to send message.");
+                  }
+                } catch (err) {
+                  alert("Server connection error.");
+                }
+              }}
+              className="bg-neutral-900/90 backdrop-blur-xl p-8 md:p-10 rounded-3xl space-y-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Input name="name" label="Your Name" placeholder="John Doe" required />
+                <Input
+                  name="email"
+                  label="Email"
+                  placeholder="john@company.com"
+                  type="email"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label
+                  className="text-xs font-bold tracking-widest uppercase"
+                  style={{ color: BRAND }}
+                >
+                  Service Interested In
+                </label>
+                <select
+                  name="service"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors appearance-none"
+                  style={{ outlineColor: BRAND }}
+                  required
+                >
+                  <option className="bg-black">Web Development</option>
+                  <option className="bg-black">Software Development</option>
+                  <option className="bg-black">Mobile App</option>
+                  <option className="bg-black">AI/ML Solution</option>
+                  <option className="bg-black">UI/UX Design</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label
+                  className="text-xs font-bold tracking-widest uppercase"
+                  style={{ color: BRAND }}
+                >
+                  Project Details
+                </label>
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Tell us about your project..."
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors"
+                  style={{ outlineColor: BRAND }}
+                  required
+                />
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full py-4 text-white font-bold rounded-xl shadow-lg relative overflow-hidden"
+                style={{
+                  backgroundColor: BRAND,
+                  boxShadow: `0 10px 30px ${BRAND}40`,
+                }}
+              >
+                <motion.span
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.8 }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                />
+                SEND MESSAGE
+              </motion.button>
+            </form>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Input({ label, name, type = "text", placeholder, required = false }) {
+  const BRAND = "#ff3b00";
+
+  return (
+    <div className="space-y-2">
+      <label
+        className="text-xs font-bold tracking-widest uppercase"
+        style={{ color: BRAND }}
+      >
+        {label}
+      </label>
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        required={required}
+        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors"
+        style={{ outlineColor: BRAND }}
+      />
+    </div>
+  );
+}

@@ -1,0 +1,265 @@
+// components/FooterSection.jsx
+"use client";
+
+import { useEffect } from "react";
+import { Icon } from "@iconify/react";
+import { usePathname } from "next/navigation";
+import API_BASE_URL from "../config";
+
+export default function FooterSection() {
+  const pathname = usePathname();
+  const isAdminPage = pathname?.startsWith("/admin");
+
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes float {
+        0% { transform: translate(0px,0px) scale(1); }
+        33% { transform: translate(30px,-50px) scale(1.1); }
+        66% { transform: translate(-20px,20px) scale(0.9); }
+        100% { transform: translate(0px,0px) scale(1); }
+      }
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      .animate-blob { animation: float 10s infinite ease-in-out; }
+      .delay-2000 { animation-delay: 2s; }
+      .shimmer-bg {
+        background: linear-gradient(90deg, transparent, rgba(255,59,0,0.1), transparent);
+        background-size: 200% 100%;
+        animation: shimmer 3s infinite linear;
+      }
+      .magnetic-wrap:hover .magnetic-content { transform: scale(1.1); }
+      .magnetic-content {
+        transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
+
+  if (isAdminPage) return null;
+
+  return (
+    <footer className="relative w-full pt-20 pb-10 overflow-hidden bg-[#050505] text-neutral-300 selection:bg-[#ff3b00] selection:text-white">
+      {/* Ambient background */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-[#ff3b00] rounded-full mix-blend-screen blur-[120px] opacity-[0.08] animate-blob" />
+        <div className="absolute bottom-[10%] right-[5%] w-80 h-80 bg-blue-900 rounded-full mix-blend-screen blur-[100px] opacity-[0.1] animate-blob delay-2000" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        {/* CTA */}
+        <div className="relative group w-full p-[1px] rounded-3xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 overflow-hidden mb-20 hover:from-[#ff3b00]/50 hover:via-[#ff3b00]/20 hover:to-[#ff3b00]/50 transition-all duration-700">
+          <div className="absolute inset-0 shimmer-bg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative bg-[#0a0a0a]/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/5">
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-2">
+                Ready to shape the future?
+              </h2>
+              <p className="text-neutral-400 text-sm md:text-base font-light">
+                Join the next generation of neural architecture today.
+              </p>
+            </div>
+            <button className="group/btn relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ff3b00] text-white text-sm font-medium tracking-wide rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,59,0,0.4)] hover:scale-105">
+              <span className="relative z-10">Start Free Trial</span>
+              <Icon
+                icon="solar:arrow-right-linear"
+                width={20}
+                className="relative z-10 transition-transform group-hover/btn:translate-x-1"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
+            </button>
+          </div>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20 border-t border-white/5 pt-16">
+          {/* Brand */}
+          <div className="lg:col-span-4 flex flex-col space-y-8">
+            <div className="relative group w-fit">
+              <div className="absolute -inset-4 bg-[#ff3b00]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-center gap-2">
+                
+                <span className="text-2xl font-semibold tracking-tighter text-white">
+                  Webflora<span className="text-[#ff3b00]"> .Technologies</span>
+                </span>
+              </div>
+            </div>
+
+            <p className="text-neutral-400 text-sm leading-relaxed font-light max-w-sm">
+              Orchestrating the intelligence of tomorrow. We build the neural
+              infrastructure that powers the next century of innovation.
+            </p>
+
+            {/* Newsletter */}
+            <div className="w-full max-w-sm">
+              <label className="text-xs text-neutral-500 uppercase tracking-widest mb-3 block">
+                Subscribe to updates
+              </label>
+              <form 
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const email = e.target.email.value;
+                  try {
+                    const res = await fetch(`${API_BASE_URL}/api/public/newsletter`, {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ email }),
+                    });
+                    if (res.ok) {
+                      alert("Successfully subscribed!");
+                      e.target.reset();
+                    } else {
+                      const data = await res.json();
+                      alert(data.message || "Subscription failed");
+                    }
+                  } catch (err) {
+                    alert("Server error");
+                  }
+                }}
+                className="relative group"
+              >
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  className="w-full bg-white/5 border border-white/10 text-white text-sm rounded-lg py-3 px-4 outline-none focus:border-[#ff3b00]/50 focus:bg-white/10 focus:ring-1 focus:ring-[#ff3b00]/50 transition-all duration-300 placeholder:text-neutral-600 font-light"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-1.5 top-1.5 p-2 bg-neutral-800 hover:bg-[#ff3b00] rounded-md text-white transition-colors duration-300 group-focus-within:bg-[#ff3b00]"
+                >
+                  <Icon icon="solar:plain-3-linear" width={18} />
+                </button>
+              </form>
+            </div>
+
+            {/* Social */}
+            <div className="flex items-center gap-4 pt-4">
+              {["brand-x-linear", "brand-github-linear", "brand-discord-linear"].map(
+                (icon, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="magnetic-wrap w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-neutral-400 hover:text-white hover:border-[#ff3b00]/50 hover:bg-[#ff3b00]/10 hover:shadow-[0_0_15px_rgba(255,59,0,0.3)] transition-all duration-300"
+                  >
+                    <Icon
+                      icon={`solar:${icon}`}
+                      className="magnetic-content"
+                      width={18}
+                    />
+                  </a>
+                )
+              )}
+            </div>
+          </div>
+
+          <div className="hidden lg:block lg:col-span-1" />
+
+          {/* Links */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <FooterColumn
+              title="Product"
+              links={["Home", "About us", "Work", "Enterprise"]}
+            />
+            <FooterColumn
+              title="Company"
+              links={["Instagram", "LinkedIn", "Careers"]}
+              badgeIndex={2}
+            />
+            <div className="flex flex-col space-y-6">
+              <h3 className="text-white text-sm font-medium tracking-widest uppercase opacity-80">
+                Contact
+              </h3>
+              <ul className="flex flex-col space-y-4 text-sm text-neutral-400 font-light">
+                <li className="flex items-center gap-3">
+                  <IconCircle icon="solar:letter-linear" />
+                  hello.webflora@gmail.com
+                </li>
+                <li className="flex items-center gap-3">
+                  <IconCircle icon="solar:map-point-linear" />
+                  Patna, Bihar
+                </li>
+              </ul>
+
+              <div className="pt-4">
+                <h3 className="text-white text-sm font-medium tracking-widest uppercase opacity-80 mb-4">
+                  Legal
+                </h3>
+                <ul className="flex flex-col space-y-2 text-xs text-neutral-500">
+                  <li className="hover:text-white transition-colors cursor-pointer">
+                    Privacy Policy
+                  </li>
+                  <li className="hover:text-white transition-colors cursor-pointer">
+                    Terms of Service
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="relative pt-8">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="absolute top-0 left-1/4 w-1/2 h-px bg-gradient-to-r from-transparent via-[#ff3b00]/40 to-transparent blur-[1px]" />
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-light text-neutral-500">
+            <div className="flex items-center gap-2">
+              <span>© 2030 Webflora Technologis</span>
+              <span className="w-1 h-1 rounded-full bg-neutral-700" />
+              <span>All systems operational</span>
+            </div>
+
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
+                <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
+                System Status
+              </div>
+              <span className="hover:text-white cursor-pointer">Security</span>
+              <span className="hover:text-white cursor-pointer">Sitemap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterColumn({ title, links, badgeIndex }) {
+  return (
+    <div className="flex flex-col space-y-6">
+      <h3 className="text-white text-sm font-medium tracking-widest uppercase opacity-80">
+        {title}
+      </h3>
+      <ul className="flex flex-col space-y-4">
+        {links.map((text, i) => (
+          <li key={i}>
+            <a className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer">
+              <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
+                /
+              </span>
+              {text}
+              {badgeIndex === i && (
+                <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
+                  Hiring
+                </span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function IconCircle({ icon }) {
+  return (
+    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#ff3b00]">
+      <Icon icon={icon} width={16} />
+    </div>
+  );
+}

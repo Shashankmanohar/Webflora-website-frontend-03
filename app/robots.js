@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://webflora.in/sitemap.xml",
+    sitemap: "https://webfloratechnologies.com/sitemap.xml",
   };
 }

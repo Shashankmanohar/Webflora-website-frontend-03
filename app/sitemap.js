@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = "https://webflora.in"; // Replace with actual production URL
+  const baseUrl = "https://webfloratechnologies.com";
 
   // Main static routes
   const routes = [

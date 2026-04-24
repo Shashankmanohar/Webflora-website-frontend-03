@@ -81,7 +81,7 @@ export default function FooterSection() {
             <div className="relative group w-fit">
               <div className="absolute -inset-4 bg-[#ff3b00]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex items-center gap-2">
-                
+
                 <span className="text-2xl font-semibold tracking-tighter text-white">
                   Webflora<span className="text-[#ff3b00]"> .Technologies</span>
                 </span>
@@ -95,10 +95,10 @@ export default function FooterSection() {
 
             {/* Newsletter */}
             <div className="w-full max-w-sm">
-              <label className="text-xs text-neutral-500 uppercase tracking-widest mb-3 block">
+              <label htmlFor="newsletter-email" className="text-xs text-neutral-500 uppercase tracking-widest mb-3 block">
                 Subscribe to updates
               </label>
-              <form 
+              <form
                 onSubmit={async (e) => {
                   e.preventDefault();
                   const email = e.target.email.value;
@@ -122,6 +122,7 @@ export default function FooterSection() {
                 className="relative group"
               >
                 <input
+                  id="newsletter-email"
                   name="email"
                   type="email"
                   required
@@ -130,6 +131,7 @@ export default function FooterSection() {
                 />
                 <button
                   type="submit"
+                  aria-label="Subscribe to newsletter"
                   className="absolute right-1.5 top-1.5 p-2 bg-neutral-800 hover:bg-[#ff3b00] rounded-md text-white transition-colors duration-300 group-focus-within:bg-[#ff3b00]"
                 >
                   <Icon icon="solar:plain-3-linear" width={18} />
@@ -144,6 +146,7 @@ export default function FooterSection() {
                   <a
                     key={i}
                     href="#"
+                    aria-label={`Visit our ${icon.split('-')[1]} page`}
                     className="magnetic-wrap w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-neutral-400 hover:text-white hover:border-[#ff3b00]/50 hover:bg-[#ff3b00]/10 hover:shadow-[0_0_15px_rgba(255,59,0,0.3)] transition-all duration-300"
                   >
                     <Icon
@@ -190,15 +193,11 @@ export default function FooterSection() {
                   Legal
                 </h3>
                 <ul className="flex flex-col space-y-2 text-xs text-neutral-500">
-                  <li>
-                    <a href="/privacy" className="hover:text-white transition-colors cursor-pointer">
-                      Privacy Policy
-                    </a>
+                  <li className="hover:text-white transition-colors cursor-pointer">
+                    Privacy Policy
                   </li>
-                  <li>
-                    <a href="/terms" className="hover:text-white transition-colors cursor-pointer">
-                      Terms of Service
-                    </a>
+                  <li className="hover:text-white transition-colors cursor-pointer">
+                    Terms of Service
                   </li>
                 </ul>
               </div>
@@ -213,18 +212,18 @@ export default function FooterSection() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-light text-neutral-500">
             <div className="flex items-center gap-2">
-              <span>© 2030 Webflora Technologies</span>
+              <span>© 2030 Webflora Technologis</span>
               <span className="w-1 h-1 rounded-full bg-neutral-700" />
               <span>All systems operational</span>
             </div>
 
             <div className="flex items-center gap-6">
-              <a href="/status" className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
+              <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
                 <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
                 System Status
-              </a>
-              <a href="/security" className="hover:text-white cursor-pointer">Security</a>
-              <a href="/sitemap.xml" className="hover:text-white cursor-pointer">Sitemap</a>
+              </div>
+              <span className="hover:text-white cursor-pointer">Security</span>
+              <span className="hover:text-white cursor-pointer">Sitemap</span>
             </div>
           </div>
         </div>
@@ -240,30 +239,24 @@ function FooterColumn({ title, links, badgeIndex }) {
         {title}
       </h3>
       <ul className="flex flex-col space-y-4">
-        {links.map((text, i) => {
-          const href = text.toLowerCase() === "home" ? "/" : 
-                       text.toLowerCase() === "about us" ? "/about" : 
-                       text.toLowerCase() === "careers" ? "/career" : 
-                       text.toLowerCase() === "work" ? "#work" : "#";
-          return (
-            <li key={i}>
-              <a 
-                href={href}
-                className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer"
-              >
-                <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
-                  /
+        {links.map((text, i) => (
+          <li key={i}>
+            <a 
+              href={text.toLowerCase().replace(' ', '-')}
+              className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer"
+            >
+              <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
+                /
+              </span>
+              {text}
+              {badgeIndex === i && (
+                <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
+                  Hiring
                 </span>
-                {text}
-                {badgeIndex === i && (
-                  <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
-                    Hiring
-                  </span>
-                )}
-              </a>
-            </li>
-          );
-        })}
+              )}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );

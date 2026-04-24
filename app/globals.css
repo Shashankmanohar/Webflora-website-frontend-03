@@ -10,6 +10,7 @@
     opacity: 0;
     transform: translate(-72%, -62%) scale(0.5);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -40%) scale(1);
@@ -31,8 +32,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: #ff3c00;
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -74,7 +75,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .font-display {
   font-family: var(--font-space-grotesk);
 }
@@ -105,8 +111,13 @@ h1, h2, h3, h4, h5, h6,
 /* ===============================
    UTILITIES
    =============================== */
-.text-brand { color: var(--brand-red); }
-.text-muted { color: var(--text-secondary); }
+.text-brand {
+  color: var(--brand-red);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
 
 .text-gradient {
   background: var(--gradient-text);
@@ -118,16 +129,27 @@ h1, h2, h3, h4, h5, h6,
   text-shadow: 0 0 40px rgba(255, 60, 0, 0.3);
 }
 
-.bg-brand-black { background: var(--brand-black); }
-.bg-brand-dark { background: var(--brand-dark); }
-.bg-brand-gray { background: var(--brand-gray); }
-.bg-brand-red { background: var(--brand-red); }
+.bg-brand-black {
+  background: var(--brand-black);
+}
+
+.bg-brand-dark {
+  background: var(--brand-dark);
+}
+
+.bg-brand-gray {
+  background: var(--brand-gray);
+}
+
+.bg-brand-red {
+  background: var(--brand-red);
+}
 
 .bg-grid {
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 .glass {
@@ -184,12 +206,19 @@ h1, h2, h3, h4, h5, h6,
 /* ===============================
    SCROLLBAR
    =============================== */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--brand-black); }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-black);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--brand-gray);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--brand-red);
 }
@@ -198,8 +227,13 @@ h1, h2, h3, h4, h5, h6,
    MARQUEE
    =============================== */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -241,8 +275,8 @@ h1, h2, h3, h4, h5, h6,
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-

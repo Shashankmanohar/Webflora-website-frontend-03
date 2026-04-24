@@ -108,9 +108,8 @@ export default function TechStackSection() {
               <Icon
                 icon={tech.icon}
                 width={40}
-                className={`grayscale transition-all duration-500 ${
-                  tech.invert ? "invert" : ""
-                }`}
+                className={`grayscale transition-all duration-500 ${tech.invert ? "invert" : ""
+                  }`}
               />
             </motion.div>
           ))}

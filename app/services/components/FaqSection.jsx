@@ -787,7 +787,7 @@ const FaqSection = () => {
         }
       `}</style>
     </section>
-  );``
+  ); ``
 };
 
 export default FaqSection;

@@ -146,7 +146,7 @@ export default function ContactSection() {
               background: `linear-gradient(135deg, ${BRAND}66, rgba(255,255,255,0.1), ${BRAND}66)`,
             }}
           >
-            <form 
+            <form
               onSubmit={async (e) => {
                 e.preventDefault();
                 const formData = new FormData(e.target);

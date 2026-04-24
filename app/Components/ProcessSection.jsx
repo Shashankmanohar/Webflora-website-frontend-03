@@ -74,11 +74,10 @@ export default function ProcessSection() {
                 >
                   {/* Left */}
                   <div
-                    className={`flex-1 ${
-                      isEven
+                    className={`flex-1 ${isEven
                         ? "md:text-right md:pr-12 opacity-50 hidden md:block"
                         : "md:text-right md:pr-12"
-                    }`}
+                      }`}
                   >
                     {!isEven && (
                       <>
@@ -106,11 +105,10 @@ export default function ProcessSection() {
 
                   {/* Right */}
                   <div
-                    className={`flex-1 ${
-                      isEven
+                    className={`flex-1 ${isEven
                         ? "md:pl-12"
                         : "md:pl-12 opacity-50 hidden md:block"
-                    }`}
+                      }`}
                   >
                     {isEven && (
                       <>

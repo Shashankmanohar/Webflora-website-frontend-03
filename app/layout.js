@@ -43,12 +43,15 @@ export default function RootLayout({ children }) {
           ${pacifico.variable}
           antialiased
         `}>
-          {/* Navbar */}
+        {/* Navbar */}
         <Navbar />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
 
         {/* Footer Section */}
         <FooterSection />
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" async></script>
       </body>
     </html>
   );

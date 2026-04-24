@@ -115,7 +115,7 @@ export default function GrowthSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
-              <a 
+              <a
                 href="#contact"
                 className="w-full md:w-auto px-6 py-3 bg-[#ff4e02] text-white font-medium hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-orange-600/20"
               >

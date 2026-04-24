@@ -96,7 +96,7 @@ export default function ExpertiseSection() {
           <p className="text-gray-400 max-w-md">
             Comprehensive digital solutions engineered for scale and
             performance.
-          </p> 
+          </p>
         </div>
 
         <button
@@ -185,6 +185,7 @@ export default function ExpertiseSection() {
             prevSlide();
             setIsAutoPlaying(false);
           }}
+          aria-label="Previous slide"
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 bg-brand-dark border border-gray-800 hover:border-brand-red flex items-center justify-center transition-all hover:scale-110 group"
         >
           <Icon
@@ -199,6 +200,7 @@ export default function ExpertiseSection() {
             nextSlide();
             setIsAutoPlaying(false);
           }}
+          aria-label="Next slide"
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 bg-brand-dark border border-gray-800 hover:border-brand-red flex items-center justify-center transition-all hover:scale-110 group"
         >
           <Icon
@@ -227,6 +229,7 @@ export default function ExpertiseSection() {
             prevSlide();
             setIsAutoPlaying(false);
           }}
+          aria-label="Previous slide"
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 w-10 h-10 bg-brand-dark border border-gray-800 hover:border-brand-red flex items-center justify-center transition-all hover:scale-110 group"
         >
           <Icon
@@ -241,6 +244,7 @@ export default function ExpertiseSection() {
             nextSlide();
             setIsAutoPlaying(false);
           }}
+          aria-label="Next slide"
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 w-10 h-10 bg-brand-dark border border-gray-800 hover:border-brand-red flex items-center justify-center transition-all hover:scale-110 group"
         >
           <Icon
@@ -261,11 +265,10 @@ export default function ExpertiseSection() {
             aria-label={`Go to slide ${index + 1}`}
           >
             <div
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
                   ? "bg-brand-red scale-125"
                   : "bg-gray-700 hover:bg-gray-500"
-              }`}
+                }`}
             />
             {index === currentIndex && (
               <div className="absolute inset-0 -m-1">
@@ -280,6 +283,7 @@ export default function ExpertiseSection() {
       <div className="flex justify-center mt-8">
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+          aria-label={isAutoPlaying ? "Pause autoplay" : "Start autoplay"}
           className="flex items-center gap-2 text-sm text-gray-500 hover:text-brand-red transition-colors group"
         >
           <Icon

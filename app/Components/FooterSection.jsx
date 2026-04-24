@@ -213,7 +213,7 @@ export default function FooterSection() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-light text-neutral-500">
             <div className="flex items-center gap-2">
-              <span>© 2030 Webflora Technologis</span>
+              <span>© 2030 Webflora Technologies</span>
               <span className="w-1 h-1 rounded-full bg-neutral-700" />
               <span>All systems operational</span>
             </div>

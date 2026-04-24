@@ -48,19 +48,22 @@ const itemVariants = {
 
 export default function TechStackSection() {
   return (
-    <section className="relative py-20 border-y border-white/5 bg-neutral-950/50 overflow-hidden w-full h-100">
-      {/* Animated gradient background */}
-      <motion.div
-        className="absolute inset-0 opacity-20"
-        animate={{
-          background: [
-            "radial-gradient(circle at 20% 20%, #ff6a00 0%, transparent 40%)",
-            "radial-gradient(circle at 80% 80%, #ff6a00 0%, transparent 40%)",
-            "radial-gradient(circle at 20% 20%, #ff6a00 0%, transparent 40%)",
-          ],
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-      />
+    <section className="relative py-20 border-y border-white/5 bg-neutral-950/50 overflow-hidden w-full min-h-[400px]">
+      {/* Optimized animated gradient background */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <motion.div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(circle at 20% 20%, #ff6a00 0%, transparent 40%)" }}
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(circle at 80% 80%, #ff6a00 0%, transparent 40%)" }}
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
         <motion.h3
@@ -99,6 +102,7 @@ export default function TechStackSection() {
                   ease: "easeInOut",
                 },
               }}
+              style={{ willChange: "transform" }}
               className="flex items-center justify-center cursor-pointer"
             >
               <Icon

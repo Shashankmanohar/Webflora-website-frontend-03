@@ -10,7 +10,6 @@ const TestimonialSection = () => {
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef(null);
   const contentRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const testimonials = useMemo(
@@ -55,15 +54,6 @@ const TestimonialSection = () => {
     [],
   );
 
-  // Optimized mouse tracking with passive event
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   // Intersection observer for smooth entry
   useEffect(() => {
@@ -371,7 +361,6 @@ const TestimonialSection = () => {
               variants={cardVariants}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              layout
               className="group relative h-full"
             >
               {/* Smooth Card Container */}

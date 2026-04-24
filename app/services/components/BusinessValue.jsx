@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 const BusinessValue = () => {
   const sectionRef = useRef(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const countersRef = useRef([]);
 
   const pillars = [
@@ -90,15 +89,6 @@ const BusinessValue = () => {
     { text: "Global Reach", icon: "lucide:globe" },
   ];
 
-  // Mouse tracking
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   // Counter Animation
   useEffect(() => {

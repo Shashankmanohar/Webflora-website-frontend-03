@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const ProductCard = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isInView, setIsInView] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
 
@@ -74,15 +73,6 @@ const ProductCard = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Mouse tracking for glass effect
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const headerVariants = {
     hidden: { opacity: 0, y: 60 },
@@ -556,7 +546,7 @@ const ProductCard = () => {
 
       <style>{`
         .will-change-transform {
-          will-change: transform, opacity, box-shadow;
+          will-change: transform, opacity;
           transform: translateZ(0);
           backface-visibility: hidden;
           perspective: 1000px;

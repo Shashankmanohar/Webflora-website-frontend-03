@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -132,9 +133,8 @@ export default function WorkSection() {
                 }`}
             >
               {/* Image */}
-              <motion.img
-                src={project.image}
-                alt={project.title}
+              <motion.div
+                className="absolute inset-0"
                 variants={{
                   rest: { scale: 1 },
                   hover: {
@@ -142,8 +142,15 @@ export default function WorkSection() {
                     transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
                   },
                 }}
-                className="w-full h-full object-cover"
-              />
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
 
               {/* Glass overlay */}
               <motion.div

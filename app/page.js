@@ -1,35 +1,60 @@
+"use client";
 import React from "react";
+import dynamic from "next/dynamic";
 import Hero from "./Components/HeroSection";
 import StatsMarquee from "./Components/StatsMarquee";
-import ExpertiseSection from "./Components/ExpertiseSection";
-import ProcessSection from "./Components/ProcessSection";
-import TechStackSection from "./Components/TechStackSection";
 import GrowthSection from "./Components/GrowthSection";
-import WhyChooseSection from "./Components/WhyChooseSection";
-import WorkSection from "./Components/WorkSection";
-import PremiumCTASection from "./Components/PremiumCTA";
-import ContactSection from "./Components/ContactSection";
-import FooterSection from "./Components/FooterSection";
-import FaqSection from "./services/components/FaqSection";
-import TestimonialSection from "./services/components/TesimonialSection";
-import ProductCard from "./Components/ProductCard";
+
+// Lazy load components below the fold
+const ExpertiseSection = dynamic(() => import("./Components/ExpertiseSection"), { ssr: false });
+const ProcessSection = dynamic(() => import("./Components/ProcessSection"), { ssr: false });
+const TechStackSection = dynamic(() => import("./Components/TechStackSection"), { ssr: false });
+const WhyChooseSection = dynamic(() => import("./Components/WhyChooseSection"), { ssr: false });
+const WorkSection = dynamic(() => import("./Components/WorkSection"), { ssr: false });
+const PremiumCTASection = dynamic(() => import("./Components/PremiumCTA"), { ssr: false });
+const ContactSection = dynamic(() => import("./Components/ContactSection"), { ssr: false });
+const FaqSection = dynamic(() => import("./services/components/FaqSection"), { ssr: false });
+const TestimonialSection = dynamic(() => import("./services/components/TesimonialSection"), { ssr: false });
+const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: false });
 
 const page = () => {
   return (
     <>
       <Hero />
       <StatsMarquee />
-      <GrowthSection />
-      <ExpertiseSection />
-      <ProcessSection />
-      <TechStackSection />
-      <WhyChooseSection />
-      <ProductCard />
-      <WorkSection />
-      <TestimonialSection />
-      <PremiumCTASection />
-      <FaqSection />
-      <ContactSection />
+      <div className="content-auto">
+        <GrowthSection />
+      </div>
+      <div className="content-auto">
+        <ExpertiseSection />
+      </div>
+      <div className="content-auto">
+        <ProcessSection />
+      </div>
+      <div className="content-auto">
+        <TechStackSection />
+      </div>
+      <div className="content-auto">
+        <WhyChooseSection />
+      </div>
+      <div className="content-auto">
+        <ProductCard />
+      </div>
+      <div className="content-auto">
+        <WorkSection />
+      </div>
+      <div className="content-auto">
+        <TestimonialSection />
+      </div>
+      <div className="content-auto">
+        <PremiumCTASection />
+      </div>
+      <div className="content-auto">
+        <FaqSection />
+      </div>
+      <div className="content-auto">
+        <ContactSection />
+      </div>
     </>
   );
 };

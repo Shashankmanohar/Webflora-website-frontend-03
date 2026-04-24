@@ -190,11 +190,15 @@ export default function FooterSection() {
                   Legal
                 </h3>
                 <ul className="flex flex-col space-y-2 text-xs text-neutral-500">
-                  <li className="hover:text-white transition-colors cursor-pointer">
-                    Privacy Policy
+                  <li>
+                    <a href="/privacy" className="hover:text-white transition-colors cursor-pointer">
+                      Privacy Policy
+                    </a>
                   </li>
-                  <li className="hover:text-white transition-colors cursor-pointer">
-                    Terms of Service
+                  <li>
+                    <a href="/terms" className="hover:text-white transition-colors cursor-pointer">
+                      Terms of Service
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -215,12 +219,12 @@ export default function FooterSection() {
             </div>
 
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
+              <a href="/status" className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
                 <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
                 System Status
-              </div>
-              <span className="hover:text-white cursor-pointer">Security</span>
-              <span className="hover:text-white cursor-pointer">Sitemap</span>
+              </a>
+              <a href="/security" className="hover:text-white cursor-pointer">Security</a>
+              <a href="/sitemap.xml" className="hover:text-white cursor-pointer">Sitemap</a>
             </div>
           </div>
         </div>
@@ -236,21 +240,30 @@ function FooterColumn({ title, links, badgeIndex }) {
         {title}
       </h3>
       <ul className="flex flex-col space-y-4">
-        {links.map((text, i) => (
-          <li key={i}>
-            <a className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer">
-              <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
-                /
-              </span>
-              {text}
-              {badgeIndex === i && (
-                <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
-                  Hiring
+        {links.map((text, i) => {
+          const href = text.toLowerCase() === "home" ? "/" : 
+                       text.toLowerCase() === "about us" ? "/about" : 
+                       text.toLowerCase() === "careers" ? "/career" : 
+                       text.toLowerCase() === "work" ? "#work" : "#";
+          return (
+            <li key={i}>
+              <a 
+                href={href}
+                className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer"
+              >
+                <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
+                  /
                 </span>
-              )}
-            </a>
-          </li>
-        ))}
+                {text}
+                {badgeIndex === i && (
+                  <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
+                    Hiring
+                  </span>
+                )}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

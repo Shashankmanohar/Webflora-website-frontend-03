@@ -227,17 +227,19 @@ export default function ContactPage() {
             className="md:col-span-3 bg-zinc-900/40 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 grid grid-cols-2 gap-4 min-h-[320px]"
           >
             {[
-              { id: "instagram", icon: "carbon:logo-instagram" },
-              { id: "linkedin", icon: "carbon:logo-linkedin" },
-              { id: "twitter", icon: "carbon:logo-twitter" },
-              { id: "facebook", icon: "carbon:logo-facebook" }
+              { id: "instagram", icon: "simple-icons:instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
+              { id: "linkedin", icon: "simple-icons:linkedin", url: "https://www.linkedin.com/company/webfloratechnologies/" },
+              { id: "twitter", icon: "simple-icons:x", url: "#" },
+              { id: "facebook", icon: "simple-icons:facebook", url: "https://www.facebook.com/profile.php?id=61580014195502" },
             ].map((social) => (
               <a
                 key={social.id}
-                href={`#${social.id}`}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center bg-white/[0.03] border border-white/5 rounded-[1.5rem] md:rounded-full hover:bg-[#ff3b00] hover:text-white text-gray-500 transition-all duration-500 group"
               >
-                <Icon icon={social.icon} width={24} className="group-hover:scale-110 transition-transform" />
+                <Icon icon={social.icon} width={20} className="group-hover:scale-110 transition-transform" />
               </a>
             ))}
           </motion.div>

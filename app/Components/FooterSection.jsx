@@ -142,9 +142,10 @@ export default function FooterSection() {
             {/* Social */}
             <div className="flex items-center gap-4 pt-4">
               {[
-                { icon: "brand-linkedin-linear", url: "https://www.linkedin.com/company/webfloratechnologies/", label: "LinkedIn" },
-                { icon: "brand-facebook-linear", url: "https://www.facebook.com/profile.php?id=61580014195502", label: "Facebook" },
-                { icon: "brand-instagram-linear", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq", label: "Instagram" }
+                { icon: "simple-icons:linkedin", url: "https://www.linkedin.com/company/webfloratechnologies/", label: "LinkedIn" },
+                { icon: "simple-icons:facebook", url: "https://www.facebook.com/profile.php?id=61580014195502", label: "Facebook" },
+                { icon: "simple-icons:instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq", label: "Instagram" },
+                { icon: "simple-icons:x", url: "#", label: "Twitter" }
               ].map((social, i) => (
                 <a
                   key={i}
@@ -155,9 +156,9 @@ export default function FooterSection() {
                   className="magnetic-wrap w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-neutral-400 hover:text-white hover:border-[#ff3b00]/50 hover:bg-[#ff3b00]/10 hover:shadow-[0_0_15px_rgba(255,59,0,0.3)] transition-all duration-300"
                 >
                   <Icon
-                    icon={`solar:${social.icon}`}
+                    icon={social.icon}
                     className="magnetic-content"
-                    width={18}
+                    width={16}
                   />
                 </a>
               ))}

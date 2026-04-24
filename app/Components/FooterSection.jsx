@@ -141,22 +141,26 @@ export default function FooterSection() {
 
             {/* Social */}
             <div className="flex items-center gap-4 pt-4">
-              {["brand-x-linear", "brand-github-linear", "brand-discord-linear"].map(
-                (icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    aria-label={`Visit our ${icon.split('-')[1]} page`}
-                    className="magnetic-wrap w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-neutral-400 hover:text-white hover:border-[#ff3b00]/50 hover:bg-[#ff3b00]/10 hover:shadow-[0_0_15px_rgba(255,59,0,0.3)] transition-all duration-300"
-                  >
-                    <Icon
-                      icon={`solar:${icon}`}
-                      className="magnetic-content"
-                      width={18}
-                    />
-                  </a>
-                )
-              )}
+              {[
+                { icon: "brand-linkedin-linear", url: "https://www.linkedin.com/company/webfloratechnologies/", label: "LinkedIn" },
+                { icon: "brand-facebook-linear", url: "https://www.facebook.com/profile.php?id=61580014195502", label: "Facebook" },
+                { icon: "brand-instagram-linear", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq", label: "Instagram" }
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit our ${social.label} page`}
+                  className="magnetic-wrap w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/5 text-neutral-400 hover:text-white hover:border-[#ff3b00]/50 hover:bg-[#ff3b00]/10 hover:shadow-[0_0_15px_rgba(255,59,0,0.3)] transition-all duration-300"
+                >
+                  <Icon
+                    icon={`solar:${social.icon}`}
+                    className="magnetic-content"
+                    width={18}
+                  />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -166,11 +170,20 @@ export default function FooterSection() {
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <FooterColumn
               title="Product"
-              links={["Home", "About us", "Work", "Enterprise"]}
+              links={[
+                { text: "Home", url: "/" },
+                { text: "About us", url: "/about" },
+                { text: "Work", url: "/#work" },
+                { text: "Enterprise", url: "/enterprise" }
+              ]}
             />
             <FooterColumn
               title="Company"
-              links={["Instagram", "LinkedIn", "Careers"]}
+              links={[
+                { text: "Instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
+                { text: "LinkedIn", url: "https://www.linkedin.com/company/webfloratechnologies/" },
+                { text: "Careers", url: "/careers" }
+              ]}
               badgeIndex={2}
             />
             <div className="flex flex-col space-y-6">
@@ -239,24 +252,31 @@ function FooterColumn({ title, links, badgeIndex }) {
         {title}
       </h3>
       <ul className="flex flex-col space-y-4">
-        {links.map((text, i) => (
-          <li key={i}>
-            <a 
-              href={text.toLowerCase().replace(' ', '-')}
-              className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer"
-            >
-              <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
-                /
-              </span>
-              {text}
-              {badgeIndex === i && (
-                <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
-                  Hiring
+        {links.map((link, i) => {
+          const text = typeof link === "string" ? link : link.text;
+          const url = typeof link === "string" ? link.toLowerCase().replace(' ', '-') : link.url;
+          
+          return (
+            <li key={i}>
+              <a 
+                href={url}
+                target={url.startsWith('http') ? "_blank" : undefined}
+                rel={url.startsWith('http') ? "noopener noreferrer" : undefined}
+                className="group flex items-center text-sm text-neutral-400 hover:text-[#ff3b00] transition-colors font-light cursor-pointer"
+              >
+                <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 opacity-0 group-hover:opacity-100 text-[#ff3b00] mr-0 group-hover:mr-2">
+                  /
                 </span>
-              )}
-            </a>
-          </li>
-        ))}
+                {text}
+                {badgeIndex === i && (
+                  <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
+                    Hiring
+                  </span>
+                )}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

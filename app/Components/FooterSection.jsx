@@ -145,7 +145,8 @@ export default function FooterSection() {
                 { icon: "simple-icons:linkedin", url: "https://www.linkedin.com/company/webfloratechnologies/", label: "LinkedIn" },
                 { icon: "simple-icons:facebook", url: "https://www.facebook.com/profile.php?id=61580014195502", label: "Facebook" },
                 { icon: "simple-icons:instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq", label: "Instagram" },
-                { icon: "simple-icons:x", url: "#", label: "Twitter" }
+                { icon: "simple-icons:x", url: "#", label: "Twitter" },
+                { icon: "solar:medal-star-bold", url: "https://jsdl.in/DT-47BSTKJRVB9", label: "Justdial" }
               ].map((social, i) => (
                 <a
                   key={i}
@@ -199,6 +200,10 @@ export default function FooterSection() {
                 <li className="flex items-center gap-3">
                   <IconCircle icon="solar:map-point-linear" />
                   Patna, Bihar
+                </li>
+                <li className="flex items-center gap-3">
+                  <IconCircle icon="solar:phone-linear" />
+                  +91 85408 14729
                 </li>
               </ul>
 

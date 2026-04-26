@@ -15,6 +15,25 @@ const page = () => {
       <BusinessValue/>
       <TestimonialSection/>
       <FaqSection/>
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Web Development, Software Development, and AI Solutions",
+            "provider": {
+              "@id": "https://webfloratechnologies.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "description": "Webflora Technologies provides website development, custom software, business automation, and AI integration services for startups and businesses."
+          })
+        }}
+      />
     </div>
   )
 }

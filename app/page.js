@@ -55,6 +55,118 @@ const page = () => {
       <div className="content-auto">
         <ContactSection />
       </div>
+
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "@id": "https://webfloratechnologies.com/#organization",
+            "name": "Webflora Technologies",
+            "url": "https://webfloratechnologies.com",
+            "logo": "https://webfloratechnologies.com/webflora-logo.svg",
+            "description": "Webflora Technologies is a Patna-based digital solutions company offering web development, custom software, and AI-powered business automation services.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "addressCountry": "India"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/webfloratechnologies/",
+              "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq",
+              "https://www.facebook.com/profile.php?id=61580014195502"
+            ],
+            "telephone": "+918540814729",
+            "founder": [
+              {
+                "@type": "Person",
+                "name": "Shashank Manohar"
+              },
+              {
+                "@type": "Person",
+                "name": "Amitesh Kumar"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://webfloratechnologies.com/#website",
+            "url": "https://webfloratechnologies.com",
+            "name": "Webflora Technologies",
+            "publisher": {
+              "@id": "https://webfloratechnologies.com/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://webfloratechnologies.com/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Webflora Technologies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Webflora Technologies is a digital solutions company based in Patna, India, offering web development, software solutions, and AI-based automation services."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What services does Webflora Technologies offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Webflora provides website development, custom software development, business automation, AI integrations, and SEO support."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Webflora Technologies located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Webflora Technologies is located in Patna, Bihar, India and serves clients across India."
+                }
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://webfloratechnologies.com/#organization",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "20"
+            }
+          })
+        }}
+      />
     </>
   );
 };

@@ -1,12 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import AboutWebflora from "../Components/AboutWebflora";
-import FounderStorySection from "../Components/FounderStorySection";
 import MissionVisionSection from "../Components/MIssion&Vission";
 import AboutService from "../Components/AboutService";
 import AboutMissionandVision from "../Components/AboutMissionandVision";
 import TeamSection from "../Components/TeamSection";
-import FaqSection from "../services/components/FaqSection";
+import ContactSection from "../Components/ContactSection";
 
 const container = {
   hidden: { opacity: 0 },
@@ -183,69 +182,23 @@ export default function UltraAnimatedHero() {
         </motion.div>
       </motion.section>
 
-      {/* AboutSection of webflora Technologies -  */}
+      {/* About Section of webflora Technologies -  */}
       <AboutWebflora />
-
-      {/* Origin Story -  */}
-      <FounderStorySection />
 
       {/* Mission and Vision */}
       <MissionVisionSection />
 
       {/* About Service  */}
       <AboutService />
-      
+
       {/* About Mission and Vision */}
       <AboutMissionandVision />
 
       {/* Team Section */}
       <TeamSection />
 
-      {/* About FAQs */}
-      <FaqSection 
-        badgeText="Trust & Transparency"
-        badgeIcon="🛡️"
-        titlePart1="Trust &"
-        titlePart2="Transparency"
-        description="Common questions about our approach, expertise, and how we help businesses grow through long-term partnership."
-        faqsData={[
-          {
-            id: 1,
-            question: "What makes Webflora Technologies different?",
-            answer: "Webflora focuses on building scalable, performance-driven digital systems that solve real business problems, not just basic websites or apps.",
-            icon: "lucide:star",
-            color: "from-blue-500/20",
-          },
-          {
-            id: 2,
-            question: "Does Webflora Technologies work with startups?",
-            answer: "Yes, we specialize in helping startups build their first digital products and scale efficiently using modern technology.",
-            icon: "lucide:rocket",
-            color: "from-purple-500/20",
-          },
-          {
-            id: 3,
-            question: "What industries does Webflora Technologies serve?",
-            answer: "We work with businesses across multiple industries including startups, education, retail, and service-based companies.",
-            icon: "lucide:building-2",
-            color: "from-pink-500/20",
-          },
-          {
-            id: 4,
-            question: "Does Webflora provide long-term support?",
-            answer: "Yes, we offer ongoing support, maintenance, and optimization to ensure long-term performance and growth.",
-            icon: "lucide:shield-check",
-            color: "from-orange-500/20",
-          },
-          {
-            id: 5,
-            question: "Can Webflora handle complete digital transformation?",
-            answer: "Yes, from website and app development to marketing and automation, we provide end-to-end digital solutions.",
-            icon: "lucide:globe",
-            color: "from-green-500/20",
-          },
-        ]}
-      />
+      {/* Contact Section */}
+      <ContactSection />
     </>
   );
 }

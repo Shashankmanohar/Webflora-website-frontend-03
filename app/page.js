@@ -15,6 +15,7 @@ const PremiumCTASection = dynamic(() => import("./Components/PremiumCTA"), { ssr
 const ContactSection = dynamic(() => import("./Components/ContactSection"), { ssr: false });
 const FaqSection = dynamic(() => import("./services/components/FaqSection"), { ssr: false });
 const TestimonialSection = dynamic(() => import("./services/components/TesimonialSection"), { ssr: false });
+const TeamSection = dynamic(() => import("./Components/TeamSection"), { ssr: false });
 const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: false });
 
 const page = () => {
@@ -45,6 +46,9 @@ const page = () => {
       </div>
       <div className="content-auto">
         <TestimonialSection />
+      </div>
+      <div className="content-auto">
+        <TeamSection />
       </div>
       <div className="content-auto">
         <PremiumCTASection />
@@ -137,7 +141,7 @@ const page = () => {
                 "name": "What services does Webflora Technologies offer?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Webflora provides web development, mobile app development, custom software, digital marketing, SEO, and AI-based automation solutions, helping businesses build fast and scalable digital systems."
+                  "text": "Webflora provides web development, mobile app development, custom software, digital marketing, and AI automation services, helping businesses build fast and scalable digital systems."
                 }
               },
               {
@@ -146,14 +150,6 @@ const page = () => {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Webflora Technologies is located in Patna, Bihar, India and serves clients across India."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is Webflora Technologies suitable for startups?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, Webflora specializes in helping startups and small businesses build scalable digital systems and grow efficiently through modern technology."
                 }
               }
             ]

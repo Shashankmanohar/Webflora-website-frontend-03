@@ -1,13 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-  reactCompiler: true,
+  // Disabling experimental compiler which might be causing slow renders on Windows
+  reactCompiler: false, 
+  
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizePackageImports: ["lucide-react", "framer-motion", "@iconify/react"],
+    turbopack: {
+      // Fixes the 'workspace root' warning and prevents scanning entire user profile
+      root: './',
+    },
   },
+  
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
+  
   images: {
     remotePatterns: [
       {

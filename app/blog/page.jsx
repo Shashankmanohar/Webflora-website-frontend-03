@@ -6,6 +6,7 @@ import { Search, Calendar, Clock, ArrowRight, ChevronRight } from "lucide-react"
 import Image from "next/image";
 import Link from "next/link";
 import API_BASE_URL from "../config";
+import ContactSection from "../Components/ContactSection";
 
 // Mock categories - you can also fetch these from unique categories in your blogs
 const BlogPage = () => {
@@ -348,6 +349,8 @@ const BlogPage = () => {
             </div>
           </div>
         </section>
+        {/* Contact Section */}
+        <ContactSection />
       </div>
     </main>
   );

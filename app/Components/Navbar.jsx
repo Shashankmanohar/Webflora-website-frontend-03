@@ -4,11 +4,22 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Info, Phone, BookOpen, Trophy } from "lucide-react";
+import { Home, Briefcase, Info, Phone, BookOpen, Trophy, Globe, Smartphone, Layers, Bot, Share2, ChevronUp } from "lucide-react";
 
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
-  { icon: Briefcase, label: "Services", href: "/services" },
+  { 
+    icon: Briefcase, 
+    label: "Services", 
+    href: "/services",
+    children: [
+      { icon: Globe, label: "Web Dev", href: "/services/web-development" },
+      { icon: Smartphone, label: "App Dev", href: "/services/app-development" },
+      { icon: Layers, label: "Software", href: "/services/software-development" },
+      { icon: Bot, label: "AI & Automation", href: "/services/ai-automation" },
+      { icon: Share2, label: "Marketing", href: "/services/social-media-marketing" },
+    ]
+  },
   { icon: Info, label: "About", href: "/about" },
   { icon: BookOpen, label: "Blog", href: "/blog" },
   { icon: Trophy, label: "Career", href: "/career" },
@@ -18,6 +29,7 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const pathname = usePathname();
 
   const isCareerPage = pathname === "/career" || pathname?.includes("career");
@@ -110,40 +122,105 @@ export default function Navbar() {
             {/* NAV ITEMS */}
             {navItems.map((item, i) => {
               const Icon = item.icon;
-              const active = pathname === item.href;
+              const active = pathname === item.href || (item.children && item.children.some(child => pathname === child.href));
+              const hasChildren = item.children && item.children.length > 0;
 
               return (
-                <Link key={i} href={item.href} className="flex-shrink-0">
-                  <motion.div
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 500,
-                      damping: 25,
-                    }}
-                    className="flex flex-col items-center gap-1 cursor-pointer group"
-                  >
-                    <Icon
-                      size={18}
-                      strokeWidth={1.5}
-                      className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
-                        ? "text-brand"
-                        : "text-white/60 group-hover:text-white"
-                        }`}
-                    />
-
-                    {/* Label */}
-                    <span
-                      className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
-                        ? "text-brand"
-                        : "text-white/40 group-hover:text-white/70"
-                        }`}
+                <div 
+                  key={i} 
+                  className="relative group"
+                  onMouseEnter={() => {
+                    if (hasChildren) {
+                      if (window.hoverTimeout) clearTimeout(window.hoverTimeout);
+                      setActiveDropdown(i);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hasChildren) {
+                      window.hoverTimeout = setTimeout(() => setActiveDropdown(null), 150);
+                    }
+                  }}
+                  onClick={(e) => {
+                    if (hasChildren) {
+                      e.preventDefault();
+                      setActiveDropdown(activeDropdown === i ? null : i);
+                    }
+                  }}
+                >
+                  <Link href={item.href} className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ y: -3 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 25,
+                      }}
+                      className="flex flex-col items-center gap-1 cursor-pointer group"
                     >
-                      {item.label}
-                    </span>
-                  </motion.div>
-                </Link>
+                      <Icon
+                        size={18}
+                        strokeWidth={1.5}
+                        className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
+                          ? "text-brand"
+                          : "text-white/60 group-hover:text-white"
+                          }`}
+                      />
+
+                      {/* Label */}
+                      <span
+                        className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
+                          ? "text-brand"
+                          : "text-white/40 group-hover:text-white/70"
+                          }`}
+                      >
+                        {item.label}
+                      </span>
+                    </motion.div>
+                  </Link>
+
+                  {/* Dropdown Menu */}
+                  {hasChildren && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95, pointerEvents: "none" }}
+                      animate={activeDropdown === i ? { opacity: 1, y: -10, scale: 1, pointerEvents: "auto" } : { opacity: 0, y: 10, scale: 0.95, pointerEvents: "none" }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60]"
+                      onMouseEnter={() => {
+                        if (window.hoverTimeout) clearTimeout(window.hoverTimeout);
+                      }}
+                    >
+                      {/* Transparent Bridge to prevent hover loss */}
+                      <div className="absolute top-full left-0 w-full h-10 cursor-default" />
+                      
+                      <div className="flex flex-col gap-1">
+                        {item.children.map((child, ci) => (
+                          <Link key={ci} href={child.href}>
+                            <motion.div
+                              whileHover={{ x: 4, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                              className={`flex items-center gap-3 px-3 py-2 rounded-xl transition-colors ${pathname === child.href ? "bg-brand/10 text-brand" : "text-white/70 hover:text-white"}`}
+                            >
+                              <child.icon size={14} strokeWidth={2} />
+                              <span className="text-xs font-bold whitespace-nowrap">{child.label}</span>
+                            </motion.div>
+                          </Link>
+                        ))}
+                        <div className="h-px bg-white/10 my-1" />
+                        <Link href={item.href}>
+                          <motion.div
+                            whileHover={{ x: 4, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                            className="flex items-center justify-between px-3 py-2 rounded-xl text-white/50 hover:text-white transition-colors"
+                          >
+                            <span className="text-[10px] font-bold uppercase tracking-wider">View All Services</span>
+                            <Icon size={12} />
+                          </motion.div>
+                        </Link>
+                      </div>
+                      {/* Arrow Down */}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white/10"></div>
+                    </motion.div>
+                  )}
+                </div>
               );
             })}
 

@@ -253,10 +253,10 @@ const OurCoreServices = () => {
         }
       }}
       className={`${isMobileView ? "w-full flex-shrink-0" : "w-full"} transform-gpu transition-all duration-700 ease-out ${isMobileView
+        ? "opacity-100 translate-y-0 scale-100"
+        : visibleCards.has(idx)
           ? "opacity-100 translate-y-0 scale-100"
-          : visibleCards.has(idx)
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 translate-y-12 scale-95"
+          : "opacity-0 translate-y-12 scale-95"
         }`}
       style={{
         transitionDelay:
@@ -458,8 +458,8 @@ const OurCoreServices = () => {
                     key={idx}
                     onClick={() => goToSlide(idx)}
                     className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide
-                        ? "bg-[#FF3B00] w-8 shadow-lg shadow-[#FF3B00]/50"
-                        : "bg-gray-700 w-2 hover:bg-gray-600"
+                      ? "bg-[#FF3B00] w-8 shadow-lg shadow-[#FF3B00]/50"
+                      : "bg-gray-700 w-2 hover:bg-gray-600"
                       }`}
                     aria-label={`Go to slide ${idx + 1}`}
                     aria-selected={idx === currentSlide}

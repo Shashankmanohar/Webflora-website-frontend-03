@@ -27,39 +27,39 @@ const item = {
 
 const teamMembers = [
   {
-    name: "Co-Founder Name",
-    role: "Co-Founder",
-    bio: "Driving the strategic vision and operational excellence of Webflora Technologies.",
-    instagram: "https://instagram.com/",
-    image: "/team/placeholder.jpg", // Placeholder until real images provided
+    name: "Shashank Manohar",
+    role: "Founder & CTO",
+    bio: "Architecting scalable digital systems and leading our engineering team to deliver modern, robust software solutions.",
+    instagram: "https://www.instagram.com/shashank__arr?igsh=MXM3NmhvYzh5cWlkZQ==",
+    image: "/team/shashank.jpg",
   },
   {
-    name: "Marketer Name",
+    name: "Amitesh Kumar",
+    role: "Co-Founder & CEO",
+    bio: "Visionary leader driving Webflora's mission to bridge the gap between business and technology through strategic implementation.",
+    instagram: "https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA==",
+    image: "/team/amitesh.jpg",
+  },
+  {
+    name: "Aadarsh Kumar",
     role: "Digital Marketer",
-    bio: "Expert in scaling brands through data-driven performance marketing strategies.",
-    instagram: "https://instagram.com/",
-    image: "/team/placeholder.jpg",
+    bio: "Expert in scaling brands through data-driven performance marketing and growth strategies.",
+    instagram: "https://www.instagram.com/ad_prajapati30?igsh=djQ3azZsYWlhbGgy",
+    image: "/team/aadarsh.jpg",
   },
   {
-    name: "Editor Name",
+    name: "Nikhil Kumar",
+    role: "Digital Marketer",
+    bio: "Specializing in brand voice and community engagement across all digital platforms.",
+    instagram: "https://www.instagram.com/ad_prajapati30?igsh=djQ3azZsYWlhbGgy",
+    image: "/team/nikhil.jpg",
+  },
+  {
+    name: "Ranjan Kumar",
     role: "Video Editor",
-    bio: "Visual storyteller dedicated to creating cinematic and engaging video content.",
-    instagram: "https://instagram.com/",
-    image: "/team/placeholder.jpg",
-  },
-  {
-    name: "Designer Name",
-    role: "Graphic Designer",
-    bio: "Crafting modern visual identities and premium designs that captivate audiences.",
-    instagram: "https://instagram.com/",
-    image: "/team/placeholder.jpg",
-  },
-  {
-    name: "Expert Name",
-    role: "Cyber Security",
-    bio: "Ensuring digital assets are protected through robust security architecture.",
-    instagram: "https://instagram.com/",
-    image: "/team/placeholder.jpg",
+    bio: "Visual storyteller dedicated to creating cinematic and engaging video content for modern brands.",
+    instagram: "https://www.instagram.com/sharp_._._abhishek?igsh=MTAwbmgwZzgyYXprOA==",
+    image: "/team/ranjan.jpg",
   },
 ];
 

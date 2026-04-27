@@ -30,7 +30,7 @@ const pacifico = Pacifico({
 
 export const metadata = {
   title: "Webflora Technologies",
-  description: "Modern digital solutions powered by technology and design",
+  description: "Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation across India.",
 };
 
 export default function RootLayout({ children }) {

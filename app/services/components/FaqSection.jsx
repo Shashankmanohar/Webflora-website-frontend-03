@@ -4,54 +4,60 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const FaqSection = () => {
+const FaqSection = ({
+  faqsData,
+  titlePart1 = "Frequently Asked",
+  titlePart2 = "Questions",
+  description = "Get answers to common questions about our services, timelines, support, and flexible engagement models designed for your success.",
+  badgeText = "FAQ & Support",
+  badgeIcon = "❓"
+}) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [isInView, setIsInView] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const containerRef = useRef(null);
   const contentRef = useRef(null);
 
-  const faqs = useMemo(
-    () => [
-      {
-        id: 1,
-        question: "Do you provide all services together?",
-        answer:
-          "Yes, we offer comprehensive service bundles tailored to your needs. You can choose individual services or combine multiple services into a cohesive strategy. Our team ensures seamless integration across all services for maximum impact and efficiency.",
-        icon: "lucide:package",
-        color: "from-blue-500/20",
-        delay: 0,
-      },
-      {
-        id: 2,
-        question: "What is the timeline?",
-        answer:
-          "Project timelines vary based on scope and complexity. Typically, strategy and planning take 2-4 weeks, implementation spans 4-12 weeks, and optimization is ongoing. We provide detailed timeline roadmaps at project kickoff with clear milestones and deliverables.",
-        icon: "lucide:calendar",
-        color: "from-purple-500/20",
-        delay: 0.1,
-      },
-      {
-        id: 3,
-        question: "Do you offer support?",
-        answer:
-          "Absolutely. We provide ongoing support including 24/7 email support, weekly strategy calls, and monthly performance reviews. Our dedicated account manager ensures your success with proactive recommendations and rapid response to any issues.",
-        icon: "lucide:headset",
-        color: "from-pink-500/20",
-        delay: 0.2,
-      },
-      {
-        id: 4,
-        question: "Can I start with one service?",
-        answer:
-          "Of course! Many clients start with one service to test our approach. This allows you to experience our quality and results before expanding to additional services. We offer flexible engagement models and can scale services as your needs grow.",
-        icon: "lucide:zap",
-        color: "from-orange-500/20",
-        delay: 0.3,
-      },
-    ],
-    [],
-  );
+  const defaultFaqs = [
+    {
+      id: 1,
+      question: "What is Webflora Technologies?",
+      answer:
+        "Webflora Technologies is a digital solutions company based in Patna, India, offering web development, app development, software solutions, digital marketing, and AI automation services.",
+      icon: "lucide:info",
+      color: "from-blue-500/20",
+      delay: 0,
+    },
+    {
+      id: 2,
+      question: "What services does Webflora Technologies offer?",
+      answer:
+        "Webflora provides website development, mobile app development, custom software, digital marketing, SEO, and AI-based automation solutions.",
+      icon: "lucide:layers",
+      color: "from-purple-500/20",
+      delay: 0.1,
+    },
+    {
+      id: 3,
+      question: "Where is Webflora Technologies located?",
+      answer:
+        "Webflora Technologies is located in Patna, Bihar, India and serves clients across India.",
+      icon: "lucide:map-pin",
+      color: "from-pink-500/20",
+      delay: 0.2,
+    },
+    {
+      id: 4,
+      question: "Is Webflora Technologies suitable for startups?",
+      answer:
+        "Yes, Webflora specializes in helping startups and small businesses build scalable digital systems and grow efficiently.",
+      icon: "lucide:rocket",
+      color: "from-orange-500/20",
+      delay: 0.3,
+    },
+  ];
+
+  const faqs = useMemo(() => faqsData || defaultFaqs, [faqsData]);
 
   // Intersection observer for smooth entry
   useEffect(() => {
@@ -295,17 +301,17 @@ const FaqSection = () => {
                   }}
                   className="text-xl sm:text-2xl"
                 >
-                  ❓
+                  {badgeIcon}
                 </motion.span>
                 <span className="text-xs sm:text-sm font-bold text-[#FF3B00] uppercase tracking-[0.3em] bg-clip-text">
-                  FAQ & Support
+                  {badgeText}
                 </span>
               </motion.div>
 
               {/* Title - Ultra Smooth with proper spacing */}
               <motion.div variants={titleVariants} className="mb-8 sm:mb-10 md:mb-12">
                 <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-[-0.04em] leading-[0.95] mb-0">
-                  Frequently Asked
+                  {titlePart1}
                   <br className="hidden sm:block" />
                   <motion.span
                     initial={{ opacity: 0, y: 40 }}
@@ -317,7 +323,7 @@ const FaqSection = () => {
                     }}
                     className="bg-gradient-to-r from-[#FF3B00] via-orange-400 to-red-600 bg-clip-text text-transparent animate-gradient block"
                   >
-                    Questions
+                    {titlePart2}
                   </motion.span>
                 </h2>
               </motion.div>
@@ -338,8 +344,7 @@ const FaqSection = () => {
                 }}
                 className="text-base sm:text-lg text-gray-400 font-light leading-relaxed sm:leading-relaxed max-w-2xl"
               >
-                Get answers to common questions about our services, timelines,
-                support, and flexible engagement models designed for your success.
+                {description}
               </motion.p>
             </motion.div>
           )}

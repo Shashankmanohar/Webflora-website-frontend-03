@@ -67,7 +67,7 @@ const page = () => {
             "name": "Webflora Technologies",
             "url": "https://webfloratechnologies.com",
             "logo": "https://webfloratechnologies.com/webflora-logo.svg",
-            "description": "Webflora Technologies is a Patna-based digital solutions company offering web development, custom software, and AI-powered business automation services.",
+            "description": "Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation services for startups and businesses across India.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Patna",
@@ -129,7 +129,7 @@ const page = () => {
                 "name": "What is Webflora Technologies?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Webflora Technologies is a digital solutions company based in Patna, India, offering web development, software solutions, and AI-based automation services."
+                  "text": "Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation services for startups and businesses across India."
                 }
               },
               {
@@ -137,7 +137,7 @@ const page = () => {
                 "name": "What services does Webflora Technologies offer?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Webflora provides website development, custom software development, business automation, AI integrations, and SEO support."
+                  "text": "Webflora provides web development, mobile app development, custom software, digital marketing, SEO, and AI-based automation solutions, helping businesses build fast and scalable digital systems."
                 }
               },
               {
@@ -146,6 +146,14 @@ const page = () => {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Webflora Technologies is located in Patna, Bihar, India and serves clients across India."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Webflora Technologies suitable for startups?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Webflora specializes in helping startups and small businesses build scalable digital systems and grow efficiently through modern technology."
                 }
               }
             ]

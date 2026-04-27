@@ -30,7 +30,7 @@ const page = () => {
               "@type": "Country",
               "name": "India"
             },
-            "description": "Webflora Technologies provides website development, custom software, business automation, and AI integration services for startups and businesses."
+            "description": "Webflora Technologies provides web development, mobile app development, custom software, digital marketing, and AI automation services, helping businesses build fast and scalable digital systems."
           })
         }}
       />

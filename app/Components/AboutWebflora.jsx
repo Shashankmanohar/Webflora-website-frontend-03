@@ -37,7 +37,7 @@ export default function AboutWebflora() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className="relative px-6 py-24 max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center overflow-hidden"
+      className="relative px-6 py-20 md:py-32 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute inset-0 -z-10">
@@ -63,29 +63,26 @@ export default function AboutWebflora() {
         </div>
 
         <p className="text-neutral-400 text-lg leading-relaxed">
-          Webflora Technologies is a growth-driven digital partner serving
-          both startups and established companies with modern,
-          performance-focused technology. We approach business challenges with
-          an engineering mindset, combining research, structured planning, and
-          clean execution in every project.
+          Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation services for startups and businesses across India.
         </p>
 
         <p className="text-neutral-400 text-lg leading-relaxed">
-          Our objective is to help businesses become faster, smarter, and
-          more efficient. Every solution we build is future-ready, with
-          scalability, performance, and sustainability integrated from the
-          ground up.
+          We help businesses improve online visibility, automate operations, and build scalable, performance-driven digital systems using modern technology and data-driven strategies. Our approach combines structured planning, clean execution, and practical solutions to solve real business challenges such as low leads, inefficient workflows, and lack of digital growth.
+        </p>
+
+        <p className="text-neutral-400 text-lg leading-relaxed">
+          Our goal is to make businesses faster, smarter, and more efficient through technology, with every solution designed for scalability, performance, and long-term growth.
         </p>
       </motion.div>
 
       {/* Right Glass Panel */}
-      <motion.div variants={item} className="relative">
-        <div className="relative p-8 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl overflow-hidden group">
+      <motion.div variants={item} className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
+        <div className="relative w-full max-w-[550px] p-6 md:p-10 rounded-[3rem] backdrop-blur-3xl bg-white/[0.02] border border-white/10 shadow-2xl overflow-hidden group">
           <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#ff3c00] blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
 
           <motion.div
             variants={container}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-4 md:gap-6"
           >
             {[
               {
@@ -113,8 +110,8 @@ export default function AboutWebflora() {
                 key={i}
                 variants={item}
                 whileHover="hover"
-                className={`relative p-6 rounded-2xl backdrop-blur-lg bg-white/5 border border-white/10 flex flex-col gap-3 ${
-                  i % 2 === 1 ? "mt-8" : ""
+                className={`relative p-5 md:p-7 rounded-[2rem] backdrop-blur-lg bg-white/5 border border-white/10 flex flex-col gap-4 transition-all hover:bg-white/[0.08] ${
+                  i % 2 === 1 ? "mt-10 md:mt-16" : ""
                 }`}
               >
                 <motion.div variants={cardHover}>
@@ -124,12 +121,14 @@ export default function AboutWebflora() {
                   />
                 </motion.div>
 
-                <h3 className="text-white font-medium">
-                  {card.title}
-                </h3>
-                <p className="text-xs text-neutral-500">
-                  {card.desc}
-                </p>
+                <div className="space-y-1.5">
+                  <h3 className="text-white font-medium text-sm md:text-base">
+                    {card.title}
+                  </h3>
+                  <p className="text-[10px] md:text-xs text-neutral-500 leading-tight">
+                    {card.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>

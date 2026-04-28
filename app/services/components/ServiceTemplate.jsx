@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import SafeIcon from "./client/SafeIcon";
 
 // Client-side atomic components for performance
@@ -41,10 +42,10 @@ const ServiceTemplate = ({ data }) => {
             </p>
             <div className="flex justify-center">
               <HoverScale className="inline-flex items-center gap-4 px-12 py-6 bg-[#FF3B00] rounded-full font-black text-xl hover:shadow-[0_0_60px_rgba(255,59,0,0.5)] transition-shadow">
-                <a href="#contact" className="flex items-center gap-4">
+                <Link href="/contact" className="flex items-center gap-4">
                   START PROJECT NOW
                   <SafeIcon icon="solar:arrow-right-up-linear" width={28} />
-                </a>
+                </Link>
               </HoverScale>
             </div>
           </FadeInUp>
@@ -72,7 +73,7 @@ const HeroWrapper = ({ data }) => {
         
         <RevealText 
           text={data.headline} 
-          className="text-6xl md:text-[8rem] font-black leading-[0.9] tracking-tighter mb-12"
+          className="text-[clamp(2.5rem,8vw,5rem)] font-bold leading-[0.95] tracking-tight mb-12"
         />
         
         <FadeInUp delay={0.4} className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-16 font-light leading-relaxed">
@@ -81,7 +82,7 @@ const HeroWrapper = ({ data }) => {
         
         <FadeInUp delay={0.6} className="flex flex-wrap justify-center gap-6">
           <HoverScale className="group relative px-10 py-5 bg-white text-black rounded-full font-black uppercase tracking-wider overflow-hidden">
-             <a href="#contact" className="relative z-10">Get Started</a>
+             <Link href="/contact" className="relative z-10">Get Started</Link>
           </HoverScale>
           <a href="#impact" className="px-10 py-5 border border-white/20 rounded-full font-black uppercase tracking-wider hover:bg-white/5 hover:border-white transition-all">
             See Our Impact

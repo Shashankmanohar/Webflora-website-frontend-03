@@ -86,8 +86,10 @@ export default function ContactSection() {
               {
                 icon: "solar:phone-linear",
                 title: "PHONE",
-                value: "+91 85408 14729",
-                link: "tel:+918540814729",
+                links: [
+                  { label: "+91 85408 14729", url: "tel:+918540814729" },
+                  { label: "+91 88630 81255", url: "tel:+918863081255" }
+                ],
               },
               {
                 icon: "solar:letter-linear",
@@ -116,7 +118,15 @@ export default function ContactSection() {
                   <h4 className="text-white font-bold mb-1">
                     {item.title}
                   </h4>
-                  {item.link ? (
+                  {item.links ? (
+                    <div className="flex flex-col gap-1">
+                      {item.links.map((l, idx) => (
+                        <a key={idx} href={l.url} className="text-gray-400 hover:text-white transition-colors">
+                          {l.label}
+                        </a>
+                      ))}
+                    </div>
+                  ) : item.link ? (
                     <a
                       href={item.link}
                       className="text-gray-400 hover:text-white transition-colors"

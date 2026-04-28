@@ -202,6 +202,15 @@ const BlogDetail = () => {
               </div>
             )}
 
+            {/* In-Article CTA */}
+            <div className="mt-16 p-10 md:p-14 rounded-[3rem] bg-gradient-to-br from-brand-red/20 via-[#050505] to-[#050505] border border-brand-red/30 shadow-[0_0_40px_rgba(255,60,0,0.1)]">
+              <h3 className="text-3xl font-bold mb-4 tracking-tight uppercase">Ready to build something extraordinary?</h3>
+              <p className="text-gray-400 mb-8 font-medium text-lg">Let's turn these insights into action. Partner with Webflora to elevate your digital presence.</p>
+              <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white font-black uppercase tracking-widest text-[11px] rounded-full hover:bg-white hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(255,60,0,0.3)]">
+                Start Your Project <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
             {/* Premium Author Card */}
             <div className="mt-24 relative p-12 md:p-16 rounded-[4rem] bg-white/[0.02] border border-white/5 overflow-hidden group">
               <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-brand-red/10 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none transition-transform duration-700 group-hover:scale-110" />
@@ -218,9 +227,9 @@ const BlogDetail = () => {
                   <p className="text-gray-400 text-lg leading-relaxed mb-8 font-medium italic">
                     "{post.authorDescription || "A lead voice at Webflora Technologies, pushing the boundaries of what's possible in the digital realm through innovation and strategy."}"
                   </p>
-                  <button className="text-white font-black uppercase tracking-[0.2em] text-[10px] flex items-center gap-3 hover:text-brand-red transition-all group/link">
+                  <Link href="/about" className="text-white font-black uppercase tracking-[0.2em] text-[10px] inline-flex items-center gap-3 hover:text-brand-red transition-all group/link">
                     Follow the Journey <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-2" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -276,13 +285,17 @@ const BlogDetail = () => {
                 </form>
               </div>
 
-              {/* Trending */}
+              {/* Our Expertise */}
               <div>
-                <h5 className="text-sm font-black mb-8 tracking-[0.3em] uppercase text-gray-700">Explore Further</h5>
+                <h5 className="text-sm font-black mb-8 tracking-[0.3em] uppercase text-gray-700">Our Expertise</h5>
                 <div className="space-y-4">
-                  {["Future of AI", "Design Systems", "Web Performance"].map((topic, i) => (
-                    <Link key={i} href="/blog" className="group flex items-center justify-between p-6 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all duration-500">
-                      <span className="text-[11px] font-black uppercase tracking-widest text-gray-400 group-hover:text-white">{topic}</span>
+                  {[
+                    { name: "Website Development", href: "/services/web-development" },
+                    { name: "Mobile App Development", href: "/services/app-development" },
+                    { name: "Digital Marketing", href: "/services/social-media-marketing" }
+                  ].map((service, i) => (
+                    <Link key={i} href={service.href} className="group flex items-center justify-between p-6 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all duration-500">
+                      <span className="text-[11px] font-black uppercase tracking-widest text-gray-400 group-hover:text-white">{service.name}</span>
                       <ChevronRight className="w-4 h-4 text-gray-700 group-hover:text-brand-red transition-all" />
                     </Link>
                   ))}

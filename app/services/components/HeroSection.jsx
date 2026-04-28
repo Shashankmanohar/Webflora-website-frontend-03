@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // ─── Starfield (Client-only to avoid SSR hydration mismatch) ─────────────────
 function Starfield() {
@@ -538,17 +539,17 @@ export default function HeroSection() {
               }}
             >
               {/* Primary */}
-              <a href="#contact" className="hero-primary-btn" aria-label="Get Free Consultation">
+              <Link href="/contact" className="hero-primary-btn" aria-label="Get Free Consultation">
                 <div className="hero-shimmer-layer" aria-hidden="true" />
                 <div className="btn-gradient-overlay" aria-hidden="true" />
                 <span className="btn-label">Get Free Consultation</span>
                 <ArrowUpRight className="btn-arrow" />
-              </a>
+              </Link>
 
               {/* Secondary */}
-              <a href="#services" className="hero-secondary-btn">
+              <Link href="/services" className="hero-secondary-btn">
                 View Portfolio
-              </a>
+              </Link>
             </div>
           </FadeUp>
         </div>

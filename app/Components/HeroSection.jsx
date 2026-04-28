@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -48,12 +49,12 @@ export default function Hero() {
 
         {/* Actions — premium hover micro-interactions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="btn-primary px-10 py-4 w-full sm:w-auto cursor-pointer flex items-center justify-center"
           >
             Start Your Project
-          </a>
+          </Link>
 
           <div className="inline-block relative">
             <div className="absolute z-1 -top-1 -left-1 w-1.5 h-1.5 bg-white"></div>
@@ -61,12 +62,12 @@ export default function Hero() {
             <div className="absolute z-1 -bottom-1 -left-1 w-1.5 h-1.5 bg-white"></div>
             <div className="absolute z-1 -bottom-1 -right-1 w-1.5 h-1.5 bg-white"></div>
 
-            <a
+            <Link
               href="#work"
               className="relative px-10 py-4 bg-transparent border-1 border-orange-600 text-white text-lg font-light tracking-wide hover:bg-orange-800 hover:text-white transition-all duration-300 flex items-center justify-center"
             >
               View Our Work
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -86,7 +86,7 @@ export default function Navbar() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Link
-                href="#contact"
+                href="/contact"
                 className="hidden md:inline-flex btn-primary px-6 py-2.5 text-xs"
               >
                 Start Project
@@ -147,37 +147,71 @@ export default function Navbar() {
                     }
                   }}
                 >
-                  <Link href={item.href} className="flex-shrink-0">
-                    <motion.div
-                      whileHover={{ y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 500,
-                        damping: 25,
-                      }}
-                      className="flex flex-col items-center gap-1 cursor-pointer group"
-                    >
-                      <Icon
-                        size={18}
-                        strokeWidth={1.5}
-                        className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
-                          ? "text-brand"
-                          : "text-white/60 group-hover:text-white"
-                          }`}
-                      />
-
-                      {/* Label */}
-                      <span
-                        className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
-                          ? "text-brand"
-                          : "text-white/40 group-hover:text-white/70"
-                          }`}
+                  {hasChildren ? (
+                    <div className="flex-shrink-0 cursor-pointer">
+                      <motion.div
+                        whileHover={{ y: -3 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 25,
+                        }}
+                        className="flex flex-col items-center gap-1 group"
                       >
-                        {item.label}
-                      </span>
-                    </motion.div>
-                  </Link>
+                        <Icon
+                          size={18}
+                          strokeWidth={1.5}
+                          className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
+                            ? "text-brand"
+                            : "text-white/60 group-hover:text-white"
+                            }`}
+                        />
+
+                        {/* Label */}
+                        <span
+                          className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
+                            ? "text-brand"
+                            : "text-white/40 group-hover:text-white/70"
+                            }`}
+                        >
+                          {item.label}
+                        </span>
+                      </motion.div>
+                    </div>
+                  ) : (
+                    <Link href={item.href} className="flex-shrink-0">
+                      <motion.div
+                        whileHover={{ y: -3 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 25,
+                        }}
+                        className="flex flex-col items-center gap-1 cursor-pointer group"
+                      >
+                        <Icon
+                          size={18}
+                          strokeWidth={1.5}
+                          className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
+                            ? "text-brand"
+                            : "text-white/60 group-hover:text-white"
+                            }`}
+                        />
+
+                        {/* Label */}
+                        <span
+                          className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
+                            ? "text-brand"
+                            : "text-white/40 group-hover:text-white/70"
+                            }`}
+                        >
+                          {item.label}
+                        </span>
+                      </motion.div>
+                    </Link>
+                  )}
 
                   {/* Dropdown Menu */}
                   {hasChildren && (

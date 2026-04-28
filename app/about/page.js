@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import AboutWebflora from "../Components/AboutWebflora";
+import FounderStorySection from "../Components/FounderStorySection";
 import MissionVisionSection from "../Components/MIssion&Vission";
 import AboutService from "../Components/AboutService";
 import AboutMissionandVision from "../Components/AboutMissionandVision";
@@ -147,23 +149,25 @@ export default function UltraAnimatedHero() {
             variants={item}
             className="flex flex-col md:flex-row items-center justify-center gap-4 pt-8"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="group relative px-8 py-4 bg-[#ff3c00] text-black font-semibold text-sm uppercase tracking-wider overflow-hidden"
-            >
-              <button className="relative z-10 flex items-center gap-2 text">
-                Explore Vision
-                <motion.button
-                  animate={{ x: [0, 6, 0] }}
-                  transition={{ duration: 1.6, repeat: Infinity }}
-                  className="text-lg"
-                >
-                  →
-                </motion.button>
-              </button>
-              <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out z-0" />
-            </motion.button>
+            <Link href="/services">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="group relative px-8 py-4 bg-[#ff3c00] text-black font-semibold text-sm uppercase tracking-wider overflow-hidden"
+              >
+                <div className="relative z-10 flex items-center gap-2 text">
+                  Explore Vision
+                  <motion.div
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ duration: 1.6, repeat: Infinity }}
+                    className="text-lg"
+                  >
+                    →
+                  </motion.div>
+                </div>
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out z-0" />
+              </motion.button>
+            </Link>
 
             <div className="flex gap-6 text-xs text-neutral-400 font-medium uppercase tracking-widest mt-8 md:mt-0">
               {["Scalable", "Efficient", "Secure"].map((t, i) => (
@@ -184,6 +188,9 @@ export default function UltraAnimatedHero() {
 
       {/* About Section of webflora Technologies -  */}
       <AboutWebflora />
+
+      {/* Origin Story */}
+      <FounderStorySection />
 
       {/* Mission and Vision */}
       <MissionVisionSection />

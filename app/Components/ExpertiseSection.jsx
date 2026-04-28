@@ -3,6 +3,7 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 export default function ExpertiseSection() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function ExpertiseSection() {
       title: "WEB DEVELOPMENT",
       desc: "Next-Gen Websites built with React, Next.js and Tailwind.",
       tech: ["logos:react", "logos:nextjs-icon"],
+      href: "/services/web-development",
     },
     {
       index: "02",
@@ -23,6 +25,7 @@ export default function ExpertiseSection() {
       title: "SOFTWARE DEV",
       desc: "Custom enterprise solutions with Python and .NET.",
       tech: ["logos:python", "logos:docker-icon"],
+      href: "/services/software-development",
     },
     {
       index: "03",
@@ -30,6 +33,7 @@ export default function ExpertiseSection() {
       title: "MOBILE APPS",
       desc: "Native and Cross-platform iOS & Android apps.",
       tech: ["logos:flutter", "logos:apple"],
+      href: "/services/app-development",
     },
     {
       index: "04",
@@ -37,6 +41,7 @@ export default function ExpertiseSection() {
       title: "AI & ML",
       desc: "Intelligent systems powered by OpenAI and TensorFlow.",
       tech: ["logos:tensorflow", "logos:openai-icon"],
+      href: "/services/ai-automation",
     },
     {
       index: "05",
@@ -44,6 +49,7 @@ export default function ExpertiseSection() {
       title: "UI/UX DESIGN",
       desc: "Beautiful, functional interfaces designed in Figma.",
       tech: ["logos:figma"],
+      href: "/services",
     },
     {
       index: "06",
@@ -51,6 +57,7 @@ export default function ExpertiseSection() {
       title: "CLOUD & DEVOPS",
       desc: "Scalable infrastructure on AWS and Azure.",
       tech: ["logos:aws"],
+      href: "/services",
     },
   ];
 
@@ -115,7 +122,8 @@ export default function ExpertiseSection() {
         <div className="relative">
           <div className="flex gap-6 transition-all duration-700 ease-in-out">
             {getVisibleCards().map((service, idx) => (
-              <div
+              <Link
+                href={service.href}
                 key={`${service.index}-${idx}`}
                 className="flex-1 min-w-0"
                 style={{
@@ -123,7 +131,7 @@ export default function ExpertiseSection() {
                 }}
               >
                 <ServiceCard {...service} />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -167,7 +175,8 @@ export default function ExpertiseSection() {
             {getVisibleCards()
               .slice(0, 2)
               .map((service, idx) => (
-                <div
+                <Link
+                  href={service.href}
                   key={`${service.index}-${idx}`}
                   className="flex-1 min-w-0"
                   style={{
@@ -175,7 +184,7 @@ export default function ExpertiseSection() {
                   }}
                 >
                   <ServiceCard {...service} />
-                </div>
+                </Link>
               ))}
           </div>
         </div>
@@ -214,14 +223,15 @@ export default function ExpertiseSection() {
       {/* Mobile Carousel - 1 card */}
       <div className="md:hidden relative">
         <div className="relative">
-          <div
-            className="transition-all duration-700 ease-in-out"
+          <Link
+            href={services[currentIndex].href}
+            className="transition-all duration-700 ease-in-out block"
             style={{
               animation: "fadeInSlide 0.7s ease-out",
             }}
           >
             <ServiceCard {...services[currentIndex]} />
-          </div>
+          </Link>
         </div>
 
         <button

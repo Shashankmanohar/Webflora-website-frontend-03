@@ -15,41 +15,18 @@ const TestimonialSection = () => {
   const testimonials = useMemo(
     () => [
       {
-        id: 1,
-        clientName: "Rahul Sharma",
-        company: "EdTech Startup",
-        result: "+120% leads generated",
+        id: 4,
+        clientName: "Albert Newwel",
+        company: "Founder, Team Excellent",
+        result: "Enhanced Visibility",
         feedback:
-          "The team's strategic approach completely transformed our digital presence. Within 6 months, we saw unprecedented growth across all channels.",
+          "We had an amazing experience working with Webflora Technologies. Shashank and his team built our website and app exactly the way we envisioned. Their SEO and digital marketing strategy significantly improved our online visibility and lead generation. Highly professional, responsive, and result-oriented team. I strongly recommend Webflora for anyone looking for reliable website, app development, and digital marketing services.",
         avatar: "👨‍💼",
-        tilt: -2,
-        color: "from-blue-500/20",
+        tilt: 1,
+        color: "from-emerald-500/20",
         delay: 0,
       },
-      {
-        id: 2,
-        clientName: "Priya Verma",
-        company: "D2C Brand",
-        result: "40% cost reduced",
-        feedback:
-          "Their data-driven campaigns eliminated wasteful spending. ROI improved dramatically while maintaining quality and brand consistency.",
-        avatar: "👩‍💼",
-        tilt: 2,
-        color: "from-purple-500/20",
-        delay: 0.15,
-      },
-      {
-        id: 3,
-        clientName: "Amit Singh",
-        company: "SaaS Platform",
-        result: "3x engagement growth",
-        feedback:
-          "Outstanding execution and creativity. They understood our vision and delivered beyond expectations across the board.",
-        avatar: "👨‍💻",
-        tilt: -1,
-        color: "from-pink-500/20",
-        delay: 0.3,
-      },
+
     ],
     [],
   );
@@ -353,7 +330,7 @@ const TestimonialSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 lg:gap-9 mb-32 sm:mb-40 md:mb-48 lg:mb-56"
+          className="flex justify-center mb-32 sm:mb-40 md:mb-48 lg:mb-56"
         >
           {testimonials.map((testimonial, idx) => (
             <motion.div
@@ -361,7 +338,7 @@ const TestimonialSection = () => {
               variants={cardVariants}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative h-full"
+              className="group relative w-full max-w-3xl"
             >
               {/* Smooth Card Container */}
               <motion.div

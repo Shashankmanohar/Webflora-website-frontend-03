@@ -1,5 +1,7 @@
 'use client';
 
+import Link from "next/link";
+
 export default function InvertedCTA() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-black px-6">
@@ -27,20 +29,20 @@ export default function InvertedCTA() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
 
             {/* inverted primary button */}
-            <a 
-              href="#contact"
+            <Link 
+              href="/contact"
               className="px-10 py-4 bg-orange-600 border-1 border-orange-600 hover:text-orange-600 text-white font-semibold transition-all duration-300 hover:bg-black cursor-pointer inline-block"
             >
               Start Your Project
-            </a>
+            </Link>
 
             {/* outline button */}
-            <a 
-              href="#contact"
+            <Link 
+              href="/contact"
               className="px-10 py-4 rounded-full border border-white/20 text-white font-semibold hover:border-orange-500 hover:text-orange-500 transition-all duration-300 inline-block"
             >
               Contact Us
-            </a>
+            </Link>
 
           </div>
         </div>

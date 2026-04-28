@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 const OurCoreServices = () => {
   const sectionRef = useRef(null);
@@ -29,6 +30,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:monitor-smartphone-linear",
       badge: "Popular",
+      href: "/services/web-development",
     },
     {
       id: 2,
@@ -45,6 +47,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:server-square-cloud-linear",
       badge: "Enterprise",
+      href: "/services/software-development",
     },
     {
       id: 3,
@@ -61,6 +64,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:smartphone-2-linear",
       badge: "Advanced",
+      href: "/services/app-development",
     },
     {
       id: 4,
@@ -77,6 +81,7 @@ const OurCoreServices = () => {
       subtitle: "Monthly",
       icon: "solar:graph-up-linear",
       badge: null,
+      href: "/services/social-media-marketing",
     },
     {
       id: 5,
@@ -93,22 +98,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:bolt-circle-linear",
       badge: null,
-    },
-    {
-      id: 5,
-      name: "Business Automation",
-      description:
-        "Automated systems that eliminate repetitive tasks and improve efficiency.",
-      features: [
-        "CRM & workflow automation setup",
-        "WhatsApp & email integration systems",
-        "Process optimization & cost reduction",
-      ],
-      timeline: "10-25 Days",
-      startingPrice: "₹40,000",
-      subtitle: "Starting Price",
-      icon: "solar:bolt-circle-linear",
-      badge: null,
+      href: "/services/ai-automation",
     },
   ];
 
@@ -360,10 +350,10 @@ const OurCoreServices = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="relative z-10 w-full py-3 sm:py-3.5 px-6 bg-black text-[#FF3B00] rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden group/btn border border-white/20 hover:border-white/40 active:scale-95">
+          <Link href={service.href || "/contact"} className="relative z-10 w-full py-3 sm:py-3.5 px-6 bg-black text-[#FF3B00] rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden group/btn border border-white/20 hover:border-white/40 active:scale-95 block text-center">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-shimmer rounded-2xl"></span>
             <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-              Get Free Consultation
+              Learn More
               <Icon
                 icon="solar:arrow-right-linear"
                 width={16}
@@ -371,7 +361,7 @@ const OurCoreServices = () => {
                 className="group-hover/btn:translate-x-1 transition-transform duration-300 flex-shrink-0"
               />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -503,7 +493,7 @@ const OurCoreServices = () => {
               We build custom solutions tailored to your unique business needs.
               Get a personalized quote.
             </p>
-            <button className="group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 bg-[#FF3B00] text-white rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,59,0,0.5)] overflow-hidden focus:ring-2 focus:ring-[#FF3B00] focus:outline-none active:scale-95">
+            <Link href="/contact" className="inline-block group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 bg-[#FF3B00] text-white rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,59,0,0.5)] overflow-hidden focus:ring-2 focus:ring-[#FF3B00] focus:outline-none active:scale-95">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
               <span className="relative z-10 flex items-center gap-2 sm:gap-3 justify-center whitespace-nowrap">
                 Schedule Free Strategy Call
@@ -514,7 +504,7 @@ const OurCoreServices = () => {
                   className="group-hover:translate-x-1 transition-transform flex-shrink-0"
                 />
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

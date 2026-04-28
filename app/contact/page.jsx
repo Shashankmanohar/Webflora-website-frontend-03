@@ -211,10 +211,37 @@ export default function ContactPage() {
             <div>
               <p className="text-white/70 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Direct Voice</p>
               <h3 className="text-3xl md:text-4xl font-black text-white leading-[1.1] tracking-tighter">
-                85408 <br /> 14729
+                85408 14729 <br />
+                88630 81255
               </h3>
-              <a href="tel:+918540814729" className="mt-8 inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all">
-                CALL NOW <Icon icon="solar:arrow-right-linear" width={16} />
+              <div className="mt-8 flex flex-col gap-3">
+                <a href="tel:+918540814729" className="inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all">
+                  CALL PRIMARY <Icon icon="solar:arrow-right-linear" width={16} />
+                </a>
+                <a href="tel:+918863081255" className="inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all text-white/70 hover:text-white">
+                  CALL SECONDARY <Icon icon="solar:arrow-right-linear" width={16} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Tile 3b: Direct Mail */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
+            className="md:col-span-3 bg-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group shadow-xl min-h-[320px] border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white shadow-inner">
+              <Icon icon="solar:letter-bold-duotone" width={32} />
+            </div>
+            <div>
+              <p className="text-white/70 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Email Comms</p>
+              <h3 className="text-xl md:text-2xl font-black text-white leading-[1.1] tracking-tighter">
+                hello.<br/>webflora@<br/>gmail.com
+              </h3>
+              <a href="mailto:hello.webflora@gmail.com" className="mt-8 inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all">
+                SEND MAIL <Icon icon="solar:arrow-right-linear" width={16} />
               </a>
             </div>
           </motion.div>
@@ -249,25 +276,25 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="md:col-span-6 bg-zinc-900/20 backdrop-blur-3xl border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-zinc-900/40 transition-all duration-700 min-h-[320px]"
+            className="md:col-span-3 bg-zinc-900/20 backdrop-blur-3xl border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group hover:bg-zinc-900/40 transition-all duration-700 min-h-[320px]"
           >
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 rounded-3xl bg-[#ff3b00]/10 border border-[#ff3b00]/20 flex items-center justify-center text-[#ff3b00] shadow-[0_0_30px_rgba(255,59,0,0.1)]">
-                <Icon icon="solar:star-bold-duotone" width={32} className="group-hover:rotate-12 transition-transform" />
-              </div>
-              <div className="max-w-[200px]">
-                <h3 className="text-xl md:text-2xl font-black text-white mb-2 tracking-tight">Digital Reputation</h3>
-                <p className="text-gray-500 text-xs md:text-sm font-light leading-relaxed">Rate our neural performance and connectivity across the web.</p>
-              </div>
+            <div className="w-14 h-14 rounded-2xl bg-[#ff3b00]/10 border border-[#ff3b00]/20 flex items-center justify-center text-[#ff3b00] shadow-[0_0_30px_rgba(255,59,0,0.1)]">
+              <Icon icon="solar:star-bold-duotone" width={32} className="group-hover:rotate-12 transition-transform" />
             </div>
-            <a
-              href="https://share.google/549i9Mw8hQelc2gcw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-10 py-5 bg-white text-black font-black text-[10px] md:text-xs tracking-[0.3em] rounded-full hover:bg-[#ff3b00] hover:text-white transition-all duration-500 shadow-2xl flex items-center gap-4 group/rev"
-            >
-              REVIEW US <Icon icon="solar:arrow-right-up-linear" width={20} className="group-hover/rev:-translate-y-1 group-hover/rev:translate-x-1 transition-transform" />
-            </a>
+            <div>
+              <p className="text-white/70 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Digital Rep</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white leading-[1.1] tracking-tighter">
+                Rate Our<br/>Work
+              </h3>
+              <a
+                href="https://share.google/549i9Mw8hQelc2gcw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-[#ff3b00] group-hover:gap-5 transition-all"
+              >
+                REVIEW NOW <Icon icon="solar:arrow-right-up-linear" width={16} />
+              </a>
+            </div>
           </motion.div>
 
         </div>

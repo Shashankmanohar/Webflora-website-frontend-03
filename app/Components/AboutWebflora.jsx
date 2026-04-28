@@ -73,6 +73,23 @@ export default function AboutWebflora() {
         <p className="text-neutral-400 text-lg leading-relaxed">
           Our goal is to make businesses faster, smarter, and more efficient through technology, with every solution designed for scalability, performance, and long-term growth.
         </p>
+
+        {/* MSME Certification Block */}
+        <motion.div 
+          variants={item}
+          className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+        >
+          <h3 className="text-xl font-semibold text-white mb-2 flex items-center gap-2">
+            <Icon icon="solar:shield-check-bold" className="text-[#ff3c00]" />
+            Certification & Compliance
+          </h3>
+          <p className="text-neutral-400 text-sm leading-relaxed mb-4">
+            Webflora Technologies is a registered MSME (Micro, Small & Medium Enterprise) under the Government of India.
+          </p>
+          <div className="inline-block px-3 py-1.5 rounded-lg bg-[#ff3c00]/10 border border-[#ff3c00]/20 text-[#ff3c00] font-mono text-xs">
+            Udyam Registration No: UDYAM-BR-26-0183379
+          </div>
+        </motion.div>
       </motion.div>
 
       {/* Right Glass Panel */}

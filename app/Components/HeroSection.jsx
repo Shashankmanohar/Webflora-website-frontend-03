@@ -10,19 +10,35 @@ export default function Hero() {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-screen overflow-hidden bg-black">
           <div className="absolute inset-0 bg-black/5" />
-          <div className="absolute left-1/4 top-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-60 animate-float-slow will-change-transform" />
-          <div className="absolute left-1/2 top-1/2 w-[320px] h-[320px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-40 animate-float-slower will-change-transform" />
+          <motion.div 
+            animate={{ y: [-30, 30, -30], x: [-20, 20, -20], scale: [1, 1.05, 1] }}
+            transition={{ duration: 39, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-1/4 top-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-60 will-change-transform" 
+          />
+          <motion.div 
+            animate={{ y: [30, -30, 30], x: [20, -20, 20], scale: [1.05, 1, 1.05] }}
+            transition={{ duration: 39, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-1/2 top-1/2 w-[320px] h-[320px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-40 will-change-transform" 
+          />
         </div>
       </div>
 
       {/* Floating Icons — premium float animation */}
-      <div className="absolute right-[10%] top-[20%] hidden lg:block opacity-30 animate-float-slow will-change-transform">
+      <motion.div 
+        animate={{ y: [-25, 25, -25], rotate: [-4, 4, -4] }}
+        transition={{ duration: 33, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-[10%] top-[20%] hidden lg:block opacity-30 will-change-transform"
+      >
         <span className="text-brand-red text-[120px]">{"</>"}</span>
-      </div>
+      </motion.div>
 
-      <div className="absolute left-[10%] bottom-[20%] hidden lg:block opacity-30 animate-float-slower will-change-transform">
+      <motion.div 
+        animate={{ y: [25, -25, 25], rotate: [4, -4, 4] }}
+        transition={{ duration: 33, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[10%] bottom-[20%] hidden lg:block opacity-30 will-change-transform"
+      >
         <span className="text-white text-[100px]">{"{}"}</span>
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -70,6 +86,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

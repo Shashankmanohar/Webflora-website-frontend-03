@@ -92,6 +92,15 @@ export default function FooterSection() {
               A Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation across India.
             </p>
 
+            {/* MSME Badge */}
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 w-fit mt-2">
+              <img src="/msme-logo.webp" alt="MSME Logo" className="h-6 object-contain grayscale opacity-80" />
+              <div className="flex flex-col">
+                <span className="text-xs text-white font-medium">MSME Registered</span>
+                <span className="text-[10px] text-neutral-500 font-mono">Udyam No: UDYAM-BR-26-0183379</span>
+              </div>
+            </div>
+
             {/* Newsletter */}
             <div className="w-full max-w-sm">
               <label htmlFor="newsletter-email" className="text-xs text-neutral-500 uppercase tracking-widest mb-3 block">

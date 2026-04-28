@@ -12,6 +12,14 @@ export const servicesData = {
       "High bounce rates",
       "Difficult to manage content"
     ],
+    subServices: [
+      { title: "Business Website Development", icon: "lucide:globe", desc: "Professional websites for companies to establish strong online presence." },
+      { title: "E-commerce Website Development", icon: "lucide:shopping-cart", desc: "Online stores with payment integration and product management." },
+      { title: "School & College Website Development", icon: "lucide:graduation-cap", desc: "Modern websites for educational institutions with student and admin features." },
+      { title: "Landing Page Design", icon: "lucide:layout-template", desc: "High-converting pages for ads and lead generation." },
+      { title: "Website Redesign & Optimization", icon: "lucide:refresh-cw", desc: "Improve performance, UI/UX, and conversion rate of existing websites." },
+      { title: "Custom Web Application Development", icon: "lucide:app-window", desc: "Advanced web-based platforms tailored to business needs." }
+    ],
     solutions: [
       "Lightning-fast Next.js architecture",
       "Mobile-first responsive design",
@@ -96,6 +104,14 @@ export const servicesData = {
       "High development costs for two platforms",
       "Poor app store visibility",
       "Lack of real-time updates"
+    ],
+    subServices: [
+      { title: "Android App Development", icon: "lucide:smartphone", desc: "Custom Android apps for businesses and startups." },
+      { title: "iOS App Development", icon: "lucide:apple", desc: "High-performance apps for Apple devices." },
+      { title: "Cross-Platform App Development", icon: "lucide:layers", desc: "Apps that work on both Android and iOS using a single codebase." },
+      { title: "Business Application Development", icon: "lucide:briefcase", desc: "Apps to manage operations, customers, and workflows." },
+      { title: "E-commerce App Development", icon: "lucide:shopping-bag", desc: "Mobile apps for online stores and marketplaces." },
+      { title: "School & College App Development", icon: "lucide:book-open", desc: "Apps for students, teachers, attendance, and communication." }
     ],
     solutions: [
       "Cross-platform React Native/Flutter development",
@@ -182,6 +198,14 @@ export const servicesData = {
       "Security vulnerabilities",
       "Inability to scale with growth"
     ],
+    subServices: [
+      { title: "ERP System Development", icon: "lucide:server", desc: "Complete business management systems for operations and data." },
+      { title: "CRM Software Development", icon: "lucide:users", desc: "Customer management systems to track leads and relationships." },
+      { title: "Billing & Invoice Generator Software", icon: "lucide:receipt", desc: "Automated billing systems for shops and businesses." },
+      { title: "AI-Based Attendance System", icon: "lucide:user-check", desc: "Smart attendance using AI (face recognition/automation)." },
+      { title: "QR Code Attendance System", icon: "lucide:qr-code", desc: "Quick and contactless attendance tracking solution." },
+      { title: "Custom Business Software Development", icon: "lucide:code", desc: "Tailored systems for unique business workflows." }
+    ],
     solutions: [
       "Custom ERP & CRM development",
       "Cloud-native SaaS architecture",
@@ -267,6 +291,14 @@ export const servicesData = {
       "Inconsistent customer support",
       "Underutilized business data"
     ],
+    subServices: [
+      { title: "Workflow Automation", icon: "lucide:git-branch", desc: "Automate repetitive business processes." },
+      { title: "n8n Automation Solutions", icon: "lucide:settings", desc: "Custom automation workflows using n8n." },
+      { title: "Chatbot Development", icon: "lucide:message-square", desc: "Automated customer support and interaction systems." },
+      { title: "Lead Automation Systems", icon: "lucide:magnet", desc: "Automate lead capture, follow-ups, and nurturing." },
+      { title: "Business Process Automation", icon: "lucide:cpu", desc: "End-to-end automation for operations and tasks." },
+      { title: "API & System Integrations", icon: "lucide:link", desc: "Connect different tools and software for seamless workflow." }
+    ],
     solutions: [
       "Custom LLM & Chatbot development",
       "Automated document processing",
@@ -351,6 +383,14 @@ export const servicesData = {
       "High ad spend with low conversion",
       "Poor community engagement",
       "Lack of measurable marketing ROI"
+    ],
+    subServices: [
+      { title: "Search Engine Optimization (SEO)", icon: "lucide:search", desc: "Improve ranking and visibility on Google." },
+      { title: "Social Media Marketing", icon: "lucide:share-2", desc: "Grow brand presence and engagement on social platforms." },
+      { title: "Google Ads (PPC Advertising)", icon: "lucide:mouse-pointer-click", desc: "Run paid campaigns for instant traffic and leads." },
+      { title: "Lead Generation Strategies", icon: "lucide:target", desc: "Targeted campaigns to bring potential customers." },
+      { title: "Content Marketing", icon: "lucide:file-text", desc: "Blogs and content to build authority and traffic." },
+      { title: "Website Performance Optimization", icon: "lucide:zap", desc: "Improve speed, UX, and conversion rates." }
     ],
     solutions: [
       "Performance-driven paid advertising",

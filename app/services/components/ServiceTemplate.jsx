@@ -22,6 +22,7 @@ const ServiceTemplate = ({ data }) => {
       
       <div className="relative">
         <ProblemWrapper data={data} />
+        <SubServicesWrapper data={data} />
         <BenefitsWrapper data={data} />
         <TechStackWrapper data={data} />
         <TestimonialWrapper />
@@ -182,6 +183,49 @@ const TechStackWrapper = ({ data }) => {
         
         <TechStackGrid techStack={data.techStack} />
       </div>
+    </section>
+  );
+};
+
+const SubServicesWrapper = ({ data }) => {
+  if (!data.subServices || data.subServices.length === 0) return null;
+
+  return (
+    <section className="py-32 px-6 bg-[#030303] relative border-y border-white/5">
+       <div className="max-w-7xl mx-auto relative z-10">
+          <div className="mb-20 text-center">
+            <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
+              Comprehensive Solutions
+            </FadeInUp>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
+              OUR <span className="text-gray-600 font-outline">EXPERTISE.</span>
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data.subServices.map((service, index) => (
+              <FadeInUp key={index} delay={index * 0.05} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+                <div className="relative h-full p-8 rounded-[2rem] bg-neutral-900/40 border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-2">
+                  {/* Accent Line */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF3B00]/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  
+                  <div className="w-14 h-14 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(255,59,0,0.0)] group-hover:shadow-[0_0_30px_rgba(255,59,0,0.3)] transition-all duration-500 group-hover:scale-110">
+                    <SafeIcon icon={service.icon} width={28} className="text-white group-hover:text-[#FF3B00] transition-colors duration-500" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#FF3B00] transition-colors">{service.title}</h3>
+                  <p className="text-gray-400 font-light leading-relaxed flex-grow">{service.desc}</p>
+                  
+                  <div className="mt-8 flex items-center gap-2 text-sm font-bold text-white/50 group-hover:text-white transition-colors cursor-pointer w-fit">
+                    <span className="uppercase tracking-wider">Learn More</span>
+                    <SafeIcon icon="solar:arrow-right-line-duotone" width={16} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </FadeInUp>
+            ))}
+          </div>
+       </div>
     </section>
   );
 };

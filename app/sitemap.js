@@ -7,7 +7,13 @@ export default async function sitemap() {
     "/about",
     "/blog",
     "/career",
+    "/contact",
     "/services",
+    "/services/web-development",
+    "/services/app-development",
+    "/services/software-development",
+    "/services/ai-automation",
+    "/services/social-media-marketing",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

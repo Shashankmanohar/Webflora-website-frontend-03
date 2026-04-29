@@ -458,9 +458,9 @@ export const servicesData = {
     techStack: [
       { name: "Meta", icon: "logos:meta-icon" },
       { name: "Google Ads", icon: "logos:google-ads" },
-      { name: "TikTok", icon: "logos:tiktok-icon" },
+      { name: "YouTube", icon: "logos:youtube-icon" },
       { name: "HubSpot", icon: "logos:hubspot" },
-      { name: "Canva", icon: "logos:canva" },
+      { name: "Canva", icon: "simple-icons:canva" },
       { name: "Analytics", icon: "logos:google-analytics" }
     ]
   }

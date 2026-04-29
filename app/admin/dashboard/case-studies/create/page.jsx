@@ -288,7 +288,7 @@ export default function CreateCaseStudy() {
                   <option value="MOBILE">Mobile App</option>
                   <option value="AI/ML">AI & Machine Learning</option>
                   <option value="SOFTWARE">Software Development</option>
-                  <option value="MARKETING">Digital Marketing</option>
+                  <option value="DIGITAL MARKETING">Digital Marketing</option>
                 </select>
               </div>
 

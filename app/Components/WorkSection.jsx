@@ -33,6 +33,15 @@ const fadeUp = {
 
 export default function WorkSection() {
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [activeCategory, setActiveCategory] = useState("ALL");
@@ -112,18 +121,17 @@ export default function WorkSection() {
             variants={fadeUp}
             className="flex flex-wrap justify-center gap-4"
           >
-            {["ALL", "WEB", "MOBILE", "AI/ML", "SOFTWARE"].map((item) => (
+            {["ALL", "WEB", "MOBILE", "AI/ML", "SOFTWARE", "DIGITAL MARKETING"].map((item) => (
               <motion.button
                 key={item}
                 onClick={() => setActiveCategory(item)}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                className={`px-6 py-2 rounded-full text-sm font-semibold backdrop-blur-xl border transition-all duration-300 ${
-                  activeCategory === item
+                className={`px-6 py-2 rounded-full text-sm font-semibold backdrop-blur-xl border transition-all duration-300 ${activeCategory === item
                     ? "border-primary bg-primary text-white shadow-[0_0_40px_rgba(255,115,0,0.35)]"
                     : "border-white/10 text-gray-400 hover:text-white hover:border-white/40"
-                }`}
+                  }`}
               >
                 {item}
               </motion.button>
@@ -148,9 +156,8 @@ export default function WorkSection() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 whileHover="hover"
                 onClick={() => router.push(`/portfolio/${project.slug}`)}
-                className={`group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer ${
-                  project.offset ? "md:mt-16" : ""
-                }`}
+                className={`group relative aspect-[4/5] md:aspect-[4/3] rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer ${project.offset ? "md:mt-16" : ""
+                  }`}
               >
                 {/* Image */}
                 <motion.div
@@ -175,49 +182,52 @@ export default function WorkSection() {
                 {/* Glass overlay */}
                 <motion.div
                   variants={{
-                    rest: { opacity: 0 },
+                    rest: { opacity: isMobile ? 1 : 0 },
                     hover: {
                       opacity: 1,
                       transition: { duration: 0.5 },
                     },
                   }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[2px] flex flex-col justify-end p-8"
+                  className={`absolute inset-0 flex flex-col justify-end p-6 md:p-10 transition-all duration-500 ${isMobile
+                      ? "bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[1px]"
+                      : "bg-gradient-to-t from-black/95 via-black/40 to-transparent backdrop-blur-[2px]"
+                    }`}
                 >
                   <motion.span
                     variants={{
-                      rest: { y: 40, opacity: 0 },
+                      rest: { y: isMobile ? 0 : 40, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-primary text-xs font-mono uppercase tracking-widest mb-2"
+                    className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-2"
                   >
                     {project.category}
                   </motion.span>
 
                   <motion.h3
                     variants={{
-                      rest: { y: 40, opacity: 0 },
+                      rest: { y: isMobile ? 0 : 40, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-display font-bold text-3xl text-white mb-2"
+                    className="font-display font-bold text-xl md:text-3xl text-white mb-2 leading-tight"
                   >
                     {project.title}
                   </motion.h3>
 
                   <motion.p
                     variants={{
-                      rest: { y: 40, opacity: 0 },
+                      rest: { y: isMobile ? 0 : 40, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-gray-300 text-sm mb-4 line-clamp-2"
+                    className="text-gray-400 text-xs md:text-sm mb-6 line-clamp-2 font-medium"
                   >
                     {project.description}
                   </motion.p>
 
-                  <div className="flex items-center text-white font-semibold gap-2">
-                    View Case Study
+                  <div className="flex items-center text-white font-black uppercase tracking-widest text-[9px] md:text-[11px] gap-3">
+                    <span className="pb-1 border-b border-primary/50">View Case Study</span>
                     <motion.div
                       variants={{
                         rest: { x: 0 },
@@ -225,7 +235,7 @@ export default function WorkSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <Icon icon="solar:arrow-right-linear" className="text-xl" />
+                      <Icon icon="solar:arrow-right-linear" className="text-sm md:text-xl text-primary" />
                     </motion.div>
                   </div>
                 </motion.div>
@@ -233,10 +243,10 @@ export default function WorkSection() {
                 {/* Premium border glow */}
                 <motion.div
                   variants={{
-                    rest: { opacity: 0 },
+                    rest: { opacity: isMobile ? 1 : 0 },
                     hover: { opacity: 1 },
                   }}
-                  className="absolute inset-0 rounded-2xl ring-1 ring-primary/40 shadow-[0_0_60px_rgba(255,115,0,0.25)]"
+                  className="absolute inset-0 rounded-2xl md:rounded-[2rem] ring-1 ring-primary/40 shadow-[0_0_60px_rgba(255,115,0,0.25)]"
                 />
               </motion.div>
             ))}
@@ -250,17 +260,19 @@ export default function WorkSection() {
           </div>
         )}
 
-        {/* Footer link */}
         <motion.div variants={fadeUp} className="text-center mt-24">
-          <motion.a
+          <Link
             href="/portfolio"
-            whileHover={{ x: 8 }}
-            transition={{ type: "spring", stiffness: 280 }}
-            className="inline-flex items-center gap-2 border-b border-primary pb-1 text-white hover:text-primary transition-colors text-lg"
+            className="inline-flex items-center gap-2 border-b border-primary pb-1 text-white hover:text-primary transition-all duration-300 group text-lg"
           >
-            See All Projects
-            <Icon icon="solar:arrow-right-linear" className="text-xl" />
-          </motion.a>
+            <motion.span
+              whileHover={{ x: 8 }}
+              className="flex items-center gap-2"
+            >
+              See All Projects
+              <Icon icon="solar:arrow-right-linear" className="text-xl transition-transform group-hover:translate-x-1" />
+            </motion.span>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

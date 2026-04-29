@@ -12,6 +12,7 @@ import FaqSection from "./FaqSection";
 import { BenefitsGrid, TechStackGrid } from "./client/InteractiveGrids";
 import TestimonialWrapper from "./client/TestimonialWrapper";
 import ContactSection from "../../Components/ContactSection";
+import { servicesData } from "../data";
 
 const ServiceTemplate = ({ data }) => {
   return (
@@ -27,6 +28,7 @@ const ServiceTemplate = ({ data }) => {
         <TechStackWrapper data={data} />
         <TestimonialWrapper />
         <FaqSection faqs={data.faqs} title={data.title} />
+        <OtherServicesWrapper currentService={data.title} />
         <ContactSection />
       </div>
 
@@ -226,6 +228,125 @@ const SubServicesWrapper = ({ data }) => {
             ))}
           </div>
        </div>
+    </section>
+  );
+};
+
+const OtherServicesWrapper = ({ currentService }) => {
+  const otherServices = Object.entries(servicesData)
+    .filter(([key, service]) => service.title !== currentService)
+    .map(([key, service]) => ({
+      ...service,
+      slug: key,
+    }));
+
+  if (otherServices.length === 0) return null;
+
+  // Configuration for Bento Grid Spans (Desktop)
+  const getBentoSpan = (index) => {
+    const spans = [
+      "md:col-span-2 md:row-span-2", // Large
+      "md:col-span-2 md:row-span-1", // Wide
+      "md:col-span-1 md:row-span-1", // Small
+      "md:col-span-1 md:row-span-1", // Small
+      "md:col-span-2 md:row-span-1", // Wide
+    ];
+    return spans[index % spans.length];
+  };
+
+  const getGradient = (index) => {
+    const gradients = [
+      "from-[#FF3B00]/10 to-transparent",
+      "from-blue-600/10 to-transparent",
+      "from-purple-600/10 to-transparent",
+      "from-emerald-600/10 to-transparent",
+      "from-orange-600/10 to-transparent",
+    ];
+    return gradients[index % gradients.length];
+  };
+
+  return (
+    <section className="py-40 px-6 bg-[#030303] relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <GlowBlob color="#FF3B00" size="600px" bottom="-20%" left="-10%" opacity={0.05} />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-2xl mb-24">
+          <FadeInUp className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF3B00]/20 bg-[#FF3B00]/5 text-[#FF3B00] text-[10px] font-bold uppercase tracking-widest mb-6">
+            <span className="w-1 h-1 rounded-full bg-[#FF3B00] animate-ping" />
+            Discover More
+          </FadeInUp>
+          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-8">
+            WIDEN YOUR <br />
+            <span className="text-gray-700">HORIZON.</span>
+          </h2>
+          <p className="text-xl text-gray-400 font-light leading-relaxed">
+            From intelligence to infrastructure, we provide the full spectrum of digital evolution.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[280px]">
+          {otherServices.map((service, index) => {
+            const span = getBentoSpan(index);
+            const gradient = getGradient(index);
+            const isLarge = span.includes("row-span-2");
+
+            return (
+              <FadeInUp 
+                key={service.slug} 
+                delay={index * 0.1}
+                className={`${span} group relative`}
+              >
+                <Link href={`/services/${service.slug}`} className="block h-full w-full">
+                  <div className={`relative h-full w-full p-8 rounded-[2.5rem] bg-neutral-900/30 border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-700 group-hover:border-white/20 group-hover:bg-neutral-900/50 flex flex-col justify-between`}>
+                    
+                    {/* Dynamic Background Gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                    
+                    {/* Icon & Category */}
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 rounded-2xl bg-black/50 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#FF3B00]/50 transition-all duration-500">
+                        <SafeIcon 
+                          icon={service.subServices?.[0]?.icon || "solar:widget-linear"} 
+                          width={24} 
+                          className="text-white group-hover:text-[#FF3B00] transition-colors" 
+                        />
+                      </div>
+                      <h3 className={`font-bold text-white tracking-tight ${isLarge ? 'text-3xl' : 'text-xl'} mb-2`}>
+                        {service.title}
+                      </h3>
+                    </div>
+
+                    {/* Description & Link (Only for large/wide cards or on hover) */}
+                    <div className="relative z-10 space-y-6">
+                      {isLarge && (
+                        <p className="text-gray-400 font-light leading-relaxed line-clamp-4">
+                          {service.subtext}
+                        </p>
+                      )}
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 group-hover:text-white transition-colors">
+                          View Case Studies
+                        </span>
+                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FF3B00] transition-colors duration-500">
+                          <SafeIcon icon="solar:arrow-right-up-linear" width={18} className="text-white group-hover:rotate-45 transition-transform duration-500" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Subtle Numbering */}
+                    <div className="absolute top-8 right-8 text-[4rem] font-black text-white/5 pointer-events-none group-hover:text-white/10 transition-colors">
+                      0{index + 1}
+                    </div>
+                  </div>
+                </Link>
+              </FadeInUp>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 };

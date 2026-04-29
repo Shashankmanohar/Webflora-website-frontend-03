@@ -84,37 +84,37 @@ const ProductCard = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="group relative h-[380px] rounded-[3rem] p-12 overflow-hidden bg-[#121212] border border-white/5 transition-all duration-500 hover:border-[#FF3B00]/30"
+              className="group relative min-h-[380px] md:h-[450px] rounded-[3rem] p-8 md:p-12 overflow-hidden bg-[#121212] border border-white/5 transition-all duration-500 hover:border-[#FF3B00]/30"
             >
               {/* Subtle Inner Glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
               
-              <div className="relative h-full flex flex-col justify-between">
+              <div className="relative h-full flex flex-col justify-between gap-10">
                 <div>
-                  <div className="mb-8">
-                    <Icon icon={p.icon} width={80} height={80} style={{ color: p.color }} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="mb-6 md:mb-8">
+                    <Icon icon={p.icon} width={60} height={60} style={{ color: p.color }} className="md:w-20 md:h-20 opacity-80 group-hover:opacity-100 transition-opacity" />
                   </div>
                   
                   <div className="w-12 h-1 bg-[#FF3B00]/50 mb-6 group-hover:w-20 transition-all duration-500" />
                   
-                  <h3 className="text-5xl font-black text-white mb-2 tracking-tight">
+                  <h3 className="text-4xl md:text-6xl font-black text-white mb-2 tracking-tight leading-none">
                     {p.name}
                   </h3>
-                  <p className="text-xl text-gray-400 font-medium">
+                  <p className="text-lg md:text-xl text-gray-400 font-medium">
                     {p.tagline}
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-4xl font-black text-[#FF3B00]">
+                <div className="flex items-center justify-between mt-auto">
+                  <span className="text-3xl md:text-5xl font-black text-[#FF3B00]">
                     {p.price}
                   </span>
                   
                   <motion.button 
                     whileHover={{ scale: 1.1, rotate: 45 }}
-                    className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500"
                   >
-                    <Icon icon="lucide:arrow-right" width={28} />
+                    <Icon icon="lucide:arrow-right" width={24} className="md:w-7" />
                   </motion.button>
                 </div>
               </div>

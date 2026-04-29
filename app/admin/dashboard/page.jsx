@@ -31,9 +31,12 @@ export default function AdminDashboard() {
   const [careers, setCareers] = useState([]);
   const [newsletters, setNewsletters] = useState([]);
   const [blogs, setBlogs] = useState([]);
+  const [caseStudies, setCaseStudies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [actionLoading, setActionLoading] = useState(false);
+  const [isCaseStudyModalOpen, setIsCaseStudyModalOpen] = useState(false);
+  const [currentCaseStudy, setCurrentCaseStudy] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -48,7 +51,7 @@ export default function AdminDashboard() {
 
   const fetchData = async (token) => {
     try {
-      const [inqRes, carRes, newsRes, blogRes] = await Promise.all([
+      const [inqRes, carRes, newsRes, blogRes, caseRes] = await Promise.all([
         fetch(`${API_BASE_URL}/api/admin/inquiries`, {
           headers: { Authorization: `Bearer ${token}` }
         }),
@@ -59,6 +62,9 @@ export default function AdminDashboard() {
           headers: { Authorization: `Bearer ${token}` }
         }),
         fetch(`${API_BASE_URL}/api/admin/blogs`, {
+          headers: { Authorization: `Bearer ${token}` }
+        }),
+        fetch(`${API_BASE_URL}/api/admin/case-studies`, {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -73,11 +79,13 @@ export default function AdminDashboard() {
       const carData = await carRes.json();
       const newsData = await newsRes.json();
       const blogData = await blogRes.json();
+      const caseData = await caseRes.json();
 
       setInquiries(inqData);
       setCareers(carData);
       setNewsletters(newsData);
       setBlogs(blogData);
+      setCaseStudies(caseData);
     } catch (err) {
       console.error("Fetch error:", err);
     } finally {
@@ -106,6 +114,25 @@ export default function AdminDashboard() {
     }
   };
 
+  const handleDeleteCaseStudy = async (id) => {
+    if (!confirm("Are you sure you want to delete this case study?")) return;
+    const token = localStorage.getItem("adminToken");
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admin/case-studies/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (res.ok) {
+        setCaseStudies(caseStudies.filter(c => c._id !== id));
+      } else {
+        const data = await res.json();
+        alert(data.message || "Failed to delete case study");
+      }
+    } catch (err) {
+      alert("Error deleting case study");
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
     router.push("/admin/login");
@@ -119,6 +146,11 @@ export default function AdminDashboard() {
   const filteredCareers = careers.filter(item =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     item.email.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredCaseStudies = caseStudies.filter(item =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -159,6 +191,13 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab("blogs")}
             count={blogs.length}
           />
+          <SidebarLink
+            icon={<ShieldCheck size={20} />}
+            label="Case Studies"
+            active={activeTab === "case-studies"}
+            onClick={() => setActiveTab("case-studies")}
+            count={caseStudies.length}
+          />
         </nav>
 
         <button
@@ -177,12 +216,14 @@ export default function AdminDashboard() {
             <h2 className="text-4xl font-bold tracking-tight mb-2">
               {activeTab === "inquiries" ? "Project Enquiries" :
                 activeTab === "careers" ? "Job Applications" :
-                  activeTab === "newsletters" ? "Subscribers" : "Blog Management"}
+                  activeTab === "newsletters" ? "Subscribers" : 
+                    activeTab === "blogs" ? "Blog Management" : "Case Studies"}
             </h2>
             <p className="text-gray-400">
               {activeTab === "inquiries" ? "Manage and respond to incoming project inquiries." :
                 activeTab === "careers" ? "Review and manage career applications." :
-                  activeTab === "newsletters" ? "View all newsletter subscribers." : "Create and manage website blog posts."}
+                  activeTab === "newsletters" ? "View all newsletter subscribers." : 
+                    activeTab === "blogs" ? "Create and manage website blog posts." : "Showcase your best work and success stories."}
             </p>
           </div>
 
@@ -194,6 +235,15 @@ export default function AdminDashboard() {
               >
                 <Plus size={18} />
                 Create Blog
+              </button>
+            )}
+            {activeTab === "case-studies" && (
+              <button
+                onClick={() => router.push("/admin/dashboard/case-studies/create")}
+                className="flex items-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-tight hover:shadow-lg hover:shadow-brand-red/20 transition-all"
+              >
+                <Plus size={18} />
+                Add Case Study
               </button>
             )}
             <div className="relative">
@@ -265,6 +315,24 @@ export default function AdminDashboard() {
                 >
                   {blogs.map((blog) => (
                     <BlogCard key={blog._id} data={blog} onDelete={handleDeleteBlog} />
+                  ))}
+                </motion.div>
+              )}
+              {activeTab === "case-studies" && (
+                <motion.div
+                  key="case-studies"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                >
+                  {caseStudies.map((cs) => (
+                    <CaseStudyCard 
+                      key={cs._id} 
+                      data={cs} 
+                      onDelete={handleDeleteCaseStudy} 
+                      onEdit={(id) => router.push(`/admin/dashboard/case-studies/edit/${id}`)}
+                    />
                   ))}
                 </motion.div>
               )}
@@ -458,6 +526,64 @@ function BlogCard({ data, onDelete }) {
             <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{data.author || 'Admin'}</span>
           </div>
           <div className="flex items-center gap-2">
+            <Clock size={12} className="text-gray-500" />
+            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
+              {new Date(data.createdAt).toLocaleDateString()}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function CaseStudyCard({ data, onDelete, onEdit }) {
+  return (
+    <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-red/30 transition-all flex flex-col">
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={data.image.startsWith('http') ? data.image : `${API_BASE_URL}/${data.image}`}
+          alt={data.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute top-4 left-4 flex gap-2">
+          <span className="bg-brand-red text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+            {data.category}
+          </span>
+          <span className={`text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${data.status === 'published' ? 'bg-green-600' : 'bg-yellow-600'}`}>
+            {data.status || 'published'}
+          </span>
+        </div>
+      </div>
+
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-xl font-bold line-clamp-2">{data.title}</h3>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => onEdit(data._id)}
+              className="text-gray-400 hover:text-white transition-colors p-2 bg-white/5 rounded-lg hover:bg-white/10"
+            >
+              <Icon icon="solar:pen-bold" size={16} />
+            </button>
+            <button
+              onClick={() => onDelete(data._id)}
+              className="text-gray-400 hover:text-red-500 transition-colors p-2 bg-white/5 rounded-lg hover:bg-white/10"
+            >
+              <Trash2 size={16} />
+            </button>
+          </div>
+        </div>
+
+        <p className="text-gray-400 text-sm line-clamp-2 mb-6 flex-1">
+          {data.description}
+        </p>
+
+        <div className="flex items-center justify-between pt-4 border-t border-white/5">
+          <div className="flex flex-col gap-1">
+             <span className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Client</span>
+             <span className="text-sm font-medium">{data.client || "Webflora Client"}</span>
+          </div>
+          <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
             <Clock size={12} className="text-gray-500" />
             <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
               {new Date(data.createdAt).toLocaleDateString()}

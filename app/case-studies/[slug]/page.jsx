@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     
     const title = `${project.title} | Case Study | Webflora Technologies`;
     const description = project.description || `Read about how Webflora Technologies delivered success for ${project.client || project.title}.`;
-    const url = `https://webfloratechnologies.com/portfolio/${slug}`;
+    const url = `https://webfloratechnologies.com/case-studies/${slug}`;
     const imageUrl = project.image.startsWith('http') ? project.image : `https://webfloratechnologies.com/${project.image}`;
 
     return {
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }) {
     };
   } catch (error) {
     return {
-      title: "Portfolio | Webflora Technologies",
+      title: "Case Studies | Webflora Technologies",
       description: "Explore our successful projects and case studies."
     };
   }

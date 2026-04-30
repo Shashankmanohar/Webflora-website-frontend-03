@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Info, Phone, BookOpen, Trophy, Globe, Smartphone, Layers, Bot, Share2, ChevronUp } from "lucide-react";
+import { Home, Briefcase, Info, Phone, BookOpen, Trophy, Globe, Smartphone, Layers, Bot, Share2, ChevronUp, FileText } from "lucide-react";
 
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
@@ -18,6 +18,7 @@ const navItems = [
       { icon: Layers, label: "Software", href: "/services/software-development" },
       { icon: Bot, label: "AI & Automation", href: "/services/ai-automation" },
       { icon: Share2, label: "Marketing", href: "/services/social-media-marketing" },
+      { icon: FileText, label: "Case Studies", href: "/case-studies" },
     ]
   },
   { icon: Info, label: "About", href: "/about" },
@@ -219,7 +220,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: 10, scale: 0.95, pointerEvents: "none" }}
                       animate={activeDropdown === i ? { opacity: 1, y: -10, scale: 1, pointerEvents: "auto" } : { opacity: 0, y: 10, scale: 0.95, pointerEvents: "none" }}
                       transition={{ duration: 0.2 }}
-                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60]"
+                      className="absolute bottom-full left-1/2 -translate-x-[30%] mb-2 w-56 bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60]"
                       onMouseEnter={() => {
                         if (window.hoverTimeout) clearTimeout(window.hoverTimeout);
                       }}

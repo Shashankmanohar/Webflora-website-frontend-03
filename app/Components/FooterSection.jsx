@@ -184,7 +184,7 @@ export default function FooterSection() {
               links={[
                 { text: "Home", url: "/" },
                 { text: "About us", url: "/about" },
-                { text: "Work", url: "/#work" },
+                { text: "Case Studies", url: "/case-studies" },
                 { text: "Enterprise", url: "/enterprise" }
               ]}
             />

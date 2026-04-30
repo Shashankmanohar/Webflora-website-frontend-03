@@ -158,7 +158,7 @@ export default function CreateCaseStudy() {
                   Slug
                 </label>
                 <div className="flex items-center bg-black border border-white/10 rounded-xl px-6 py-3">
-                  <span className="text-gray-500 text-sm">webflora.com/portfolio/</span>
+                  <span className="text-gray-500 text-sm">webflora.com/case-studies/</span>
                   <input 
                     type="text"
                     name="slug"

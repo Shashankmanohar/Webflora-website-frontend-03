@@ -138,7 +138,7 @@ export default function TeamSection() {
                     <Instagram size={20} />
                   </a>
                   <button className="flex-1 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#ff3c00] hover:text-black hover:border-[#ff3c00] transition-all duration-300">
-                    View Portfolio
+                    View Case Studies
                   </button>
                 </div>
               </div>

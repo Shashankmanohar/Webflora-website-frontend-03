@@ -128,7 +128,7 @@ export default function TermsOfService() {
               {[
                 { title: "Transfer", desc: "Final deliverables transferred upon full payment." },
                 { title: "Ownership", desc: "Core source code and frameworks remain our property." },
-                { title: "Portfolio", desc: "We reserve the right to showcase completed work." }
+                { title: "Case Studies", desc: "We reserve the right to showcase completed work." }
               ].map((ip, i) => (
                 <div key={i} className="space-y-2">
                   <h3 className="text-[#ff3b00] text-sm font-medium">{ip.title}</h3>

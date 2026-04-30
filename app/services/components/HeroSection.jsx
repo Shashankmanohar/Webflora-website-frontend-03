@@ -547,8 +547,8 @@ export default function HeroSection() {
               </Link>
 
               {/* Secondary */}
-              <Link href="/services" className="hero-secondary-btn">
-                View Portfolio
+              <Link href="/case-studies" className="hero-secondary-btn">
+                View Case Studies
               </Link>
             </div>
           </FadeUp>

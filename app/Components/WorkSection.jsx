@@ -155,8 +155,8 @@ export default function WorkSection() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 whileHover="hover"
-                onClick={() => router.push(`/portfolio/${project.slug}`)}
-                className={`group relative aspect-[4/5] md:aspect-[4/3] rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer ${project.offset ? "md:mt-16" : ""
+                onClick={() => router.push(`/case-studies/${project.slug}`)}
+                className={`group relative aspect-[16/11] md:aspect-[16/11] rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer ${project.offset ? "md:mt-16" : ""
                   }`}
               >
                 {/* Image */}
@@ -165,7 +165,7 @@ export default function WorkSection() {
                   variants={{
                     rest: { scale: 1 },
                     hover: {
-                      scale: 1.1,
+                      scale: 1.05,
                       transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
                     },
                   }}
@@ -262,7 +262,7 @@ export default function WorkSection() {
 
         <motion.div variants={fadeUp} className="text-center mt-24">
           <Link
-            href="/portfolio"
+            href="/case-studies"
             className="inline-flex items-center gap-2 border-b border-primary pb-1 text-white hover:text-primary transition-all duration-300 group text-lg"
           >
             <motion.span

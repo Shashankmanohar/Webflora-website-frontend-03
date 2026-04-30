@@ -3,7 +3,7 @@ import HeroSection from './components/HeroSection'
 import ProblemSection from './components/ProblemSection'
 import OurCoreServices from './components/OurCoreServices'
 import BusinessValue from './components/BusinessValue'
-import TestimonialSection from './components/TesimonialSection'
+import TestimonialSection from './components/TestimonialSection'
 import FaqSection from './components/FaqSection'
 
 const page = () => {

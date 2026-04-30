@@ -6,10 +6,6 @@ const nextConfig = {
   
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "@iconify/react"],
-    turbopack: {
-      // Fixes the 'workspace root' warning and prevents scanning entire user profile
-      root: './',
-    },
   },
   
   compiler: {

@@ -14,7 +14,7 @@ const WorkSection = dynamic(() => import("./Components/WorkSection"), { ssr: fal
 const PremiumCTASection = dynamic(() => import("./Components/PremiumCTA"), { ssr: false });
 const ContactSection = dynamic(() => import("./Components/ContactSection"), { ssr: false });
 const FaqSection = dynamic(() => import("./services/components/FaqSection"), { ssr: false });
-const TestimonialSection = dynamic(() => import("./services/components/TesimonialSection"), { ssr: false });
+const TestimonialSection = dynamic(() => import("./services/components/TestimonialSection"), { ssr: false });
 const TeamSection = dynamic(() => import("./Components/TeamSection"), { ssr: false });
 const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: false });
 

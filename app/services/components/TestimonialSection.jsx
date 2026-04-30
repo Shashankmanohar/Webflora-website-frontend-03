@@ -26,6 +26,18 @@ const TestimonialSection = () => {
         color: "from-emerald-500/20",
         delay: 0,
       },
+      {
+        id: 5,
+        clientName: "Shyam Kishor Sharma",
+        company: "Founder, Best For Everyone",
+        result: "MLM System Automation",
+        feedback:
+          "I had an excellent experience working with Webflora Technologies for MLM software development. They built a fully customized MLM system for my business with features like genealogy tree, e-wallet, commission tracking, and real-time reporting. Their approach is very data-driven and scalable, helping automate complex operations. Clean and user-friendly dashboard, fast performance, and secure system. Highly professional team that understands both technology and business growth.",
+        avatar: "🚀",
+        tilt: -1,
+        color: "from-orange-500/20",
+        delay: 0.2,
+      },
 
     ],
     [],
@@ -330,7 +342,7 @@ const TestimonialSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="flex justify-center mb-32 sm:mb-40 md:mb-48 lg:mb-56"
+          className="flex flex-col md:flex-row flex-wrap justify-center gap-10 md:gap-16 mb-32 sm:mb-40 md:mb-48 lg:mb-56"
         >
           {testimonials.map((testimonial, idx) => (
             <motion.div
@@ -338,7 +350,7 @@ const TestimonialSection = () => {
               variants={cardVariants}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative w-full max-w-3xl"
+              className="group relative w-full md:w-[calc(50%-2rem)] lg:max-w-xl"
             >
               {/* Smooth Card Container */}
               <motion.div

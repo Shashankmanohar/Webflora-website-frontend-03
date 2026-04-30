@@ -3,7 +3,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-const Testimonials = dynamic(() => import("../TesimonialSection"), { 
+const Testimonials = dynamic(() => import("../TestimonialSection"), {
   ssr: false,
   loading: () => <div className="h-96 animate-pulse bg-white/5 rounded-3xl m-6" />
 });

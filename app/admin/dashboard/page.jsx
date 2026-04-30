@@ -32,11 +32,14 @@ export default function AdminDashboard() {
   const [newsletters, setNewsletters] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [caseStudies, setCaseStudies] = useState([]);
+  const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [actionLoading, setActionLoading] = useState(false);
   const [isCaseStudyModalOpen, setIsCaseStudyModalOpen] = useState(false);
+  const [isJobModalOpen, setIsJobModalOpen] = useState(false);
   const [currentCaseStudy, setCurrentCaseStudy] = useState(null);
+  const [newJob, setNewJob] = useState({ title: "", category: "Engineering", type: "Full-Time", location: "", lastDate: "" });
   const router = useRouter();
 
   useEffect(() => {
@@ -51,7 +54,7 @@ export default function AdminDashboard() {
 
   const fetchData = async (token) => {
     try {
-      const [inqRes, carRes, newsRes, blogRes, caseRes] = await Promise.all([
+      const [inqRes, carRes, newsRes, blogRes, caseRes, jobRes] = await Promise.all([
         fetch(`${API_BASE_URL}/api/admin/inquiries`, {
           headers: { Authorization: `Bearer ${token}` }
         }),
@@ -66,10 +69,13 @@ export default function AdminDashboard() {
         }),
         fetch(`${API_BASE_URL}/api/admin/case-studies`, {
           headers: { Authorization: `Bearer ${token}` }
+        }),
+        fetch(`${API_BASE_URL}/api/admin/jobs`, {
+          headers: { Authorization: `Bearer ${token}` }
         })
       ]);
 
-      if (inqRes.status === 401 || carRes.status === 401) {
+      if (inqRes.status === 401) {
         localStorage.removeItem("adminToken");
         router.push("/admin/login");
         return;
@@ -80,20 +86,20 @@ export default function AdminDashboard() {
       const newsData = await newsRes.json();
       const blogData = await blogRes.json();
       const caseData = await caseRes.json();
+      const jobData = await jobRes.json();
 
       setInquiries(inqData);
       setCareers(carData);
       setNewsletters(newsData);
       setBlogs(blogData);
       setCaseStudies(caseData);
+      setJobs(jobData);
     } catch (err) {
       console.error("Fetch error:", err);
     } finally {
       setLoading(false);
     }
   };
-
-
 
   const handleDeleteBlog = async (id) => {
     if (!confirm("Are you sure you want to delete this blog?")) return;
@@ -130,6 +136,141 @@ export default function AdminDashboard() {
       }
     } catch (err) {
       alert("Error deleting case study");
+    }
+  };
+
+  const handleDeleteInquiry = async (id) => {
+    if (!confirm("Are you sure you want to delete this enquiry?")) return;
+    const token = localStorage.getItem("adminToken");
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admin/inquiry/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (res.ok) {
+        setInquiries(inquiries.filter(i => i._id !== id));
+      } else {
+        const data = await res.json();
+        alert(data.message || "Failed to delete enquiry");
+      }
+    } catch (err) {
+      alert("Error deleting enquiry");
+    }
+  };
+
+  const handleDeleteCareer = async (id) => {
+    if (!confirm("Are you sure you want to delete this application?")) return;
+    const token = localStorage.getItem("adminToken");
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admin/career/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (res.ok) {
+        setCareers(careers.filter(c => c._id !== id));
+      } else {
+        const data = await res.json();
+        alert(data.message || "Failed to delete application");
+      }
+    } catch (err) {
+      alert("Error deleting application");
+    }
+  };
+
+  const handleDeleteNewsletter = async (id) => {
+    if (!confirm("Are you sure you want to delete this subscriber?")) return;
+    const token = localStorage.getItem("adminToken");
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admin/newsletter/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (res.ok) {
+        setNewsletters(newsletters.filter(n => n._id !== id));
+      } else {
+        const data = await res.json();
+        alert(data.message || "Failed to delete subscriber");
+      }
+    } catch (err) {
+      alert("Error deleting subscriber");
+    }
+  };
+
+  const handleDeleteJob = async (id) => {
+    if (!confirm("Are you sure you want to delete this job position?")) return;
+    const token = localStorage.getItem("adminToken");
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admin/jobs/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (res.ok) {
+        setJobs(jobs.filter(j => j._id !== id));
+      } else {
+        const data = await res.json();
+        alert(data.message || "Failed to delete job");
+      }
+    } catch (err) {
+      alert("Error deleting job");
+    }
+  };
+
+  const handleCreateJob = async (e) => {
+    e.preventDefault();
+    setActionLoading(true);
+    const token = localStorage.getItem("adminToken");
+    const method = newJob._id ? "PUT" : "POST";
+    const url = newJob._id 
+      ? `${API_BASE_URL}/api/admin/jobs/${newJob._id}` 
+      : `${API_BASE_URL}/api/admin/jobs`;
+
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: { 
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}` 
+        },
+        body: JSON.stringify(newJob)
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (newJob._id) {
+          setJobs(jobs.map(j => j._id === data._id ? data : j));
+        } else {
+          setJobs([data, ...jobs]);
+        }
+        setIsJobModalOpen(false);
+        setNewJob({ title: "", category: "Engineering", type: "Full-Time", location: "", lastDate: "" });
+      } else {
+        const data = await res.json();
+        alert(data.message || "Failed to save job");
+      }
+    } catch (err) {
+      alert("Error saving job");
+    } finally {
+      setActionLoading(false);
+    }
+  };
+
+  const handleUpdateJobStatus = async (id, currentStatus) => {
+    const token = localStorage.getItem("adminToken");
+    const newStatus = currentStatus === "open" ? "closed" : "open";
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admin/jobs/${id}`, {
+        method: "PUT",
+        headers: { 
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}` 
+        },
+        body: JSON.stringify({ status: newStatus })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setJobs(jobs.map(j => j._id === id ? data : j));
+      }
+    } catch (err) {
+      alert("Error updating status");
     }
   };
 
@@ -198,6 +339,13 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab("case-studies")}
             count={caseStudies.length}
           />
+          <SidebarLink
+            icon={<Icon icon="solar:user-speak-bold" width="20" />}
+            label="Job Roles"
+            active={activeTab === "jobs"}
+            onClick={() => setActiveTab("jobs")}
+            count={jobs.length}
+          />
         </nav>
 
         <button
@@ -217,13 +365,15 @@ export default function AdminDashboard() {
               {activeTab === "inquiries" ? "Project Enquiries" :
                 activeTab === "careers" ? "Job Applications" :
                   activeTab === "newsletters" ? "Subscribers" : 
-                    activeTab === "blogs" ? "Blog Management" : "Case Studies"}
+                    activeTab === "blogs" ? "Blog Management" : 
+                      activeTab === "case-studies" ? "Case Studies" : "Job Openings"}
             </h2>
             <p className="text-gray-400">
               {activeTab === "inquiries" ? "Manage and respond to incoming project inquiries." :
                 activeTab === "careers" ? "Review and manage career applications." :
                   activeTab === "newsletters" ? "View all newsletter subscribers." : 
-                    activeTab === "blogs" ? "Create and manage website blog posts." : "Showcase your best work and success stories."}
+                    activeTab === "blogs" ? "Create and manage website blog posts." : 
+                      activeTab === "case-studies" ? "Showcase your best work and success stories." : "Manage open roles on your career page."}
             </p>
           </div>
 
@@ -244,6 +394,15 @@ export default function AdminDashboard() {
               >
                 <Plus size={18} />
                 Add Case Study
+              </button>
+            )}
+            {activeTab === "jobs" && (
+              <button
+                onClick={() => setIsJobModalOpen(true)}
+                className="flex items-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-tight hover:shadow-lg hover:shadow-brand-red/20 transition-all"
+              >
+                <Plus size={18} />
+                Add New Role
               </button>
             )}
             <div className="relative">
@@ -275,7 +434,7 @@ export default function AdminDashboard() {
                   className="space-y-4"
                 >
                   {filteredInquiries.map((inq) => (
-                    <InquiryCard key={inq._id} data={inq} />
+                    <InquiryCard key={inq._id} data={inq} onDelete={handleDeleteInquiry} />
                   ))}
                 </motion.div>
               )}
@@ -288,7 +447,7 @@ export default function AdminDashboard() {
                   className="space-y-4"
                 >
                   {filteredCareers.map((car) => (
-                    <CareerCard key={car._id} data={car} />
+                    <CareerCard key={car._id} data={car} onDelete={handleDeleteCareer} />
                   ))}
                 </motion.div>
               )}
@@ -301,7 +460,7 @@ export default function AdminDashboard() {
                   className="space-y-4"
                 >
                   {newsletters.map((news) => (
-                    <NewsletterCard key={news._id} data={news} />
+                    <NewsletterCard key={news._id} data={news} onDelete={handleDeleteNewsletter} />
                   ))}
                 </motion.div>
               )}
@@ -336,16 +495,44 @@ export default function AdminDashboard() {
                   ))}
                 </motion.div>
               )}
+              {activeTab === "jobs" && (
+                <motion.div
+                  key="jobs"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                  {jobs.map((job) => (
+                    <JobCard 
+                      key={job._id} 
+                      data={job} 
+                      onDelete={handleDeleteJob}
+                      onStatusToggle={() => handleUpdateJobStatus(job._id, job.status)}
+                      onEdit={() => {
+                        setNewJob(job);
+                        setIsJobModalOpen(true);
+                      }}
+                    />
+                  ))}
+                </motion.div>
+              )}
             </AnimatePresence>
           </div>
         )}
-
-
       </main>
+
+      <JobModal 
+        isOpen={isJobModalOpen}
+        onClose={() => setIsJobModalOpen(false)}
+        onSave={handleCreateJob}
+        job={newJob}
+        setJob={setNewJob}
+        loading={actionLoading}
+      />
     </div>
   );
 }
-
 
 function SidebarLink({ icon, label, active, onClick, count }) {
   return (
@@ -370,15 +557,21 @@ function SidebarLink({ icon, label, active, onClick, count }) {
   );
 }
 
-function InquiryCard({ data }) {
+function InquiryCard({ data, onDelete }) {
   return (
-    <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl hover:border-brand-red/30 transition-colors group">
+    <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl hover:border-brand-red/30 transition-colors group relative">
+      <button
+        onClick={() => onDelete(data._id)}
+        className="absolute top-6 right-6 text-gray-600 hover:text-red-500 transition-colors p-2 opacity-0 group-hover:opacity-100"
+      >
+        <Trash2 size={18} />
+      </button>
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold mb-1">{data.name}</h3>
           <p className="text-brand-red text-sm font-bold uppercase tracking-widest">{data.service}</p>
         </div>
-        <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
+        <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full mr-10">
           <Clock size={14} className="text-gray-400" />
           <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
             {new Date(data.createdAt).toLocaleDateString()}
@@ -401,15 +594,21 @@ function InquiryCard({ data }) {
   );
 }
 
-function CareerCard({ data }) {
+function CareerCard({ data, onDelete }) {
   return (
-    <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl hover:border-blue-500/30 transition-colors group">
+    <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl hover:border-blue-500/30 transition-colors group relative">
+      <button
+        onClick={() => onDelete(data._id)}
+        className="absolute top-6 right-6 text-gray-600 hover:text-red-500 transition-colors p-2 opacity-0 group-hover:opacity-100"
+      >
+        <Trash2 size={18} />
+      </button>
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold mb-1">{data.name}</h3>
           <p className="text-blue-500 text-sm font-bold uppercase tracking-widest">{data.position}</p>
         </div>
-        <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
+        <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full mr-10">
           <Clock size={14} className="text-gray-400" />
           <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
             {new Date(data.createdAt).toLocaleDateString()}
@@ -448,7 +647,7 @@ function CareerCard({ data }) {
   );
 }
 
-function NewsletterCard({ data }) {
+function NewsletterCard({ data, onDelete }) {
   return (
     <div className="bg-zinc-900/50 border border-white/10 p-4 rounded-xl hover:border-brand-red/30 transition-colors group flex items-center justify-between">
       <div className="flex items-center gap-4">
@@ -460,11 +659,19 @@ function NewsletterCard({ data }) {
           <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Subscriber</p>
         </div>
       </div>
-      <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
-        <Clock size={12} className="text-gray-500" />
-        <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
-          Joined {new Date(data.createdAt).toLocaleDateString()}
-        </span>
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
+          <Clock size={12} className="text-gray-500" />
+          <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
+            Joined {new Date(data.createdAt).toLocaleDateString()}
+          </span>
+        </div>
+        <button
+          onClick={() => onDelete(data._id)}
+          className="text-gray-600 hover:text-red-500 transition-colors p-2 opacity-0 group-hover:opacity-100"
+        >
+          <Trash2 size={18} />
+        </button>
       </div>
     </div>
   );
@@ -506,14 +713,6 @@ function BlogCard({ data, onDelete }) {
           /{data.slug}
         </p>
 
-        <div className="flex flex-wrap gap-1 mb-4">
-          {data.tags && data.tags.map((tag, i) => (
-            <span key={i} className="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">
-              #{tag}
-            </span>
-          ))}
-        </div>
-
         <p className="text-gray-400 text-sm line-clamp-3 mb-6 flex-1">
           {data.content.replace(/<[^>]*>/g, '')}
         </p>
@@ -536,6 +735,7 @@ function BlogCard({ data, onDelete }) {
     </div>
   );
 }
+
 function CaseStudyCard({ data, onDelete, onEdit }) {
   return (
     <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-red/30 transition-all flex flex-col">
@@ -591,6 +791,163 @@ function CaseStudyCard({ data, onDelete, onEdit }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function JobCard({ data, onDelete, onStatusToggle, onEdit }) {
+  return (
+    <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl hover:border-brand-red/30 transition-all group flex flex-col h-full">
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex gap-2">
+          <span className="bg-brand-red text-white text-[9px] font-bold uppercase px-2 py-0.5 rounded">
+            {data.category}
+          </span>
+          <span className="bg-zinc-800 text-gray-400 text-[9px] font-bold uppercase px-2 py-0.5 rounded">
+            {data.type}
+          </span>
+        </div>
+        <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <button
+            onClick={onEdit}
+            className="text-gray-600 hover:text-white transition-colors"
+          >
+            <Icon icon="solar:pen-bold" width="18" />
+          </button>
+          <button
+            onClick={() => onDelete(data._id)}
+            className="text-gray-600 hover:text-red-500 transition-colors"
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
+      </div>
+
+      <h3 className="text-lg font-bold mb-2 uppercase tracking-tight">{data.title}</h3>
+      
+      <div className="flex items-center gap-2 text-xs text-gray-500 mb-2 uppercase font-bold">
+        <Icon icon="solar:map-point-bold" width="14" />
+        {data.location}
+      </div>
+
+      {data.lastDate && (
+        <div className="flex items-center gap-2 text-[10px] text-brand-red mb-6 uppercase font-bold">
+          <Icon icon="solar:calendar-bold" width="14" />
+          Apply Before: {new Date(data.lastDate).toLocaleDateString()}
+        </div>
+      )}
+
+      <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+        <button 
+          onClick={onStatusToggle}
+          className={`text-[10px] font-bold uppercase px-2 py-1 rounded-full transition-colors ${data.status === 'open' ? 'text-green-500 bg-green-500/10 hover:bg-green-500/20' : 'text-red-500 bg-red-500/10 hover:bg-red-500/20'}`}
+        >
+          {data.status}
+        </button>
+        <span className="text-[10px] text-gray-600 font-bold uppercase">
+          {new Date(data.createdAt).toLocaleDateString()}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// --- Modals ---
+
+function JobModal({ isOpen, onClose, onSave, job, setJob, loading }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-zinc-950 border border-white/10 p-8 rounded-3xl w-full max-w-lg shadow-2xl"
+      >
+        <div className="flex justify-between items-center mb-8">
+          <h3 className="text-2xl font-bold uppercase tracking-tight">{job._id ? "Edit Job Role" : "Create Job Role"}</h3>
+          <button onClick={() => {
+            onClose();
+            setJob({ title: "", category: "Engineering", type: "Full-Time", location: "", lastDate: "" });
+          }} className="text-gray-500 hover:text-white transition-colors">
+            <X size={24} />
+          </button>
+        </div>
+
+        <form onSubmit={onSave} className="space-y-5">
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Role Title</label>
+            <input
+              type="text"
+              required
+              className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand-red"
+              placeholder="e.g. Senior Frontend Engineer"
+              value={job.title}
+              onChange={(e) => setJob({ ...job, title: e.target.value })}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Category</label>
+              <select
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-sm focus:outline-none"
+                value={job.category}
+                onChange={(e) => setJob({ ...job, category: e.target.value })}
+              >
+                <option value="Engineering">Engineering</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+                <option value="Support">Support</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Type</label>
+              <select
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-sm focus:outline-none"
+                value={job.type}
+                onChange={(e) => setJob({ ...job, type: e.target.value })}
+              >
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Contract">Contract</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Location</label>
+            <input
+              type="text"
+              required
+              className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand-red"
+              placeholder="e.g. Remote / Patna, India"
+              value={job.location}
+              onChange={(e) => setJob({ ...job, location: e.target.value })}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Last Date to Apply</label>
+            <input
+              type="date"
+              className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand-red text-gray-400"
+              value={job.lastDate ? new Date(job.lastDate).toISOString().split('T')[0] : ""}
+              onChange={(e) => setJob({ ...job, lastDate: e.target.value })}
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-brand-red text-white font-bold uppercase tracking-tight py-4 rounded-xl shadow-lg shadow-brand-red/20 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 mt-4"
+          >
+            {loading ? "Publishing..." : "Publish Opening"}
+          </button>
+        </form>
+      </motion.div>
     </div>
   );
 }

@@ -23,8 +23,10 @@ const CareerPage = () => {
     "Drag & drop or click to upload",
   );
   const [modalFileName, setModalFileName] = useState("Select File");
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const jobs = [
+  const fallbackJobs = [
     {
       title: "Senior Frontend Engineer",
       category: "Engineering",
@@ -50,6 +52,26 @@ const CareerPage = () => {
       location: "San Francisco, CA",
     },
   ];
+
+  React.useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/public/jobs`);
+        const data = await res.json();
+        if (res.ok) {
+          setJobs(data.length > 0 ? data : fallbackJobs);
+        } else {
+          setJobs(fallbackJobs);
+        }
+      } catch (err) {
+        setJobs(fallbackJobs);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -397,7 +419,15 @@ const CareerPage = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
           >
-            {jobs.map((job, index) => (
+            {loading ? (
+              <div className="col-span-full py-20 flex justify-center">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  className="w-12 h-12 border-4 border-[#FF3B00] border-t-transparent rounded-full"
+                />
+              </div>
+            ) : jobs.map((job, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
@@ -432,10 +462,17 @@ const CareerPage = () => {
                   {job.title}
                 </h3>
 
-                <div className="flex items-center gap-2 text-sm font-semibold uppercase mb-8 opacity-80">
+                <div className="flex items-center gap-2 text-sm font-semibold uppercase mb-4 opacity-80">
                   <Icon icon="solar:map-point-linear" width="18" height="18" />
                   {job.location}
                 </div>
+
+                {job.lastDate && (
+                  <div className="flex items-center gap-2 text-xs text-[#FF3B00] font-bold uppercase mb-8">
+                    <Icon icon="solar:calendar-linear" width="18" height="18" />
+                    Last Date: {new Date(job.lastDate).toLocaleDateString()}
+                  </div>
+                )}
 
                 <div className="mt-auto pt-6 border-t-4 border-black">
                   <motion.button

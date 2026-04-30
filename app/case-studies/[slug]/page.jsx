@@ -28,6 +28,9 @@ export async function generateMetadata({ params }) {
     return {
       title: title,
       description: description,
+      icons: {
+        icon: "/title-logo.png",
+      },
       alternates: {
         canonical: url,
       },

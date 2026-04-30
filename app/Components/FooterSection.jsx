@@ -3,6 +3,7 @@
 
 import { useEffect } from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import API_BASE_URL from "../config";
 
@@ -220,11 +221,15 @@ export default function FooterSection() {
                   Legal
                 </h3>
                 <ul className="flex flex-col space-y-2 text-xs text-neutral-500">
-                  <li className="hover:text-white transition-colors cursor-pointer">
-                    Privacy Policy
+                  <li>
+                    <Link href="/privacy-policy" className="hover:text-white transition-colors cursor-pointer">
+                      Privacy Policy
+                    </Link>
                   </li>
-                  <li className="hover:text-white transition-colors cursor-pointer">
-                    Terms of Service
+                  <li>
+                    <Link href="/terms-of-service" className="hover:text-white transition-colors cursor-pointer">
+                      Terms of Service
+                    </Link>
                   </li>
                 </ul>
               </div>

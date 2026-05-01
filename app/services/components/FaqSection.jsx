@@ -96,15 +96,15 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
             >
               <button 
                 onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
-                className="w-full p-8 md:p-10 text-left flex items-center gap-6"
+                className="w-full p-6 md:p-10 text-left flex items-center gap-4 md:gap-6"
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${
+                <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-xl md:rounded-2xl flex items-center justify-center transition-all duration-500 ${
                   expandedIndex === idx ? "bg-[#FF3B00] text-black" : "bg-white/5 text-[#FF3B00]"
                 }`}>
-                  <Icon icon={faq.icon || "lucide:help-circle"} width={28} />
+                  <Icon icon={faq.icon || "lucide:help-circle"} className="text-xl md:text-2xl" />
                 </div>
                 
-                <span className={`text-xl md:text-2xl font-bold flex-1 transition-colors ${
+                <span className={`text-base md:text-2xl font-bold flex-1 transition-colors ${
                   expandedIndex === idx ? "text-white" : "text-gray-300 hover:text-white"
                 }`}>
                   {faq.question}
@@ -112,9 +112,9 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                 
                 <motion.div 
                   animate={{ rotate: expandedIndex === idx ? 180 : 0 }}
-                  className="text-[#FF3B00]"
+                  className="text-[#FF3B00] shrink-0"
                 >
-                  <Icon icon="lucide:chevron-down" width={32} />
+                  <Icon icon="lucide:chevron-down" width={24} className="md:w-8 md:h-8" />
                 </motion.div>
               </button>
               

@@ -574,7 +574,7 @@ function InquiryCard({ data, onDelete }) {
         <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full mr-10">
           <Clock size={14} className="text-gray-400" />
           <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
-            {new Date(data.createdAt).toLocaleDateString()}
+            {new Date(data.createdAt).toLocaleDateString('en-IN')}
           </span>
         </div>
       </div>
@@ -611,7 +611,7 @@ function CareerCard({ data, onDelete }) {
         <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full mr-10">
           <Clock size={14} className="text-gray-400" />
           <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
-            {new Date(data.createdAt).toLocaleDateString()}
+            {new Date(data.createdAt).toLocaleDateString('en-IN')}
           </span>
         </div>
       </div>
@@ -663,7 +663,7 @@ function NewsletterCard({ data, onDelete }) {
         <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
           <Clock size={12} className="text-gray-500" />
           <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
-            Joined {new Date(data.createdAt).toLocaleDateString()}
+            Joined {new Date(data.createdAt).toLocaleDateString('en-IN')}
           </span>
         </div>
         <button
@@ -727,7 +727,7 @@ function BlogCard({ data, onDelete }) {
           <div className="flex items-center gap-2">
             <Clock size={12} className="text-gray-500" />
             <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
-              {new Date(data.createdAt).toLocaleDateString()}
+              {new Date(data.createdAt).toLocaleDateString('en-IN')}
             </span>
           </div>
         </div>
@@ -786,7 +786,7 @@ function CaseStudyCard({ data, onDelete, onEdit }) {
           <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full">
             <Clock size={12} className="text-gray-500" />
             <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
-              {new Date(data.createdAt).toLocaleDateString()}
+              {new Date(data.createdAt).toLocaleDateString('en-IN')}
             </span>
           </div>
         </div>
@@ -833,7 +833,7 @@ function JobCard({ data, onDelete, onStatusToggle, onEdit }) {
       {data.lastDate && (
         <div className="flex items-center gap-2 text-[10px] text-brand-red mb-6 uppercase font-bold">
           <Icon icon="solar:calendar-bold" width="14" />
-          Apply Before: {new Date(data.lastDate).toLocaleDateString()}
+          Apply Before: {new Date(data.lastDate).toLocaleDateString('en-IN')}
         </div>
       )}
 
@@ -845,7 +845,7 @@ function JobCard({ data, onDelete, onStatusToggle, onEdit }) {
           {data.status}
         </button>
         <span className="text-[10px] text-gray-600 font-bold uppercase">
-          {new Date(data.createdAt).toLocaleDateString()}
+          {new Date(data.createdAt).toLocaleDateString('en-IN')}
         </span>
       </div>
     </div>

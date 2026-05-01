@@ -470,7 +470,7 @@ const CareerPage = () => {
                 {job.lastDate && (
                   <div className="flex items-center gap-2 text-xs text-[#FF3B00] font-bold uppercase mb-8">
                     <Icon icon="solar:calendar-linear" width="18" height="18" />
-                    Last Date: {new Date(job.lastDate).toLocaleDateString()}
+                    Last Date: {new Date(job.lastDate).toLocaleDateString('en-IN')}
                   </div>
                 )}
 

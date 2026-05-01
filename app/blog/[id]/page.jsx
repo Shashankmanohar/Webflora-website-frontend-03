@@ -36,6 +36,7 @@ export async function generateMetadata({ params }) {
     return {
       title: title,
       description: description,
+      keywords: `${post.category || 'tech blog'}, ${post.tags ? post.tags.join(', ') : ''}, webflora technologies blog, digital marketing insights india, web development trends, AI automation tutorials patna, software engineering best practices, top IT firm articles, technology news, SEO updates`,
       alternates: {
         canonical: url,
       },

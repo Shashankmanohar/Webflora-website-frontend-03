@@ -29,8 +29,17 @@ const pacifico = Pacifico({
 });
 
 export const metadata = {
-  title: "Webflora Technologies",
-  description: "Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation across India.",
+  title: "Webflora Technologies | Premier Web, App & AI Automation Agency",
+  description: "Webflora Technologies is a top digital solutions company offering Web Development, Mobile App Development, Custom Software Development, AI Automation, Social Media Marketing, and complete Digital Marketing services in Patna, India, and worldwide.",
+  keywords: "Web Development, App Development, Custom Software Development, AI Automation, Social Media Marketing, Digital Marketing, web development patna, digital marketing agency india, custom software solutions, AI automation company, mobile app development, top IT company, SEO services, web design, e-commerce development, business automation, tech startup india, generative AI integration",
+  openGraph: {
+    title: "Webflora Technologies | Premier Web, App & AI Automation Agency",
+    description: "Discover top-tier digital solutions including Web Development, App Development, AI Automation, and Digital Marketing with Webflora Technologies.",
+    url: "https://webfloratechnologies.com",
+    siteName: "Webflora Technologies",
+    locale: "en_US",
+    type: "website",
+  },
   icons: {
     icon: "/title-logo.png",
     shortcut: "/title-logo.png",

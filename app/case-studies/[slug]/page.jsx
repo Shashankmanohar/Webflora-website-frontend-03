@@ -28,6 +28,7 @@ export async function generateMetadata({ params }) {
     return {
       title: title,
       description: description,
+      keywords: `${project.category || 'case study'}, ${project.industry || 'B2B'}, webflora successful projects, digital transformation examples, custom software case studies patna, web development portfolio india, AI automation success stories, client testimonials, top tech solutions`,
       icons: {
         icon: "/title-logo.png",
       },

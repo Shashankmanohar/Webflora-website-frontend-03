@@ -26,45 +26,22 @@ const CareerPage = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fallbackJobs = [
-    {
-      title: "Senior Frontend Engineer",
-      category: "Engineering",
-      type: "Full-Time",
-      location: "Remote / New York",
-    },
-    {
-      title: "Product Designer",
-      category: "Design",
-      type: "Full-Time",
-      location: "London, UK",
-    },
-    {
-      title: "Growth Marketing Intern",
-      category: "Marketing",
-      type: "Internship",
-      location: "Remote",
-    },
-    {
-      title: "Backend Systems Engineer",
-      category: "Engineering",
-      type: "Full-Time",
-      location: "San Francisco, CA",
-    },
-  ];
-
   React.useEffect(() => {
     const fetchJobs = async () => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
       try {
-        const res = await fetch(`${API_BASE_URL}/api/public/jobs`);
+        const res = await fetch(`${API_BASE_URL}/api/public/jobs`, { signal: controller.signal });
+        clearTimeout(timeoutId);
         const data = await res.json();
         if (res.ok) {
-          setJobs(data.length > 0 ? data : fallbackJobs);
+          setJobs(data.length > 0 ? data : []);
         } else {
-          setJobs(fallbackJobs);
+          setJobs([]);
         }
       } catch (err) {
-        setJobs(fallbackJobs);
+        clearTimeout(timeoutId);
+        setJobs([]);
       } finally {
         setLoading(false);
       }
@@ -426,6 +403,11 @@ const CareerPage = () => {
                   transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                   className="w-12 h-12 border-4 border-[#FF3B00] border-t-transparent rounded-full"
                 />
+              </div>
+            ) : jobs.length === 0 ? (
+              <div className="col-span-full py-16 text-center border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h3 className="text-2xl font-bold uppercase tracking-tighter mb-2">No Open Roles Currently</h3>
+                <p className="text-sm font-semibold uppercase tracking-tight text-gray-500">Check back later or drop your resume above.</p>
               </div>
             ) : jobs.map((job, index) => (
               <motion.div

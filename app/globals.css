@@ -267,6 +267,28 @@ h6,
 }
 
 /* ===============================
+   ICON ANIMATIONS
+   =============================== */
+svg, iconify-icon {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.group:hover svg, .group:hover iconify-icon,
+a:hover svg, a:hover iconify-icon,
+button:hover svg, button:hover iconify-icon,
+div:hover > svg, div:hover > iconify-icon {
+  transform: scale(1.15) rotate(12deg);
+}
+
+/* Force navbar and dropdown icons to not animate */
+nav svg, nav iconify-icon,
+#webflora-bottom-nav svg, #webflora-bottom-nav iconify-icon {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ===============================
    THEME TOKENS
    =============================== */
 @theme inline {

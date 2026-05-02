@@ -8,9 +8,9 @@ import { Home, Briefcase, Info, Phone, BookOpen, Trophy, Globe, Smartphone, Laye
 
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
-  { 
-    icon: Briefcase, 
-    label: "Services", 
+  {
+    icon: Briefcase,
+    label: "Services",
     href: "/services",
     children: [
       { icon: Globe, label: "Web Dev", href: "/services/web-development" },
@@ -97,7 +97,7 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      <div className="fixed bottom-4 sm:bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-full px-3 sm:px-4 md:px-6">
+      <div id="webflora-bottom-nav" className="fixed bottom-4 sm:bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-full px-3 sm:px-4 md:px-6">
         <motion.div
           initial={{ y: 80, opacity: 0, scale: 0.92 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -127,8 +127,8 @@ export default function Navbar() {
               const hasChildren = item.children && item.children.length > 0;
 
               return (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="relative group"
                   onMouseEnter={() => {
                     if (hasChildren) {
@@ -227,7 +227,7 @@ export default function Navbar() {
                     >
                       {/* Transparent Bridge to prevent hover loss */}
                       <div className="absolute top-full left-0 w-full h-10 cursor-default" />
-                      
+
                       <div className="flex flex-col gap-1">
                         {item.children.map((child, ci) => (
                           <Link key={ci} href={child.href}>

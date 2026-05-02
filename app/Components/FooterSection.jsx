@@ -175,17 +175,26 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <div className="hidden lg:block lg:col-span-1" />
-
           {/* Links */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+            <FooterColumn
+              title="Services"
+              links={[
+                { text: "Web Development", url: "/services/web-development" },
+                { text: "App Development", url: "/services/app-development" },
+                { text: "AI Automation", url: "/services/ai-automation" },
+                { text: "Software Dev", url: "/services/software-development" },
+                { text: "Digital Mkt", url: "/services/digital-marketing" }
+              ]}
+            />
             <FooterColumn
               title="Product"
               links={[
                 { text: "Home", url: "/" },
                 { text: "About us", url: "/about" },
+                { text: "Services", url: "/services" },
                 { text: "Case Studies", url: "/case-studies" },
-                { text: "Enterprise", url: "/enterprise" }
+                { text: "Blog", url: "/blog" }
               ]}
             />
             <FooterColumn
@@ -193,7 +202,7 @@ export default function FooterSection() {
               links={[
                 { text: "Instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
                 { text: "LinkedIn", url: "https://www.linkedin.com/company/webfloratechnologies/" },
-                { text: "Careers", url: "/careers" }
+                { text: "Careers", url: "/career" }
               ]}
               badgeIndex={2}
             />
@@ -210,7 +219,7 @@ export default function FooterSection() {
                   <IconCircle icon="solar:map-point-linear" />
                   Patna, Bihar
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-3 whitespace-nowrap">
                   <IconCircle icon="solar:phone-linear" />
                   +91 85408 14729
                 </li>

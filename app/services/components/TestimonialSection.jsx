@@ -11,6 +11,8 @@ const TestimonialSection = () => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const testimonials = useMemo(
     () => [
@@ -38,10 +40,64 @@ const TestimonialSection = () => {
         color: "from-orange-500/20",
         delay: 0.2,
       },
-
+      {
+        id: 6,
+        clientName: "Dinesh Kumar",
+        company: "Managing Director, Diamond Resort",
+        result: "Digital Transformation",
+        feedback:
+          "We had a great experience working with Webflora Technologies for Diamond Resort’s digital development. They delivered a modern, responsive website with effective SEO and marketing strategies. The site is fast, user-friendly, and visually appealing. Their SEO improved our rankings and traffic, while marketing brought consistent leads and boosted visibility. Highly recommended for web development, SEO, and digital marketing that delivers real results.",
+        avatar: "💎",
+        tilt: 1,
+        color: "from-blue-500/20",
+        delay: 0.4,
+      },
     ],
     [],
   );
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.9,
+    }),
+  };
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setDirection(1);
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, testimonials.length]);
+
+  const handleNext = () => {
+    setDirection(1);
+    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
 
 
   // Intersection observer for smooth entry
@@ -337,217 +393,103 @@ const TestimonialSection = () => {
           )}
         </AnimatePresence>
 
-        {/* TESTIMONIALS GRID - Ultra Smooth with proper spacing */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="flex flex-col md:flex-row flex-wrap justify-center gap-10 md:gap-16 mb-32 sm:mb-40 md:mb-48 lg:mb-56"
-        >
-          {testimonials.map((testimonial, idx) => (
-            <motion.div
-              key={testimonial.id}
-              variants={cardVariants}
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative w-full md:w-[calc(50%-2rem)] lg:max-w-xl"
-            >
-              {/* Smooth Card Container */}
-              <motion.div
-                animate={{
-                  scale: hoveredIndex === idx ? 1.06 : 1,
-                  y: hoveredIndex === idx ? -12 : 0,
-                  rotateX: hoveredIndex === idx ? 5 : 0,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 350,
-                  damping: 25,
-                  mass: 0.8,
-                }}
-                style={{
-                  rotate: testimonial.tilt,
-                  transformStyle: "preserve-3d",
-                }}
-                className="relative bg-[#0A0A0A] border-3 border-[#FF3B00] rounded-3xl p-7 sm:p-8 md:p-10 lg:p-12 overflow-hidden h-full flex flex-col justify-between will-change-transform perspective"
-              >
-                {/* Shadow that expands smoothly */}
-                <motion.div
-                  animate={{
-                    boxShadow:
-                      hoveredIndex === idx
-                        ? "0 20px 60px rgba(255, 59, 0, 0.4), 12px 12px 0px #FF3B00, inset 0 0 30px rgba(255, 59, 0, 0.15)"
-                        : "8px 8px 0px #FF3B00, 0 10px 30px rgba(0, 0, 0, 0.5)",
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="absolute inset-0 pointer-events-none"
-                />
+        {/* TESTIMONIALS CAROUSEL - Curated Webflora Theme Carousel with Ambient Orbs */}
+        <div className="relative flex flex-col items-center justify-center mb-32 sm:mb-40 md:mb-48 lg:mb-56 w-full mx-auto select-none overflow-visible">
+          {/* Ambient orbs to fill wide blank desktop spaces */}
+          <div className="absolute inset-0 pointer-events-none overflow-visible hidden lg:block">
+            <div className="absolute top-1/2 -left-48 w-80 h-80 bg-[#ff3b00]/15 rounded-full blur-[140px] -translate-y-1/2 animate-pulse duration-5000" />
+            <div className="absolute top-1/2 -right-48 w-80 h-80 bg-[#ff3b00]/10 rounded-full blur-[140px] -translate-y-1/2 animate-pulse duration-7000 delay-2000" />
+            
+            {/* Soft decorative background grid */}
+            <div className="absolute inset-x-0 top-0 bottom-0 bg-grid opacity-[0.15] -z-10" />
+          </div>
 
-                {/* Smooth Border Glow */}
-                <motion.div
-                  className="absolute inset-0 border-3 border-[#FF3B00] rounded-[24px] pointer-events-none"
-                  animate={{
-                    opacity: hoveredIndex === idx ? 1 : 0,
-                    boxShadow:
-                      hoveredIndex === idx
-                        ? "inset 0 0 30px rgba(255, 59, 0, 0.6), 0 0 40px rgba(255, 59, 0, 0.4)"
-                        : "inset 0 0 0px rgba(255, 59, 0, 0)",
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                />
+          {/* DESKTOP VIEW: Show 3 cards side-by-side for perfect screen coverage */}
+          <div className="hidden md:grid grid-cols-3 gap-8 w-full max-w-6xl px-4 z-10">
+            {testimonials.slice(0, 3).map((testimonial) => (
+              <div key={testimonial.id} className="group relative h-full">
+                {/* Glowing background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ff3b00]/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                {/* Smooth Background Gradient */}
-                <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${testimonial.color} via-transparent to-transparent rounded-3xl`}
-                  animate={{
-                    opacity: hoveredIndex === idx ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  pointerEvents="none"
-                />
+                {/* Card Body */}
+                <div className="relative h-full bg-gradient-to-br from-gray-900 via-black to-gray-950 border border-gray-800 group-hover:border-[#ff3b00]/50 rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group-hover:shadow-2xl group-hover:shadow-[#ff3b00]/20 transform group-hover:scale-105 min-h-[360px]">
+                  {/* Top Accent Line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Quote Icon - Smooth Scale */}
-                  <motion.div
-                    animate={{
-                      scale: hoveredIndex === idx ? 1.3 : 1,
-                      rotate: hoveredIndex === idx ? 8 : 0,
-                      opacity: hoveredIndex === idx ? 1 : 0.6,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 25,
-                      mass: 0.6,
-                    }}
-                    className="text-6xl sm:text-7xl md:text-8xl mb-6 sm:mb-8 inline-block leading-none"
-                  >
-                    "
-                  </motion.div>
-
-                  {/* Feedback - Smooth Color transition with proper spacing */}
-                  <motion.p
-                    animate={{
-                      color: hoveredIndex === idx ? "#F3F4F6" : "#D1D5DB",
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="text-sm sm:text-base md:text-lg font-light leading-relaxed sm:leading-relaxed mb-8 sm:mb-10"
-                  >
-                    {testimonial.feedback}
-                  </motion.p>
-                </div>
-
-                {/* Client Info - Smooth Reveal with breathing room */}
-                <motion.div
-                  animate={{
-                    y: hoveredIndex === idx ? 0 : 0,
-                    opacity: 1,
-                  }}
-                  transition={{ duration: 0.4 }}
-                  className="relative z-10 pt-6 sm:pt-8 border-t-2 border-[#FF3B00]/40"
-                >
-                  {/* Avatar + Name Container */}
-                  <div className="flex items-start justify-between mb-5 sm:mb-6">
-                    <motion.div
-                      animate={{
-                        x: hoveredIndex === idx ? 4 : 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="flex flex-col flex-1 pr-3"
-                    >
-                      <motion.h4
-                        animate={{
-                          color: hoveredIndex === idx ? "#FF3B00" : "#FFFFFF",
-                        }}
-                        transition={{
-                          duration: 0.3,
-                          ease: [0.16, 1, 0.3, 1],
-                        }}
-                        className="text-lg sm:text-xl font-black mb-2 sm:mb-2.5 tracking-[-0.02em]"
-                      >
-                        {testimonial.clientName}
-                      </motion.h4>
-                      <motion.p
-                        animate={{
-                          color: hoveredIndex === idx ? "#9CA3AF" : "#6B7280",
-                        }}
-                        transition={{ duration: 0.3 }}
-                        className="text-xs sm:text-sm font-medium uppercase tracking-widest"
-                      >
-                        {testimonial.company}
-                      </motion.p>
-                    </motion.div>
-
-                    {/* Avatar Emoji - Smooth Bounce */}
-                    <motion.span
-                      animate={{
-                        scale: hoveredIndex === idx ? 1.4 : 1,
-                        y: hoveredIndex === idx ? -6 : 0,
-                        rotate: hoveredIndex === idx ? 12 : 0,
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 20,
-                        mass: 0.7,
-                      }}
-                      className="text-4xl sm:text-5xl md:text-6xl flex-shrink-0"
-                    >
-                      {testimonial.avatar}
-                    </motion.span>
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col">
+                    <span className="text-4xl text-[#ff3b00]/40 font-serif mb-1 select-none leading-none transform group-hover:scale-110 transition-transform duration-300">"</span>
+                    <p className="text-sm sm:text-base text-gray-200 font-light leading-relaxed mb-6 select-text group-hover:text-white transition-colors duration-300">
+                      {testimonial.feedback}
+                    </p>
                   </div>
 
-                  {/* Result Badge - Smooth Pulse */}
-                  <motion.div
-                    animate={{
-                      scale: hoveredIndex === idx ? 1.08 : 1,
-                      y: hoveredIndex === idx ? -2 : 0,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 25,
-                    }}
-                    className="inline-flex items-center gap-2.5 sm:gap-3 px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-r from-[#FF3B00]/15 to-[#FF3B00]/5 border-2 border-[#FF3B00] rounded-xl"
-                  >
-                    <motion.div
-                      animate={{
-                        rotate: hoveredIndex === idx ? 180 : 0,
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <Icon
-                        icon="lucide:trending-up"
-                        width={16}
-                        height={16}
-                        className="text-[#FF3B00]"
-                      />
-                    </motion.div>
-                    <motion.span
-                      animate={{
-                        color: hoveredIndex === idx ? "#FFAA00" : "#FF3B00",
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="text-xs sm:text-sm font-black uppercase tracking-wider"
-                    >
-                      {testimonial.result}
-                    </motion.span>
-                  </motion.div>
-                </motion.div>
+                  {/* Client Info Bar */}
+                  <div className="relative z-10 pt-4 border-t border-gray-800 group-hover:border-[#ff3b00]/40 flex items-center justify-between gap-3 transition-colors duration-300">
+                    <div className="flex flex-col flex-1">
+                      <h4 className="text-base font-black text-white tracking-tight mb-0.5 group-hover:text-[#ff3b00] transition-colors duration-300 font-display">
+                        {testimonial.clientName}
+                      </h4>
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest font-display">
+                        {testimonial.company}
+                      </p>
+                    </div>
+
+                    {/* Avatar Emoji */}
+                    <span className="text-3xl select-none flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                      {testimonial.avatar}
+                    </span>
+                  </div>
+
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* MOBILE VIEW: Single card centered compact slider */}
+          <div className="md:hidden relative w-full max-w-xl px-4 min-h-[420px] flex items-center justify-center">
+            <AnimatePresence initial={false} mode="wait">
+              <motion.div
+                key={activeTestimonial}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -40, scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                className="absolute w-full"
+              >
+                {/* Mobile Card Container */}
+                <div className="group relative h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff3b00]/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 border border-gray-800 group-hover:border-[#ff3b00]/50 rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group-hover:shadow-2xl group-hover:shadow-[#ff3b00]/20 min-h-[360px]">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative z-10 flex flex-col">
+                      <span className="text-4xl text-[#ff3b00]/40 font-serif mb-1 leading-none transform group-hover:scale-110 transition-transform duration-300 select-none">"</span>
+                      <p className="text-sm text-gray-200 font-light leading-relaxed mb-6 select-text group-hover:text-white transition-colors duration-300">
+                        {testimonials[activeTestimonial]?.feedback}
+                      </p>
+                    </div>
+                    <div className="relative z-10 pt-4 border-t border-gray-800 group-hover:border-[#ff3b00]/40 flex items-center justify-between gap-3">
+                      <div className="flex flex-col flex-1">
+                        <h4 className="text-base font-black text-white tracking-tight mb-0.5 group-hover:text-[#ff3b00] transition-colors duration-300 font-display">
+                          {testimonials[activeTestimonial]?.clientName}
+                        </h4>
+                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest font-display">
+                          {testimonials[activeTestimonial]?.company}
+                        </p>
+                      </div>
+                      <span className="text-3xl select-none flex-shrink-0">
+                        {testimonials[activeTestimonial]?.avatar}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </div>
               </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
 
         {/* === VIDEO TESTIMONIAL - Ultra Smooth with breathing room === */}
         <motion.div

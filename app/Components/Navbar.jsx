@@ -76,6 +76,7 @@ export default function Navbar() {
                 src="/webflora-logo.svg"
                 alt="WebFlora Logo"
                 className="w-full h-full object-contain"
+                loading="lazy"
               />
             </motion.div>
           </Link>

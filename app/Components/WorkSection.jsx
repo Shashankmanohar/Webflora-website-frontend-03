@@ -176,6 +176,7 @@ export default function WorkSection() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
                   />
                 </motion.div>
 

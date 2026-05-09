@@ -685,6 +685,7 @@ function BlogCard({ data, onDelete }) {
           src={data.image}
           alt={data.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <span className="bg-brand-red text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
@@ -744,6 +745,7 @@ function CaseStudyCard({ data, onDelete, onEdit }) {
           src={data.image.startsWith('http') ? data.image : `${API_BASE_URL}/${data.image}`}
           alt={data.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <span className="bg-brand-red text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">

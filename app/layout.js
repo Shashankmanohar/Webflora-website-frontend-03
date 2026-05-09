@@ -66,6 +66,66 @@ export default function RootLayout({ children }) {
         {/* Footer Section */}
         <FooterSection />
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" async></script>
+
+        {/* Vegavan AI Support Chatbot */}
+        <script
+          src="https://vegavan-backend.vercel.app/chatbot.js"
+          data-user-id="69fc5bbe69d61b8cd4efd91a"
+          async
+        ></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+          (function() {
+            const observer = new MutationObserver((mutations, obs) => {
+              const container = document.getElementById('ai-chatbot-root-container');
+              if (container && container.shadowRoot) {
+                const style = document.createElement('style');
+                style.textContent = \`
+                  .chatbot-launcher {
+                    background: #ff3c00 !important;
+                  }
+                  .chat-header {
+                    background: #ff3c00 !important;
+                  }
+                  .message.user {
+                    background: #ff3c00 !important;
+                  }
+                  .send-btn {
+                    background: #ff3c00 !important;
+                  }
+                  .prechat-submit {
+                    background: #ff3c00 !important;
+                  }
+                  .prechat-input:focus {
+                    border-color: #ff3c00 !important;
+                  }
+                  .chat-input:focus {
+                    border-color: #ff3c00 !important;
+                  }
+                  @media (max-width: 768px) {
+                    .chatbot-launcher {
+                      bottom: 100px !important;
+                      right: 20px !important;
+                    }
+                  }
+                \`;
+                container.shadowRoot.appendChild(style);
+                obs.disconnect();
+              }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+          })();
+          `
+        }} />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          @media (max-width: 768px) {
+            #ai-chatbot-root-container {
+              bottom: 100px !important;
+              right: 20px !important;
+            }
+          }
+        `}} />
       </body>
     </html>
   );

@@ -49,19 +49,27 @@ export default async function sitemap() {
     console.error("Error fetching data for sitemap:", error);
   }
 
-  const blogRoutes = Array.isArray(blogs) ? blogs.map((blog) => ({
-    url: `${baseUrl}/blog/${blog.slug}`,
-    lastModified: new Date(blog.updatedAt || blog.createdAt).toISOString(),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  })) : [];
+  const blogRoutes = Array.isArray(blogs) ? blogs.map((blog) => {
+    const dateVal = blog.updatedAt || blog.createdAt;
+    const isValidDate = dateVal && !isNaN(new Date(dateVal).getTime());
+    return {
+      url: `${baseUrl}/blog/${blog.slug}`,
+      lastModified: isValidDate ? new Date(dateVal).toISOString() : new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    };
+  }) : [];
 
-  const caseStudyRoutes = Array.isArray(caseStudies) ? caseStudies.map((cs) => ({
-    url: `${baseUrl}/case-studies/${cs.slug}`,
-    lastModified: new Date(cs.updatedAt || cs.createdAt).toISOString(),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  })) : [];
+  const caseStudyRoutes = Array.isArray(caseStudies) ? caseStudies.map((cs) => {
+    const dateVal = cs.updatedAt || cs.createdAt;
+    const isValidDate = dateVal && !isNaN(new Date(dateVal).getTime());
+    return {
+      url: `${baseUrl}/case-studies/${cs.slug}`,
+      lastModified: isValidDate ? new Date(dateVal).toISOString() : new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    };
+  }) : [];
 
   return [...staticRoutes, ...blogRoutes, ...caseStudyRoutes];
 }

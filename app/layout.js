@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk, Pacifico } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import FooterSection from "./Components/FooterSection";
+import Script from "next/script";
+
 
 /* Inter – Body / UI */
 const inter = Inter({
@@ -50,6 +52,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://code.iconify.design" />
+        <link rel="preconnect" href="https://vegavan-backend.vercel.app" />
+      </head>
       <body
         className={`
           ${inter.variable}
@@ -65,14 +73,18 @@ export default function RootLayout({ children }) {
 
         {/* Footer Section */}
         <FooterSection />
-        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" async></script>
+        {/* Iconify Icon Script */}
+        <Script
+          src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+          strategy="lazyOnload"
+        />
 
         {/* Vegavan AI Support Chatbot */}
-        <script
+        <Script
           src="https://vegavan-backend.vercel.app/chatbot.js"
           data-user-id="69fc5bbe69d61b8cd4efd91a"
-          async
-        ></script>
+          strategy="lazyOnload"
+        />
         <script dangerouslySetInnerHTML={{
           __html: `
           (function() {

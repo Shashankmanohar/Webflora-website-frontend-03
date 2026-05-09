@@ -95,7 +95,7 @@ export default function FooterSection() {
 
             {/* MSME Badge */}
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 w-fit mt-2">
-              <img src="/msme-logo.webp" alt="MSME Logo" className="h-6 object-contain grayscale opacity-80" loading="lazy" />
+              <img src="/msme-logo.webp" alt="MSME Logo" className="h-6 object-contain grayscale opacity-80" width={100} height={24} loading="lazy" />
               <div className="flex flex-col">
                 <span className="text-xs text-white font-medium">MSME Registered</span>
                 <span className="text-[10px] text-neutral-500 font-mono">Udyam No: UDYAM-BR-26-0183379</span>

@@ -276,8 +276,8 @@ export default function ExpertiseSection() {
           >
             <div
               className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                  ? "bg-brand-red scale-125"
-                  : "bg-gray-700 hover:bg-gray-500"
+                ? "bg-brand-red scale-125"
+                : "bg-gray-700 hover:bg-gray-500"
                 }`}
             />
             {index === currentIndex && (

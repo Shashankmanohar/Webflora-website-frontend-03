@@ -75,7 +75,7 @@ export default function AboutWebflora() {
         </p>
 
         {/* MSME Certification Block */}
-        <motion.div 
+        <motion.div
           variants={item}
           className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
         >
@@ -127,9 +127,8 @@ export default function AboutWebflora() {
                 key={i}
                 variants={item}
                 whileHover="hover"
-                className={`relative p-5 md:p-7 rounded-[2rem] backdrop-blur-lg bg-white/5 border border-white/10 flex flex-col gap-4 transition-all hover:bg-white/[0.08] ${
-                  i % 2 === 1 ? "mt-10 md:mt-16" : ""
-                }`}
+                className={`relative p-5 md:p-7 rounded-[2rem] backdrop-blur-lg bg-white/5 border border-white/10 flex flex-col gap-4 transition-all hover:bg-white/[0.08] ${i % 2 === 1 ? "mt-10 md:mt-16" : ""
+                  }`}
               >
                 <motion.div variants={cardHover}>
                   <Icon

@@ -13,7 +13,7 @@ export default function MissionVisionSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && audioRef.current) {
             audioRef.current.currentTime = 0;
-            audioRef.current.play().catch(() => {});
+            audioRef.current.play().catch(() => { });
           }
         });
       },

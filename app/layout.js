@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
           ${pacifico.variable}
           antialiased
         `}>
-        {/* Navbar */}
+        {/* Banner and Nav */}
         <Navbar />
         <main id="main-content">
           {children}

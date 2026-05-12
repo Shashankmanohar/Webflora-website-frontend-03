@@ -14,3 +14,5 @@ const config = {
 };
 
 export default config;
+
+// Force cache purge trigger

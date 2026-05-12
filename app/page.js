@@ -18,6 +18,7 @@ const FaqSection = dynamic(() => import("./services/components/FaqSection"), { s
 const TestimonialSection = dynamic(() => import("./services/components/TestimonialSection"), { ssr: false });
 const TeamSection = dynamic(() => import("./Components/TeamSection"), { ssr: false });
 const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: false });
+const VegavanTeaser = dynamic(() => import("./Components/VegavanTeaser"), { ssr: false });
 
 const page = () => {
   return (
@@ -44,6 +45,9 @@ const page = () => {
       </div>
       <div className="content-auto">
         <WorkSection />
+      </div>
+      <div className="content-auto">
+        <VegavanTeaser />
       </div>
       <div className="content-auto">
         <TestimonialSection />

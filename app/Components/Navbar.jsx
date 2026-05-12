@@ -13,10 +13,11 @@ const navItems = [
     label: "Services",
     href: "/services",
     children: [
+      { icon: Bot, label: "Vegavan AI", href: "/vegavan-ai" },
+      { icon: Bot, label: "AI & Automation", href: "/services/ai-automation" },
       { icon: Globe, label: "Web Dev", href: "/services/web-development" },
       { icon: Smartphone, label: "App Dev", href: "/services/app-development" },
       { icon: Layers, label: "Software", href: "/services/software-development" },
-      { icon: Bot, label: "AI & Automation", href: "/services/ai-automation" },
       { icon: Share2, label: "Marketing", href: "/services/social-media-marketing" },
       { icon: FileText, label: "Case Studies", href: "/case-studies" },
     ]
@@ -240,6 +241,11 @@ export default function Navbar() {
                             >
                               <child.icon size={14} strokeWidth={2} />
                               <span className="text-xs font-bold whitespace-nowrap">{child.label}</span>
+                              {child.label === "Vegavan AI" && (
+                                <span className="ml-auto text-[8px] font-black uppercase tracking-widest bg-[#FF3B00] text-white px-1.5 py-0.5 rounded">
+                                  SaaS
+                                </span>
+                              )}
                             </motion.div>
                           </Link>
                         ))}

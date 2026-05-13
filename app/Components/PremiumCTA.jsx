@@ -13,13 +13,13 @@ export default function InvertedCTA() {
 
         {/* content */}
         <div className="relative z-10 space-y-8">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
             Let’s Build Something
             <br />
             <span className="text-[#ff3b00]">
               Great Together
             </span>
-          </h1>
+          </h2>
 
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
             Transform your business with technology that delivers results.

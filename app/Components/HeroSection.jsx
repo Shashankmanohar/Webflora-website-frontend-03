@@ -43,20 +43,20 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur">
+        <h1 className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-          <span className="text-xs tracking-widest text-gray-300 font-mono">
-            FUTURE READY SOLUTIONS
+          <span className="text-xs tracking-widest text-gray-300 font-mono uppercase">
+            Software development company in patna, india
           </span>
-        </div>
+        </h1>
 
         {/* Heading — elegant reveal */}
-        <h1 className="font-display font-bold tracking-tighter leading-[0.95] text-5xl md:text-7xl lg:text-8xl mb-6 will-change-transform">
+        <h2 className="font-display font-bold tracking-tighter leading-[0.95] text-5xl md:text-7xl lg:text-8xl mb-6 will-change-transform">
           ANYTHING THAT <br />
           <span className="text-gradient inline-block">CAN BE BUILT,</span>
           <br />
           <span className="text-brand text-glow inline-block">WE BUILD.</span>
-        </h1>
+        </h2>
 
         {/* Subtext */}
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">

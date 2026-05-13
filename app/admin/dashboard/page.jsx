@@ -473,7 +473,12 @@ export default function AdminDashboard() {
                   className="grid grid-cols-1 md:grid-cols-2 gap-8"
                 >
                   {blogs.map((blog) => (
-                    <BlogCard key={blog._id} data={blog} onDelete={handleDeleteBlog} />
+                    <BlogCard 
+                      key={blog._id} 
+                      data={blog} 
+                      onDelete={handleDeleteBlog} 
+                      onEdit={(id) => router.push(`/admin/dashboard/blogs/edit/${id}`)}
+                    />
                   ))}
                 </motion.div>
               )}
@@ -677,7 +682,7 @@ function NewsletterCard({ data, onDelete }) {
   );
 }
 
-function BlogCard({ data, onDelete }) {
+function BlogCard({ data, onDelete, onEdit }) {
   return (
     <div className="bg-zinc-900/50 border border-white/10 rounded-2xl overflow-hidden group hover:border-brand-red/30 transition-all flex flex-col">
       <div className="relative h-48 overflow-hidden">
@@ -702,10 +707,16 @@ function BlogCard({ data, onDelete }) {
           <h3 className="text-xl font-bold line-clamp-2">{data.title}</h3>
           <div className="flex items-center gap-1">
             <button
-              onClick={() => onDelete(data._id)}
-              className="text-gray-600 hover:text-red-500 transition-colors p-2"
+              onClick={() => onEdit(data._id)}
+              className="text-gray-400 hover:text-white transition-colors p-2 bg-white/5 rounded-lg hover:bg-white/10"
             >
-              <Trash2 size={18} />
+              <Icon icon="solar:pen-bold" width="16" height="16" />
+            </button>
+            <button
+              onClick={() => onDelete(data._id)}
+              className="text-gray-400 hover:text-red-500 transition-colors p-2 bg-white/5 rounded-lg hover:bg-white/10"
+            >
+              <Trash2 size={16} />
             </button>
           </div>
         </div>

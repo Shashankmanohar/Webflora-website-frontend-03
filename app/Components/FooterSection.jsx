@@ -43,7 +43,7 @@ export default function FooterSection() {
   if (isAdminPage) return null;
 
   return (
-    <footer className="relative w-full pt-20 pb-10 overflow-hidden bg-[#050505] text-neutral-300 selection:bg-[#ff3b00] selection:text-white">
+    <footer className="relative w-full pt-20 pb-28 sm:pb-20 md:pb-10 overflow-hidden bg-[#050505] text-neutral-300 selection:bg-[#ff3b00] selection:text-white">
       {/* Ambient background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[20%] left-[10%] w-96 h-96 bg-[#ff3b00] rounded-full mix-blend-screen blur-[120px] opacity-[0.08] animate-blob" />
@@ -260,10 +260,6 @@ export default function FooterSection() {
             </div>
 
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
-                <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
-                System Status
-              </div>
               <span className="hover:text-white cursor-pointer">Security</span>
               <span className="hover:text-white cursor-pointer">Sitemap</span>
             </div>

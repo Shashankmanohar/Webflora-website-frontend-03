@@ -91,12 +91,12 @@ export default function VegavanTeaser() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative aspect-[4/3] lg:aspect-square rounded-[3rem] overflow-hidden border border-white/10 bg-gradient-to-br from-[#121212] to-[#080808] shadow-2xl flex items-center justify-center"
+            className="relative aspect-auto py-12 lg:py-0 lg:aspect-square rounded-[3rem] overflow-hidden border border-white/10 bg-gradient-to-br from-[#121212] to-[#080808] shadow-2xl flex items-center justify-center"
           >
             {/* Grid Background */}
             <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-            <div className="relative z-10 w-[80%] h-[70%] bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6 flex flex-col shadow-2xl">
+            <div className="relative z-10 w-[85%] sm:w-[80%] h-auto lg:h-[70%] bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 flex flex-col shadow-2xl">
               {/* Header mockup */}
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                 <div className="flex items-center gap-3">
@@ -114,13 +114,13 @@ export default function VegavanTeaser() {
               </div>
 
               {/* Chat bubbles mockup */}
-              <div className="flex-1 flex flex-col gap-4 justify-end">
+              <div className="flex-1 flex flex-col gap-3 sm:gap-4 justify-end">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6 }}
-                  className="self-end bg-white/10 text-white text-xs md:text-sm px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] border border-white/5"
+                  className="self-end bg-white/10 text-white text-xs md:text-sm px-3 py-2.5 sm:px-4 sm:py-3 rounded-2xl rounded-tr-sm max-w-[85%] sm:max-w-[80%] border border-white/5"
                 >
                   How can you help my business grow?
                 </motion.div>
@@ -130,7 +130,7 @@ export default function VegavanTeaser() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1.2 }}
-                  className="self-start bg-[#FF3B00] text-white text-xs md:text-sm px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] shadow-lg shadow-[#FF3B00]/20"
+                  className="self-start bg-[#FF3B00] text-white text-xs md:text-sm px-3 py-2.5 sm:px-4 sm:py-3 rounded-2xl rounded-tl-sm max-w-[85%] sm:max-w-[80%] shadow-lg shadow-[#FF3B00]/20"
                 >
                   I provide 24/7 automated customer support, capture high-quality leads, and guide them to conversion while you focus on operations! 🚀
                 </motion.div>
@@ -140,7 +140,7 @@ export default function VegavanTeaser() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1.8 }}
-                  className="self-start flex gap-2 mt-2"
+                  className="self-start flex gap-2 mt-1"
                 >
                   <div className="w-2 h-2 bg-white/30 rounded-full animate-bounce" />
                   <div className="w-2 h-2 bg-white/30 rounded-full animate-bounce [animation-delay:0.2s]" />

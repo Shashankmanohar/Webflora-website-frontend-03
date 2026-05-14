@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Our Services | Digital Solutions by Webflora",
-  description: "Explore the comprehensive digital services offered by Webflora Technologies, including Web Development, App Development, Custom Software Development, AI Automation, Social Media Marketing, and Digital Marketing.",
-  keywords: "Web Development, App Development, Custom Software Development, AI Automation, Social Media Marketing, Digital Marketing, webflora services, web development services, mobile app development, SEO services, AI automation solutions, custom software development, digital marketing packages, business process automation, UI/UX design india, ecommerce solutions, SaaS development company",
+  title: "IT & Digital Services in Patna Bihar | Webflora Technologies",
+  description: "Explore web development, app development, software development, AI automation, SEO, and digital marketing services offered by Webflora Technologies in Patna, Bihar.",
+  keywords: "IT services Patna, software services Bihar, web development services Patna, digital services Bihar, AI solutions India",
 };
 
 export default function ServicesLayout({ children }) {

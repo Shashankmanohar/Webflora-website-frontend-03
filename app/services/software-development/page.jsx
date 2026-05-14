@@ -3,8 +3,9 @@ import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
 
 export const metadata = {
-  title: "Software Development Services | Webflora Technologies",
-  description: "Scale your business with robust, scalable, and secure custom software tailored to your unique operational needs.",
+  title: "Software Development Company in Patna Bihar | Custom Software Solutions",
+  description: "Webflora Technologies develops custom software, ERP systems, CRM solutions, and business management software for companies in Patna, Bihar.",
+  keywords: "software development company Patna, custom software Bihar, ERP software Patna, CRM development Bihar, business software India",
 };
 
 const page = () => {

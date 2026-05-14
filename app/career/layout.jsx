@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Careers & Open Roles | Webflora Technologies",
-  description: "Join the Webflora team. We are looking for bold minds in engineering, design, marketing, and more. Apply today and build the future with us.",
-  keywords: "webflora careers, IT jobs in patna, frontend developer jobs, backend engineering roles, digital marketing internship, remote tech jobs, AI automation engineer careers, software developer openings india, web design jobs, top tech companies to work for",
+  title: "Careers at Webflora Technologies | IT Jobs in Patna Bihar",
+  description: "Explore job opportunities in web development, SEO, AI automation, app development, and digital marketing at Webflora Technologies in Patna, Bihar.",
+  keywords: "IT jobs Patna, software company careers Bihar, web developer jobs Patna, SEO jobs Bihar, digital marketing jobs India",
 };
 
 export default function CareerLayout({ children }) {

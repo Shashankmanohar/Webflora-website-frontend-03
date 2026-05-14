@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Contact Us | Webflora Technologies",
-  description: "Get in touch with Webflora Technologies for project inquiries, technical support, and IT consultation. We are ready to bring your digital vision to life.",
-  keywords: "contact webflora technologies, hire web developers, IT consultation india, software project estimation, digital marketing quote, AI automation experts contact, hire mobile app developers patna, web design consultation, tech support india",
+  title: "Contact Webflora Technologies | Software Company in Patna Bihar",
+  description: "Get in touch with Webflora Technologies for web development, app development, SEO, AI automation, and digital marketing services in Patna, Bihar.",
+  keywords: "contact software company Patna, web development contact Bihar, IT company Patna, digital agency Bihar",
 };
 
 export default function ContactLayout({ children }) {

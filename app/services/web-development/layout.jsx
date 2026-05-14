@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Professional Web Development Services | Webflora Technologies",
-  description: "How to build a scalable website? Webflora Technologies provides expert custom web development, frontend/backend engineering, and complete MERN stack solutions.",
-  keywords: "web development company patna, custom website development india, frontend developers, backend developers, React, Next.js web solutions, MERN stack development, responsive web design, custom CMS development, corporate website builders, professional web agency, how to build a website",
+  title: "Web Development Company in Patna Bihar | Custom Website Development",
+  description: "Webflora Technologies provides responsive website development, ecommerce websites, business websites, and custom web applications in Patna, Bihar.",
+  keywords: "web development company Patna, website development Bihar, ecommerce website Patna, responsive web design Bihar, custom website company India",
   category: "technology",
   alternates: {
     canonical: "https://webfloratechnologies.com/services/web-development",

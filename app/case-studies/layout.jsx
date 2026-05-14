@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Case Studies & Work | Webflora Technologies",
-  description: "Explore our portfolio of successful digital transformations, web applications, and marketing campaigns delivered by Webflora Technologies.",
-  keywords: "webflora portfolio, successful case studies, digital agency work, web development projects, marketing campaign results, AI automation success stories, custom software examples, business transformation projects, e-commerce solutions portfolio, tech client testimonials",
+  title: "Case Studies | Web Development & Digital Growth Projects by Webflora",
+  description: "Explore successful website development, software development, AI automation, and digital marketing projects completed by Webflora Technologies.",
+  keywords: "case studies Patna, web development projects Bihar, software portfolio India, digital marketing success stories",
 };
 
 export default function CaseStudiesLayout({ children }) {

@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Custom Software Development Services | Webflora Technologies",
-  description: "Looking for top-tier custom software development? Webflora Technologies engineers scalable enterprise software, SaaS platforms, and bespoke CRM/ERP systems tailored to your business needs.",
-  keywords: "What is custom software development, hire software developers patna, enterprise software solutions india, SaaS product development company, ERP CRM developers patna, bespoke software engineering, business process management software, scalable cloud applications, custom dashboard development, software engineering excellence",
+  title: "Software Development Company in Patna Bihar | Custom Software Solutions",
+  description: "Webflora Technologies develops custom software, ERP systems, CRM solutions, and business management software for companies in Patna, Bihar.",
+  keywords: "software development company Patna, custom software Bihar, ERP software Patna, CRM development Bihar, business software India",
   category: "technology",
   alternates: {
     canonical: "https://webfloratechnologies.com/services/software-development",

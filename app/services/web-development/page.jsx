@@ -3,9 +3,9 @@ import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
 
 export const metadata = {
-  title: "Web Development Services | Webflora Technologies",
-  description: "High-performance, SEO-optimized web development services in Patna, Bihar. We build fast, scalable websites using Next.js, React, and modern UI/UX design.",
-  keywords: "Web Development, Next.js, React, SEO, Patna, Bihar, Web Design, Performance, Scalable Websites",
+  title: "Web Development Company in Patna Bihar | Custom Website Development",
+  description: "Webflora Technologies provides responsive website development, ecommerce websites, business websites, and custom web applications in Patna, Bihar.",
+  keywords: "web development company Patna, website development Bihar, ecommerce website Patna, responsive web design Bihar, custom website company India",
 };
 
 const page = () => {

@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Social Media Marketing Agency | Webflora Technologies",
-  description: "Looking for the best social media marketing agency? Webflora Technologies provides viral content creation, brand management, and targeted ad campaigns on Instagram, Facebook, and LinkedIn.",
-  keywords: "social media marketing patna, SMM agency india, Facebook marketing, Instagram growth, brand building services, influencer marketing campaigns, LinkedIn B2B marketing, viral content creation, social media management agency, Twitter marketing experts",
+  title: "Social Media Marketing Company in Patna Bihar | Instagram & Facebook Marketing",
+  description: "Grow your brand visibility with social media marketing services including Instagram marketing, Facebook advertising, content creation, and audience engagement by Webflora Technologies.",
+  keywords: "social media marketing Patna, Instagram marketing Bihar, Facebook ads company Patna, SMM agency Bihar, social media management India",
   category: "marketing",
   alternates: {
     canonical: "https://webfloratechnologies.com/services/social-media-marketing",

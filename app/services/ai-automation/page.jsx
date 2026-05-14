@@ -3,8 +3,9 @@ import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
 
 export const metadata = {
-  title: "AI Automation Services | Webflora Technologies",
-  description: "Leverage the power of LLMs and machine learning to automate complex workflows and drive intelligent decision-making.",
+  title: "AI Automation Company in Patna Bihar | AI Workflow Solutions",
+  description: "Automate customer support, lead generation, workflows, and business operations with AI automation services by Webflora Technologies.",
+  keywords: "AI automation company Patna, AI solutions Bihar, workflow automation Patna, AI chatbot company Bihar, automation agency India",
 };
 
 const page = () => {

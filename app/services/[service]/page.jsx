@@ -8,9 +8,9 @@ export async function generateMetadata({ params }) {
   if (!service) return {};
 
   return {
-    title: `${service.title} Services | Webflora Technologies`,
-    description: service.subtext,
-    keywords: `${service.title}, Next.js, React, SEO, Patna, Bihar, Web Design, Performance`,
+    title: service.seoTitle || `${service.title} Services | Webflora Technologies`,
+    description: service.seoDescription || service.subtext,
+    keywords: service.seoKeywords || `${service.title}, Next.js, React, SEO, Patna, Bihar, Web Design, Performance`,
   };
 }
 

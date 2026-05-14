@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Full-Service Digital Marketing Agency | Webflora Technologies",
-  description: "How to rank higher on Google? Webflora Technologies offers comprehensive SEO, SEM, PPC, and content marketing services to maximize your ROI and business growth.",
-  keywords: "digital marketing agency patna, SEO services india, PPC management, content marketing strategy, Google Ads expert, B2B digital marketing, local SEO company, brand awareness campaigns, top marketing agency",
+  title: "Digital Marketing Company in Patna Bihar | SEO & Online Growth Services",
+  description: "Boost traffic, leads, and online visibility with SEO, Google Ads, social media marketing, and digital marketing services from Webflora Technologies in Patna, Bihar.",
+  keywords: "digital marketing company Patna, SEO company Bihar, online marketing agency Patna, lead generation Bihar, Google Ads services India",
   category: "marketing",
   alternates: {
     canonical: "https://webfloratechnologies.com/services/digital-marketing",

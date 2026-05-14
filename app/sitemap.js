@@ -5,26 +5,41 @@ export default async function sitemap() {
 
   // Main static routes
   const staticRoutes = [
-    "",
-    "/about",
-    "/blog",
-    "/career",
-    "/contact",
-    "/case-studies",
-    "/services",
-    "/privacy-policy",
-    "/terms-of-service",
-    "/services/web-development",
-    "/services/app-development",
-    "/services/software-development",
-    "/services/ai-automation",
-    "/services/social-media-marketing",
-    "/services/digital-marketing",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
+    // Main Pages
+    { route: "", priority: 1.0 },
+    { route: "/services", priority: 0.95 },
+    { route: "/about", priority: 0.85 },
+    { route: "/contact", priority: 0.85 },
+    { route: "/case-studies", priority: 0.8 },
+    { route: "/blog", priority: 0.8 },
+    { route: "/career", priority: 0.7 },
+    { route: "/vegavan-ai", priority: 0.95 }, // Main SaaS page from the app
+
+    // Core Service Pages
+    { route: "/services/web-development", priority: 0.95 },
+    { route: "/services/app-development", priority: 0.9 },
+    { route: "/services/software-development", priority: 0.9 },
+    { route: "/services/ai-automation", priority: 0.95 },
+    { route: "/services/digital-marketing", priority: 0.9 },
+    { route: "/services/social-media-marketing", priority: 0.85 },
+
+    // Legal Pages
+    { route: "/privacy-policy", priority: 0.2 },
+    { route: "/terms-of-service", priority: 0.2 },
+
+    // Utility Pages
+    { route: "/sitemap.xml", priority: 0.1 },
+    { route: "/robots.txt", priority: 0.1 },
+  ].map((item) => ({
+    url: `${baseUrl}${item.route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: "weekly",
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency:
+      item.priority >= 0.9
+        ? "weekly"
+        : item.priority >= 0.7
+        ? "monthly"
+        : "yearly",
+    priority: item.priority,
   }));
 
   // Fetch dynamic routes (Blogs & Case Studies)

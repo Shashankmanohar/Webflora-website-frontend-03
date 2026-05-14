@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "AI Automation & Chatbot Services | Webflora Technologies",
-  description: "What is AI business automation? Discover how Webflora Technologies implements generative AI, custom chatbots, and workflow automation to save you time and money.",
-  keywords: "AI automation agency india, ChatGPT integration, generative AI solutions, business process automation, AI chatbot development patna, machine learning consulting, predictive analytics services, AI-driven digital transformation, robotic process automation, NLP model development",
+  title: "AI Automation Company in Patna Bihar | AI Workflow Solutions",
+  description: "Automate customer support, lead generation, workflows, and business operations with AI automation services by Webflora Technologies.",
+  keywords: "AI automation company Patna, AI solutions Bihar, workflow automation Patna, AI chatbot company Bihar, automation agency India",
   category: "technology",
   alternates: {
     canonical: "https://webfloratechnologies.com/services/ai-automation",

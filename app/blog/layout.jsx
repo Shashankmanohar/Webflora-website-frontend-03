@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Insights & Articles | Webflora Technologies Blog",
-  description: "Read the latest articles, tutorials, and insights on AI automation, web development, SEO, and digital marketing strategies from Webflora experts.",
-  keywords: "tech blog india, AI automation insights, web development tutorials, digital marketing trends, SEO strategies, software development blog, coding best practices, React and Next.js guides, startup growth marketing, tech innovation news",
+  title: "Technology & Digital Marketing Blog in Patna Bihar | Webflora",
+  description: "Read the latest blogs on web development, SEO, AI automation, software development, and digital marketing trends from Webflora Technologies.",
+  keywords: "technology blog Patna, SEO blog Bihar, web development articles Patna, AI blogs India, digital marketing tips Bihar",
 };
 
 export default function BlogLayout({ children }) {

@@ -3,8 +3,9 @@ import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
 
 export const metadata = {
-  title: "App Development Services | Webflora Technologies",
-  description: "Create seamless mobile experiences with our expert React Native and Flutter development services. High-performance apps for iOS and Android.",
+  title: "Mobile App Development Company in Patna Bihar | Android & iOS Apps",
+  description: "Get Android app development, iOS app development, and custom mobile application solutions from Webflora Technologies in Patna, Bihar.",
+  keywords: "app development company Patna, mobile app development Bihar, android app developer Patna, iOS app company Bihar",
 };
 
 const page = () => {

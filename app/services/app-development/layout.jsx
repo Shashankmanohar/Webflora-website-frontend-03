@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Mobile App Development Services (iOS & Android) | Webflora",
-  description: "Searching for the best mobile app developers? Webflora Technologies creates high-performance cross-platform and native apps using React Native and Flutter.",
-  keywords: "mobile app development company patna, iOS app developers india, Android app development, React Native, Flutter developers, custom mobile apps, enterprise mobility solutions, mobile UI/UX design, app launch strategy, top mobile app agency",
+  title: "Mobile App Development Company in Patna Bihar | Android & iOS Apps",
+  description: "Get Android app development, iOS app development, and custom mobile application solutions from Webflora Technologies in Patna, Bihar.",
+  keywords: "app development company Patna, mobile app development Bihar, android app developer Patna, iOS app company Bihar",
   category: "technology",
   alternates: {
     canonical: "https://webfloratechnologies.com/services/app-development",

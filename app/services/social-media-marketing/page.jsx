@@ -3,8 +3,9 @@ import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
 
 export const metadata = {
-  title: "Social Media Marketing Services | Webflora Technologies",
-  description: "Dominate your niche with performance-driven social media strategies that build brand authority and drive sustainable growth.",
+  title: "Social Media Marketing Company in Patna Bihar | Instagram & Facebook Marketing",
+  description: "Grow your brand visibility with social media marketing services including Instagram marketing, Facebook advertising, content creation, and audience engagement by Webflora Technologies.",
+  keywords: "social media marketing Patna, Instagram marketing Bihar, Facebook ads company Patna, SMM agency Bihar, social media management India",
 };
 
 const page = () => {

@@ -59,7 +59,7 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed z-50 transition-all duration-500 left-1/4 top-6 lg:top-8 w-1/2 rounded-lg ${isCareerPage
+        className={`fixed z-50 transition-all duration-500 left-0 top-0 w-full lg:left-1/4 lg:top-8 lg:w-1/2 lg:rounded-lg ${isCareerPage
           ? "bg-black/40 backdrop-blur-xl border border-white/10 hidden lg:block"
           : scrolled
             ? "bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl hidden lg:block"

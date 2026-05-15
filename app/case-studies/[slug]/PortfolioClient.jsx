@@ -22,10 +22,31 @@ const PortfolioClient = () => {
   const { slug } = useParams();
   const [project, setProject] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
+  const [relatedProjects, setRelatedProjects] = React.useState([]);
 
   React.useEffect(() => {
     fetchProject();
   }, [slug]);
+
+  React.useEffect(() => {
+    const fetchRelatedData = async () => {
+      try {
+        // Fetch case studies
+        const csRes = await fetch(`${API_BASE_URL}/api/public/case-studies`);
+        if (csRes.ok) {
+          const csData = await csRes.json();
+          // Filter out current case study, and take first 2
+          const filtered = csData.filter(p => p.slug !== slug).slice(0, 2);
+          setRelatedProjects(filtered);
+        }
+      } catch (error) {
+        console.error("Error fetching related data:", error);
+      }
+    };
+    if (project) {
+      fetchRelatedData();
+    }
+  }, [slug, project]);
 
   const fetchProject = async () => {
     try {
@@ -253,6 +274,40 @@ const PortfolioClient = () => {
             </div>
           </aside>
         </div>
+
+        {/* Related Case Studies */}
+        {relatedProjects.length > 0 && (
+          <div className="mt-32 pt-20 border-t border-white/5">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12">
+              <div>
+                <span className="text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-3 block">Success Stories</span>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">Related Case Studies</h2>
+              </div>
+              <Link href="/case-studies" className="group flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 hover:text-white mt-4 md:mt-0 transition-colors">
+                All Case Studies <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {relatedProjects.map((item) => (
+                <Link href={`/case-studies/${item.slug}`} key={item._id} className="group flex flex-col bg-[#0a0a0a] border border-white/5 hover:border-primary/30 rounded-3xl overflow-hidden transition-all duration-500">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image src={item.image.startsWith('http') ? item.image : `${API_BASE_URL}/${item.image}`} alt={item.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <div className="absolute top-6 left-6 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-[8px] font-bold uppercase tracking-widest rounded-lg">{item.category}</div>
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2 mb-4 leading-tight">{item.title}</h3>
+                    <p className="text-neutral-500 text-sm font-light leading-relaxed line-clamp-2 mb-8">{item.description}</p>
+                    <div className="mt-auto flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-neutral-400 group-hover:text-white transition-colors">
+                      View Case Study <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
 
       <style jsx global>{`

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden bg-grid h-screen pb-12 sm:pb-16 lg:pb-20">
+    <section className="relative min-h-[calc(100vh-80px)] lg:h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-28 pb-12 sm:pb-16 lg:pt-0 lg:pb-20">
       {/* Glow Background — animated but same visuals */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-screen overflow-hidden bg-black">
@@ -45,8 +45,8 @@ export default function Hero() {
         {/* Badge */}
         <h1 className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-          <span className="text-xs tracking-widest text-gray-300 font-mono uppercase">
-            Software development company in patna, india
+          <span className="text-[10px] sm:text-xs tracking-wider sm:tracking-widest text-gray-300 font-mono uppercase">
+            Software development company in patna, bihar
           </span>
         </h1>
 

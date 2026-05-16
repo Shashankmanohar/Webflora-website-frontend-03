@@ -11,6 +11,7 @@ import ContactSection from "../Components/ContactSection";
 import SEOContentBlock from "../Components/SEOContentBlock";
 import TrustSignals from "../Components/TrustSignals";
 import GoogleTrustBanner from "../Components/GoogleTrustBanner";
+import FaqSection from "../services/components/FaqSection";
 
 const container = {
   hidden: { opacity: 0 },
@@ -229,6 +230,68 @@ export default function UltraAnimatedHero() {
           <>Since our inception, <strong className="text-white font-medium">Webflora Technologies</strong> has been driven by a mission to engineer scalable, high-performance digital systems. We are not just a <strong className="text-gray-300">software development company in Patna</strong>; we are a dedicated team of technical founders and engineers who understand how to translate business goals into technological realities.</>,
           <>Our commitment to excellence means we utilize enterprise-grade technologies to deliver custom <Link href="/services/website-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">web development</Link>, <Link href="/services/mobile-app-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">mobile applications</Link>, and <Link href="/services/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI automation</Link>. We serve businesses across Bihar and India, ensuring every product we ship is secure, optimized for SEO, and built for measurable business growth. Explore our <Link href="/vegavan-ai" className="text-[#FF3B00] hover:underline font-medium">Vegavan AI</Link> solutions or view our <Link href="/case-studies" className="text-[#FF3B00] hover:underline font-medium">case studies</Link> to see our engineering in action.</>
         ]}
+      />
+
+      {/* About FAQs Section */}
+      <FaqSection 
+        title="Webflora Technologies"
+        faqs={[
+          {
+            question: "What is Webflora Technologies?",
+            answer: "Webflora Technologies is a software development and digital solutions company based in Patna, Bihar, helping businesses build websites, mobile applications, AI automation systems, and scalable software solutions.",
+            icon: "lucide:info"
+          },
+          {
+            question: "Where is Webflora Technologies located?",
+            answer: "Webflora Technologies is located in Patna, Bihar, India, and serves startups, businesses, coaching institutes, and enterprises across Bihar and India.",
+            icon: "lucide:map-pin"
+          },
+          {
+            question: "What industries does Webflora Technologies work with?",
+            answer: "We work with startups, ecommerce businesses, coaching institutes, healthcare businesses, educational organizations, local businesses, and enterprises looking for digital transformation and automation solutions.",
+            icon: "lucide:briefcase"
+          },
+          {
+            question: "Why is Webflora Technologies the best custom software development company in Patna?",
+            answer: "We provide tailored, secure, and scalable enterprise-grade software solutions using modern tech stacks, ensuring that your business operations are fully automated and data-driven.",
+            icon: "lucide:award"
+          },
+          {
+            question: "How much does custom software development cost?",
+            answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,00,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
+            icon: "lucide:indian-rupee"
+          },
+          {
+            question: "How long does it take to develop software?",
+            answer: "Development time depends on complexity. Small systems may take 4-8 weeks, while large scalable systems can take several months for a full rollout and integration.",
+            icon: "lucide:calendar"
+          },
+          {
+            question: "Can you upgrade existing software?",
+            answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing legacy systems to match current business needs using modern SaaS architecture and cloud-native solutions.",
+            icon: "lucide:refresh-cw"
+          },
+          {
+            question: "What makes Webflora Technologies different from other agencies?",
+            answer: "Our approach focuses on scalable engineering, structured execution, performance optimization, AI-driven systems, and long-term business growth instead of just basic website or software delivery.",
+            icon: "lucide:zap"
+          },
+          {
+            question: "Is Webflora Technologies MSME registered?",
+            answer: "Yes, Webflora Technologies is registered as an MSME under the Government of India with Udyam Registration Number UDYAM-BR-26-0183379.",
+            icon: "lucide:award"
+          },
+          {
+            question: "Do founders directly manage projects?",
+            answer: "Yes, Webflora follows a founder-led execution approach where project strategy, quality control, and client communication are closely managed to ensure better execution and transparency.",
+            icon: "lucide:users"
+          },
+          {
+            question: "What is the mission of Webflora Technologies?",
+            answer: "Our mission is to help businesses grow faster and operate smarter through scalable technology systems, automation, digital transformation, and performance-focused engineering solutions.",
+            icon: "lucide:target"
+          }
+        ]} 
       />
 
       {/* Contact Section */}

@@ -81,13 +81,38 @@ export const servicesData = {
     faqs: [
       {
         question: "How much does website development cost in Patna?",
-        answer: "Website development costs in Patna usually start from ₹25,000 and depend on design complexity, features, integrations, and scalability requirements.",
+        answer: "Website development costs depend on project complexity, design requirements, features, integrations, and scalability needs. Basic business websites usually start from ₹25,000, while advanced ecommerce platforms and custom web applications require larger investment.",
         icon: "lucide:wallet"
       },
       {
-        question: "Do you build SEO-friendly websites?",
-        answer: "Yes, all websites are developed with SEO best practices, mobile responsiveness, fast loading speed, and Core Web Vitals optimization.",
+        question: "Do you create SEO-friendly websites?",
+        answer: "Yes, all websites are developed with SEO best practices, mobile responsiveness, fast loading speed, structured content, and Core Web Vitals optimization to improve search engine visibility and user experience.",
         icon: "lucide:search"
+      },
+      {
+        question: "Which technologies do you use for web development?",
+        answer: "We use modern technologies including Next.js, React, Tailwind CSS, Node.js, MongoDB, PostgreSQL, and scalable backend frameworks to build high-performance websites and web applications.",
+        icon: "lucide:code"
+      },
+      {
+        question: "Can you redesign existing websites?",
+        answer: "Yes, we redesign outdated websites by improving UI/UX, performance, SEO structure, responsiveness, loading speed, and overall user experience for better business results.",
+        icon: "lucide:refresh-cw"
+      },
+      {
+        question: "Do you develop ecommerce websites?",
+        answer: "Yes, we build ecommerce websites with secure payment gateways, inventory systems, product management, order tracking, and scalable architecture for online businesses.",
+        icon: "lucide:shopping-cart"
+      },
+      {
+        question: "How long does it take to build a website?",
+        answer: "Website development timelines vary depending on project requirements. Most business websites take between 2 to 6 weeks, while advanced platforms and web applications may require longer development cycles.",
+        icon: "lucide:calendar"
+      },
+      {
+        question: "Do you provide website maintenance services?",
+        answer: "Yes, we provide website maintenance, security updates, performance optimization, backups, scalability improvements, and technical support after deployment.",
+        icon: "lucide:shield-check"
       }
     ],
     techStack: [
@@ -178,13 +203,38 @@ export const servicesData = {
     faqs: [
       {
         question: "How much does mobile app development cost?",
-        answer: "Mobile app development costs depend on app features, integrations, user flow, and scalability. Basic apps usually start from ₹80,000.",
+        answer: "Mobile app development costs depend on app features, platform requirements, integrations, design complexity, and scalability needs. Basic business apps usually start from ₹80,000 while advanced applications require higher investment.",
         icon: "lucide:wallet"
       },
       {
-        question: "Which is better: Flutter or React Native?",
-        answer: "Both Flutter and React Native are powerful cross-platform frameworks. The right choice depends on project goals, performance requirements, and development timeline.",
+        question: "Do you develop apps for both Android and iOS?",
+        answer: "Yes, we develop applications for Android and iOS platforms using technologies like React Native, Flutter, Kotlin, and Swift to ensure smooth cross-platform performance.",
+        icon: "lucide:smartphone"
+      },
+      {
+        question: "Which framework is better: Flutter or React Native?",
+        answer: "Both Flutter and React Native are excellent cross-platform frameworks. The best choice depends on project goals, performance requirements, scalability, and feature complexity.",
         icon: "lucide:code"
+      },
+      {
+        question: "How long does mobile app development take?",
+        answer: "Development timelines depend on app complexity, features, integrations, and UI/UX requirements. Most business applications take between 6 to 16 weeks for development and deployment.",
+        icon: "lucide:calendar"
+      },
+      {
+        question: "Do you provide app maintenance and updates?",
+        answer: "Yes, we provide ongoing app maintenance, bug fixing, feature upgrades, performance optimization, and scalability support after launch.",
+        icon: "lucide:refresh-cw"
+      },
+      {
+        question: "Can you build ecommerce mobile apps?",
+        answer: "Yes, we develop ecommerce applications with payment integration, inventory management, order tracking, push notifications, and scalable backend systems for online businesses.",
+        icon: "lucide:shopping-bag"
+      },
+      {
+        question: "Will my app be scalable in the future?",
+        answer: "Yes, all applications are developed using scalable architecture and modern frameworks to support future feature upgrades, higher traffic, and long-term business growth.",
+        icon: "lucide:trending-up"
       }
     ],
     techStack: [
@@ -273,29 +323,24 @@ export const servicesData = {
     ],
     faqs: [
       {
-        question: "What is custom software development?",
-        answer: "Custom software development involves building tailored systems designed specifically for your business processes and requirements.",
-        icon: "lucide:code-2"
-      },
-      {
-        question: "How can software improve my business?",
-        answer: "Custom software helps automate operations, reduce manual work, improve efficiency, and manage data more effectively through business automation.",
-        icon: "lucide:trending-up"
-      },
-      {
-        question: "How long does it take to develop software?",
-        answer: "Development time depends on complexity. Small systems may take a few weeks, while large scalable systems can take several months.",
-        icon: "lucide:calendar"
-      },
-      {
-        question: "Is custom software expensive?",
-        answer: "Cost depends on features and scale, but it provides long-term value by improving efficiency and reducing operational costs. We focus on high ROI for enterprises.",
+        question: "How much does custom software development cost?",
+        answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,0,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
         icon: "lucide:indian-rupee"
       },
       {
+        question: "How long does it take to develop software?",
+        answer: "Development time depends on complexity. Small systems may take 4-8 weeks, while large scalable systems can take several months for a full rollout and integration.",
+        icon: "lucide:calendar"
+      },
+      {
         question: "Can you upgrade existing software?",
-        answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing legacy systems to match current business needs using modern SaaS architecture.",
+        answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing legacy systems to match current business needs using modern SaaS architecture and cloud-native solutions.",
         icon: "lucide:refresh-cw"
+      },
+      {
+        question: "Why is Webflora Technologies the best custom software development company in Patna?",
+        answer: "We provide tailored, secure, and scalable enterprise-grade software solutions using modern tech stacks, ensuring that your business operations are fully automated and data-driven.",
+        icon: "lucide:award"
       }
     ],
     techStack: [
@@ -384,28 +429,38 @@ export const servicesData = {
     faqs: [
       {
         question: "What is AI automation for businesses?",
-        answer: "AI automation helps businesses automate repetitive tasks such as customer support, lead management, workflow approvals, and data processing using artificial intelligence technologies.",
+        answer: "AI automation uses artificial intelligence technologies to automate repetitive business tasks such as customer support, workflow approvals, lead qualification, data processing, and communication management.",
         icon: "lucide:brain-circuit"
       },
       {
         question: "How can AI automation help my business?",
-        answer: "It can automate workflows, manage data, improve customer interactions, and reduce operational costs, functioning as an intelligent business automation service.",
+        answer: "AI automation helps businesses save time, reduce manual workload, improve customer response speed, automate operations, increase efficiency, and streamline workflow management.",
         icon: "lucide:zap"
       },
       {
-        question: "Is AI automation expensive?",
-        answer: "Cost depends on complexity, but even basic automation can save time and money in the long run. We specialize in accessible AI integration services for SMBs.",
-        icon: "lucide:indian-rupee"
+        question: "Do you build AI chatbots for websites and WhatsApp?",
+        answer: "Yes, we develop AI-powered chatbots for websites, WhatsApp, and business platforms to automate customer support, lead generation, and communication processes.",
+        icon: "lucide:message-square"
       },
       {
-        question: "What kind of tasks can be automated?",
-        answer: "Tasks like customer responses via WhatsApp chatbots, data entry, lead management, process automation, and reporting can be automated.",
+        question: "Can small businesses use AI automation?",
+        answer: "Yes, AI automation is highly beneficial for startups and small businesses because it improves operational efficiency, automates repetitive tasks, and reduces manual dependency.",
+        icon: "lucide:trending-up"
+      },
+      {
+        question: "What types of business processes can be automated?",
+        answer: "We automate customer support, lead management, CRM workflows, appointment booking, email communication, internal approvals, data entry, reporting systems, and operational workflows.",
         icon: "lucide:list-checks"
       },
       {
-        question: "Do I need technical knowledge to use AI automation?",
-        answer: "No, Webflora provides user-friendly AI solutions and support to help you manage systems easily.",
-        icon: "lucide:help-circle"
+        question: "Do you provide custom AI solutions?",
+        answer: "Yes, we develop custom AI automation systems tailored to specific business processes, workflows, and operational requirements.",
+        icon: "lucide:settings"
+      },
+      {
+        question: "Which technologies do you use for AI automation?",
+        answer: "We use technologies including OpenAI, LangChain, TensorFlow, Pinecone, Python, machine learning frameworks, and workflow automation platforms like n8n.",
+        icon: "lucide:code"
       }
     ],
     techStack: [

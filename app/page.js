@@ -25,14 +25,39 @@ const GoogleTrustBanner = dynamic(() => import("./Components/GoogleTrustBanner")
 
 const homeFaqs = [
   {
-    question: "Which is the best software development company in Patna?",
-    answer: "Webflora Technologies helps businesses build scalable websites, software, AI systems, and mobile applications using modern technologies and performance-focused development strategies.",
+    question: "Which is the best software development company in Patna Bihar?",
+    answer: "Webflora Technologies is a Patna-based software development company offering web development, mobile app development, AI automation, custom software solutions, and digital marketing services for startups and businesses across Bihar and India.",
     icon: "lucide:award"
   },
   {
     question: "What services does Webflora Technologies provide?",
-    answer: "We provide web development, app development, AI automation, software development, SEO, digital marketing, workflow automation, and business technology solutions.",
+    answer: "We provide website development, mobile app development, AI automation, workflow automation, SEO, digital marketing, custom software development, ERP systems, and scalable digital solutions tailored to business growth.",
     icon: "lucide:layers"
+  },
+  {
+    question: "Why should businesses invest in digital transformation?",
+    answer: "Digital transformation helps businesses automate operations, improve efficiency, increase online visibility, generate more leads, and create better customer experiences through modern technology solutions.",
+    icon: "lucide:trending-up"
+  },
+  {
+    question: "Do you work with startups and small businesses?",
+    answer: "Yes, we work with startups, local businesses, coaching institutes, ecommerce brands, and enterprises by building scalable digital systems that support long-term business growth.",
+    icon: "lucide:users"
+  },
+  {
+    question: "How do you ensure project quality and performance?",
+    answer: "Every project follows a structured development process that includes planning, UI/UX design, scalable architecture, testing, optimization, and ongoing support to ensure performance, security, and reliability.",
+    icon: "lucide:check-circle"
+  },
+  {
+    question: "Do you provide long-term technical support?",
+    answer: "Yes, we provide maintenance, optimization, updates, technical support, and scalability improvements after project deployment to ensure systems continue performing efficiently.",
+    icon: "lucide:headset"
+  },
+  {
+    question: "Why choose Webflora Technologies?",
+    answer: "Webflora Technologies combines modern engineering, business-focused strategy, AI-driven solutions, and founder-led execution to build scalable digital products designed for measurable business growth.",
+    icon: "lucide:zap"
   }
 ];
 

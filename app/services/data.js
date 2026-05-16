@@ -1,29 +1,51 @@
+import Link from "next/link";
+
 export const servicesData = {
-  "web-development": {
-    title: "Web Development",
-    headline: "Future-Ready Websites Engineered for Performance",
-    subtext: "We build high-performance, SEO-optimized websites that convert visitors into loyal customers using cutting-edge technologies like Next.js and React.",
-    heroBadge: "Modern Web Solutions",
-    problemTitle: "Web Performance Challenges",
+  "website-development-company-in-patna": {
+    title: "Website Development Company in Patna Bihar",
+    headline: "Custom Website Development Services",
+    subtext: "Webflora Technologies provides SEO-friendly website development services in Patna Bihar using Next.js, React, Tailwind CSS, and scalable backend technologies for startups and businesses.",
+    geoTitle: "Custom Website Development Services",
+    geoContent: "Webflora Technologies provides SEO-friendly website development services in Patna Bihar using Next.js, React, Tailwind CSS, and scalable backend technologies for startups and businesses.",
+    heroBadge: "Top Website Agency in Bihar",
+    problemTitle: "Website Performance Challenges",
     problems: [
-      "Slow loading times affecting SEO",
-      "Poor mobile responsiveness",
-      "Outdated design and user experience",
-      "High bounce rates",
-      "Difficult to manage content"
+      "Slow loading times affecting SEO and user drop-offs",
+      "Poor mobile responsiveness causing high bounce rates",
+      "Outdated design that damages brand authority",
+      "Generic templates with zero lead generation",
+      "Lack of ongoing maintenance and technical support"
     ],
     subServices: [
-      { title: "Business Website Development", icon: "lucide:globe", desc: "Professional websites for companies to establish strong online presence." },
-      { title: "E-commerce Website Development", icon: "lucide:shopping-cart", desc: "Online stores with payment integration and product management." },
-      { title: "School & College Website Development", icon: "lucide:graduation-cap", desc: "Modern websites for educational institutions with student and admin features." },
-      { title: "Landing Page Design", icon: "lucide:layout-template", desc: "High-converting pages for ads and lead generation." },
-      { title: "Website Redesign & Optimization", icon: "lucide:refresh-cw", desc: "Improve performance, UI/UX, and conversion rate of existing websites." },
-      { title: "Custom Web Application Development", icon: "lucide:app-window", desc: "Advanced web-based platforms tailored to business needs." }
+      { title: "Custom Website Development", icon: "lucide:globe", desc: "Tailored business website development with scalable architecture and premium UI/UX." },
+      { title: "Ecommerce Website Development", icon: "lucide:shopping-cart", desc: "High-converting online stores with payment gateways and inventory management." },
+      { title: "Responsive Web Design", icon: "lucide:smartphone", desc: "Mobile-first websites designed to look perfect on all devices and screen sizes." },
+      { title: "SEO-Friendly Websites", icon: "lucide:search", desc: "Websites engineered with technical SEO best practices for high Google rankings." },
+      { title: "Website Redesign Services", icon: "lucide:refresh-cw", desc: "Transform outdated sites with modern design systems and faster load times." },
+      { title: "Custom Web Applications", icon: "lucide:app-window", desc: "Advanced cloud-based software tailored to specific business operations." }
+    ],
+    process: [
+      { title: "Requirement Analysis", desc: "We understand your business goals, target audience, and technical requirements." },
+      { title: "UI/UX Design", desc: "Creating high-converting, user-centric interfaces aligned with your brand identity." },
+      { title: "Frontend Development", desc: "Building fast, responsive components using React and Next.js." },
+      { title: "Backend Integration", desc: "Developing secure APIs, databases, and third-party integrations." },
+      { title: "SEO Optimization", desc: "Implementing technical SEO, fast load times, and semantic HTML." },
+      { title: "Testing & Deployment", desc: "Rigorous quality assurance before a seamless cloud deployment." },
+      { title: "Maintenance & Support", desc: "Ongoing updates, security monitoring, and performance scaling." }
+    ],
+    industries: [
+      "Coaching Institutes",
+      "Ecommerce & Retail",
+      "Healthcare & Clinics",
+      "Startups & SaaS",
+      "Real Estate",
+      "Schools & Colleges",
+      "Local Businesses"
     ],
     solutions: [
       "Lightning-fast Next.js architecture",
-      "Mobile-first responsive design",
-      "Modern UI/UX with glassmorphism",
+      "Mobile-first responsive web design",
+      "Custom ecommerce website platforms",
       "SEO & Core Web Vitals optimization",
       "Scalable headless CMS integration"
     ],
@@ -59,28 +81,13 @@ export const servicesData = {
     faqs: [
       {
         question: "How much does website development cost in Patna?",
-        answer: "Website development cost depends on features, design, and functionality. Basic websites are affordable, while advanced business websites with custom features require higher investment.",
-        icon: "lucide:indian-rupee"
+        answer: "Website development costs in Patna usually start from ₹25,000 and depend on design complexity, features, integrations, and scalability requirements.",
+        icon: "lucide:wallet"
       },
       {
-        question: "How long does it take to build a website?",
-        answer: "A standard website usually takes 7–15 days, while complex or custom websites may take 3–6 weeks depending on requirements.",
-        icon: "lucide:calendar"
-      },
-      {
-        question: "Will my website be SEO-friendly?",
-        answer: "Yes, all websites are built with SEO-friendly structure, fast loading speed, and proper optimization to help improve visibility on Google.",
+        question: "Do you build SEO-friendly websites?",
+        answer: "Yes, all websites are developed with SEO best practices, mobile responsiveness, fast loading speed, and Core Web Vitals optimization.",
         icon: "lucide:search"
-      },
-      {
-        question: "Can you redesign my existing website?",
-        answer: "Yes, Webflora Technologies can redesign and optimize your existing website to improve performance, design, and conversions.",
-        icon: "lucide:refresh-cw"
-      },
-      {
-        question: "Do you provide website maintenance?",
-        answer: "Yes, we offer ongoing support and maintenance to ensure your website stays updated, secure, and high-performing.",
-        icon: "lucide:settings"
       }
     ],
     techStack: [
@@ -92,10 +99,12 @@ export const servicesData = {
       { name: "PostgreSQL", icon: "logos:postgresql" }
     ]
   },
-  "app-development": {
-    title: "App Development",
-    headline: "Intuitive Mobile Apps for iOS & Android",
-    subtext: "Create seamless mobile experiences with our expert React Native and Flutter development services, designed to engage your users on every screen.",
+  "mobile-app-development-company-in-patna": {
+    title: "Mobile App Development Company in Patna Bihar",
+    headline: "Android & iOS App Development Services",
+    subtext: "We develop scalable Android and iOS mobile applications using React Native, Flutter, Firebase, and modern app technologies for startups and businesses across Bihar and India.",
+    geoTitle: "Android & iOS App Development Services",
+    geoContent: "We develop scalable Android and iOS mobile applications using React Native, Flutter, Firebase, and modern app technologies for startups and businesses across Bihar and India.",
     heroBadge: "Next-Gen Mobile Apps",
     problemTitle: "Mobile Experience Gaps",
     problems: [
@@ -106,24 +115,41 @@ export const servicesData = {
       "Lack of real-time updates"
     ],
     subServices: [
-      { title: "Android App Development", icon: "lucide:smartphone", desc: "Custom Android apps for businesses and startups." },
-      { title: "iOS App Development", icon: "lucide:apple", desc: "High-performance apps for Apple devices." },
-      { title: "Cross-Platform App Development", icon: "lucide:layers", desc: "Apps that work on both Android and iOS using a single codebase." },
-      { title: "Business Application Development", icon: "lucide:briefcase", desc: "Apps to manage operations, customers, and workflows." },
-      { title: "E-commerce App Development", icon: "lucide:shopping-bag", desc: "Mobile apps for online stores and marketplaces." },
-      { title: "School & College App Development", icon: "lucide:book-open", desc: "Apps for students, teachers, attendance, and communication." }
+      { title: "Ecommerce Apps", icon: "lucide:shopping-bag", desc: "Online shopping apps with payment integration and order management." },
+      { title: "Coaching Institute Apps", icon: "lucide:book-open", desc: "Student management, attendance, and learning systems." },
+      { title: "CRM Apps", icon: "lucide:users", desc: "Customer and sales management mobile applications." },
+      { title: "Booking Apps", icon: "lucide:calendar-check", desc: "Appointment and reservation systems for services and clinics." },
+      { title: "AI-Powered Apps", icon: "lucide:bot", desc: "Apps integrated with AI chatbots and automation systems." },
+      { title: "Business Mobile Applications", icon: "lucide:briefcase", desc: "Custom mobile app solutions to manage daily operations." }
+    ],
+    process: [
+      { title: "Requirement Analysis", desc: "Understanding your business goals, target audience, and app features." },
+      { title: "Wireframing & UI/UX Design", desc: "Creating intuitive, user-centric designs for maximum engagement." },
+      { title: "App Development", desc: "Building the application using React Native or Flutter for cross-platform efficiency." },
+      { title: "API Integration", desc: "Connecting backend systems, databases, and third-party services securely." },
+      { title: "Testing & QA", desc: "Rigorous testing to ensure bug-free performance across all devices." },
+      { title: "App Store Deployment", desc: "Launching your app on the Google Play Store and Apple App Store." },
+      { title: "Maintenance & Updates", desc: "Continuous monitoring, performance upgrades, and feature enhancements." }
+    ],
+    industries: [
+      "Education",
+      "Healthcare",
+      "Ecommerce",
+      "Real Estate",
+      "Startups",
+      "Restaurants"
     ],
     solutions: [
       "Cross-platform React Native/Flutter development",
       "Native-level performance optimization",
       "User-centric UI/UX design",
-      "App Store Optimization (ASO)",
+      "App Store Optimization (ASO) for Google Play and Apple App Store visibility to improve discoverability and downloads.",
       "Real-time data synchronization"
     ],
     benefits: [
       {
         title: "Native Performance",
-        description: "Smooth animations and fast response times that feel like native apps.",
+        description: "Smooth animations and optimized performance ensure better user experience and higher retention rates.",
         icon: "lucide:smartphone",
         stat: "60FPS",
         statLabel: "UI Performance",
@@ -152,28 +178,13 @@ export const servicesData = {
     faqs: [
       {
         question: "How much does mobile app development cost?",
-        answer: "App development cost depends on features, platform (Android/iOS), and complexity. Basic apps cost less, while advanced apps with integrations require higher investment.",
-        icon: "lucide:indian-rupee"
+        answer: "Mobile app development costs depend on app features, integrations, user flow, and scalability. Basic apps usually start from ₹80,000.",
+        icon: "lucide:wallet"
       },
       {
-        question: "Should I build Android or iOS app first?",
-        answer: "For most businesses in India, Android is recommended first due to wider user base. However, it depends on your target audience.",
-        icon: "lucide:smartphone"
-      },
-      {
-        question: "How long does it take to develop a mobile app?",
-        answer: "A simple app can take 3–6 weeks, while complex apps may take 2–4 months depending on features and functionality.",
-        icon: "lucide:clock"
-      },
-      {
-        question: "Will my app be scalable in the future?",
-        answer: "Yes, all apps are developed with scalability in mind so you can add features and handle more users as your business grows.",
-        icon: "lucide:trending-up"
-      },
-      {
-        question: "Do you provide app maintenance and updates?",
-        answer: "Yes, we provide ongoing support, updates, and improvements after launch.",
-        icon: "lucide:refresh-ccw"
+        question: "Which is better: Flutter or React Native?",
+        answer: "Both Flutter and React Native are powerful cross-platform frameworks. The right choice depends on project goals, performance requirements, and development timeline.",
+        icon: "lucide:code"
       }
     ],
     techStack: [
@@ -185,10 +196,12 @@ export const servicesData = {
       { name: "App Store", icon: "logos:apple" }
     ]
   },
-  "software-development": {
-    title: "Software Development",
-    headline: "Custom Enterprise Software & SaaS Solutions",
-    subtext: "Scale your business with robust, scalable, and secure custom software tailored to your unique operational needs.",
+  "software-development-company-in-patna": {
+    title: "Custom Software Development Company in Patna Bihar",
+    headline: "Enterprise Software Development Solutions",
+    subtext: "We develop scalable ERP systems, CRM software, automation platforms, management systems, and custom enterprise software solutions for businesses and organizations.",
+    geoTitle: "Enterprise Software Development Solutions",
+    geoContent: "We develop scalable ERP systems, CRM software, automation platforms, management systems, and custom enterprise software solutions for businesses and organizations.",
     heroBadge: "Enterprise Solutions",
     problemTitle: "Operational Inefficiencies",
     problems: [
@@ -205,6 +218,22 @@ export const servicesData = {
       { title: "AI-Based Attendance System", icon: "lucide:user-check", desc: "Smart attendance using AI (face recognition/automation)." },
       { title: "QR Code Attendance System", icon: "lucide:qr-code", desc: "Quick and contactless attendance tracking solution." },
       { title: "Custom Business Software Development", icon: "lucide:code", desc: "Tailored systems for unique business workflows." }
+    ],
+    process: [
+      { title: "Requirements Gathering", desc: "Detailed analysis of your business logic and software needs." },
+      { title: "System Architecture", desc: "Designing a scalable and secure database and system infrastructure." },
+      { title: "Agile Development", desc: "Iterative coding to ensure rapid delivery and flexibility." },
+      { title: "Security & Load Testing", desc: "Rigorous testing against vulnerabilities and high traffic volumes." },
+      { title: "Deployment", desc: "Smooth rollout with minimal downtime." },
+      { title: "Training & Onboarding", desc: "Helping your team adapt to the new custom software seamlessly." },
+      { title: "Ongoing Maintenance", desc: "Continuous updates, backups, and feature additions." }
+    ],
+    industries: [
+      "Retail & Wholesale",
+      "Manufacturing",
+      "Real Estate",
+      "Healthcare",
+      "Corporate Enterprises"
     ],
     solutions: [
       "Custom ERP & CRM development",
@@ -250,22 +279,22 @@ export const servicesData = {
       },
       {
         question: "How can software improve my business?",
-        answer: "Custom software helps automate operations, reduce manual work, improve efficiency, and manage data more effectively.",
+        answer: "Custom software helps automate operations, reduce manual work, improve efficiency, and manage data more effectively through business automation.",
         icon: "lucide:trending-up"
       },
       {
         question: "How long does it take to develop software?",
-        answer: "Development time depends on complexity. Small systems may take a few weeks, while large systems can take several months.",
+        answer: "Development time depends on complexity. Small systems may take a few weeks, while large scalable systems can take several months.",
         icon: "lucide:calendar"
       },
       {
         question: "Is custom software expensive?",
-        answer: "Cost depends on features and scale, but it provides long-term value by improving efficiency and reducing operational costs.",
+        answer: "Cost depends on features and scale, but it provides long-term value by improving efficiency and reducing operational costs. We focus on high ROI for enterprises.",
         icon: "lucide:indian-rupee"
       },
       {
         question: "Can you upgrade existing software?",
-        answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing systems to match current business needs.",
+        answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing legacy systems to match current business needs using modern SaaS architecture.",
         icon: "lucide:refresh-cw"
       }
     ],
@@ -278,11 +307,13 @@ export const servicesData = {
       { name: "MongoDB", icon: "logos:mongodb-icon" }
     ]
   },
-  "ai-automation": {
-    title: "AI Automation",
-    headline: "Intelligent Systems for the Modern Enterprise",
-    subtext: "Leverage the power of LLMs and machine learning to automate complex workflows and drive intelligent decision-making.",
-    heroBadge: "AI & Automation",
+  "ai-automation-company-in-patna": {
+    title: "AI Automation Company in Patna Bihar",
+    headline: "Business AI Automation Services",
+    subtext: "Webflora Technologies provides AI automation, chatbot development, workflow automation, CRM automation, and AI integration services for businesses across Patna, Bihar, and India.",
+    geoTitle: "Business AI Automation Services",
+    geoContent: "Webflora Technologies provides AI automation, chatbot development, workflow automation, CRM automation, and AI integration services for businesses across Patna, Bihar, and India.",
+    heroBadge: "AI-First Future",
     problemTitle: "Information Overload",
     problems: [
       "Slow response times to customer queries",
@@ -292,12 +323,27 @@ export const servicesData = {
       "Underutilized business data"
     ],
     subServices: [
-      { title: "Workflow Automation", icon: "lucide:git-branch", desc: "Automate repetitive business processes." },
-      { title: "n8n Automation Solutions", icon: "lucide:settings", desc: "Custom automation workflows using n8n." },
-      { title: "Chatbot Development", icon: "lucide:message-square", desc: "Automated customer support and interaction systems." },
-      { title: "Lead Automation Systems", icon: "lucide:magnet", desc: "Automate lead capture, follow-ups, and nurturing." },
-      { title: "Business Process Automation", icon: "lucide:cpu", desc: "End-to-end automation for operations and tasks." },
-      { title: "API & System Integrations", icon: "lucide:link", desc: "Connect different tools and software for seamless workflow." }
+      { title: "AI Chatbots for Customer Support", icon: "lucide:message-square", desc: "Automated customer support and interaction systems." },
+      { title: "Lead Qualification Automation", icon: "lucide:magnet", desc: "Automate lead capture, follow-ups, and nurturing." },
+      { title: "WhatsApp Automation", icon: "lucide:message-circle", desc: "Intelligent bots handling WhatsApp inquiries and support." },
+      { title: "CRM Workflow Automation", icon: "lucide:users", desc: "Sync data and automate tasks within your CRM seamlessly." },
+      { title: "Data Extraction Automation", icon: "lucide:database", desc: "Automatically extract and process data from documents." },
+      { title: "n8n Automation Solutions", icon: "lucide:settings", desc: "Custom automation workflows and API integrations using n8n." }
+    ],
+    process: [
+      { title: "Business Workflow Analysis", desc: "We map out your current processes to find bottlenecks." },
+      { title: "Automation Opportunity Identification", desc: "Pinpointing repetitive tasks ripe for AI intervention." },
+      { title: "AI Model Selection", desc: "Choosing the right AI models (like OpenAI, Claude) for your specific needs." },
+      { title: "Integration & Development", desc: "Building the custom automation flows using platforms like n8n." },
+      { title: "Testing & Optimization", desc: "Ensuring AI responses are accurate and workflows run flawlessly." },
+      { title: "Deployment & Monitoring", desc: "Rolling out the solution with continuous performance monitoring." }
+    ],
+    industries: [
+      "Coaching Institutes",
+      "Ecommerce",
+      "Real Estate",
+      "Healthcare",
+      "Startups"
     ],
     solutions: [
       "Custom LLM & Chatbot development",
@@ -338,43 +384,45 @@ export const servicesData = {
     faqs: [
       {
         question: "What is AI automation for businesses?",
-        answer: "AI automation uses technology to automate repetitive tasks, improve efficiency, and reduce manual work.",
+        answer: "AI automation helps businesses automate repetitive tasks such as customer support, lead management, workflow approvals, and data processing using artificial intelligence technologies.",
         icon: "lucide:brain-circuit"
       },
       {
         question: "How can AI automation help my business?",
-        answer: "It can automate workflows, manage data, improve customer interactions, and reduce operational costs.",
+        answer: "It can automate workflows, manage data, improve customer interactions, and reduce operational costs, functioning as an intelligent business automation service.",
         icon: "lucide:zap"
       },
       {
         question: "Is AI automation expensive?",
-        answer: "Cost depends on complexity, but even basic automation can save time and money in the long run.",
+        answer: "Cost depends on complexity, but even basic automation can save time and money in the long run. We specialize in accessible AI integration services for SMBs.",
         icon: "lucide:indian-rupee"
       },
       {
         question: "What kind of tasks can be automated?",
-        answer: "Tasks like customer responses, data entry, lead management, and reporting can be automated.",
+        answer: "Tasks like customer responses via WhatsApp chatbots, data entry, lead management, process automation, and reporting can be automated.",
         icon: "lucide:list-checks"
       },
       {
         question: "Do I need technical knowledge to use AI automation?",
-        answer: "No, Webflora provides user-friendly solutions and support to help you manage systems easily.",
+        answer: "No, Webflora provides user-friendly AI solutions and support to help you manage systems easily.",
         icon: "lucide:help-circle"
       }
     ],
     techStack: [
       { name: "OpenAI", icon: "logos:openai-icon" },
-      { name: "PyTorch", icon: "logos:pytorch-icon" },
+      { name: "n8n", icon: "logos:n8n" },
       { name: "TensorFlow", icon: "logos:tensorflow" },
       { name: "LangChain", icon: "logos:langchain-icon" },
       { name: "Pinecone", icon: "logos:pinecone-icon" },
       { name: "HuggingFace", icon: "logos:hugging-face-icon" }
     ]
   },
-  "social-media-marketing": {
-    title: "Social Media Marketing",
-    headline: "Strategic Brand Growth & ROI-Driven Marketing",
-    subtext: "Dominate your niche with performance-driven social media strategies that build brand authority and drive sustainable growth.",
+  "digital-marketing-agency-in-patna": {
+    title: "Digital Marketing Company in Patna Bihar",
+    headline: "SEO & Performance Marketing Services",
+    subtext: "Webflora Technologies provides SEO, Google Ads, social media marketing, local SEO, and lead generation services for startups and businesses across Bihar and India.",
+    geoTitle: "SEO & Performance Marketing Services",
+    geoContent: "Webflora Technologies provides SEO, Google Ads, social media marketing, local SEO, and lead generation services for startups and businesses across Bihar and India.",
     heroBadge: "Digital Growth",
     problemTitle: "Market Invisibility",
     problems: [
@@ -385,12 +433,26 @@ export const servicesData = {
       "Lack of measurable marketing ROI"
     ],
     subServices: [
-      { title: "Search Engine Optimization (SEO)", icon: "lucide:search", desc: "Improve ranking and visibility on Google." },
-      { title: "Social Media Marketing", icon: "lucide:share-2", desc: "Grow brand presence and engagement on social platforms." },
-      { title: "Google Ads (PPC Advertising)", icon: "lucide:mouse-pointer-click", desc: "Run paid campaigns for instant traffic and leads." },
-      { title: "Lead Generation Strategies", icon: "lucide:target", desc: "Targeted campaigns to bring potential customers." },
-      { title: "Content Marketing", icon: "lucide:file-text", desc: "Blogs and content to build authority and traffic." },
-      { title: "Website Performance Optimization", icon: "lucide:zap", desc: "Improve speed, UX, and conversion rates." }
+      { title: "Search Engine Optimization (SEO)", icon: "lucide:search", desc: "Improve ranking and visibility on Google for local Bihar searches." },
+      { title: "Social Media Marketing", icon: "lucide:share-2", desc: "Grow brand presence and engagement on Meta, Instagram, and LinkedIn." },
+      { title: "Google Ads (PPC Advertising)", icon: "lucide:mouse-pointer-click", desc: "Run paid campaigns for instant traffic and targeted local leads." },
+      { title: "Lead Generation Strategies", icon: "lucide:target", desc: "Targeted campaigns to bring potential customers and scale revenue." },
+      { title: "Content Marketing", icon: "lucide:file-text", desc: "Blogs and content to build authority and inbound traffic." },
+      { title: "Website Performance Optimization", icon: "lucide:zap", desc: "Improve speed, UX, and conversion rates to maximize ad spend." }
+    ],
+    process: [
+      { title: "Market Research & Audit", desc: "Analyzing your current brand presence and competitor landscape." },
+      { title: "Strategy Formulation", desc: "Creating a customized roadmap across SEO, Paid Ads, and Content." },
+      { title: "Campaign Execution", desc: "Launching data-driven marketing campaigns targeted at high-intent users." },
+      { title: "Conversion Optimization", desc: "A/B testing ad creatives and landing pages to lower CPA." },
+      { title: "Analytics & Reporting", desc: "Transparent tracking of ROAS, lead volume, and brand growth." }
+    ],
+    industries: [
+      "Local Businesses",
+      "Real Estate",
+      "Coaching Institutes",
+      "Healthcare",
+      "Ecommerce"
     ],
     solutions: [
       "Performance-driven paid advertising",
@@ -431,27 +493,27 @@ export const servicesData = {
     faqs: [
       {
         question: "How long does SEO take to show results?",
-        answer: "SEO usually takes 2–4 months to show noticeable results, depending on competition and strategy.",
+        answer: "Local SEO usually takes 2–4 months to show noticeable results in Patna and Bihar, depending on competition and strategy.",
         icon: "lucide:timer"
       },
       {
         question: "Which is better: SEO or paid ads?",
-        answer: "Both have benefits. SEO is long-term growth, while paid ads provide quick results. A combination works best.",
+        answer: "Both have benefits. SEO is long-term growth, while paid ads provide quick results. A combination ensures maximum ROAS and lead generation.",
         icon: "lucide:balance"
       },
       {
         question: "Do you provide social media marketing?",
-        answer: "Yes, we manage social media platforms to increase engagement, brand visibility, and lead generation.",
+        answer: "Yes, we manage social media platforms to increase brand awareness, community engagement, and paid social campaigns.",
         icon: "lucide:share-2"
       },
       {
         question: "How do you generate leads?",
-        answer: "We use SEO, ads, content marketing, and conversion optimization strategies to attract and convert potential customers.",
+        answer: "We use a mix of local SEO, Google ads, content marketing, and conversion optimization strategies to attract high-intent potential customers.",
         icon: "lucide:magnet"
       },
       {
         question: "Can digital marketing work for small businesses?",
-        answer: "Yes, digital marketing is highly effective for small businesses to increase visibility and attract customers.",
+        answer: "Absolutely. Digital marketing is highly effective for small businesses to increase visibility and dominate their local geographic area.",
         icon: "lucide:trending-up"
       }
     ],

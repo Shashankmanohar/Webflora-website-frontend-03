@@ -16,12 +16,11 @@ export default async function sitemap() {
     { route: "/vegavan-ai", priority: 0.95 }, // Main SaaS page from the app
 
     // Core Service Pages
-    { route: "/services/web-development", priority: 0.95 },
-    { route: "/services/app-development", priority: 0.9 },
-    { route: "/services/software-development", priority: 0.9 },
-    { route: "/services/ai-automation", priority: 0.95 },
-    { route: "/services/digital-marketing", priority: 0.9 },
-    { route: "/services/social-media-marketing", priority: 0.85 },
+    { route: "/services/website-development-company-in-patna", priority: 0.95 },
+    { route: "/services/mobile-app-development-company-in-patna", priority: 0.9 },
+    { route: "/services/software-development-company-in-patna", priority: 0.9 },
+    { route: "/services/ai-automation-company-in-patna", priority: 0.95 },
+    { route: "/services/digital-marketing-agency-in-patna", priority: 0.9 },
 
     // Legal Pages
     { route: "/privacy-policy", priority: 0.2 },

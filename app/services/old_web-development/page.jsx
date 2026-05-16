@@ -1,60 +1,20 @@
 import React from "react";
 import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
-import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }) {
-  const { service: serviceSlug } = await params;
-  const service = servicesData[serviceSlug];
-  if (!service) return {};
+export const metadata = {
+  title: "Web Development Company in Patna Bihar | Custom Website Development",
+  description: "Webflora Technologies provides responsive website development, ecommerce websites, business websites, and custom web applications in Patna, Bihar.",
+  keywords: "web development company Patna, website development Bihar, ecommerce website Patna, responsive web design Bihar, custom website company India",
+};
 
-  const baseUrl = "https://webfloratechnologies.com";
-  const url = `${baseUrl}/services/${serviceSlug}`;
-
-  return {
-    title: service.seoTitle || `${service.title} Services | Webflora Technologies`,
-    description: service.seoDescription || service.subtext,
-    keywords: service.seoKeywords || `${service.title}, Next.js, React, SEO, Patna, Bihar, Web Design, Performance`,
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title: service.title,
-      description: service.subtext,
-      url: url,
-      siteName: "Webflora Technologies",
-      images: [
-        {
-          url: `${baseUrl}/og-image.jpg`, // Default OG image
-          width: 1200,
-          height: 630,
-        },
-      ],
-      locale: "en_IN",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: service.title,
-      description: service.subtext,
-      images: [`${baseUrl}/og-image.jpg`],
-    },
-  };
-}
-
-export default async function ServicePage({ params }) {
-  const { service: serviceSlug } = await params;
-  const data = servicesData[serviceSlug];
-  
-  if (!data) {
-    notFound();
-  }
+const page = () => {
+  const data = servicesData["web-development"];
   
   return (
     <>
       <ServiceTemplate data={data} />
       
-      {/* Service Schema for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -62,25 +22,14 @@ export default async function ServicePage({ params }) {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": data.title,
-            "serviceType": data.title,
+            "serviceType": "Web Development",
             "description": data.subtext,
             "provider": {
               "@type": "ProfessionalService",
               "name": "Webflora Technologies",
               "@id": "https://webfloratechnologies.com/#organization"
             },
-            "areaServed": "India",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": `${data.title} Catalog`,
-              "itemListElement": data.solutions.map((s, i) => ({
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": s
-                }
-              }))
-            }
+            "areaServed": "India"
           })
         }}
       />
@@ -107,7 +56,7 @@ export default async function ServicePage({ params }) {
                 "@type": "ListItem",
                 "position": 3,
                 "name": data.title,
-                "item": `https://webfloratechnologies.com/services/${serviceSlug}`
+                "item": `https://webfloratechnologies.com/services/web-development`
               }
             ]
           })
@@ -134,10 +83,6 @@ export default async function ServicePage({ params }) {
       )}
     </>
   );
-}
+};
 
-export async function generateStaticParams() {
-  return Object.keys(servicesData).map((service) => ({
-    service: service,
-  }));
-}
+export default page;

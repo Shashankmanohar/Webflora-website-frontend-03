@@ -8,6 +8,9 @@ import AboutService from "../Components/AboutService";
 import AboutMissionandVision from "../Components/AboutMissionandVision";
 import TeamSection from "../Components/TeamSection";
 import ContactSection from "../Components/ContactSection";
+import SEOContentBlock from "../Components/SEOContentBlock";
+import TrustSignals from "../Components/TrustSignals";
+import GoogleTrustBanner from "../Components/GoogleTrustBanner";
 
 const container = {
   hidden: { opacity: 0 },
@@ -126,24 +129,16 @@ export default function UltraAnimatedHero() {
             Spotlight on Engineering
           </motion.div>
 
-          <motion.h1
-            variants={item}
-            className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.9] text-white drop-shadow-2xl"
-          >
-            Technology That Moves <br />
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.9] text-white drop-shadow-2xl">
+            About <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-neutral-50 to-[#ff3c00]">
-              Your Business Forward
+              Webflora Technologies
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={item}
-            className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed"
-          >
-            Engineering scalable digital systems that drive measurable growth.
-            We build the architecture for your future success using precision
-            and modern standards.
-          </motion.p>
+          <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+            Leading Software Development Company in Patna Bihar
+          </p>
 
           <motion.div
             variants={item}
@@ -186,6 +181,29 @@ export default function UltraAnimatedHero() {
         </motion.div>
       </motion.section>
 
+      <GoogleTrustBanner />
+      <TrustSignals />
+
+      {/* GEO Content Section */}
+      <section className="py-32 bg-black border-y border-white/5 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">
+            Leading Software Development Company in Patna Bihar
+          </h2>
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light mb-12">
+            Webflora Technologies is a Patna-based digital solutions company helping startups, coaching institutes, ecommerce businesses, and enterprises build scalable digital systems through software development, AI automation, and modern web technologies.
+          </p>
+          
+          <div className="text-left bg-white/5 p-8 rounded-3xl border border-white/10 max-w-2xl mx-auto">
+             <h3 className="text-xl font-bold text-white mb-4">Why choose Webflora Technologies?</h3>
+             <p className="text-gray-400 font-light">
+               Webflora Technologies focuses on scalable engineering, founder-led execution, AI-driven systems, and long-term technology partnerships for business growth.
+             </p>
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
+      </section>
+
       {/* About Section of webflora Technologies -  */}
       <AboutWebflora />
 
@@ -204,8 +222,57 @@ export default function UltraAnimatedHero() {
       {/* Team Section */}
       <TeamSection />
 
+      {/* SEO Content Block */}
+      <SEOContentBlock 
+        title="Leading Technology Partner in Bihar"
+        paragraphs={[
+          <>Since our inception, <strong className="text-white font-medium">Webflora Technologies</strong> has been driven by a mission to engineer scalable, high-performance digital systems. We are not just a <strong className="text-gray-300">software development company in Patna</strong>; we are a dedicated team of technical founders and engineers who understand how to translate business goals into technological realities.</>,
+          <>Our commitment to excellence means we utilize enterprise-grade technologies to deliver custom <Link href="/services/website-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">web development</Link>, <Link href="/services/mobile-app-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">mobile applications</Link>, and <Link href="/services/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI automation</Link>. We serve businesses across Bihar and India, ensuring every product we ship is secure, optimized for SEO, and built for measurable business growth. Explore our <Link href="/vegavan-ai" className="text-[#FF3B00] hover:underline font-medium">Vegavan AI</Link> solutions or view our <Link href="/case-studies" className="text-[#FF3B00] hover:underline font-medium">case studies</Link> to see our engineering in action.</>
+        ]}
+      />
+
       {/* Contact Section */}
       <ContactSection />
+
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Webflora Technologies",
+            "description": "Learn about Webflora Technologies, a leading software development and digital solutions company based in Patna, Bihar.",
+            "url": "https://webfloratechnologies.com/about",
+            "publisher": {
+              "@id": "https://webfloratechnologies.com/#organization"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://webfloratechnologies.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://webfloratechnologies.com/about"
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }

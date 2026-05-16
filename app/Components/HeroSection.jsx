@@ -42,13 +42,18 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        {/* SEO H1 - Primary authority signal at the top */}
+        <h1 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-4 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
+          Software Development Company in Patna Bihar
+        </h1>
+
         {/* Badge */}
-        <h1 className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
           <span className="text-[10px] sm:text-xs tracking-wider sm:tracking-widest text-gray-300 font-mono uppercase">
-            Software development company in patna, bihar
+            Top Web Agency in Bihar
           </span>
-        </h1>
+        </div>
 
         {/* Heading — elegant reveal */}
         <h2 className="font-display font-bold tracking-tighter leading-[0.95] text-5xl md:text-7xl lg:text-8xl mb-6 will-change-transform">

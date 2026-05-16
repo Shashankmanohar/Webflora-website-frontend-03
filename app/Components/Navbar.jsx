@@ -14,11 +14,11 @@ const navItems = [
     href: "/services",
     children: [
       { icon: Bot, label: "Vegavan AI", href: "/vegavan-ai" },
-      { icon: Bot, label: "AI & Automation", href: "/services/ai-automation" },
-      { icon: Globe, label: "Web Dev", href: "/services/web-development" },
-      { icon: Smartphone, label: "App Dev", href: "/services/app-development" },
-      { icon: Layers, label: "Software", href: "/services/software-development" },
-      { icon: Share2, label: "Marketing", href: "/services/social-media-marketing" },
+      { icon: Bot, label: "AI & Automation", href: "/services/ai-automation-company-in-patna" },
+      { icon: Globe, label: "Website Dev", href: "/services/website-development-company-in-patna" },
+      { icon: Smartphone, label: "App Dev", href: "/services/mobile-app-development-company-in-patna" },
+      { icon: Layers, label: "Software", href: "/services/software-development-company-in-patna" },
+      { icon: Share2, label: "Marketing", href: "/services/digital-marketing-agency-in-patna" },
       { icon: FileText, label: "Case Studies", href: "/case-studies" },
     ]
   },

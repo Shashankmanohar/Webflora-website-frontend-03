@@ -30,7 +30,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:monitor-smartphone-linear",
       badge: "Popular",
-      href: "/services/web-development",
+      href: "/services/website-development-company-in-patna",
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:server-square-cloud-linear",
       badge: "Enterprise",
-      href: "/services/software-development",
+      href: "/services/software-development-company-in-patna",
     },
     {
       id: 3,
@@ -64,7 +64,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:smartphone-2-linear",
       badge: "Advanced",
-      href: "/services/app-development",
+      href: "/services/mobile-app-development-company-in-patna",
     },
     {
       id: 4,
@@ -81,7 +81,7 @@ const OurCoreServices = () => {
       subtitle: "Monthly",
       icon: "solar:graph-up-linear",
       badge: null,
-      href: "/services/social-media-marketing",
+      href: "/services/digital-marketing-agency-in-patna",
     },
     {
       id: 5,
@@ -98,7 +98,7 @@ const OurCoreServices = () => {
       subtitle: "Starting Price",
       icon: "solar:bolt-circle-linear",
       badge: null,
-      href: "/services/ai-automation",
+      href: "/services/ai-automation-company-in-patna",
     },
   ];
 

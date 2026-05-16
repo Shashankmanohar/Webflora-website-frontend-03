@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import API_BASE_URL from "../config";
+import SEOContentBlock from "../Components/SEOContentBlock";
+import TrustSignals from "../Components/TrustSignals";
 
 // --- Premium Component: Starfield ---
 function Starfield() {
@@ -113,19 +115,14 @@ export default function CaseStudiesPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header Section */}
         <header className="mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-6"
-          >
-            <span className="w-8 h-[1px] bg-primary" />
-            Portfolio Showcase
-          </motion.div>
+          <h1 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
+            Webflora Technologies Case Studies
+          </h1>
           
-          <ElegantReveal 
-            text="Case Studies" 
-            className="text-6xl md:text-8xl font-bold tracking-tight mb-8"
-          />
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+            Recent Projects <br />
+            <span className="text-gray-500 italic">and Success Stories</span>
+          </h2>
           
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -225,6 +222,54 @@ export default function CaseStudiesPage() {
           </div>
         )}
       </div>
+
+      <TrustSignals />
+
+      <div className="content-auto relative z-10 mt-20">
+        <SEOContentBlock 
+          title="Proven Digital Solutions & Success Stories"
+          paragraphs={[
+            <>Explore our portfolio of <strong className="text-white font-medium">high-performance web applications</strong>, enterprise software, and growth-driven marketing campaigns. As a leading technology partner in Patna, Bihar, we consistently deliver digital products that scale and generate measurable ROI for businesses across India.</>,
+            <>From complex <strong className="text-gray-300">ecommerce website development</strong> to intelligent AI automation workflows, our case studies demonstrate our commitment to engineering excellence, modern UI/UX, and technical SEO.</>
+          ]}
+        />
+      </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Case Studies - Webflora Technologies",
+            "description": "View our portfolio of custom software, web development, and digital marketing success stories.",
+            "url": "https://webfloratechnologies.com/case-studies"
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://webfloratechnologies.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Case Studies",
+                "item": "https://webfloratechnologies.com/case-studies"
+              }
+            ]
+          })
+        }}
+      />
 
       <style jsx global>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }

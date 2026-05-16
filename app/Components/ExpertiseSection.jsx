@@ -17,7 +17,7 @@ export default function ExpertiseSection() {
       title: "WEB DEVELOPMENT",
       desc: "Next-Gen Websites built with React, Next.js and Tailwind.",
       tech: ["logos:react", "logos:nextjs-icon"],
-      href: "/services/web-development",
+      href: "/services/website-development-company-in-patna",
     },
     {
       index: "02",
@@ -25,7 +25,7 @@ export default function ExpertiseSection() {
       title: "SOFTWARE DEV",
       desc: "Custom enterprise solutions with Python and .NET.",
       tech: ["logos:python", "logos:docker-icon"],
-      href: "/services/software-development",
+      href: "/services/software-development-company-in-patna",
     },
     {
       index: "03",
@@ -33,7 +33,7 @@ export default function ExpertiseSection() {
       title: "MOBILE APPS",
       desc: "Native and Cross-platform iOS & Android apps.",
       tech: ["logos:flutter", "logos:apple"],
-      href: "/services/app-development",
+      href: "/services/mobile-app-development-company-in-patna",
     },
     {
       index: "04",
@@ -41,7 +41,7 @@ export default function ExpertiseSection() {
       title: "AI & ML",
       desc: "Intelligent systems powered by OpenAI and TensorFlow.",
       tech: ["logos:tensorflow", "logos:openai-icon"],
-      href: "/services/ai-automation",
+      href: "/services/ai-automation-company-in-patna",
     },
     {
       index: "05",

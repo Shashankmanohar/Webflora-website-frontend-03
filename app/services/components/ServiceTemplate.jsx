@@ -12,6 +12,7 @@ import FaqSection from "./FaqSection";
 import { BenefitsGrid, TechStackGrid } from "./client/InteractiveGrids";
 import TestimonialWrapper from "./client/TestimonialWrapper";
 import ContactSection from "../../Components/ContactSection";
+import SEOContentBlock from "../../Components/SEOContentBlock";
 import { servicesData } from "../data";
 
 const ServiceTemplate = ({ data }) => {
@@ -24,11 +25,41 @@ const ServiceTemplate = ({ data }) => {
       <div className="relative">
         <ProblemWrapper data={data} />
         <SubServicesWrapper data={data} />
+        <ProcessWrapper data={data} />
+        <IndustriesWrapper data={data} />
         <BenefitsWrapper data={data} />
         <TechStackWrapper data={data} />
         <TestimonialWrapper />
         <FaqSection faqs={data.faqs} title={data.title} />
         <OtherServicesWrapper currentService={data.title} />
+        
+        {/* GEO Content Section - New section for localized SEO */}
+        {(data.geoTitle || data.geoContent) && (
+          <section className="py-32 bg-black border-y border-white/5 relative overflow-hidden">
+            <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+              <FadeInUp>
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">
+                  {data.geoTitle}
+                </h2>
+                <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+                  {data.geoContent}
+                </p>
+              </FadeInUp>
+            </div>
+            {/* Background elements to match aesthetic */}
+            <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
+          </section>
+        )}
+
+        <div className="content-auto relative z-10">
+          <SEOContentBlock 
+            title={`${data.title} Company in Patna, Bihar`}
+            paragraphs={[
+              <React.Fragment key="p1">At <strong className="text-white font-medium">Webflora Technologies</strong>, we specialize in high-end <strong className="text-gray-300">{data.title.toLowerCase()}</strong> for businesses across India. {data.subtext}</React.Fragment>,
+              <React.Fragment key="p2">Our team engineers scalable systems designed for performance, automation, and long-term business growth. By leveraging enterprise-grade technologies, we ensure your digital infrastructure meets modern demands.</React.Fragment>
+            ]}
+          />
+        </div>
         <ContactSection />
       </div>
 
@@ -60,42 +91,150 @@ const ServiceTemplate = ({ data }) => {
 
 const HeroWrapper = ({ data }) => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-20 pb-32 px-6 overflow-hidden">
-      <Starfield />
-      <GlowBlob color="#FF3B00" size="500px" top="-10%" left="-10%" />
-      <GlowBlob color="#3B82F6" size="500px" bottom="-10%" right="-10%" delay={2} />
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#030303] pt-32 pb-24 px-4 sm:px-6">
+      <style>{`
+        @keyframes blob {
+          0%   { transform: translate(0px, 0px) scale(1); }
+          33%  { transform: translate(30px, -50px) scale(1.1); }
+          66%  { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .hero-blob-1 { animation: blob 10s ease-in-out infinite; will-change: transform; }
+        .hero-blob-2 { animation: blob 10s ease-in-out 2s infinite; will-change: transform; }
+        .hero-blob-3 { animation: blob 10s ease-in-out 4s infinite; will-change: transform; }
+      `}</style>
       
-      <div className="relative z-10 max-w-7xl mx-auto text-center">
-        <FadeInUp className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-2xl mb-12">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF3B00] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF3B00]"></span>
-          </span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/90">{data.heroBadge}</span>
-        </FadeInUp>
-        
-        <RevealText 
-          text={data.headline} 
-          className="text-[clamp(2.5rem,8vw,5rem)] font-bold leading-[0.95] tracking-tight mb-12"
+      {/* ── Backgrounds ── */}
+      <div
+        style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}
+        aria-hidden="true"
+      >
+        <Starfield />
+
+        {/* Orange blob */}
+        <div
+          className="hero-blob-1"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+            width: 600,
+            height: 600,
+            background: "rgba(255,60,0,0.20)",
+            filter: "blur(120px)",
+            borderRadius: "50%",
+            mixBlendMode: "screen",
+          }}
         />
-        
-        <FadeInUp delay={0.4} className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-16 font-light leading-relaxed">
-          {data.subtext}
+        {/* Blue blob */}
+        <div
+          className="hero-blob-2"
+          style={{
+            position: "absolute",
+            top: "25%",
+            left: "25%",
+            width: 400,
+            height: 400,
+            background: "rgba(59,130,246,0.10)",
+            filter: "blur(100px)",
+            borderRadius: "50%",
+            mixBlendMode: "screen",
+          }}
+        />
+        {/* Purple blob */}
+        <div
+          className="hero-blob-3"
+          style={{
+            position: "absolute",
+            bottom: "25%",
+            right: "25%",
+            width: 500,
+            height: 500,
+            background: "rgba(168,85,247,0.10)",
+            filter: "blur(100px)",
+            borderRadius: "50%",
+            mixBlendMode: "screen",
+          }}
+        />
+      </div>
+
+      {/* ── Subtle Grid Overlay ── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          opacity: 0.5,
+          backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: "50px 50px",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)",
+          maskImage:
+            "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)",
+        }}
+      />
+
+      <div className="relative z-10 text-center w-full max-w-6xl mx-auto">
+        {/* SEO H1 - Primary authority signal at the top */}
+        <FadeInUp className="mb-4">
+          <h1 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
+            {data.title}
+          </h1>
+        </FadeInUp>
+
+        {/* Pill Badge */}
+        <FadeInUp delay={0.1} className="inline-flex items-center gap-2 px-3 py-1 mb-10 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-sm">
+          <span className="flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-1.5 w-1.5 rounded-full bg-white/40 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white/60"></span>
+          </span>
+          <span className="text-[10px] font-medium tracking-[0.2em] text-gray-400 uppercase">
+            {data.heroBadge || "Top Web Agency in Bihar"}
+          </span>
+        </FadeInUp>
+
+        {/* Main Headline: Clean, highly legible, perfectly sized for long text */}
+        <FadeInUp delay={0.2} className="mb-8">
+          <h2 className="font-sans font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] text-white">
+            {data.headline}
+          </h2>
         </FadeInUp>
         
-        <FadeInUp delay={0.6} className="flex flex-wrap justify-center gap-6">
-          <HoverScale className="group relative px-10 py-5 bg-white text-black rounded-full font-black uppercase tracking-wider overflow-hidden">
-             <Link href="/contact" className="relative z-10">Get Started</Link>
-          </HoverScale>
-          <a href="#impact" className="px-10 py-5 border border-white/20 rounded-full font-black uppercase tracking-wider hover:bg-white/5 hover:border-white transition-all">
+        {/* Subtext */}
+        <FadeInUp delay={0.2} className="text-gray-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+          {data.subtextJSX || data.subtext}
+        </FadeInUp>
+        
+        {/* Professional, Minimalist SaaS Buttons */}
+        <FadeInUp delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/contact"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-black rounded-full font-semibold text-sm tracking-wide hover:bg-gray-200 transition-colors w-full sm:w-auto shadow-[0_0_40px_rgba(255,255,255,0.1)]"
+          >
+            Get Started
+            <SafeIcon icon="solar:arrow-right-up-linear" className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+
+          <a
+            href="#impact"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 text-white rounded-full font-medium text-sm tracking-wide transition-all w-full sm:w-auto backdrop-blur-sm"
+          >
             See Our Impact
           </a>
         </FadeInUp>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20 animate-bounce">
-        <SafeIcon icon="solar:mouse-scroll-linear" width={24} />
+        {/* Minimal SEO Block (Matches TrustSignals aesthetic) */}
+        <FadeInUp delay={0.5} className="mt-20 max-w-3xl mx-auto border-t border-white/5 pt-8 text-center">
+          <p className="text-xs md:text-sm text-gray-500 font-light leading-relaxed">
+            <strong className="text-white font-medium">Webflora Technologies</strong> is a leading <strong className="text-gray-300">{data.title.toLowerCase()}</strong> providing custom digital solutions, robust architectures, and scalable web applications for startups, businesses, coaching institutes, and enterprises across India.
+          </p>
+        </FadeInUp>
       </div>
     </section>
   );
@@ -347,6 +486,70 @@ const OtherServicesWrapper = ({ currentService }) => {
           })}
         </div>
       </div>
+    </section>
+  );
+};
+
+const ProcessWrapper = ({ data }) => {
+  if (!data.process || data.process.length === 0) return null;
+
+  return (
+    <section className="py-32 px-6 bg-[#050505] relative border-y border-white/5">
+       <div className="max-w-7xl mx-auto relative z-10">
+          <div className="mb-20 text-center">
+            <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
+              How We Work
+            </FadeInUp>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
+              OUR <span className="text-gray-600 font-outline">PROCESS.</span>
+            </h2>
+          </div>
+          
+          <div className="space-y-6">
+            {data.process.map((step, index) => (
+              <FadeInUp key={index} delay={index * 0.05} className="group relative">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8 rounded-[2rem] bg-neutral-900/40 border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-500">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center text-[#FF3B00] font-black text-2xl group-hover:scale-110 group-hover:border-[#FF3B00] transition-all duration-500">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
+                    <p className="text-gray-400 font-light">{step.desc}</p>
+                  </div>
+                </div>
+              </FadeInUp>
+            ))}
+          </div>
+       </div>
+    </section>
+  );
+};
+
+const IndustriesWrapper = ({ data }) => {
+  if (!data.industries || data.industries.length === 0) return null;
+
+  return (
+    <section className="py-32 px-6 bg-[#030303] relative border-b border-white/5">
+       <div className="max-w-7xl mx-auto relative z-10 text-center">
+          <div className="mb-16 text-center">
+            <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
+              Who We Serve
+            </FadeInUp>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
+              INDUSTRIES <span className="text-gray-600 font-outline">SERVED.</span>
+            </h2>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            {data.industries.map((industry, index) => (
+              <FadeInUp key={index} delay={index * 0.05}>
+                <div className="px-6 py-3 rounded-full bg-neutral-900/40 border border-white/10 hover:border-[#FF3B00] text-gray-300 hover:text-white transition-all cursor-default">
+                  {industry}
+                </div>
+              </FadeInUp>
+            ))}
+          </div>
+       </div>
     </section>
   );
 };

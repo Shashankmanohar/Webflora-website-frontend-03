@@ -36,11 +36,11 @@ const BlogClient = () => {
   const [showAllExpertise, setShowAllExpertise] = React.useState(false);
 
   const allExpertise = [
-    { name: "Website Development", href: "/services/web-development" },
-    { name: "Mobile App Development", href: "/services/app-development" },
-    { name: "Digital Marketing", href: "/services/social-media-marketing" },
-    { name: "Software Development", href: "/services/software-development" },
-    { name: "AI & Automation", href: "/services/ai-automation" },
+    { name: "Website Development", href: "/services/website-development-company-in-patna" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development-company-in-patna" },
+    { name: "Digital Marketing", href: "/services/digital-marketing-agency-in-patna" },
+    { name: "Software Development", href: "/services/software-development-company-in-patna" },
+    { name: "AI & Automation", href: "/services/ai-automation-company-in-patna" },
     { name: "Vegavan AI (SaaS)", href: "/vegavan-ai" },
   ];
 

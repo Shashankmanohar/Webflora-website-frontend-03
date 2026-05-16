@@ -60,7 +60,7 @@ export default function FooterSection() {
                 Ready to shape the future?
               </h2>
               <p className="text-neutral-400 text-sm md:text-base font-light">
-                Join the next generation of neural architecture today.
+                Build scalable digital systems designed for growth, automation, and long-term business success.
               </p>
             </div>
             <button className="group/btn relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ff3b00] text-white text-sm font-medium tracking-wide rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,59,0,0.4)] hover:scale-105">
@@ -73,6 +73,13 @@ export default function FooterSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
             </button>
           </div>
+        </div>
+
+        {/* Local SEO Paragraph */}
+        <div className="mb-12 border-t border-white/5 pt-12">
+          <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-light text-center max-w-4xl mx-auto">
+            <strong className="text-white font-medium">Webflora Technologies</strong> is a Patna-based software development and digital solutions company helping startups, local businesses, coaching institutes, ecommerce brands, and enterprises across Bihar and India build scalable digital systems.
+          </p>
         </div>
 
         {/* Grid */}
@@ -180,11 +187,11 @@ export default function FooterSection() {
             <FooterColumn
               title="Services"
               links={[
-                { text: "Web Development", url: "/services/web-development" },
-                { text: "App Development", url: "/services/app-development" },
-                { text: "AI Automation", url: "/services/ai-automation" },
-                { text: "Software Dev", url: "/services/software-development" },
-                { text: "Digital Mkt", url: "/services/digital-marketing" }
+                { text: "Web Development", url: "/services/website-development-company-in-patna" },
+                { text: "App Development", url: "/services/mobile-app-development-company-in-patna" },
+                { text: "AI Automation", url: "/services/ai-automation-company-in-patna" },
+                { text: "Software Development", url: "/services/software-development-company-in-patna" },
+                { text: "Digital Marketing", url: "/services/digital-marketing-agency-in-patna" }
               ]}
             />
             <FooterColumn

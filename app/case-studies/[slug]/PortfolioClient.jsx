@@ -260,9 +260,9 @@ const PortfolioClient = () => {
                 <h5 className="text-[10px] font-bold uppercase tracking-widest text-neutral-700 px-2">Related Expertise</h5>
                 <div className="space-y-2">
                   {[
-                    { name: "Web Development", href: "/services/web-development" },
-                    { name: "Mobile Apps", href: "/services/app-development" },
-                    { name: "Digital Growth", href: "/services/social-media-marketing" }
+                    { name: "Web Development", href: "/services/website-development-company-in-patna" },
+                    { name: "Mobile Apps", href: "/services/mobile-app-development-company-in-patna" },
+                    { name: "Digital Growth", href: "/services/digital-marketing-agency-in-patna" }
                   ].map((service) => (
                     <Link key={service.name} href={service.href} className="group flex items-center justify-between p-5 rounded-2xl bg-transparent hover:bg-white/5 transition-all">
                       <span className="text-[11px] font-bold text-neutral-500 group-hover:text-white uppercase tracking-widest">{service.name}</span>

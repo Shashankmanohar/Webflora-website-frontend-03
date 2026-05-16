@@ -16,7 +16,7 @@ export default function StatsMarquee() {
           <Star />
           <Stat text="|" />
           <Star />
-          <Stat text="5+ YEARS" />
+          <Stat text="GROWING SINCE 2023" />
           <Star />
           <Stat text="|" />
           <Star />
@@ -36,9 +36,8 @@ export default function StatsMarquee() {
           <Star />
           <Stat text="|" />
           <Star />
-          <Stat text="5+ YEARS" />
+          <Stat text="GROWING SINCE 2023" />
           <Star />
-          
         </div>
       </div>
     </section>

@@ -32,11 +32,11 @@ const pacifico = Pacifico({
 
 export const metadata = {
   title: "Best Software Development Company in Patna Bihar | Webflora Technologies",
-  description: "Webflora Technologies is a leading software development company in Patna, Bihar offering web development, app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses.",
-  keywords: "software development company Patna, software company Bihar, web development company Patna, IT company Bihar, AI automation Patna, digital marketing company Bihar",
+  description: "Webflora Technologies is a leading software development company in Patna, Bihar offering website development, app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses.",
+  keywords: "software company in Patna, software company Bihar, website development company in Patna, IT company Bihar, AI automation Patna, digital marketing company Bihar",
   openGraph: {
     title: "Best Software Development Company in Patna Bihar | Webflora Technologies",
-    description: "Webflora Technologies is a leading software development company in Patna, Bihar offering web development, app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses.",
+    description: "Webflora Technologies is a leading software development company in Patna, Bihar offering website development, app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses.",
     url: "https://webfloratechnologies.com",
     siteName: "Webflora Technologies",
     locale: "en_US",
@@ -62,6 +62,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://vegavan-backend.vercel.app" />
       </head>
       <body
+        suppressHydrationWarning
         className={`
           ${inter.variable}
           ${spaceGrotesk.variable}

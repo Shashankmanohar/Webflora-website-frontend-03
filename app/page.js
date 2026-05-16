@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Hero from "./Components/HeroSection";
 import StatsMarquee from "./Components/StatsMarquee";
 import GrowthSection from "./Components/GrowthSection";
+import SEOContentBlock from "./Components/SEOContentBlock";
 
 // Lazy load components below the fold
 const ExpertiseSection = dynamic(() => import("./Components/ExpertiseSection"), { ssr: false });
@@ -19,11 +20,39 @@ const TestimonialSection = dynamic(() => import("./services/components/Testimoni
 const TeamSection = dynamic(() => import("./Components/TeamSection"), { ssr: false });
 const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: false });
 const VegavanTeaser = dynamic(() => import("./Components/VegavanTeaser"), { ssr: false });
+const TrustSignals = dynamic(() => import("./Components/TrustSignals"), { ssr: false });
+const GoogleTrustBanner = dynamic(() => import("./Components/GoogleTrustBanner"), { ssr: false });
+
+const homeFaqs = [
+  {
+    question: "Which is the best software development company in Patna?",
+    answer: "Webflora Technologies helps businesses build scalable websites, software, AI systems, and mobile applications using modern technologies and performance-focused development strategies.",
+    icon: "lucide:award"
+  },
+  {
+    question: "What services does Webflora Technologies provide?",
+    answer: "We provide web development, app development, AI automation, software development, SEO, digital marketing, workflow automation, and business technology solutions.",
+    icon: "lucide:layers"
+  }
+];
 
 const page = () => {
   return (
     <>
       <Hero />
+      <GoogleTrustBanner />
+      <TrustSignals />
+      <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">
+            What Does Webflora Technologies Do?
+          </h2>
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+            Webflora Technologies is a Patna-based software development company providing website development, mobile app development, AI automation, custom software, and digital marketing services for startups and businesses across Bihar and India.
+          </p>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
+      </section>
       <StatsMarquee />
       <div className="content-auto">
         <GrowthSection />
@@ -37,9 +66,7 @@ const page = () => {
       <div className="content-auto">
         <TechStackSection />
       </div>
-      <div className="content-auto">
-        <WhyChooseSection />
-      </div>
+
       <div className="content-auto">
         <ProductCard />
       </div>
@@ -59,7 +86,10 @@ const page = () => {
         <PremiumCTASection />
       </div>
       <div className="content-auto">
-        <FaqSection />
+        <FaqSection faqs={homeFaqs} title="web development and software services" />
+      </div>
+      <div className="content-auto">
+        <SEOContentBlock />
       </div>
       <div className="content-auto">
         <ContactSection />
@@ -131,33 +161,85 @@ const page = () => {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://webfloratechnologies.com/#localbusiness",
+            "name": "Webflora Technologies",
+            "image": "https://webfloratechnologies.com/webflora-logo.svg",
+            "url": "https://webfloratechnologies.com",
+            "telephone": "+918540814729",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.594095",
+              "longitude": "85.137566"
+            },
+            "priceRange": "$$"
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Software & Web Development",
+            "provider": {
+              "@id": "https://webfloratechnologies.com/#organization"
+            },
+            "areaServed": {
+              "@type": "State",
+              "name": "Bihar"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "IT Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Website Development"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Custom Software Development"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Digital Marketing & SEO"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is Webflora Technologies?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation services for startups and businesses across India."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What services does Webflora Technologies offer?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Webflora provides web development, mobile app development, custom software, digital marketing, and AI automation services, helping businesses build fast and scalable digital systems."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Where is Webflora Technologies located?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Webflora Technologies is located in Patna, Bihar, India and serves clients across India."
-                }
+            "mainEntity": homeFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
               }
-            ]
+            }))
           })
         }}
       />
@@ -170,8 +252,8 @@ const page = () => {
             "@id": "https://webfloratechnologies.com/#organization",
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "20"
+              "ratingValue": "5.0",
+              "reviewCount": "50"
             }
           })
         }}

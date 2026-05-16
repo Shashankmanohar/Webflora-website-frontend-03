@@ -62,8 +62,8 @@ export default function BentoWhyChoose() {
         {/* heading */}
         <motion.div variants={reveal} className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
-            Why Global Brands Choose{" "}
-            <span className=" text-orange-600">webflora</span>
+            Trusted by Startups & Businesses Across{" "}
+            <span className=" text-orange-600">India</span>
           </h2>
           <p className="text-zinc-500">
             Not just an agency. We are your technical partners.

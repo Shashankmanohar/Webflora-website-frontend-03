@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import API_BASE_URL from "../config";
 import ContactSection from "../Components/ContactSection";
+import SEOContentBlock from "../Components/SEOContentBlock";
+import TrustSignals from "../Components/TrustSignals";
 
 // Mock categories - you can also fetch these from unique categories in your blogs
 const BlogPage = () => {
@@ -68,11 +70,19 @@ const BlogPage = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
+              className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]"
+            >
+              Webflora Technologies Blog
+            </motion.h1>
+
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]"
             >
-              Stories of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-orange-500">Digital Mastery.</span>
-            </motion.h1>
+              Latest Insights <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-orange-500">and Industry Trends.</span>
+            </motion.h2>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -350,8 +360,57 @@ const BlogPage = () => {
             </div>
           </div>
         </section>
+
+        <TrustSignals />
+
+        <div className="content-auto relative z-10 mb-20">
+          <SEOContentBlock 
+            title="Technology & Digital Marketing Insights"
+            paragraphs={[
+              <>Stay updated with the latest trends in <strong className="text-white font-medium">software development</strong>, artificial intelligence, and digital marketing. The Webflora Technologies blog provides deep technical insights, actionable business strategies, and industry news for startups and enterprises.</>,
+              <>Whether you are looking to understand the benefits of Next.js for <strong className="text-gray-300">SEO-friendly websites</strong> or how to leverage n8n for workflow automation, our engineering and marketing experts share their knowledge to help you scale your business in the digital era.</>
+            ]}
+          />
+        </div>
+
         {/* Contact Section */}
         <ContactSection />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Blog",
+              "name": "Webflora Technologies Blog",
+              "description": "Insights, guides, and news about software development, AI, and digital marketing from Webflora Technologies.",
+              "url": "https://webfloratechnologies.com/blog"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://webfloratechnologies.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://webfloratechnologies.com/blog"
+                }
+              ]
+            })
+          }}
+        />
       </div>
     </main>
   );

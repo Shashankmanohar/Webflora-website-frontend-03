@@ -68,10 +68,12 @@ export default function ContactPage() {
             <span className="text-[#ff3b00] font-black tracking-[0.5em] text-[8px] md:text-[10px] uppercase mb-4 ml-0 md:ml-2">
               Neural Connectivity // 01
             </span>
-            <h1 className="text-5xl sm:text-6xl md:text-[9rem] font-black leading-[0.9] md:leading-[0.8] tracking-tighter text-white">
-              GET IN <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/50 to-transparent">TOUCH</span>
+            <h1 className="text-4xl sm:text-5xl md:text-[5rem] font-black leading-[0.9] md:leading-[1] tracking-tighter text-white uppercase mb-4">
+              Contact Webflora Technologies
             </h1>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-500 tracking-tight lowercase">
+              Get in Touch <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/50 to-transparent italic">With Our Team</span>
+            </h2>
           </motion.div>
 
           <motion.div
@@ -81,8 +83,7 @@ export default function ContactPage() {
             className="max-w-md text-center md:text-right border-b-2 md:border-b-0 md:border-r-2 border-[#ff3b00] pb-6 md:pb-0 md:pr-8 md:py-4"
           >
             <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed">
-              We don&apos;t just build websites; we architect digital legacies.
-              Initiate a connection to begin the evolution of your brand.
+              Contact Webflora Technologies for website development, mobile app development, AI automation, software development, and digital marketing services in Patna Bihar.
             </p>
           </motion.div>
         </div>

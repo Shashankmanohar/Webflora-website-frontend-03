@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, TrendingUp, ShieldCheck, Zap } from "lucide-react";
+import { Icon } from "@iconify/react";
+import { TrendingUp, ShieldCheck, Zap } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,10 +23,11 @@ const itemVariants = {
 
 export default function TrustSignals() {
   return (
-    <section className="py-32 bg-[#050505] relative overflow-hidden z-10 border-t border-white/5">
+    <section className="py-32 md:py-48 bg-[#050505] relative overflow-hidden z-10 border-t border-white/5">
       {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#ff3c00]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#ff3c00]/5 rounded-full blur-[140px] pointer-events-none animate-pulse" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none animate-pulse delay-700" />
+      <div className="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -35,115 +37,131 @@ export default function TrustSignals() {
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="mb-32"
+          className="mb-40"
         >
-          <div className="text-center mb-16">
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-400 mb-6">
-              <TrendingUp className="w-4 h-4 text-[#ff3c00]" /> Quantitative Proof
-            </motion.div>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              Impact by the <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Numbers</span>
-            </motion.h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div className="max-w-2xl">
+              <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+                <div className="h-px w-12 bg-[#ff3c00]" />
+                <span className="text-[#ff3c00] font-bold uppercase tracking-[0.4em] text-[10px]">Quantifiable Impact</span>
+              </motion.div>
+              <motion.h2 variants={itemVariants} className="text-5xl md:text-8xl font-display font-bold text-white tracking-tighter leading-[0.8] uppercase">
+                Success <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700">Validated.</span>
+              </motion.h2>
+            </div>
+            <motion.p variants={itemVariants} className="text-gray-500 text-lg md:text-xl font-light max-w-sm border-l border-white/10 pl-8">
+              Empowering global brands with high-performance digital infrastructure.
+            </motion.p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              { number: "200+", label: "Projects Delivered", desc: "Successfully engineered and deployed." },
+              { number: "200+", label: "Projects Delivered", desc: "Successfully engineered systems." },
               { number: "150+", label: "Clients Served", desc: "Across startups and enterprises." },
               { number: "5+", label: "Years Experience", desc: "Mastering the digital landscape." },
-              { number: "99%", label: "Client Satisfaction", desc: "Driven by transparent communication." }
+              { number: "99%", label: "Client Satisfaction", desc: "Driven by transparent processes." }
             ].map((stat, idx) => (
               <motion.div 
                 key={idx} 
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="group relative p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm overflow-hidden"
+                className="group relative p-10 rounded-[2.5rem] bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
               >
-                {/* Hover Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ff3c00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10 text-center">
-                  <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-[#ff3c00] mb-3 drop-shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+                <div className="relative z-10">
+                  <div className="text-5xl md:text-6xl font-display font-bold text-white mb-4 tracking-tighter">
                     {stat.number}
                   </div>
-                  <div className="text-base font-semibold text-white tracking-wide mb-1">{stat.label}</div>
-                  <div className="text-xs text-gray-500 font-light">{stat.desc}</div>
+                  <div className="text-xs font-bold text-[#ff3c00] uppercase tracking-[0.2em] mb-2">{stat.label}</div>
+                  <p className="text-sm text-gray-500 font-light leading-relaxed">{stat.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* --- INDUSTRIES WE SERVE --- */}
-        <motion.div 
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="mb-32 relative"
-        >
-          <div className="text-center mb-16">
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-white mb-4">Industries We Engineer For</motion.h2>
-            <motion.p variants={itemVariants} className="text-gray-400 max-w-2xl mx-auto font-light">
-              We build scalable digital infrastructure for highly specialized vertical markets.
-            </motion.p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
-            {[
-              "Coaching Institutes", "Ecommerce", "Healthcare", "Real Estate", 
-              "Startups", "Restaurants", "Education", "Local Businesses", "Corporate Enterprises"
-            ].map((industry, idx) => (
-              <motion.span 
-                key={idx} 
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 rounded-full bg-[#0a0a0a] border border-white/10 text-sm font-medium text-gray-400 hover:text-white hover:border-[#ff3c00]/50 hover:shadow-[0_0_20px_rgba(255,60,0,0.15)] transition-all duration-300 cursor-default"
-              >
-                {industry}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* --- WHY CHOOSE US --- */}
+        {/* --- WHY CHOOSE US (BENTO GRID) --- */}
         <motion.div 
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
-          <div className="text-center mb-16">
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-400 mb-6">
-              <ShieldCheck className="w-4 h-4 text-[#ff3c00]" /> The Webflora Advantage
+          <div className="flex flex-col items-center text-center mb-24">
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
+              <ShieldCheck className="w-4 h-4 text-[#ff3c00]" />
+              <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
             </motion.div>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Businesses Choose Us
+            <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter leading-none uppercase">
+              Why Businesses <span className="text-primary">Choose Us</span>
             </motion.h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
             {[
-              { icon: <Zap />, title: "Performance-focused", desc: "We engineer systems optimized for speed, Core Web Vitals, and UX to maximize your conversion rates." },
-              { icon: <ShieldCheck />, title: "Scalable architecture", desc: "Codebases and cloud infrastructure designed to grow seamlessly alongside your business." },
-              { icon: <CheckCircle2 />, title: "Founder-led execution", desc: "Direct involvement from technical founders ensuring premium quality and strategic alignment." },
-              { icon: <TrendingUp />, title: "SEO-first systems", desc: "In-built semantic HTML and schema architecture to dominate local and global search engine rankings." },
-              { icon: <CheckCircle2 />, title: "Long-term support", desc: "Continuous maintenance, security patches, and technological evolution post-launch." },
-              { icon: <CheckCircle2 />, title: "Transparent communication", desc: "Clear roadmaps, realistic timelines, and consistent updates with no hidden complexities." }
+              { 
+                icon: "solar:bolt-bold-duotone", 
+                title: "Performance-focused", 
+                desc: "We engineer systems optimized for speed, Core Web Vitals, and UX to maximize your conversion rates.",
+                span: "md:col-span-3",
+                color: "from-orange-500/10"
+              },
+              { 
+                icon: "solar:shield-check-bold-duotone", 
+                title: "Scalable Architecture", 
+                desc: "Codebases and cloud infrastructure designed to grow seamlessly alongside your business.",
+                span: "md:col-span-3",
+                color: "from-blue-500/10"
+              },
+              { 
+                icon: "solar:user-speak-bold-duotone", 
+                title: "Founder-led Execution", 
+                desc: "Direct involvement from technical founders ensuring premium quality and strategic alignment.",
+                span: "md:col-span-2",
+                color: "from-purple-500/10"
+              },
+              { 
+                icon: "solar:graph-up-bold-duotone", 
+                title: "SEO-first Systems", 
+                desc: "In-built semantic HTML and schema architecture to dominate search rankings.",
+                span: "md:col-span-2",
+                color: "from-emerald-500/10"
+              },
+              { 
+                icon: "solar:settings-bold-duotone", 
+                title: "Long-term Support", 
+                desc: "Continuous maintenance and security patches post-launch.",
+                span: "md:col-span-2",
+                color: "from-pink-500/10"
+              },
+              { 
+                icon: "solar:chat-square-check-bold-duotone", 
+                title: "Transparent Communication", 
+                desc: "Clear roadmaps, realistic timelines, and consistent updates with no hidden complexities.",
+                span: "md:col-span-6",
+                color: "from-[#ff3c00]/10"
+              }
             ].map((reason, idx) => (
               <motion.div 
                 key={idx} 
                 variants={itemVariants}
-                className="group relative p-8 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-white/10 transition-colors duration-500 overflow-hidden"
+                className={`group relative p-10 rounded-[2.5rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-[#ff3c00]/10 transition-colors duration-500 pointer-events-none" />
+                {/* Background Accent */}
+                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${reason.color} to-transparent opacity-0 group-hover:opacity-100 blur-[80px] transition-all duration-700 pointer-events-none`} />
                 
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-6 group-hover:scale-110 transition-transform duration-500">
-                  {React.cloneElement(reason.icon, { className: "w-5 h-5" })}
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                    <Icon icon={reason.icon} className="w-8 h-8" />
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-tight uppercase">{reason.title}</h3>
+                  <p className="text-gray-500 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500">{reason.desc}</p>
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{reason.title}</h3>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">{reason.desc}</p>
+                {/* Modern Border Accent */}
+                <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </motion.div>
             ))}
           </div>

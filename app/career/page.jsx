@@ -29,7 +29,7 @@ const CareerPage = () => {
   React.useEffect(() => {
     const fetchJobs = async () => {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
       try {
         const res = await fetch(`${API_BASE_URL}/api/public/jobs`, { signal: controller.signal });
         clearTimeout(timeoutId);
@@ -389,94 +389,96 @@ const CareerPage = () => {
             Open Positions
           </motion.h2>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
-          >
-            {loading ? (
-              <div className="col-span-full py-20 flex justify-center">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                  className="w-12 h-12 border-4 border-[#FF3B00] border-t-transparent rounded-full"
-                />
-              </div>
-            ) : jobs.length === 0 ? (
-              <div className="col-span-full py-16 text-center border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                <h3 className="text-2xl font-bold uppercase tracking-tighter mb-2">No Open Roles Currently</h3>
-                <p className="text-sm font-semibold uppercase tracking-tight text-gray-500">Check back later or drop your resume above.</p>
-              </div>
-            ) : jobs.map((job, index) => (
+          {loading ? (
+            <div className="col-span-full py-20 flex justify-center">
               <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{
-                  y: -10,
-                  boxShadow: "12px 12px 0px 0px rgba(255,59,0,1)",
-                }}
-                className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col h-full group"
-              >
-                <div className="flex gap-2 mb-4 flex-wrap">
-                  <motion.span
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="bg-black text-white text-xs font-bold uppercase px-3 py-1 border-2 border-black tracking-tight"
-                  >
-                    {job.category}
-                  </motion.span>
-                  <motion.span
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-white text-black text-xs font-bold uppercase px-3 py-1 border-2 border-black tracking-tight"
-                  >
-                    {job.type}
-                  </motion.span>
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                className="w-12 h-12 border-4 border-[#FF3B00] border-t-transparent rounded-full"
+              />
+            </div>
+          ) : (
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+            >
+              {jobs.length === 0 ? (
+                <div className="col-span-full py-16 text-center border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h3 className="text-2xl font-bold uppercase tracking-tighter mb-2">No Open Roles Currently</h3>
+                  <p className="text-sm font-semibold uppercase tracking-tight text-gray-500">Check back later or drop your resume above.</p>
                 </div>
-
-                <h3 className="text-2xl font-bold uppercase tracking-tighter mb-2 group-hover:text-[#FF3B00] transition-colors">
-                  {job.title}
-                </h3>
-
-                <div className="flex items-center gap-2 text-sm font-semibold uppercase mb-4 opacity-80">
-                  <Icon icon="solar:map-point-linear" width="18" height="18" />
-                  {job.location}
-                </div>
-
-                {job.lastDate && (
-                  <div className="flex items-center gap-2 text-xs text-[#FF3B00] font-bold uppercase mb-8">
-                    <Icon icon="solar:calendar-linear" width="18" height="18" />
-                    Last Date: {new Date(job.lastDate).toLocaleDateString('en-IN')}
+              ) : jobs.map((job, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{
+                    y: -10,
+                    boxShadow: "12px 12px 0px 0px rgba(255,59,0,1)",
+                  }}
+                  className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col h-full group"
+                >
+                  <div className="flex gap-2 mb-4 flex-wrap">
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                      className="bg-black text-white text-xs font-bold uppercase px-3 py-1 border-2 border-black tracking-tight"
+                    >
+                      {job.category}
+                    </motion.span>
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-white text-black text-xs font-bold uppercase px-3 py-1 border-2 border-black tracking-tight"
+                    >
+                      {job.type}
+                    </motion.span>
                   </div>
-                )}
 
-                <div className="mt-auto pt-6 border-t-4 border-black">
-                  <motion.button
-                    onClick={() => openApplyModal(job.title)}
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: "#FF3B00",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-between bg-white text-black font-bold uppercase tracking-tight border-4 border-black px-4 py-3 hover:bg-[#FF3B00] transition-all"
-                  >
-                    Apply Now
-                    <Icon
-                      icon="solar:arrow-right-up-linear"
-                      width="20"
-                      height="20"
-                    />
-                  </motion.button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tighter mb-2 group-hover:text-[#FF3B00] transition-colors">
+                    {job.title}
+                  </h3>
+
+                  <div className="flex items-center gap-2 text-sm font-semibold uppercase mb-4 opacity-80">
+                    <Icon icon="solar:map-point-linear" width="18" height="18" />
+                    {job.location}
+                  </div>
+
+                  {job.lastDate && (
+                    <div className="flex items-center gap-2 text-xs text-[#FF3B00] font-bold uppercase mb-8">
+                      <Icon icon="solar:calendar-linear" width="18" height="18" />
+                      Last Date: {new Date(job.lastDate).toLocaleDateString('en-IN')}
+                    </div>
+                  )}
+
+                  <div className="mt-auto pt-6 border-t-4 border-black">
+                    <motion.button
+                      onClick={() => openApplyModal(job.title)}
+                      whileHover={{
+                        scale: 1.05,
+                        backgroundColor: "#FF3B00",
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full flex items-center justify-between bg-white text-black font-bold uppercase tracking-tight border-4 border-black px-4 py-3 hover:bg-[#FF3B00] transition-all"
+                    >
+                      Apply Now
+                      <Icon
+                        icon="solar:arrow-right-up-linear"
+                        width="20"
+                        height="20"
+                      />
+                    </motion.button>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
         </div>
       </motion.section>
 

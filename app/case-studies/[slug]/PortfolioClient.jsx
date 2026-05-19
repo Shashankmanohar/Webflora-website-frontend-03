@@ -90,6 +90,116 @@ const PortfolioClient = () => {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white pt-24 pb-32">
+      {/* Case Study Schemas */}
+      {project && (
+        <>
+          {/* CASE STUDY SCHEMA */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+
+                "@type": "CreativeWork",
+
+                "@id": `https://webfloratechnologies.com/case-studies/${slug}`,
+
+                "name": project.title,
+
+                "headline": `How Webflora Technologies Built ${project.title}`,
+
+                "description": project.description || `Explore how Webflora Technologies helped ${project.client || "our client"} improve performance, automate workflows, and increase online growth through custom web development and digital solutions.`,
+
+                "url": `https://webfloratechnologies.com/case-studies/${slug}`,
+
+                "image": project.image ? (project.image.startsWith('http') ? project.image : `https://webfloratechnologies.com/${project.image}`) : "https://webfloratechnologies.com/case-study-image.jpg",
+
+                "creator": {
+                  "@type": "Organization",
+                  "name": "Webflora Technologies",
+                  "@id": "https://webfloratechnologies.com/#organization"
+                },
+
+                "publisher": {
+                  "@type": "Organization",
+
+                  "name": "Webflora Technologies",
+
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://webfloratechnologies.com/webflora-logo.svg"
+                  }
+                },
+
+                "datePublished": project.createdAt ? project.createdAt.split('T')[0] : "2026-05-19",
+
+                "dateModified": project.updatedAt ? project.updatedAt.split('T')[0] : (project.createdAt ? project.createdAt.split('T')[0] : "2026-05-19"),
+
+                "inLanguage": "en-IN",
+
+                "keywords": [
+                  "case study",
+                  project.category || "website development",
+                  "software development",
+                  "digital transformation",
+                  "AI automation",
+                  "SEO growth",
+                  "Patna software company"
+                ],
+
+                "about": [
+                  {
+                    "@type": "Thing",
+                    "name": project.category || "Web Development"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "Custom Software Development"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "AI Automation"
+                  }
+                ]
+              })
+            }}
+          />
+
+          {/* BREADCRUMB SCHEMA */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+
+                "@type": "BreadcrumbList",
+
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://webfloratechnologies.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Case Studies",
+                    "item": "https://webfloratechnologies.com/case-studies"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": project.title,
+                    "item": `https://webfloratechnologies.com/case-studies/${slug}`
+                  }
+                ]
+              })
+            }}
+          />
+        </>
+      )}
+
       {/* Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-[200]"

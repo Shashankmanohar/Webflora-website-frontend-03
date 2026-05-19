@@ -159,6 +159,104 @@ const BlogClient = () => {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white pt-32 pb-32 overflow-hidden">
+      {/* Blog Schemas */}
+      {post && (
+        <>
+          {/* BLOG POST SCHEMA */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+
+                "@type": "BlogPosting",
+
+                "@id": `https://webfloratechnologies.com/blog/${slug}`,
+
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": `https://webfloratechnologies.com/blog/${slug}`
+                },
+
+                "headline": post.title,
+
+                "description": post.description || post.excerpt || "Read the latest insights and updates from Webflora Technologies.",
+
+                "image": post.image || "https://webfloratechnologies.com/blog-image.jpg",
+
+                "author": {
+                  "@type": "Organization",
+                  "name": "Webflora Technologies",
+                  "@id": "https://webfloratechnologies.com/#organization"
+                },
+
+                "publisher": {
+                  "@type": "Organization",
+
+                  "name": "Webflora Technologies",
+
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://webfloratechnologies.com/webflora-logo.svg"
+                  }
+                },
+
+                "datePublished": post.createdAt ? post.createdAt.split('T')[0] : "2026-05-19",
+
+                "dateModified": post.updatedAt ? post.updatedAt.split('T')[0] : (post.createdAt ? post.createdAt.split('T')[0] : "2026-05-19"),
+
+                "inLanguage": "en-IN",
+
+                "keywords": post.tags || [
+                  "software development company in Patna",
+                  "web development company Bihar",
+                  "SEO company Patna",
+                  "AI automation company India",
+                  "mobile app development"
+                ],
+
+                "articleSection": post.category || "Technology",
+
+                "wordCount": post.wordCount || "1200"
+              })
+            }}
+          />
+
+          {/* BREADCRUMB SCHEMA */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+
+                "@type": "BreadcrumbList",
+
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://webfloratechnologies.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": "https://webfloratechnologies.com/blog"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": post.title,
+                    "item": `https://webfloratechnologies.com/blog/${slug}`
+                  }
+                ]
+              })
+            }}
+          />
+        </>
+      )}
+
       {/* Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1.5 bg-brand-red origin-left z-[200] shadow-[0_0_10px_rgba(255,60,0,0.5)]"

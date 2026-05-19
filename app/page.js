@@ -121,33 +121,63 @@ const page = () => {
       </div>
 
       {/* JSON-LD Schemas */}
+      {/* MAIN ORGANIZATION SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ProfessionalService",
+
+            "@type": ["Organization", "ProfessionalService"],
+
             "@id": "https://webfloratechnologies.com/#organization",
+
             "name": "Webflora Technologies",
+
             "url": "https://webfloratechnologies.com",
+
             "logo": "https://webfloratechnologies.com/webflora-logo.svg",
-            "description": "Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation services for startups and businesses across India.",
+
+            "image": "https://webfloratechnologies.com/webflora-logo.svg",
+
+            "description":
+              "Webflora Technologies is a software development company based in Patna Bihar offering web development, mobile app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses across India.",
+
+            "telephone": "+918540814729",
+
+            "email": "hello.webflora@gmail.com",
+
+            "identifier": {
+              "@type": "PropertyValue",
+              "name": "Udyam Registration Number",
+              "value": "UDYAM-BR-26-0183379"
+            },
+
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Patna",
               "addressRegion": "Bihar",
-              "addressCountry": "India"
+              "postalCode": "800001",
+              "addressCountry": "IN"
             },
+
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.594095",
+              "longitude": "85.137566"
+            },
+
             "areaServed": {
               "@type": "Country",
               "name": "India"
             },
+
             "sameAs": [
               "https://www.linkedin.com/company/webfloratechnologies/",
-              "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq",
+              "https://www.instagram.com/webflora.technologies",
               "https://www.facebook.com/profile.php?id=61580014195502"
             ],
-            "telephone": "+918540814729",
+
             "founder": [
               {
                 "@type": "Person",
@@ -157,79 +187,158 @@ const page = () => {
                 "@type": "Person",
                 "name": "Amitesh Kumar"
               }
+            ],
+
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+918540814729",
+                "contactType": "customer support",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              },
+              {
+                "@type": "ContactPoint",
+                "telephone": "+918863081255",
+                "contactType": "technical support",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              }
+            ],
+
+            "knowsAbout": [
+              "Web Development",
+              "Website Development",
+              "Mobile App Development",
+              "AI Automation",
+              "SEO Services",
+              "Digital Marketing",
+              "Custom Software Development",
+              "ERP Software Development",
+              "React Development",
+              "Next.js Development",
+              "Node.js Development",
+              "UI UX Design",
+              "Software Development",
+              "Ecommerce Development"
             ]
           })
         }}
       />
+
+      {/* WEBSITE SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+
             "@type": "WebSite",
+
             "@id": "https://webfloratechnologies.com/#website",
+
             "url": "https://webfloratechnologies.com",
+
             "name": "Webflora Technologies",
+
             "publisher": {
               "@id": "https://webfloratechnologies.com/#organization"
             },
+
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://webfloratechnologies.com/?s={search_term_string}",
+              "target":
+                "https://webfloratechnologies.com/?s={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           })
         }}
       />
+
+      {/* LOCAL BUSINESS SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+
             "@type": "LocalBusiness",
+
             "@id": "https://webfloratechnologies.com/#localbusiness",
+
             "name": "Webflora Technologies",
-            "image": "https://webfloratechnologies.com/webflora-logo.svg",
+
+            "description":
+              "Webflora Technologies is a software development company in Patna Bihar offering web development, mobile app development, AI automation, SEO, and digital marketing services.",
+
+            "image":
+              "https://webfloratechnologies.com/webflora-logo.svg",
+
             "url": "https://webfloratechnologies.com",
+
             "telephone": "+918540814729",
+
+            "email": "hello.webflora@gmail.com",
+
+            "priceRange": "$$",
+
+            "openingHours": "Mo-Sa 09:00-19:00",
+
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Patna",
               "addressRegion": "Bihar",
+              "postalCode": "800001",
               "addressCountry": "IN"
             },
+
             "geo": {
               "@type": "GeoCoordinates",
               "latitude": "25.594095",
               "longitude": "85.137566"
-            },
-            "priceRange": "$$"
+            }
           })
         }}
       />
+
+      {/* SERVICE SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+
             "@type": "Service",
-            "serviceType": "Software & Web Development",
+
+            "serviceType": "Software Development Services",
+
             "provider": {
               "@id": "https://webfloratechnologies.com/#organization"
             },
+
             "areaServed": {
-              "@type": "State",
-              "name": "Bihar"
+              "@type": "Country",
+              "name": "India"
             },
+
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "IT Services",
+
+              "name": "Digital Services",
+
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
                     "name": "Website Development"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Mobile App Development"
                   }
                 },
                 {
@@ -243,7 +352,21 @@ const page = () => {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Digital Marketing & SEO"
+                    "name": "AI Automation"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SEO Services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Digital Marketing"
                   }
                 }
               ]
@@ -251,35 +374,27 @@ const page = () => {
           })
         }}
       />
+
+      {/* FAQ SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+
             "@type": "FAQPage",
-            "mainEntity": homeFaqs.map(faq => ({
+
+            "mainEntity": homeFaqs.map((faq) => ({
               "@type": "Question",
+
               "name": faq.question,
+
               "acceptedAnswer": {
                 "@type": "Answer",
+
                 "text": faq.answer
               }
             }))
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "@id": "https://webfloratechnologies.com/#organization",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "50"
-            }
           })
         }}
       />

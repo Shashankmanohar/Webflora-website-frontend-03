@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Home, Briefcase, Info, Phone, BookOpen, Trophy, Globe, Smartphone, Layers, Bot, Share2, ChevronUp, FileText } from "lucide-react";
@@ -73,13 +74,13 @@ export default function Navbar() {
               transition={{ type: "spring", stiffness: 300 }}
               className="w-[140px] h-[50px] lg:w-[150px] lg:h-[55px] flex items-center"
             >
-              <img
+              <Image
                 src="/webflora-logo.svg"
-                alt="WebFlora Logo"
+                alt="WebFlora Technologies Logo"
                 className="w-full h-full object-contain"
                 width={150}
                 height={55}
-                loading="lazy"
+                priority
               />
             </motion.div>
           </Link>

@@ -74,6 +74,10 @@ export default function AboutWebflora() {
           Our goal is to make businesses faster, smarter, and more efficient through technology, with every solution designed for scalability, performance, and long-term growth.
         </p>
 
+        <p className="text-neutral-400 text-lg leading-relaxed">
+          Beyond custom software engineering, Webflora Technologies is deeply committed to empowering local youths and aspiring tech startups in Bihar. By providing high-quality, practical technical education, hands-on software development internships, and mentoring local student communities, we are actively fostering the next generation of software engineers and entrepreneurs within Patna's growing technological ecosystem.
+        </p>
+
         {/* MSME Certification Block */}
         <motion.div
           variants={item}

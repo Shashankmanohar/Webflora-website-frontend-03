@@ -96,13 +96,17 @@ export default function FounderStorySection() {
             </motion.p>
 
             <motion.p variants={item}>
+              Rather than moving to tier-1 metro hubs, the founders made a conscious decision to establish our primary engineering headquarters in Patna. Our goal is to lead high-value IT job creation in Bihar, proving that world-class software development and digital products can be designed and executed locally. By nurturing regional technical talent and offering high-end software development career opportunities, Webflora Technologies is building a robust foundation for software startups in Patna and actively strengthening the technology ecosystem of Patna.
+            </motion.p>
+
+            <motion.p variants={item}>
               The journey began with freelance execution focused on
               high-quality delivery and building client trust. Over time,
               this evolved into a structured agency model. Today, every
               project follows a founder-led strategy with direct involvement,
               clear communication, and strict quality standards. This
-              approach has positioned Webflora as a reliable long-term
-              digital partner that grows alongside its clients.
+              approach has positioned Webflora as a reliable, long-term
+              software development company and digital partner that grows alongside its clients.
             </motion.p>
           </motion.div>
         </div>

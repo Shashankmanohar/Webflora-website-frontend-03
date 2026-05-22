@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] lg:h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-28 pb-12 sm:pb-16 lg:pt-0 lg:pb-20">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-36 sm:pt-40 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
       {/* Glow Background — animated but same visuals */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-screen overflow-hidden bg-black">
@@ -27,28 +27,28 @@ export default function Hero() {
       <motion.div
         animate={{ y: [-25, 25, -25], rotate: [-4, 4, -4] }}
         transition={{ duration: 33, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute right-[10%] top-[20%] hidden lg:block opacity-30 will-change-transform"
+        className="absolute right-[8%] top-[25%] hidden lg:block opacity-35 will-change-transform"
       >
-        <span className="text-brand-red text-[120px]">{"</>"}</span>
+        <span className="text-white text-[80px]">{"</>"}</span>
       </motion.div>
 
       <motion.div
         animate={{ y: [25, -25, 25], rotate: [4, -4, 4] }}
         transition={{ duration: 33, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[10%] bottom-[20%] hidden lg:block opacity-30 will-change-transform"
+        className="absolute left-[8%] bottom-[25%] hidden lg:block opacity-35 will-change-transform"
       >
-        <span className="text-white text-[100px]">{"{}"}</span>
+        <span className="text-white text-[70px]">{"{}"}</span>
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* SEO H1 - Primary authority signal at the top */}
-        <h1 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-4 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
+        <h1 className="text-[#FF3B00] text-[9px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-black mb-3 px-4 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] leading-relaxed">
           Software Development Company in Patna Bihar
         </h1>
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-white/10 bg-white/5 backdrop-blur">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
           <span className="text-[10px] sm:text-xs tracking-wider sm:tracking-widest text-gray-300 font-mono uppercase">
             Top Web Agency in Bihar
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         {/* Heading — elegant reveal */}
-        <h2 className="font-display font-bold tracking-tighter leading-[0.95] text-5xl md:text-7xl lg:text-8xl mb-6 will-change-transform">
+        <h2 className="font-display font-bold tracking-tighter leading-[0.98] text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 will-change-transform">
           ANYTHING THAT <br />
           <span className="text-gradient inline-block">CAN BE BUILT,</span>
           <br />
@@ -64,15 +64,15 @@ export default function Hero() {
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
-          SOFTWARE <span className="text-white">•</span> WEB <span className="text-white">•</span> MOBILE <span className="text-white">•</span> AI SOLUTIONS
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-8 uppercase tracking-wider">
+          CUSTOM SOFTWARE <span className="text-[#FF3B00]">•</span> WEBSITE DEVELOPMENT <span className="text-[#FF3B00]">•</span> MOBILE APPS <span className="text-[#FF3B00]">•</span> AI WORKFLOW AUTOMATION
         </p>
 
         {/* Actions — premium hover micro-interactions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="btn-primary px-10 py-4 w-full sm:w-auto cursor-pointer flex items-center justify-center"
+            className="btn-primary px-8 py-3.5 w-full sm:w-auto cursor-pointer flex items-center justify-center"
           >
             Start Your Project
           </Link>
@@ -85,7 +85,7 @@ export default function Hero() {
 
             <Link
               href="#work"
-              className="relative px-10 py-4 bg-transparent border-1 border-orange-600 text-white text-lg font-light tracking-wide hover:bg-orange-800 hover:text-white transition-all duration-300 flex items-center justify-center"
+              className="relative px-8 py-3.5 bg-transparent border-1 border-orange-600 text-white text-base font-light tracking-wide hover:bg-orange-800 hover:text-white transition-all duration-300 flex items-center justify-center"
             >
               View Our Work
             </Link>

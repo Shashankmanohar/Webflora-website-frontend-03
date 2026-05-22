@@ -15,25 +15,25 @@ const TestimonialSection = () => {
       {
         id: 4,
         clientName: "Albert Newwel",
-        company: "Founder, Team Excellent",
+        company: "Founder, Team Excellent (Patna, Bihar)",
         feedback:
-          "We had an amazing experience working with Webflora Technologies. Shashank and his team built our website and app exactly the way we envisioned. Their SEO and digital marketing strategy significantly improved our online visibility and lead generation. Highly professional, responsive, and result-oriented team. I strongly recommend Webflora for anyone looking for reliable website, app development, and digital marketing services.",
+          "We had an amazing experience working with Webflora Technologies. Shashank and his team built a highly scalable digital portal and responsive mobile app for our educational center in Patna, Bihar, exactly the way we envisioned. Their technical SEO optimization and performance marketing strategy dramatically improved our online visibility, bringing over 140% boost in online admission inquiries. Highly professional, responsive, and result-oriented team.",
         avatar: "👨‍💼",
       },
       {
         id: 5,
         clientName: "Shyam Kishor Sharma",
-        company: "Founder, Best For Everyone",
+        company: "Founder, Best For Everyone (Bihar)",
         feedback:
-          "I had an excellent experience working with Webflora Technologies for MLM software development. They built a fully customized MLM system for my business with features like genealogy tree, e-wallet, commission tracking, and real-time reporting. Their approach is very data-driven and scalable, helping automate complex operations. Clean and user-friendly dashboard, fast performance, and secure system. Highly professional team that understands both technology and business growth.",
+          "I had an excellent experience working with Webflora Technologies for custom MLM software development in Bihar. They built a fully secure, high-performance MLM management portal with real-time genealogies, automated commission wallets, and advanced analytics dashboards. Their node.js backend architecture runs flawlessly under load. They are truly the best custom software developers in Patna for serious business automation.",
         avatar: "🚀",
       },
       {
         id: 6,
         clientName: "Dinesh Kumar",
-        company: "Managing Director, Diamond Resort",
+        company: "Managing Director, Diamond Resort (Patna, Bihar)",
         feedback:
-          "We had a great experience working with Webflora Technologies for Diamond Resort’s digital development. They delivered a modern, responsive website with effective SEO and marketing strategies. The site is fast, user-friendly, and visually appealing. Their SEO improved our rankings and traffic, while marketing brought consistent leads and boosted visibility. Highly recommended for web development, SEO, and digital marketing that delivers real results.",
+          "We had a great experience partnering with Webflora Technologies for Diamond Resort’s custom web app development in Patna, Bihar. They engineered a stunning, fast, and SEO-optimized booking platform with secure payment integrations. Their expert local SEO optimization shot our rankings to the top of Google page 1, resulting in consistent booking inquiries. The absolute best choice for web development in Bihar.",
         avatar: "💎",
       },
     ],

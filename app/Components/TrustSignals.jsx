@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
-import { TrendingUp, ShieldCheck, Zap } from "lucide-react";
+import { TrendingUp, ShieldCheck, Zap, Users, Settings, MessageSquare } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -94,76 +93,79 @@ export default function TrustSignals() {
               <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
             </motion.div>
             <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter leading-none uppercase">
-              Why Businesses <span className="text-primary">Choose Us</span>
+              Why Businesses <span className="text-[#ff3c00]">Choose Us</span>
             </motion.h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
             {[
               { 
-                icon: "solar:bolt-bold-duotone", 
+                icon: Zap, 
                 title: "Performance-focused", 
                 desc: "We engineer systems optimized for speed, Core Web Vitals, and UX to maximize your conversion rates.",
                 span: "md:col-span-3",
                 color: "from-orange-500/10"
               },
               { 
-                icon: "solar:shield-check-bold-duotone", 
+                icon: ShieldCheck, 
                 title: "Scalable Architecture", 
                 desc: "Codebases and cloud infrastructure designed to grow seamlessly alongside your business.",
                 span: "md:col-span-3",
                 color: "from-blue-500/10"
               },
               { 
-                icon: "solar:user-speak-bold-duotone", 
+                icon: Users, 
                 title: "Founder-led Execution", 
                 desc: "Direct involvement from technical founders ensuring premium quality and strategic alignment.",
                 span: "md:col-span-2",
                 color: "from-purple-500/10"
               },
               { 
-                icon: "solar:graph-up-bold-duotone", 
+                icon: TrendingUp, 
                 title: "SEO-first Systems", 
                 desc: "In-built semantic HTML and schema architecture to dominate search rankings.",
                 span: "md:col-span-2",
                 color: "from-emerald-500/10"
               },
               { 
-                icon: "solar:settings-bold-duotone", 
+                icon: Settings, 
                 title: "Long-term Support", 
                 desc: "Continuous maintenance and security patches post-launch.",
                 span: "md:col-span-2",
                 color: "from-pink-500/10"
               },
               { 
-                icon: "solar:chat-square-check-bold-duotone", 
+                icon: MessageSquare, 
                 title: "Transparent Communication", 
                 desc: "Clear roadmaps, realistic timelines, and consistent updates with no hidden complexities.",
                 span: "md:col-span-6",
                 color: "from-[#ff3c00]/10"
               }
-            ].map((reason, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={itemVariants}
-                className={`group relative p-10 rounded-[2.5rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
-              >
-                {/* Background Accent */}
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${reason.color} to-transparent opacity-0 group-hover:opacity-100 blur-[80px] transition-all duration-700 pointer-events-none`} />
-                
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
-                    <Icon icon={reason.icon} className="w-8 h-8" />
+            ].map((reason, idx) => {
+              const IconComponent = reason.icon;
+              return (
+                <motion.div 
+                  key={idx} 
+                  variants={itemVariants}
+                  className={`group relative p-10 rounded-[2.5rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
+                >
+                  {/* Background Accent */}
+                  <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${reason.color} to-transparent opacity-0 group-hover:opacity-100 blur-[80px] transition-all duration-700 pointer-events-none`} />
+                  
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-8 group-hover:scale-110 group-hover:bg-[#ff3c00] group-hover:text-black transition-all duration-500 shadow-inner">
+                      <IconComponent className="w-7 h-7" />
+                    </div>
+                    
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-tight uppercase">{reason.title}</h3>
+                    <p className="text-gray-500 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500">{reason.desc}</p>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-tight uppercase">{reason.title}</h3>
-                  <p className="text-gray-500 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500">{reason.desc}</p>
-                </div>
-                
-                {/* Modern Border Accent */}
-                <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              </motion.div>
-            ))}
+                  {/* Modern Border Accent */}
+                  <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#ff3c00]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
         

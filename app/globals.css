@@ -310,6 +310,9 @@ nav iconify-icon,
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-brand: var(--primary);
+  --color-brand-red: var(--brand-red);
 }
 
 .dark {

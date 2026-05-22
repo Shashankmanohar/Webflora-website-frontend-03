@@ -4,34 +4,34 @@ export const servicesData = {
   "website-development-company-in-patna": {
     title: "Website Development Company in Patna Bihar",
     headline: "Custom Website Development Services",
-    subtext: "Webflora Technologies provides SEO-friendly website development services in Patna Bihar using Next.js, React, Tailwind CSS, and scalable backend technologies for startups and businesses.",
-    geoTitle: "Custom Website Development Services",
-    geoContent: "Webflora Technologies provides SEO-friendly website development services in Patna Bihar using Next.js, React, Tailwind CSS, and scalable backend technologies for startups and businesses.",
+    subtext: "Webflora Technologies is the premier website development company in Patna, Bihar, delivering high-performance, SEO-friendly websites using Next.js, React, Tailwind CSS, and scalable cloud architectures. We build fast, responsive, and secure digital platforms that help startups, coaching institutes, and businesses in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India turn web traffic into revenue. Our custom solutions start from ₹25,000.",
+    geoTitle: "Premium Website Development Services in Bihar",
+    geoContent: "As the leading website development company in Patna, Bihar, Webflora Technologies is committed to elevating the regional digital ecosystem. We specialize in server-side rendered, lightning-fast web solutions custom-tailored for regional trade hubs. Whether you need a corporate portal or an ecommerce platform, we serve businesses in Patna, Muzaffarpur, Gaya, Bhagalpur, and across all of Bihar with local SEO-optimized systems.",
     heroBadge: "Top Website Agency in Bihar",
     problemTitle: "Website Performance Challenges",
     problems: [
-      "Slow loading times affecting SEO and user drop-offs",
-      "Poor mobile responsiveness causing high bounce rates",
-      "Outdated design that damages brand authority",
-      "Generic templates with zero lead generation",
-      "Lack of ongoing maintenance and technical support"
+      "Slow loading times affecting Google search rankings and driving user drop-offs",
+      "Poor mobile responsiveness causing high bounce rates on smartphone browsers",
+      "Outdated web interfaces that damage your brand's digital authority in the market",
+      "Generic WordPress templates with zero conversion optimization or high-intent leads",
+      "Lack of ongoing technical support, MSME reliability, and system maintenance"
     ],
     subServices: [
-      { title: "Custom Website Development", icon: "lucide:globe", desc: "Tailored business website development with scalable architecture and premium UI/UX." },
-      { title: "Ecommerce Website Development", icon: "lucide:shopping-cart", desc: "High-converting online stores with payment gateways and inventory management." },
-      { title: "Responsive Web Design", icon: "lucide:smartphone", desc: "Mobile-first websites designed to look perfect on all devices and screen sizes." },
-      { title: "SEO-Friendly Websites", icon: "lucide:search", desc: "Websites engineered with technical SEO best practices for high Google rankings." },
-      { title: "Website Redesign Services", icon: "lucide:refresh-cw", desc: "Transform outdated sites with modern design systems and faster load times." },
-      { title: "Custom Web Applications", icon: "lucide:app-window", desc: "Advanced cloud-based software tailored to specific business operations." }
+      { title: "Custom Website Development", icon: "lucide:globe", desc: "Tailored business website development with scalable Next.js architecture and premium UI/UX starting from ₹25,000." },
+      { title: "Ecommerce Website Development", icon: "lucide:shopping-cart", desc: "High-converting online stores built on React and Node.js with secure checkout, payment gateways, GST-compliant billing, and full inventory management." },
+      { title: "Responsive Web Design", icon: "lucide:smartphone", desc: "Mobile-first websites designed by expert UI/UX designers to look breathtaking on all modern mobile screens, tablets, and desktops." },
+      { title: "SEO-Friendly Websites", icon: "lucide:search", desc: "Websites engineered with semantic HTML, rich JSON-LD schemas, and speed optimization for top Google search visibility in Patna and Bihar." },
+      { title: "Website Redesign Services", icon: "lucide:refresh-cw", desc: "Re-engineer legacy or outdated sites with modern React systems, clean code, and sub-second page loads to lower bounce rates." },
+      { title: "Custom Web Applications", icon: "lucide:app-window", desc: "Advanced SaaS portals and cloud-based custom software tailored to automate your unique business workflows and operations." }
     ],
     process: [
-      { title: "Requirement Analysis", desc: "We understand your business goals, target audience, and technical requirements." },
-      { title: "UI/UX Design", desc: "Creating high-converting, user-centric interfaces aligned with your brand identity." },
-      { title: "Frontend Development", desc: "Building fast, responsive components using React and Next.js." },
-      { title: "Backend Integration", desc: "Developing secure APIs, databases, and third-party integrations." },
-      { title: "SEO Optimization", desc: "Implementing technical SEO, fast load times, and semantic HTML." },
-      { title: "Testing & Deployment", desc: "Rigorous quality assurance before a seamless cloud deployment." },
-      { title: "Maintenance & Support", desc: "Ongoing updates, security monitoring, and performance scaling." }
+      { title: "Requirement Analysis", desc: "We research your market competitors and define your core commercial business goals." },
+      { title: "UI/UX Design", desc: "Crafting high-converting, premium wireframes and visual systems aligned with your brand identity by expert designers." },
+      { title: "Frontend Development", desc: "Engineering ultra-fast, responsive web interfaces using React, Next.js, and sleek CSS animations." },
+      { title: "Backend Integration", desc: "Building highly secure REST APIs, robust databases (PostgreSQL/MongoDB), and third-party integrations." },
+      { title: "SEO Optimization", desc: "Injecting dynamic JSON-LD schemas, meta keywords, and Core Web Vitals optimization to rank on Google." },
+      { title: "Testing & Deployment", desc: "Rigorous quality assurance testing for security and performance before launching onto secure Vercel or AWS cloud." },
+      { title: "Maintenance & Support", desc: "Ongoing security patches, updates, backups, and cloud scalability support to keep your site 100% active." }
     ],
     industries: [
       "Coaching Institutes",
@@ -43,16 +43,16 @@ export const servicesData = {
       "Local Businesses"
     ],
     solutions: [
-      "Lightning-fast Next.js architecture",
-      "Mobile-first responsive web design",
-      "Custom ecommerce website platforms",
-      "SEO & Core Web Vitals optimization",
-      "Scalable headless CMS integration"
+      "Lightning-fast Next.js & React architecture for instant loading speed",
+      "Mobile-first responsive web design with premium, custom UI/UX",
+      "Custom ecommerce website development company systems with payment gates",
+      "SEO, dynamic JSON-LD schema & Core Web Vitals optimization",
+      "Scalable headless CMS & secure admin control dashboards"
     ],
     benefits: [
       {
         title: "Speed Optimization",
-        description: "Achieve 90+ Lighthouse scores with server-side rendering and optimized assets.",
+        description: "Achieve 90+ Google Lighthouse and Core Web Vitals scores with static generation, server-side rendering, and asset caching.",
         icon: "lucide:zap",
         stat: "99.9%",
         statLabel: "Uptime Guaranteed",
@@ -61,7 +61,7 @@ export const servicesData = {
       },
       {
         title: "SEO Excellence",
-        description: "Built-in SEO best practices to ensure your site ranks high on search engines.",
+        description: "Built-in local SEO architecture to rank high in Patna and Bihar Google maps and search results, driving organic search traffic.",
         icon: "lucide:search",
         stat: "150%",
         statLabel: "Traffic Increase",
@@ -70,7 +70,7 @@ export const servicesData = {
       },
       {
         title: "Conversion Focus",
-        description: "Strategically designed user flows that lead to higher lead generation and sales.",
+        description: "Strategically placed call-to-actions (CTAs) and interactive elements designed by professional UI designers to double your business leads.",
         icon: "lucide:trending-up",
         stat: "45%",
         statLabel: "Conversion Lift",
@@ -81,32 +81,37 @@ export const servicesData = {
     faqs: [
       {
         question: "How much does website development cost in Patna?",
-        answer: "Website development costs depend on project complexity, design requirements, features, integrations, and scalability needs. Basic business websites usually start from ₹25,000, while advanced ecommerce platforms and custom web applications require larger investment.",
+        answer: "Website development costs depend on project complexity, design requirements, and scalability. At Webflora Technologies, a custom basic business website package starts from ₹25,000, while custom e-commerce web applications and enterprise portals are priced competitively based on features.",
         icon: "lucide:wallet"
       },
       {
+        question: "Why is Webflora the best website development company in Patna?",
+        answer: "We are an MSME-registered (UDYAM-BR-26-0183379) professional agency offering custom, sub-second loading Next.js and React websites. We don't use generic, slow templates; we design custom interfaces with a strong focus on local SEO, speed, and conversion metrics.",
+        icon: "lucide:award"
+      },
+      {
         question: "Do you create SEO-friendly websites?",
-        answer: "Yes, all websites are developed with SEO best practices, mobile responsiveness, fast loading speed, structured content, and Core Web Vitals optimization to improve search engine visibility and user experience.",
+        answer: "Yes, all websites are developed with technical SEO best practices, mobile responsiveness, fast loading speed, structured JSON-LD schemas, and Core Web Vitals optimization to improve search engine visibility and user experience.",
         icon: "lucide:search"
       },
       {
         question: "Which technologies do you use for web development?",
-        answer: "We use modern technologies including Next.js, React, Tailwind CSS, Node.js, MongoDB, PostgreSQL, and scalable backend frameworks to build high-performance websites and web applications.",
+        answer: "We use modern technologies including Next.js, React, Tailwind CSS, Node.js, MongoDB, PostgreSQL, and scalable backend frameworks to build high-performance websites and custom web applications.",
         icon: "lucide:code"
       },
       {
         question: "Can you redesign existing websites?",
-        answer: "Yes, we redesign outdated websites by improving UI/UX, performance, SEO structure, responsiveness, loading speed, and overall user experience for better business results.",
+        answer: "Yes, we redesign outdated websites by improving UI/UX, page performance, SEO structure, mobile responsiveness, loading speed, and overall user experience for better business results.",
         icon: "lucide:refresh-cw"
       },
       {
         question: "Do you develop ecommerce websites?",
-        answer: "Yes, we build ecommerce websites with secure payment gateways, inventory systems, product management, order tracking, and scalable architecture for online businesses.",
+        answer: "Yes, we build custom ecommerce websites with secure payment gateways, inventory systems, product management, order tracking, and scalable architecture for online businesses in Patna and Bihar.",
         icon: "lucide:shopping-cart"
       },
       {
         question: "How long does it take to build a website?",
-        answer: "Website development timelines vary depending on project requirements. Most business websites take between 2 to 6 weeks, while advanced platforms and web applications may require longer development cycles.",
+        answer: "Website development timelines vary depending on project requirements. Most custom business websites take between 2 to 6 weeks, while advanced platforms and SaaS web applications may require longer development cycles.",
         icon: "lucide:calendar"
       },
       {
@@ -127,34 +132,34 @@ export const servicesData = {
   "mobile-app-development-company-in-patna": {
     title: "Mobile App Development Company in Patna Bihar",
     headline: "Android & iOS App Development Services",
-    subtext: "We develop scalable Android and iOS mobile applications using React Native, Flutter, Firebase, and modern app technologies for startups and businesses across Bihar and India.",
-    geoTitle: "Android & iOS App Development Services",
-    geoContent: "We develop scalable Android and iOS mobile applications using React Native, Flutter, Firebase, and modern app technologies for startups and businesses across Bihar and India.",
+    subtext: "Webflora Technologies is the leading mobile app development company in Patna, Bihar. We design, build, and deploy custom cross-platform mobile apps for Android and iOS using Flutter, React Native, and robust Node.js backends. From high-converting e-commerce apps to educational portals, we empower startups and enterprises across Patna, Muzaffarpur, Gaya, Bhagalpur, and all of India. Our custom app packages start from ₹80,000.",
+    geoTitle: "Android & iOS App Development Services in Bihar",
+    geoContent: "As Patna's premier mobile app development company, we craft feature-rich, high-performance Android and iOS apps tailored to local and national markets. We integrate state-of-the-art push notifications, real-time sync, and secure local payment gateways (UPI, Paytm, Razorpay) to help businesses across Bihar scale rapidly.",
     heroBadge: "Next-Gen Mobile Apps",
     problemTitle: "Mobile Experience Gaps",
     problems: [
-      "Fragmented user experience",
-      "Slow performance on older devices",
-      "High development costs for two platforms",
-      "Poor app store visibility",
-      "Lack of real-time updates"
+      "Fragmented performance and slow UI layouts across low-end mobile devices",
+      "High development budgets and time delays of maintaining two separate native codebases",
+      "Poor visibility on Google Play Store and Apple App Store due to lack of standard ASO (App Store Optimization)",
+      "Insecure customer payment integrations and sluggish data synchronization",
+      "Lack of post-launch maintenance, app updates, and OS version compliance"
     ],
     subServices: [
-      { title: "Ecommerce Apps", icon: "lucide:shopping-bag", desc: "Online shopping apps with payment integration and order management." },
-      { title: "Coaching Institute Apps", icon: "lucide:book-open", desc: "Student management, attendance, and learning systems." },
-      { title: "CRM Apps", icon: "lucide:users", desc: "Customer and sales management mobile applications." },
-      { title: "Booking Apps", icon: "lucide:calendar-check", desc: "Appointment and reservation systems for services and clinics." },
-      { title: "AI-Powered Apps", icon: "lucide:bot", desc: "Apps integrated with AI chatbots and automation systems." },
-      { title: "Business Mobile Applications", icon: "lucide:briefcase", desc: "Custom mobile app solutions to manage daily operations." }
+      { title: "Ecommerce Apps", icon: "lucide:shopping-bag", desc: "Feature-rich online shopping apps with secure UPI/card checkout, live order tracking, and sales push notifications starting from ₹80,000." },
+      { title: "Coaching Institute Apps", icon: "lucide:book-open", desc: "LMS systems, student onboarding, video lectures, online mock tests, attendance tracking, and digital study materials." },
+      { title: "CRM & ERP Apps", icon: "lucide:users", desc: "On-the-go corporate mobile applications to track field sales, client relationships, and inventory status." },
+      { title: "Booking & Delivery Apps", icon: "lucide:calendar-check", desc: "On-demand service booking, appointment scheduling for healthcare clinics, and delivery dispatch systems." },
+      { title: "AI-Powered Apps", icon: "lucide:bot", desc: "Innovative mobile apps featuring integrated AI chatbots, intelligent search, and n8n workflow automations." },
+      { title: "Business Mobile Applications", icon: "lucide:briefcase", desc: "Customized mobile app architectures built on Flutter or React Native to completely digitize internal workflows." }
     ],
     process: [
       { title: "Requirement Analysis", desc: "Understanding your business goals, target audience, and app features." },
-      { title: "Wireframing & UI/UX Design", desc: "Creating intuitive, user-centric designs for maximum engagement." },
-      { title: "App Development", desc: "Building the application using React Native or Flutter for cross-platform efficiency." },
-      { title: "API Integration", desc: "Connecting backend systems, databases, and third-party services securely." },
-      { title: "Testing & QA", desc: "Rigorous testing to ensure bug-free performance across all devices." },
-      { title: "App Store Deployment", desc: "Launching your app on the Google Play Store and Apple App Store." },
-      { title: "Maintenance & Updates", desc: "Continuous monitoring, performance upgrades, and feature enhancements." }
+      { title: "Wireframing & UI/UX Design", desc: "Creating intuitive, user-centric designs for maximum engagement by professional UI/UX designers." },
+      { title: "App Development", desc: "Building the application using React Native or Flutter for cross-platform efficiency and high performance." },
+      { title: "API Integration", desc: "Connecting backend systems, databases, and third-party payment services securely." },
+      { title: "Testing & QA", desc: "Rigorous testing to ensure bug-free performance across all devices and screen resolutions." },
+      { title: "App Store Deployment", desc: "Launching your app on the Google Play Store and Apple App Store with keyword optimization." },
+      { title: "Maintenance & Updates", desc: "Continuous monitoring, performance upgrades, and feature enhancements to match new OS versions." }
     ],
     industries: [
       "Education",
@@ -165,16 +170,16 @@ export const servicesData = {
       "Restaurants"
     ],
     solutions: [
-      "Cross-platform React Native/Flutter development",
-      "Native-level performance optimization",
-      "User-centric UI/UX design",
-      "App Store Optimization (ASO) for Google Play and Apple App Store visibility to improve discoverability and downloads.",
-      "Real-time data synchronization"
+      "Cross-platform React Native and Flutter development",
+      "Sub-second native-level rendering and 60FPS animations",
+      "User-centric premium UI/UX design with dark-mode support",
+      "App Store Optimization (ASO) for Google Play and Apple App Store visibility",
+      "Secure offline database storage and real-time syncing"
     ],
     benefits: [
       {
         title: "Native Performance",
-        description: "Smooth animations and optimized performance ensure better user experience and higher retention rates.",
+        description: "Smooth 60FPS interface transitions and lightweight app bundles ensure exceptional user retention and 5-star ratings.",
         icon: "lucide:smartphone",
         stat: "60FPS",
         statLabel: "UI Performance",
@@ -183,7 +188,7 @@ export const servicesData = {
       },
       {
         title: "Cross-Platform Efficiency",
-        description: "One codebase for both iOS and Android, saving time and development costs.",
+        description: "Single codebase for both iOS and Android platforms, slashing initial development budgets by up to 50%.",
         icon: "lucide:layers",
         stat: "50%",
         statLabel: "Cost Reduction",
@@ -192,7 +197,7 @@ export const servicesData = {
       },
       {
         title: "High Engagement",
-        description: "Features like push notifications and offline access to keep users coming back.",
+        description: "Features like push notifications and offline access to keep users active and drive repeat sales.",
         icon: "lucide:users",
         stat: "3x",
         statLabel: "User Retention",
@@ -202,14 +207,19 @@ export const servicesData = {
     ],
     faqs: [
       {
-        question: "How much does mobile app development cost?",
-        answer: "Mobile app development costs depend on app features, platform requirements, integrations, design complexity, and scalability needs. Basic business apps usually start from ₹80,000 while advanced applications require higher investment.",
+        question: "How much does mobile app development cost in Patna Bihar?",
+        answer: "At Webflora Technologies, the premier mobile app development company in Patna, basic hybrid mobile app packages using Flutter or React Native start from ₹80,000. Advanced applications featuring real-time tracking, chat engines, or custom AI integrations are quoted based on technical requirements.",
         icon: "lucide:wallet"
       },
       {
         question: "Do you develop apps for both Android and iOS?",
         answer: "Yes, we develop applications for Android and iOS platforms using technologies like React Native, Flutter, Kotlin, and Swift to ensure smooth cross-platform performance.",
         icon: "lucide:smartphone"
+      },
+      {
+        question: "Do you deploy the applications to Google Play and Apple App Store?",
+        answer: "Yes, as a full-service mobile app development company in Patna, we handle the entire launch cycle—from technical code optimization and App Store Optimization (ASO) to official deployment and approval on both Apple App Store and Google Play Store.",
+        icon: "lucide:refresh-cw"
       },
       {
         question: "Which framework is better: Flutter or React Native?",
@@ -220,11 +230,6 @@ export const servicesData = {
         question: "How long does mobile app development take?",
         answer: "Development timelines depend on app complexity, features, integrations, and UI/UX requirements. Most business applications take between 6 to 16 weeks for development and deployment.",
         icon: "lucide:calendar"
-      },
-      {
-        question: "Do you provide app maintenance and updates?",
-        answer: "Yes, we provide ongoing app maintenance, bug fixing, feature upgrades, performance optimization, and scalability support after launch.",
-        icon: "lucide:refresh-cw"
       },
       {
         question: "Can you build ecommerce mobile apps?",
@@ -249,32 +254,32 @@ export const servicesData = {
   "software-development-company-in-patna": {
     title: "Custom Software Development Company in Patna Bihar",
     headline: "Enterprise Software Development Solutions",
-    subtext: "We develop scalable ERP systems, CRM software, automation platforms, management systems, and custom enterprise software solutions for businesses and organizations.",
-    geoTitle: "Enterprise Software Development Solutions",
-    geoContent: "We develop scalable ERP systems, CRM software, automation platforms, management systems, and custom enterprise software solutions for businesses and organizations.",
+    subtext: "Webflora Technologies is an MSME-registered (UDYAM-BR-26-0183379) professional custom software development company in Patna, Bihar. We build enterprise-grade CRM systems, scalable ERP software, automated billing engines, smart HR portals, and custom web applications. We leverage Python, Go, AWS, and secure databases to streamline business operations for enterprises in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India. Custom software systems start from ₹1,00,000.",
+    geoTitle: "Enterprise Software Development Solutions in Bihar",
+    geoContent: "As the most trusted custom software development company in Patna, Bihar, we specialize in localizing enterprise technology. Our solutions include GST-compliant billing engines, localized inventory alerts, and QR-based digital management systems. We serve manufacturing units, retail chains, and educational groups across Bihar with robust SaaS platforms.",
     heroBadge: "Enterprise Solutions",
     problemTitle: "Operational Inefficiencies",
     problems: [
-      "Manual data entry and human error",
-      "Disconnected legacy systems",
-      "Lack of real-time business insights",
-      "Security vulnerabilities",
-      "Inability to scale with growth"
+      "Repetitive manual data entry resulting in high operational costs and human error",
+      "Disconnected legacy systems that do not sync data or communicate in real time",
+      "Lack of analytical dashboards and business intelligence reporting for executive decisions",
+      "Critical security vulnerabilities and threat exposures in legacy software",
+      "Inflexible software architectures that fail to scale as the business volume expands"
     ],
     subServices: [
-      { title: "ERP System Development", icon: "lucide:server", desc: "Complete business management systems for operations and data." },
-      { title: "CRM Software Development", icon: "lucide:users", desc: "Customer management systems to track leads and relationships." },
-      { title: "Billing & Invoice Generator Software", icon: "lucide:receipt", desc: "Automated billing systems for shops and businesses." },
-      { title: "AI-Based Attendance System", icon: "lucide:user-check", desc: "Smart attendance using AI (face recognition/automation)." },
-      { title: "QR Code Attendance System", icon: "lucide:qr-code", desc: "Quick and contactless attendance tracking solution." },
-      { title: "Custom Business Software Development", icon: "lucide:code", desc: "Tailored systems for unique business workflows." }
+      { title: "ERP System Development", icon: "lucide:server", desc: "Complete custom enterprise resource planning systems to automate inventory, warehouse logistics, payroll, and workflows." },
+      { title: "CRM Software Development", icon: "lucide:users", desc: "Customer relationship management platforms to capture digital leads, track sales pipelines, and automate follow-up emails." },
+      { title: "Billing & Invoice Generator Software", icon: "lucide:receipt", desc: "Lightning-fast, GST-compliant billing software for wholesalers, distributors, and retail businesses in Patna and Bihar." },
+      { title: "AI-Based Attendance System", icon: "lucide:user-check", desc: "Next-generation smart attendance trackers using face recognition, automated geofencing, and AI validation." },
+      { title: "QR Code Attendance System", icon: "lucide:qr-code", desc: "Contactless, secure, and fast QR-based check-in systems designed specifically for local coaching institutes and offices." },
+      { title: "Custom Business Software Development", icon: "lucide:code", desc: "Fully customized software systems coded from scratch to address your exact organizational operational logic." }
     ],
     process: [
       { title: "Requirements Gathering", desc: "Detailed analysis of your business logic and software needs." },
       { title: "System Architecture", desc: "Designing a scalable and secure database and system infrastructure." },
-      { title: "Agile Development", desc: "Iterative coding to ensure rapid delivery and flexibility." },
+      { title: "Agile Development", desc: "Iterative coding to ensure rapid delivery and flexibility using Scrum methods." },
       { title: "Security & Load Testing", desc: "Rigorous testing against vulnerabilities and high traffic volumes." },
-      { title: "Deployment", desc: "Smooth rollout with minimal downtime." },
+      { title: "Deployment", desc: "Smooth rollout with minimal downtime and data migration support." },
       { title: "Training & Onboarding", desc: "Helping your team adapt to the new custom software seamlessly." },
       { title: "Ongoing Maintenance", desc: "Continuous updates, backups, and feature additions." }
     ],
@@ -323,9 +328,14 @@ export const servicesData = {
     ],
     faqs: [
       {
-        question: "How much does custom software development cost?",
-        answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,0,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
+        question: "How much does custom software development cost in Patna?",
+        answer: "Custom software systems designed by Webflora Technologies start from ₹1,0,000. The ultimate pricing depends on system architecture complexity, active user counts, security standards, and third-party integrations.",
         icon: "lucide:indian-rupee"
+      },
+      {
+        question: "Is Webflora Technologies a registered company?",
+        answer: "Yes, Webflora Technologies is an officially registered Professional Service under the MSME Ministry, Government of India, with registration ID UDYAM-BR-26-0183379. This guarantees extreme structural reliability, standard commercial compliance, and long-term project support.",
+        icon: "lucide:award"
       },
       {
         question: "How long does it take to develop software?",
@@ -355,25 +365,25 @@ export const servicesData = {
   "ai-automation-company-in-patna": {
     title: "AI Automation Company in Patna Bihar",
     headline: "Business AI Automation Services",
-    subtext: "Webflora Technologies provides AI automation, chatbot development, workflow automation, CRM automation, and AI integration services for businesses across Patna, Bihar, and India.",
-    geoTitle: "Business AI Automation Services",
-    geoContent: "Webflora Technologies provides AI automation, chatbot development, workflow automation, CRM automation, and AI integration services for businesses across Patna, Bihar, and India.",
+    subtext: "Webflora Technologies is the pioneering AI automation company in Patna, Bihar. We design and implement smart workflow automations, custom AI chatbots, OpenAI/Claude API integrations, n8n chatbot workflows, and automated CRM pipelines. We help companies in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India eliminate manual bottlenecks and operate 24/7. Our custom automation workflows start from ₹35,000.",
+    geoTitle: "Business AI Automation Services in Bihar",
+    geoContent: "As Bihar's first specialized AI automation company, we bring cutting-edge Generative AI and automated processes to local enterprises. We build custom n8n workflow chatbots, WhatsApp Business automation setups, and CRM sync systems that reduce response times, capture leads, and boost productivity for coaching institutes, startups, and clinics across Patna and Bihar.",
     heroBadge: "AI-First Future",
     problemTitle: "Information Overload",
     problems: [
-      "Slow response times to customer queries",
-      "High costs of manual data processing",
-      "Difficulty in analyzing large datasets",
-      "Inconsistent customer support",
-      "Underutilized business data"
+      "Delayed lead responses causing potential customers to drop off and choose competitors",
+      "Exorbitant manual labor costs associated with data entry and document processing",
+      "Missed business opportunities due to lack of 24/7 customer support on WhatsApp and web",
+      "Inconsistent follow-ups and unorganized lead data in customer relationship databases",
+      "Valuable business data lying unused instead of driving automated alerts and growth analytics"
     ],
     subServices: [
-      { title: "AI Chatbots for Customer Support", icon: "lucide:message-square", desc: "Automated customer support and interaction systems." },
-      { title: "Lead Qualification Automation", icon: "lucide:magnet", desc: "Automate lead capture, follow-ups, and nurturing." },
-      { title: "WhatsApp Automation", icon: "lucide:message-circle", desc: "Intelligent bots handling WhatsApp inquiries and support." },
-      { title: "CRM Workflow Automation", icon: "lucide:users", desc: "Sync data and automate tasks within your CRM seamlessly." },
-      { title: "Data Extraction Automation", icon: "lucide:database", desc: "Automatically extract and process data from documents." },
-      { title: "n8n Automation Solutions", icon: "lucide:settings", desc: "Custom automation workflows and API integrations using n8n." }
+      { title: "AI Chatbots for Customer Support", icon: "lucide:message-square", desc: "Intelligent customer support chatbots powered by GPT-4 and custom knowledge bases to answer inquiries instantly." },
+      { title: "Lead Qualification Automation", icon: "lucide:magnet", desc: "Automated lead capturing, grading, and instant CRM routing systems to turn website visitors into buyers." },
+      { title: "WhatsApp Automation", icon: "lucide:message-circle", desc: "Official WhatsApp API integrations and intelligent bots to automate order alerts, FAQs, and support workflows." },
+      { title: "CRM Workflow Automation", icon: "lucide:users", desc: "Seamless bi-directional data syncing between tools like HubSpot, Salesforce, sheets, and databases." },
+      { title: "Data Extraction Automation", icon: "lucide:database", desc: "Smart document parsers that automatically read invoices, resumes, and PDFs to extract structured data." },
+      { title: "n8n Automation Solutions", icon: "lucide:settings", desc: "Custom, high-efficiency API integrations and automated backend workflows designed using n8n for rapid data routing starting from ₹35,000." }
     ],
     process: [
       { title: "Business Workflow Analysis", desc: "We map out your current processes to find bottlenecks." },
@@ -428,9 +438,14 @@ export const servicesData = {
     ],
     faqs: [
       {
-        question: "What is AI automation for businesses?",
-        answer: "AI automation uses artificial intelligence technologies to automate repetitive business tasks such as customer support, workflow approvals, lead qualification, data processing, and communication management.",
+        question: "How much does AI automation implementation cost in Patna?",
+        answer: "At Webflora Technologies, custom n8n workflow integrations and AI chatbot automations start from ₹35,000. Custom enterprise solutions involving custom LLM fine-tuning or heavy data parsing are quoted after thorough process mapping.",
         icon: "lucide:brain-circuit"
+      },
+      {
+        question: "Do you specialize in n8n and WhatsApp automation?",
+        answer: "Yes, we are the leading AI automation company in Patna specializing in n8n workflows and official WhatsApp Business API setups. We build highly efficient, cost-effective automation systems that avoid expensive recurring software fees.",
+        icon: "lucide:award"
       },
       {
         question: "How can AI automation help my business?",
@@ -453,11 +468,6 @@ export const servicesData = {
         icon: "lucide:list-checks"
       },
       {
-        question: "Do you provide custom AI solutions?",
-        answer: "Yes, we develop custom AI automation systems tailored to specific business processes, workflows, and operational requirements.",
-        icon: "lucide:settings"
-      },
-      {
         question: "Which technologies do you use for AI automation?",
         answer: "We use technologies including OpenAI, LangChain, TensorFlow, Pinecone, Python, machine learning frameworks, and workflow automation platforms like n8n.",
         icon: "lucide:code"
@@ -475,31 +485,31 @@ export const servicesData = {
   "digital-marketing-agency-in-patna": {
     title: "Digital Marketing Company in Patna Bihar",
     headline: "SEO & Performance Marketing Services",
-    subtext: "Webflora Technologies provides SEO, Google Ads, social media marketing, local SEO, and lead generation services for startups and businesses across Bihar and India.",
-    geoTitle: "SEO & Performance Marketing Services",
-    geoContent: "Webflora Technologies provides SEO, Google Ads, social media marketing, local SEO, and lead generation services for startups and businesses across Bihar and India.",
+    subtext: "Webflora Technologies is a premier performance-focused digital marketing company in Patna, Bihar. We deliver local SEO map optimization, ROI-driven Google Ads (PPC), hyper-targeted Meta/Instagram ad campaigns, social media growth, and conversion-optimized lead generation. We help retail, real estate, healthcare clinics, and coaching institutes in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and all over India scale their revenue. Growth plans start from ₹15,000/month.",
+    geoTitle: "SEO & Performance Marketing Services in Bihar",
+    geoContent: "As the most reliable digital marketing company in Bihar, we dominate localized search engines. We set up professional Google Business Profiles, target local keywords to secure Google's Local 3-Pack, and run geo-targeted advertisements that drive actual foot traffic and inbound phone inquiries to local offices in Patna, Muzaffarpur, Gaya, and beyond.",
     heroBadge: "Digital Growth",
     problemTitle: "Market Invisibility",
     problems: [
-      "Low brand awareness in a crowded market",
-      "Inconsistent content quality and posting",
-      "High ad spend with low conversion",
-      "Poor community engagement",
-      "Lack of measurable marketing ROI"
+      "Complete digital invisibility on Google searches and local map results in Patna and Bihar",
+      "Inconsistent social media posts and poor creative designs that fail to engage audiences",
+      "Extremely high ad spend on Google or Meta with little to no actual leads or customer sales",
+      "Low audience engagement and lack of high-authority backlink profiles",
+      "Inability to track absolute return on ad spend (ROAS) or trace where customer calls originate"
     ],
     subServices: [
-      { title: "Search Engine Optimization (SEO)", icon: "lucide:search", desc: "Improve ranking and visibility on Google for local Bihar searches." },
-      { title: "Social Media Marketing", icon: "lucide:share-2", desc: "Grow brand presence and engagement on Meta, Instagram, and LinkedIn." },
-      { title: "Google Ads (PPC Advertising)", icon: "lucide:mouse-pointer-click", desc: "Run paid campaigns for instant traffic and targeted local leads." },
-      { title: "Lead Generation Strategies", icon: "lucide:target", desc: "Targeted campaigns to bring potential customers and scale revenue." },
-      { title: "Content Marketing", icon: "lucide:file-text", desc: "Blogs and content to build authority and inbound traffic." },
-      { title: "Website Performance Optimization", icon: "lucide:zap", desc: "Improve speed, UX, and conversion rates to maximize ad spend." }
+      { title: "Search Engine Optimization (SEO)", icon: "lucide:search", desc: "Dominate local search lists in Bihar and rank on Google page 1 for high-intent business terms." },
+      { title: "Social Media Marketing", icon: "lucide:share-2", desc: "Grow your community and aesthetic brand appeal on Instagram, Facebook, and LinkedIn with premium graphic assets." },
+      { title: "Google Ads (PPC Advertising)", icon: "lucide:mouse-pointer-click", desc: "Generate instant, high-intent phone inquiries and leads with laser-targeted search campaigns." },
+      { title: "Lead Generation Strategies", icon: "lucide:target", desc: "Hyper-targeted marketing campaigns optimized by our UI designers to bring high-quality sales leads." },
+      { title: "Content Marketing", icon: "lucide:file-text", desc: "High-value blog content, infographics, and copywriting engineered to build topical authority and drive organic traffic." },
+      { title: "Website Performance Optimization", icon: "lucide:zap", desc: "Optimize landing pages, CTA buttons, and load speeds to maximize return on ad spend (ROAS) and lower acquisition costs." }
     ],
     process: [
       { title: "Market Research & Audit", desc: "Analyzing your current brand presence and competitor landscape." },
       { title: "Strategy Formulation", desc: "Creating a customized roadmap across SEO, Paid Ads, and Content." },
       { title: "Campaign Execution", desc: "Launching data-driven marketing campaigns targeted at high-intent users." },
-      { title: "Conversion Optimization", desc: "A/B testing ad creatives and landing pages to lower CPA." },
+      { title: "Conversion Optimization", desc: "A/B testing ad creatives and landing pages to lower cost-per-acquisition (CPA)." },
       { title: "Analytics & Reporting", desc: "Transparent tracking of ROAS, lead volume, and brand growth." }
     ],
     industries: [
@@ -547,8 +557,13 @@ export const servicesData = {
     ],
     faqs: [
       {
-        question: "How long does SEO take to show results?",
-        answer: "Local SEO usually takes 2–4 months to show noticeable results in Patna and Bihar, depending on competition and strategy.",
+        question: "How much do digital marketing services cost in Patna Bihar?",
+        answer: "At Webflora Technologies, our customized performance marketing and local SEO growth plans start from ₹15,000 per month. The pricing depends on target ad budget, keyword competition, and campaign complexity.",
+        icon: "lucide:wallet"
+      },
+      {
+        question: "How long does local SEO take to show organic results?",
+        answer: "Local SEO map ranking and organic search engine listings usually take 2 to 4 months to yield substantial traffic and phone calls in Patna, Bihar, depending on industry search competition.",
         icon: "lucide:timer"
       },
       {

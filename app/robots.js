@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: "/private/",
+        disallow: ["/private/", "/admin", "/admin/login"],
       },
     ],
     sitemap: "https://webfloratechnologies.com/sitemap.xml",

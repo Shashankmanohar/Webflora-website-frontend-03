@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-36 sm:pt-40 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-20 sm:pt-32 lg:pt-36 pb-20 sm:pb-32 lg:pb-36">
       {/* Glow Background — animated but same visuals */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-screen overflow-hidden bg-black">
@@ -41,14 +41,14 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
         {/* SEO H1 - Primary authority signal at the top */}
-        <h1 className="text-[#FF3B00] text-[9px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-black mb-3 px-4 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] leading-relaxed">
+        <h1 className="text-[#FF3B00] text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-black mb-3 px-4 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] leading-relaxed">
           Software Development Company in Patna Bihar
         </h1>
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-white/10 bg-white/5 backdrop-blur">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 sm:mb-6 rounded-full border border-white/10 bg-white/5 backdrop-blur">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
           <span className="text-[10px] sm:text-xs tracking-wider sm:tracking-widest text-gray-300 font-mono uppercase">
             Top Web Agency in Bihar
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         {/* Heading — elegant reveal */}
-        <h2 className="font-display font-bold tracking-tighter leading-[0.98] text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 will-change-transform">
+        <h2 className="font-display font-bold tracking-tighter leading-[0.98] text-[36px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 will-change-transform">
           ANYTHING THAT <br />
           <span className="text-gradient inline-block">CAN BE BUILT,</span>
           <br />
@@ -64,28 +64,28 @@ export default function Hero() {
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-8 uppercase tracking-wider">
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-7 sm:mb-8 uppercase tracking-wider">
           CUSTOM SOFTWARE <span className="text-[#FF3B00]">•</span> WEBSITE DEVELOPMENT <span className="text-[#FF3B00]">•</span> MOBILE APPS <span className="text-[#FF3B00]">•</span> AI WORKFLOW AUTOMATION
         </p>
 
         {/* Actions — premium hover micro-interactions */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
           <Link
             href="/contact"
-            className="btn-primary px-8 py-3.5 w-full sm:w-auto cursor-pointer flex items-center justify-center"
+            className="btn-primary px-8 py-3.5 w-full sm:w-auto cursor-pointer flex items-center justify-center text-center font-semibold rounded-none"
           >
             Start Your Project
           </Link>
 
-          <div className="inline-block relative">
-            <div className="absolute z-1 -top-1 -left-1 w-1.5 h-1.5 bg-white"></div>
-            <div className="absolute z-1 -top-[3px] -right-1 w-1.5 h-1.5 bg-white"></div>
-            <div className="absolute z-1 -bottom-1 -left-1 w-1.5 h-1.5 bg-white"></div>
-            <div className="absolute z-1 -bottom-1 -right-1 w-1.5 h-1.5 bg-white"></div>
+          <div className="w-full sm:w-auto inline-block relative">
+            <div className="absolute z-10 -top-1 -left-1 w-1.5 h-1.5 bg-white"></div>
+            <div className="absolute z-10 -top-[3px] -right-1 w-1.5 h-1.5 bg-white"></div>
+            <div className="absolute z-10 -bottom-1 -left-1 w-1.5 h-1.5 bg-white"></div>
+            <div className="absolute z-10 -bottom-1 -right-1 w-1.5 h-1.5 bg-white"></div>
 
             <Link
               href="#work"
-              className="relative px-8 py-3.5 bg-transparent border-1 border-orange-600 text-white text-base font-light tracking-wide hover:bg-orange-800 hover:text-white transition-all duration-300 flex items-center justify-center"
+              className="relative w-full sm:w-auto px-8 py-3.5 bg-transparent border-1 border-orange-600 text-white text-base font-light tracking-wide hover:bg-orange-800 hover:text-white transition-all duration-300 flex items-center justify-center text-center"
             >
               View Our Work
             </Link>

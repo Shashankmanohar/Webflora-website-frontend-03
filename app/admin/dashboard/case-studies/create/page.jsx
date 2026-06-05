@@ -58,6 +58,10 @@ export default function CreateCaseStudy() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      if (file.size > 4 * 1024 * 1024) {
+        alert("Image file size must be less than 4MB to avoid Vercel upload limits.");
+        return;
+      }
       setImageFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {

@@ -61,6 +61,19 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://code.iconify.design" />
         <link rel="preconnect" href="https://vegavan-backend.vercel.app" />
       </head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-7DCZZDRV1R"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7DCZZDRV1R');
+        `}
+      </Script>
       <body
         suppressHydrationWarning
         className={`

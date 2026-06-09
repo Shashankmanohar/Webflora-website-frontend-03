@@ -66,10 +66,12 @@ export default function WorkSection() {
 
   useEffect(() => {
     if (activeCategory === "ALL") {
-      setFilteredProjects(projects);
+      setFilteredProjects(projects.slice(0, 6));
     } else {
       setFilteredProjects(
-        projects.filter((p) => p.category.toUpperCase() === activeCategory)
+        projects
+          .filter((p) => p.category.toUpperCase() === activeCategory)
+          .slice(0, 6)
       );
     }
   }, [activeCategory, projects]);

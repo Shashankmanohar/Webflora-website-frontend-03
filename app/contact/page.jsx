@@ -204,14 +204,14 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="md:col-span-3 bg-[#ff3b00] rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group shadow-[0_30px_60px_rgba(255,59,0,0.3)] min-h-[320px]"
+            className="md:col-span-4 bg-[#ff3b00] rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group shadow-[0_30px_60px_rgba(255,59,0,0.3)] min-h-[320px]"
           >
             <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-white shadow-inner">
               <Icon icon="solar:phone-bold-duotone" width={32} />
             </div>
             <div>
               <p className="text-white/70 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Direct Voice</p>
-              <h3 className="text-3xl md:text-4xl font-black text-white leading-[1.1] tracking-tighter">
+              <h3 className="text-2xl md:text-3xl font-black text-white leading-[1.1] tracking-tighter">
                 85408 14729 <br />
                 88630 81255
               </h3>
@@ -231,7 +231,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="md:col-span-3 bg-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group shadow-xl min-h-[320px] border border-white/10 hover:bg-white/10 transition-colors"
+            className="md:col-span-4 bg-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group shadow-xl min-h-[320px] border border-white/10 hover:bg-white/10 transition-colors"
           >
             <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white shadow-inner">
               <Icon icon="solar:letter-bold-duotone" width={32} />
@@ -247,29 +247,63 @@ export default function ContactPage() {
             </div>
           </motion.div>
 
+          {/* Tile 3c: Physical Address */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.58 }}
+            className="md:col-span-4 bg-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group shadow-xl min-h-[320px] border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white shadow-inner">
+              <Icon icon="solar:map-point-bold-duotone" width={32} className="text-[#ff3b00]" />
+            </div>
+            <div>
+              <p className="text-white/70 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Headquarters</p>
+              <h3 className="text-sm font-bold text-gray-300 leading-relaxed mb-4">
+                NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India
+              </h3>
+              <a
+                href="https://maps.app.goo.gl/7NaCiVttuDvndmzK9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all"
+              >
+                OPEN MAPS <Icon icon="solar:arrow-right-linear" width={16} />
+              </a>
+            </div>
+          </motion.div>
+
           {/* Tile 4: Social Grid */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="md:col-span-3 bg-zinc-900/40 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 grid grid-cols-2 gap-4 min-h-[320px]"
+            className="md:col-span-6 bg-zinc-900/40 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between min-h-[320px]"
           >
-            {[
-              { id: "instagram", icon: "simple-icons:instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
-              { id: "linkedin", icon: "simple-icons:linkedin", url: "https://www.linkedin.com/company/webfloratechnologies/" },
-              { id: "twitter", icon: "simple-icons:x", url: "#" },
-              { id: "facebook", icon: "simple-icons:facebook", url: "https://www.facebook.com/profile.php?id=61580014195502" },
-            ].map((social) => (
-              <a
-                key={social.id}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center bg-white/[0.03] border border-white/5 rounded-[1.5rem] md:rounded-full hover:bg-[#ff3b00] hover:text-white text-gray-500 transition-all duration-500 group"
-              >
-                <Icon icon={social.icon} width={20} className="group-hover:scale-110 transition-transform" />
-              </a>
-            ))}
+            <div>
+              <p className="text-gray-500 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Connect Socially</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white leading-[1.1] tracking-tighter">
+                Follow Our Updates
+              </h3>
+            </div>
+            <div className="grid grid-cols-4 gap-4 mt-6">
+              {[
+                { id: "instagram", icon: "simple-icons:instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
+                { id: "linkedin", icon: "simple-icons:linkedin", url: "https://www.linkedin.com/company/webfloratechnologies/" },
+                { id: "twitter", icon: "simple-icons:x", url: "#" },
+                { id: "facebook", icon: "simple-icons:facebook", url: "https://www.facebook.com/profile.php?id=61580014195502" },
+              ].map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-16 bg-white/[0.03] border border-white/5 rounded-2xl hover:bg-[#ff3b00] hover:text-white text-gray-500 transition-all duration-500 group"
+                >
+                  <Icon icon={social.icon} width={24} className="group-hover:scale-110 transition-transform" />
+                </a>
+              ))}
+            </div>
           </motion.div>
 
           {/* Tile 5: Review Us */}
@@ -277,7 +311,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="md:col-span-3 bg-zinc-900/20 backdrop-blur-3xl border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group hover:bg-zinc-900/40 transition-all duration-700 min-h-[320px]"
+            className="md:col-span-6 bg-zinc-900/20 backdrop-blur-3xl border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group hover:bg-zinc-900/40 transition-all duration-700 min-h-[320px]"
           >
             <div className="w-14 h-14 rounded-2xl bg-[#ff3b00]/10 border border-[#ff3b00]/20 flex items-center justify-center text-[#ff3b00] shadow-[0_0_30px_rgba(255,59,0,0.1)]">
               <Icon icon="solar:star-bold-duotone" width={32} className="group-hover:rotate-12 transition-transform" />

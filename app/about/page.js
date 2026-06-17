@@ -243,7 +243,7 @@ export default function UltraAnimatedHero() {
           },
           {
             question: "Where is Webflora Technologies located?",
-            answer: "Webflora Technologies is located in Patna, Bihar, India, and serves startups, businesses, coaching institutes, and enterprises across Bihar and India.",
+            answer: "Webflora Technologies is located at NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India, and serves startups, businesses, coaching institutes, and enterprises across Bihar and India.",
             icon: "lucide:map-pin"
           },
           {

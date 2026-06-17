@@ -155,9 +155,10 @@ const page = () => {
 
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
               "addressLocality": "Patna",
               "addressRegion": "Bihar",
-              "postalCode": "800001",
+              "postalCode": "800016",
               "addressCountry": "IN"
             },
 
@@ -286,9 +287,10 @@ const page = () => {
 
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
               "addressLocality": "Patna",
               "addressRegion": "Bihar",
-              "postalCode": "800001",
+              "postalCode": "800016",
               "addressCountry": "IN"
             },
 

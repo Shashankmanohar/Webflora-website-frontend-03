@@ -184,38 +184,44 @@ export default function FooterSection() {
           </div>
 
           {/* Links */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
-            <FooterColumn
-              title="Services"
-              links={[
-                { text: "Web Development", url: "/services/website-development-company-in-patna" },
-                { text: "App Development", url: "/services/mobile-app-development-company-in-patna" },
-                { text: "AI Automation", url: "/services/ai-automation-company-in-patna" },
-                { text: "Software Development", url: "/services/software-development-company-in-patna" },
-                { text: "Digital Marketing", url: "/services/digital-marketing-agency-in-patna" }
-              ]}
-            />
-            <FooterColumn
-              title="Product"
-              links={[
-                { text: "Home", url: "/" },
-                { text: "Vegavan AI", url: "/vegavan-ai" },
-                { text: "About us", url: "/about" },
-                { text: "Services", url: "/services" },
-                { text: "Case Studies", url: "/case-studies" },
-                { text: "Blog", url: "/blog" }
-              ]}
-            />
-            <FooterColumn
-              title="Company"
-              links={[
-                { text: "Instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
-                { text: "LinkedIn", url: "https://www.linkedin.com/company/webfloratechnologies/" },
-                { text: "Careers", url: "/career" }
-              ]}
-              badgeIndex={2}
-            />
-            <div className="flex flex-col space-y-6">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
+            <div className="md:col-span-3">
+              <FooterColumn
+                title="Services"
+                links={[
+                  { text: "Web Development", url: "/services/website-development-company-in-patna" },
+                  { text: "App Development", url: "/services/mobile-app-development-company-in-patna" },
+                  { text: "AI Automation", url: "/services/ai-automation-company-in-patna" },
+                  { text: "Software Development", url: "/services/software-development-company-in-patna" },
+                  { text: "Digital Marketing", url: "/services/digital-marketing-agency-in-patna" }
+                ]}
+              />
+            </div>
+            <div className="md:col-span-3">
+              <FooterColumn
+                title="Product"
+                links={[
+                  { text: "Home", url: "/" },
+                  { text: "Vegavan AI", url: "/vegavan-ai" },
+                  { text: "About us", url: "/about" },
+                  { text: "Services", url: "/services" },
+                  { text: "Case Studies", url: "/case-studies" },
+                  { text: "Blog", url: "/blog" }
+                ]}
+              />
+            </div>
+            <div className="md:col-span-2">
+              <FooterColumn
+                title="Company"
+                links={[
+                  { text: "Instagram", url: "https://www.instagram.com/webflora.technologies?igsh=aW5lNnk1Z2g1ZXRq" },
+                  { text: "LinkedIn", url: "https://www.linkedin.com/company/webfloratechnologies/" },
+                  { text: "Careers", url: "/career" }
+                ]}
+                badgeIndex={2}
+              />
+            </div>
+            <div className="md:col-span-4 flex flex-col space-y-6">
               <h3 className="text-white text-sm font-medium tracking-widest uppercase opacity-80">
                 Contact
               </h3>
@@ -224,9 +230,9 @@ export default function FooterSection() {
                   <IconCircle icon="solar:letter-linear" />
                   hello.webflora@gmail.com
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-start gap-3">
                   <IconCircle icon="solar:map-point-linear" />
-                  Patna, Bihar
+                  <span className="leading-snug">NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India</span>
                 </li>
                 <li className="flex items-center gap-3 whitespace-nowrap">
                   <IconCircle icon="solar:phone-linear" />

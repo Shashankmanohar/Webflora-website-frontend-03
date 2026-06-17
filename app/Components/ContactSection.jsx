@@ -81,7 +81,7 @@ export default function ContactSection() {
               {
                 icon: "solar:map-point-linear",
                 title: "LOCATION",
-                value: "Patna, Bihar, India",
+                value: "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India",
               },
               {
                 icon: "solar:phone-linear",

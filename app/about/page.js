@@ -12,6 +12,7 @@ import SEOContentBlock from "../Components/SEOContentBlock";
 import TrustSignals from "../Components/TrustSignals";
 import GoogleTrustBanner from "../Components/GoogleTrustBanner";
 import FaqSection from "../services/components/FaqSection";
+import GoogleReviewsSection from "../Components/GoogleReviewsSection";
 
 const container = {
   hidden: { opacity: 0 },
@@ -184,6 +185,7 @@ export default function UltraAnimatedHero() {
 
       <GoogleTrustBanner />
       <TrustSignals />
+      <GoogleReviewsSection />
 
       {/* GEO Content Section */}
       <section className="py-32 bg-black border-y border-white/5 relative overflow-hidden">

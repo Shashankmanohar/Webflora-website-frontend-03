@@ -22,6 +22,7 @@ const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: fal
 const VegavanTeaser = dynamic(() => import("./Components/VegavanTeaser"), { ssr: false });
 const TrustSignals = dynamic(() => import("./Components/TrustSignals"), { ssr: false });
 const GoogleTrustBanner = dynamic(() => import("./Components/GoogleTrustBanner"), { ssr: false });
+const GoogleReviewsSection = dynamic(() => import("./Components/GoogleReviewsSection"), { ssr: false });
 
 const homeFaqs = [
   {
@@ -103,6 +104,9 @@ const page = () => {
       </div>
       <div className="content-auto">
         <TestimonialSection />
+      </div>
+      <div className="content-auto">
+        <GoogleReviewsSection />
       </div>
       <div className="content-auto">
         <TeamSection />

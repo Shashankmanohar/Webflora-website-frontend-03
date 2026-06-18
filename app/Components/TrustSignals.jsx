@@ -23,9 +23,9 @@ const itemVariants = {
 export default function TrustSignals() {
   return (
     <section className="py-20 md:py-28 bg-[#050505] relative overflow-hidden z-10 border-t border-white/5">
-      {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#ff3c00]/5 rounded-full blur-[140px] pointer-events-none animate-pulse" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none animate-pulse delay-700" />
+      {/* Ambient Background Glows — static radial gradients (no blur animation = no non-composited animation warning) */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(255,60,0,0.06) 0%, rgba(255,60,0,0) 70%)" }} />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(59,130,246,0.06) 0%, rgba(59,130,246,0) 70%)" }} />
       <div className="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -49,7 +49,7 @@ export default function TrustSignals() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700">Validated.</span>
               </motion.h2>
             </div>
-            <motion.p variants={itemVariants} className="text-gray-500 text-base md:text-lg font-light max-w-sm border-l border-white/10 pl-8">
+            <motion.p variants={itemVariants} className="text-gray-400 text-base md:text-lg font-light max-w-sm border-l border-white/10 pl-8">
               Empowering global brands with high-performance digital infrastructure.
             </motion.p>
           </div>
@@ -73,7 +73,7 @@ export default function TrustSignals() {
                     {stat.number}
                   </div>
                   <div className="text-xs font-bold text-[#ff3c00] uppercase tracking-[0.2em] mb-2">{stat.label}</div>
-                  <p className="text-sm text-gray-500 font-light leading-relaxed">{stat.desc}</p>
+                  <p className="text-sm text-gray-400 font-light leading-relaxed">{stat.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -158,7 +158,7 @@ export default function TrustSignals() {
                     </div>
                     
                     <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-3 tracking-tight uppercase">{reason.title}</h3>
-                    <p className="text-gray-500 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500 text-sm md:text-base">{reason.desc}</p>
+                    <p className="text-gray-400 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500 text-sm md:text-base">{reason.desc}</p>
                   </div>
                   
                   {/* Modern Border Accent */}

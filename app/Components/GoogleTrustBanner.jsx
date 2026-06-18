@@ -19,7 +19,7 @@ export default function GoogleTrustBanner() {
               <Star key={i} size={20} className="fill-yellow-500 text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.3)]" />
             ))}
           </div>
-          <span className="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-bold">Verified Google Reviews</span>
+          <span className="text-gray-400 text-[10px] uppercase tracking-[0.2em] font-bold">Verified Google Reviews</span>
         </div>
 
         <div className="hidden md:block w-px h-12 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
@@ -28,7 +28,7 @@ export default function GoogleTrustBanner() {
           <h3 className="text-white font-bold text-xl md:text-2xl tracking-tight mb-1">
             Highest Rated Tech Agency in Patna
           </h3>
-          <p className="text-gray-500 text-sm md:text-base font-light max-w-xl">
+          <p className="text-gray-400 text-sm md:text-base font-light max-w-xl">
             Join 150+ businesses who trust Webflora for scalable software and high-performance websites.
           </p>
         </div>

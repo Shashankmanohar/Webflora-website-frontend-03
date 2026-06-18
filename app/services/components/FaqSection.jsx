@@ -97,6 +97,8 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
               <button 
                 onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
                 className="w-full p-5 md:p-6 text-left flex items-center gap-4 md:gap-6"
+                aria-expanded={expandedIndex === idx}
+                aria-label={`${expandedIndex === idx ? 'Collapse' : 'Expand'} answer to: ${faq.question}`}
               >
                 <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-xl md:rounded-2xl flex items-center justify-center transition-all duration-500 ${
                   expandedIndex === idx ? "bg-[#FF3B00] text-black" : "bg-white/5 text-[#FF3B00]"
@@ -131,7 +133,7 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                       <p className="text-base text-gray-400 leading-relaxed font-light max-w-4xl mb-6">
                         {faq.answer}
                       </p>
-                      <button className="flex items-center gap-3 px-8 py-4 rounded-xl border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">
+                      <button aria-label="Get Started with Webflora Technologies" className="flex items-center gap-3 px-8 py-4 rounded-xl border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">
                         Get Started
                         <Icon icon="lucide:arrow-right" width={18} className="group-hover:translate-x-1 transition-transform" />
                       </button>

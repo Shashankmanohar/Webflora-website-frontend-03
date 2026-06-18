@@ -14,12 +14,14 @@ const inter = Inter({
   display: "swap",
 });
 
-/* Space Grotesk – Headings / Brand */
+/* Space Grotesk – Headings / Brand
+   display:"optional" = browser uses fallback if font isn't ready in 100ms,
+   never swaps → eliminates the font-swap LCP event at ~3.5s */
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-space-grotesk",
-  display: "swap",
+  display: "optional",
 });
 
 
@@ -77,13 +79,7 @@ export default function RootLayout({ children }) {
 
         {/* Footer Section */}
         <FooterSection />
-        {/* Iconify Icon Script */}
-        <Script
-          src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
-          strategy="lazyOnload"
-        />
 
-        {/* Vegavan AI Support Chatbot */}
         <Script
           src="https://vegavan-backend.vercel.app/chatbot.js"
           data-user-id="69fc5bbe69d61b8cd4efd91a"

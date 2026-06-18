@@ -1,6 +1,11 @@
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
   // Disabling experimental compiler which might be causing slow renders on Windows
   reactCompiler: false, 
   
@@ -26,4 +31,6 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+})(nextConfig);

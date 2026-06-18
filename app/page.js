@@ -4,6 +4,7 @@ import Hero from "./Components/HeroSection";
 import StatsMarquee from "./Components/StatsMarquee";
 import GrowthSection from "./Components/GrowthSection";
 import SEOContentBlock from "./Components/SEOContentBlock";
+import LazySection from "./Components/LazySection";
 
 // Dynamically import components below the fold with SSR enabled for initial paint and bundle splitting
 const ExpertiseSection = dynamic(() => import("./Components/ExpertiseSection"));
@@ -80,50 +81,80 @@ const page = () => {
       </section>
       <StatsMarquee />
       <div className="content-auto">
-        <GrowthSection />
+        <LazySection height="300px">
+          <GrowthSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <ExpertiseSection />
+        <LazySection height="400px">
+          <ExpertiseSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <IndustriesSection />
+        <LazySection height="400px">
+          <IndustriesSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <ProcessSection />
+        <LazySection height="400px">
+          <ProcessSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <TechStackSection />
+        <LazySection height="200px">
+          <TechStackSection />
+        </LazySection>
       </div>
 
       <div className="content-auto">
-        <ProductCard />
+        <LazySection height="400px">
+          <ProductCard />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <WorkSection />
+        <LazySection height="400px">
+          <WorkSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <VegavanTeaser />
+        <LazySection height="400px">
+          <VegavanTeaser />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <TestimonialSection />
+        <LazySection height="450px">
+          <TestimonialSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <GoogleReviewsSection />
+        <LazySection height="350px">
+          <GoogleReviewsSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <TeamSection />
+        <LazySection height="400px">
+          <TeamSection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <PremiumCTASection />
+        <LazySection height="300px">
+          <PremiumCTASection />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <FaqSection faqs={homeFaqs} title="web development and software services" />
+        <LazySection height="500px">
+          <FaqSection faqs={homeFaqs} title="web development and software services" />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <SEOContentBlock />
+        <LazySection height="400px">
+          <SEOContentBlock />
+        </LazySection>
       </div>
       <div className="content-auto">
-        <ContactSection />
+        <LazySection height="500px">
+          <ContactSection />
+        </LazySection>
       </div>
 
       {/* JSON-LD Schemas */}

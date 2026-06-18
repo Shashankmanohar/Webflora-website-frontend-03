@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 
 export default function LazySection({ children, height = "200px" }) {
   const [inView, setInView] = useState(false);
@@ -24,7 +24,11 @@ export default function LazySection({ children, height = "200px" }) {
 
   return (
     <div ref={ref} style={{ minHeight: inView ? "auto" : height }}>
-      {inView ? children : null}
+      {inView ? (
+        <Suspense fallback={<div style={{ minHeight: height }} />}>
+          {children}
+        </Suspense>
+      ) : null}
     </div>
   );
 }

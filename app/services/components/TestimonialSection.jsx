@@ -89,24 +89,24 @@ const TestimonialSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-32 md:py-48 overflow-hidden bg-black"
+      className="relative py-16 md:py-20 overflow-hidden bg-black"
     >
       {/* Background patterns */}
       <div className="absolute inset-0 pointer-events-none bg-grid opacity-[0.1]" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center mb-24">
+        <div className="flex flex-col items-center text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-4xl md:text-7xl font-display font-bold text-white tracking-tighter leading-none mb-6 uppercase"
+            className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-none mb-6 uppercase"
           >
             Client <span className="text-primary">Success</span> Stories
           </motion.h2>
         </div>
 
         <div 
-          className="relative h-[500px] md:h-[650px] flex items-center justify-center perspective-[2500px]"
+          className="relative h-[380px] md:h-[460px] flex items-center justify-center perspective-[2500px]"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
@@ -130,42 +130,42 @@ const TestimonialSection = () => {
                       setActiveIndex(index);
                     }
                   }}
-                  className="absolute w-[320px] md:w-[700px] group select-none"
+                  className="absolute w-[300px] md:w-[600px] group select-none"
                 >
                   {/* SIMPLIFIED HIGH-READABILITY CARD */}
-                  <div className={`relative flex flex-col rounded-[2.5rem] md:rounded-[3rem] overflow-hidden transition-all duration-700 ${
+                  <div className={`relative flex flex-col rounded-[2rem] overflow-hidden transition-all duration-700 ${
                     isActive 
                     ? "bg-[#0A0A0A] border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.9)]" 
                     : "bg-white/[0.02] backdrop-blur-2xl border-white/5 opacity-40 grayscale"
                   } border`}>
                     
                     {/* Content Area */}
-                    <div className="p-8 md:p-14 flex flex-col">
-                      <div className="mb-8">
+                    <div className="p-6 md:p-8 flex flex-col">
+                      <div className="mb-4">
                         <Icon 
                           icon="ri:double-quotes-l" 
-                          className={`text-4xl md:text-6xl mb-4 transition-colors duration-700 ${
+                          className={`text-2xl md:text-3xl mb-2 transition-colors duration-700 ${
                             isActive ? "text-primary/20" : "text-white/[0.02]"
                           }`} 
                         />
-                        <p className={`text-base md:text-xl font-medium leading-[1.7] tracking-normal transition-colors duration-700 ${
+                        <p className={`text-xs md:text-sm font-normal leading-[1.6] tracking-normal transition-colors duration-700 ${
                           isActive ? "text-white/90" : "text-white/20 line-clamp-3"
                         }`}>
                           {testimonial.feedback}
                         </p>
                       </div>
-
-                      <div className="mt-auto flex items-center gap-5 pt-8 border-t border-white/5">
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-white/5 flex items-center justify-center text-3xl border border-white/10">
+ 
+                      <div className="mt-auto flex items-center gap-4 pt-5 border-t border-white/5">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center text-xl border border-white/10">
                           {testimonial.avatar}
                         </div>
                         <div>
-                          <h4 className={`text-lg md:text-2xl font-display font-bold leading-none mb-1 ${
+                          <h4 className={`text-sm md:text-base font-display font-bold leading-none mb-1 ${
                             isActive ? "text-white" : "text-white/30"
                           }`}>
                             {testimonial.clientName}
                           </h4>
-                          <p className={`text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] ${
+                          <p className={`text-[8px] md:text-[9px] font-bold uppercase tracking-[0.3em] ${
                             isActive ? "text-primary" : "text-white/10"
                           }`}>
                             {testimonial.company}
@@ -173,7 +173,7 @@ const TestimonialSection = () => {
                         </div>
                       </div>
                     </div>
-
+ 
                     {/* Active Accent Bar */}
                     {isActive && (
                       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-primary" />

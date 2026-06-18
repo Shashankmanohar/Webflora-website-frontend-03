@@ -227,7 +227,7 @@ const PortfolioClient = () => {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-12 tracking-tight max-w-5xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-12 tracking-tight max-w-5xl">
             {project.title}
           </h1>
           
@@ -298,6 +298,36 @@ const PortfolioClient = () => {
               className="case-study-content prose prose-invert prose-lg max-w-none"
               dangerouslySetInnerHTML={{ __html: project.content }}
             />
+
+            {/* Contextual Internal Service Link for AEO & SEO */}
+            <div className="mt-16 p-8 rounded-3xl bg-zinc-950 border border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none" />
+              <div className="space-y-2 text-left">
+                <span className="text-primary text-[10px] font-black uppercase tracking-[0.2em] block">
+                  Service Expertise Link
+                </span>
+                <h4 className="text-lg font-bold text-white leading-snug">
+                  Interested in our {project.category} systems?
+                </h4>
+                <p className="text-xs text-neutral-400 font-light leading-relaxed max-w-lg">
+                  This case study demonstrates our capability in custom web engineering, performance optimization, and custom integrations. Click below to view detailed features, pricing, and service offerings.
+                </p>
+              </div>
+              <Link 
+                href={
+                  project.category?.toUpperCase() === "WEB" ? "/services/website-development-company-in-patna" :
+                  project.category?.toUpperCase() === "MOBILE" ? "/services/mobile-app-development-company-in-patna" :
+                  project.category?.toUpperCase() === "SOFTWARE" ? "/services/software-development-company-in-patna" :
+                  project.category?.toUpperCase() === "AI/ML" ? "/services/ai-automation-company-in-patna" :
+                  project.category?.toUpperCase() === "DIGITAL MARKETING" ? "/services/digital-marketing-agency-in-patna" :
+                  "/services"
+                }
+                className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-primary hover:border-primary text-white hover:text-white transition-all text-xs font-black uppercase tracking-wider rounded-xl flex items-center gap-2 flex-shrink-0 group shadow-lg"
+              >
+                <span>Explore {project.category} Service</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
 
             {/* High-Impact Cinematic CTA */}
             <motion.div 

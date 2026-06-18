@@ -48,11 +48,11 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-40 px-6 bg-black relative overflow-hidden">
+    <section ref={containerRef} className="py-20 px-6 bg-black relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* HEADER */}
-        <div className="mb-24">
+        <div className="mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -65,7 +65,7 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none mb-8"
+            className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-8"
           >
             Frequently Asked <br />
             <span className="text-[#FF3B00]">Questions</span>
@@ -96,7 +96,7 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
             >
               <button 
                 onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
-                className="w-full p-6 md:p-10 text-left flex items-center gap-4 md:gap-6"
+                className="w-full p-5 md:p-6 text-left flex items-center gap-4 md:gap-6"
               >
                 <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-xl md:rounded-2xl flex items-center justify-center transition-all duration-500 ${
                   expandedIndex === idx ? "bg-[#FF3B00] text-black" : "bg-white/5 text-[#FF3B00]"
@@ -104,11 +104,11 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                   <Icon icon={faq.icon || "lucide:help-circle"} className="text-xl md:text-2xl" />
                 </div>
                 
-                <span className={`text-base md:text-2xl font-bold flex-1 transition-colors ${
+                <h3 className={`text-base md:text-xl font-bold flex-1 transition-colors ${
                   expandedIndex === idx ? "text-white" : "text-gray-300 hover:text-white"
                 }`}>
                   {faq.question}
-                </span>
+                </h3>
                 
                 <motion.div 
                   animate={{ rotate: expandedIndex === idx ? 180 : 0 }}
@@ -128,7 +128,7 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                   >
                     <div className="px-8 md:px-10 pb-10 pt-2">
                       <div className="h-[1px] w-full bg-gradient-to-r from-[#FF3B00]/40 to-transparent mb-8" />
-                      <p className="text-lg text-gray-400 leading-relaxed font-light max-w-4xl mb-8">
+                      <p className="text-base text-gray-400 leading-relaxed font-light max-w-4xl mb-6">
                         {faq.answer}
                       </p>
                       <button className="flex items-center gap-3 px-8 py-4 rounded-xl border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">

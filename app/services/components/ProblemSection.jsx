@@ -77,7 +77,7 @@ export default function ProblemSection() {
   ];
 
   return (
-    <section className="py-32 px-6 border-t border-white/5 bg-neutral-950/30 relative">
+    <section className="py-20 px-6 border-t border-white/5 bg-neutral-950/30 relative">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <h2 className="font-display font-semibold text-4xl md:text-5xl text-white tracking-tighter mb-4 fade-up-element">

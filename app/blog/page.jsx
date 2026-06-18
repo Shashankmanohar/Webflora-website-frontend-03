@@ -78,7 +78,7 @@ const BlogPage = () => {
             <motion.h2 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]"
+              className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-[0.9]"
             >
               Latest Insights <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-orange-500">and Industry Trends.</span>
@@ -96,7 +96,7 @@ const BlogPage = () => {
         </section>
 
         {loading ? (
-          <div className="flex justify-center py-32">
+          <div className="flex justify-center py-20">
             <div className="relative w-16 h-16">
               <div className="absolute inset-0 border-4 border-brand-red/20 rounded-full" />
               <div className="absolute inset-0 border-4 border-brand-red border-t-transparent rounded-full animate-spin" />
@@ -281,7 +281,7 @@ const BlogPage = () => {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-32 bg-white/[0.02] border border-white/5 rounded-[3rem]">
+                <div className="text-center py-20 bg-white/[0.02] border border-white/5 rounded-[3rem]">
                   <div className="inline-flex p-8 rounded-full bg-white/5 border border-white/10 mb-8">
                     <Search className="w-16 h-16 text-gray-700" />
                   </div>
@@ -317,7 +317,7 @@ const BlogPage = () => {
                 <motion.h2 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-[0.9]"
+                  className="text-3xl md:text-5xl font-bold mb-8 tracking-tighter leading-[0.9]"
                 >
                   Digital <br />
                   <span className="text-white/40">Intelligence.</span>

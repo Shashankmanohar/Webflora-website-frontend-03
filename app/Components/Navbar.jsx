@@ -4,8 +4,29 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { Home, Briefcase, Info, Phone, BookOpen, Trophy, Globe, Smartphone, Layers, Bot, Share2, ChevronUp, FileText } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  Home, 
+  Briefcase, 
+  Info, 
+  Phone, 
+  BookOpen, 
+  Trophy, 
+  Globe, 
+  Smartphone, 
+  Layers, 
+  Bot, 
+  Share2, 
+  ChevronDown, 
+  FileText,
+  Heart,
+  GraduationCap,
+  Building2,
+  Factory,
+  ShoppingBag,
+  Menu,
+  X
+} from "lucide-react";
 
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
@@ -14,13 +35,25 @@ const navItems = [
     label: "Services",
     href: "/services",
     children: [
-      { icon: Bot, label: "Vegavan AI", href: "/vegavan-ai" },
-      { icon: Bot, label: "AI & Automation", href: "/services/ai-automation-company-in-patna" },
-      { icon: Globe, label: "Website Dev", href: "/services/website-development-company-in-patna" },
-      { icon: Smartphone, label: "App Dev", href: "/services/mobile-app-development-company-in-patna" },
-      { icon: Layers, label: "Software", href: "/services/software-development-company-in-patna" },
-      { icon: Share2, label: "Marketing", href: "/services/digital-marketing-agency-in-patna" },
-      { icon: FileText, label: "Case Studies", href: "/case-studies" },
+      { icon: Bot, label: "Vegavan AI", desc: "Autonomous conversational support.", href: "/vegavan-ai", highlight: true },
+      { icon: Bot, label: "AI & Automation", desc: "Custom n8n and workflow agents.", href: "/services/ai-automation-company-in-patna" },
+      { icon: Globe, label: "Website Dev", desc: "High-performance marketing sites.", href: "/services/website-development-company-in-patna" },
+      { icon: Smartphone, label: "App Dev", desc: "Native iOS & Android systems.", href: "/services/mobile-app-development-company-in-patna" },
+      { icon: Layers, label: "Software Systems", desc: "Enterprise cloud platforms & ERP.", href: "/services/software-development-company-in-patna" },
+      { icon: Share2, label: "Digital Growth", desc: "ROI-driven marketing campaigns.", href: "/services/digital-marketing-agency-in-patna" },
+      { icon: FileText, label: "Case Studies", desc: "Our verified customer stories.", href: "/case-studies" },
+    ]
+  },
+  {
+    icon: Building2,
+    label: "Industries",
+    href: "/industries",
+    children: [
+      { icon: Heart, label: "Healthcare", desc: "Secure telemedicine & patient portals.", href: "/industries/healthcare" },
+      { icon: GraduationCap, label: "Education", desc: "Scalable LMS & online exam systems.", href: "/industries/education" },
+      { icon: Home, label: "Real Estate", desc: "Stunning property portals & lead CRM.", href: "/industries/real-estate" },
+      { icon: Factory, label: "Manufacturing", desc: "Custom inventory ERP & B2B portals.", href: "/industries/manufacturing" },
+      { icon: ShoppingBag, label: "Retail", desc: "Fast e-commerce & unified checkout.", href: "/industries/retail" },
     ]
   },
   { icon: Info, label: "About", href: "/about" },
@@ -33,15 +66,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
   const pathname = usePathname();
 
-  const isCareerPage = pathname === "/career" || pathname?.includes("career");
   const isAdminPage = pathname?.startsWith("/admin");
 
-  if (isAdminPage) return null;
-
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -52,239 +83,301 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setMobileSubmenuOpen(null);
   }, [pathname]);
+
+  if (isAdminPage) return null;
 
   return (
     <>
+      {/* Desktop Floating Glass Capsule Navbar */}
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed z-50 transition-all duration-500 left-0 top-0 w-full lg:left-1/4 lg:top-8 lg:w-1/2 lg:rounded-lg ${isCareerPage
-          ? "bg-black/40 backdrop-blur-xl border border-white/10 hidden lg:block"
-          : scrolled
-            ? "bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl hidden lg:block"
-            : "bg-transparent border border-transparent lg:scale-105"
-          }`}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed z-50 left-1/2 -translate-x-1/2 hidden lg:block transition-all duration-500 ${
+          scrolled 
+            ? "top-4 w-[76%] bg-[#050505]/75 backdrop-blur-3xl border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] rounded-full" 
+            : "top-8 w-[82%] bg-black/35 backdrop-blur-2xl border border-white/5 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)] rounded-full"
+        }`}
       >
-        <div className="max-w-9xl mx-auto px-6 h-20 flex items-center justify-between font-display">
+        <div className="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#FF3B00]/40 to-transparent blur-[1px]" />
+        
+        <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between font-sans relative">
+          
+          {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
-              whileHover={{ scale: 1.05, rotate: -1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="w-[140px] h-[50px] lg:w-[150px] lg:h-[55px] flex items-center"
+              whileHover={{ scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="w-[130px] h-[40px] flex items-center"
             >
               <Image
                 src="/webflora-logo.svg"
                 alt="WebFlora Technologies Logo"
                 className="w-full h-full object-contain"
-                width={150}
-                height={55}
+                width={130}
+                height={40}
                 priority
               />
             </motion.div>
           </Link>
 
-          <div className="flex items-center gap-4">
+          {/* Navigation Links */}
+          <div className="flex items-center gap-2 text-[13px] font-medium tracking-tight text-neutral-300">
+            {navItems.map((item, idx) => {
+              const isChildActive = item.children && item.children.some(child => pathname === child.href);
+              const isActive = pathname === item.href || isChildActive;
+
+              if (item.children) {
+                return (
+                  <div 
+                    key={idx} 
+                    className="relative py-4 group"
+                    onMouseEnter={() => setActiveDropdown(idx)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <button className={`flex items-center gap-1 hover:text-white transition-all duration-300 cursor-pointer relative py-2 px-4 focus:outline-none rounded-full ${
+                      isActive ? "text-white font-semibold" : ""
+                    }`}>
+                      {item.label}
+                      <ChevronDown size={13} className={`transition-transform duration-300 text-neutral-500 group-hover:text-white ${activeDropdown === idx ? "rotate-180" : ""}`} />
+                      
+                      {isActive && (
+                        <motion.span
+                          layoutId="nav-active-pill"
+                          className="absolute inset-0 bg-white/[0.07] border border-white/[0.08] rounded-full -z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+                          transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                        />
+                      )}
+                    </button>
+
+                    {/* Desktop Dropdown Popover */}
+                    <AnimatePresence>
+                      {activeDropdown === idx && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 12, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 12, scale: 0.97 }}
+                          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                          style={{ originX: 0.5, originY: 0 }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-[#050505]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_40px_80px_rgba(0,0,0,0.95)] z-[200]"
+                        >
+                          <div className="absolute top-[-5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 bg-[#050505] border-t border-l border-white/10 z-[199]" />
+                          
+                          <div className="grid grid-cols-2 gap-2 relative z-[200]">
+                            {item.children.map((child, ci) => {
+                              const ChildIcon = child.icon;
+                              const isChildUrlActive = pathname === child.href;
+
+                              return (
+                                <Link key={ci} href={child.href}>
+                                  <motion.div
+                                    whileHover={{ y: -1, backgroundColor: "rgba(255, 255, 255, 0.04)" }}
+                                    className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-300 border border-transparent hover:border-white/5 ${
+                                      child.highlight 
+                                        ? "bg-[#FF3B00]/5 border-[#FF3B00]/15 hover:bg-[#FF3B00]/10" 
+                                        : ""
+                                    }`}
+                                  >
+                                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                      child.highlight ? "bg-[#FF3B00] text-white shadow-[0_0_15px_rgba(255,59,0,0.4)]" : "bg-white/5 text-neutral-400 group-hover:text-white"
+                                    }`}>
+                                      <ChildIcon size={14} />
+                                    </div>
+                                    <div className="text-left">
+                                      <div className={`text-[11px] font-bold uppercase tracking-wider ${
+                                        isChildUrlActive || child.highlight ? "text-white" : "text-neutral-200"
+                                      }`}>
+                                        {child.label}
+                                      </div>
+                                      <div className="text-[10px] text-neutral-400 font-medium tracking-normal mt-0.5 leading-snug normal-case">
+                                        {child.desc}
+                                      </div>
+                                    </div>
+                                  </motion.div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  className={`hover:text-white transition-all duration-300 relative py-2 px-4 focus:outline-none rounded-full flex items-center justify-center ${
+                    isActive ? "text-white font-semibold" : ""
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      className="absolute inset-0 bg-white/[0.07] border border-white/[0.08] rounded-full -z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* CTA: Call Us Button */}
+          <div className="relative">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 450, damping: 22 }}
+              className="relative z-10"
             >
-              <Link
-                href="/contact"
-                className="hidden md:inline-flex btn-primary px-6 py-2.5 text-xs"
+              <a
+                href="tel:8540814729"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF3B00] hover:bg-[#ff4e1a] text-white text-[11px] font-black tracking-wider uppercase rounded-full shadow-[0_8px_25px_rgba(255,59,0,0.35)] transition-all duration-300 relative overflow-hidden group"
               >
-                Start Project
-              </Link>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:animate-shimmer" style={{ animationDuration: '1.2s' }} />
+                
+                <div className="relative flex items-center justify-center w-3 h-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <iconify-icon icon="solar:phone-calling-linear" class="text-xs relative z-10"></iconify-icon>
+                </div>
+                Call Us
+              </a>
             </motion.div>
           </div>
+
         </div>
       </motion.nav>
 
-      <div id="webflora-bottom-nav" className="fixed bottom-4 sm:bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-full px-3 sm:px-4 md:px-6">
-        <motion.div
-          initial={{ y: 80, opacity: 0, scale: 0.92 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="
-            relative 
-            w-[94vw] sm:w-fit
-            max-w-[98vw]
-            mx-auto
-            px-4 sm:px-10 md:px-12
-            py-3 sm:py-5 md:py-4 lg:py-3
-            rounded-full
-          "
-          style={{
-            background: "rgba(10, 10, 10, 0.8)",
-            backdropFilter: "blur(20px)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)",
-          }}
-        >
-          {/* CONTENT */}
-          <div className="relative z-10 h-10 lg:h-9 flex items-center justify-around sm:justify-center gap-x-1 sm:gap-x-7 md:gap-x-9 lg:gap-x-8">
-            {/* NAV ITEMS */}
-            {navItems.map((item, i) => {
-              const Icon = item.icon;
-              const active = pathname === item.href || (item.children && item.children.some(child => pathname === child.href));
-              const hasChildren = item.children && item.children.length > 0;
+      {/* Mobile Top Header (Fixed on Mobile & Tablet) */}
+      <div className="fixed top-0 left-0 w-full h-16 bg-[#030303]/80 backdrop-blur-xl border-b border-white/5 z-50 flex items-center justify-between px-6 lg:hidden">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/webflora-logo.svg"
+            alt="WebFlora Technologies Logo"
+            width={110}
+            height={34}
+            className="object-contain"
+            priority
+          />
+        </Link>
+        
+        <div className="flex items-center gap-3">
+          <a
+            href="tel:8540814729"
+            className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center active:scale-95 transition-transform"
+            aria-label="Call Us"
+          >
+            <Phone size={16} className="text-white" />
+          </a>
+          
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center active:scale-95 transition-transform text-white"
+            aria-label="Toggle Navigation Drawer"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </div>
 
-              return (
-                <div
-                  key={i}
-                  className="relative group"
-                  onMouseEnter={() => {
-                    if (hasChildren) {
-                      if (window.hoverTimeout) clearTimeout(window.hoverTimeout);
-                      setActiveDropdown(i);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (hasChildren) {
-                      window.hoverTimeout = setTimeout(() => setActiveDropdown(null), 150);
-                    }
-                  }}
-                  onClick={(e) => {
-                    if (hasChildren) {
-                      e.preventDefault();
-                      setActiveDropdown(activeDropdown === i ? null : i);
-                    }
-                  }}
-                >
-                  {hasChildren ? (
-                    <div className="flex-shrink-0 cursor-pointer">
-                      <motion.div
-                        whileHover={{ y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 25,
-                        }}
-                        className="flex flex-col items-center gap-1 group"
-                      >
-                        <Icon
-                          size={18}
-                          strokeWidth={1.5}
-                          className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
-                            ? "text-brand"
-                            : "text-white/60 group-hover:text-white"
-                            }`}
-                        />
+      {/* Full-Screen Glassmorphic Navigation Drawer for Mobile/Tablet */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 top-16 bg-[#030303]/98 backdrop-blur-3xl z-40 lg:hidden overflow-y-auto px-6 py-8 flex flex-col justify-between"
+          >
+            {/* Nav Items List */}
+            <div className="space-y-4">
+              {navItems.map((item, idx) => {
+                const hasChildren = item.children && item.children.length > 0;
+                const isSubOpen = mobileSubmenuOpen === idx;
+                const isItemActive = pathname === item.href || (item.children && item.children.some(child => pathname === child.href));
 
-                        {/* Label */}
-                        <span
-                          className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
-                            ? "text-brand"
-                            : "text-white/40 group-hover:text-white/70"
-                            }`}
+                return (
+                  <div key={idx} className="border-b border-white/5 pb-4">
+                    {hasChildren ? (
+                      <div>
+                        <button
+                          onClick={() => setMobileSubmenuOpen(isSubOpen ? null : idx)}
+                          className="flex items-center justify-between w-full text-left py-2 focus:outline-none"
                         >
-                          {item.label}
-                        </span>
-                      </motion.div>
-                    </div>
-                  ) : (
-                    <Link href={item.href} className="flex-shrink-0">
-                      <motion.div
-                        whileHover={{ y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 25,
-                        }}
-                        className="flex flex-col items-center gap-1 cursor-pointer group"
-                      >
-                        <Icon
-                          size={18}
-                          strokeWidth={1.5}
-                          className={`transition-colors duration-300 lg:w-4 lg:h-4 ${active
-                            ? "text-brand"
-                            : "text-white/60 group-hover:text-white"
-                            }`}
-                        />
-
-                        {/* Label */}
-                        <span
-                          className={`text-[8px] sm:text-[10px] md:text-[11px] lg:text-[10px] font-bold tracking-tight whitespace-nowrap transition-colors duration-300 ${active
-                            ? "text-brand"
-                            : "text-white/40 group-hover:text-white/70"
-                            }`}
-                        >
-                          {item.label}
-                        </span>
-                      </motion.div>
-                    </Link>
-                  )}
-
-                  {/* Dropdown Menu */}
-                  {hasChildren && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95, pointerEvents: "none" }}
-                      animate={activeDropdown === i ? { opacity: 1, y: -10, scale: 1, pointerEvents: "auto" } : { opacity: 0, y: 10, scale: 0.95, pointerEvents: "none" }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute bottom-full left-1/2 -translate-x-[30%] mb-2 w-56 bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60]"
-                      onMouseEnter={() => {
-                        if (window.hoverTimeout) clearTimeout(window.hoverTimeout);
-                      }}
-                    >
-                      {/* Transparent Bridge to prevent hover loss */}
-                      <div className="absolute top-full left-0 w-full h-10 cursor-default" />
-
-                      <div className="flex flex-col gap-1">
-                        {item.children.map((child, ci) => (
-                          <Link key={ci} href={child.href}>
+                          <span className={`text-base font-bold tracking-wider uppercase ${isItemActive ? "text-[#FF3B00]" : "text-white"}`}>
+                            {item.label}
+                          </span>
+                          <ChevronDown size={18} className={`transition-transform duration-300 ${isSubOpen ? "rotate-180 text-[#FF3B00]" : "text-neutral-500"}`} />
+                        </button>
+                        
+                        <AnimatePresence>
+                          {isSubOpen && (
                             <motion.div
-                              whileHover={{ x: 4, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                              className={`flex items-center gap-3 px-3 py-2 rounded-xl transition-colors ${pathname === child.href ? "bg-brand/10 text-brand" : "text-white/70 hover:text-white"}`}
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="mt-3 pl-4 space-y-2 overflow-hidden"
                             >
-                              <child.icon size={14} strokeWidth={2} />
-                              <span className="text-xs font-bold whitespace-nowrap">{child.label}</span>
-                              {child.label === "Vegavan AI" && (
-                                <span className="ml-auto text-[8px] font-black uppercase tracking-widest bg-[#FF3B00] text-white px-1.5 py-0.5 rounded">
-                                  SaaS
-                                </span>
-                              )}
+                              {item.children.map((child, ci) => {
+                                const isChildActive = pathname === child.href;
+                                return (
+                                  <Link
+                                    key={ci}
+                                    href={child.href}
+                                    className={`flex items-center gap-3 py-2 text-sm transition-colors ${isChildActive ? "text-white font-medium" : "text-neutral-400"}`}
+                                  >
+                                    <child.icon size={14} className={child.highlight || isChildActive ? "text-[#FF3B00]" : "text-neutral-500"} />
+                                    <span>{child.label}</span>
+                                  </Link>
+                                );
+                              })}
                             </motion.div>
-                          </Link>
-                        ))}
-                        <div className="h-px bg-white/10 my-1" />
-                        <Link href={item.href}>
-                          <motion.div
-                            whileHover={{ x: 4, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                            className="flex items-center justify-between px-3 py-2 rounded-xl text-white/50 hover:text-white transition-colors"
-                          >
-                            <span className="text-[10px] font-bold uppercase tracking-wider">View All Services</span>
-                            <Icon size={12} />
-                          </motion.div>
-                        </Link>
+                          )}
+                        </AnimatePresence>
                       </div>
-                      {/* Arrow Down */}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white/10"></div>
-                    </motion.div>
-                  )}
-                </div>
-              );
-            })}
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`block py-2 text-base font-bold tracking-wider uppercase transition-colors ${isItemActive ? "text-[#FF3B00]" : "text-white hover:text-[#FF3B00]"}`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
 
-            {/* CALL OPTION (Integrated for even spacing) */}
-            <div className="flex-shrink-0">
-              <a href="tel:8540814729">
-                <motion.div
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 25 }}
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-11 md:h-11 lg:w-9 lg:h-9 rounded-full flex items-center justify-center bg-brand-red shadow-[0_0_25px_rgba(255,60,0,0.4)] border border-white/10"
-                >
-                  <Phone size={16} className="text-white lg:w-3.5 lg:h-3.5" />
-                </motion.div>
+            {/* Quick Actions & Contacts block at the bottom */}
+            <div className="mt-12 pt-6 border-t border-white/5 space-y-6">
+              <div className="flex flex-col gap-2 text-xs text-neutral-500 font-mono">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span>Available for custom projects</span>
+                </div>
+                <span>hello.webflora@gmail.com</span>
+                <span>+91 85408 14729</span>
+              </div>
+              
+              <a
+                href="tel:8540814729"
+                className="w-full py-4 bg-[#FF3B00] hover:bg-[#ff4e1a] text-white text-center font-bold tracking-wider rounded-full flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(255,59,0,0.3)] active:scale-98 transition-transform"
+              >
+                <Phone size={15} />
+                CALL DIRECT SALES
               </a>
             </div>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

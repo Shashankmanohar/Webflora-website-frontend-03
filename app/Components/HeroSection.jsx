@@ -1,44 +1,57 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-20 sm:pt-32 lg:pt-36 pb-20 sm:pb-32 lg:pb-36">
-      {/* Glow Background — animated but same visuals */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28">
+      {/* CSS Animations injected directly for compositor execution (0ms main thread blocking) */}
+      <style>{`
+        @keyframes drift1 {
+          0% { transform: translate(-20px, -30px) scale(1); }
+          50% { transform: translate(20px, 30px) scale(1.05); }
+          100% { transform: translate(-20px, -30px) scale(1); }
+        }
+        @keyframes drift2 {
+          0% { transform: translate(20px, 30px) scale(1.05); }
+          50% { transform: translate(-20px, -30px) scale(1); }
+          100% { transform: translate(20px, 30px) scale(1.05); }
+        }
+        @keyframes float1 {
+          0% { transform: translateY(-25px) rotate(-4deg); }
+          50% { transform: translateY(25px) rotate(4deg); }
+          100% { transform: translateY(-25px) rotate(-4deg); }
+        }
+        @keyframes float2 {
+          0% { transform: translateY(25px) rotate(4deg); }
+          50% { transform: translateY(-25px) rotate(-4deg); }
+          100% { transform: translateY(25px) rotate(4deg); }
+        }
+        .animate-drift-1 { animation: drift1 39s infinite ease-in-out; }
+        .animate-drift-2 { animation: drift2 39s infinite ease-in-out; }
+        .animate-float-1 { animation: float1 33s infinite ease-in-out; }
+        .animate-float-2 { animation: float2 33s infinite ease-in-out; }
+      `}</style>
+
+      {/* Glow Background — animated via CSS keyframes */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-screen overflow-hidden bg-black">
           <div className="absolute inset-0 bg-black/5" />
-          <motion.div
-            animate={{ y: [-30, 30, -30], x: [-20, 20, -20], scale: [1, 1.05, 1] }}
-            transition={{ duration: 39, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-1/4 top-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-60 will-change-transform"
+          <div
+            className="absolute left-1/4 top-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-60 will-change-transform animate-drift-1"
           />
-          <motion.div
-            animate={{ y: [30, -30, 30], x: [20, -20, 20], scale: [1.05, 1, 1.05] }}
-            transition={{ duration: 39, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-1/2 top-1/2 w-[320px] h-[320px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-40 will-change-transform"
+          <div
+            className="absolute left-1/2 top-1/2 w-[320px] h-[320px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-40 will-change-transform animate-drift-2"
           />
         </div>
       </div>
 
-      {/* Floating Icons — premium float animation */}
-      <motion.div
-        animate={{ y: [-25, 25, -25], rotate: [-4, 4, -4] }}
-        transition={{ duration: 33, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute right-[8%] top-[25%] hidden lg:block opacity-35 will-change-transform"
-      >
+      {/* Floating Icons — pure CSS float animation */}
+      <div className="absolute right-[8%] top-[25%] hidden lg:block opacity-35 will-change-transform animate-float-1">
         <span className="text-white text-[80px]">{"</>"}</span>
-      </motion.div>
+      </div>
 
-      <motion.div
-        animate={{ y: [25, -25, 25], rotate: [4, -4, 4] }}
-        transition={{ duration: 33, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[8%] bottom-[25%] hidden lg:block opacity-35 will-change-transform"
-      >
+      <div className="absolute left-[8%] bottom-[25%] hidden lg:block opacity-35 will-change-transform animate-float-2">
         <span className="text-white text-[70px]">{"{}"}</span>
-      </motion.div>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
@@ -56,7 +69,7 @@ export default function Hero() {
         </div>
 
         {/* Heading — elegant reveal */}
-        <h2 className="font-display font-bold tracking-tighter leading-[0.98] text-[36px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 will-change-transform">
+        <h2 className="font-display font-bold tracking-tighter leading-[1.05] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 will-change-transform">
           ANYTHING THAT <br />
           <span className="text-gradient inline-block">CAN BE BUILT,</span>
           <br />

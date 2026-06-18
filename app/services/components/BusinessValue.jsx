@@ -155,7 +155,7 @@ const BusinessValue = () => {
     <section
       ref={sectionRef}
       id="impact"
-      className="relative py-24 sm:py-40 md:py-56 px-4 sm:px-6 lg:px-8 overflow-hidden bg-black border-t border-white/5"
+      className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-black border-t border-white/5"
     >
       {/* === PREMIUM BACKGROUND SYSTEM === */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -282,7 +282,7 @@ const BusinessValue = () => {
                 ease: [0.16, 1, 0.3, 1],
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-[-0.05em] leading-[0.95] mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7.5xl font-black text-white tracking-[-0.05em] leading-[0.95] mb-6"
             >
               Proven Results
               <br />
@@ -646,7 +646,7 @@ const BusinessValue = () => {
 
               {/* Counter */}
               <div className="mb-4">
-                <motion.div className="text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight group-hover/metric:text-[#FF3B00] transition-colors duration-300">
+                <motion.div className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight group-hover/metric:text-[#FF3B00] transition-colors duration-300">
                   <span
                     ref={(el) => {
                       if (el) countersRef.current[idx] = el;

@@ -131,14 +131,14 @@ export default function UltraAnimatedHero() {
             Spotlight on Engineering
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.9] text-white drop-shadow-2xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.9] text-white drop-shadow-2xl">
             About <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-neutral-50 to-[#ff3c00]">
               Webflora Technologies
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             Leading Software Development Company in Patna Bihar
           </p>
 
@@ -188,12 +188,12 @@ export default function UltraAnimatedHero() {
       <GoogleReviewsSection />
 
       {/* GEO Content Section */}
-      <section className="py-32 bg-black border-y border-white/5 relative overflow-hidden">
+      <section className="py-20 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tighter leading-none">
             Leading Software Development Company in Patna Bihar
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light mb-12">
+          <p className="text-gray-400 text-base mb-8 leading-relaxed font-light">
             Webflora Technologies is a Patna-based digital solutions company helping startups, coaching institutes, ecommerce businesses, and enterprises build scalable digital systems through software development, AI automation, and modern web technologies.
           </p>
           
@@ -237,63 +237,7 @@ export default function UltraAnimatedHero() {
       {/* About FAQs Section */}
       <FaqSection 
         title="Webflora Technologies"
-        faqs={[
-          {
-            question: "What is Webflora Technologies?",
-            answer: "Webflora Technologies is a software development and digital solutions company based in Patna, Bihar, helping businesses build websites, mobile applications, AI automation systems, and scalable software solutions.",
-            icon: "lucide:info"
-          },
-          {
-            question: "Where is Webflora Technologies located?",
-            answer: "Webflora Technologies is located at NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India, and serves startups, businesses, coaching institutes, and enterprises across Bihar and India.",
-            icon: "lucide:map-pin"
-          },
-          {
-            question: "What industries does Webflora Technologies work with?",
-            answer: "We work with startups, ecommerce businesses, coaching institutes, healthcare businesses, educational organizations, local businesses, and enterprises looking for digital transformation and automation solutions.",
-            icon: "lucide:briefcase"
-          },
-          {
-            question: "Why is Webflora Technologies the best custom software development company in Patna?",
-            answer: "We provide tailored, secure, and scalable enterprise-grade software solutions using modern tech stacks, ensuring that your business operations are fully automated and data-driven.",
-            icon: "lucide:award"
-          },
-          {
-            question: "How much does custom software development cost?",
-            answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,00,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
-            icon: "lucide:indian-rupee"
-          },
-          {
-            question: "How long does it take to develop software?",
-            answer: "Development time depends on complexity. Small systems may take 4-8 weeks, while large scalable systems can take several months for a full rollout and integration.",
-            icon: "lucide:calendar"
-          },
-          {
-            question: "Can you upgrade existing software?",
-            answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing legacy systems to match current business needs using modern SaaS architecture and cloud-native solutions.",
-            icon: "lucide:refresh-cw"
-          },
-          {
-            question: "What makes Webflora Technologies different from other agencies?",
-            answer: "Our approach focuses on scalable engineering, structured execution, performance optimization, AI-driven systems, and long-term business growth instead of just basic website or software delivery.",
-            icon: "lucide:zap"
-          },
-          {
-            question: "Is Webflora Technologies MSME registered?",
-            answer: "Yes, Webflora Technologies is registered as an MSME under the Government of India with Udyam Registration Number UDYAM-BR-26-0183379.",
-            icon: "lucide:award"
-          },
-          {
-            question: "Do founders directly manage projects?",
-            answer: "Yes, Webflora follows a founder-led execution approach where project strategy, quality control, and client communication are closely managed to ensure better execution and transparency.",
-            icon: "lucide:users"
-          },
-          {
-            question: "What is the mission of Webflora Technologies?",
-            answer: "Our mission is to help businesses grow faster and operate smarter through scalable technology systems, automation, digital transformation, and performance-focused engineering solutions.",
-            icon: "lucide:target"
-          }
-        ]} 
+        faqs={aboutFaqs} 
       />
 
       {/* Contact Section */}
@@ -338,6 +282,81 @@ export default function UltraAnimatedHero() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": aboutFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
     </>
   );
 }
+
+const aboutFaqs = [
+  {
+    question: "What is Webflora Technologies?",
+    answer: "Webflora Technologies is a software development and digital solutions company based in Patna, Bihar, helping businesses build websites, mobile applications, AI automation systems, and scalable software solutions.",
+    icon: "lucide:info"
+  },
+  {
+    question: "Where is Webflora Technologies located?",
+    answer: "Webflora Technologies is located at NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India, and serves startups, businesses, coaching institutes, and enterprises across Bihar and India.",
+    icon: "lucide:map-pin"
+  },
+  {
+    question: "What industries does Webflora Technologies work with?",
+    answer: "We work with startups, ecommerce businesses, coaching institutes, healthcare businesses, educational organizations, local businesses, and enterprises looking for digital transformation and automation solutions.",
+    icon: "lucide:briefcase"
+  },
+  {
+    question: "Why is Webflora Technologies the best custom software development company in Patna?",
+    answer: "We provide tailored, secure, and scalable enterprise-grade software solutions using modern tech stacks, ensuring that your business operations are fully automated and data-driven.",
+    icon: "lucide:award"
+  },
+  {
+    question: "How much does custom software development cost?",
+    answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,00,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
+    icon: "lucide:indian-rupee"
+  },
+  {
+    question: "How long does it take to develop software?",
+    answer: "Development time depends on complexity. Small systems may take 4-8 weeks, while large scalable systems can take several months for a full rollout and integration.",
+    icon: "lucide:calendar"
+  },
+  {
+    question: "Can you upgrade existing software?",
+    answer: "Yes, Webflora Technologies can improve, upgrade, or rebuild existing legacy systems to match current business needs using modern SaaS architecture and cloud-native solutions.",
+    icon: "lucide:refresh-cw"
+  },
+  {
+    question: "What makes Webflora Technologies different from other agencies?",
+    answer: "Our approach focuses on scalable engineering, structured execution, performance optimization, AI-driven systems, and long-term business growth instead of just basic website or software delivery.",
+    icon: "lucide:zap"
+  },
+  {
+    question: "Is Webflora Technologies MSME registered?",
+    answer: "Yes, Webflora Technologies is registered as an MSME under the Government of India with Udyam Registration Number UDYAM-BR-26-0183379.",
+    icon: "lucide:award"
+  },
+  {
+    question: "Do founders directly manage projects?",
+    answer: "Yes, Webflora follows a founder-led execution approach where project strategy, quality control, and client communication are closely managed to ensure better execution and transparency.",
+    icon: "lucide:users"
+  },
+  {
+    question: "What is the mission of Webflora Technologies?",
+    answer: "Our mission is to help businesses grow faster and operate smarter through scalable technology systems, automation, digital transformation, and performance-focused engineering solutions.",
+    icon: "lucide:target"
+  }
+];

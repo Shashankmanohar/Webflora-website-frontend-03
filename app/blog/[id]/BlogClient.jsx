@@ -294,7 +294,7 @@ const BlogClient = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-7xl font-bold leading-[1.1] mb-12 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-bold leading-[1.1] mb-12 tracking-tight">
               {post.title}
             </h1>
             

@@ -22,7 +22,7 @@ const itemVariants = {
 
 export default function TrustSignals() {
   return (
-    <section className="py-32 md:py-48 bg-[#050505] relative overflow-hidden z-10 border-t border-white/5">
+    <section className="py-20 md:py-28 bg-[#050505] relative overflow-hidden z-10 border-t border-white/5">
       {/* Ambient Background Glows */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#ff3c00]/5 rounded-full blur-[140px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none animate-pulse delay-700" />
@@ -36,20 +36,20 @@ export default function TrustSignals() {
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="mb-40"
+          className="mb-24"
         >
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
             <div className="max-w-2xl">
               <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
                 <div className="h-px w-12 bg-[#ff3c00]" />
                 <span className="text-[#ff3c00] font-bold uppercase tracking-[0.4em] text-[10px]">Quantifiable Impact</span>
               </motion.div>
-              <motion.h2 variants={itemVariants} className="text-5xl md:text-8xl font-display font-bold text-white tracking-tighter leading-[0.8] uppercase">
+              <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-display font-bold text-white tracking-tighter leading-[1.0] uppercase">
                 Success <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700">Validated.</span>
               </motion.h2>
             </div>
-            <motion.p variants={itemVariants} className="text-gray-500 text-lg md:text-xl font-light max-w-sm border-l border-white/10 pl-8">
+            <motion.p variants={itemVariants} className="text-gray-500 text-base md:text-lg font-light max-w-sm border-l border-white/10 pl-8">
               Empowering global brands with high-performance digital infrastructure.
             </motion.p>
           </div>
@@ -65,11 +65,11 @@ export default function TrustSignals() {
                 key={idx} 
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="group relative p-10 rounded-[2.5rem] bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
+                className="group relative p-6 md:p-8 rounded-[2rem] bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
                 <div className="relative z-10">
-                  <div className="text-5xl md:text-6xl font-display font-bold text-white mb-4 tracking-tighter">
+                  <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2 tracking-tighter">
                     {stat.number}
                   </div>
                   <div className="text-xs font-bold text-[#ff3c00] uppercase tracking-[0.2em] mb-2">{stat.label}</div>
@@ -87,12 +87,12 @@ export default function TrustSignals() {
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
-          <div className="flex flex-col items-center text-center mb-24">
+          <div className="flex flex-col items-center text-center mb-16">
             <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
               <ShieldCheck className="w-4 h-4 text-[#ff3c00]" />
               <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
             </motion.div>
-            <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter leading-none uppercase">
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-none uppercase">
               Why Businesses <span className="text-[#ff3c00]">Choose Us</span>
             </motion.h2>
           </div>
@@ -147,18 +147,18 @@ export default function TrustSignals() {
                 <motion.div 
                   key={idx} 
                   variants={itemVariants}
-                  className={`group relative p-10 rounded-[2.5rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
+                  className={`group relative p-6 md:p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
                 >
                   {/* Background Accent */}
                   <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${reason.color} to-transparent opacity-0 group-hover:opacity-100 blur-[80px] transition-all duration-700 pointer-events-none`} />
                   
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-8 group-hover:scale-110 group-hover:bg-[#ff3c00] group-hover:text-black transition-all duration-500 shadow-inner">
-                      <IconComponent className="w-7 h-7" />
+                    <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-6 group-hover:scale-110 group-hover:bg-[#ff3c00] group-hover:text-black transition-all duration-500 shadow-inner">
+                      <IconComponent className="w-5.5 h-5.5" />
                     </div>
                     
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-tight uppercase">{reason.title}</h3>
-                    <p className="text-gray-500 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500">{reason.desc}</p>
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-3 tracking-tight uppercase">{reason.title}</h3>
+                    <p className="text-gray-500 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500 text-sm md:text-base">{reason.desc}</p>
                   </div>
                   
                   {/* Modern Border Accent */}

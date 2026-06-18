@@ -179,8 +179,6 @@ export default function HeroSection() {
     <>
       {/* ── Keyframe Styles ── */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@200;300;400&display=swap');
-
         @keyframes twinkle {
           0%, 100% { opacity: var(--opacity, 0.3); transform: scale(1); }
           50%        { opacity: 0; transform: scale(0.5); }

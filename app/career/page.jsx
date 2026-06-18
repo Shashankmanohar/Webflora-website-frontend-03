@@ -151,7 +151,7 @@ const CareerPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="py-20 md:py-32 px-6 text-center border-b-4 border-black relative overflow-hidden bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px]"
+        className="py-16 md:py-24 px-6 text-center border-b-4 border-black relative overflow-hidden bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px]"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 40 }}
@@ -163,7 +163,7 @@ const CareerPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-6 leading-none"
+            className="text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-6 leading-none"
           >
             Join Our
             <br />

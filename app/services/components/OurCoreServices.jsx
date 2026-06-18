@@ -375,7 +375,7 @@ const OurCoreServices = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-neutral-950/30 to-black"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-neutral-950/30 to-black"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">

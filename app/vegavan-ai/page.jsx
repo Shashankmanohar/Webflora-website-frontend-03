@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence, useInView } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import FaqSection from "../services/components/FaqSection";
 
 // ===============================
 // PREMIUM SUB-COMPONENTS
@@ -166,7 +167,7 @@ export default function VegavanCinemaPage() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-6xl sm:text-8xl md:text-[9rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4"
+            className="text-5xl sm:text-7xl md:text-[6.5rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4"
           >
             VEGAVAN
           </motion.h1>
@@ -175,7 +176,7 @@ export default function VegavanCinemaPage() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-[6rem] font-black tracking-tighter text-[#FF3B00] relative"
+            className="text-3xl sm:text-5xl md:text-[4.5rem] font-black tracking-tighter text-[#FF3B00] relative"
           >
             INTELLIGENCE
             <span className="absolute -top-4 -right-6 text-xs font-mono font-medium tracking-widest text-white bg-[#FF3B00] px-2 py-1 rounded flex items-center gap-1 shadow-[0_0_20px_#FF3B00]">
@@ -188,7 +189,7 @@ export default function VegavanCinemaPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 text-lg md:text-2xl text-neutral-400 max-w-3xl text-center font-light leading-relaxed"
+          className="mt-8 text-base md:text-xl text-neutral-400 max-w-3xl text-center font-light leading-relaxed"
         >
           Stop hiring operators for basic queries. <strong className="text-white font-medium">Instantly integrate autonomous NLP chatbots</strong> that absorb your exact documentation and output human-tier support 24/7.
         </motion.p>
@@ -226,7 +227,7 @@ export default function VegavanCinemaPage() {
       </div>
 
       {/* SECTION 3: COMPREHENSIVE INFORMATION ARCHITECTURE */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-48">
+      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28">
         
         {/* Info Panel 1: The Problem & Solution Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-40">
@@ -283,7 +284,7 @@ export default function VegavanCinemaPage() {
 
         {/* Info Panel 2: The Detailed Advantage Matrix */}
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white">Master Your Conversations.</h2>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">Master Your Conversations.</h2>
           <p className="text-neutral-500 mt-4 max-w-2xl mx-auto font-light text-lg">Deep technical utility, distilled for operational dominance.</p>
         </div>
 
@@ -390,7 +391,7 @@ export default function VegavanCinemaPage() {
       </section>
 
       {/* SECTION 4: ULTIMATE CTA */}
-      <section className="relative z-10 py-40 px-6 overflow-hidden text-center flex justify-center items-center">
+      <section className="relative z-10 py-24 px-6 overflow-hidden text-center flex justify-center items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF3B00]/5 to-transparent pointer-events-none" />
         
         <motion.div
@@ -408,7 +409,7 @@ export default function VegavanCinemaPage() {
           <div className="bg-black border border-white/10 p-12 md:p-24 rounded-[3rem] shadow-2xl relative z-10 overflow-hidden backdrop-blur-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent" />
             
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter mb-8 relative z-10">Ready for autonomy?</h2>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-8 relative z-10">Ready for autonomy?</h2>
             <p className="text-neutral-400 text-lg md:text-xl font-light max-w-xl mx-auto mb-12 relative z-10">
               Unlock the future of engagement. Add our conversational system to your workforce today and accelerate every operational metric you track.
             </p>
@@ -424,6 +425,55 @@ export default function VegavanCinemaPage() {
         </motion.div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="relative z-10">
+        <FaqSection 
+          title="Vegavan AI Chatbot" 
+          faqs={vegavanFaqs} 
+        />
+      </section>
+
+      {/* FAQ JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": vegavanFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
     </main>
   );
 }
+
+const vegavanFaqs = [
+  {
+    question: "What is Vegavan AI?",
+    answer: "Vegavan AI is a custom-engineered autonomous conversational AI chatbot designed by Webflora Technologies. It operates as a 24/7 digital assistant, absorbing your exact business documents, PDFs, and website links to resolve customer queries instantly without manual intervention.",
+    icon: "lucide:bot"
+  },
+  {
+    question: "How long does it take to train and deploy Vegavan AI?",
+    answer: "Training is near-instant. Once you sync your corporate documents or website URLs, the AI engine processes and vectorizes the data in seconds. The official deployment requires pasting a single line of script code, taking under 60 seconds to set up on WordPress, Next.js, Shopify, or custom HTML.",
+    icon: "lucide:clock"
+  },
+  {
+    question: "Is patient or client data secure when using Vegavan AI?",
+    answer: "Yes, data privacy and security are priority. All conversations are handled through SSL encrypted transit channels, and customer data sits securely within restricted air-gapped database pools. It fully supports custom configurations to align with sensitive data safety compliance.",
+    icon: "lucide:shield-check"
+  },
+  {
+    question: "How does Vegavan AI capture sales leads?",
+    answer: "The chatbot is optimized to identify high-intent buying signals. At optimal engagement moments during natural conversation, it politely prompts the user for contact details (such as email, name, or phone number) and automatically syncs them to your sales CRM or email alerts.",
+    icon: "lucide:users"
+  }
+];

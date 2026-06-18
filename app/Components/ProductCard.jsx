@@ -69,18 +69,18 @@ const ProductCard = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-40 px-6 bg-black relative">
+    <section ref={containerRef} className="py-20 px-6 bg-black relative">
       <div className="max-w-6xl mx-auto relative z-10">
         
-        <div className="text-center mb-24">
+        <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6"
+            className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4"
           >
             Digital <span className="text-[#FF3B00]">Solutions</span>
           </motion.h2>
-          <p className="text-xl text-gray-500 font-light max-w-2xl mx-auto">
+          <p className="text-base text-gray-500 font-light max-w-2xl mx-auto">
             High-performance systems built with precision and modern design excellence.
           </p>
         </div>
@@ -93,42 +93,43 @@ const ProductCard = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="group relative min-h-[420px] md:min-h-[500px] h-auto rounded-[3rem] p-8 md:p-12 overflow-hidden bg-[#121212] border border-white/5 transition-all duration-500 hover:border-[#FF3B00]/30"
+              className="group relative min-h-[340px] md:min-h-[380px] h-auto rounded-[2rem] p-6 md:p-8 overflow-hidden bg-[#121212] border border-white/5 transition-all duration-500 hover:border-[#FF3B00]/30"
             >
               {/* Subtle Inner Glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
               
-              <div className="relative h-full flex flex-col justify-between gap-10">
+              <div className="relative h-full flex flex-col justify-between gap-6">
                 <div>
-                  <div className="mb-6 md:mb-8">
-                    <Icon icon={p.icon} width={60} height={60} style={{ color: p.color }} className="md:w-20 md:h-20 opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="mb-4">
+                    <Icon icon={p.icon} width={48} height={48} style={{ color: p.color }} className="md:w-14 md:h-14 opacity-80 group-hover:opacity-100 transition-opacity" />
                   </div>
                   
-                  <div className="w-12 h-1 bg-[#FF3B00]/50 mb-6 group-hover:w-20 transition-all duration-500" />
+                  <div className="w-12 h-1 bg-[#FF3B00]/50 mb-4 group-hover:w-20 transition-all duration-500" />
                   
-                  <h3 className="text-4xl md:text-6xl font-black text-white mb-2 tracking-tight leading-none hover:text-[#FF3B00] transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight leading-none hover:text-[#FF3B00] transition-colors duration-300">
                     <Link href={p.link}>
                       {p.name}
                     </Link>
                   </h3>
-                  <p className="text-lg md:text-xl text-gray-400 font-medium">
+                  <p className="text-sm md:text-base text-gray-400 font-medium">
                     {p.tagline}
                   </p>
-                  <p className="text-sm md:text-base text-gray-500 font-light mt-4 leading-relaxed group-hover:text-gray-400 transition-colors duration-500">
+                  <p className="text-xs md:text-sm text-gray-500 font-light mt-2 leading-relaxed group-hover:text-gray-400 transition-colors duration-500">
                     {p.description}
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between mt-auto">
-                  <span className="text-3xl md:text-5xl font-black text-[#FF3B00]">
+                <div className="flex items-center justify-between mt-auto pt-4">
+                  <span className="text-2xl md:text-3xl font-black text-[#FF3B00]">
                     {p.price}
                   </span>
                   
                   <Link 
                     href={p.link}
-                    className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:rotate-45 group-hover:bg-white group-hover:text-black transition-all duration-500"
+                    aria-label={`Learn more about ${p.name}`}
+                    className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:rotate-45 group-hover:bg-white group-hover:text-black transition-all duration-500"
                   >
-                    <Icon icon="lucide:arrow-right" width={24} className="md:w-7" />
+                    <Icon icon="lucide:arrow-right" width={20} className="md:w-6" />
                   </Link>
                 </div>
               </div>

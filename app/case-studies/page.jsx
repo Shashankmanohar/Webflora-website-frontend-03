@@ -14,15 +14,18 @@ import TrustSignals from "../Components/TrustSignals";
 function Starfield() {
   const [stars, setStars] = useState([]);
   useEffect(() => {
-    const generated = Array.from({ length: 40 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 1.5 + 0.5,
-      duration: Math.random() * 3 + 2,
-      opacity: Math.random() * 0.4 + 0.1,
-    }));
-    setStars(generated);
+    const timer = setTimeout(() => {
+      const generated = Array.from({ length: 40 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 1.5 + 0.5,
+        duration: Math.random() * 3 + 2,
+        opacity: Math.random() * 0.4 + 0.1,
+      }));
+      setStars(generated);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -119,7 +122,7 @@ export default function CaseStudiesPage() {
             Webflora Technologies Case Studies
           </h1>
           
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
             Recent Projects <br />
             <span className="text-gray-500 italic">and Success Stories</span>
           </h2>
@@ -216,7 +219,7 @@ export default function CaseStudiesPage() {
 
         {/* Empty State */}
         {filteredProjects.length === 0 && (
-          <div className="text-center py-40">
+          <div className="text-center py-20">
             <Icon icon="solar:folder-error-linear" className="text-5xl text-neutral-800 mx-auto mb-6" />
             <p className="text-neutral-500 font-medium">No case studies found in this category.</p>
           </div>

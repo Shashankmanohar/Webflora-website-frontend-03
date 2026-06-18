@@ -46,9 +46,9 @@ const item = {
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-32 bg-neutral-950 px-6">
+    <section id="process" className="py-20 bg-neutral-950 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-display font-bold text-4xl md:text-5xl text-white tracking-tighter text-center mb-20">
+        <h2 className="font-display font-bold text-3xl md:text-4xl text-white tracking-tighter text-center mb-16">
           HOW <span className="text-orange-600">WE</span> BUILD THE FUTURE
         </h2>
 
@@ -61,7 +61,7 @@ export default function ProcessSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="space-y-16 relative"
+            className="space-y-12 relative"
           >
             {steps.map((step, i) => {
               const isEven = i % 2 === 1;

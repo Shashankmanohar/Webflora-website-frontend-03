@@ -37,7 +37,7 @@ export default function AboutWebflora() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className="relative px-6 py-20 md:py-32 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center overflow-hidden"
+      className="relative px-6 py-16 md:py-20 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute inset-0 -z-10">
@@ -48,7 +48,7 @@ export default function AboutWebflora() {
       {/* Left Content */}
       <motion.div variants={item} className="space-y-8">
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
             About <span className="text-[#ff3c00]">Webflora</span> <br />
             <span >Technologies</span>
           </h2>
@@ -62,19 +62,19 @@ export default function AboutWebflora() {
           />
         </div>
 
-        <p className="text-neutral-400 text-lg leading-relaxed">
+        <p className="text-neutral-400 text-base leading-relaxed">
           Webflora Technologies is a Patna-based digital solutions company offering web development, mobile app development, custom software, digital marketing, and AI automation services for startups and businesses across India.
         </p>
 
-        <p className="text-neutral-400 text-lg leading-relaxed">
+        <p className="text-neutral-400 text-base leading-relaxed">
           We help businesses improve online visibility, automate operations, and build scalable, performance-driven digital systems using modern technology and data-driven strategies. Our approach combines structured planning, clean execution, and practical solutions to solve real business challenges such as low leads, inefficient workflows, and lack of digital growth.
         </p>
 
-        <p className="text-neutral-400 text-lg leading-relaxed">
+        <p className="text-neutral-400 text-base leading-relaxed">
           Our goal is to make businesses faster, smarter, and more efficient through technology, with every solution designed for scalability, performance, and long-term growth.
         </p>
 
-        <p className="text-neutral-400 text-lg leading-relaxed">
+        <p className="text-neutral-400 text-base leading-relaxed">
           Beyond custom software engineering, Webflora Technologies is deeply committed to empowering local youths and aspiring tech startups in Bihar. By providing high-quality, practical technical education, hands-on software development internships, and mentoring local student communities, we are actively fostering the next generation of software engineers and entrepreneurs within Patna's growing technological ecosystem.
         </p>
 

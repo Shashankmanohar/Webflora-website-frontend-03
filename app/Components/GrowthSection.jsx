@@ -23,7 +23,7 @@ const fadeUp = {
 
 export default function GrowthSection() {
   return (
-    <section className="py-24 relative bg-black text-white overflow-hidden">
+    <section className="py-16 md:py-20 relative bg-black text-white overflow-hidden">
       {/* ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-3xl" />
@@ -41,7 +41,7 @@ export default function GrowthSection() {
           <motion.div variants={container} className="space-y-8 ">
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-semibold"
+              className="text-2xl md:text-3xl font-semibold"
             >
               Is your business <br />
               <span className="text-zinc-500">stuck in the past?</span>
@@ -62,7 +62,7 @@ export default function GrowthSection() {
                   <div className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover:bg-red-500/10 group-hover:text-red-500 transition-colors">
                     <Icon icon="solar:close-circle-linear" width={20} />
                   </div>
-                  <span className="text-lg line-through decoration-zinc-700 group-hover:decoration-red-400 transition-all">
+                  <span className="text-base line-through decoration-zinc-700 group-hover:decoration-red-400 transition-all">
                     {text}
                   </span>
                 </motion.div>
@@ -81,7 +81,7 @@ export default function GrowthSection() {
 
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-semibold mb-8 relative z-10"
+              className="text-2xl md:text-3xl font-semibold mb-6 relative z-10"
             >
               We engineer <br />
               <span className="text-[#F54A00]">scalable growth.</span>
@@ -102,7 +102,7 @@ export default function GrowthSection() {
                   <div className="w-8 h-8 rounded-full bg-orange-600/10 flex items-center justify-center text-[#F54A00]">
                     <Icon icon="solar:check-circle-bold" width={20} />
                   </div>
-                  <span className="text-lg font-medium text-zinc-100">
+                  <span className="text-base font-medium text-zinc-100">
                     {text}
                   </span>
                 </motion.div>

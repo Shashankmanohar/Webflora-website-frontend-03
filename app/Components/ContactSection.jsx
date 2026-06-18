@@ -24,29 +24,42 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-32 px-6 overflow-hidden bg-neutral-950"
+      className="relative py-20 px-6 overflow-hidden bg-neutral-950"
     >
+      {/* CSS Animations injected for compositor execution (0ms main thread blocking) */}
+      <style>{`
+        @keyframes pulse-opacity {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
+        }
+        @keyframes glow-y-1 {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-30px); }
+        }
+        @keyframes glow-y-2 {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(40px); }
+        }
+        .animate-pulse-opacity { animation: pulse-opacity 8s infinite ease-in-out; }
+        .animate-glow-y-1 { animation: glow-y-1 10s infinite ease-in-out; }
+        .animate-glow-y-2 { animation: glow-y-2 12s infinite ease-in-out; }
+      `}</style>
+
       {/* Animated gradient background */}
-      <motion.div
-        animate={{ opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-0 right-0 w-1/3 h-full pointer-events-none blur-2xl"
+      <div
+        className="absolute top-0 right-0 w-1/3 h-full pointer-events-none blur-2xl animate-pulse-opacity"
         style={{
           background: `linear-gradient(to left, ${BRAND}33, transparent)`,
         }}
       />
 
       {/* Floating glow orbs */}
-      <motion.div
-        animate={{ y: [0, -30, 0] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl"
+      <div
+        className="absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl animate-glow-y-1"
         style={{ backgroundColor: `${BRAND}1a` }}
       />
-      <motion.div
-        animate={{ y: [0, 40, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute bottom-0 right-0 w-80 h-80 rounded-full blur-3xl"
+      <div
+        className="absolute bottom-0 right-0 w-80 h-80 rounded-full blur-3xl animate-glow-y-2"
         style={{ backgroundColor: `${BRAND}1a` }}
       />
 
@@ -61,7 +74,7 @@ export default function ContactSection() {
           <motion.h2
             custom={1}
             variants={fadeUp}
-            className="font-bold text-4xl md:text-7xl text-white tracking-tight mb-6 leading-tight"
+            className="font-bold text-4xl md:text-5xl text-white tracking-tight mb-6 leading-tight"
           >
             LET&apos;S CREATE <br />
             <span style={{ color: BRAND }}>EXTRAORDINARY</span>
@@ -70,7 +83,7 @@ export default function ContactSection() {
           <motion.p
             custom={2}
             variants={fadeUp}
-            className="text-gray-400 text-lg mb-12"
+            className="text-gray-400 text-base mb-8"
           >
             Ready to start? Tell us about your project, timeline, and
             budget. We typically reply within 24 hours.
@@ -198,12 +211,14 @@ export default function ContactSection() {
 
               <div className="space-y-2">
                 <label
+                  htmlFor="contact-service"
                   className="text-xs font-bold tracking-widest uppercase"
                   style={{ color: BRAND }}
                 >
                   Service Interested In
                 </label>
                 <select
+                  id="contact-service"
                   name="service"
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors appearance-none"
                   style={{ outlineColor: BRAND }}
@@ -219,12 +234,14 @@ export default function ContactSection() {
 
               <div className="space-y-2">
                 <label
+                  htmlFor="contact-message"
                   className="text-xs font-bold tracking-widest uppercase"
                   style={{ color: BRAND }}
                 >
                   Project Details
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   rows="4"
                   placeholder="Tell us about your project..."
@@ -262,16 +279,19 @@ export default function ContactSection() {
 
 function Input({ label, name, type = "text", placeholder, required = false }) {
   const BRAND = "#ff3b00";
+  const inputId = `contact-input-${name}`;
 
   return (
     <div className="space-y-2">
       <label
+        htmlFor={inputId}
         className="text-xs font-bold tracking-widest uppercase"
         style={{ color: BRAND }}
       >
         {label}
       </label>
       <input
+        id={inputId}
         name={name}
         type={type}
         placeholder={placeholder}

@@ -29,11 +29,11 @@ export default function FounderStorySection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className="px-6 py-24 max-w-7xl mx-auto w-full relative"
+      className="px-6 py-16 max-w-7xl mx-auto w-full relative"
     >
       <motion.div
         variants={item}
-        className="relative p-8 md:p-12 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl overflow-hidden"
+        className="relative p-6 md:p-8 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl overflow-hidden"
       >
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0" />
@@ -63,7 +63,7 @@ export default function FounderStorySection() {
               <span className="text-[#ff3c00] font-mono text-sm tracking-widest uppercase mb-2 block">
                 The Origin
               </span>
-              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
                 Founder Story
               </h2>
             </div>
@@ -85,7 +85,7 @@ export default function FounderStorySection() {
           {/* Right */}
           <motion.div
             variants={container}
-            className="md:col-span-7 space-y-6 text-neutral-400 leading-relaxed border-l border-white/10 pl-0 md:pl-12"
+            className="md:col-span-7 space-y-6 text-neutral-400 text-sm md:text-base leading-relaxed border-l border-white/10 pl-0 md:pl-12"
           >
             <motion.p variants={item}>
               Webflora Technologies was founded to address a real gap in how

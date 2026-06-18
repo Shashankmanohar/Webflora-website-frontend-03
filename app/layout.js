@@ -55,17 +55,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://code.iconify.design" />
-        <link rel="preconnect" href="https://vegavan-backend.vercel.app" />
-      </head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-7DCZZDRV1R"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -133,7 +127,7 @@ export default function RootLayout({ children }) {
                   }
                   @media (max-width: 768px) {
                     .chatbot-launcher {
-                      bottom: 100px !important;
+                      bottom: 20px !important;
                       right: 20px !important;
                     }
                   }
@@ -150,7 +144,7 @@ export default function RootLayout({ children }) {
           __html: `
           @media (max-width: 768px) {
             #ai-chatbot-root-container {
-              bottom: 100px !important;
+              bottom: 20px !important;
               right: 20px !important;
             }
           }

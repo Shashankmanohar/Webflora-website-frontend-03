@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function VegavanTeaser() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-black">
+    <section className="relative py-16 md:py-20 overflow-hidden bg-black">
       {/* Background dynamic gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[30%] -left-[10%] w-[60%] h-[60%] bg-[#FF3B00]/10 rounded-full blur-[120px] opacity-50 animate-pulse" />
@@ -23,7 +23,7 @@ export default function VegavanTeaser() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
               <span className="relative flex h-3 w-3">
@@ -33,11 +33,11 @@ export default function VegavanTeaser() {
               <span className="text-xs md:text-sm font-bold text-white uppercase tracking-widest">Announcing Our First SaaS</span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
+            <h2 className="text-3xl md:text-5xl font-black text-white leading-none tracking-tighter">
               Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3B00] via-orange-400 to-yellow-500">Vegavan AI</span>
             </h2>
 
-            <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-xl">
+            <p className="text-base text-gray-400 font-medium leading-relaxed max-w-xl">
               The ultimate intelligent Conversational AI platform. Automate 90% of customer interactions, drive sales, and capture leads 24/7 without writing a single line of code.
             </p>
 
@@ -47,7 +47,7 @@ export default function VegavanTeaser() {
                   <Icon icon="solar:chat-square-code-bold-duotone" width={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Human-like Interactions</h4>
+                  <h4 className="text-base font-bold text-white">Human-like Interactions</h4>
                   <p className="text-sm text-gray-500">Powered by state-of-the-art NLP models.</p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function VegavanTeaser() {
                   <Icon icon="solar:bolt-circle-bold-duotone" width={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Instant Setup</h4>
+                  <h4 className="text-base font-bold text-white">Instant Setup</h4>
                   <p className="text-sm text-gray-500">Train on your data in minutes.</p>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function VegavanTeaser() {
                   <Icon icon="solar:layers-bold-duotone" width={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Omnichannel Integration</h4>
+                  <h4 className="text-base font-bold text-white">Omnichannel Integration</h4>
                   <p className="text-sm text-gray-500">Deploy effortlessly across Websites & Mobile Apps.</p>
                 </div>
               </div>

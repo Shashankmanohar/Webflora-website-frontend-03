@@ -94,10 +94,10 @@ export default function ExpertiseSection() {
   };
 
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden">
+    <section className="py-20 px-6 max-w-7xl mx-auto overflow-hidden">
       <div className="flex flex-col md:flex-row justify-between items-end mb-16">
         <div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             EXPERTISE<span className="text-orange-600">.</span>
           </h2>
           <p className="text-gray-400 max-w-md">
@@ -108,7 +108,7 @@ export default function ExpertiseSection() {
 
         <button
           onClick={() => router.push("/services")}
-          className="group  hidden font md:flex items-center gap-2 uppercase text-xl tracking-widest font-semibold transition duration-200 hover:scale-110 cursor-pointer"
+          className="group hidden md:flex items-center gap-2 uppercase text-sm tracking-widest font-semibold transition duration-200 hover:scale-110 cursor-pointer"
         >
           View All Services
           <span className="text-orange-600 text-3xl transition-transform duration-300 group-hover:rotate-45">

@@ -65,30 +65,30 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section className="px-6 py-32 bg-black relative overflow-hidden">
+    <section className="px-6 py-20 bg-black relative overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-[#ff3c00]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[30%] h-[30%] bg-white/5 blur-[100px] rounded-full pointer-events-none" />
-
+ 
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[#ff3c00] font-mono text-sm tracking-[0.3em] uppercase mb-4 block"
+            className="text-[#ff3c00] font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
           >
             The Team
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-8"
+            className="text-3xl md:text-5xl font-bold tracking-tighter text-white mb-6"
           >
             Minds Behind <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 to-neutral-500">The Innovation.</span>
           </motion.h2>
         </div>
-
+ 
         <motion.div 
           variants={container}
           initial="hidden"
@@ -100,31 +100,31 @@ export default function TeamSection() {
             <motion.div
               key={index}
               variants={item}
-              className="group relative h-[480px] rounded-[2.5rem] overflow-hidden border border-white/5 bg-[#080808] transition-all duration-500 hover:border-[#ff3c00]/30"
+              className="group relative h-[380px] rounded-[2rem] overflow-hidden border border-white/5 bg-[#080808] transition-all duration-500 hover:border-[#ff3c00]/30"
             >
               {/* Profile Image Overlay */}
               <div className="absolute inset-0 z-0">
                 <div className="w-full h-full bg-zinc-900 flex items-center justify-center">
-                   <span className="text-zinc-800 text-9xl font-black">{member.name.charAt(0)}</span>
+                   <span className="text-zinc-800 text-7xl font-black">{member.name.charAt(0)}</span>
                 </div>
                 {/* Once user provides images, they can be swapped here */}
                 {/* <Image src={member.image} alt={member.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" /> */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
               </div>
-
+ 
               {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-10 z-10">
-                <div className="mb-4">
-                  <span className="px-4 py-1.5 bg-[#ff3c00] text-black text-[10px] font-black tracking-widest uppercase rounded-full">
+              <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
+                <div className="mb-3">
+                  <span className="px-3 py-1 bg-[#ff3c00] text-black text-[9px] font-black tracking-widest uppercase rounded-full">
                     {member.role}
                   </span>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">
+                <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                   {member.name}
                 </h3>
                 
-                <p className="text-neutral-500 text-sm leading-relaxed mb-8 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <p className="text-neutral-500 text-xs leading-relaxed mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   {member.bio}
                 </p>
 

@@ -87,19 +87,29 @@ export default function WorkSection() {
   return (
     <section
       id="work"
-      className="relative py-32 px-6 bg-neutral-950 overflow-hidden"
+      className="relative py-20 px-6 bg-neutral-950 overflow-hidden"
     >
+      {/* CSS Animations injected for compositor execution (0ms main thread blocking) */}
+      <style>{`
+        @keyframes pulse-opacity-work {
+          0%, 100% { opacity: 0.25; }
+          50% { opacity: 0.4; }
+        }
+        @keyframes pulse-opacity-work-2 {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.35; }
+        }
+        .animate-pulse-work-1 { animation: pulse-opacity-work 8s infinite ease-in-out; }
+        .animate-pulse-work-2 { animation: pulse-opacity-work-2 10s infinite ease-in-out; }
+      `}</style>
+
       {/* Ambient premium glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          animate={{ opacity: [0.25, 0.4, 0.25] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -top-40 -left-40 w-[32rem] h-[32rem] bg-primary/20 rounded-full blur-[140px]"
+        <div
+          className="absolute -top-40 -left-40 w-[32rem] h-[32rem] bg-primary/20 rounded-full blur-[140px] animate-pulse-work-1"
         />
-        <motion.div
-          animate={{ opacity: [0.2, 0.35, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-primary/20 rounded-full blur-[140px]"
+        <div
+          className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-primary/20 rounded-full blur-[140px] animate-pulse-work-2"
         />
       </div>
 
@@ -111,10 +121,10 @@ export default function WorkSection() {
         className="relative max-w-7xl mx-auto"
       >
         {/* Header */}
-        <motion.div className="flex flex-col items-center text-center mb-20">
+        <motion.div className="flex flex-col items-center text-center mb-16">
           <motion.h2
             variants={fadeUp}
-            className="font-display font-bold text-4xl md:text-6xl text-white tracking-tighter mb-6 uppercase"
+            className="font-display font-bold text-3xl md:text-5xl text-white tracking-tighter mb-6 uppercase"
           >
             WORK THAT SPEAKS
           </motion.h2>
@@ -145,7 +155,7 @@ export default function WorkSection() {
         <motion.div
           layout
           variants={container}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -158,8 +168,7 @@ export default function WorkSection() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 whileHover="hover"
                 onClick={() => router.push(`/case-studies/${project.slug}`)}
-                className={`group relative aspect-[16/11] md:aspect-[16/11] rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer ${project.offset ? "md:mt-16" : ""
-                  }`}
+                className="group relative aspect-[16/10] rounded-2xl md:rounded-[1.5rem] overflow-hidden cursor-pointer"
               >
                 {/* Image */}
                 <motion.div
@@ -177,7 +186,7 @@ export default function WorkSection() {
                     alt={project.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     loading="lazy"
                   />
                 </motion.div>
@@ -191,54 +200,54 @@ export default function WorkSection() {
                       transition: { duration: 0.5 },
                     },
                   }}
-                  className={`absolute inset-0 flex flex-col justify-end p-6 md:p-10 transition-all duration-500 ${isMobile
+                  className={`absolute inset-0 flex flex-col justify-end p-5 md:p-6 transition-all duration-500 ${isMobile
                       ? "bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[1px]"
                       : "bg-gradient-to-t from-black/95 via-black/40 to-transparent backdrop-blur-[2px]"
                     }`}
                 >
                   <motion.span
                     variants={{
-                      rest: { y: isMobile ? 0 : 40, opacity: isMobile ? 1 : 0 },
+                      rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-2"
+                    className="text-primary text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] mb-1.5"
                   >
                     {project.category}
                   </motion.span>
 
                   <motion.h3
                     variants={{
-                      rest: { y: isMobile ? 0 : 40, opacity: isMobile ? 1 : 0 },
+                      rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-display font-bold text-xl md:text-3xl text-white mb-2 leading-tight"
+                    className="font-display font-bold text-lg md:text-xl text-white mb-1.5 leading-tight line-clamp-2"
                   >
                     {project.title}
                   </motion.h3>
 
                   <motion.p
                     variants={{
-                      rest: { y: isMobile ? 0 : 40, opacity: isMobile ? 1 : 0 },
+                      rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-gray-400 text-xs md:text-sm mb-6 line-clamp-2 font-medium"
+                    className="text-gray-400 text-xs mb-4 line-clamp-2 font-medium leading-relaxed"
                   >
                     {project.description}
                   </motion.p>
 
-                  <div className="flex items-center text-white font-black uppercase tracking-widest text-[9px] md:text-[11px] gap-3">
-                    <span className="pb-1 border-b border-primary/50">View Case Study</span>
+                  <div className="flex items-center text-white font-black uppercase tracking-widest text-[9px] md:text-[10px] gap-2.5">
+                    <span className="pb-0.5 border-b border-primary/50">View Case Study</span>
                     <motion.div
                       variants={{
                         rest: { x: 0 },
-                        hover: { x: 6 },
+                        hover: { x: 4 },
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <Icon icon="solar:arrow-right-linear" className="text-sm md:text-xl text-primary" />
+                      <Icon icon="solar:arrow-right-linear" className="text-xs md:text-lg text-primary" />
                     </motion.div>
                   </div>
                 </motion.div>

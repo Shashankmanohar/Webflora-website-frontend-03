@@ -101,35 +101,35 @@ const marqueeReviews = [...googleReviewsData, ...googleReviewsData, ...googleRev
 
 export default function GoogleReviewsSection() {
   return (
-    <section className="py-24 md:py-32 bg-[#030303] relative overflow-hidden z-10 border-t border-white/5">
+    <section className="py-16 md:py-20 bg-[#030303] relative overflow-hidden z-10 border-t border-white/5">
       {/* Ambient background styling */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff3c00]/5 rounded-full blur-[160px] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10 mb-16">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 mb-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center gap-3 mb-6 px-4 py-1.5 w-fit rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">100% Verified Reviews</span>
           </div>
-          <h2 className="text-4xl md:text-7xl font-display font-bold text-white tracking-tighter leading-none uppercase">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-none uppercase">
             Loved By <span className="text-[#ff3c00]">Our Clients</span>
           </h2>
         </div>
       </div>
-
+ 
       {/* Infinite Auto-Scrolling Marquee Container */}
       <div className="relative w-full overflow-hidden select-none py-4">
         {/* Shadow Overlays to blend edges */}
         <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-[#030303] to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-[#030303] to-transparent z-20 pointer-events-none" />
-
+ 
         {/* Marquee Track */}
         <div className="flex gap-6 animate-marquee hover:[animation-play-state:paused] w-max">
           {marqueeReviews.map((review, idx) => (
             <div
               key={review.clientName + "-" + idx}
-              className="w-[300px] md:w-[400px] flex-shrink-0 group relative p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[280px]"
+              className="w-[300px] md:w-[400px] flex-shrink-0 group relative p-6 rounded-[2rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[280px]"
             >
               {/* Background glow accent */}
               <div className="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-[#ff3c00]/10 to-transparent opacity-0 group-hover:opacity-100 blur-[30px] transition-all duration-500 pointer-events-none" />
@@ -163,9 +163,9 @@ export default function GoogleReviewsSection() {
                   {review.avatar}
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-sm tracking-wide leading-none mb-1.5 group-hover:text-[#ff3c00] transition-colors duration-300">
+                  <h3 className="text-white font-bold text-sm tracking-wide leading-none mb-1.5 group-hover:text-[#ff3c00] transition-colors duration-300">
                     {review.clientName}
-                  </h4>
+                  </h3>
                   <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider block">
                     Google Reviewer
                   </span>

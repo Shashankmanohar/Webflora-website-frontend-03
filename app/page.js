@@ -1,5 +1,3 @@
-"use client";
-// Triggering fresh Vercel deployment after Case Studies redesign
 import React from "react";
 import dynamic from "next/dynamic";
 import Hero from "./Components/HeroSection";
@@ -7,22 +5,23 @@ import StatsMarquee from "./Components/StatsMarquee";
 import GrowthSection from "./Components/GrowthSection";
 import SEOContentBlock from "./Components/SEOContentBlock";
 
-// Lazy load components below the fold
-const ExpertiseSection = dynamic(() => import("./Components/ExpertiseSection"), { ssr: false });
-const ProcessSection = dynamic(() => import("./Components/ProcessSection"), { ssr: false });
-const TechStackSection = dynamic(() => import("./Components/TechStackSection"), { ssr: false });
-const WhyChooseSection = dynamic(() => import("./Components/WhyChooseSection"), { ssr: false });
-const WorkSection = dynamic(() => import("./Components/WorkSection"), { ssr: false });
-const PremiumCTASection = dynamic(() => import("./Components/PremiumCTA"), { ssr: false });
-const ContactSection = dynamic(() => import("./Components/ContactSection"), { ssr: false });
-const FaqSection = dynamic(() => import("./services/components/FaqSection"), { ssr: false });
-const TestimonialSection = dynamic(() => import("./services/components/TestimonialSection"), { ssr: false });
-const TeamSection = dynamic(() => import("./Components/TeamSection"), { ssr: false });
-const ProductCard = dynamic(() => import("./Components/ProductCard"), { ssr: false });
-const VegavanTeaser = dynamic(() => import("./Components/VegavanTeaser"), { ssr: false });
-const TrustSignals = dynamic(() => import("./Components/TrustSignals"), { ssr: false });
-const GoogleTrustBanner = dynamic(() => import("./Components/GoogleTrustBanner"), { ssr: false });
-const GoogleReviewsSection = dynamic(() => import("./Components/GoogleReviewsSection"), { ssr: false });
+// Dynamically import components below the fold with SSR enabled for initial paint and bundle splitting
+const ExpertiseSection = dynamic(() => import("./Components/ExpertiseSection"));
+const IndustriesSection = dynamic(() => import("./Components/IndustriesSection"));
+const ProcessSection = dynamic(() => import("./Components/ProcessSection"));
+const TechStackSection = dynamic(() => import("./Components/TechStackSection"));
+const WhyChooseSection = dynamic(() => import("./Components/WhyChooseSection"));
+const WorkSection = dynamic(() => import("./Components/WorkSection"));
+const PremiumCTASection = dynamic(() => import("./Components/PremiumCTA"));
+const ContactSection = dynamic(() => import("./Components/ContactSection"));
+const FaqSection = dynamic(() => import("./services/components/FaqSection"));
+const TestimonialSection = dynamic(() => import("./services/components/TestimonialSection"));
+const TeamSection = dynamic(() => import("./Components/TeamSection"));
+const ProductCard = dynamic(() => import("./Components/ProductCard"));
+const VegavanTeaser = dynamic(() => import("./Components/VegavanTeaser"));
+const TrustSignals = dynamic(() => import("./Components/TrustSignals"));
+const GoogleTrustBanner = dynamic(() => import("./Components/GoogleTrustBanner"));
+const GoogleReviewsSection = dynamic(() => import("./Components/GoogleReviewsSection"));
 
 const homeFaqs = [
   {
@@ -85,6 +84,9 @@ const page = () => {
       </div>
       <div className="content-auto">
         <ExpertiseSection />
+      </div>
+      <div className="content-auto">
+        <IndustriesSection />
       </div>
       <div className="content-auto">
         <ProcessSection />

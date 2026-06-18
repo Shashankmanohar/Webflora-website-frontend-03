@@ -117,7 +117,7 @@ export default function BentoWhyChoose() {
                 </motion.div>
 
                 <div>
-                  <h4 className="font-semibold text-xl mb-2">{card.title}</h4>
+                  <h3 className="font-semibold text-xl mb-2">{card.title}</h3>
                   <p className="text-sm text-zinc-400 leading-relaxed">
                     {card.desc}
                   </p>

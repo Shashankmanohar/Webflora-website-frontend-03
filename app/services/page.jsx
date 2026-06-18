@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection'
 import ProblemSection from './components/ProblemSection'
 import OurCoreServices from './components/OurCoreServices'
 import BusinessValue from './components/BusinessValue'
+import WorkSection from '../Components/WorkSection'
 import TestimonialSection from './components/TestimonialSection'
 import FaqSection from './components/FaqSection'
 import SEOContentBlock from '../Components/SEOContentBlock'
@@ -16,6 +17,7 @@ const page = () => {
       <ProblemSection/>
       <OurCoreServices/>
       <BusinessValue/>
+      <WorkSection/>
       <TestimonialSection/>
       <FaqSection/>
       {/* Service Schema */}
@@ -55,6 +57,41 @@ const page = () => {
                 "position": 2,
                 "name": "Services",
                 "item": "https://webfloratechnologies.com/services"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do you provide all services together?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we offer comprehensive service bundles tailored to your needs. You can choose individual services or combine multiple services into a cohesive strategy. Our team ensures seamless integration across all services for maximum impact and efficiency."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the timeline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Project timelines vary based on scope and complexity. Typically, strategy and planning take 2-4 weeks, implementation spans 4-12 weeks, and optimization is ongoing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. We provide ongoing support including 24/7 email support, weekly strategy calls, and monthly performance reviews. Our dedicated account manager ensures your success."
+                }
               }
             ]
           })

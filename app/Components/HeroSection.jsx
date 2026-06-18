@@ -25,21 +25,23 @@ export default function Hero() {
           50% { transform: translateY(-25px) rotate(-4deg); }
           100% { transform: translateY(25px) rotate(4deg); }
         }
-        .animate-drift-1 { animation: drift1 39s infinite ease-in-out; }
-        .animate-drift-2 { animation: drift2 39s infinite ease-in-out; }
+        @media (min-width: 768px) {
+          .animate-drift-1 { animation: drift1 39s infinite ease-in-out; }
+          .animate-drift-2 { animation: drift2 39s infinite ease-in-out; }
+        }
         .animate-float-1 { animation: float1 33s infinite ease-in-out; }
         .animate-float-2 { animation: float2 33s infinite ease-in-out; }
       `}</style>
-
+ 
       {/* Glow Background — animated via CSS keyframes */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative w-full h-screen overflow-hidden bg-black">
           <div className="absolute inset-0 bg-black/5" />
           <div
-            className="absolute left-1/4 top-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-60 will-change-transform animate-drift-1"
+            className="absolute left-1/4 top-1/4 w-[280px] h-[280px] md:w-[420px] md:h-[420px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[80px] md:blur-[150px] opacity-60 will-change-transform md:animate-drift-1"
           />
           <div
-            className="absolute left-1/2 top-1/2 w-[320px] h-[320px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[150px] opacity-40 will-change-transform animate-drift-2"
+            className="absolute left-1/2 top-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-b from-orange-500 to-orange-600 blur-[80px] md:blur-[150px] opacity-40 will-change-transform md:animate-drift-2"
           />
         </div>
       </div>

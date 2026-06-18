@@ -6,6 +6,8 @@ import GrowthSection from "./Components/GrowthSection";
 import SEOContentBlock from "./Components/SEOContentBlock";
 import LazySection from "./Components/LazySection";
 
+// Viewport-gated components — rendered only when scrolled into view
+
 // Dynamically import components below the fold with SSR disabled to prevent initial pre-hydration TBT overhead
 const ExpertiseSection = dynamic(() => import("./Components/ExpertiseSection"), { ssr: false });
 const IndustriesSection = dynamic(() => import("./Components/IndustriesSection"), { ssr: false });
@@ -66,8 +68,16 @@ const page = () => {
   return (
     <>
       <Hero />
-      <GoogleTrustBanner />
-      <TrustSignals />
+      <div className="content-auto">
+        <LazySection height="80px">
+          <GoogleTrustBanner />
+        </LazySection>
+      </div>
+      <div className="content-auto">
+        <LazySection height="600px">
+          <TrustSignals />
+        </LazySection>
+      </div>
       <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">

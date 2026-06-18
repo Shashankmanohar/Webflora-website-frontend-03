@@ -1,5 +1,5 @@
 // app/layout.js
-import { Inter, Space_Grotesk, Pacifico } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import FooterSection from "./Components/FooterSection";
@@ -22,13 +22,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-/* Pacifico – Cursive Accent */
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-cursive",
-  display: "swap",
-});
+
 
 export const metadata = {
   title: "Best Software Development Company in Patna Bihar | Webflora Technologies",
@@ -73,7 +67,6 @@ export default function RootLayout({ children }) {
         className={`
           ${inter.variable}
           ${spaceGrotesk.variable}
-          ${pacifico.variable}
           antialiased
         `}>
         {/* Banner and Nav */}

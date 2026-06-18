@@ -82,6 +82,7 @@ export default function AnnouncementBanner() {
                 e.preventDefault();
                 dismiss();
               }}
+              aria-label="Dismiss banner"
               className="absolute right-4 md:right-0 text-neutral-500 hover:text-white transition-colors p-1"
             >
               <Icon icon="solar:close-circle-bold-duotone" width={18} />

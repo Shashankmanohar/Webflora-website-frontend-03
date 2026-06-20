@@ -227,7 +227,7 @@ const PortfolioClient = () => {
             </span>
           </div>
           
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-12 tracking-tight max-w-5xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-12 tracking-tight max-w-5xl">
             {project.title}
           </h1>
           
@@ -451,15 +451,25 @@ const PortfolioClient = () => {
       </div>
 
       <style jsx global>{`
-        .case-study-content h2, .case-study-content h3 {
+        .case-study-content h1, .case-study-content h2, .case-study-content h3, .case-study-content h4 {
           color: white;
           font-weight: 800;
           margin-top: 4rem;
           margin-bottom: 1.5rem;
           letter-spacing: -0.02em;
+          line-height: 1.1;
         }
-        .case-study-content h2 { font-size: 2.25rem; }
-        .case-study-content h3 { font-size: 1.75rem; }
+        .case-study-content h1 { font-size: 3.25rem; }
+        .case-study-content h2 { font-size: 2.5rem; }
+        .case-study-content h3 { font-size: 1.9rem; }
+        .case-study-content h4 { font-size: 1.5rem; }
+        
+        @media (max-width: 768px) {
+          .case-study-content h1 { font-size: 1.9rem; }
+          .case-study-content h2 { font-size: 1.65rem; }
+          .case-study-content h3 { font-size: 1.4rem; }
+          .case-study-content h4 { font-size: 1.2rem; }
+        }
         
         .case-study-content p {
           font-size: 1.15rem;

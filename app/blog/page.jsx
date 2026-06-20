@@ -67,22 +67,22 @@ const BlogPage = () => {
               <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px]">The Journal</span>
             </motion.div>
             
-            <motion.h1 
+            <motion.span 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]"
+              className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] block"
             >
               Webflora Technologies Blog
-            </motion.h1>
+            </motion.span>
 
-            <motion.h2 
+            <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-[0.9]"
             >
               Latest Insights <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-orange-500">and Industry Trends.</span>
-            </motion.h2>
+            </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

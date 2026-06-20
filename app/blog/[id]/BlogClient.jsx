@@ -294,7 +294,7 @@ const BlogClient = () => {
               </span>
             </div>
             
-            <h1 className="text-3xl md:text-5xl font-bold leading-[1.1] mb-12 tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-12 tracking-tight">
               {post.title}
             </h1>
             
@@ -569,8 +569,9 @@ const BlogClient = () => {
           margin-bottom: 1.5rem;
           line-height: 1.1;
         }
-        .blog-content h2 { font-size: 2.75rem; }
-        .blog-content h3 { font-size: 2rem; }
+        .blog-content h1 { font-size: 3.25rem; }
+        .blog-content h2 { font-size: 2.5rem; }
+        .blog-content h3 { font-size: 1.9rem; }
         .blog-content h4 { font-size: 1.5rem; }
         
         .blog-content p {
@@ -649,8 +650,10 @@ const BlogClient = () => {
         }
         
         @media (max-width: 768px) {
-          .blog-content h2 { font-size: 2.25rem; }
-          .blog-content h3 { font-size: 1.75rem; }
+          .blog-content h1 { font-size: 1.9rem; }
+          .blog-content h2 { font-size: 1.65rem; }
+          .blog-content h3 { font-size: 1.4rem; }
+          .blog-content h4 { font-size: 1.2rem; }
           .blog-content p { font-size: 1.125rem; }
           .blog-content blockquote { padding: 2rem; }
           .blog-content blockquote p { font-size: 1.25rem; }

@@ -118,14 +118,14 @@ export default function CaseStudiesPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header Section */}
         <header className="mb-16 md:mb-24">
-          <h1 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
+          <span className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] block">
             Webflora Technologies Case Studies
-          </h1>
+          </span>
           
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
             Recent Projects <br />
             <span className="text-gray-500 italic">and Success Stories</span>
-          </h2>
+          </h1>
           
           <motion.p
             initial={{ opacity: 0, y: 10 }}

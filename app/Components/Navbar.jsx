@@ -156,52 +156,54 @@ export default function Navbar() {
                     {/* Dropdown — CSS opacity + translate, no JS animation */}
                     <div
                       role="menu"
-                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-[#050505]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_40px_80px_rgba(0,0,0,0.95)] z-[200] transition-all duration-200 origin-top ${
+                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[480px] z-[200] transition-all duration-200 origin-top ${
                         activeDropdown === idx
                           ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
                           : "opacity-0 scale-[0.97] translate-y-3 pointer-events-none"
                       }`}
                     >
-                      <div className="absolute top-[-5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 bg-[#050505] border-t border-l border-white/10 z-[199]" />
+                      <div className="bg-[#050505]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_40px_80px_rgba(0,0,0,0.95)] relative">
+                        <div className="absolute top-[-5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 bg-[#050505] border-t border-l border-white/10 z-[199]" />
 
-                      <div className="grid grid-cols-2 gap-2 relative z-[200]">
-                        {item.children.map((child, ci) => {
-                          const ChildIcon = child.icon;
-                          const isChildUrlActive = pathname === child.href;
-                          return (
-                            <Link key={ci} href={child.href} role="menuitem">
-                              <div
-                                className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 border border-transparent hover:border-white/5 hover:-translate-y-px hover:bg-white/[0.04] ${
-                                  child.highlight
-                                    ? "bg-[#FF3B00]/5 border-[#FF3B00]/15 hover:bg-[#FF3B00]/10"
-                                    : ""
-                                }`}
-                              >
+                        <div className="grid grid-cols-2 gap-2 relative z-[200]">
+                          {item.children.map((child, ci) => {
+                            const ChildIcon = child.icon;
+                            const isChildUrlActive = pathname === child.href;
+                            return (
+                              <Link key={ci} href={child.href} role="menuitem">
                                 <div
-                                  className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                  className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 border border-transparent hover:border-white/5 hover:-translate-y-px hover:bg-white/[0.04] ${
                                     child.highlight
-                                      ? "bg-[#FF3B00] text-white shadow-[0_0_15px_rgba(255,59,0,0.4)]"
-                                      : "bg-white/5 text-neutral-400"
+                                      ? "bg-[#FF3B00]/5 border-[#FF3B00]/15 hover:bg-[#FF3B00]/10"
+                                      : ""
                                   }`}
                                 >
-                                  <ChildIcon size={14} />
-                                </div>
-                                <div className="text-left">
                                   <div
-                                    className={`text-[11px] font-bold uppercase tracking-wider ${
-                                      isChildUrlActive || child.highlight ? "text-white" : "text-neutral-200"
+                                    className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                      child.highlight
+                                        ? "bg-[#FF3B00] text-white shadow-[0_0_15px_rgba(255,59,0,0.4)]"
+                                        : "bg-white/5 text-neutral-400"
                                     }`}
                                   >
-                                    {child.label}
+                                    <ChildIcon size={14} />
                                   </div>
-                                  <div className="text-[10px] text-neutral-400 font-medium tracking-normal mt-0.5 leading-snug normal-case">
-                                    {child.desc}
+                                  <div className="text-left">
+                                    <div
+                                      className={`text-[11px] font-bold uppercase tracking-wider ${
+                                        isChildUrlActive || child.highlight ? "text-white" : "text-neutral-200"
+                                      }`}
+                                    >
+                                      {child.label}
+                                    </div>
+                                    <div className="text-[10px] text-neutral-400 font-medium tracking-normal mt-0.5 leading-snug normal-case">
+                                      {child.desc}
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </Link>
-                          );
-                        })}
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -21,10 +21,10 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import API_BASE_URL from "../../config";
 
-const BlogClient = () => {
+const BlogClient = ({ initialPost }) => {
   const { id: slug } = useParams();
-  const [post, setPost] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const [post, setPost] = React.useState(initialPost || null);
+  const [loading, setLoading] = React.useState(!initialPost);
   const [relatedBlogs, setRelatedBlogs] = React.useState([]);
 
   const [comments, setComments] = React.useState([]);
@@ -47,7 +47,9 @@ const BlogClient = () => {
   const discussionRef = React.useRef(null);
 
   React.useEffect(() => {
-    fetchPost();
+    if (!post || post.slug !== slug) {
+      fetchPost();
+    }
     fetchComments();
   }, [slug]);
 
@@ -280,10 +282,7 @@ const BlogClient = () => {
 
         {/* Hero Section */}
         <header className="max-w-5xl mx-auto mb-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div>
             <div className="flex items-center justify-center gap-4 mb-8">
               <span className="px-5 py-2 bg-brand-red text-white text-[10px] font-black tracking-widest uppercase rounded-full">
                 {post.category}
@@ -323,18 +322,21 @@ const BlogClient = () => {
                   <div className="flex gap-2">
                     <button 
                       onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`, '_blank')}
+                      aria-label="Share on Twitter"
                       className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-all duration-500"
                     >
                       <Twitter className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
+                      aria-label="Share on LinkedIn"
                       className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all duration-500"
                     >
                       <Linkedin className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')}
+                      aria-label="Share on Facebook"
                       className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-500"
                     >
                       <Facebook className="w-4 h-4" />
@@ -343,16 +345,11 @@ const BlogClient = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </header>
 
         {/* Featured Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="max-w-7xl mx-auto relative aspect-video md:aspect-[21/9] rounded-[2rem] md:rounded-[4rem] overflow-hidden border border-white/5 shadow-[0_40px_80px_rgba(0,0,0,0.5)] mb-12 md:mb-24"
-        >
+        <div className="max-w-7xl mx-auto relative aspect-video md:aspect-[21/9] rounded-[2rem] md:rounded-[4rem] overflow-hidden border border-white/5 shadow-[0_40px_80px_rgba(0,0,0,0.5)] mb-12 md:mb-24">
           <Image 
             src={post.image} 
             alt={post.title}
@@ -360,7 +357,7 @@ const BlogClient = () => {
             className="object-cover"
             priority
           />
-        </motion.div>
+        </div>
 
         {/* Content Section */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-24">
@@ -457,6 +454,7 @@ const BlogClient = () => {
                         alert("Link copied to clipboard!");
                       }
                     }}
+                    aria-label="Share article link"
                     className="w-16 flex items-center justify-center bg-white/5 border-2 border-white/5 text-gray-400 rounded-[2rem] hover:border-white/20 hover:text-white transition-all"
                    >
                     <Share2 className="w-4 h-4" />
@@ -691,6 +689,7 @@ const BlogClient = () => {
                 </div>
                 <button 
                   onClick={() => setIsDiscussionOpen(false)}
+                  aria-label="Close discussion panel"
                   className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-brand-red hover:text-white transition-all"
                 >
                   <X className="w-4 h-4" />

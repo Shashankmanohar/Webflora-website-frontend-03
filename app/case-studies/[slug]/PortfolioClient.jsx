@@ -18,14 +18,16 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import API_BASE_URL from "../../config";
 
-const PortfolioClient = () => {
+const PortfolioClient = ({ initialProject }) => {
   const { slug } = useParams();
-  const [project, setProject] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const [project, setProject] = React.useState(initialProject || null);
+  const [loading, setLoading] = React.useState(!initialProject);
   const [relatedProjects, setRelatedProjects] = React.useState([]);
 
   React.useEffect(() => {
-    fetchProject();
+    if (!project || project.slug !== slug) {
+      fetchProject();
+    }
   }, [slug]);
 
   React.useEffect(() => {
@@ -256,12 +258,14 @@ const PortfolioClient = () => {
               <div className="flex gap-3">
                 <button 
                   onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(project.title)}&url=${encodeURIComponent(window.location.href)}`, '_blank')}
+                  aria-label="Share on Twitter"
                   className="text-neutral-500 hover:text-[#1DA1F2] transition-colors"
                 >
                   <Twitter size={18} />
                 </button>
                 <button 
                   onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
+                  aria-label="Share on LinkedIn"
                   className="text-neutral-500 hover:text-[#0A66C2] transition-colors"
                 >
                   <Linkedin size={18} />

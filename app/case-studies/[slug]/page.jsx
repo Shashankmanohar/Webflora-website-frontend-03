@@ -65,6 +65,21 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function PortfolioPage() {
-  return <PortfolioClient />;
+export default async function PortfolioPage({ params }) {
+  const resolvedParams = await Promise.resolve(params);
+  const slug = resolvedParams.slug;
+
+  let project = null;
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/public/case-studies/${slug}`, { 
+      next: { revalidate: 60 } 
+    });
+    if (res.ok) {
+      project = await res.json();
+    }
+  } catch (error) {
+    console.error("Error fetching project server-side:", error);
+  }
+
+  return <PortfolioClient initialProject={project} />;
 }

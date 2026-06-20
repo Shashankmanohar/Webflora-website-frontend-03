@@ -72,6 +72,21 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function BlogPage() {
-  return <BlogClient />;
+export default async function BlogPage({ params }) {
+  const resolvedParams = await Promise.resolve(params);
+  const slug = resolvedParams.id;
+
+  let post = null;
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/public/blogs/${slug}`, { 
+      next: { revalidate: 60 } 
+    });
+    if (res.ok) {
+      post = await res.json();
+    }
+  } catch (error) {
+    console.error("Error fetching post server-side:", error);
+  }
+
+  return <BlogClient initialPost={post} />;
 }

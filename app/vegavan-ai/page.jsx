@@ -451,6 +451,31 @@ export default function VegavanCinemaPage() {
           })
         }}
       />
+
+      {/* Product JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Vegavan AI",
+            "image": "https://webfloratechnologies.com/webflora-logo.svg",
+            "description": "Vegavan AI is a custom-engineered autonomous conversational AI chatbot designed by Webflora Technologies. It operates as a 24/7 digital assistant, absorbing your exact business documents, PDFs, and website links to resolve customer queries instantly.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Webflora Technologies"
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "INR",
+              "lowPrice": "4999",
+              "highPrice": "19999",
+              "offerCount": "3"
+            }
+          })
+        }}
+      />
     </main>
   );
 }

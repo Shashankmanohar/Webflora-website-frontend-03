@@ -133,6 +133,7 @@ export default function TeamSection() {
                     href={member.instagram} 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    aria-label={`Follow ${member.name} on Instagram`}
                     className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
                   >
                     <Instagram size={20} />

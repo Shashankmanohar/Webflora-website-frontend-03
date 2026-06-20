@@ -102,6 +102,43 @@ const marqueeReviews = [...googleReviewsData, ...googleReviewsData, ...googleRev
 export default function GoogleReviewsSection() {
   return (
     <section className="py-16 md:py-20 bg-[#030303] relative overflow-hidden z-10 border-t border-white/5">
+      {/* Structured Review Schemas for Search Engines */}
+      {googleReviewsData.map((review, idx) => (
+        <script
+          key={`review-schema-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": review.clientName
+              },
+              "itemReviewed": {
+                "@type": "LocalBusiness",
+                "name": "Webflora Technologies",
+                "image": "https://webfloratechnologies.com/webflora-logo.svg",
+                "url": "https://webfloratechnologies.com",
+                "priceRange": "$$",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Patna",
+                  "addressRegion": "Bihar",
+                  "addressCountry": "IN"
+                }
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": review.rating.toString(),
+                "bestRating": "5"
+              },
+              "reviewBody": review.feedback
+            })
+          }}
+        />
+      ))}
+
       {/* Ambient background styling */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff3c00]/5 rounded-full blur-[160px] pointer-events-none" />
       

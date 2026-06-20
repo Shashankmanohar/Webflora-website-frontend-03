@@ -85,7 +85,8 @@ export default function RootLayout({ children }) {
         <ChatbotLoader />
 
         {/* Mobile chatbot position override */}
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @media (max-width: 768px) {
             #ai-chatbot-root-container { bottom: 20px !important; right: 20px !important; }
           }

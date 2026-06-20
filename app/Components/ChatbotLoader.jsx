@@ -57,6 +57,7 @@ function loadChatbot() {
 export default function ChatbotLoader() {
   useEffect(() => {
     let loaded = false;
+    let timer;
 
     function handleInteraction() {
       if (loaded) return;
@@ -65,7 +66,7 @@ export default function ChatbotLoader() {
       TRIGGER_EVENTS.forEach((e) =>
         window.removeEventListener(e, handleInteraction)
       );
-      clearTimeout(timer);
+      if (timer) clearTimeout(timer);
       loadChatbot();
     }
 
@@ -74,14 +75,14 @@ export default function ChatbotLoader() {
       window.addEventListener(e, handleInteraction, { once: true, passive: true })
     );
 
-    // Fallback: load after 12s even if no interaction (e.g., idle visitor)
-    const timer = setTimeout(handleInteraction, 12000);
+    // Set a 12-second timeout to load the chatbot if no interaction occurs
+    timer = setTimeout(handleInteraction, 12000);
 
     return () => {
+      if (timer) clearTimeout(timer);
       TRIGGER_EVENTS.forEach((e) =>
         window.removeEventListener(e, handleInteraction)
       );
-      clearTimeout(timer);
     };
   }, []);
 

@@ -100,7 +100,7 @@ const PortfolioClient = () => {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
 
-                "@type": "CreativeWork",
+                "@type": "Article",
 
                 "@id": `https://webfloratechnologies.com/case-studies/${slug}`,
 
@@ -114,7 +114,7 @@ const PortfolioClient = () => {
 
                 "image": project.image ? (project.image.startsWith('http') ? project.image : `https://webfloratechnologies.com/${project.image}`) : "https://webfloratechnologies.com/case-study-image.jpg",
 
-                "creator": {
+                "author": {
                   "@type": "Organization",
                   "name": "Webflora Technologies",
                   "@id": "https://webfloratechnologies.com/#organization"

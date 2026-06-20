@@ -169,7 +169,7 @@ const BlogClient = () => {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
 
-                "@type": "BlogPosting",
+                "@type": "Article",
 
                 "@id": `https://webfloratechnologies.com/blog/${slug}`,
 

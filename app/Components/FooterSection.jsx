@@ -22,14 +22,23 @@ export default function FooterSection() {
         100% { transform: translate(0px,0px) scale(1); }
       }
       @keyframes shimmer {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+        0% { transform: translateX(-150%); }
+        100% { transform: translateX(150%); }
       }
       .animate-blob { animation: float 10s infinite ease-in-out; }
       .delay-2000 { animation-delay: 2s; }
       .shimmer-bg {
-        background: linear-gradient(90deg, transparent, rgba(255,59,0,0.1), transparent);
-        background-size: 200% 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,59,0,0.15), transparent);
         animation: shimmer 3s infinite linear;
       }
       .magnetic-wrap:hover .magnetic-content { transform: scale(1.1); }

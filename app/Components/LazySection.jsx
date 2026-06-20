@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef, Suspense } from "react";
 
-export default function LazySection({ children, height = "200px" }) {
+export default function LazySection({ loader, height = "200px", props = {} }) {
   const [inView, setInView] = useState(false);
+  const [Component, setComponent] = useState(null);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -22,13 +23,23 @@ export default function LazySection({ children, height = "200px" }) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (inView && loader) {
+      loader().then((mod) => {
+        setComponent(() => mod.default);
+      });
+    }
+  }, [inView, loader]);
+
   return (
     <div ref={ref} style={{ minHeight: inView ? "auto" : height }}>
-      {inView ? (
+      {Component ? (
         <Suspense fallback={<div style={{ minHeight: height }} />}>
-          {children}
+          <Component {...props} />
         </Suspense>
-      ) : null}
+      ) : (
+        <div style={{ minHeight: height }} />
+      )}
     </div>
   );
 }

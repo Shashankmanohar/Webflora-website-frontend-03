@@ -27,6 +27,7 @@ export default function HomeSections({ homeFaqs, faqComponent }) {
         <LazySection
           height="600px"
           loader={() => import("./TrustSignals")}
+          props={{ hideStats: true }}
         />
       </div>
 

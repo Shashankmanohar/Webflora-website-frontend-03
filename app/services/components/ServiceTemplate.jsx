@@ -184,13 +184,6 @@ const HeroWrapper = ({ data }) => {
       />
 
       <div className="relative z-10 text-center w-full max-w-6xl mx-auto">
-        {/* SEO Category Badge - Secondary heading visually */}
-        <FadeInUp className="mb-4">
-          <h2 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
-            {data.title}
-          </h2>
-        </FadeInUp>
-
         {/* Pill Badge */}
         <FadeInUp delay={0.1} className="inline-flex items-center gap-2 px-3 py-1 mb-10 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-sm">
           <span className="flex h-1.5 w-1.5">

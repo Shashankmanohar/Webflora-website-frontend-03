@@ -108,12 +108,6 @@ const HeroWrapper = ({ data }) => {
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none", opacity: 0.5, backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)`, backgroundSize: "50px 50px", WebkitMaskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)", maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)" }} />
 
       <div className="relative z-10 text-center w-full max-w-6xl mx-auto">
-        <FadeInUp className="mb-4">
-          <h2 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
-            {data.title} Solutions
-          </h2>
-        </FadeInUp>
-
         <FadeInUp delay={0.1} className="inline-flex items-center gap-2 px-3 py-1 mb-10 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-sm">
           <span className="flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-1.5 w-1.5 rounded-full bg-white/40 opacity-75"></span>

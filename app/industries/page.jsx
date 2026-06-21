@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { industriesData } from "./data";
+import TrustSignals from "../Components/TrustSignals";
 
 const sectors = Object.entries(industriesData);
 
@@ -76,6 +77,10 @@ export default function AllIndustriesPage() {
           <p className="text-lg text-zinc-400 font-light leading-relaxed">
             At Webflora Technologies, we combine modern full-stack development, database security, and custom automation to build high-performance systems for critical sectors. Explore our industry-specific solutions starting from ₹30,000.
           </p>
+        </div>
+
+        <div className="mb-20">
+          <TrustSignals />
         </div>
 
         {/* Sectors Grid */}

@@ -27,59 +27,7 @@ export default function TrustSignals() {
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(255,60,0,0.06) 0%, rgba(255,60,0,0) 70%)" }} />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(59,130,246,0.06) 0%, rgba(59,130,246,0) 70%)" }} />
       <div className="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
-      
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        {/* --- BY THE NUMBERS --- */}
-        <motion.div 
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="mb-24"
-        >
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
-            <div className="max-w-2xl">
-              <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
-                <div className="h-px w-12 bg-[#ff3c00]" />
-                <span className="text-[#ff3c00] font-bold uppercase tracking-[0.4em] text-[10px]">Quantifiable Impact</span>
-              </motion.div>
-              <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-[1.0] uppercase">
-                Success <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700">Validated.</span>
-              </motion.h2>
-            </div>
-            <motion.p variants={itemVariants} className="text-gray-400 text-base md:text-lg font-light max-w-sm border-l border-white/10 pl-8">
-              Empowering global brands with high-performance digital infrastructure.
-            </motion.p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { number: "200+", label: "Projects Delivered", desc: "Successfully engineered systems." },
-              { number: "150+", label: "Clients Served", desc: "Across startups and enterprises." },
-              { number: "5+", label: "Years Experience", desc: "Mastering the digital landscape." },
-              { number: "99%", label: "Client Satisfaction", desc: "Driven by transparent processes." }
-            ].map((stat, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="group relative p-6 md:p-8 rounded-[2rem] bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-                <div className="relative z-10">
-                  <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2 tracking-tighter">
-                    {stat.number}
-                  </div>
-                  <div className="text-xs font-bold text-[#ff3c00] uppercase tracking-[0.2em] mb-2">{stat.label}</div>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed">{stat.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* --- WHY CHOOSE US (BENTO GRID) --- */}
         <motion.div 
           initial="hidden"

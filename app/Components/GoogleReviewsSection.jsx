@@ -149,7 +149,7 @@ export default function GoogleReviewsSection() {
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">100% Verified Reviews</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-none uppercase">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tighter leading-none uppercase">
             Loved By <span className="text-[#ff3c00]">Our Clients</span>
           </h2>
         </div>

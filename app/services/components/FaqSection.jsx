@@ -65,7 +65,7 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-8"
+            className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none mb-8"
           >
             Frequently Asked <br />
             <span className="text-[#FF3B00]">Questions</span>

@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "./Components/HeroSection";
 import StatsMarquee from "./Components/StatsMarquee";
 import HomeSections from "./Components/HomeSections";
+import HomeIntroSection from "./Components/HomeIntroSection";
+import FaqSection from "./services/components/FaqSection";
 
 /* ── FAQ data (defined server-side, passed as prop to client component) ── */
 const homeFaqs = [
@@ -49,10 +51,13 @@ export default function Page() {
       {/* ── Above the fold — statically server-rendered ── */}
       <Hero />
 
+      {/* ── SEO introduction section — statically server-rendered ── */}
+      <HomeIntroSection />
+
       {/* ── SEO text block — server-rendered for crawlers ── */}
       <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
             What Does Webflora Technologies Do?
           </h2>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
@@ -66,7 +71,12 @@ export default function Page() {
       <StatsMarquee />
 
       {/* ── All viewport-gated client sections ── */}
-      <HomeSections homeFaqs={homeFaqs} />
+      <HomeSections 
+        homeFaqs={homeFaqs} 
+        faqComponent={
+          <FaqSection faqs={homeFaqs} title="web development and software services" />
+        }
+      />
 
       {/* ── JSON-LD Schemas — server-rendered for SEO ── */}
 

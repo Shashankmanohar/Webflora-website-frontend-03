@@ -76,7 +76,7 @@ const ProductCard = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4"
+            className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-4"
           >
             Digital <span className="text-[#FF3B00]">Solutions</span>
           </motion.h2>

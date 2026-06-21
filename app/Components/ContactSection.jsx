@@ -74,7 +74,7 @@ export default function ContactSection() {
           <motion.h2
             custom={1}
             variants={fadeUp}
-            className="font-bold text-4xl md:text-5xl text-white tracking-tight mb-6 leading-tight"
+            className="font-bold text-3xl md:text-4xl text-white tracking-tight mb-6 leading-tight"
           >
             LET&apos;S CREATE <br />
             <span style={{ color: BRAND }}>EXTRAORDINARY</span>

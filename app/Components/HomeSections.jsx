@@ -13,7 +13,7 @@
 import React from "react";
 import LazySection from "./LazySection";
 
-export default function HomeSections({ homeFaqs }) {
+export default function HomeSections({ homeFaqs, faqComponent }) {
   return (
     <>
       {/* Trust signals — appear just below the hero fold */}
@@ -46,19 +46,7 @@ export default function HomeSections({ homeFaqs }) {
       <div className="content-auto">
         <LazySection
           height="400px"
-          loader={() => import("./IndustriesSection")}
-        />
-      </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
           loader={() => import("./ProcessSection")}
-        />
-      </div>
-      <div className="content-auto">
-        <LazySection
-          height="200px"
-          loader={() => import("./TechStackSection")}
         />
       </div>
       <div className="content-auto">
@@ -93,12 +81,6 @@ export default function HomeSections({ homeFaqs }) {
           loader={() => import("./GoogleReviewsSection")}
         />
       </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
-          loader={() => import("./TeamSection")}
-        />
-      </div>
 
       {/* CTA + FAQ + Contact */}
       <div className="content-auto">
@@ -107,19 +89,10 @@ export default function HomeSections({ homeFaqs }) {
           loader={() => import("./PremiumCTA")}
         />
       </div>
-      <div className="content-auto">
-        <LazySection
-          height="500px"
-          loader={() => import("../services/components/FaqSection")}
-          props={{ faqs: homeFaqs, title: "web development and software services" }}
-        />
-      </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
-          loader={() => import("./SEOContentBlock")}
-        />
-      </div>
+      
+      {/* Statically rendered SEO blocks passed from server component */}
+      {faqComponent}
+
       <div className="content-auto">
         <LazySection
           height="500px"

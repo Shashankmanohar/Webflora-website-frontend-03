@@ -44,7 +44,7 @@ export default function TrustSignals() {
                 <div className="h-px w-12 bg-[#ff3c00]" />
                 <span className="text-[#ff3c00] font-bold uppercase tracking-[0.4em] text-[10px]">Quantifiable Impact</span>
               </motion.div>
-              <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-display font-bold text-white tracking-tighter leading-[1.0] uppercase">
+              <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-[1.0] uppercase">
                 Success <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700">Validated.</span>
               </motion.h2>
@@ -92,7 +92,7 @@ export default function TrustSignals() {
               <ShieldCheck className="w-4 h-4 text-[#ff3c00]" />
               <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
             </motion.div>
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-none uppercase">
+            <motion.h2 variants={itemVariants} className="text-2xl md:text-4xl font-display font-bold text-white tracking-tighter leading-none uppercase">
               Why Businesses <span className="text-[#ff3c00]">Choose Us</span>
             </motion.h2>
           </div>

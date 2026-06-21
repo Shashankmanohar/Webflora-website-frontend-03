@@ -2,81 +2,120 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-grid pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28">
-
-      {/* Glow Background — radial-gradient orbs (no blur filter = zero paint cost) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-        <div className="relative w-full h-screen overflow-hidden bg-black">
-          {/* Orb 1 — upper-left */}
-          <div
-            className="absolute left-1/4 top-1/4 w-[340px] h-[340px] md:w-[500px] md:h-[500px] rounded-full will-change-transform md:animate-drift-1"
-            style={{ background: "radial-gradient(circle at center, rgba(249,115,22,0.35) 0%, rgba(249,115,22,0) 70%)" }}
-          />
-          {/* Orb 2 — lower-center */}
-          <div
-            className="absolute left-1/2 top-1/2 w-[260px] h-[260px] md:w-[380px] md:h-[380px] rounded-full will-change-transform md:animate-drift-2"
-            style={{ background: "radial-gradient(circle at center, rgba(249,115,22,0.22) 0%, rgba(249,115,22,0) 70%)" }}
-          />
-        </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-24 pb-12">
+      
+      {/* Background Grid Pattern & Ambient Glows */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 bg-grid opacity-[0.08]" />
+        
+        {/* Centered glowing orb behind content */}
+        <div 
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] md:w-[600px] md:h-[600px] rounded-full opacity-20"
+          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.18) 0%, rgba(0,0,0,0) 70%)" }}
+        />
+        <div 
+          className="absolute left-1/3 top-1/3 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full opacity-10"
+          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.12) 0%, rgba(0,0,0,0) 70%)" }}
+        />
       </div>
 
-      {/* Floating Code Icons — pure CSS float animation (desktop only) */}
-      <div className="absolute right-[8%] top-[25%] hidden lg:block opacity-35 will-change-transform animate-float-1" aria-hidden="true">
-        <span className="text-white text-[80px]">{"</>"}</span>
+      {/* Floating abstract code decorations (Desktop only) */}
+      <div className="absolute right-[8%] top-[25%] hidden xl:block opacity-20 animate-float-1 pointer-events-none text-white text-[70px] font-mono select-none" aria-hidden="true">
+        {"</>"}
       </div>
-      <div className="absolute left-[8%] bottom-[25%] hidden lg:block opacity-35 will-change-transform animate-float-2" aria-hidden="true">
-        <span className="text-white text-[70px]">{"{}"}</span>
+      <div className="absolute left-[8%] bottom-[25%] hidden xl:block opacity-20 animate-float-2 pointer-events-none text-white text-[60px] font-mono select-none" aria-hidden="true">
+        {"{}"}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto w-full">
-
-        {/* SEO H1 */}
-        <h1 className="text-[#FF3B00] text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-black mb-3 px-4 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] leading-relaxed">
-          Software Development Company in Patna Bihar
-        </h1>
-
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 sm:mb-6 rounded-full border border-white/10 bg-white/5 backdrop-blur">
-          <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-          <span className="text-[10px] sm:text-xs tracking-wider sm:tracking-widest text-gray-300 font-mono uppercase">
-            Top Web Agency in Bihar
+      <div className="relative z-10 max-w-5xl mx-auto px-6 w-full text-center flex flex-col items-center space-y-4 md:space-y-5">
+        
+        {/* Trust Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-md">
+          <span className="text-orange-500 text-xs">⭐</span>
+          <span className="text-[10px] sm:text-xs tracking-wider text-gray-300 font-mono uppercase">
+            Trusted Software Company in Patna
           </span>
         </div>
 
-        {/* Main Heading — LCP element */}
-        <h2 className="font-display font-bold tracking-tighter leading-[1.05] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5">
-          ANYTHING THAT <br />
-          <span className="text-gradient inline-block">CAN BE BUILT,</span>
-          <br />
-          <span className="text-brand text-glow inline-block">WE BUILD.</span>
-        </h2>
+        {/* H1 Main Heading */}
+        <h1 className="font-display font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl text-white">
+          Best Software Development <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-black drop-shadow-[0_0_20px_rgba(249,115,22,0.15)]">
+            Company in Patna,
+          </span>{" "}
+          <span className="text-white">Bihar</span>
+        </h1>
 
-        {/* Subtext */}
-        <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-7 sm:mb-8 uppercase tracking-wider">
-          CUSTOM SOFTWARE <span className="text-[#FF3B00]">•</span> WEBSITE DEVELOPMENT <span className="text-[#FF3B00]">•</span> MOBILE APPS <span className="text-[#FF3B00]">•</span> AI WORKFLOW AUTOMATION
+        {/* Subtext description */}
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-3xl">
+          We design, build, and deploy custom software systems, lightning-fast Next.js websites, cross-platform mobile apps, and automated workflows that scale businesses across Bihar and India.
+        </p>
+
+        {/* Core Services inline bullet points */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-gray-300 font-mono">
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Custom Software
+          </span>
+          <span className="text-gray-600 hidden sm:inline">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Web Development
+          </span>
+          <span className="text-gray-600 hidden sm:inline">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Mobile Apps
+          </span>
+          <span className="text-gray-600 hidden sm:inline">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> AI Automation
+          </span>
+        </div>
+
+        {/* Tagline branding statement */}
+        <p className="text-[10px] font-mono tracking-widest text-[#FF3B00]/70 uppercase">
+          "Anything that can be built, we build."
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-1">
           <Link
             href="/contact"
-            className="btn-primary px-8 py-3.5 w-full sm:w-auto cursor-pointer flex items-center justify-center text-center font-semibold rounded-none"
+            className="px-8 py-3 w-full sm:w-auto cursor-pointer bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-sm font-semibold tracking-wide text-center transition-all duration-300 shadow-lg shadow-orange-500/20"
           >
             Start Your Project
           </Link>
 
-          <div className="w-full sm:w-auto inline-block relative">
-            <div className="absolute z-10 -top-1 -left-1 w-1.5 h-1.5 bg-white" />
-            <div className="absolute z-10 -top-[3px] -right-1 w-1.5 h-1.5 bg-white" />
-            <div className="absolute z-10 -bottom-1 -left-1 w-1.5 h-1.5 bg-white" />
-            <div className="absolute z-10 -bottom-1 -right-1 w-1.5 h-1.5 bg-white" />
-            <Link
-              href="#work"
-              className="relative w-full sm:w-auto px-8 py-3.5 bg-transparent border border-orange-600 text-white text-base font-light tracking-wide hover:bg-orange-800 hover:text-white transition-all duration-300 flex items-center justify-center text-center"
-            >
-              View Our Work
-            </Link>
+          <Link
+            href="/contact?consultation=true"
+            className="px-8 py-3 w-full sm:w-auto cursor-pointer bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-white text-sm font-semibold tracking-wide text-center transition-all duration-300"
+          >
+            Get Free Consultation
+          </Link>
+          
+          <Link
+            href="#work"
+            className="text-gray-400 hover:text-white text-sm font-medium transition-colors py-2 flex items-center gap-1"
+          >
+            View Work <span className="text-orange-500 font-bold">→</span>
+          </Link>
+        </div>
+
+        {/* Statistics Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl pt-6 border-t border-white/10">
+          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
+            <p className="text-white text-xl md:text-2xl font-bold tracking-tight">200+</p>
+            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Projects Delivered</p>
+          </div>
+          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
+            <p className="text-white text-xl md:text-2xl font-bold tracking-tight">150+</p>
+            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Clients Served</p>
+          </div>
+          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
+            <p className="text-white text-xl md:text-2xl font-bold tracking-tight">5+</p>
+            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Years Experience</p>
+          </div>
+          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
+            <p className="text-[#FF3B00] text-xl md:text-2xl font-bold tracking-tight">99%</p>
+            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Satisfaction</p>
           </div>
         </div>
 

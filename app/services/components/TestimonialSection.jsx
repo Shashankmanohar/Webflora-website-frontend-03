@@ -99,7 +99,7 @@ const TestimonialSection = () => {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-3xl md:text-5xl font-display font-bold text-white tracking-tighter leading-none mb-6 uppercase"
+            className="text-3xl md:text-4xl font-display font-bold text-white tracking-tighter leading-none mb-6 uppercase"
           >
             Client <span className="text-primary">Success</span> Stories
           </motion.h2>

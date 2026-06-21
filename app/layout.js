@@ -30,7 +30,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: "Best Software Development Company in Patna Bihar | Webflora Technologies",
   description: "Webflora Technologies is a leading software development company in Patna, Bihar offering website development, app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses.",
-  keywords: "software company in Patna, software company Bihar, website development company in Patna, IT company Bihar, AI automation Patna, digital marketing company Bihar",
+  keywords: "Webflora Technologies, software company Patna, website development Patna, mobile app development Bihar, AI automation India",
   openGraph: {
     title: "Best Software Development Company in Patna Bihar | Webflora Technologies",
     description: "Webflora Technologies is a leading software development company in Patna, Bihar offering website development, app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses.",

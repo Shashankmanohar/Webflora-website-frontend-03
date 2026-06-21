@@ -124,7 +124,7 @@ export default function WorkSection() {
         <motion.div className="flex flex-col items-center text-center mb-16">
           <motion.h2
             variants={fadeUp}
-            className="font-display font-bold text-3xl md:text-5xl text-white tracking-tighter mb-6 uppercase"
+            className="font-display font-bold text-3xl md:text-4xl text-white tracking-tighter mb-6 uppercase"
           >
             WORK THAT SPEAKS
           </motion.h2>

@@ -33,7 +33,7 @@ export default function VegavanTeaser() {
               <span className="text-xs md:text-sm font-bold text-white uppercase tracking-widest">Announcing Our First SaaS</span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-black text-white leading-none tracking-tighter">
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-none tracking-tighter">
               Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3B00] via-orange-400 to-yellow-500">Vegavan AI</span>
             </h2>
 

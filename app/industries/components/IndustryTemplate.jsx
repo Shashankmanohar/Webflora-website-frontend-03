@@ -33,7 +33,7 @@ const IndustryTemplate = ({ data }) => {
           <section className="py-20 bg-black border-y border-white/5 relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
               <FadeInUp>
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-none">
+                <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
                   {data.geoTitle}
                 </h2>
                 <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light font-sans">
@@ -62,7 +62,7 @@ const IndustryTemplate = ({ data }) => {
         <GlowBlob color="#FF3B00" size="400px" top="0" left="30%" />
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <FadeInUp className="space-y-8">
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-none">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-none">
               READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3B00] to-orange-500">DIGITIZE?</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-light">
@@ -109,9 +109,9 @@ const HeroWrapper = ({ data }) => {
 
       <div className="relative z-10 text-center w-full max-w-6xl mx-auto">
         <FadeInUp className="mb-4">
-          <h1 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
+          <h2 className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black drop-shadow-[0_0_15px_rgba(255,59,0,0.3)]">
             {data.title} Solutions
-          </h1>
+          </h2>
         </FadeInUp>
 
         <FadeInUp delay={0.1} className="inline-flex items-center gap-2 px-3 py-1 mb-10 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-sm">
@@ -125,9 +125,9 @@ const HeroWrapper = ({ data }) => {
         </FadeInUp>
 
         <FadeInUp delay={0.2} className="mb-8">
-          <h2 className="font-sans font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] text-white">
+          <h1 className="font-sans font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] text-white">
             {data.headline}
-          </h2>
+          </h1>
         </FadeInUp>
         
         <FadeInUp delay={0.2} className="text-gray-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed">
@@ -169,7 +169,7 @@ const ProblemWrapper = ({ data }) => {
             <FadeInUp className="text-[#FF3B00] font-bold tracking-widest uppercase text-sm block mb-6">
               Industry Challenges
             </FadeInUp>
-            <h2 className="text-3xl md:text-5xl font-bold mb-10 tracking-tighter leading-tight animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 tracking-tighter leading-tight animate-fade-in">
               {data.problemTitle}
             </h2>
             <div className="space-y-4">
@@ -219,7 +219,7 @@ const BenefitsWrapper = ({ data }) => {
                <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
                  Key Advantages
                </FadeInUp>
-               <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none">
+               <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none">
                  BUSINESS <br/><span className="text-gray-600 font-outline">BENEFITS.</span>
                </h2>
              </div>
@@ -238,8 +238,10 @@ const TechStackWrapper = ({ data }) => {
   return (
     <section className="py-20 px-6 bg-[#030303] relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        <FadeInUp className="text-3xl md:text-5xl font-black mb-24 tracking-tighter">
-          TECHNOLOGY <span className="text-gray-700">ARSENAL.</span>
+        <FadeInUp>
+          <h2 className="text-3xl md:text-4xl font-black mb-24 tracking-tighter text-white">
+            TECHNOLOGY <span className="text-gray-700">ARSENAL.</span>
+          </h2>
         </FadeInUp>
         
         <TechStackGrid techStack={data.techStack} />
@@ -258,7 +260,7 @@ const SubServicesWrapper = ({ data }) => {
             <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
               Platform Features
             </FadeInUp>
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter">
               OUR <span className="text-gray-600 font-outline">CAPABILITIES.</span>
             </h2>
           </div>
@@ -295,7 +297,7 @@ const ProcessWrapper = ({ data }) => {
             <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
               How We Deliver
             </FadeInUp>
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter">
               OUR <span className="text-gray-600 font-outline">PROCESS.</span>
             </h2>
           </div>

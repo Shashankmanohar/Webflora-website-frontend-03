@@ -13,7 +13,7 @@ export default function InvertedCTA() {
 
         {/* content */}
         <div className="relative z-10 space-y-8">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
             Let’s Build Something
             <br />
             <span className="text-[#ff3b00]">

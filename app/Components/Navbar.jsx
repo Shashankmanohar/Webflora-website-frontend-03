@@ -36,6 +36,7 @@ const navItems = [
     label: "Services",
     href: "/services",
     children: [
+      { icon: Briefcase,    label: "All Services",      desc: "Browse all core services we offer.",        href: "/services" },
       { icon: Bot,          label: "Vegavan AI",        desc: "Autonomous conversational support.",        href: "/vegavan-ai",                                                   highlight: true },
       { icon: Bot,          label: "AI & Automation",   desc: "Custom n8n and workflow agents.",           href: "/services/ai-automation-company-in-patna" },
       { icon: Globe,        label: "Website Dev",        desc: "High-performance marketing sites.",         href: "/services/website-development-company-in-patna" },
@@ -50,6 +51,7 @@ const navItems = [
     label: "Industries",
     href: "/industries",
     children: [
+      { icon: Building2,    label: "All Industries",     desc: "View all industries we cater to.",          href: "/industries" },
       { icon: Heart,        label: "Healthcare",         desc: "Secure telemedicine & patient portals.",    href: "/industries/healthcare" },
       { icon: GraduationCap,label: "Education",          desc: "Scalable LMS & online exam systems.",       href: "/industries/education" },
       { icon: Home,         label: "Real Estate",        desc: "Stunning property portals & lead CRM.",     href: "/industries/real-estate" },
@@ -133,7 +135,8 @@ export default function Navbar() {
                     onMouseEnter={() => setActiveDropdown(idx)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <button
+                    <Link
+                      href={item.href}
                       aria-haspopup="true"
                       aria-expanded={activeDropdown === idx}
                       aria-label={`${item.label} — expand menu`}
@@ -151,7 +154,7 @@ export default function Navbar() {
                       {isActive && (
                         <span className="absolute inset-0 bg-white/[0.07] border border-white/[0.08] rounded-full -z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] transition-all duration-300" />
                       )}
-                    </button>
+                    </Link>
 
                     {/* Dropdown — CSS opacity + translate, no JS animation */}
                     <div

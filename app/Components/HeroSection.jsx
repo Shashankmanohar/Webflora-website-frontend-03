@@ -33,36 +33,41 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-md">
           <span className="text-orange-500 text-xs">⭐</span>
           <span className="text-[10px] sm:text-xs tracking-wider text-gray-300 font-mono uppercase">
-            Trusted Software Company in Patna
+            Trusted Software & Website Company in Patna
           </span>
         </div>
 
         {/* H1 Main Heading */}
         <h1 className="font-display font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl text-white">
-          Best Software Development <br />
+          Software Company & <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-black drop-shadow-[0_0_20px_rgba(249,115,22,0.15)]">
-            Company in Patna,
+            Website Company
           </span>{" "}
-          <span className="text-white">Bihar</span>
+          <br className="hidden sm:inline" />
+          <span className="text-white">in Patna Bihar</span>
         </h1>
 
         {/* Subtext description */}
         <p className="text-gray-400 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-3xl">
-          We design, build, and deploy custom software systems, lightning-fast Next.js websites, cross-platform mobile apps, and automated workflows that scale businesses across Bihar and India.
+          We are a full-service software company, website company, and mobile app company in Patna, Bihar, offering performance digital marketing and custom AI automation solutions that scale business growth across India.
         </p>
 
         {/* Core Services inline bullet points */}
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-gray-300 font-mono">
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Custom Software
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Software Company
           </span>
           <span className="text-gray-600 hidden sm:inline">|</span>
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Web Development
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Website Company
           </span>
           <span className="text-gray-600 hidden sm:inline">|</span>
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Mobile Apps
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Mobile App Company
+          </span>
+          <span className="text-gray-600 hidden sm:inline">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Digital Marketing
           </span>
           <span className="text-gray-600 hidden sm:inline">|</span>
           <span className="flex items-center gap-1.5">

@@ -55,6 +55,18 @@ const industryMeta = {
     border: "group-hover:border-[#FF3B00]/30",
     accent: "text-[#FF3B00]",
   },
+  startups: {
+    icon: "solar:rocket-bold-duotone",
+    glow: "bg-orange-600/10",
+    border: "group-hover:border-orange-500/30",
+    accent: "text-orange-500",
+  },
+  ecommerce: {
+    icon: "solar:cart-large-4-bold-duotone",
+    glow: "bg-sky-600/10",
+    border: "group-hover:border-sky-500/30",
+    accent: "text-sky-500",
+  },
 };
 
 export default function IndustriesSection() {

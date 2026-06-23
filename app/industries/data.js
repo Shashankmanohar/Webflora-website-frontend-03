@@ -485,5 +485,332 @@ export const industriesData = {
       { name: "Node.js", icon: "logos:nodejs-icon" },
       { name: "PostgreSQL", icon: "logos:postgresql" }
     ]
+  },
+  "startups": {
+    title: "Startups & MVPs",
+    headline: "Engineering Scalable MVPs to Launch and Raise Capital",
+    subtext: "Webflora Technologies designs rapid, high-performance MVPs, investor-ready prototypes, SaaS architectures, and agile software solutions for fast-growing startups starting from ₹45,000.",
+    geoTitle: "High-Growth Startup & MVP Development in Patna & Bihar",
+    geoContent: "We partner with aspiring entrepreneurs, bootstrapped founders, and funded startups across Patna, Muzaffarpur, Gaya, and India to bring their ideas to life. From database scaling to payment systems, we launch your MVP in record time.",
+    heroBadge: "Rapid MVP & SaaS Development",
+    problemTitle: "Startup Launch Bottlenecks",
+    problems: [
+      "High development costs and long timelines delaying market validation",
+      "Unscalable architectures that crash when user traffic grows",
+      "Inability to create polished, high-converting investor pitch prototypes",
+      "Lack of direct developer communication and founder-led product design",
+      "Poor search engine optimization preventing early user acquisition"
+    ],
+    subServices: [
+      { title: "Rapid MVP Development", icon: "lucide:rocket", desc: "Build and deploy a functional version of your core product in 4-6 weeks to validate with real users." },
+      { title: "SaaS Product Design", icon: "lucide:layout", desc: "Design multi-tenant software-as-a-service platforms with user roles and recurring subscription models." },
+      { title: "Investor-Ready Prototypes", icon: "lucide:presentation", desc: "Construct high-fidelity interactive frontend prototypes to showcase capabilities directly to VCs and angel investors." },
+      { title: "API & Third-Party Syncs", icon: "lucide:link-2", desc: "Connect CRM databases, auth platforms, notification hubs, and payment options seamlessly." },
+      { title: "Launch Marketing & SEO", icon: "lucide:megaphone", desc: "Deploy high-converting landing pages built with localized SEO to acquire your first 1,000 users organically." }
+    ],
+    process: [
+      { title: "Founder Discovery Session", desc: "Aligning on core features for the MVP to minimize launch waste." },
+      { title: "Rapid Wireframing & UI", desc: "Designing premium layouts focused on product value." },
+      { title: "Agile Development Sprints", desc: "Coding fast, responsive, and cleanly structured React components." },
+      { title: "Cloud Deployment & Analytics", desc: "Deploying on optimized cloud hosting with hotjar and mixpanel analytics." }
+    ],
+    solutions: [
+      "Clean-code Next.js architecture built for easy future scaling",
+      "Cost-effective third-party integrations (Supabase, Firebase, Stripe)",
+      "Lightweight, pixel-perfect user interfaces to attract users",
+      "SEO-optimized structure built for early organic traction"
+    ],
+    benefits: [
+      {
+        title: "Fast Time-to-Market",
+        description: "Launch your functional prototype or MVP in weeks rather than months.",
+        icon: "lucide:zap",
+        stat: "4-6 Wks",
+        statLabel: "Average Launch Time",
+        metric: "Deployment Speed",
+        color: "from-[#FF3B00]/20 to-red-600/5"
+      },
+      {
+        title: "Optimized Burn Rate",
+        description: "Save up to 50% on engineering overhead with our precise founder-led execution.",
+        icon: "lucide:percent",
+        stat: "50%",
+        statLabel: "Cost Reduction",
+        metric: "Budget Efficiency",
+        color: "from-cyan-600/20 to-blue-600/5"
+      },
+      {
+        title: "Fundable Prototype",
+        description: "Stun investors with high-fidelity, interactive, and beautifully designed product pages.",
+        icon: "lucide:coins",
+        stat: "₹10Cr+",
+        statLabel: "Raised by clients",
+        metric: "Fundraising Lift",
+        color: "from-purple-600/20 to-violet-600/5"
+      }
+    ],
+    faqs: [
+      {
+        question: "What is your average timeline for building an MVP?",
+        answer: "We deliver functional MVPs in 4 to 6 weeks. This includes database setup, user authentication, core functionality, and a payment gateway.",
+        icon: "lucide:calendar-clock"
+      },
+      {
+        question: "Do you sign non-disclosure agreements (NDAs) to protect our idea?",
+        answer: "Yes, we sign strict NDAs before you share any proprietary details, ensuring your intellectual property and startup concept are completely protected.",
+        icon: "lucide:file-signature"
+      },
+      {
+        question: "Can we migrate the code internally once we hire an in-house team?",
+        answer: "Absolutely. We write clean, fully documented, standard Next.js and React code hosted on your own GitHub account, making handovers to your future developers smooth.",
+        icon: "lucide:git-pull-request"
+      },
+      {
+        question: "How do you help us keep hosting and API costs low at the start?",
+        answer: "We structure the app using serverless platforms and free/generous tier backend services (like Vercel, Supabase, and Resend), keeping initial overhead close to zero.",
+        icon: "lucide:dollar-sign"
+      },
+      {
+        question: "Do you provide product design and wireframing services?",
+        answer: "Yes, we handle the entire product journey: from UX mapping and Figma wireframes to backend architecture, frontend coding, and cloud launch.",
+        icon: "lucide:layers"
+      }
+    ],
+    techStack: [
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "React", icon: "logos:react" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+      { name: "Tailwind", icon: "logos:tailwindcss-icon" }
+    ]
+  },
+  "ecommerce": {
+    title: "E-Commerce",
+    headline: "Powering Modern, High-Conversion Online Storefronts",
+    subtext: "Webflora Technologies engineers lightning-fast e-commerce applications, Shopify/WooCommerce API syncs, automated multi-channel inventories, and fast-checkout flows starting from ₹35,000.",
+    geoTitle: "Scalable E-Commerce Web Development in Patna & Bihar",
+    geoContent: "We help retail brands, direct-to-consumer (D2C) startups, and wholesalers across Patna, Bihar, and India establish custom online storefronts. From automated WhatsApp tracking to UPI checkouts, we build optimized sales engines.",
+    heroBadge: "Custom E-Commerce Storefronts",
+    problemTitle: "E-Commerce Growth Barriers",
+    problems: [
+      "Slow-loading product catalogs driving high bounce rates and cart abandonment",
+      "Rigid CMS limitations preventing unique, custom-branded shopping experiences",
+      "Manual stock and order tracking causing fulfillment errors and delays",
+      "Fragmented payment setups lacking one-click mobile UPI checkout options",
+      "High platforms transaction fees eating into thin retail profit margins"
+    ],
+    subServices: [
+      { title: "Next.js Storefronts", icon: "lucide:shopping-bag", desc: "Build sub-second loading storefronts utilizing React and static rendering for maximum Google page speed." },
+      { title: "Multi-vendor Marketplaces", icon: "lucide:users", desc: "Develop advanced marketplace platforms allowing third-party sellers to list products and track commissions." },
+      { title: "Custom Admin Dashboards", icon: "lucide:layout-dashboard", desc: "Manage catalog inventories, custom promotional coupon codes, order dispatches, and tax splits easily." },
+      { title: "One-Click UPI Checkout", icon: "lucide:zap", desc: "Provide direct UPI scanning and mobile wallet integrations to eliminate payment screen drop-offs." },
+      { title: "Automated Order Tracking", icon: "lucide:truck", desc: "Automate purchase invoices, packing sheets, and real-time shipping tracking via integrated APIs." }
+    ],
+    process: [
+      { title: "Conversion UX Architecture", desc: "Mapping out quick navigation paths from home page search to payment completion." },
+      { title: "Visual Catalog Layout", desc: "Designing premium, high-resolution product showcase cards and checkout overlays." },
+      { title: "Secure Cart & Payment Code", desc: "Integrating secure transaction APIs and robust database transaction handlers." },
+      { title: "SEO Schema Optimization", desc: "Adding rich product, review, and price schemas for automatic Google snippet visibility." }
+    ],
+    solutions: [
+      "Custom shopping carts built with instant client-side updates",
+      "API integrations with major carriers (Delhivery, Shiprocket, BlueDart)",
+      "Secure, encrypted payment pipelines with zero transaction leakage",
+      "Advanced discount code engines and flash-sale schedulers"
+    ],
+    benefits: [
+      {
+        title: "Sub-Second Speeds",
+        description: "Boost search engine visibility and conversion rates with highly optimized static page rendering.",
+        icon: "lucide:zap",
+        stat: "98/100",
+        statLabel: "PageSpeed Score",
+        metric: "Performance Score",
+        color: "from-[#FF3B00]/20 to-red-600/5"
+      },
+      {
+        title: "Increased Cart Recovery",
+        description: "Automated cart abandonment sequences recover up to 30% of lost sales.",
+        icon: "lucide:mail",
+        stat: "30%",
+        statLabel: "Sales Reclaimed",
+        metric: "Revenue Boost",
+        color: "from-cyan-600/20 to-blue-600/5"
+      },
+      {
+        title: "Lower Platform Fees",
+        description: "Say goodbye to monthly percentage commissions. Own your code, host free, and pay zero platform fees.",
+        icon: "lucide:badge-percent",
+        stat: "0%",
+        statLabel: "Sales Commission",
+        metric: "Profit Growth",
+        color: "from-purple-600/20 to-violet-600/5"
+      }
+    ],
+    faqs: [
+      {
+        question: "Can we migrate our existing Shopify/WooCommerce store to Next.js?",
+        answer: "Yes, we handle complete catalog migration including products, customer details, metadata, and images while preserving your existing SEO URLs.",
+        icon: "lucide:refresh-cw"
+      },
+      {
+        question: "Which payment gateways do you support?",
+        answer: "We support all major payment providers including Razorpay, PayU, Paytm, Stripe, and Instamojo, with full support for card, net banking, and UPI checkouts.",
+        icon: "lucide:credit-card"
+      },
+      {
+        question: "Can the platform handle inventory sync across offline stores?",
+        answer: "Yes, we design custom database webhooks and integrations to automatically update online stock levels whenever items are scanned at your physical store POS.",
+        icon: "lucide:refresh-cw"
+      },
+      {
+        question: "How does localized SEO help my online store?",
+        answer: "We implement rich structured schemas (Product, Offer, AggregateRating) so Google can display your product prices, availability, and review stars directly in search results.",
+        icon: "lucide:search"
+      },
+      {
+        question: "Is there a limit on the number of products or orders?",
+        answer: "No, custom Next.js storefronts paired with scalable SQL/NoSQL databases have no limits on product listings, page visits, or monthly order quantities.",
+        icon: "lucide:infinity"
+      }
+    ],
+    techStack: [
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "React", icon: "logos:react" },
+      { name: "Node.js", icon: "logos:nodejs-icon" },
+      { name: "PostgreSQL", icon: "logos:postgresql" }
+    ]
+  },
+  "hospital-software-development": {
+    title: "Hospital Software Development",
+    headline: "Hospital ERP & Patient Management Systems",
+    subtext: "We design and build secure, compliant, and scalable hospital software systems. From ward vacancy trackers to digital doctor prescriptions and patient billing dashboards, we digitize healthcare.",
+    geoTitle: "Hospital Software in Patna & Bihar",
+    geoContent: "We serve diagnostics networks, regional hospitals, and private clinics in Patna, Gaya, Muzaffarpur, and all of Bihar, integrating payment portals and offline-to-cloud patient syncing.",
+    problems: ["Clunky queue management causing patient dropouts.", "Slow manual billing desks with high error rates."],
+    subServices: [
+      { title: "OPD Queue Manager", icon: "lucide:users", desc: "Automated ticket queues and doctor slot tracking." },
+      { title: "IPD Admission Panel", icon: "lucide:bed", desc: "Track room occupancy, bed availability, and patient transfers." }
+    ],
+    solutions: ["Secure patient database with AES-256 encryption", "Automated billing and PDF discharge summary printers"],
+    benefits: [
+      { title: "Zero Billing Errors", description: "Automated invoice calculation with integrated pharmacy codes.", icon: "lucide:file-text", stat: "100%", statLabel: "Billing Accuracy" }
+    ],
+    faqs: [
+      { question: "Is the hospital database secure?", answer: "Yes, we implement strict Role-Based Access Controls (RBAC) and encrypted SQL tables." }
+    ]
+  },
+  "school-website-development": {
+    title: "School Website Development",
+    headline: "High-Performance School & College Portals",
+    subtext: "We build fast, responsive, and SEO-optimized school websites. We include student portfolios, digital admission forms, and photo galleries to showcase your institution.",
+    geoTitle: "School Web Portals in Patna & Bihar",
+    geoContent: "We help schools and colleges across Bihar establish modern web portals to communicate notice updates and receive registrations.",
+    problems: ["Slow loading speeds during admission cycles.", "Hard-to-edit notice boards requiring coding skills."],
+    subServices: [
+      { title: "Notice & Events Boards", icon: "lucide:calendar", desc: "Simple admin interface to post notice files and event pictures." },
+      { title: "Admission Inquiries", icon: "lucide:user-plus", desc: "Capture and route online student forms directly to admin panels." }
+    ],
+    solutions: ["Sub-second page speeds via Next.js SSG", "Easy admin notice manager panel"],
+    benefits: [
+      { title: "Instant Page Load", description: "Vitals compliant Next.js layout prevents user dropouts.", icon: "lucide:zap", stat: "95+", statLabel: "Performance Score" }
+    ],
+    faqs: [
+      { question: "Can we post daily homework updates?", answer: "Yes, we build a simple notice board editor where teachers can upload files in 2 clicks." }
+    ]
+  },
+  "coaching-erp": {
+    title: "Coaching ERP Solutions",
+    headline: "Smart ERP & Mock Test Systems for Coaching Institutes",
+    subtext: "We engineer custom ERP systems specifically designed for educational coaching institutes. Manage student batches, generate smart PDF ID cards, and host online mock test papers.",
+    geoTitle: "Coaching ERP Development in Bihar",
+    geoContent: "We serve coaching hubs in Patna, Gaya, and Muzaffarpur, replacing manual attendance register sheets with QR-based trackers.",
+    problems: ["Manual fee card tracking leading to revenue leaks.", "Inability to track student progress at scale."],
+    subServices: [
+      { title: "Automated Fee Ledgers", icon: "lucide:credit-card", desc: "Track pending balances, print receipts, and send automated reminders." },
+      { title: "QR Attendance Sync", icon: "lucide:qr-code", desc: "Contactless student check-in via mobile QR scanning." }
+    ],
+    solutions: ["Milestone balance tracker with WhatsApp alerts", "Custom LMS portals for exam results"],
+    benefits: [
+      { title: "Revenue Recovery", description: "Automated alerts reduce balance delays by up to 50%.", icon: "lucide:trending-up", stat: "50%", statLabel: "Faster Recovery" }
+    ],
+    faqs: [
+      { question: "Can parents log in to check reports?", answer: "Yes, we design secure mobile parent views to check attendance and scores." }
+    ]
+  },
+  "restaurant-website-development": {
+    title: "Restaurant Website Development",
+    headline: "Custom Online Menus & Restaurant Storefronts",
+    subtext: "We design and build breathtaking digital restaurant menus and order capturing systems. Allow customers to browse dishes, place takeaway orders, and book tables.",
+    geoTitle: "Restaurant Portals in Patna & Bihar",
+    geoContent: "We help hotels, cafes, and restaurants in Patna elevate their culinary brand appeal and capture direct bookings without high commission fees.",
+    problems: ["High commission fees on standard food delivery apps.", "Clunky menus that are hard to read on mobile."],
+    subServices: [
+      { title: "Interactive Menus", icon: "lucide:utensils-cross-key", desc: "Mobile-first catalog with categories, tag filters, and images." },
+      { title: "Direct Booking Capture", icon: "lucide:calendar", desc: "Receive table bookings directly via WhatsApp notification lines." }
+    ],
+    solutions: ["0% commission direct ordering channel", "Sleek mobile menu layouts"],
+    benefits: [
+      { title: "Commission Savings", description: "Keep 100% of your sales by capturing direct website orders.", icon: "lucide:percent", stat: "0%", statLabel: "Commission Charged" }
+    ],
+    faqs: [
+      { question: "Do you integrate payment gateways?", answer: "Yes, we integrate UPI, card checkouts, and cash-on-delivery options." }
+    ]
+  },
+  "hotel-booking-website": {
+    title: "Hotel Booking Websites",
+    headline: "Premium Hotel Portals & Room Booking Systems",
+    subtext: "We build custom hotel booking websites featuring room directories, reservation calendars, and secure payment integrations. Own your customer details directly.",
+    geoTitle: "Hotel Portals in Patna & Bihar",
+    geoContent: "We help hoteliers, guest houses, and banquet halls in Bihar showcase rooms, list amenities, and book wedding halls.",
+    problems: ["High OTA commissions reducing profit margins.", "Fragmented room booking calendars causing double bookings."],
+    subServices: [
+      { title: "Live Room Availability", icon: "lucide:bed-double", desc: "Calendar block system syncing room availability in real time." },
+      { title: "Banquet Hall Schedulers", icon: "lucide:calendar", desc: "Filter booking dates for weddings and corporate meetings." }
+    ],
+    solutions: ["Direct UPI checkout integration", "Centralized admin booking console"],
+    benefits: [
+      { title: "Direct bookings lift", description: "SEO setup drives organic bookings and saves OTA fees.", icon: "lucide:trending-up", stat: "30%", statLabel: "Direct Booking Lift" }
+    ],
+    faqs: [
+      { question: "Can we sync with Channel Managers?", answer: "Yes, we configure integrations via API webhooks to sync room counts." }
+    ]
+  },
+  "manufacturing-erp": {
+    title: "Manufacturing ERP Solutions",
+    headline: "Supply Chain & Factory Inventory ERP Systems",
+    subtext: "We build specialized ERP systems to automate factory assembly lines, track raw material levels, manage purchase orders, and monitor staff workflows.",
+    geoTitle: "Factory Digitalization in Bihar",
+    geoContent: "We serve processing mills, manufacturing units, and factories in Patna, Barauni, and Bihar with cloud-native dashboards.",
+    problems: ["Excel sheet formula errors causing inventory delays.", "Lack of data audits for supplier shipments."],
+    subServices: [
+      { title: "Raw Material Alerts", icon: "lucide:alert-triangle", desc: "Auto-notification when material levels drop below re-order thresholds." },
+      { title: "Supplier Log Boards", icon: "lucide:truck", desc: "Track pending orders, delivery dates, and quality check notes." }
+    ],
+    solutions: ["Real-time supply chain analytics", "Secure Role-Based Access Controls"],
+    benefits: [
+      { title: "Zero Stockouts", description: "Smart logs ensure raw materials are ordered ahead of production stages.", icon: "lucide:package", stat: "99%", statLabel: "Stock Availability" }
+    ],
+    faqs: [
+      { question: "Can we track multiple warehouses?", answer: "Yes, our multi-tenant database handles transfers across branches easily." }
+    ]
+  },
+  "real-estate-crm": {
+    title: "Real Estate CRM Systems",
+    headline: "Property Pipeline & Lead Tracker CRM Systems",
+    subtext: "We design and build custom Real Estate CRM systems. Track property site visits, follow up on customer installments, and manage builder projects in a single interface.",
+    geoTitle: "Real Estate Tech in Patna & Bihar",
+    geoContent: "We help property builders and agencies in Bihar manage residential launches and coordinate sales leads.",
+    problems: ["Sales executives forgetting to follow up with hot buyers.", "Scattered property brochures and pricing tables."],
+    subServices: [
+      { title: "Lead Allocation Sorter", icon: "lucide:users-2", desc: "Auto-route new website inquiries to active sales agents." },
+      { title: "Installment Calculators", icon: "lucide:calculator", desc: "Calculate payment milestone timelines and auto-send billing alerts." }
+    ],
+    solutions: ["Centralized builder database dashboard", "WhatsApp API billing integrations"],
+    benefits: [
+      { title: "Faster Follow-ups", description: "Immediate auto-assignments reduce lead reply delays to minutes.", icon: "lucide:phone-call", stat: "10x", statLabel: "Reply Speed Lift" }
+    ],
+    faqs: [
+      { question: "Can we upload floor plans and brochures?", answer: "Yes, the CRM includes secure cloud storage to manage project assets." }
+    ]
   }
 };

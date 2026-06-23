@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const servicesData = {
   "website-development-company-in-patna": {
     title: "Website Development Company in Patna Bihar",
@@ -48,6 +46,15 @@ export const servicesData = {
       "Custom ecommerce website development company systems with payment gates",
       "SEO, dynamic JSON-LD schema & Core Web Vitals optimization",
       "Scalable headless CMS & secure admin control dashboards"
+    ],
+    suitableFor: [
+      { title: "Schools & Colleges", icon: "lucide:graduation-cap", reason: "Manage online admissions, post notices, host photo galleries, and show student achievements." },
+      { title: "Hospitals & Clinics", icon: "lucide:activity", reason: "Publish physician lists, service schedules, patient guidelines, and health packages." },
+      { title: "Restaurants & Cafes", icon: "lucide:utensils", reason: "Feature custom interactive digital menus, manage online table reservations, and take takeaway bookings." },
+      { title: "Manufacturing & Factories", icon: "lucide:factory", reason: "Showcase industrial capacity, certifications, product catalogs, and capture global B2B leads." },
+      { title: "Startups & SaaS", icon: "lucide:rocket", reason: "Launch high-converting landing pages, interactive product demos, and validation MVPs." },
+      { title: "NGOs & Trusts", icon: "lucide:heart", reason: "Accept secure online donations, display current campaigns, and publish transparent impact updates." },
+      { title: "Coaching Institutes", icon: "lucide:book-open", reason: "Process digital registrations, showcase top rankers, and provide contact channels for parents." }
     ],
     benefits: [
       {
@@ -127,7 +134,38 @@ export const servicesData = {
       { name: "TypeScript", icon: "logos:typescript-icon" },
       { name: "Node.js", icon: "logos:nodejs-icon" },
       { name: "PostgreSQL", icon: "logos:postgresql" }
-    ]
+    ],
+    detailedArticle: {
+      title: "Governance, Security & SLA Support",
+      sections: [
+        {
+          title: "Why Businesses Need a Professional Website Development Strategy",
+          paragraphs: [
+            "In today's digital economy, your website is the digital storefront of your business. It is often the very first point of contact for potential customers. A slow, poorly-designed, or non-responsive website immediately damages your credibility and turns away visitors. On the other hand, a modern, fast-loading, and professionally designed website builds instant trust, establishes your brand authority, and serves as a 24/7 lead generation engine.",
+            "As consumer search behavior continues to shift to mobile devices, businesses in Patna, Bihar, and across India must have highly optimized web platforms. By offering intuitive navigation, clear call-to-actions, and localized SEO, a professional website transforms casual search traffic into high-intent sales inquiries."
+          ]
+        },
+        {
+          title: "Advanced Security & Data Privacy Standards We Implement",
+          paragraphs: [
+            "Security is core to our build process. We leverage static site generation (SSG) which makes our frontend code serverless and virtually immune to standard database hacking attacks. We also configure SSL certificates, secure authentication layers (such as OTP login), role-based permissions, and implement regular security patches to keep your databases safe.",
+            "All server endpoints are hidden behind security proxies, and user input is heavily sanitized on both frontend and backend to completely prevent injection threats."
+          ]
+        },
+        {
+          title: "Post-Launch System Maintenance & SLA Support",
+          paragraphs: [
+            "Websites are living systems that require regular care. Our comprehensive maintenance services cover regular database backups, automated security scans, platform version updates, content changes, and technical support. This ensures your website operates at 100% uptime with zero downtime, protecting your business operations."
+          ]
+        },
+        {
+          title: "Transparent Pricing Structure & Code Ownership ROI",
+          paragraphs: [
+            "Our custom basic website packages start from a transparent ₹25,000, while complex custom web applications are quoted based on specific feature requirements. By choosing our custom code, you gain complete source code ownership and host it on your own serverless cloud accounts. This keeps your recurring licensing fees close to zero, providing a high return on investment (ROI) that helps your business scale sustainably."
+          ]
+        }
+      ]
+    }
   },
   "mobile-app-development-company-in-patna": {
     title: "Mobile App Development Company in Patna Bihar",
@@ -155,7 +193,7 @@ export const servicesData = {
     process: [
       { title: "Requirement Analysis", desc: "Understanding your business goals, target audience, and app features." },
       { title: "Wireframing & UI/UX Design", desc: "Creating intuitive, user-centric designs for maximum engagement by professional UI/UX designers." },
-      { title: "App Development", desc: "Building the application using React Native or Flutter for cross-platform efficiency and high performance." },
+      { title: "App Engineering", desc: "Building the application using React Native or Flutter for cross-platform efficiency and high performance." },
       { title: "API Integration", desc: "Connecting backend systems, databases, and third-party payment services securely." },
       { title: "Testing & QA", desc: "Rigorous testing to ensure bug-free performance across all devices and screen resolutions." },
       { title: "App Store Deployment", desc: "Launching your app on the Google Play Store and Apple App Store with keyword optimization." },
@@ -175,6 +213,14 @@ export const servicesData = {
       "User-centric premium UI/UX design with dark-mode support",
       "App Store Optimization (ASO) for Google Play and Apple App Store visibility",
       "Secure offline database storage and real-time syncing"
+    ],
+    suitableFor: [
+      { title: "Online Delivery Brands", icon: "lucide:truck", reason: "Integrate live map tracking, SMS gateways, and secure checkout for delivery services." },
+      { title: "Coaching & EdTech", icon: "lucide:video", reason: "Host video lectures, conduct live mock tests, process student assignments, and track attendance." },
+      { title: "Supermarkets & Retailers", icon: "lucide:shopping-bag", reason: "Launch customized online storefronts with instant push alerts, billing sync, and customer coupons." },
+      { title: "Clinics & Doctors", icon: "lucide:calendar-check", reason: "Let patients book/modify doctor slots, store digital prescriptions, and check queue status." },
+      { title: "Startups & SaaS", icon: "lucide:rocket", reason: "Build high-speed mobile MVPs to acquire early users and pitch interactive products to VC investors." },
+      { title: "Service Agencies", icon: "lucide:settings", reason: "Provide home services, booking mechanisms, customer reviews, and staff-tracking schedules." }
     ],
     benefits: [
       {
@@ -249,7 +295,38 @@ export const servicesData = {
       { name: "Swift", icon: "logos:swift" },
       { name: "Kotlin", icon: "logos:kotlin-icon" },
       { name: "App Store", icon: "logos:apple" }
-    ]
+    ],
+    detailedArticle: {
+      title: "Governance, Security & SLA Support",
+      sections: [
+        {
+          title: "Why Businesses Need a Custom Mobile Application Strategy",
+          paragraphs: [
+            "In a mobile-first world, a dedicated application is the most direct channel to your customers. Web-based mobile sites are excellent for discovery, but mobile apps provide direct push notifications, faster offline access, and a highly optimized native UI. A professional mobile application builds long-term customer loyalty and streamlines recurring transactions.",
+            "Whether you need an e-commerce shopping platform, an educational coaching application, or an enterprise CRM app, custom cross-platform applications ensure high performance on both Android and iOS devices, maximizing your market reach."
+          ]
+        },
+        {
+          title: "Advanced Security & Data Privacy Standards We Implement",
+          paragraphs: [
+            "We build mobile applications with state-of-the-art security protocols. All data stored locally on the device is encrypted using secure keychains and encrypted storage databases. Network communications between the app and the backend APIs use TLS/SSL encryption with strict certificate pinning to prevent intercept threats.",
+            "We also implement secure passwordless OTP authentications and role-based permissions to protect user accounts and transaction histories."
+          ]
+        },
+        {
+          title: "Post-Launch System Maintenance & OS Update SLA",
+          paragraphs: [
+            "Mobile operating systems (Android & iOS) receive major updates every year. Our long-term mobile app maintenance SLA covers compatibility updates, performance testing on new OS versions, security patches, regular server backups, and API monitoring to ensure your app remains active and approved on both the Google Play Store and Apple App Store."
+          ]
+        },
+        {
+          title: "Transparent Pricing Structure & Code Ownership ROI",
+          paragraphs: [
+            "Our cross-platform mobile app packages start from ₹80,000, which covers development for both Android and iOS using React Native or Flutter. This single codebase approach cuts development costs by up to 50%. You own the final source code and publishing accounts, ensuring complete independence and zero platform dependency."
+          ]
+        }
+      ]
+    }
   },
   "software-development-company-in-patna": {
     title: "Custom Software Development Company in Patna Bihar",
@@ -296,6 +373,14 @@ export const servicesData = {
       "Real-time dashboards & analytics",
       "Enterprise-grade security",
       "Scalable microservices"
+    ],
+    suitableFor: [
+      { title: "Manufacturing & Factories", icon: "lucide:factory", reason: "Automate assembly stages, track raw materials, generate purchase orders, and monitor shifts." },
+      { title: "Wholesalers & Distributors", icon: "lucide:boxes", reason: "Manage credit limits, automate bulk pricing levels, and track pending dispatches." },
+      { title: "Educational Boards", icon: "lucide:graduation-cap", reason: "Digitize student registration databases, print certificate layouts, and manage staff databases." },
+      { title: "Hospital Networks", icon: "lucide:hospital", reason: "Securely share patient medical records across branches, manage ward vacancies, and automate inventory." },
+      { title: "Real Estate Builders", icon: "lucide:building-2", reason: "Qualify high-intent property leads, schedule customer site visits, and track installment billing." },
+      { title: "Logistics Companies", icon: "lucide:truck", reason: "Optimize delivery route paths, monitor fuel usages, print barcodes, and manage warehouse spaces." }
     ],
     benefits: [
       {
@@ -360,12 +445,49 @@ export const servicesData = {
       { name: "Go", icon: "logos:go" },
       { name: "Kubernetes", icon: "logos:kubernetes" },
       { name: "MongoDB", icon: "logos:mongodb-icon" }
-    ]
+    ],
+    detailedArticle: {
+      title: "Governance, Security & SLA Support",
+      sections: [
+        {
+          title: "Why Modern Businesses Need Custom Software Solutions",
+          paragraphs: [
+            "In today's hyper-competitive digital landscape, relying on off-the-shelf software or manual spreadsheets is a recipe for stagnation. A custom software solution acts as the digital nervous system of your business. It automates repetitive operational workflows, eliminates human errors, and integrates disconnected business components.",
+            "Off-the-shelf products often force you to adapt your workflows to their rigid structures. Custom software, however, is built around your specific business logic. Whether you are managing distributors, capturing sales leads, tracking inventories, or running complex calculations, custom-engineered software scales precisely with your growth, giving you a distinct competitive edge in the local and national markets."
+          ]
+        },
+        {
+          title: "Advanced Security & Data Privacy Standards We Implement",
+          paragraphs: [
+            "All our software is security-hardened. We implement AES-256 database encryption, role-based access control (RBAC), secure HTTPS communication, and private VPC hosting on AWS or cloud servers to ensure complete security against data leaks.",
+            "We also implement secure APIs and perform rigorous validation routines on user input to completely prevent security vulnerabilities and threat exposures."
+          ]
+        },
+        {
+          title: "Post-Launch System Maintenance & SLA Support",
+          paragraphs: [
+            "Our software engineering lifecycle includes robust post-launch maintenance. We provide long-term maintenance packages covering database backups, security patches, system updates, and active technical support. This ensures your software operates at 100% efficiency and scales securely with your business."
+          ]
+        },
+        {
+          title: "Transparent Pricing Structure & Code Ownership ROI",
+          paragraphs: [
+            "We believe in absolute transparency. Custom software is an investment that pays for itself. Instead of charging monthly per-user licensing fees that scale up as your company grows, we charge a flat one-time development fee starting from ₹1,00,000.",
+            "This ensures you own the source code, keep your recurring costs close to zero, and maximize your return on investment (ROI)."
+          ]
+        }
+      ]
+    }
   },
   "ai-automation-company-in-patna": {
     title: "AI Automation Company in Patna Bihar",
     headline: "Business AI Automation Services",
     subtext: "Webflora Technologies is the pioneering AI automation company in Patna, Bihar. We design and implement smart workflow automations, custom AI chatbots, OpenAI/Claude API integrations, n8n chatbot workflows, and automated CRM pipelines. We help companies in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India eliminate manual bottlenecks and operate 24/7. Our custom automation workflows start from ₹35,000.",
+    relatedServices: [
+      { name: "Software Development", href: "/services/software-development-company-in-patna" },
+      { name: "Website Development", href: "/services/website-development-company-in-patna" },
+      { name: "Digital Marketing", href: "/services/digital-marketing-agency-in-patna" }
+    ],
     geoTitle: "Business AI Automation Services in Bihar",
     geoContent: "As Bihar's first specialized AI automation company, we bring cutting-edge Generative AI and automated processes to local enterprises. We build custom n8n workflow chatbots, WhatsApp Business automation setups, and CRM sync systems that reduce response times, capture leads, and boost productivity for coaching institutes, startups, and clinics across Patna and Bihar.",
     heroBadge: "AI-First Future",
@@ -406,6 +528,13 @@ export const servicesData = {
       "Predictive analytics models",
       "Intelligent workflow automation",
       "Natural Language Processing (NLP)"
+    ],
+    suitableFor: [
+      { title: "SaaS & Tech Startups", icon: "lucide:rocket", reason: "Automate customer onboarding, send real-time alerts, and sync user signups to HubSpot CRM." },
+      { title: "Coaching Institutes", icon: "lucide:book-open", reason: "Auto-qualify admission leads via WhatsApp bots, sync payments to sheets, and automate email follow-ups." },
+      { title: "Customer Care Teams", icon: "lucide:message-square", reason: "Deploy GPT-4 powered chatbots to resolve up to 70% of support tickets without human help." },
+      { title: "Retail & E-commerce", icon: "lucide:shopping-bag", reason: "Send automated WhatsApp order updates, tracking alerts, and request customer reviews." },
+      { title: "Agencies & Consultants", icon: "lucide:briefcase", reason: "Automate client report formatting, schedule appointments, and compile data from multiple tools." }
     ],
     benefits: [
       {
@@ -448,6 +577,26 @@ export const servicesData = {
         icon: "lucide:award"
       },
       {
+        question: "What is n8n vs Zapier and why choose n8n?",
+        answer: "While Zapier charges high monthly fees per task call, n8n is an open-source alternative that we host on your own serverless cloud. This allows you to run millions of automated tasks at a fraction of the cost, making it highly cost-effective.",
+        icon: "lucide:git-compare"
+      },
+      {
+        question: "What is RAG vs Fine-tuning for AI chatbots?",
+        answer: "Fine-tuning updates the neural parameters of an AI model to learn styles, whereas RAG (Retrieval-Augmented Generation) connects the AI to a dynamic document database (like your PDFs or FAQs) in real time to fetch accurate answers without hallucinations.",
+        icon: "lucide:server"
+      },
+      {
+        question: "What is the difference between an AI Chatbot and Live Chat?",
+        answer: "Live Chat requires an active human representative to type answers. An AI Chatbot responds instantly 24/7, auto-qualifying leads and answering FAQs, routing to a human agent only when needed.",
+        icon: "lucide:bot"
+      },
+      {
+        question: "What are some real-world AI Workflow Examples?",
+        answer: "Examples include: (1) Automatically reading incoming PDF invoices and saving data to Google Sheets. (2) Sending custom WhatsApp confirmation alerts when someone fills out a contact form. (3) Grabbing and grading leads from Facebook Ads and saving them straight to your CRM.",
+        icon: "lucide:workflow"
+      },
+      {
         question: "How can AI automation help my business?",
         answer: "AI automation helps businesses save time, reduce manual workload, improve customer response speed, automate operations, increase efficiency, and streamline workflow management.",
         icon: "lucide:zap"
@@ -480,7 +629,38 @@ export const servicesData = {
       { name: "LangChain", icon: "logos:langchain-icon" },
       { name: "Pinecone", icon: "logos:pinecone-icon" },
       { name: "HuggingFace", icon: "logos:hugging-face-icon" }
-    ]
+    ],
+    detailedArticle: {
+      title: "Governance, Security & SLA Support",
+      sections: [
+        {
+          title: "Why Businesses Need Custom AI & Workflow Automation",
+          paragraphs: [
+            "Manual data entry, delayed lead responses, and fragmented spreadsheets are major bottlenecks to scaling. AI and workflow automation act as the ultimate efficiency booster for modern companies. By automating recurring communications, invoice parsing, CRM synchronization, and customer FAQs, you can run your business operations 24/7 with zero human errors.",
+            "Custom workflow automations (like n8n and WhatsApp API bots) scale dynamically, allowing your team to focus on strategic growth instead of repetitive administrative tasks."
+          ]
+        },
+        {
+          title: "Advanced Security, Data Privacy & API Protection Standards",
+          paragraphs: [
+            "AI automation involves handling proprietary business data and communicating across multiple third-party APIs. We design secure data pipelines where credentials and API keys are stored in encrypted environment vaults. All data in transit is protected using SSL protocols, and access to workflow dashboards is restricted using multi-factor authentication (MFA) and strict IP-whitelisting.",
+            "Your custom LLMs and databases run inside private cloud environments, ensuring that your business intelligence remains completely confidential."
+          ]
+        },
+        {
+          title: "Post-Launch Workflow Maintenance & Integration SLA",
+          paragraphs: [
+            "Third-party API updates or structure changes can break automations. Our active maintenance support covers continuous workflow monitoring, instant API path adjustments, automated error-logging alerts, and database backup routines. This keeps your automated processes running smoothly without interruption."
+          ]
+        },
+        {
+          title: "Transparent Pricing Structure & ROI Strategy",
+          paragraphs: [
+            "Custom n8n and AI chatbot implementations start from ₹35,000. Unlike commercial automation systems that charge expensive monthly subscription fees based on task volume, our serverless solutions run on your own cloud accounts. This minimizes operational overhead, ensuring a high return on investment (ROI) that pays for itself in labor savings."
+          ]
+        }
+      ]
+    }
   },
   "digital-marketing-agency-in-patna": {
     title: "Digital Marketing Company in Patna Bihar",
@@ -525,6 +705,13 @@ export const servicesData = {
       "Community management & growth",
       "Influencer partnership strategy",
       "Detailed performance analytics"
+    ],
+    suitableFor: [
+      { title: "Local Clinics & Doctors", icon: "lucide:activity", reason: "Rank #1 on Google maps for searches like 'best clinic near me' and drive organic phone calls." },
+      { title: "Coaching Centres", icon: "lucide:graduation-cap", reason: "Run conversion-focused Meta/Google Ads to acquire local student admissions for new batches." },
+      { title: "Real Estate Developers", icon: "lucide:building-2", reason: "Target high-income home buyers with optimized lead forms and elegant landing page layouts." },
+      { title: "D2C Brands", icon: "lucide:shopping-bag", reason: "Scale digital sales on Instagram/Facebook with retargeting pixels and high-ROAS lookalike campaigns." },
+      { title: "Hotels & Banquet Halls", icon: "lucide:calendar", reason: "Dominate local event planning searches and capture bulk bookings for weddings and conferences." }
     ],
     benefits: [
       {
@@ -594,6 +781,37 @@ export const servicesData = {
       { name: "HubSpot", icon: "logos:hubspot" },
       { name: "Canva", icon: "simple-icons:canva" },
       { name: "Analytics", icon: "logos:google-analytics" }
-    ]
+    ],
+    detailedArticle: {
+      title: "Governance, Security & SLA Support",
+      sections: [
+        {
+          title: "Why Businesses Need a Performance-Focused Marketing Strategy",
+          paragraphs: [
+            "Digital visibility is the primary driver of modern business customer acquisition. Simply posting on social media is not enough; you need a structured SEO and performance advertising strategy. By optimizing search engine maps (Google Local Pack) and running hyper-targeted Meta/Google Ads, you generate high-intent sales inquiries from your target demographic.",
+            "A data-driven marketing strategy focuses on actual customer acquisition costs (CAC) and absolute return on ad spend (ROAS), turning marketing budgets into measurable revenue growth."
+          ]
+        },
+        {
+          title: "Advanced Security & Brand Privacy Standards",
+          paragraphs: [
+            "We handle your official ad accounts, pixel trackers, and customer lead databases with extreme care. We utilize secure Business Manager access levels with two-factor authentication (2FA) enforced on all administrator accounts. All gathered lead data is encrypted and synced directly to your private CRM database, fully complying with modern data privacy standards.",
+            "We also implement active spam-filtering on lead forms to prevent unauthorized entries and protect your campaign statistics."
+          ]
+        },
+        {
+          title: "Ongoing Campaign Maintenance & Performance Monitoring SLA",
+          paragraphs: [
+            "Ad algorithms and search trends change daily. Our ongoing marketing management covers daily bid optimization, ad creative A/B testing, keyword search trend audits, monthly SEO rank tracking, and transparent performance reporting. This ensures your campaigns adapt in real time to yield the lowest cost per acquisition."
+          ]
+        },
+        {
+          title: "Transparent Pricing Models & ROI Commitment",
+          paragraphs: [
+            "Our digital marketing and performance SEO packages start from ₹15,000 per month, structured transparently based on target keywords and ad budgets. We focus entirely on driving high-intent phone calls, leads, and sales, providing a clear path to scale your business sustainably."
+          ]
+        }
+      ]
+    }
   }
 };

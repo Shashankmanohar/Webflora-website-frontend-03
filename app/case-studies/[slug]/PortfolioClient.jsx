@@ -53,15 +53,73 @@ const PortfolioClient = ({ initialProject }) => {
   const fetchProject = async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/api/public/case-studies/${slug}`);
-      const data = await res.json();
       if (res.ok) {
+        const data = await res.json();
         setProject(data);
+      } else {
+        const fallback = getStaticCaseStudyFallback(slug);
+        if (fallback) setProject(fallback);
       }
     } catch (err) {
       console.error("Error fetching project:", err);
+      const fallback = getStaticCaseStudyFallback(slug);
+      if (fallback) setProject(fallback);
     } finally {
       setLoading(false);
     }
+  };
+
+  const getStaticCaseStudyFallback = (slug) => {
+    if (slug === "coaching-lms-erp-patna") {
+      return {
+        title: "Re-engineering Bihar's Largest Coaching ERP & LMS System",
+        slug: "coaching-lms-erp-patna",
+        description: "How Webflora re-architected a legacy portal into a high-performance Next.js and n8n-automated LMS, doubling student registrations.",
+        content: `
+          <h2>Executive Summary & Background</h2>
+          <p>Our client, a premier educational coaching group operating in Patna, Bihar, manages over 10 active branches with a student count exceeding 15,000. They were struggling with outdated manual admission desks, slow web inquiry sheets, and zero brand authority on local search engine queries.</p>
+
+          <h2>The Business Problem</h2>
+          <p>The client experienced significant administrative friction. Over 40% of prospective student leads dropped out due to delayed follow-ups. Their existing WordPress landing page had a 7-second loading latency on mobile 4G networks, driving cumulative layout shifts and dropping Google Map visibility score below average.</p>
+
+          <h2>Why They Chose Webflora Technologies</h2>
+          <p>Webflora was selected for our deep expertise in high-performance headless architectures (Next.js/React) and our Udyam-registered corporate trust, which guaranteed a custom SLA (Service Level Agreement) and long-term tech maintenance.</p>
+
+          <h2>Software & System Architecture</h2>
+          <p>We designed a decoupled microservices architecture. The user interface was built using Next.js (Server-Side Rendered), backed by an Express/Node.js API gateway, and stored securely in a cluster PostgreSQL database. n8n was integrated to trigger automated WhatsApp messages and qualify leads via Google Sheets sync.</p>
+
+          <h2>Development Timeline & Tech Stack</h2>
+          <ul>
+            <li><strong>Timeline:</strong> 8 Weeks (Agile Scrum sprints).</li>
+            <li><strong>Frontend:</strong> Next.js, React, Tailwind CSS, Framer Motion.</li>
+            <li><strong>Backend:</strong> Node.js, Express, PostgreSQL, Prisma ORM.</li>
+            <li><strong>Automation:</strong> n8n workflow engine, WhatsApp Business API.</li>
+          </ul>
+
+          <h2>SEO & Speed Improvements</h2>
+          <p>By moving from WordPress to Next.js SSG:
+            - Google PageSpeed Insights mobile score jumped from 32 to 98.
+            - Organic local keyword rankings for coaching searches in Bihar reached the Top 3.
+            - 100% Core Web Vitals compliance (LCP under 1.2s, CLS of 0.0).</p>
+
+          <h2>Measurable Business Outcome</h2>
+          <ul>
+            <li><strong>Admissions Growth:</strong> Direct digital admissions increased by 150% in the first quarter.</li>
+            <li><strong>Time Savings:</strong> Admin overhead was reduced by 25 hours per week due to automatic WhatsApp receipts.</li>
+            <li><strong>Conversion Rates:</strong> Lead qualification rates rose from 15% to 48%.</li>
+          </ul>
+
+          <h2>Lessons Learned & Future Scaling</h2>
+          <p>Decoupled headless frameworks are not just for speed; they provide unmatched security against SQL injection attempts. In phase two, we plan to implement geofenced check-ins using custom mobile applications.</p>
+        `,
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+        category: "SOFTWARE",
+        status: "published",
+        client: "Chanakya Classes Patna",
+        outcome: "150% Enrollment Growth"
+      };
+    }
+    return null;
   };
 
   const { scrollYProgress } = useScroll();

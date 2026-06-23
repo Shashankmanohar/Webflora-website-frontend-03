@@ -1,557 +1,152 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
 
-// ─── Starfield (Client-only to avoid SSR hydration mismatch) ─────────────────
-function Starfield() {
-  const [stars, setStars] = useState([]);
-
-  useEffect(() => {
-    const generated = Array.from({ length: 20 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      duration: Math.random() * 3 + 3,
-      opacity: Math.random() * 0.5 + 0.2,
-    }));
-    setStars(generated);
-  }, []);
-
-  return (
-    <div className="absolute inset-0 opacity-50" aria-hidden="true">
-      {stars.map((star) => (
-        <div
-          key={star.id}
-          className="absolute rounded-full bg-white"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-            animation: `twinkle ${star.duration}s ease-in-out infinite`,
-            opacity: star.opacity,
-            "--opacity": star.opacity,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// ─── Word-by-word Headline Reveal ─────────────────────────────────────────────
-function RevealHeadline({ text, isActive }) {
-  const words = text.split(" ");
-
-  return (
-    <h1
-      style={{
-        fontFamily: "'Space Grotesk', sans-serif",
-        fontWeight: 600,
-        fontSize: "clamp(2.5rem, 8vw, 5rem)",
-        letterSpacing: "-0.04em",
-        lineHeight: 0.95,
-        color: "#ffffff",
-        filter: "drop-shadow(0 25px 25px rgba(0,0,0,0.5))",
-        margin: 0,
-      }}
-    >
-      {words.map((word, wi) => (
-        <span
-          key={wi}
-          style={{ display: "inline-block", overflow: "hidden", marginRight: "0.25em" }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              opacity: isActive ? 1 : 0,
-              transform: isActive
-                ? "translateY(0) rotate(0deg)"
-                : "translateY(100%) rotate(5deg)",
-              transition: `opacity 0.5s ease-out ${wi * 80}ms, transform 0.5s cubic-bezier(0.2,1,0.3,1) ${wi * 80}ms`,
-              willChange: "opacity, transform",
-            }}
-          >
-            {word}
-          </span>
-        </span>
-      ))}
-    </h1>
-  );
-}
-
-// ─── Fade-Up on Scroll ────────────────────────────────────────────────────────
-function FadeUp({ children, delay = 0, style = {} }) {
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(30px)",
-        transition: `opacity 0.8s ease-out ${delay}ms, transform 0.8s cubic-bezier(0.2,1,0.3,1) ${delay}ms`,
-        willChange: "opacity, transform",
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-// ─── Arrow Up-Right SVG ───────────────────────────────────────────────────────
-function ArrowUpRight({ className = "" }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M7 17L17 7M17 7H7M17 7v10" />
-    </svg>
-  );
-}
-
-// ─── Mouse / Scroll Icon SVG ──────────────────────────────────────────────────
-function MouseIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="white"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="5" y="2" width="14" height="20" rx="7" />
-      <path d="M12 6v4" />
-    </svg>
-  );
-}
-
-// ─── Main Hero Section ────────────────────────────────────────────────────────
 export default function HeroSection() {
-  const [headlineActive, setHeadlineActive] = useState(false);
-  const [primaryHovered, setPrimaryHovered] = useState(false);
-  const [secondaryHovered, setSecondaryHovered] = useState(false);
-
-  // Trigger headline word reveal after mount
-  useEffect(() => {
-    const t = setTimeout(() => setHeadlineActive(true), 100);
-    return () => clearTimeout(t);
-  }, []);
-
-  const headline = "Technology Solutions That Directly Increase Business Growth";
-  const subtextParts = ["Websites", "Software", "Apps", "Automation", "Marketing"];
+  const [hoveredPanel, setHoveredPanel] = useState(null);
 
   return (
     <>
-      {/* ── Keyframe Styles ── */}
       <style>{`
-        @keyframes twinkle {
-          0%, 100% { opacity: var(--opacity, 0.3); transform: scale(1); }
-          50%        { opacity: 0; transform: scale(0.5); }
+        @keyframes float-slow {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
         }
-        @keyframes blob {
-          0%   { transform: translate(0px, 0px) scale(1); }
-          33%  { transform: translate(30px, -50px) scale(1.1); }
-          66%  { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
+        @keyframes float-medium {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
         }
-        @keyframes ping-anim {
-          75%, 100% { transform: scale(2); opacity: 0; }
+        @keyframes pulse-soft {
+          0%, 100% { opacity: 0.15; }
+          50% { opacity: 0.3; }
         }
-        @keyframes separator-pulse {
-          0%, 100% { opacity: 1; }
-          50%       { opacity: 0.3; }
+        .animate-float-card-1 {
+          animation: float-slow 7s ease-in-out infinite;
         }
-        @keyframes scroll-bounce {
-          0%, 100% { transform: translateX(-50%) translateY(0);    animation-timing-function: cubic-bezier(0.8,0,1,1); }
-          50%       { transform: translateX(-50%) translateY(-6px); animation-timing-function: cubic-bezier(0,0,0.2,1); }
+        .animate-float-card-2 {
+          animation: float-medium 6s ease-in-out infinite 1s;
         }
-        @keyframes shimmer-move {
-          0%   { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
+        .animate-float-card-3 {
+          animation: float-slow 8s ease-in-out infinite 2s;
         }
-
-        .hero-blob-1 { animation: blob 10s ease-in-out infinite; will-change: transform; }
-        .hero-blob-2 { animation: blob 10s ease-in-out 2s infinite; will-change: transform; }
-        .hero-blob-3 { animation: blob 10s ease-in-out 4s infinite; will-change: transform; }
-
-        .hero-scroll-indicator {
-          position: absolute;
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
-          opacity: 0.5;
-          animation: scroll-bounce 2s ease-in-out infinite;
-        }
-
-        .hero-ping {
-          position: absolute;
-          inset: 0;
-          border-radius: 9999px;
-          background: #ff3c00;
-          opacity: 0.75;
-          animation: ping-anim 1.5s cubic-bezier(0,0,0.2,1) infinite;
-        }
-
-        .hero-separator {
-          animation: separator-pulse 2s ease-in-out infinite;
-        }
-
-        .hero-shimmer-layer {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          background: linear-gradient(
-            105deg,
-            transparent 40%,
-            rgba(255,255,255,0.55) 50%,
-            transparent 60%
-          );
-          background-size: 200% 100%;
-          animation: shimmer-move 1.8s linear infinite;
-        }
-
-        .hero-primary-btn {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-          padding: 16px 32px;
-          border-radius: 9999px;
-          font-size: 0.875rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: #000;
-          background: #ffffff;
-          border: none;
-          cursor: pointer;
-          overflow: hidden;
-          text-decoration: none;
-          box-shadow: 0 0 40px rgba(255,255,255,0.2);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          outline: none;
-        }
-        .hero-primary-btn:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 60px rgba(255,255,255,0.3);
-        }
-        .hero-primary-btn:focus-visible {
-          outline: 2px solid #ff3c00;
-          outline-offset: 3px;
-        }
-        .hero-primary-btn .btn-gradient-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to right, #ff3c00, #fb923c, #ff3c00);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          pointer-events: none;
-        }
-        .hero-primary-btn:hover .btn-gradient-overlay {
-          opacity: 1;
-        }
-        .hero-primary-btn:hover .btn-arrow {
-          transform: rotate(-45deg);
-        }
-        .btn-arrow {
-          transition: transform 0.3s ease;
-          position: relative;
-          z-index: 10;
-        }
-        .btn-label {
-          position: relative;
-          z-index: 10;
-        }
-
-        .hero-secondary-btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 16px 32px;
-          border-radius: 9999px;
-          font-size: 0.875rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: #ffffff;
-          background: transparent;
-          border: 1px solid rgba(255,255,255,0.10);
-          cursor: pointer;
-          text-decoration: none;
-          backdrop-filter: blur(8px);
-          transition: border-color 0.3s, background 0.3s, transform 0.3s;
-          outline: none;
-        }
-        .hero-secondary-btn:hover {
-          border-color: rgba(255,60,0,0.5);
-          background: rgba(255,60,0,0.05);
-          transform: scale(1.05);
-        }
-        .hero-secondary-btn:focus-visible {
-          outline: 2px solid #ff3c00;
-          outline-offset: 3px;
+        .orb-pulse {
+          animation: pulse-soft 4s ease-in-out infinite;
         }
       `}</style>
 
-      <section
-        role="banner"
-        style={{
-          position: "relative",
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          paddingTop: "80px",
-          paddingLeft: "24px",
-          paddingRight: "24px",
-          overflow: "hidden",
-          background: "#030303",
-        }}
-      >
-        {/* ── Backgrounds ── */}
-        <div
-          style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}
-          aria-hidden="true"
-        >
-          <Starfield />
-
-          {/* Orange blob */}
-          <div
-            className="hero-blob-1"
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-              width: 600,
-              height: 600,
-              background: "rgba(255,60,0,0.20)",
-              filter: "blur(120px)",
-              borderRadius: "50%",
-              mixBlendMode: "screen",
-            }}
-          />
-          {/* Blue blob */}
-          <div
-            className="hero-blob-2"
-            style={{
-              position: "absolute",
-              top: "25%",
-              left: "25%",
-              width: 400,
-              height: 400,
-              background: "rgba(59,130,246,0.10)",
-              filter: "blur(100px)",
-              borderRadius: "50%",
-              mixBlendMode: "screen",
-            }}
-          />
-          {/* Purple blob */}
-          <div
-            className="hero-blob-3"
-            style={{
-              position: "absolute",
-              bottom: "25%",
-              right: "25%",
-              width: 500,
-              height: 500,
-              background: "rgba(168,85,247,0.10)",
-              filter: "blur(100px)",
-              borderRadius: "50%",
-              mixBlendMode: "screen",
-            }}
-          />
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black pt-32 pb-20 px-6 border-b border-white/5">
+        
+        {/* Background Grids & Orbs */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 bg-grid opacity-10" />
+          <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#FF3B00]/10 blur-[120px] orb-pulse" />
+          <div className="absolute bottom-[10%] left-[5%] w-[300px] h-[300px] rounded-full bg-blue-600/5 blur-[100px] orb-pulse" />
         </div>
 
-        {/* ── Subtle Grid Overlay ── */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            pointerEvents: "none",
-            opacity: 0.5,
-            backgroundImage: `
-              linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)
-            `,
-            backgroundSize: "50px 50px",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)",
-            maskImage:
-              "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)",
-          }}
-        />
-
-        {/* ── Main Content ── */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 10,
-            textAlign: "center",
-            maxWidth: "64rem",
-            margin: "0 auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "40px",
-          }}
-        >
-          {/* Status badge */}
-          <FadeUp delay={100}>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "6px 16px",
-                borderRadius: "9999px",
-                border: "1px solid rgba(255,255,255,0.05)",
-                background: "rgba(255,255,255,0.05)",
-                backdropFilter: "blur(12px)",
-                boxShadow: "0 0 15px rgba(255,60,0,0.2)",
-                cursor: "default",
-              }}
-            >
-              {/* Pulsing dot */}
-              <span style={{ position: "relative", display: "flex", width: 8, height: 8 }}>
-                <span
-                  className="hero-ping"
-                  style={{ width: "100%", height: "100%" }}
-                />
-                <span
-                  style={{
-                    position: "relative",
-                    display: "inline-flex",
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "#ff3c00",
-                  }}
-                />
-              </span>
-              <span
-                style={{
-                  fontSize: "10px",
-                  fontFamily: "'JetBrains Mono', monospace",
-                  color: "rgba(255,255,255,0.9)",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.2em",
-                }}
-              >
-                System Online
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          {/* Left Column: Wording & CTAs */}
+          <div className="lg:col-span-6 flex flex-col space-y-8 text-left">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#FF3B00]/20 bg-[#FF3B00]/5 w-fit">
+              <span className="w-2 h-2 rounded-full bg-[#FF3B00] animate-ping" />
+              <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#FF3B00] font-bold">
+                Our Capabilities
               </span>
             </div>
-          </FadeUp>
 
-          {/* Headline */}
-          <FadeUp delay={0} style={{ width: "100%" }}>
-            <RevealHeadline text={headline} isActive={headlineActive} />
-          </FadeUp>
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight leading-[1.05]">
+              Digital Architecture <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500">
+                Built For Value.
+              </span>
+            </h1>
 
-          {/* Subtext */}
-          <FadeUp delay={400} style={{ maxWidth: "42rem", margin: "0 auto" }}>
-            <p
-              style={{
-                color: "#9ca3af",
-                fontSize: "1.125rem",
-                fontWeight: 300,
-                lineHeight: 1.75,
-                letterSpacing: "0.02em",
-                fontFamily: "'JetBrains Mono', monospace",
-                margin: 0,
-              }}
-            >
-              {subtextParts.map((part, i) => (
-                <span key={i}>
-                  {part}
-                  {i < subtextParts.length - 1 && (
-                    <span
-                      className="hero-separator"
-                      aria-hidden="true"
-                      style={{
-                        color: "#ff3c00",
-                        margin: "0 12px",
-                        display: "inline-block",
-                      }}
-                    >
-                      /
-                    </span>
-                  )}
-                </span>
-              ))}
+            <p className="text-gray-400 text-base md:text-lg font-light leading-relaxed max-w-xl">
+              We design and engineer bespoke software systems, high-converting Next.js websites, cross-platform mobile apps, and automated workflows optimized for Patna, Bihar, and global businesses.
             </p>
-          </FadeUp>
 
-          {/* CTA Buttons */}
-          <FadeUp delay={600} style={{ width: "100%" }}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "20px",
-                justifyContent: "center",
-                marginTop: "16px",
-              }}
-            >
-              {/* Primary */}
-              <Link href="/contact" className="hero-primary-btn" aria-label="Get Free Consultation">
-                <div className="hero-shimmer-layer" aria-hidden="true" />
-                <div className="btn-gradient-overlay" aria-hidden="true" />
-                <span className="btn-label">Get Free Consultation</span>
-                <ArrowUpRight className="btn-arrow" />
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+              <Link
+                href="/contact"
+                className="px-8 py-4 w-full sm:w-auto bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-sm font-bold uppercase tracking-wider text-center transition-all duration-300 shadow-lg shadow-orange-500/20 rounded-full"
+              >
+                Schedule Architecture Call
               </Link>
-
-              {/* Secondary */}
-              <Link href="/case-studies" className="hero-secondary-btn">
-                View Case Studies
+              <Link
+                href="/case-studies"
+                className="px-8 py-4 w-full sm:w-auto bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-white text-sm font-bold uppercase tracking-wider text-center transition-all duration-300 rounded-full"
+              >
+                Explore Case Studies
               </Link>
             </div>
-          </FadeUp>
-        </div>
+          </div>
 
+          {/* Right Column: Dynamic Capabilities Dashboard */}
+          <div className="lg:col-span-6 relative flex items-center justify-center min-h-[400px]">
+            <div className="absolute inset-0 bg-radial-gradient from-white/5 to-transparent rounded-full blur-3xl opacity-50" />
+
+            <div className="relative w-full max-w-[500px] flex flex-col gap-6">
+              
+              {/* Card 1: Web Tech */}
+              <div 
+                className="animate-float-card-1 p-6 rounded-3xl bg-zinc-950/80 border border-white/5 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-orange-500/30 hover:scale-[1.02]"
+                onMouseEnter={() => setHoveredPanel(1)}
+                onMouseLeave={() => setHoveredPanel(null)}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+                    <Icon icon="lucide:globe" width={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white text-lg">Next.js & React Hub</h3>
+                    <p className="text-xs text-gray-500 font-mono">Performance & SEO-optimized static webs</p>
+                  </div>
+                  <div className="ml-auto text-xs text-gray-600 font-mono">₹25K+</div>
+                </div>
+              </div>
+
+              {/* Card 2: Enterprise Software */}
+              <div 
+                className="animate-float-card-2 p-6 rounded-3xl bg-zinc-950/80 border border-white/5 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-blue-500/30 hover:scale-[1.02] ml-4 sm:ml-8"
+                onMouseEnter={() => setHoveredPanel(2)}
+                onMouseLeave={() => setHoveredPanel(null)}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+                    <Icon icon="lucide:server" width={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white text-lg">Custom SaaS & ERP</h3>
+                    <p className="text-xs text-gray-500 font-mono">Scalable cloud business software</p>
+                  </div>
+                  <div className="ml-auto text-xs text-gray-600 font-mono">₹1.0L+</div>
+                </div>
+              </div>
+
+              {/* Card 3: AI & Workflow Automations */}
+              <div 
+                className="animate-float-card-3 p-6 rounded-3xl bg-zinc-950/80 border border-white/5 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-red-500/30 hover:scale-[1.02]"
+                onMouseEnter={() => setHoveredPanel(3)}
+                onMouseLeave={() => setHoveredPanel(null)}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-red-500/10 flex items-center justify-center text-red-500">
+                    <Icon icon="lucide:cpu" width={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white text-lg">AI Workflow Automation</h3>
+                    <p className="text-xs text-gray-500 font-mono">n8n chatbots & WhatsApp integrations</p>
+                  </div>
+                  <div className="ml-auto text-xs text-gray-600 font-mono">₹35K+</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </section>
     </>
   );

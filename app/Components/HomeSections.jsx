@@ -46,6 +46,12 @@ export default function HomeSections({ homeFaqs, faqComponent }) {
       </div>
       <div className="content-auto">
         <LazySection
+          height="500px"
+          loader={() => import("./IndustriesSection")}
+        />
+      </div>
+      <div className="content-auto">
+        <LazySection
           height="400px"
           loader={() => import("./ProcessSection")}
         />

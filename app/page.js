@@ -8,39 +8,34 @@ import FaqSection from "./services/components/FaqSection";
 /* ── FAQ data (defined server-side, passed as prop to client component) ── */
 const homeFaqs = [
   {
-    question: "Which is the best software development company in Patna Bihar?",
-    answer: "Webflora Technologies is the leading MSME registered software development company in Patna, Bihar (Udyam Registration: UDYAM-BR-26-0183379), offering custom website development, mobile app development, CRM/ERP systems, and AI automation for startups and enterprises across Bihar and India.",
+    question: "Which is the best software company and website company in Patna Bihar?",
+    answer: "Webflora Technologies is the leading registered software company and website company in Patna, Bihar, offering custom software, custom website development, mobile app development, performance digital marketing, and AI automation for startups and enterprises across India.",
     icon: "lucide:award"
   },
   {
-    question: "What services does Webflora Technologies provide?",
-    answer: "We provide professional website development using Next.js and React, cross-platform mobile app development using React Native and Flutter, enterprise custom software solutions (scalable ERP & CRM), digital marketing (local SEO & lead generation), and AI workflow automation powered by n8n, Node.js, and Python.",
+    question: "What services does your mobile app company and software company provide?",
+    answer: "As a full-service software company and mobile app company, we provide custom software development, Android & iOS mobile app development (React Native & Flutter), professional website development (Next.js & React), performance digital marketing (SEO & lead generation), and custom AI automation solutions.",
     icon: "lucide:layers"
   },
   {
-    question: "Why should businesses invest in digital transformation?",
-    answer: "Digital transformation helps businesses automate operational workflows, eliminate human errors, improve loading speeds, rank higher on Google for local Bihar searches, generate high-intent sales leads, and scale overall revenue through custom-engineered software.",
+    question: "Do you offer digital marketing and AI automation services?",
+    answer: "Yes, we are a premium digital marketing agency and AI automation company. We run performance-focused SEO and ad campaigns, and build custom AI workflow automations (using tools like n8n and OpenAI/Claude APIs) to streamline your sales and operations.",
     icon: "lucide:trending-up"
   },
   {
-    question: "Do you work with startups and small businesses in Bihar?",
-    answer: "Yes, we partner closely with local startups, small businesses, online retail/ecommerce brands, and coaching institutes in Patna, Muzaffarpur, Gaya, Bhagalpur, and all of Bihar, building scalable digital tools designed to drive measurable business growth.",
-    icon: "lucide:users"
-  },
-  {
-    question: "How do you ensure project quality and performance?",
-    answer: "We follow a strict founder-led execution methodology, using agile development sprints, enterprise-grade cloud-native security, and precise speed optimization to guarantee 90+ Lighthouse Core Web Vitals performance scores.",
+    question: "Why should my business partner with Webflora Technologies?",
+    answer: "Whether you need a reliable website company, software company, mobile app company, digital marketing partner, or AI automation builder, we offer founder-led execution, high-performance code, and transparent flat-rate pricing to scale your business operations.",
     icon: "lucide:check-circle"
   },
   {
-    question: "Do you provide long-term technical support?",
-    answer: "Yes, Webflora Technologies provides comprehensive long-term technical support, regular security updates, server maintenance, SEO health audits, and future scalability upgrades after project deployment.",
-    icon: "lucide:headset"
+    question: "Do you support startups and local businesses in Bihar?",
+    answer: "Yes, we partner closely with local startups, coaching institutes, clinics, and businesses in Patna, Muzaffarpur, Gaya, and all of Bihar, providing scalable website development, mobile app builds, and localized digital marketing solutions.",
+    icon: "lucide:users"
   },
   {
-    question: "Why choose Webflora Technologies?",
-    answer: "We stand out by combining modern full-stack software engineering, business-centric strategies, transparent pricing packages starting at ₹25K, and direct founder-led execution to build robust products that guarantee business scaling.",
-    icon: "lucide:zap"
+    question: "Do you provide long-term support for software and apps?",
+    answer: "Yes, Webflora Technologies provides comprehensive technical support, regular security updates, server maintenance, SEO health audits, and future scaling upgrades for all custom software, websites, and mobile applications.",
+    icon: "lucide:headset"
   }
 ];
 
@@ -58,10 +53,10 @@ export default function Page() {
       <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
-            What Does Webflora Technologies Do?
+            Your Trusted Software Company & Website Company
           </h2>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-            Webflora Technologies is a Patna-based software development company providing website development, mobile app development, AI automation, custom software, and digital marketing services for startups and businesses across Bihar and India.
+            Webflora Technologies is a premier software company, website company, mobile app company, digital marketing agency, and AI automation company. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth across India.
           </p>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
@@ -92,7 +87,7 @@ export default function Page() {
             "url": "https://webfloratechnologies.com",
             "logo": "https://webfloratechnologies.com/webflora-logo.svg",
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
-            "description": "Webflora Technologies is a software development company based in Patna Bihar offering web development, mobile app development, AI automation, SEO, digital marketing, and custom software solutions for startups and businesses across India.",
+            "description": "Webflora Technologies is a software company, website company, mobile app company, digital marketing agency, and AI automation company based in Patna Bihar offering custom software development, website development, mobile app development, performance digital marketing, and AI automation workflows.",
             "telephone": "+918540814729",
             "email": "hello.webflora@gmail.com",
             "identifier": {
@@ -140,8 +135,10 @@ export default function Page() {
               }
             ],
             "knowsAbout": [
-              "Web Development", "Website Development", "Mobile App Development",
-              "AI Automation", "SEO Services", "Digital Marketing",
+              "website company", "software company", "mobile app company",
+              "digital marketing", "AI automation", "Web Development",
+              "Website Development", "Mobile App Development",
+              "AI Automation Services", "SEO Services", "Digital Marketing Services",
               "Custom Software Development", "ERP Software Development",
               "React Development", "Next.js Development", "Node.js Development",
               "UI UX Design", "Software Development", "Ecommerce Development"
@@ -179,7 +176,7 @@ export default function Page() {
             "@type": "LocalBusiness",
             "@id": "https://webfloratechnologies.com/#localbusiness",
             "name": "Webflora Technologies",
-            "description": "Webflora Technologies is a software development company in Patna Bihar offering web development, mobile app development, AI automation, SEO, and digital marketing services.",
+            "description": "Webflora Technologies is a software company, website company, mobile app company, digital marketing agency, and AI automation company in Patna Bihar.",
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
             "url": "https://webfloratechnologies.com",
             "telephone": "+918540814729",
@@ -217,11 +214,10 @@ export default function Page() {
               "@type": "OfferCatalog",
               "name": "Digital Services",
               "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Company Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Company Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Company Development" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } }
               ]
             }

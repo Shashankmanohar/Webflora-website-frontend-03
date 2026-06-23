@@ -28,12 +28,12 @@ const spaceGrotesk = Space_Grotesk({
 
 
 export const metadata = {
-  title: "Website Development Company in Patna | Web Design, SEO & Digital Marketing | Webflora Technologies",
-  description: "Webflora Technologies is a leading website development company in Patna offering web design, SEO, digital marketing, ecommerce development and AI solutions. Get a free consultation today.",
-  keywords: "Webflora Technologies, software company Patna, website development Patna, mobile app development Bihar, AI automation India",
+  title: "Best Software Company & Website Company in Patna | Mobile App & AI Automation | Webflora Technologies",
+  description: "Webflora Technologies is the leading software company, website company, mobile app company, and digital marketing agency in Patna, Bihar, offering custom software, web development, mobile app development, digital marketing, and AI automation solutions.",
+  keywords: "website company, software company, mobile app company, digital marketing, AI automation, Webflora Technologies, software company Patna, website development Patna, mobile app development Bihar, AI automation India",
   openGraph: {
-    title: "Website Development Company in Patna | Web Design, SEO & Digital Marketing | Webflora Technologies",
-    description: "Webflora Technologies is a leading website development company in Patna offering web design, SEO, digital marketing, ecommerce development and AI solutions. Get a free consultation today.",
+    title: "Best Software Company & Website Company in Patna | Mobile App & AI Automation | Webflora Technologies",
+    description: "Webflora Technologies is the leading software company, website company, mobile app company, and digital marketing agency in Patna, Bihar, offering custom software, web development, mobile app development, digital marketing, and AI automation solutions.",
     url: "https://webfloratechnologies.com",
     siteName: "Webflora Technologies",
     locale: "en_US",
@@ -77,6 +77,59 @@ export default function RootLayout({ children }) {
         <main id="main-content">
           {children}
         </main>
+
+        {/* Global SEO Schemas */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://webfloratechnologies.com/#website",
+                  "url": "https://webfloratechnologies.com",
+                  "name": "Webflora Technologies",
+                  "publisher": {
+                    "@type": "Organization",
+                    "@id": "https://webfloratechnologies.com/#organization"
+                  },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://webfloratechnologies.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://webfloratechnologies.com/#founder",
+                  "name": "Shashank Manohar",
+                  "jobTitle": "Co-Founder & CEO",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "@id": "https://webfloratechnologies.com/#organization"
+                  },
+                  "sameAs": [
+                    "https://www.linkedin.com/in/shashank-manohar-429a1b1b4/"
+                  ]
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": "https://webfloratechnologies.com/#webpage",
+                  "url": "https://webfloratechnologies.com",
+                  "name": "Website Development Company in Patna",
+                  "isPartOf": {
+                    "@id": "https://webfloratechnologies.com/#website"
+                  },
+                  "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["#main-content h1", "#main-content p"]
+                  }
+                }
+              ]
+            })
+          }}
+        />
 
         {/* Footer Section */}
         <FooterSection />

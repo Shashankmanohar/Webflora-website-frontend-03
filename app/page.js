@@ -89,7 +89,7 @@ export default function Page() {
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
             "description": "Webflora Technologies is a software company, website company, mobile app company, digital marketing agency, and AI automation company based in Patna Bihar offering custom software development, website development, mobile app development, performance digital marketing, and AI automation workflows.",
             "telephone": "+918540814729",
-            "email": "hello.webflora@gmail.com",
+            "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
             "identifier": {
               "@type": "PropertyValue",
               "name": "Udyam Registration Number",
@@ -180,7 +180,7 @@ export default function Page() {
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
             "url": "https://webfloratechnologies.com",
             "telephone": "+918540814729",
-            "email": "hello.webflora@gmail.com",
+            "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
             "priceRange": "$$",
             "openingHours": "Mo-Sa 09:00-19:00",
             "address": {

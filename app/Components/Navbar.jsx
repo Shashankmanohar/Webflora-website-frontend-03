@@ -37,7 +37,7 @@ const navItems = [
     href: "/services",
     children: [
       { icon: Briefcase,    label: "All Services",      desc: "Browse all core services we offer.",        href: "/services" },
-      { icon: Bot,          label: "Vegavan AI",        desc: "Autonomous conversational support.",        href: "/vegavan-ai",                                                   highlight: true },
+      { icon: Bot,          label: "Vegavan AI",        desc: "Autonomous chat support.",        href: "/vegavan-ai",                                                   highlight: true },
       { icon: Bot,          label: "AI & Automation",   desc: "Custom n8n and workflow agents.",           href: "/services/ai-automation-company-in-patna" },
       { icon: Globe,        label: "Website Dev",        desc: "High-performance marketing sites.",         href: "/services/website-development-company-in-patna" },
       { icon: Smartphone,   label: "App Dev",            desc: "Native iOS & Android systems.",             href: "/services/mobile-app-development-company-in-patna" },
@@ -144,7 +144,7 @@ export default function Navbar() {
                         isActive ? "text-white font-semibold" : ""
                       }`}
                     >
-                      {item.label}
+                      {item.label}{" "}
                       <ChevronDown
                         size={13}
                         className={`transition-transform duration-300 text-neutral-500 group-hover:text-white ${
@@ -196,10 +196,10 @@ export default function Navbar() {
                                         isChildUrlActive || child.highlight ? "text-white" : "text-neutral-200"
                                       }`}
                                     >
-                                      {child.label}
+                                      {child.label}{" "}
                                     </div>
                                     <div className="text-[10px] text-neutral-400 font-medium tracking-normal mt-0.5 leading-snug normal-case">
-                                      {child.desc}
+                                      {child.desc}{" "}
                                     </div>
                                   </div>
                                 </div>
@@ -221,7 +221,7 @@ export default function Navbar() {
                     isActive ? "text-white font-semibold" : ""
                   }`}
                 >
-                  {item.label}
+                  {item.label}{" "}
                   {isActive && (
                     <span className="absolute inset-0 bg-white/[0.07] border border-white/[0.08] rounded-full -z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] transition-all duration-300" />
                   )}
@@ -373,7 +373,8 @@ export default function Navbar() {
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" aria-hidden="true" />
               <span>Available for custom projects</span>
             </div>
-            <span>hello.webflora@gmail.com</span>
+            <span>hello@webfloratechnologies.com</span>
+            <span>info@webfloratechnologies.com</span>
             <span>+91 85408 14729</span>
           </div>
 

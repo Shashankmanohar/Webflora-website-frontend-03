@@ -166,12 +166,20 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold text-white mb-6">12. Contact</h2>
             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
               <p className="text-white font-medium mb-4">Webflora Technologies</p>
-              <a 
-                href="mailto:hello.webflora@gmail.com" 
-                className="text-[#ff3b00] text-lg hover:underline transition-all"
-              >
-                hello.webflora@gmail.com
-              </a>
+              <div className="flex flex-col gap-2">
+                <a 
+                  href="mailto:hello@webfloratechnologies.com" 
+                  className="text-[#ff3b00] text-lg hover:underline transition-all"
+                >
+                  hello@webfloratechnologies.com
+                </a>
+                <a 
+                  href="mailto:info@webfloratechnologies.com" 
+                  className="text-[#ff3b00] text-lg hover:underline transition-all"
+                >
+                  info@webfloratechnologies.com
+                </a>
+              </div>
             </div>
           </motion.section>
         </div>

@@ -203,13 +203,22 @@ export default function PrivacyPolicy() {
             <div className="p-8 rounded-3xl bg-gradient-to-br from-white/5 to-transparent border border-white/10">
               <p className="text-white font-medium mb-1">Webflora Technologies</p>
               <p className="text-sm text-neutral-500 mb-4">NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India</p>
-              <a 
-                href="mailto:hello.webflora@gmail.com" 
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ff3b00] text-white rounded-full text-sm font-medium hover:scale-105 transition-transform"
-              >
-                <Icon icon="solar:letter-linear" width={20} />
-                hello.webflora@gmail.com
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="mailto:hello@webfloratechnologies.com" 
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#ff3b00] text-white rounded-full text-sm font-medium hover:scale-105 transition-transform"
+                >
+                  <Icon icon="solar:letter-linear" width={20} />
+                  hello@webfloratechnologies.com
+                </a>
+                <a 
+                  href="mailto:info@webfloratechnologies.com" 
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#ff3b00] text-white rounded-full text-sm font-medium hover:scale-105 transition-transform"
+                >
+                  <Icon icon="solar:letter-linear" width={20} />
+                  info@webfloratechnologies.com
+                </a>
+              </div>
             </div>
           </motion.section>
         </div>

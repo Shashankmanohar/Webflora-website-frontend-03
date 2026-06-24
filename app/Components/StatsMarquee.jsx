@@ -4,42 +4,42 @@ export default function StatsMarquee() {
       <div className="flex whitespace-nowrap animate-marquee">
         {/* Block 1 */}
         <div className="flex items-center gap-16 px-8">
-          <Stat text="200+ PROJECTS" />
-          <Star />
-          <Stat text="|" />
-          <Star />
-          <Stat text="150+ CLIENTS" />
-          <Star />
-          <Stat text="|" />
-          <Star />
-          <Stat text="99% SATISFACTION" />
-          <Star />
-          <Stat text="|" />
-          <Star />
-          <Stat text="GROWING SINCE 2023" />
-          <Star />
-          <Stat text="|" />
-          <Star />
+          <Stat text="200+ PROJECTS" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
+          <Stat text="150+ CLIENTS" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
+          <Stat text="99% SATISFACTION" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
+          <Stat text="GROWING SINCE 2023" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
         </div>
 
         {/* Block 2 – duplicate for infinite loop */}
         <div className="flex items-center gap-16 px-8" aria-hidden="true">
-          <Stat text="200+ PROJECTS" />
-          <Star />
-          <Stat text="|" />
-          <Star />
-          <Stat text="150+ CLIENTS" />
-          <Star />
-          <Stat text="|" />
-          <Star />
-          <Stat text="99% SATISFACTION" />
-          <Star />
-          <Stat text="|" />
-          <Star />
-          <Stat text="GROWING SINCE 2023" />
-          <Star />
-          <Stat text="|" />
-          <Star />
+          <Stat text="200+ PROJECTS" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
+          <Stat text="150+ CLIENTS" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
+          <Stat text="99% SATISFACTION" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
+          <Stat text="GROWING SINCE 2023" />{" "}
+          <Star />{" "}
+          <Stat text="|" />{" "}
+          <Star />{" "}
         </div>
       </div>
     </section>

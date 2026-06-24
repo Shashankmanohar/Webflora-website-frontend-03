@@ -114,7 +114,7 @@ export default function FooterSection() {
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 w-fit mt-2">
               <Image src="/msme-logo.webp" alt="MSME Registered Software Company Patna" className="h-6 object-contain grayscale opacity-80" width={100} height={24} loading="lazy" />
               <div className="flex flex-col">
-                <span className="text-xs text-white font-medium">MSME Registered</span>
+                <span className="text-xs text-white font-medium">MSME Registered </span>
                 <span className="text-[10px] text-neutral-500 font-mono">Udyam No: UDYAM-BR-26-0183379</span>
               </div>
             </div>
@@ -237,7 +237,15 @@ export default function FooterSection() {
               <ul className="flex flex-col space-y-4 text-sm text-neutral-400 font-light">
                 <li className="flex items-center gap-3">
                   <IconCircle icon="solar:letter-linear" />
-                  hello.webflora@gmail.com
+                  <a href="mailto:hello@webfloratechnologies.com" className="hover:text-white transition-colors">
+                    hello@webfloratechnologies.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <IconCircle icon="solar:letter-linear" />
+                  <a href="mailto:info@webfloratechnologies.com" className="hover:text-white transition-colors">
+                    info@webfloratechnologies.com
+                  </a>
                 </li>
                 <li className="flex items-start gap-3">
                   <IconCircle icon="solar:map-point-linear" />
@@ -322,9 +330,12 @@ function FooterColumn({ title, links, badgeIndex }) {
                   </span>
                 )}
                 {badgeIndex === i && (
-                  <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
-                    Hiring
-                  </span>
+                  <>
+                    {" "}
+                    <span className="ml-2 text-[10px] bg-white/10 text-white px-1.5 py-0.5 rounded border border-white/10">
+                      Hiring
+                    </span>
+                  </>
                 )}
               </a>
             </li>

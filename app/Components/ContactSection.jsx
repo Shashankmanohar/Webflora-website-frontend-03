@@ -107,8 +107,10 @@ export default function ContactSection() {
               {
                 icon: "solar:letter-linear",
                 title: "EMAIL",
-                value: "hello.webflora@gmail.com",
-                link: "mailto:hello.webflora@gmail.com",
+                links: [
+                  { label: "hello@webfloratechnologies.com", url: "mailto:hello@webfloratechnologies.com" },
+                  { label: "info@webfloratechnologies.com", url: "mailto:info@webfloratechnologies.com" }
+                ],
               },
             ].map((item, i) => (
               <motion.div

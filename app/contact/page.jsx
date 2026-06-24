@@ -238,12 +238,18 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-white/70 text-[9px] font-black tracking-[0.4em] uppercase mb-3">Email Comms</p>
-              <h3 className="text-xl md:text-2xl font-black text-white leading-[1.1] tracking-tighter">
-                hello.<br/>webflora@<br/>gmail.com
+              <h3 className="text-lg md:text-xl font-black text-white leading-[1.2] tracking-tighter break-all">
+                hello@webfloratechnologies.com <br />
+                info@webfloratechnologies.com
               </h3>
-              <a href="mailto:hello.webflora@gmail.com" className="mt-8 inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all">
-                SEND MAIL <Icon icon="solar:arrow-right-linear" width={16} />
-              </a>
+              <div className="mt-8 flex flex-col gap-3">
+                <a href="mailto:hello@webfloratechnologies.com" className="inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all">
+                  SEND MAIL (PRIMARY) <Icon icon="solar:arrow-right-linear" width={16} />
+                </a>
+                <a href="mailto:info@webfloratechnologies.com" className="inline-flex items-center gap-3 text-[10px] md:text-xs font-black text-white group-hover:gap-5 transition-all text-white/70 hover:text-white">
+                  SEND MAIL (SECONDARY) <Icon icon="solar:arrow-right-linear" width={16} />
+                </a>
+              </div>
             </div>
           </motion.div>
 

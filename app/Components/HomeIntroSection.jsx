@@ -75,7 +75,7 @@ export default function HomeIntroSection() {
                 <Icon icon="solar:chart-square-bold-duotone" className="text-4xl text-orange-500" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Why Businesses Need Custom Software</h3>
                 <p className="text-gray-400 font-light leading-relaxed text-sm md:text-base">
-                  Off-the-shelf software packages often lock you into rigid templates and expensive monthly subscription costs. Custom software allows you to build digital tools tailored precisely to your company's operational goals. By automating manual processes, eliminating double data entries, and connecting databases, custom systems lower your overhead costs, eliminate human errors, and scale your throughput without adding administrative staff.
+                  Off-the-shelf software packages often lock you into rigid templates and expensive monthly subscription costs. Custom software allows you to build digital tools tailored precisely to your company's business goals. By automating manual processes, removing duplicate entries, and connecting databases, custom systems lower your overhead costs, prevent errors, and scale your throughput without adding extra staff.
                 </p>
               </div>
 

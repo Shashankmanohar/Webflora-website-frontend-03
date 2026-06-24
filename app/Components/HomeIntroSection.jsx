@@ -35,30 +35,30 @@ export default function HomeIntroSection() {
             ⭐ Leading Tech Partner in Bihar
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight uppercase">
-            Software Company & <br />
+            Top-Rated <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-extrabold drop-shadow-[0_0_30px_rgba(251,146,60,0.15)]">
-              Website Company in Patna
+              Software & Website Company in Patna
             </span>
           </h2>
           <div className="h-[2px] w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded mx-auto" />
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
-            Webflora Technologies (Udyam: UDYAM-BR-26-0183379) is the premier software company, website company, and mobile app company in Patna, Bihar. We offer custom software engineering, next-gen mobile apps, result-oriented digital marketing, and bespoke AI automation solutions to scale your business.
+            Webflora Technologies (Udyam: UDYAM-BR-26-0183379) is the leading software company in Bihar and a premium website company in India. We offer custom website development, mobile application builds, digital marketing, and bespoke AI automation solutions in Patna, Bihar, and across India.
           </p>
         </div>
 
         {/* Dynamic Tab Switcher */}
-        <div className="flex justify-center gap-2 md:gap-4 mb-16 max-w-xl mx-auto border-b border-white/5 pb-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-2 md:gap-4 mb-16 max-w-xl mx-auto border-b border-white/5 pb-4 w-full">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2.5 md:px-6 md:py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeTab === tab.id
                   ? "bg-white text-black shadow-lg shadow-white/5 scale-105"
                   : "bg-transparent text-neutral-500 hover:text-white"
               }`}
             >
-              <Icon icon={tab.icon} className="text-lg" />
+              <Icon icon={tab.icon} className="text-sm md:text-lg" />
               {tab.label}
             </button>
           ))}
@@ -70,7 +70,7 @@ export default function HomeIntroSection() {
           {/* TAB 1: CORE VALUE */}
           {activeTab === "core" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch animate-fade-in">
-              <div className="lg:col-span-7 p-8 md:p-12 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
+              <div className="lg:col-span-7 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <Icon icon="solar:chart-square-bold-duotone" className="text-4xl text-orange-500" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Why Businesses Need Custom Software</h3>
@@ -79,7 +79,7 @@ export default function HomeIntroSection() {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 p-8 md:p-12 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 hover:border-red-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
+              <div className="lg:col-span-5 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-red-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <Icon icon="solar:cup-first-bold-duotone" className="text-4xl text-red-500" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Key Benefits</h3>
@@ -108,7 +108,7 @@ export default function HomeIntroSection() {
           {/* TAB 2: TECH & SECURITY */}
           {activeTab === "arsenal" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch animate-fade-in">
-              <div className="lg:col-span-5 p-8 md:p-12 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 hover:border-blue-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
+              <div className="lg:col-span-5 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-blue-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <Icon icon="solar:safe-square-bold-duotone" className="text-4xl text-blue-500" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Security & Privacy</h3>
@@ -117,24 +117,24 @@ export default function HomeIntroSection() {
                 </p>
               </div>
 
-              <div className="lg:col-span-7 p-8 md:p-12 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
+              <div className="lg:col-span-7 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <Icon icon="solar:widget-3-bold-duotone" className="text-4xl text-orange-500" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Our Core Frameworks</h3>
                 <div className="grid grid-cols-2 gap-4 text-gray-400 font-light text-sm md:text-base">
-                  <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex items-center gap-3">
+                  <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex items-center gap-3">
                     <Icon icon="logos:nextjs-icon" className="text-xl" />
                     <span>Next.js & React</span>
                   </div>
-                  <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex items-center gap-3">
+                  <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex items-center gap-3">
                     <Icon icon="logos:flutter" className="text-xl" />
                     <span>Flutter & Native</span>
                   </div>
-                  <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex items-center gap-3">
+                  <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex items-center gap-3">
                     <Icon icon="logos:nodejs-icon" className="text-xl" />
                     <span>Node.js Backend</span>
                   </div>
-                  <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex items-center gap-3">
+                  <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex items-center gap-3">
                     <Icon icon="logos:postgresql" className="text-xl" />
                     <span>Secure SQL</span>
                   </div>
@@ -146,7 +146,7 @@ export default function HomeIntroSection() {
           {/* TAB 3: PROCESS & COST */}
           {activeTab === "journey" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch animate-fade-in">
-              <div className="lg:col-span-7 p-8 md:p-12 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
+              <div className="lg:col-span-7 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <Icon icon="solar:route-bold-duotone" className="text-4xl text-orange-500" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">The Integration Process</h3>
@@ -169,7 +169,7 @@ export default function HomeIntroSection() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
+              <div className="lg:col-span-5 p-8 md:p-12 rounded-none bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <Icon icon="solar:wallet-money-bold-duotone" className="text-4xl text-orange-400" />
                 <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Flat-Rate Costs</h3>
                 <p className="text-gray-300 font-light text-sm leading-relaxed">
@@ -193,81 +193,29 @@ export default function HomeIntroSection() {
 
         </div>
 
-        {/* Plain-Language FAQs Accordion Grid */}
-        <div className="mt-28 space-y-8 max-w-4xl mx-auto">
-          <div className="text-center space-y-2">
-            <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] text-xs">Direct Answers</span>
-            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider">Frequently Asked Questions</h3>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <div className="p-6 md:p-8 rounded-3xl bg-zinc-950/30 border border-white/5 hover:border-white/10 transition-all duration-300 space-y-3">
-              <h4 className="text-white font-bold text-base flex items-center gap-2">
-                <Icon icon="solar:question-square-bold" className="text-orange-500 text-lg shrink-0" />
-                Why hire a professional software company?
-              </h4>
-              <p className="text-sm text-gray-400 font-light leading-relaxed">
-                A custom software company designs bespoke systems tailored to your workflows. This automates manual tasks, reduces human error, and ensures 100% code ownership with zero monthly licensing markups.
-              </p>
-            </div>
-
-            <div className="p-6 md:p-8 rounded-3xl bg-zinc-950/30 border border-white/5 hover:border-white/10 transition-all duration-300 space-y-3">
-              <h4 className="text-white font-bold text-base flex items-center gap-2">
-                <Icon icon="solar:question-square-bold" className="text-orange-500 text-lg shrink-0" />
-                What does a website company charge in Patna?
-              </h4>
-              <p className="text-sm text-gray-400 font-light leading-relaxed">
-                As a premium website company, our custom Next.js/React business websites start at a flat rate of ₹25,000. This includes custom designs, local SEO configuration, faster loading speeds, and contact forms.
-              </p>
-            </div>
-
-            <div className="p-6 md:p-8 rounded-3xl bg-zinc-950/30 border border-white/5 hover:border-white/10 transition-all duration-300 space-y-3">
-              <h4 className="text-white font-bold text-base flex items-center gap-2">
-                <Icon icon="solar:question-square-bold" className="text-orange-500 text-lg shrink-0" />
-                How does a mobile app company build apps?
-              </h4>
-              <p className="text-sm text-gray-400 font-light leading-relaxed">
-                Our mobile app company uses cross-platform frameworks (Flutter/React Native) to code one application that runs natively on both Android & iOS, reducing client development costs by up to 50%.
-              </p>
-            </div>
-
-            <div className="p-6 md:p-8 rounded-3xl bg-zinc-950/30 border border-white/5 hover:border-white/10 transition-all duration-300 space-y-3">
-              <h4 className="text-white font-bold text-base flex items-center gap-2">
-                <Icon icon="solar:question-square-bold" className="text-orange-500 text-lg shrink-0" />
-                How does an AI automation company optimize workflows?
-              </h4>
-              <p className="text-sm text-gray-400 font-light leading-relaxed">
-                An AI automation company integrates your software databases, WhatsApp APIs, and LLMs (like OpenAI/Claude) to automate repetitive copy-pasting, lead generation, and customer support.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
         {/* Quick Links */}
         <div className="pt-16 flex flex-wrap gap-3 justify-center">
           <Link 
             href="/services/website-development-company-in-patna"
-            className="text-xs px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
+            className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Web Development Patna
           </Link>
           <Link 
             href="/services/mobile-app-development-company-in-patna"
-            className="text-xs px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
+            className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Mobile Apps Patna
           </Link>
           <Link 
             href="/services/software-development-company-in-patna"
-            className="text-xs px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
+            className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Software Solutions Patna
           </Link>
           <Link 
             href="/services/ai-automation-company-in-patna"
-            className="text-xs px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
+            className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             AI & Automation Bihar
           </Link>
@@ -282,6 +230,13 @@ export default function HomeIntroSection() {
         }
         .animate-fade-in {
           animation: fadeIn 0.4s ease-out forwards;
+        }
+        .scrollbar-none::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-none {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </section>

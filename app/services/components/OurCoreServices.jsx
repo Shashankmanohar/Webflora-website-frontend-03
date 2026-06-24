@@ -17,9 +17,9 @@ const OurCoreServices = () => {
   const services = [
     {
       id: 1,
-      name: "Website Development",
+      name: "Website Development in Patna",
       description:
-        "Conversion-focused websites built for speed, performance, and scalability.",
+        "Conversion-focused website development in Patna built for speed, performance, and scalability by the best website company in Patna.",
       features: [
         "Custom UI/UX designs tailored to your brand",
         "SEO optimization for organic traffic growth",
@@ -27,16 +27,16 @@ const OurCoreServices = () => {
       ],
       timeline: "7-21 Days",
       startingPrice: "₹25,000",
-      subtitle: "Starting Price",
+      subtitle: "Website Development Cost in Patna Starting Price",
       icon: "solar:monitor-smartphone-linear",
       badge: "Popular",
       href: "/services/website-development-company-in-patna",
     },
     {
       id: 2,
-      name: "Software & ERP Systems",
+      name: "Software & ERP Systems in Patna",
       description:
-        "Custom business software to automate workflows and centralize operations.",
+        "Custom business software to automate workflows and centralize operations by a top software company in Patna, Bihar.",
       features: [
         "Real-time dashboards & analytics",
         "Automated workflow management systems",
@@ -44,16 +44,16 @@ const OurCoreServices = () => {
       ],
       timeline: "15-30 Days",
       startingPrice: "₹80,000",
-      subtitle: "Starting Price",
+      subtitle: "Software Development Cost in Patna Starting Price",
       icon: "solar:server-square-cloud-linear",
       badge: "Enterprise",
       href: "/services/software-development-company-in-patna",
     },
     {
       id: 3,
-      name: "Mobile App Development",
+      name: "Mobile App Development in Patna",
       description:
-        "High-performance Android and iOS applications for scalable user growth.",
+        "High-performance Android and iOS mobile app development in Patna, Bihar for scalable user growth.",
       features: [
         "Cross-platform native apps for iOS & Android",
         "Real-time synchronization & APIs",
@@ -61,16 +61,16 @@ const OurCoreServices = () => {
       ],
       timeline: "20-45 Days",
       startingPrice: "₹1,20,000",
-      subtitle: "Starting Price",
+      subtitle: "Mobile App Development Cost in Patna Starting Price",
       icon: "solar:smartphone-2-linear",
       badge: "Advanced",
       href: "/services/mobile-app-development-company-in-patna",
     },
     {
       id: 4,
-      name: "Digital Marketing",
+      name: "Digital Marketing in Patna",
       description:
-        "Performance-driven marketing strategies focused on ROI and lead generation.",
+        "Performance-driven digital marketing agency in Patna, Bihar focused on ROI and local SEO lead generation.",
       features: [
         "SEO & paid advertising optimization",
         "Social media management & content strategy",
@@ -78,16 +78,16 @@ const OurCoreServices = () => {
       ],
       timeline: "Ongoing",
       startingPrice: "₹15,000",
-      subtitle: "Monthly",
+      subtitle: "Digital Marketing Cost in Patna Monthly Price",
       icon: "solar:graph-up-linear",
       badge: null,
       href: "/services/digital-marketing-agency-in-patna",
     },
     {
       id: 5,
-      name: "Business Automation",
+      name: "Business Automation in Patna",
       description:
-        "Automated systems that eliminate repetitive tasks and improve efficiency.",
+        "Automated workflows and custom AI solutions designed by a leading AI automation and software company in Patna, Bihar.",
       features: [
         "CRM & workflow automation setup",
         "WhatsApp & email integration systems",
@@ -95,7 +95,7 @@ const OurCoreServices = () => {
       ],
       timeline: "10-25 Days",
       startingPrice: "₹40,000",
-      subtitle: "Starting Price",
+      subtitle: "AI & Automation Cost in Patna Starting Price",
       icon: "solar:bolt-circle-linear",
       badge: null,
       href: "/services/ai-automation-company-in-patna",
@@ -256,41 +256,41 @@ const OurCoreServices = () => {
       onMouseLeave={() => !isMobileView && setHoveredCard(null)}
     >
       {/* Main Card Container */}
-      <div className="group h-full flex flex-col rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-3">
+      <div className="group h-full flex flex-col rounded-none overflow-hidden shadow-2xl transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-3">
         {/* Upper Section - Black Background */}
-        <div className="flex-1 bg-black pt-12 px-6 sm:px-8 md:px-10 pb-8 relative overflow-hidden border border-gray-800">
+        <div className="flex-1 bg-black pt-10 px-5 sm:px-6 md:px-8 pb-6 relative overflow-hidden border border-gray-800">
           {/* Badge */}
           {service.badge && (
-            <div className="absolute top-4 right-4 bg-[#FF3B00] text-white px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg shadow-[#FF3B00]/50 transform transition-all duration-300 group-hover:scale-110 z-20">
+            <div className="absolute top-4 right-4 bg-[#FF3B00] text-white px-2.5 sm:px-3 py-1 rounded-none text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-[#FF3B00]/50 transform transition-all duration-300 group-hover:scale-110 z-20">
               {service.badge}
             </div>
           )}
-
+ 
           {/* Header with Icon */}
-          <div className="flex items-start justify-between mb-8">
-            <div className="flex-1 pr-4">
-              <h3 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight mb-3 leading-tight">
+          <div className="flex items-start justify-between mb-6">
+            <div className="flex-1 pr-3">
+              <h3 className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-white tracking-tight mb-2 leading-tight">
                 {service.name}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 sm:line-clamp-none">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-2 sm:line-clamp-none">
                 {service.description}
               </p>
             </div>
           </div>
-
+ 
           {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-[#FF3B00]/30 via-gray-700 to-transparent my-6"></div>
-
+          <div className="h-px bg-gradient-to-r from-[#FF3B00]/30 via-gray-700 to-transparent my-5"></div>
+ 
           {/* Includes Section */}
-          <div className="mb-8">
-            <h4 className="text-white font-bold text-xs sm:text-sm uppercase tracking-wider mb-4 font-display">
+          <div className="mb-6">
+            <h4 className="text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-3 font-display">
               Includes
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {service.features.map((feature, fIdx) => (
                 <div
                   key={fIdx}
-                  className="flex gap-3 items-start transform transition-all duration-300"
+                  className="flex gap-2.5 items-start transform transition-all duration-300"
                   style={{
                     transitionDelay:
                       hoveredCard === idx ? `${fIdx * 50}ms` : "0ms",
@@ -299,15 +299,15 @@ const OurCoreServices = () => {
                   }}
                 >
                   <div className="flex-shrink-0 mt-0.5">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#FF3B00] to-orange-600 flex items-center justify-center text-white shadow-lg shadow-[#FF3B00]/50 transform transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-4 h-4 rounded-none bg-gradient-to-br from-[#FF3B00] to-orange-600 flex items-center justify-center text-white shadow-lg shadow-[#FF3B00]/50 transform transition-transform duration-300 group-hover:scale-110">
                       <Icon
                         icon="solar:check-circle-bold"
-                        width={16}
-                        height={16}
+                        width={13}
+                        height={13}
                       />
                     </div>
                   </div>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-snug font-medium group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-gray-400 text-xs leading-snug font-medium group-hover:text-gray-200 transition-colors duration-300">
                     {feature}
                   </p>
                 </div>
@@ -315,49 +315,49 @@ const OurCoreServices = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Lower Section - Orange Gradient Background */}
-        <div className="bg-gradient-to-r from-[#FF3B00] to-orange-600 relative overflow-hidden pb-8 px-6 sm:px-8 md:px-10 pt-8">
+        <div className="bg-gradient-to-r from-[#FF3B00] to-orange-600 relative overflow-hidden pb-6 px-5 sm:px-6 md:px-8 pt-6">
           {/* Animated Background Blur */}
           <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
-            <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-white/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-white/20 rounded-none blur-3xl animate-pulse"></div>
           </div>
-
+ 
           {/* Pricing Section */}
-          <div className="relative z-10 mb-8">
-            <p className="text-white/90 text-xs uppercase tracking-widest font-mono font-bold mb-2">
+          <div className="relative z-10 mb-6">
+            <p className="text-white/95 text-[9px] uppercase tracking-widest font-mono font-bold mb-1.5 leading-snug">
               {service.subtitle}
             </p>
-            <p className="text-white font-display font-black text-2xl sm:text-3xl md:text-4xl tracking-tight">
+            <p className="text-white font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight">
               {service.startingPrice}
               {!service.subtitle.includes("Monthly") && (
-                <span className="text-lg font-semibold">/-</span>
+                <span className="text-sm font-semibold">/-</span>
               )}
             </p>
           </div>
-
+ 
           {/* Timeline Badge */}
-          <div className="relative z-10 inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-white/30 rounded-full px-3 sm:px-4 py-2 mb-6">
+          <div className="relative z-10 inline-flex items-center gap-1.5 bg-black/30 backdrop-blur-sm border border-white/30 rounded-none px-2.5 sm:px-3 py-1.5 mb-5">
             <Icon
               icon="solar:clock-circle-linear"
-              width={14}
-              height={14}
+              width={12}
+              height={12}
               className="text-white flex-shrink-0"
             />
-            <span className="text-white text-xs font-semibold uppercase tracking-wider">
+            <span className="text-white text-[10px] font-semibold uppercase tracking-wider">
               {service.timeline}
             </span>
           </div>
-
+ 
           {/* CTA Button */}
-          <Link href={service.href || "/contact"} className="relative z-10 w-full py-3 sm:py-3.5 px-6 bg-black text-[#FF3B00] rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden group/btn border border-white/20 hover:border-white/40 active:scale-95 block text-center">
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-shimmer rounded-2xl"></span>
+          <Link href={service.href || "/contact"} className="relative z-10 w-full py-2.5 sm:py-3 px-4 bg-black text-[#FF3B00] rounded-none font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden group/btn border border-white/20 hover:border-white/40 active:scale-95 block text-center">
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-shimmer rounded-none"></span>
             <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
               Learn More
               <Icon
                 icon="solar:arrow-right-linear"
-                width={16}
-                height={16}
+                width={14}
+                height={14}
                 className="group-hover/btn:translate-x-1 transition-transform duration-300 flex-shrink-0"
               />
             </span>
@@ -419,7 +419,7 @@ const OurCoreServices = () => {
           <div className="flex flex-col gap-6">
             {/* Carousel Container */}
             <div
-              className="relative overflow-hidden rounded-3xl bg-black/50"
+              className="relative overflow-hidden rounded-none bg-black/50"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
               role="region"
@@ -447,7 +447,7 @@ const OurCoreServices = () => {
                   <button
                     key={idx}
                     onClick={() => goToSlide(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide
+                    className={`h-2 transition-all duration-300 ${idx === currentSlide
                       ? "bg-[#FF3B00] w-8 shadow-lg shadow-[#FF3B00]/50"
                       : "bg-gray-700 w-2 hover:bg-gray-600"
                       }`}
@@ -462,14 +462,14 @@ const OurCoreServices = () => {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={prevSlide}
-                  className="p-3 rounded-full bg-[#FF3B00]/20 border border-[#FF3B00]/50 text-[#FF3B00] hover:bg-[#FF3B00]/30 transition-all duration-300 active:scale-95"
+                  className="p-3 rounded-none bg-[#FF3B00]/20 border border-[#FF3B00]/50 text-[#FF3B00] hover:bg-[#FF3B00]/30 transition-all duration-300 active:scale-95"
                   aria-label="Previous slide"
                 >
                   <Icon icon="solar:arrow-left-linear" width={20} height={20} />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="p-3 rounded-full bg-[#FF3B00]/20 border border-[#FF3B00]/50 text-[#FF3B00] hover:bg-[#FF3B00]/30 transition-all duration-300 active:scale-95"
+                  className="p-3 rounded-none bg-[#FF3B00]/20 border border-[#FF3B00]/50 text-[#FF3B00] hover:bg-[#FF3B00]/30 transition-all duration-300 active:scale-95"
                   aria-label="Next slide"
                 >
                   <Icon
@@ -493,7 +493,7 @@ const OurCoreServices = () => {
               We build custom solutions tailored to your unique business needs.
               Get a personalized quote.
             </p>
-            <Link href="/contact" className="inline-block group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 bg-[#FF3B00] text-white rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,59,0,0.5)] overflow-hidden focus:ring-2 focus:ring-[#FF3B00] focus:outline-none active:scale-95">
+            <Link href="/contact" className="inline-block group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 bg-[#FF3B00] text-white rounded-none font-bold text-xs sm:text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,59,0,0.5)] overflow-hidden focus:ring-2 focus:ring-[#FF3B00] focus:outline-none active:scale-95">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
               <span className="relative z-10 flex items-center gap-2 sm:gap-3 justify-center whitespace-nowrap">
                 Schedule Free Strategy Call

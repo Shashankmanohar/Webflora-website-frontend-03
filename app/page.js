@@ -53,10 +53,10 @@ export default function Page() {
       <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
-            Your Trusted Software Company & Website Company
+            Your Trusted Software & Website Company in Patna
           </h2>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-            Webflora Technologies is a premier software company, website company, mobile app company, digital marketing agency, and AI automation company. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth across India.
+            Webflora Technologies is the premier software company in Bihar and the leading website company in India, offering top-tier website design, custom software applications, mobile apps, and digital marketing. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth from Patna, Bihar, to all over India.
           </p>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
@@ -224,7 +224,6 @@ export default function Page() {
           })
         }}
       />
-
       {/* FAQ SCHEMA */}
       <script
         type="application/ld+json"

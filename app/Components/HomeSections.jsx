@@ -13,7 +13,7 @@
 import React from "react";
 import LazySection from "./LazySection";
 
-export default function HomeSections({ homeFaqs, faqComponent }) {
+export default function HomeSections({ faqComponent }) {
   return (
     <>
       {/* Trust signals — appear just below the hero fold */}
@@ -40,14 +40,14 @@ export default function HomeSections({ homeFaqs, faqComponent }) {
       </div>
       <div className="content-auto">
         <LazySection
-          height="400px"
-          loader={() => import("./ExpertiseSection")}
+          height="600px"
+          loader={() => import("./ServicesDetailShowcase")}
         />
       </div>
       <div className="content-auto">
         <LazySection
           height="500px"
-          loader={() => import("./IndustriesSection")}
+          loader={() => import("./SectorsServedSection")}
         />
       </div>
       <div className="content-auto">

@@ -65,15 +65,15 @@ export default function TrustSignals({ hideStats = false }) {
                   key={idx} 
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
-                  className="group relative p-6 md:p-8 rounded-[2rem] bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
+                  className="group relative p-5 md:p-6 rounded-none bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
                   <div className="relative z-10">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2 tracking-tighter">
+                    <div className="text-3xl md:text-4xl font-display font-bold text-white mb-1.5 tracking-tighter">
                       {stat.number}
                     </div>
-                    <div className="text-xs font-bold text-[#ff3c00] uppercase tracking-[0.2em] mb-2">{stat.label}</div>
-                    <p className="text-sm text-gray-400 font-light leading-relaxed">{stat.desc}</p>
+                    <div className="text-[10px] font-bold text-[#ff3c00] uppercase tracking-[0.2em] mb-1.5">{stat.label}</div>
+                    <p className="text-xs text-gray-400 font-light leading-relaxed">{stat.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -103,42 +103,42 @@ export default function TrustSignals({ hideStats = false }) {
               { 
                 icon: Zap, 
                 title: "Performance-focused", 
-                desc: "We engineer systems optimized for speed, Core Web Vitals, and UX to maximize your conversion rates.",
+                desc: "We engineer systems optimized for speed, Core Web Vitals, and UX, making us a top-rated software company in Patna.",
                 span: "md:col-span-3",
                 color: "from-orange-500/10"
               },
               { 
                 icon: ShieldCheck, 
                 title: "Scalable Architecture", 
-                desc: "Codebases and cloud infrastructure designed to grow seamlessly alongside your business.",
+                desc: "Codebases and cloud infrastructure designed by a premium website company in Patna, Bihar, to grow seamlessly alongside your business.",
                 span: "md:col-span-3",
                 color: "from-blue-500/10"
               },
               { 
                 icon: Users, 
                 title: "Founder-led Execution", 
-                desc: "Direct involvement from technical founders ensuring premium quality and strategic alignment.",
+                desc: "Direct involvement from technical founders of our software company in Patna, Bihar, ensuring strategic alignment.",
                 span: "md:col-span-2",
                 color: "from-purple-500/10"
               },
               { 
                 icon: TrendingUp, 
                 title: "SEO-first Systems", 
-                desc: "In-built semantic HTML and schema architecture to dominate search rankings.",
+                desc: "In-built semantic HTML and schema architecture designed by a leading website company in Patna to dominate search rankings across India.",
                 span: "md:col-span-2",
                 color: "from-emerald-500/10"
               },
               { 
                 icon: Settings, 
                 title: "Long-term Support", 
-                desc: "Continuous maintenance and security patches post-launch.",
+                desc: "Continuous maintenance and security updates from a trusted software company in Bihar and India post-launch.",
                 span: "md:col-span-2",
                 color: "from-pink-500/10"
               },
               { 
                 icon: MessageSquare, 
                 title: "Transparent Communication", 
-                desc: "Clear roadmaps, realistic timelines, and consistent updates with no hidden complexities.",
+                desc: "As a reliable software and website company in Patna, Bihar, we offer clear roadmaps, realistic timelines, and updates with zero hidden complexities.",
                 span: "md:col-span-6",
                 color: "from-[#ff3c00]/10"
               }
@@ -148,18 +148,18 @@ export default function TrustSignals({ hideStats = false }) {
                 <motion.div 
                   key={idx} 
                   variants={itemVariants}
-                  className={`group relative p-6 md:p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
+                  className={`group relative p-5 md:p-6 rounded-none bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
                 >
                   {/* Background Accent */}
                   <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${reason.color} to-transparent opacity-0 group-hover:opacity-100 blur-[80px] transition-all duration-700 pointer-events-none`} />
                   
                   <div className="relative z-10">
-                    <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-6 group-hover:scale-110 group-hover:bg-[#ff3c00] group-hover:text-black transition-all duration-500 shadow-inner">
-                      <IconComponent className="w-5.5 h-5.5" />
+                    <div className="w-9 h-9 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-5 group-hover:scale-110 group-hover:bg-[#ff3c00] group-hover:text-black transition-all duration-500 shadow-inner">
+                      <IconComponent className="w-4.5 h-4.5" />
                     </div>
                     
-                    <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-3 tracking-tight uppercase">{reason.title}</h3>
-                    <p className="text-gray-400 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500 text-sm md:text-base">{reason.desc}</p>
+                    <h3 className="text-lg md:text-xl font-display font-bold text-white mb-2 tracking-tight uppercase">{reason.title}</h3>
+                    <p className="text-gray-400 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500 text-xs md:text-sm">{reason.desc}</p>
                   </div>
                   
                   {/* Modern Border Accent */}

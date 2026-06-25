@@ -50,7 +50,7 @@ function Starfield() {
 // --- Premium Component: Elegent Reveal ---
 function ElegantReveal({ text, className }) {
   return (
-    <motion.h1 
+    <motion.h1
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -97,10 +97,10 @@ export default function CaseStudiesPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#050505] flex items-center justify-center">
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-12 h-12 border-2 border-primary/30 border-t-primary rounded-full" 
+          className="w-12 h-12 border-2 border-primary/30 border-t-primary rounded-full"
         />
       </div>
     );
@@ -121,12 +121,12 @@ export default function CaseStudiesPage() {
           <span className="text-[#FF3B00] text-[11px] md:text-[13px] uppercase tracking-[0.4em] font-black mb-6 drop-shadow-[0_0_15px_rgba(255,59,0,0.3)] block">
             Webflora Technologies Case Studies
           </span>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
             Recent Projects <br />
             <span className="text-gray-500 italic">and Success Stories</span>
           </h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -144,11 +144,10 @@ export default function CaseStudiesPage() {
               <button
                 key={item}
                 onClick={() => setActiveCategory(item)}
-                className={`flex-shrink-0 px-6 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border ${
-                  activeCategory === item
+                className={`flex-shrink-0 px-6 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border ${activeCategory === item
                     ? "bg-white border-white text-black"
                     : "bg-transparent border-white/10 text-neutral-500 hover:text-white hover:border-white/30"
-                }`}
+                  }`}
               >
                 {item}
               </button>
@@ -170,7 +169,7 @@ export default function CaseStudiesPage() {
                 className="group flex flex-col h-full bg-[#0a0a0a] rounded-3xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-500"
               >
                 {/* Image Container */}
-                <div 
+                <div
                   onClick={() => router.push(`/case-studies/${project.slug}`)}
                   className="relative aspect-video overflow-hidden cursor-pointer"
                 >
@@ -190,19 +189,19 @@ export default function CaseStudiesPage() {
 
                 {/* Content Area */}
                 <div className="flex flex-col flex-1 p-6 md:p-8">
-                  <h3 
+                  <h3
                     onClick={() => router.push(`/case-studies/${project.slug}`)}
                     className="text-xl md:text-2xl font-bold text-white mb-3 cursor-pointer group-hover:text-primary transition-colors line-clamp-2"
                   >
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-neutral-500 text-sm mb-8 line-clamp-3 font-light leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <Link 
+                    <Link
                       href={`/case-studies/${project.slug}`}
                       className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition-colors flex items-center gap-2"
                     >
@@ -229,7 +228,7 @@ export default function CaseStudiesPage() {
       <TrustSignals />
 
       <div className="content-auto relative z-10 mt-20">
-        <SEOContentBlock 
+        <SEOContentBlock
           title="Proven Digital Solutions & Success Stories"
           paragraphs={[
             <>Explore our portfolio of <strong className="text-white font-medium">high-performance web applications</strong>, enterprise software, and growth-driven marketing campaigns. As a leading technology partner in Patna, Bihar, we consistently deliver digital products that scale and generate measurable ROI for businesses across India.</>,

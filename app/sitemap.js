@@ -36,8 +36,8 @@ export default async function sitemap() {
       item.priority >= 0.9
         ? "weekly"
         : item.priority >= 0.7
-        ? "monthly"
-        : "yearly",
+          ? "monthly"
+          : "yearly",
     priority: item.priority,
   }));
 

@@ -3,17 +3,17 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-24 pb-12">
-      
+
       {/* Background Grid Pattern & Ambient Glows */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 bg-grid opacity-[0.08]" />
-        
+
         {/* Centered glowing orb behind content */}
-        <div 
+        <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] md:w-[600px] md:h-[600px] rounded-full opacity-20"
           style={{ background: "radial-gradient(circle, rgba(249,115,22,0.18) 0%, rgba(0,0,0,0) 70%)" }}
         />
-        <div 
+        <div
           className="absolute left-1/3 top-1/3 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, rgba(59,130,246,0.12) 0%, rgba(0,0,0,0) 70%)" }}
         />
@@ -28,42 +28,42 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 w-full text-center flex flex-col items-center space-y-4 md:space-y-5">
-        
+
         {/* Trust Badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-md">
           <span className="text-orange-500 text-xs">⭐</span>
           <span className="text-[10px] sm:text-xs tracking-wider text-gray-300 font-mono uppercase">
-            Trusted Software & Website Company in Patna
+            Trusted Software Company in Patna
           </span>
         </div>
 
         {/* H1 Main Heading */}
         <h1 className="font-display font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl text-white">
-          Software Company & <br />
+          Software <br className="sm:hidden" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-black drop-shadow-[0_0_20px_rgba(249,115,22,0.15)]">
-            Website Company
+            Company
           </span>{" "}
           <br className="hidden sm:inline" />
-          <span className="text-white">in Patna Bihar</span>
+          <span className="text-white">in Patna, Bihar</span>
         </h1>
 
         {/* Subtext description */}
         <p className="text-gray-400 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-3xl">
-          We are a full-service software company, website company, and mobile app company in Patna, Bihar, offering performance digital marketing and custom AI automation solutions that scale business growth across India.
+          We are a full-service software company in Patna, Bihar, offering custom website development, mobile app development, performance digital marketing, and custom AI automation solutions that scale business growth across India.
         </p>
 
         {/* Core Services inline bullet points */}
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-gray-300 font-mono">
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Software Company
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Software Development
           </span>
           <span className="text-gray-600 hidden sm:inline">|</span>
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Website Company
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Web Development
           </span>
           <span className="text-gray-600 hidden sm:inline">|</span>
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Mobile App Company
+            <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Mobile Apps
           </span>
           <span className="text-gray-600 hidden sm:inline">|</span>
           <span className="flex items-center gap-1.5">
@@ -95,7 +95,7 @@ export default function Hero() {
           >
             Get Free Consultation
           </Link>
-          
+
           <Link
             href="#work"
             className="text-gray-400 hover:text-white text-sm font-medium transition-colors py-2 flex items-center gap-1"

@@ -97,7 +97,7 @@ export default function SectorsServedSection() {
       <div className="flex flex-col md:flex-row justify-between items-end mb-16">
         <div>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 uppercase tracking-wider">
-            Sectors We Serve<span className="text-orange-600">.</span>
+            Industries We Serve<span className="text-orange-600">.</span>
           </h2>
           <p className="text-gray-400 max-w-md">
             Industry-specific digital capabilities engineered for scale, compliance, and growth.

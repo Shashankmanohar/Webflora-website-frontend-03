@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 const services = [
   {
     id: "web",
-    title: "Website Development",
+    title: "Website Development Services",
     badge: "Best Website Company in Patna",
     href: "/services/website-development-company-in-patna",
     icon: "solar:display-bold",
@@ -91,7 +91,7 @@ const services = [
   },
   {
     id: "ai",
-    title: "AI & Automation",
+    title: "AI Automation Solutions",
     badge: "Best AI & Automation Company in Bihar",
     href: "/services/ai-automation-company-in-patna",
     icon: "solar:cpu-bold-duotone",
@@ -119,7 +119,7 @@ const services = [
   },
   {
     id: "marketing",
-    title: "Digital Marketing",
+    title: "Digital Marketing Services",
     badge: "Best Digital Marketing Agency in Patna",
     href: "/services/digital-marketing-agency-in-patna",
     icon: "solar:ranking-bold-duotone",
@@ -206,7 +206,7 @@ export default function ServicesDetailShowcase() {
                     <Icon icon={item.icon} className="text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-extrabold text-xs tracking-wider uppercase">{item.title}</h3>
+                    <h2 className="font-extrabold text-xs tracking-wider uppercase">{item.title}</h2>
                     <span className={`text-[9px] font-mono transition-opacity duration-300 ${
                       isActive ? "text-white/80" : "text-neutral-500 group-hover:text-neutral-400"
                     }`}>
@@ -233,10 +233,10 @@ export default function ServicesDetailShowcase() {
                     href={currentService.href} 
                     className="block group-hover:translate-x-1 transition-transform duration-300"
                   >
-                    <h3 className="text-2xl md:text-3xl font-black text-white hover:underline flex items-center gap-2 tracking-tight leading-none uppercase">
+                    <h2 className="text-2xl md:text-3xl font-black text-white hover:underline flex items-center gap-2 tracking-tight leading-none uppercase">
                       {currentService.title}
                       <Icon icon="solar:arrow-right-up-bold" className={`text-2xl ${currentService.textColor} opacity-60 group-hover:opacity-100 transition-opacity`} />
-                    </h3>
+                    </h2>
                   </Link>
                 </div>
 
@@ -315,7 +315,7 @@ export default function ServicesDetailShowcase() {
                       <Icon icon={item.icon} className="text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm tracking-wide uppercase text-white">{item.title}</h4>
+                      <h2 className="font-bold text-sm tracking-wide uppercase text-white">{item.title}</h2>
                       <span className="text-[10px] opacity-40 font-mono">{item.badge}</span>
                     </div>
                   </div>

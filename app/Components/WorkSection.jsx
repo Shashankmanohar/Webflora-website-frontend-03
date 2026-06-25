@@ -126,7 +126,7 @@ export default function WorkSection() {
             variants={fadeUp}
             className="font-display font-bold text-3xl md:text-4xl text-white tracking-tighter mb-6 uppercase"
           >
-            WORK THAT SPEAKS
+            Case Studies
           </motion.h2>
 
           <motion.div

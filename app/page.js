@@ -8,33 +8,33 @@ import FaqSection from "./services/components/FaqSection";
 /* ── FAQ data (defined server-side, passed as prop to client component) ── */
 const homeFaqs = [
   {
-    question: "Which is the best software company and website company in Patna Bihar?",
-    answer: "Webflora Technologies is the leading registered software company and website company in Patna, Bihar, offering custom software, custom website development, mobile app development, performance digital marketing, and AI automation for startups and enterprises across India.",
+    question: "Why is Webflora Technologies considered the top software development company in Patna?",
+    answer: "Webflora Technologies stands out due to our commitment to high-performance code, tailor-made designs, and transparent flat-rate pricing. We build secure, search-optimized web and mobile systems that scale alongside your company.",
     icon: "lucide:award"
   },
   {
-    question: "What services does your mobile app company and software company provide?",
-    answer: "As a full-service software company and mobile app company, we provide custom software development, Android & iOS mobile app development (React Native & Flutter), professional website development (Next.js & React), performance digital marketing (SEO & lead generation), and custom AI automation solutions.",
+    question: "What digital services do you provide?",
+    answer: "We offer a complete suite of tech services: custom enterprise software (ERP/CRM), high-converting website development, native and cross-platform mobile apps (Android & iOS), custom AI workflow automations, and targeted performance digital marketing.",
     icon: "lucide:layers"
   },
   {
-    question: "Do you offer digital marketing and AI automation services?",
-    answer: "Yes, we are a premium digital marketing agency and AI automation company. We run performance-focused SEO and ad campaigns, and build custom AI workflow automations (using tools like n8n and OpenAI/Claude APIs) to streamline your sales and operations.",
+    question: "Do you offer custom AI and automation integrations?",
+    answer: "Yes, we design smart workflow automations and custom AI pipelines using platforms like n8n and API frameworks (OpenAI, Claude). We help businesses eliminate manual bottlenecks and operate 24/7.",
     icon: "lucide:trending-up"
   },
   {
-    question: "Why should my business partner with Webflora Technologies?",
-    answer: "Whether you need a reliable website company, software company, mobile app company, digital marketing partner, or AI automation builder, we offer founder-led execution, high-performance code, and transparent flat-rate pricing to scale your business operations.",
+    question: "Why should my business choose Webflora Technologies over off-the-shelf software?",
+    answer: "We offer complete source code ownership, founder-led execution, and high-performance custom builds with zero monthly per-user licensing fees. This ensures your systems conform to your business rules, not the other way around.",
     icon: "lucide:check-circle"
   },
   {
     question: "Do you support startups and local businesses in Bihar?",
-    answer: "Yes, we partner closely with local startups, coaching institutes, clinics, and businesses in Patna, Muzaffarpur, Gaya, and all of Bihar, providing scalable website development, mobile app builds, and localized digital marketing solutions.",
+    answer: "Yes, we partner closely with local startups, clinics, institutes, and businesses in Patna, Muzaffarpur, Gaya, and across Bihar, helping them digitize operations and grow their online presence.",
     icon: "lucide:users"
   },
   {
-    question: "Do you provide long-term support for software and apps?",
-    answer: "Yes, Webflora Technologies provides comprehensive technical support, regular security updates, server maintenance, SEO health audits, and future scaling upgrades for all custom software, websites, and mobile applications.",
+    question: "Do you provide long-term technical support?",
+    answer: "Absolutely. We offer complete post-launch support including server management, regular security updates, local SEO health checks, and feature scaling support for all our custom builds.",
     icon: "lucide:headset"
   }
 ];
@@ -53,10 +53,10 @@ export default function Page() {
       <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
-            Your Trusted Software & Website Company in Patna
+            Driving Digital Transformation
           </h2>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-            Webflora Technologies is the premier software company in Bihar and the leading website company in India, offering top-tier website design, custom software applications, mobile apps, and digital marketing. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth from Patna, Bihar, to all over India.
+            Webflora Technologies is the premier software company in Patna, Bihar, offering top-tier website design, custom software applications, mobile apps, and digital marketing. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth from Patna, Bihar, to all over India.
           </p>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
@@ -66,8 +66,8 @@ export default function Page() {
       <StatsMarquee />
 
       {/* ── All viewport-gated client sections ── */}
-      <HomeSections 
-        homeFaqs={homeFaqs} 
+      <HomeSections
+        homeFaqs={homeFaqs}
         faqComponent={
           <FaqSection faqs={homeFaqs} title="web development and software services" />
         }
@@ -87,7 +87,7 @@ export default function Page() {
             "url": "https://webfloratechnologies.com",
             "logo": "https://webfloratechnologies.com/webflora-logo.svg",
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
-            "description": "Webflora Technologies is a software company, website company, mobile app company, digital marketing agency, and AI automation company based in Patna Bihar offering custom software development, website development, mobile app development, performance digital marketing, and AI automation workflows.",
+            "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile app development, performance digital marketing, and AI automation solutions.",
             "telephone": "+918540814729",
             "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
             "identifier": {
@@ -176,7 +176,7 @@ export default function Page() {
             "@type": "LocalBusiness",
             "@id": "https://webfloratechnologies.com/#localbusiness",
             "name": "Webflora Technologies",
-            "description": "Webflora Technologies is a software company, website company, mobile app company, digital marketing agency, and AI automation company in Patna Bihar.",
+            "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile app development, digital marketing, and AI automation workflows.",
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
             "url": "https://webfloratechnologies.com",
             "telephone": "+918540814729",
@@ -236,6 +236,24 @@ export default function Page() {
               "name": faq.question,
               "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
             }))
+          })
+        }}
+      />
+      {/* BREADCRUMB SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://webfloratechnologies.com"
+              }
+            ]
           })
         }}
       />

@@ -16,11 +16,11 @@ export default function HomeIntroSection() {
     <section className="py-28 bg-[#030303] relative overflow-hidden border-t border-white/5">
       {/* Dynamic Background Orbs */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div 
+        <div
           className="absolute -right-20 top-1/4 w-[500px] h-[500px] rounded-full opacity-10 blur-[100px]"
           style={{ background: "radial-gradient(circle, rgba(255,59,0,0.2) 0%, rgba(0,0,0,0) 70%)" }}
         />
-        <div 
+        <div
           className="absolute -left-20 bottom-1/4 w-[500px] h-[500px] rounded-full opacity-5 blur-[100px]"
           style={{ background: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%)" }}
         />
@@ -28,7 +28,7 @@ export default function HomeIntroSection() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-6 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-xs text-orange-400 font-medium tracking-wide uppercase">
@@ -37,12 +37,12 @@ export default function HomeIntroSection() {
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight uppercase">
             Top-Rated <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-extrabold drop-shadow-[0_0_30px_rgba(251,146,60,0.15)]">
-              Software & Website Company in Patna
+              Engineering Scalable Solutions
             </span>
           </h2>
           <div className="h-[2px] w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded mx-auto" />
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
-            Webflora Technologies (Udyam: UDYAM-BR-26-0183379) is the leading software company in Bihar and a premium website company in India. We offer custom website development, mobile application builds, digital marketing, and bespoke AI automation solutions in Patna, Bihar, and across India.
+            Webflora Technologies (Udyam: UDYAM-BR-26-0183379) is the leading software company in Patna, Bihar, offering custom software development, website development, mobile application builds, digital marketing, and bespoke AI automation solutions in India.
           </p>
         </div>
 
@@ -52,11 +52,10 @@ export default function HomeIntroSection() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2.5 md:px-6 md:py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                activeTab === tab.id
+              className={`w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2.5 md:px-6 md:py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab.id
                   ? "bg-white text-black shadow-lg shadow-white/5 scale-105"
                   : "bg-transparent text-neutral-500 hover:text-white"
-              }`}
+                }`}
             >
               <Icon icon={tab.icon} className="text-sm md:text-lg" />
               {tab.label}
@@ -66,7 +65,7 @@ export default function HomeIntroSection() {
 
         {/* Tab Contents */}
         <div className="min-h-[450px] transition-all duration-500">
-          
+
           {/* TAB 1: CORE VALUE */}
           {activeTab === "core" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch animate-fade-in">
@@ -195,25 +194,25 @@ export default function HomeIntroSection() {
 
         {/* Quick Links */}
         <div className="pt-16 flex flex-wrap gap-3 justify-center">
-          <Link 
+          <Link
             href="/services/website-development-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Web Development Patna
           </Link>
-          <Link 
+          <Link
             href="/services/mobile-app-development-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Mobile Apps Patna
           </Link>
-          <Link 
+          <Link
             href="/services/software-development-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Software Solutions Patna
           </Link>
-          <Link 
+          <Link
             href="/services/ai-automation-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >

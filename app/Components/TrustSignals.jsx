@@ -28,10 +28,10 @@ export default function TrustSignals({ hideStats = false }) {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle at center, rgba(59,130,246,0.06) 0%, rgba(59,130,246,0) 70%)" }} />
       <div className="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* --- BY THE NUMBERS --- */}
         {!hideStats && (
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
@@ -53,7 +53,7 @@ export default function TrustSignals({ hideStats = false }) {
                 Empowering global brands with high-performance digital infrastructure.
               </motion.p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { number: "200+", label: "Projects Delivered", desc: "Successfully engineered systems." },
@@ -61,8 +61,8 @@ export default function TrustSignals({ hideStats = false }) {
                 { number: "5+", label: "Years Experience", desc: "Mastering the digital landscape." },
                 { number: "99%", label: "Client Satisfaction", desc: "Driven by transparent processes." }
               ].map((stat, idx) => (
-                <motion.div 
-                  key={idx} 
+                <motion.div
+                  key={idx}
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                   className="group relative p-5 md:p-6 rounded-none bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-white/10"
@@ -82,7 +82,7 @@ export default function TrustSignals({ hideStats = false }) {
         )}
 
         {/* --- WHY CHOOSE US (BENTO GRID) --- */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
@@ -97,47 +97,47 @@ export default function TrustSignals({ hideStats = false }) {
               Why Businesses <span className="text-[#ff3c00]">Choose Us</span>
             </motion.h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
             {[
-              { 
-                icon: Zap, 
-                title: "Performance-focused", 
+              {
+                icon: Zap,
+                title: "Performance-focused",
                 desc: "We engineer systems optimized for speed, Core Web Vitals, and UX, making us a top-rated software company in Patna.",
                 span: "md:col-span-3",
                 color: "from-orange-500/10"
               },
-              { 
-                icon: ShieldCheck, 
-                title: "Scalable Architecture", 
+              {
+                icon: ShieldCheck,
+                title: "Scalable Architecture",
                 desc: "Codebases and cloud infrastructure designed by a premium website company in Patna, Bihar, to grow seamlessly alongside your business.",
                 span: "md:col-span-3",
                 color: "from-blue-500/10"
               },
-              { 
-                icon: Users, 
-                title: "Founder-led Execution", 
+              {
+                icon: Users,
+                title: "Founder-led Execution",
                 desc: "Direct involvement from technical founders of our software company in Patna, Bihar, ensuring strategic alignment.",
                 span: "md:col-span-2",
                 color: "from-purple-500/10"
               },
-              { 
-                icon: TrendingUp, 
-                title: "SEO-first Systems", 
+              {
+                icon: TrendingUp,
+                title: "SEO-first Systems",
                 desc: "In-built semantic HTML and schema architecture designed by a leading website company in Patna to dominate search rankings across India.",
                 span: "md:col-span-2",
                 color: "from-emerald-500/10"
               },
-              { 
-                icon: Settings, 
-                title: "Long-term Support", 
+              {
+                icon: Settings,
+                title: "Long-term Support",
                 desc: "Continuous maintenance and security updates from a trusted software company in Bihar and India post-launch.",
                 span: "md:col-span-2",
                 color: "from-pink-500/10"
               },
-              { 
-                icon: MessageSquare, 
-                title: "Transparent Communication", 
+              {
+                icon: MessageSquare,
+                title: "Transparent Communication",
                 desc: "As a reliable software and website company in Patna, Bihar, we offer clear roadmaps, realistic timelines, and updates with zero hidden complexities.",
                 span: "md:col-span-6",
                 color: "from-[#ff3c00]/10"
@@ -145,23 +145,23 @@ export default function TrustSignals({ hideStats = false }) {
             ].map((reason, idx) => {
               const IconComponent = reason.icon;
               return (
-                <motion.div 
-                  key={idx} 
+                <motion.div
+                  key={idx}
                   variants={itemVariants}
                   className={`group relative p-5 md:p-6 rounded-none bg-[#0A0A0A] border border-white/5 hover:border-[#ff3c00]/30 transition-all duration-700 overflow-hidden ${reason.span}`}
                 >
                   {/* Background Accent */}
                   <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${reason.color} to-transparent opacity-0 group-hover:opacity-100 blur-[80px] transition-all duration-700 pointer-events-none`} />
-                  
+
                   <div className="relative z-10">
                     <div className="w-9 h-9 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-[#ff3c00] mb-5 group-hover:scale-110 group-hover:bg-[#ff3c00] group-hover:text-black transition-all duration-500 shadow-inner">
                       <IconComponent className="w-4.5 h-4.5" />
                     </div>
-                    
+
                     <h3 className="text-lg md:text-xl font-display font-bold text-white mb-2 tracking-tight uppercase">{reason.title}</h3>
                     <p className="text-gray-400 font-light leading-relaxed max-w-xl group-hover:text-gray-300 transition-colors duration-500 text-xs md:text-sm">{reason.desc}</p>
                   </div>
-                  
+
                   {/* Modern Border Accent */}
                   <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#ff3c00]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </motion.div>
@@ -169,7 +169,7 @@ export default function TrustSignals({ hideStats = false }) {
             })}
           </div>
         </motion.div>
-        
+
       </div>
     </section>
   );

@@ -65,9 +65,19 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none mb-8"
+            className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-8"
           >
-            Frequently Asked <span className="text-[#FF3B00]">Questions</span>
+            {title?.toLowerCase() === "home" ? (
+              <>Frequently Asked Questions About <span className="text-[#FF3B00]">Webflora Technologies</span></>
+            ) : title?.toLowerCase().includes("website") ? (
+              <>Frequently Asked Questions About <span className="text-[#FF3B00]">Website Development</span></>
+            ) : title?.toLowerCase().includes("software") ? (
+              <>Frequently Asked Questions About <span className="text-[#FF3B00]">Software Development</span></>
+            ) : title?.toLowerCase().includes("mobile") ? (
+              <>Frequently Asked Questions About <span className="text-[#FF3B00]">Mobile App Development</span></>
+            ) : (
+              <>Frequently Asked <span className="text-[#FF3B00]">Questions</span></>
+            )}
           </motion.h2>
           
           <motion.p 
@@ -80,32 +90,32 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
         </div>
 
         {/* ACCORDION ITEMS */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => (
             <motion.div
               key={faq.id}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: idx * 0.05 }}
-              className={`rounded-3xl border transition-all duration-500 overflow-hidden ${
+              className={`rounded-2xl border transition-all duration-500 overflow-hidden ${
                 expandedIndex === idx 
-                  ? "border-[#FF3B00] bg-white/[0.03] shadow-[0_0_50px_rgba(255,59,0,0.1)]" 
-                  : "border-white/10 bg-white/[0.01] hover:border-white/20"
+                  ? "border-[#FF3B00] bg-white/[0.02] shadow-[0_0_40px_rgba(255,59,0,0.08)]" 
+                  : "border-white/5 bg-white/[0.005] hover:border-white/10"
               }`}
             >
               <button 
                 onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
-                className="w-full p-5 md:p-6 text-left flex items-center gap-4 md:gap-6"
+                className="w-full p-4 md:p-5 text-left flex items-center gap-3 md:gap-5"
                 aria-expanded={expandedIndex === idx}
                 aria-label={`${expandedIndex === idx ? 'Collapse' : 'Expand'} answer to: ${faq.question}`}
               >
-                <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-xl md:rounded-2xl flex items-center justify-center transition-all duration-500 ${
+                <div className={`w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl flex items-center justify-center transition-all duration-500 ${
                   expandedIndex === idx ? "bg-[#FF3B00] text-black" : "bg-white/5 text-[#FF3B00]"
                 }`}>
-                  <Icon icon={faq.icon || "lucide:help-circle"} className="text-xl md:text-2xl" />
+                  <Icon icon={faq.icon || "lucide:help-circle"} className="text-lg md:text-xl" />
                 </div>
                 
-                <h3 className={`text-base md:text-xl font-bold flex-1 transition-colors ${
+                <h3 className={`text-sm sm:text-base md:text-lg font-semibold flex-1 transition-colors ${
                   expandedIndex === idx ? "text-white" : "text-gray-300 hover:text-white"
                 }`}>
                   {faq.question}
@@ -115,7 +125,7 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                   animate={{ rotate: expandedIndex === idx ? 180 : 0 }}
                   className="text-[#FF3B00] shrink-0"
                 >
-                  <Icon icon="lucide:chevron-down" width={24} className="md:w-8 md:h-8" />
+                  <Icon icon="lucide:chevron-down" width={20} className="md:w-6 md:h-6" />
                 </motion.div>
               </button>
               
@@ -125,16 +135,16 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <div className="px-8 md:px-10 pb-10 pt-2">
-                      <div className="h-[1px] w-full bg-gradient-to-r from-[#FF3B00]/40 to-transparent mb-8" />
-                      <p className="text-base text-gray-400 leading-relaxed font-light max-w-4xl mb-6">
+                    <div className="px-6 md:px-8 pb-6 pt-2">
+                      <div className="h-[1px] w-full bg-gradient-to-r from-[#FF3B00]/30 to-transparent mb-5" />
+                      <p className="text-xs sm:text-sm text-gray-400 leading-relaxed font-light max-w-4xl mb-5">
                         {faq.answer}
                       </p>
-                      <button aria-label="Get Started with Webflora Technologies" className="flex items-center gap-3 px-8 py-4 rounded-xl border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">
+                      <button aria-label="Get Started with Webflora Technologies" className="flex items-center gap-2.5 px-6 py-3 rounded-lg border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] text-sm font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">
                         Get Started
-                        <Icon icon="lucide:arrow-right" width={18} className="group-hover:translate-x-1 transition-transform" />
+                        <Icon icon="lucide:arrow-right" width={16} className="group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </motion.div>

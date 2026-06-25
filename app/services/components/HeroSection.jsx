@@ -39,8 +39,16 @@ export default function HeroSection() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black pt-32 pb-20 px-6 border-b border-white/5">
         
         {/* Background Grids & Orbs */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute inset-0 bg-grid opacity-10" />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <div className="creative-grid-bg" />
+          <div className="creative-grid-dots" />
+
+          {/* Rising glowing dots */}
+          <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 4)", "--duration": "10s", "--delay": "0s" }} />
+          <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6,0_0_20px_#3b82f6]" style={{ left: "calc(45px * 9)", "--duration": "13s", "--delay": "2s" }} />
+          <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 15)", "--duration": "9s", "--delay": "4s" }} />
+          <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-orange-400 rounded-full shadow-[0_0_10px_#fb923c,0_0_20px_#fb923c]" style={{ left: "calc(45px * 20)", "--duration": "15s", "--delay": "1s" }} />
+          <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 26)", "--duration": "11s", "--delay": "3s" }} />
           <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#FF3B00]/10 blur-[120px] orb-pulse" />
           <div className="absolute bottom-[10%] left-[5%] w-[300px] h-[300px] rounded-full bg-blue-600/5 blur-[100px] orb-pulse" />
         </div>

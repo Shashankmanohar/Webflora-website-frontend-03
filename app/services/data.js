@@ -160,44 +160,114 @@ export const servicesData = {
     ],
     "faqs": [
       {
-        "question": "How much does website development cost in Patna?",
-        "answer": "Website development costs depend on project complexity, design requirements, and scalability. At Webflora Technologies, a custom basic business website package starts from ₹25,000, while custom e-commerce web applications and enterprise portals are priced competitively based on features.",
+        "question": "How much does a website cost in Patna?",
+        "answer": "At Webflora Technologies, our custom basic website package starts from ₹25,000. E-commerce systems, custom portals, and enterprise-grade web applications are priced based on the number of features, API integrations, database complexity, and design requirements.",
         "icon": "lucide:wallet"
       },
       {
-        "question": "Why is Webflora the best website development company in Patna?",
-        "answer": "We are an MSME-registered (UDYAM-BR-26-0183379) professional agency offering custom, sub-second loading Next.js and React websites. We don't use generic, slow templates; we design custom interfaces with a strong focus on local SEO, speed, and conversion metrics.",
+        "question": "Which is the best website company in Bihar?",
+        "answer": "Webflora Technologies is considered a top-rated website development company in Bihar. We are an MSME-registered (UDYAM-BR-26-0183379) professional agency offering custom, sub-second loading Next.js and React web architectures with zero slow templates, solid local SEO, and full source code ownership.",
         "icon": "lucide:award"
       },
       {
-        "question": "Do you create SEO-friendly websites?",
-        "answer": "Yes, all websites are developed with technical SEO best practices, mobile responsiveness, fast loading speed, structured JSON-LD schemas, and Core Web Vitals optimization to improve search engine visibility and user experience.",
-        "icon": "lucide:search"
-      },
-      {
-        "question": "Which technologies do you use for web development?",
-        "answer": "We use modern technologies including Next.js, React, Tailwind CSS, Node.js, MongoDB, PostgreSQL, and scalable backend frameworks to build high-performance websites and custom web applications.",
-        "icon": "lucide:code"
-      },
-      {
-        "question": "Can you redesign existing websites?",
-        "answer": "Yes, we redesign outdated websites by improving UI/UX, page performance, SEO structure, mobile responsiveness, loading speed, and overall user experience for better business results.",
-        "icon": "lucide:refresh-cw"
-      },
-      {
-        "question": "Do you develop ecommerce websites?",
-        "answer": "Yes, we build custom ecommerce websites with secure payment gateways, inventory systems, product management, order tracking, and scalable architecture for online businesses in Patna and Bihar.",
-        "icon": "lucide:shopping-cart"
-      },
-      {
-        "question": "How long does it take to build a website?",
-        "answer": "Website development timelines vary depending on project requirements. Most custom business websites take between 2 to 6 weeks, while advanced platforms and SaaS web applications may require longer development cycles.",
+        "question": "How long does website development take?",
+        "answer": "A standard corporate or landing page typically takes 2 to 4 weeks. E-commerce platforms and custom database portals generally take 4 to 8 weeks, while complex enterprise web systems may span 8 to 12 weeks from planning to final deployment.",
         "icon": "lucide:calendar"
       },
       {
-        "question": "Do you provide website maintenance services?",
-        "answer": "Yes, we provide website maintenance, security updates, performance optimization, backups, scalability improvements, and technical support after deployment.",
+        "question": "Do you build SEO-friendly websites?",
+        "answer": "Yes, all our websites are engineered with technical SEO best practices. This includes semantic HTML5 layouts, optimized meta tags, automated XML sitemaps, JSON-LD schema markup, fast loading speeds, and responsive design to rank on Google.",
+        "icon": "lucide:search"
+      },
+      {
+        "question": "Do you provide maintenance?",
+        "answer": "Yes, we offer monthly and annual maintenance support. This covers regular off-site backups, security patching, library updates, content revisions, server health monitoring, and minor feature additions to keep your system active.",
         "icon": "lucide:shield-check"
+      },
+      {
+        "question": "Can I rank my business on Google?",
+        "answer": "Yes. By building a fast, structured, mobile-responsive website and integrating localized keyword targeting, schema markup, and optimized business profiles, you can rank your business on Google Search and Maps.",
+        "icon": "lucide:trending-up"
+      },
+      {
+        "question": "What technologies do you use?",
+        "answer": "We build using Next.js, React, Tailwind CSS, Node.js, Express, Python, PostgreSQL, MongoDB, and AWS to deliver high-performance, robust, and secure web solutions.",
+        "icon": "lucide:code"
+      },
+      {
+        "question": "Will my website look good on mobile?",
+        "answer": "Yes. Every website we build is 100% mobile-responsive, utilizing flexible grid frameworks so that layout elements render perfectly on all devices, from small smartphones to wide desktop monitors.",
+        "icon": "lucide:smartphone"
+      },
+      {
+        "question": "Do I get complete ownership of the source code?",
+        "answer": "Yes, we provide full source code ownership and repository access once the project is completed and final payments are cleared.",
+        "icon": "lucide:key"
+      },
+      {
+        "question": "Do you provide domain registration and cloud hosting?",
+        "answer": "Yes, we assist in domain registration and set up cloud hosting on secure providers like AWS, Vercel, Hostinger, or custom VPS containers depending on your project needs.",
+        "icon": "lucide:globe"
+      },
+      {
+        "question": "Can you redesign my existing website?",
+        "answer": "Yes, we redesign legacy websites to update old UI/UX layouts, improve page loading speed, update security configurations, and implement mobile-first styling.",
+        "icon": "lucide:refresh-cw"
+      },
+      {
+        "question": "Do you develop e-commerce websites with payment gateways?",
+        "answer": "Yes, we build secure, fully-featured e-commerce stores with payment gateway integrations (Razorpay, Stripe), product catalogs, secure checkout steps, and admin inventory dashboards.",
+        "icon": "lucide:shopping-cart"
+      },
+      {
+        "question": "What is the difference between custom development and WordPress?",
+        "answer": "Custom React/Next.js development provides faster load speeds, better security, lower server costs, and unlimited layout flexibility. WordPress is a generic template platform that is easier for non-technical edits but suffers from slower speeds and plugin security risks.",
+        "icon": "lucide:layers"
+      },
+      {
+        "question": "Do you write content for the website?",
+        "answer": "We can assist with SEO copywriting, keyword optimization, and professional content creation tailored to your industry to help improve search rankings.",
+        "icon": "lucide:file-text"
+      },
+      {
+        "question": "Can you integrate third-party APIs into my site?",
+        "answer": "Yes, we can integrate any third-party REST or GraphQL APIs, such as CRM systems, SMS gateways, WhatsApp APIs, payment portals, and ERP pipelines.",
+        "icon": "lucide:link"
+      },
+      {
+        "question": "How do you measure website loading speed?",
+        "answer": "We optimize our builds to pass Google Core Web Vitals and target 90+ performance scores on tools like Google PageSpeed Insights and Lighthouse.",
+        "icon": "lucide:activity"
+      },
+      {
+        "question": "What is schema markup and why is it important?",
+        "answer": "Schema markup (JSON-LD) is structured data added to your HTML to help search engines understand your content better, allowing you to show rich snippets and rank on Google.",
+        "icon": "lucide:hash"
+      },
+      {
+        "question": "Can I update content on my website on my own?",
+        "answer": "Yes, we build easy-to-use custom admin panels or integrate headless Content Management Systems (CMS) like Sanity or Strapi so you can edit text, images, and blogs.",
+        "icon": "lucide:edit"
+      },
+      {
+        "question": "Do you provide SSL certificates?",
+        "answer": "Yes, we configure free SSL certificates (Let's Encrypt) to secure connection protocols (HTTPS) and safeguard user data.",
+        "icon": "lucide:lock"
+      },
+      {
+        "question": "Do you develop websites for startups?",
+        "answer": "Yes, we work closely with startups to design and deploy MVPs (Minimum Viable Products), high-converting landing pages, and interactive product prototypes.",
+        "icon": "lucide:rocket"
+      },
+      {
+        "question": "What information do you need from me to start?",
+        "answer": "We need your company profile, branding assets (logo, colors), project objectives, site layout preferences, and reference websites that you like.",
+        "icon": "lucide:info"
+      },
+      {
+        "question": "Do you offer digital marketing services after launching?",
+        "answer": "Yes, we provide performance digital marketing, including search engine optimization (SEO), local search ranking campaigns, and social media ad management.",
+        "icon": "lucide:bar-chart"
       }
     ],
     "techStack": [
@@ -257,7 +327,37 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Website Development Services in Patna | Webflora Technologies"
+    "seoTitle": "Website Development Services in Patna | Webflora Technologies",
+    "pricing": [
+      {
+        "name": "Startup Website",
+        "subtitle": "Best for local business presence",
+        "price": "₹25,000",
+        "period": "one-time cost",
+        "features": [
+          "Responsive React/Next.js Layout",
+          "5 Core Pages + Contact Form",
+          "Standard Local SEO Setup",
+          "Sub-1s Page Loading Speed",
+          "1 Month Post-Launch Support"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Custom E-Commerce",
+        "subtitle": "Fully featured online storefront",
+        "price": "₹75,000+",
+        "period": "based on features",
+        "features": [
+          "Bespoke Product Catalog & Checkout",
+          "Razorpay / Stripe Payment Gate",
+          "Admin Dashboard & Inventory Control",
+          "Advanced SEO & Speed Optimized",
+          "3 Months Support SLA"
+        ],
+        "popular": true
+      }
+    ]
   },
   "mobile-app-development-company-in-patna": {
     "title": "Mobile App Development Services in Patna",
@@ -506,7 +606,37 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Mobile App Development in Patna | Android & iOS Apps | Webflora"
+    "seoTitle": "Mobile App Development in Patna | Android & iOS Apps | Webflora",
+    "pricing": [
+      {
+        "name": "MVP Mobile App",
+        "subtitle": "Build to validate your app idea",
+        "price": "₹80,000",
+        "period": "one-time cost",
+        "features": [
+          "Flutter or React Native UI",
+          "Auth (Email/OTP) & User Profile",
+          "Clean Firebase/Node API Backend",
+          "App Store & Google Play Setup",
+          "30 Days Launch Warranty"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Custom Enterprise App",
+        "subtitle": "Heavy database custom mobile app",
+        "price": "₹1,80,000+",
+        "period": "based on specs",
+        "features": [
+          "Bespoke Design System Integration",
+          "Role-Based Admin Dashboards",
+          "Real-Time Notifications & Chats",
+          "AWS VPS Backend Configuration",
+          "6 Months Maintenance Contract"
+        ],
+        "popular": true
+      }
+    ]
   },
   "software-development-company-in-patna": {
     "title": "Custom Software Development Services in Patna",
@@ -745,7 +875,37 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Custom Software Development in Patna Bihar | Webflora Technologies"
+    "seoTitle": "Custom Software Development in Patna Bihar | Webflora Technologies",
+    "pricing": [
+      {
+        "name": "SaaS Starter",
+        "subtitle": "Bespoke web application build",
+        "price": "₹1,20,000",
+        "period": "one-time cost",
+        "features": [
+          "Next.js Dashboard UI Portal",
+          "Database Integration (Postgre/Mongo)",
+          "Auth and User Roles Controls",
+          "Standard Payment Webhook/Stripe",
+          "3 Months System SLA"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Custom Enterprise Suite",
+        "subtitle": "Full CRM / ERP workflow software",
+        "price": "₹2,50,000+",
+        "period": "custom scope",
+        "features": [
+          "Bespoke Cloud Pipeline Structure",
+          "Multi-Tenant Database Scaling",
+          "Autonomous Automation (n8n APIs)",
+          "Dedicated Staging Environments",
+          "12 Months Maintenance SLA"
+        ],
+        "popular": true
+      }
+    ]
   },
   "ai-automation-company-in-patna": {
     "title": "AI Automation & Chatbot Services in Patna",
@@ -1018,7 +1178,37 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "AI Automation Services in Patna | Chatbots & Workflows | Webflora"
+    "seoTitle": "AI Automation Services in Patna | Chatbots & Workflows | Webflora",
+    "pricing": [
+      {
+        "name": "AI Chatbot Starter",
+        "subtitle": "Smart automated responder setup",
+        "price": "₹45,000",
+        "period": "one-time cost",
+        "features": [
+          "WhatsApp & Web Chatbot Flows",
+          "Custom Knowledge Base Sync",
+          "Lead Capture Integration",
+          "Basic Analytics Dashboard",
+          "30 Days Tweak Guarantee"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Enterprise AI Agent",
+        "subtitle": "Autonomous workflows & LLMs",
+        "price": "₹1,50,000+",
+        "period": "custom scope",
+        "features": [
+          "Multi-Agent Orchestration (n8n)",
+          "Private LLM/RAG Architecture",
+          "Internal ERP/CRM API Sync",
+          "Ongoing Conversation Audits",
+          "Priority SLA Maintenance Support"
+        ],
+        "popular": true
+      }
+    ]
   },
   "digital-marketing-agency-in-patna": {
     "title": "Performance Digital Marketing Services in Patna",
@@ -1248,7 +1438,37 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Digital Marketing Agency in Patna | SEO & Lead Gen | Webflora"
+    "seoTitle": "Digital Marketing Agency in Patna | SEO & Lead Gen | Webflora",
+    "pricing": [
+      {
+        "name": "Local Growth Plan",
+        "subtitle": "Boost local search views & maps",
+        "price": "₹15,000",
+        "period": "per month",
+        "features": [
+          "Google Maps Ranking Optimization",
+          "Keyword Auditing & Metadata Setup",
+          "10 High-Authority Local Citations",
+          "On-Page SEO Technical Fixes",
+          "Monthly Search Traffic Reports"
+        ],
+        "popular": false
+      },
+      {
+        "name": "National Scale Plan",
+        "subtitle": "Rank for competitive terms across India",
+        "price": "₹35,000+",
+        "period": "per month",
+        "features": [
+          "Competitive National Keyword Analysis",
+          "Bespoke SEO Link-Building Campaigns",
+          "Content Optimization Copywriting",
+          "Technical Schema Audit Fixes",
+          "Bi-Weekly Performance Calls"
+        ],
+        "popular": true
+      }
+    ]
   },
   "software-company-in-bihar": {
     "title": "Software Development Company in Bihar",
@@ -1487,7 +1707,37 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Software Development Company in Bihar | Custom Cloud Systems | Webflora"
+    "seoTitle": "Software Development Company in Bihar | Custom Cloud Systems | Webflora",
+    "pricing": [
+      {
+        "name": "MSME ERP Starter",
+        "subtitle": "Bespoke database solutions for Bihar",
+        "price": "₹95,000",
+        "period": "one-time cost",
+        "features": [
+          "Next.js Inventory & Billing Panel",
+          "Safe Database Sync (PostgreSQL)",
+          "Role-Based User Permissions",
+          "Automated WhatsApp Alert Setup",
+          "1 Year Basic Bug Support"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Enterprise Cloud Portal",
+        "subtitle": "Robust cloud platforms for MSMEs",
+        "price": "₹2,20,000+",
+        "period": "custom scope",
+        "features": [
+          "Scalable AWS Cloud Infrastructure",
+          "High-Traffic Database Architectures",
+          "Custom Automated Billing Engines",
+          "Multi-Tenant User Accounts",
+          "Full Source Code Transfer"
+        ],
+        "popular": true
+      }
+    ]
   },
   "digital-marketing-agency-in-bihar": {
     "title": "Digital Marketing Agency in Bihar",
@@ -1717,6 +1967,36 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Digital Marketing Agency in Bihar | Performance SEO & PPC | Webflora"
+    "seoTitle": "Digital Marketing Agency in Bihar | Performance SEO & PPC | Webflora",
+    "pricing": [
+      {
+        "name": "Bihar Local Visibility",
+        "subtitle": "Lead generation for local hubs",
+        "price": "₹12,000",
+        "period": "per month",
+        "features": [
+          "Patna & Bihar Local Maps Setup",
+          "Local Competitor Keyword Audit",
+          "Hindi & English Ad Creatives",
+          "Local Citation Cataloging",
+          "Bi-Weekly Traffic Reports"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Pan-India Scale Plan",
+        "subtitle": "Target nation-wide high-intent customers",
+        "price": "₹30,000+",
+        "period": "per month",
+        "features": [
+          "National PPC Ad Optimization",
+          "SEO Link-Building Campaigns",
+          "Advanced Landing Page Testing",
+          "High-Authority Backlink Setup",
+          "Weekly Performance Reviews"
+        ],
+        "popular": true
+      }
+    ]
   }
 };

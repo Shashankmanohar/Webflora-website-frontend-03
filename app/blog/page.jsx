@@ -253,9 +253,9 @@ const BlogPage = () => {
                         </div>
 
                         <Link href={`/blog/${post.slug}`} className="block group/title">
-                          <h3 className="text-3xl font-bold mb-4 leading-[1.2] tracking-tight group-hover/title:text-brand-red transition-colors duration-300">
+                          <h2 className="text-3xl font-bold mb-4 leading-[1.2] tracking-tight group-hover/title:text-brand-red transition-colors duration-300">
                             {post.title}
-                          </h3>
+                          </h2>
                         </Link>
 
                         <p className="text-gray-300 text-base leading-relaxed mb-8 line-clamp-3 font-normal">

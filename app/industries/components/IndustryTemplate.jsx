@@ -105,7 +105,16 @@ const HeroWrapper = ({ data }) => {
         <div className="hero-blob-3" style={{ position: "absolute", bottom: "25%", right: "25%", width: 500, height: 500, background: "rgba(168,85,247,0.10)", filter: "blur(100px)", borderRadius: "50%", mixBlendMode: "screen" }} />
       </div>
 
-      <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none", opacity: 0.5, backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)`, backgroundSize: "50px 50px", WebkitMaskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)", maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%)" }} />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        <div className="creative-grid-bg" />
+        <div className="creative-grid-dots" />
+        
+        {/* Rising glowing dots */}
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 4)", "--duration": "9s", "--delay": "0s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6,0_0_15px_#3b82f6]" style={{ left: "calc(45px * 12)", "--duration": "11s", "--delay": "2s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_10px_#ff3c00,0_0_20px_#ff3c00]" style={{ left: "calc(45px * 20)", "--duration": "13s", "--delay": "4s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-orange-400 rounded-full shadow-[0_0_8px_#fb923c,0_0_15px_#fb923c]" style={{ left: "calc(45px * 28)", "--duration": "10s", "--delay": "1s" }} />
+      </div>
 
       <div className="relative z-10 text-center w-full max-w-6xl mx-auto">
         <FadeInUp delay={0.1} className="inline-flex items-center gap-2 px-3 py-1 mb-10 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-sm">

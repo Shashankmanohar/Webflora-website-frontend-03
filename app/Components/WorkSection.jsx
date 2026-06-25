@@ -216,7 +216,7 @@ export default function WorkSection() {
                     {project.category}
                   </motion.span>
 
-                  <motion.h3
+                  <motion.h2
                     variants={{
                       rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
                       hover: { y: 0, opacity: 1 },
@@ -225,7 +225,7 @@ export default function WorkSection() {
                     className="font-display font-bold text-lg md:text-xl text-white mb-1.5 leading-tight line-clamp-2"
                   >
                     {project.title}
-                  </motion.h3>
+                  </motion.h2>
 
                   <motion.p
                     variants={{

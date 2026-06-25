@@ -51,7 +51,14 @@ export default function AllIndustriesPage() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-red-600/5 rounded-full blur-3xl" />
         <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-[#FF3B00]/5 rounded-full blur-3xl" />
-        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-[0.03]" />
+        <div className="creative-grid-bg" />
+        <div className="creative-grid-dots" />
+        
+        {/* Rising glowing dots */}
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 4)", "--duration": "9s", "--delay": "0s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6,0_0_15px_#3b82f6]" style={{ left: "calc(45px * 12)", "--duration": "11s", "--delay": "2s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_10px_#ff3c00,0_0_20px_#ff3c00]" style={{ left: "calc(45px * 20)", "--duration": "13s", "--delay": "4s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-orange-400 rounded-full shadow-[0_0_8px_#fb923c,0_0_15px_#fb923c]" style={{ left: "calc(45px * 28)", "--duration": "10s", "--delay": "1s" }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">

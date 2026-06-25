@@ -30,19 +30,22 @@ export default function HomeIntroSection() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-6 mb-16">
+        <div className="text-center max-w-4xl mx-auto space-y-6 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-xs text-orange-400 font-medium tracking-wide uppercase">
             ⭐ Leading Tech Partner in Bihar
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight uppercase">
-            Top-Rated <br />
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight uppercase font-display">
+            Leading Software Company <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-extrabold drop-shadow-[0_0_30px_rgba(251,146,60,0.15)]">
-              Engineering Scalable Solutions
+              in Patna Bihar
             </span>
           </h2>
           <div className="h-[2px] w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded mx-auto" />
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
-            Webflora Technologies (Udyam: UDYAM-BR-26-0183379) is the leading software company in Patna, Bihar, offering custom software development, website development, mobile application builds, digital marketing, and bespoke AI automation solutions in India.
+            Webflora Technologies is a leading software company in Patna, Bihar, helping businesses accelerate digital transformation through custom software development, website development, mobile applications, AI automation, and digital marketing solutions.
+          </p>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+            We build scalable, secure, and high-performance digital products that help startups, SMEs, and enterprises improve efficiency, automate operations, and drive business growth.
           </p>
         </div>
 

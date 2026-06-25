@@ -189,12 +189,12 @@ export default function CaseStudiesPage() {
 
                 {/* Content Area */}
                 <div className="flex flex-col flex-1 p-6 md:p-8">
-                  <h3
+                  <h2
                     onClick={() => router.push(`/case-studies/${project.slug}`)}
                     className="text-xl md:text-2xl font-bold text-white mb-3 cursor-pointer group-hover:text-primary transition-colors line-clamp-2"
                   >
                     {project.title}
-                  </h3>
+                  </h2>
 
                   <p className="text-neutral-500 text-sm mb-8 line-clamp-3 font-light leading-relaxed">
                     {project.description}

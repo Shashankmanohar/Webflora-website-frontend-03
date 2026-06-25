@@ -16,6 +16,7 @@ import SEOContentBlock from "../../Components/SEOContentBlock";
 import { servicesData } from "../data";
 
 import WorkSection from "../../Components/WorkSection";
+import BentoWhyChoose from "../../Components/WhyChooseSection";
 
 const ServiceTemplate = ({ data }) => {
   return (
@@ -32,6 +33,8 @@ const ServiceTemplate = ({ data }) => {
         <IndustriesWrapper data={data} />
         <BenefitsWrapper data={data} />
         <TechStackWrapper data={data} />
+        <BentoWhyChoose />
+        <PricingWrapper data={data} />
         <TestimonialWrapper />
         <WorkSection />
         <DetailedArticleWrapper data={data} />
@@ -103,8 +106,16 @@ const HeroWrapper = ({ data }) => {
     <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-black pt-32 pb-20 px-6 border-b border-white/5">
       
       {/* Background Grids & Orbs */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="creative-grid-bg" />
+        <div className="creative-grid-dots" />
+
+        {/* Rising glowing dots */}
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 5)", "--duration": "8s", "--delay": "0s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_10px_#ff3c00,0_0_20px_#ff3c00]" style={{ left: "calc(45px * 10)", "--duration": "12s", "--delay": "1.5s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6,0_0_15px_#3b82f6]" style={{ left: "calc(45px * 16)", "--duration": "9s", "--delay": "3.5s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_10px_#ff3c00,0_0_20px_#ff3c00]" style={{ left: "calc(45px * 22)", "--duration": "14s", "--delay": "0.5s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-orange-400 rounded-full shadow-[0_0_8px_#fb923c,0_0_15px_#fb923c]" style={{ left: "calc(45px * 28)", "--duration": "10s", "--delay": "2.5s" }} />
         
         {/* Colorful glows */}
         <div 
@@ -315,9 +326,9 @@ const BenefitsWrapper = ({ data }) => {
                <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
                  Unmatched Value
                </FadeInUp>
-               <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none">
-                 WHY WE ARE <br/><span className="text-gray-600 font-outline">DIFFERENT.</span>
-               </h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase">
+                  Benefits
+                </h2>
              </div>
              <p className="text-lg text-gray-400 max-w-sm font-light">We don't just deliver services; we deliver measurable business outcomes.</p>
           </div>
@@ -360,7 +371,7 @@ const SubServicesWrapper = ({ data }) => {
               Comprehensive Solutions
             </FadeInUp>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-              OUR <span className="text-gray-600 font-outline">EXPERTISE.</span>
+              Features
             </h2>
           </div>
           
@@ -531,7 +542,7 @@ const ProcessWrapper = ({ data }) => {
               How We Work
             </FadeInUp>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-              OUR <span className="text-gray-600 font-outline">PROCESS.</span>
+              Development Process
             </h2>
           </div>
           
@@ -566,25 +577,251 @@ const ProcessWrapper = ({ data }) => {
 };
 
 const IndustriesWrapper = ({ data }) => {
-  if (!data.industries || data.industries.length === 0) return null;
+  const getIndustryContent = (title) => {
+    const name = title.toLowerCase();
+    
+    // Website Development
+    if (name.includes("website") || name.includes("web design")) {
+      return [
+        {
+          industry: "Coaching Institutes",
+          title: "Website Development for Coaching Institutes",
+          desc: "We build custom educational portals for coaching centers, institutes, and individual educators. Our coaching site development features integrated online registration platforms, course catalog filter systems, student ranker achievement walls, downloadable syllabi, and local search optimization templates. This establishes credibility, automates registration tasks, and maximizes local student admissions.",
+          icon: "solar:backpack-bold-duotone"
+        },
+        {
+          industry: "Hospitals",
+          title: "Website Development for Hospitals",
+          desc: "Healthcare website designs require clarity, responsiveness, and accessibility. We construct hospital and clinic web platforms featuring doctor database directory panels, department service descriptions, online appointment request configurations, patient guidance instructions, and local clinical search optimization to help local patients connect with medical specialists.",
+          icon: "solar:health-bold-duotone"
+        },
+        {
+          industry: "Real Estate",
+          title: "Website Development for Real Estate",
+          desc: "We engineer property catalog websites for real estate agencies and brokers. Features include advanced property search filters, interactive mapping systems, detailed neighborhood information, virtual 360-degree tour integration, high-resolution layout carousels, and high-intent contact forms to capture buyer inquiries.",
+          icon: "solar:home-bold-duotone"
+        },
+        {
+          industry: "Schools",
+          title: "Website Development for Schools",
+          desc: "Educational website portals for schools, colleges, and trusts. We deliver custom websites equipped with admission notice boards, academic calendars, downloadable registration forms, photo galleries, student achievement records, and dedicated parent-teacher contact coordinates.",
+          icon: "solar:square-academic-cap-bold-duotone"
+        },
+        {
+          industry: "Restaurants",
+          title: "Website Development for Restaurants",
+          desc: "Bespoke digital menus and booking configurations for restaurants, cafes, and hotels. We build restaurant websites that feature interactive food menus, reservation scheduling forms, customer reviews, operational hours, and map directions to increase dining covers.",
+          icon: "solar:cup-hot-bold-duotone"
+        },
+        {
+          industry: "Manufacturing Companies",
+          title: "Website Development for Manufacturing Companies",
+          desc: "Industrial B2B website development to showcase production capabilities. We build manufacturing sites that present product catalogs, technical ISO certifications, custom Request for Quote (RFQ) forms, company capability statements, and factory facility galleries.",
+          icon: "solar:settings-bold-duotone"
+        }
+      ];
+    }
+    // Mobile App Development
+    else if (name.includes("mobile") || name.includes("app")) {
+      return [
+        {
+          industry: "Coaching Institutes",
+          title: "Mobile App Development for Coaching Institutes",
+          desc: "Custom coaching apps featuring secure student logins, live virtual classes, mock exam tests, push notifications, batch schedules, offline lecture access, and fee transaction gateways to digitize student management on mobile screens.",
+          icon: "solar:backpack-bold-duotone"
+        },
+        {
+          industry: "Hospitals",
+          title: "Mobile App Development for Hospitals",
+          desc: "Clinical mobile app designs enabling patients to book consultant appointments, attend remote video consultations, download laboratory check reports, receive prescription alarms, and chat with emergency staff.",
+          icon: "solar:health-bold-duotone"
+        },
+        {
+          industry: "Real Estate",
+          title: "Mobile App Development for Real Estate",
+          desc: "Real estate search apps with dynamic geolocation sorting, real-time agent-buyer messaging, saved search alarms, filter configurations, and interactive maps to connect home buyers with local brokers.",
+          icon: "solar:home-bold-duotone"
+        },
+        {
+          industry: "Schools",
+          title: "Mobile App Development for Schools",
+          desc: "Parent-teacher school apps showing student homework records, report cards, class notice boards, fee payment gateways, and school bus GPS coordinates for complete transparency.",
+          icon: "solar:square-academic-cap-bold-duotone"
+        },
+        {
+          industry: "Restaurants",
+          title: "Mobile App Development for Restaurants",
+          desc: "Food ordering apps with digital menu navigation, cart checkouts, secure online payment, live delivery tracking on maps, and customized customer discount systems.",
+          icon: "solar:cup-hot-bold-duotone"
+        },
+        {
+          industry: "Manufacturing Companies",
+          title: "Mobile App Development for Manufacturing Companies",
+          desc: "Operations mobile apps to monitor factory machine parameters, delivery logs, employee shifts, and inventory records for managers on the go.",
+          icon: "solar:settings-bold-duotone"
+        }
+      ];
+    }
+    // Software Development
+    else if (name.includes("software") || name.includes("erp") || name.includes("crm")) {
+      return [
+        {
+          industry: "Coaching Institutes",
+          title: "Software Development for Coaching Institutes",
+          desc: "Coaching ERP systems handling student registration files, automated fee alert pipelines, batch management, mock test scores, and employee shift databases.",
+          icon: "solar:backpack-bold-duotone"
+        },
+        {
+          industry: "Hospitals",
+          title: "Software Development for Hospitals",
+          desc: "Hospital Management Software (HMS) coordinating OPD/IPD registers, patient electronic health files (EHR), inventory pharmacy supplies, and staff billing portals.",
+          icon: "solar:health-bold-duotone"
+        },
+        {
+          industry: "Real Estate",
+          title: "Software Development for Real Estate",
+          desc: "Real estate CRM systems managing broker commissions, property allocation parameters, customer progress history, and sales performance indicators.",
+          icon: "solar:home-bold-duotone"
+        },
+        {
+          industry: "Schools",
+          title: "Software Development for Schools",
+          desc: "School ERP platforms managing student records, library books tracking, employee payroll files, exam results, and administrative credentials.",
+          icon: "solar:square-academic-cap-bold-duotone"
+        },
+        {
+          industry: "Restaurants",
+          title: "Software Development for Restaurants",
+          desc: "Point of Sale (POS) billing software managing kitchen order tickets (KOT), recipe stock levels, GST-compliant transactions, and sales analytics.",
+          icon: "solar:cup-hot-bold-duotone"
+        },
+        {
+          industry: "Manufacturing Companies",
+          title: "Software Development for Manufacturing Companies",
+          desc: "Manufacturing ERP databases coordinating B2B supply chain assets, Bill of Materials (BOM), batch schedules, production pipelines, and vendor invoices.",
+          icon: "solar:settings-bold-duotone"
+        }
+      ];
+    }
+    // Digital Marketing
+    else if (name.includes("marketing") || name.includes("seo")) {
+      return [
+        {
+          industry: "Coaching Institutes",
+          title: "Digital Marketing for Coaching Institutes",
+          desc: "Targeted digital marketing campaigns for coaching centers focusing on admission lead generation, local SEO ranking, and search engine ad optimization.",
+          icon: "solar:backpack-bold-duotone"
+        },
+        {
+          industry: "Hospitals",
+          title: "Digital Marketing for Hospitals",
+          desc: "Patient acquisition campaigns connecting local clinics with patients in need of specialized treatment, optimized maps configurations, and local search ads.",
+          icon: "solar:health-bold-duotone"
+        },
+        {
+          industry: "Real Estate",
+          title: "Digital Marketing for Real Estate",
+          desc: "Lead generation ad programs targeting property buyers, dynamic portal SEO, local map listings, and email nurturing workflows to close property sales.",
+          icon: "solar:home-bold-duotone"
+        },
+        {
+          industry: "Schools",
+          title: "Digital Marketing for Schools",
+          desc: "School admission marketing campaigns, branding advertisements on social channels, and local maps configuration to maximize registrations.",
+          icon: "solar:square-academic-cap-bold-duotone"
+        },
+        {
+          industry: "Restaurants",
+          title: "Digital Marketing for Restaurants",
+          desc: "Local Google Maps optimization, foodie branding campaigns, reservation conversion metrics, and local audience targeting to boost dine-in covers.",
+          icon: "solar:cup-hot-bold-duotone"
+        },
+        {
+          industry: "Manufacturing Companies",
+          title: "Digital Marketing for Manufacturing Companies",
+          desc: "B2B lead generation targeting purchase officers, manufacturing directory indexing, and LinkedIn marketing setups to capture corporate contracts.",
+          icon: "solar:settings-bold-duotone"
+        }
+      ];
+    }
+    // Fallback/AI Automation
+    else {
+      return [
+        {
+          industry: "Coaching Institutes",
+          title: "Automation Solutions for Coaching Institutes",
+          desc: "Autonomous workflow pipelines syncing student registrations, automated Whatsapp alerts, CRM syncs, and teacher schedule notifications.",
+          icon: "solar:backpack-bold-duotone"
+        },
+        {
+          industry: "Hospitals",
+          title: "Automation Solutions for Hospitals",
+          desc: "AI-driven receptionists handling appointment inquiries, automated pharmacy inventory logs, and patient follow-up message pipelines.",
+          icon: "solar:health-bold-duotone"
+        },
+        {
+          industry: "Real Estate",
+          title: "Automation Solutions for Real Estate",
+          desc: "WhatsApp chatbots sorting listing query flows, scheduling property site visits, and assigning prospects to local agents.",
+          icon: "solar:home-bold-duotone"
+        },
+        {
+          industry: "Schools",
+          title: "Automation Solutions for Schools",
+          desc: "Automated parent inquiry workflows, digital fee receipt delivery, notice broadcast automations, and administrative tasks sync.",
+          icon: "solar:square-academic-cap-bold-duotone"
+        },
+        {
+          industry: "Restaurants",
+          title: "Automation Solutions for Restaurants",
+          desc: "Autonomous table booking confirmations, POS transaction logs, customer review requests, and inventory alert setups.",
+          icon: "solar:cup-hot-bold-duotone"
+        },
+        {
+          industry: "Manufacturing Companies",
+          title: "Automation Solutions for Manufacturing Companies",
+          desc: "Autonomous supply chain inventory alerts, automated purchase order generation, and machinery telemetry sync pipelines.",
+          icon: "solar:settings-bold-duotone"
+        }
+      ];
+    }
+  };
+
+  const industries = getIndustryContent(data.title);
 
   return (
-    <section className="py-20 px-6 bg-[#030303] relative border-b border-white/5">
-       <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <div className="mb-16 text-center">
+    <section className="py-24 px-6 bg-[#030303] relative border-b border-white/5">
+       <div className="max-w-7xl mx-auto relative z-10">
+          <div className="mb-20 text-center max-w-3xl mx-auto space-y-4">
             <FadeInUp className="text-[#FF3B00] font-bold uppercase tracking-[0.3em] mb-4 block text-xs">
               Who We Serve
             </FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter">
-              INDUSTRIES <span className="text-gray-600 font-outline">SERVED.</span>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+              Industries <span className="text-orange-600">We Serve</span>
             </h2>
+            <div className="h-[2px] w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded mx-auto" />
+            <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed pt-2">
+              We engineer specialized digital systems tailored to meet the strict technical demands of key commercial sectors.
+            </p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4">
-            {data.industries.map((industry, index) => (
-              <FadeInUp key={index} delay={index * 0.05}>
-                <div className="px-6 py-3 rounded-full bg-neutral-900/40 border border-white/10 hover:border-[#FF3B00] text-gray-300 hover:text-white transition-all cursor-default">
-                  {industry}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industries.map((item, index) => (
+              <FadeInUp key={item.industry} delay={index * 0.05} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl pointer-events-none" />
+                <div className="relative h-full p-8 rounded-[2rem] bg-zinc-950/40 border border-white/5 backdrop-blur-sm hover:border-[#FF3B00]/20 hover:bg-zinc-900/10 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-2">
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FF3B00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  
+                  <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:border-[#FF3B00]/40 transition-all duration-500 group-hover:scale-110">
+                    <SafeIcon icon={item.icon} width={26} className="text-white group-hover:text-[#FF3B00] transition-colors duration-500" />
+                  </div>
+                  
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-4 tracking-tight group-hover:text-[#FF3B00] transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs md:text-sm text-gray-400 font-light leading-relaxed flex-grow">
+                    {item.desc}
+                  </p>
                 </div>
               </FadeInUp>
             ))}
@@ -737,6 +974,228 @@ const DetailedArticleWrapper = ({ data }) => {
             })}
           </div>
 
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PricingWrapper = ({ data }) => {
+  const getPricingPackages = (title) => {
+    const name = title.toLowerCase();
+    
+    if (name.includes("website") || name.includes("web design")) {
+      return [
+        {
+          name: "Startup Website",
+          subtitle: "Best for local business presence",
+          price: "₹25,000",
+          period: "one-time cost",
+          features: [
+            "Responsive React/Next.js Layout",
+            "5 Core Pages + Contact Form",
+            "Standard Local SEO Setup",
+            "Sub-1s Page Loading Speed",
+            "1 Month Post-Launch Support"
+          ],
+          popular: false
+        },
+        {
+          name: "Custom E-Commerce",
+          subtitle: "Fully featured online storefront",
+          price: "₹75,000+",
+          period: "based on features",
+          features: [
+            "Bespoke Product Catalog & Checkout",
+            "Razorpay / Stripe Payment Gate",
+            "Admin Dashboard & Inventory Control",
+            "Advanced SEO & Speed Optimized",
+            "3 Months Support SLA"
+          ],
+          popular: true
+        }
+      ];
+    } else if (name.includes("mobile") || name.includes("app")) {
+      return [
+        {
+          name: "MVP Mobile App",
+          subtitle: "Build to validate your app idea",
+          price: "₹80,000",
+          period: "one-time cost",
+          features: [
+            "Flutter or React Native UI",
+            "Auth (Email/OTP) & User Profile",
+            "Clean Firebase/Node API Backend",
+            "App Store & Google Play Setup",
+            "30 Days Launch Warranty"
+          ],
+          popular: false
+        },
+        {
+          name: "Custom Enterprise App",
+          subtitle: "Heavy database custom mobile app",
+          price: "₹1,80,000+",
+          period: "based on specs",
+          features: [
+            "Bespoke Design System Integration",
+            "Role-Based Admin Dashboards",
+            "Real-Time Notifications & Chats",
+            "AWS VPS Backend Configuration",
+            "6 Months Maintenance Contract"
+          ],
+          popular: true
+        }
+      ];
+    } else if (name.includes("software") || name.includes("erp") || name.includes("crm")) {
+      return [
+        {
+          name: "SaaS Starter",
+          subtitle: "Bespoke web application build",
+          price: "₹1,20,000",
+          period: "one-time cost",
+          features: [
+            "Next.js Dashboard UI Portal",
+            "Database Integration (Postgre/Mongo)",
+            "Auth and User Roles Controls",
+            "Standard Payment Webhook/Stripe",
+            "3 Months System SLA"
+          ],
+          popular: false
+        },
+        {
+          name: "Custom Enterprise Suite",
+          subtitle: "Full CRM / ERP workflow software",
+          price: "₹2,50,000+",
+          period: "custom scope",
+          features: [
+            "Bespoke Cloud Pipeline Structure",
+            "Multi-Tenant Database Scaling",
+            "Autonomous Automation (n8n APIs)",
+            "Dedicated Staging Environments",
+            "12 Months Maintenance SLA"
+          ],
+          popular: true
+        }
+      ];
+    } else if (name.includes("marketing") || name.includes("seo")) {
+      return [
+        {
+          name: "Local Growth Plan",
+          subtitle: "Boost local search views & maps",
+          price: "₹15,000",
+          period: "per month",
+          features: [
+            "Google Maps Ranking Optimization",
+            "Keyword Auditing & Metadata Setup",
+            "10 High-Authority Local Citations",
+            "On-Page SEO Technical Fixes",
+            "Monthly Search Traffic Reports"
+          ],
+          popular: false
+        },
+        {
+          name: "National Scale Plan",
+          subtitle: "Rank for competitive terms across India",
+          price: "₹35,000+",
+          period: "per month",
+          features: [
+            "Competitive National Keyword Analysis",
+            "Bespoke SEO Link-Building Campaigns",
+            "Content Optimization Copywriting",
+            "Technical Schema Audit Fixes",
+            "Bi-Weekly Performance Calls"
+          ],
+          popular: true
+        }
+      ];
+    } else {
+      return [
+        {
+          name: "Discovery & Blueprint",
+          subtitle: "Design and strategy analysis",
+          price: "₹35,000",
+          period: "one-time cost",
+          features: [
+            "Technical Requirement Specs",
+            "UI/UX Layout Sketches",
+            "Technology Stack Evaluation",
+            "Timeline & Cost Estimates",
+            "Architecture Schematic Draft"
+          ],
+          popular: false
+        },
+        {
+          name: "Custom Integration Build",
+          subtitle: "Bespoke full-scale development",
+          price: "₹95,000+",
+          period: "based on scope",
+          features: [
+            "Next.js/React Frontend Layout",
+            "REST/GraphQL API Endpoints",
+            "Autonomous Workflows (n8n/GPT)",
+            "Cloud Deployment (AWS/Vercel)",
+            "3 Months Launch Warranty"
+          ],
+          popular: true
+        }
+      ];
+    }
+  };
+
+  const packages = data.pricing || getPricingPackages(data.title);
+
+  return (
+    <section className="py-24 px-6 bg-[#050505] relative border-y border-white/5 overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10 text-center">
+        <div className="mb-16">
+          <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+            Simple & Transparent
+          </FadeInUp>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+            Pricing
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+          {packages.map((pkg) => (
+            <div 
+              key={pkg.name}
+              className={`p-8 rounded-[2.5rem] bg-zinc-950/80 border backdrop-blur-xl relative overflow-hidden group hover:border-[#FF3B00]/40 transition-all duration-500 ${
+                pkg.popular 
+                  ? "border-[#FF3B00]/20 shadow-[0_0_50px_rgba(255,59,0,0.1)]" 
+                  : "border-white/5 hover:border-[#FF3B00]/30"
+              }`}
+            >
+              {pkg.popular && (
+                <div className="absolute top-0 right-0 px-4 py-1.5 bg-[#FF3B00] text-black text-[9px] font-black uppercase tracking-widest rounded-bl-2xl">
+                  POPULAR
+                </div>
+              )}
+              <h3 className="text-xl font-bold text-white mb-2">{pkg.name}</h3>
+              <p className="text-xs text-[#FF3B00] font-mono uppercase tracking-wider mb-6">{pkg.subtitle}</p>
+              <div className="flex items-baseline gap-2 mb-6">
+                <span className="text-4xl font-black text-white">{pkg.price}</span>
+                <span className="text-xs text-neutral-500 font-mono">{pkg.period}</span>
+              </div>
+              <ul className="space-y-3 text-sm text-neutral-400 font-light mb-8">
+                {pkg.features.map((feat) => (
+                  <li key={feat} className="flex items-center gap-2">
+                    <span className="text-[#FF3B00]">✓</span> {feat}
+                  </li>
+                ))}
+              </ul>
+              <Link 
+                href="/contact" 
+                className={`block text-center w-full py-4 rounded-2xl font-bold uppercase tracking-wider text-xs transition-all duration-300 ${
+                  pkg.popular
+                    ? "bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg shadow-orange-500/20"
+                    : "bg-white/5 border border-white/10 hover:border-[#FF3B00] hover:bg-orange-500/5 text-white"
+                }`}
+              >
+                {pkg.popular ? "Request Quote" : "Get Started"}
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>

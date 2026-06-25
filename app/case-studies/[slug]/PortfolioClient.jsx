@@ -498,7 +498,7 @@ const PortfolioClient = ({ initialProject }) => {
                     <div className="absolute top-6 left-6 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-[8px] font-bold uppercase tracking-widest rounded-lg">{item.category}</div>
                   </div>
                   <div className="p-8 flex flex-col flex-1">
-                    <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2 mb-4 leading-tight">{item.title}</h3>
+                    <h2 className="text-2xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2 mb-4 leading-tight">{item.title}</h2>
                     <p className="text-neutral-500 text-sm font-light leading-relaxed line-clamp-2 mb-8">{item.description}</p>
                     <div className="mt-auto flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-neutral-400 group-hover:text-white transition-colors">
                       View Case Study <ArrowRight size={14} />

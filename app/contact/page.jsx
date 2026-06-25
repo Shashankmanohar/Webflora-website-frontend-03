@@ -51,9 +51,15 @@ export default function ContactPage() {
   return (
     <main className="relative min-h-screen pt-32 pb-20 px-4 md:px-10 overflow-hidden bg-[#020202] selection:bg-[#ff3b00]/30 font-display">
       {/* Background Matrix Effect */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.05] z-0">
-        <div className="absolute inset-0 bg-grid" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#ff3b00]/5 to-transparent" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="creative-grid-bg" />
+        <div className="creative-grid-dots" />
+        
+        {/* Rising glowing dots */}
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_8px_#ff3c00,0_0_15px_#ff3c00]" style={{ left: "calc(45px * 3)", "--duration": "9s", "--delay": "0s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6,0_0_15px_#3b82f6]" style={{ left: "calc(45px * 10)", "--duration": "12s", "--delay": "2s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-[#FF3B00] rounded-full shadow-[0_0_10px_#ff3c00,0_0_20px_#ff3c00]" style={{ left: "calc(45px * 17)", "--duration": "14s", "--delay": "4s" }} />
+        <div className="animate-grid-dot-rise w-1.5 h-1.5 bg-orange-400 rounded-full shadow-[0_0_8px_#fb923c,0_0_15px_#fb923c]" style={{ left: "calc(45px * 24)", "--duration": "11s", "--delay": "1s" }} />
       </div>
 
       <div className="max-w-[1600px] mx-auto relative z-10">

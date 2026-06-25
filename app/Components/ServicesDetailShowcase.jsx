@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 const services = [
   {
     id: "web",
-    title: "Website Development Services",
+    title: "Website Development",
     badge: "Best Website Company in Patna",
     href: "/services/website-development-company-in-patna",
     icon: "solar:display-bold",
@@ -18,7 +18,7 @@ const services = [
     hoverBorder: "hover:border-orange-500/30",
     activeBg: "bg-orange-500/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(255,59,0,0.15)]",
     bulletColor: "text-orange-400 bg-orange-500/10",
-    desc: "Webflora Technologies is the premier website development company in Patna, Bihar, delivering high-performance, SEO-friendly websites using Next.js, React, Tailwind CSS, and scalable cloud architectures. We build fast, responsive, and secure digital platforms that turn web traffic into revenue. Our custom solutions start from ₹25,000.",
+    desc: "Our website development services focus on creating fast, responsive, SEO-friendly websites using modern technologies that improve user experience and generate business leads.",
     included: [
       "Custom Website Development",
       "Ecommerce Website Development",
@@ -46,7 +46,7 @@ const services = [
     hoverBorder: "hover:border-cyan-500/30",
     activeBg: "bg-cyan-500/10 border-cyan-500/50 text-white shadow-[0_0_25px_rgba(6, 182, 212, 0.15)]",
     bulletColor: "text-cyan-400 bg-cyan-500/10",
-    desc: "We design, build, and deploy custom cross-platform mobile apps for Android and iOS using Flutter, React Native, and robust Node.js backends. From high-converting e-commerce apps to educational portals, we empower startups and enterprises to launch smooth 60FPS mobile platforms starting from ₹80,000.",
+    desc: "We build Android, iOS, and cross-platform mobile applications designed to enhance customer engagement and support business growth.",
     included: [
       "Custom App Development",
       "iOS App Development",
@@ -63,7 +63,7 @@ const services = [
   },
   {
     id: "software",
-    title: "Custom Software Development",
+    title: "Software Development",
     badge: "Top Rated Software Company in Patna",
     href: "/services/software-development-company-in-patna",
     icon: "solar:code-circle-bold-duotone",
@@ -74,7 +74,7 @@ const services = [
     hoverBorder: "hover:border-blue-500/30",
     activeBg: "bg-blue-500/10 border-blue-500/50 text-white shadow-[0_0_25px_rgba(59, 130, 246, 0.15)]",
     bulletColor: "text-blue-400 bg-blue-500/10",
-    desc: "We build enterprise-grade CRM systems, scalable ERP software, automated billing engines, smart HR portals, and custom SaaS web applications. We leverage Python, Go, and secure SQL databases to streamline workflows and eliminate manual errors. Custom software systems start from ₹1,00,000.",
+    desc: "We develop custom software solutions tailored to business requirements. Our software development services include ERP systems, CRM platforms, inventory management software, HR management systems, and enterprise applications.",
     included: [
       "ERP System Development",
       "CRM Software Development",
@@ -91,7 +91,7 @@ const services = [
   },
   {
     id: "ai",
-    title: "AI Automation Solutions",
+    title: "AI Automation",
     badge: "Best AI & Automation Company in Bihar",
     href: "/services/ai-automation-company-in-patna",
     icon: "solar:cpu-bold-duotone",
@@ -102,7 +102,7 @@ const services = [
     hoverBorder: "hover:border-purple-500/30",
     activeBg: "bg-purple-500/10 border-purple-500/50 text-white shadow-[0_0_25px_rgba(168, 85, 247, 0.15)]",
     bulletColor: "text-purple-400 bg-purple-500/10",
-    desc: "We design and implement smart workflow automations, custom AI chatbots, OpenAI/Claude API integrations, n8n chatbot workflows, and automated CRM pipelines. We help companies in Patna eliminate manual bottlenecks and operate 24/7. Our custom automation workflows start from ₹35,000.",
+    desc: "We implement AI-powered automation solutions including chatbots, workflow automation, lead management systems, and business process optimization.",
     included: [
       "AI Chatbots for Customer Support",
       "Lead Qualification Automation",
@@ -119,7 +119,7 @@ const services = [
   },
   {
     id: "marketing",
-    title: "Digital Marketing Services",
+    title: "Digital Marketing",
     badge: "Best Digital Marketing Agency in Patna",
     href: "/services/digital-marketing-agency-in-patna",
     icon: "solar:ranking-bold-duotone",
@@ -130,7 +130,7 @@ const services = [
     hoverBorder: "hover:border-emerald-500/30",
     activeBg: "bg-emerald-500/10 border-emerald-500/50 text-white shadow-[0_0_25px_rgba(16,185,129,0.15)]",
     bulletColor: "text-emerald-400 bg-emerald-500/10",
-    desc: "Webflora Technologies is a premier performance-focused digital marketing company in Patna, Bihar. We deliver local SEO map optimization, ROI-driven Google Ads (PPC), hyper-targeted Meta/Instagram ad campaigns, social media growth, and conversion-optimized lead generation. Growth plans start from ₹15,000/month.",
+    desc: "Our digital marketing solutions include SEO, local SEO, content marketing, social media marketing, performance advertising, and lead generation campaigns.",
     included: [
       "Search Engine Optimization (SEO)",
       "Social Media Marketing",
@@ -157,7 +157,7 @@ export default function ServicesDetailShowcase() {
     <section className="py-20 bg-[#020202] relative overflow-hidden border-t border-white/5">
       {/* Background Ambient Radial Glow */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div 
+        <div
           className="absolute left-[65%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-30 blur-[120px] transition-all duration-700 pointer-events-none"
           style={{ background: `radial-gradient(circle, ${currentService.glow} 0%, rgba(0,0,0,0) 70%)` }}
         />
@@ -165,7 +165,7 @@ export default function ServicesDetailShowcase() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-white/10 bg-white/[0.02] backdrop-blur-md text-[10px] text-neutral-400 font-mono tracking-widest uppercase rounded-none">
@@ -182,7 +182,7 @@ export default function ServicesDetailShowcase() {
 
         {/* Desktop Interface */}
         <div className="hidden lg:grid lg:grid-cols-12 gap-6 items-stretch">
-          
+
           {/* Left: Tab Selectors */}
           <div className="lg:col-span-4 flex flex-col gap-2.5 justify-center pr-4 border-r border-white/5">
             {services.map((item) => {
@@ -191,25 +191,22 @@ export default function ServicesDetailShowcase() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`group w-full text-left px-5 py-3.5 border transition-all duration-500 flex items-center gap-3.5 cursor-pointer rounded-none ${
-                    isActive
+                  className={`group w-full text-left px-5 py-3.5 border transition-all duration-500 flex items-center gap-3.5 cursor-pointer rounded-none ${isActive
                       ? item.activeBg
                       : "bg-zinc-950/20 border-white/5 text-neutral-400 hover:text-white hover:bg-zinc-900/30 hover:border-white/10"
-                  }`}
+                    }`}
                   title={`View details for ${item.title}`}
                 >
-                  <div className={`p-2 transition-all duration-300 rounded-none ${
-                    isActive 
-                      ? "bg-white text-black" 
+                  <div className={`p-2 transition-all duration-300 rounded-none ${isActive
+                      ? "bg-white text-black"
                       : "bg-white/5 text-neutral-300 group-hover:bg-white/10"
-                  }`}>
+                    }`}>
                     <Icon icon={item.icon} className="text-xl" />
                   </div>
                   <div>
                     <h2 className="font-extrabold text-xs tracking-wider uppercase">{item.title}</h2>
-                    <span className={`text-[9px] font-mono transition-opacity duration-300 ${
-                      isActive ? "text-white/80" : "text-neutral-500 group-hover:text-neutral-400"
-                    }`}>
+                    <span className={`text-[9px] font-mono transition-opacity duration-300 ${isActive ? "text-white/80" : "text-neutral-500 group-hover:text-neutral-400"
+                      }`}>
                       {item.badge}
                     </span>
                   </div>
@@ -221,7 +218,7 @@ export default function ServicesDetailShowcase() {
           {/* Right: Active Service Content Card */}
           <div className="lg:col-span-8 pl-4">
             <div className={`h-full p-8 md:p-10 bg-gradient-to-br ${currentService.color} border border-white/10 backdrop-blur-xl transition-all duration-700 flex flex-col justify-between group relative overflow-hidden rounded-none`}>
-              
+
               <div className="space-y-6">
                 {/* Badge and Title */}
                 <div className="space-y-2">
@@ -229,8 +226,8 @@ export default function ServicesDetailShowcase() {
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     {currentService.badge}
                   </span>
-                  <Link 
-                    href={currentService.href} 
+                  <Link
+                    href={currentService.href}
                     className="block group-hover:translate-x-1 transition-transform duration-300"
                   >
                     <h2 className="text-2xl md:text-3xl font-black text-white hover:underline flex items-center gap-2 tracking-tight leading-none uppercase">
@@ -279,7 +276,7 @@ export default function ServicesDetailShowcase() {
                 >
                   Explore Details
                 </Link>
-                
+
                 <Link
                   href="/contact"
                   className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-400 hover:text-white transition-colors"
@@ -299,11 +296,10 @@ export default function ServicesDetailShowcase() {
           {services.map((item) => {
             const isOpen = activeTab === item.id;
             return (
-              <div 
-                key={item.id} 
-                className={`border transition-all duration-300 rounded-none ${
-                  isOpen ? "bg-zinc-950/80 border-white/10 shadow-xl" : "bg-zinc-950/20 border-white/5"
-                }`}
+              <div
+                key={item.id}
+                className={`border transition-all duration-300 rounded-none ${isOpen ? "bg-zinc-950/80 border-white/10 shadow-xl" : "bg-zinc-950/20 border-white/5"
+                  }`}
               >
                 {/* Header Selector */}
                 <button
@@ -319,9 +315,9 @@ export default function ServicesDetailShowcase() {
                       <span className="text-[10px] opacity-40 font-mono">{item.badge}</span>
                     </div>
                   </div>
-                  <Icon 
-                    icon={isOpen ? "solar:minus-circle-linear" : "solar:add-circle-linear"} 
-                    className={`text-xl transition-transform ${isOpen ? "text-white" : "text-neutral-500"}`} 
+                  <Icon
+                    icon={isOpen ? "solar:minus-circle-linear" : "solar:add-circle-linear"}
+                    className={`text-xl transition-transform ${isOpen ? "text-white" : "text-neutral-500"}`}
                   />
                 </button>
 

@@ -46,6 +46,12 @@ export default function HomeSections({ faqComponent }) {
       </div>
       <div className="content-auto">
         <LazySection
+          height="400px"
+          loader={() => import("./TechStackSection")}
+        />
+      </div>
+      <div className="content-auto">
+        <LazySection
           height="500px"
           loader={() => import("./SectorsServedSection")}
         />
@@ -96,9 +102,16 @@ export default function HomeSections({ faqComponent }) {
           loader={() => import("./PremiumCTA")}
         />
       </div>
-      
+
       {/* Statically rendered SEO blocks passed from server component */}
       {faqComponent}
+
+      <div className="content-auto">
+        <LazySection
+          height="500px"
+          loader={() => import("./LatestInsights")}
+        />
+      </div>
 
       <div className="content-auto">
         <LazySection

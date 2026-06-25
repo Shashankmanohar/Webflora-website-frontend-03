@@ -51,12 +51,18 @@ export default function Page() {
 
       {/* ── SEO text block — server-rendered for crawlers ── */}
       <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
-            Driving Digital Transformation
+        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-6">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tighter leading-none uppercase font-display">
+            Why Businesses Need Custom Software
           </h2>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-            Webflora Technologies is the premier software company in Patna, Bihar, offering top-tier website design, custom software applications, mobile apps, and digital marketing. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth from Patna, Bihar, to all over India.
+            Many businesses rely on generic software that cannot fully support their workflows, growth plans, or operational requirements.
+          </p>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+            Custom software is designed specifically for your business processes, allowing you to automate repetitive tasks, improve productivity, reduce operational costs, integrate systems, and gain complete control over your technology infrastructure.
+          </p>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+            Unlike subscription-based platforms, custom solutions provide long-term flexibility, scalability, and ownership.
           </p>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
@@ -69,7 +75,7 @@ export default function Page() {
       <HomeSections
         homeFaqs={homeFaqs}
         faqComponent={
-          <FaqSection faqs={homeFaqs} title="web development and software services" />
+          <FaqSection faqs={homeFaqs} title="home" />
         }
       />
 

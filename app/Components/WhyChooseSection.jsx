@@ -3,141 +3,141 @@
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
+const stats = [
+  { value: "50+", label: "Projects Delivered" },
+  { value: "95%", label: "Client Satisfaction" },
+  { value: "24/7", label: "Fast Support Response" },
+  { value: "100%", label: "Modern Technology Stack" },
+];
+
 const cards = [
   {
-    icon: "solar:user-check-linear",
-    title: "Founder-Led",
-    desc: "Direct access to technical founders, not just account managers.",
-    size: "lg:col-span-2 lg:row-span-2",
+    icon: "solar:ranking-linear",
+    title: "Results-Driven Approach",
+    desc: "We focus on solving complex business problems, improving operational efficiency, generating high-quality leads, and helping companies achieve measurable growth through cutting-edge technology. Our digital solutions are built to yield maximum ROI for startups and enterprise brands in Patna, Bihar, and across India.",
   },
   {
-    icon: "solar:shield-check-linear",
-    title: "100% Secure",
-    desc: "Enterprise-grade security protocols for every project we ship.",
+    icon: "solar:bolt-linear",
+    title: "Performance & Speed Optimized",
+    desc: "Every website, portal, and custom software solution we ship is fully optimized for lightning-fast loading speeds, excellent user experiences, and 99+ score Core Web Vitals. We use static regeneration and server-side rendering to ensure your systems perform smoothly under heavy traffic loads.",
   },
   {
     icon: "solar:graph-up-linear",
-    title: "Result Focused",
-    desc: "We improve measurable business metrics, not vanity numbers.",
+    title: "SEO & Growth Focused Development",
+    desc: "We develop search-friendly web apps integrated with technical SEO configurations, structured schema markups, and modern crawlable architectures. This allows businesses in Bihar to rank at the top of search engine result pages, improving organic visibility and inbound organic leads.",
   },
   {
-    icon: "solar:headphones-round-sound-linear",
-    title: "Long-Term Support",
-    desc: "Continuous upgrades and maintenance to keep you ahead.",
+    icon: "solar:cpu-linear",
+    title: "AI & Automation Expertise",
+    desc: "From custom workflow automation via n8n to LLM-powered chatbot agents, we integrate state-of-the-art artificial intelligence to eliminate manual bottlenecks, streamline internal communications, and automate customer support round-the-clock. This saves organizations in India hundreds of manual hours every week.",
+  },
+  {
+    icon: "solar:shield-keyhole-linear",
+    title: "Secure & Scalable Solutions",
+    desc: "Our software architecture is designed to support future business expansion while keeping user data highly secure. We use decoupled backend systems, encrypted database connections, and secure API gateways to ensure absolute reliability, performance, and compliance with industry standards.",
+  },
+  {
+    icon: "solar:users-group-two-rounded-linear",
+    title: "Experienced Development Team",
+    desc: "Our developers, UI/UX designers, and performance marketing specialists work together under founder-led execution to deliver high-quality solutions. With deep expertise in Next.js, Node.js, and cloud systems, we build modern platforms tailored specifically to your unique business operations.",
+  },
+  {
+    icon: "solar:chat-square-call-linear",
+    title: "Transparent Communication",
+    desc: "We maintain absolute clarity throughout the development lifecycle. Clients receive weekly progress updates, clear project milestones, and live staging sandbox links. You will have direct communication channels with our engineering team, ensuring no details get lost in translation.",
+  },
+  {
+    icon: "solar:settings-minimalistic-linear",
+    title: "Long-Term Support & Maintenance",
+    desc: "We provide dedicated post-launch support to keep your systems running flawlessly. Our maintenance services include automated database backups, library upgrades, security patches, local SEO health checks, and minor feature integrations to ensure your technology platform stays ahead of competitors.",
   },
 ];
 
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const reveal = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
-export default function BentoWhyChoose() {
+export default function WhyChooseSection() {
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden">
-      {/* ambient orange glow */}
+    <section id="why-choose" className="py-24 bg-black text-white relative overflow-hidden border-t border-white/5">
+      {/* Ambient background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-orange-600/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-orange-500/10 blur-3xl rounded-full" />
+        <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] bg-orange-600/[0.03] blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-orange-500/[0.02] blur-3xl rounded-full" />
       </div>
 
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className="max-w-7xl mx-auto px-6 md:px-12 relative z-10"
+        viewport={{ once: true, amount: 0.15 }}
+        className="max-w-7xl mx-auto px-6 relative z-10"
       >
-        {/* heading */}
-        <motion.div variants={reveal} className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
-            Trusted by Startups & Businesses Across{" "}
-            <span className=" text-orange-600">India</span>
+        {/* Header / Intro */}
+        <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/20 bg-orange-500/5 text-xs text-orange-400 font-bold uppercase tracking-wider">
+            🤝 Trust & Reliability
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase leading-none font-display">
+            Why Choose <span className="text-orange-600">Webflora Technologies</span>
           </h2>
-          <p className="text-zinc-500">
-            Not just an agency. We are your technical partners.
+          <p className="text-neutral-400 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
+            Businesses choose Webflora Technologies because we combine technology, strategy, and innovation to build solutions that drive measurable business growth. Our team focuses on creating scalable, secure, and high-performance digital products that deliver long-term value.
           </p>
-        </motion.div>
+        </div>
 
-        {/* bento grid */}
-        <motion.div
-          variants={container}
-          className="
-            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-            auto-rows-[220px] gap-8
-          "
-        >
+        {/* Real Proof Points / Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20 p-8 rounded-3xl bg-zinc-950/40 border border-white/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-600/[0.02] rounded-full blur-xl pointer-events-none" />
+          {stats.map((stat, i) => (
+            <div key={i} className="text-center space-y-2">
+              <div className="text-3xl md:text-5xl font-black text-orange-500 font-display">
+                {stat.value}
+              </div>
+              <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Benefit Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, i) => (
             <motion.div
               key={i}
               variants={reveal}
-              whileHover={{
-                y: -12,
-                scale: 1.02,
-                rotateX: 4,
-                rotateY: -4,
-              }}
-              transition={{ type: "spring", stiffness: 120 }}
-              className={`
-                group relative rounded-3xl
-                bg-zinc-900 border border-zinc-800
-                p-8 flex flex-col justify-between
-                shadow-[0_20px_70px_rgba(0,0,0,0.7)]
-                hover:border-orange-500/40
-                ${card.size || ""}
-              `}
-              style={{ transformStyle: "preserve-3d" }}
+              whileHover={{ y: -6 }}
+              className="group relative p-6 rounded-3xl bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 hover:bg-zinc-900/10 transition-all duration-300 flex flex-col justify-between"
             >
-              {/* animated edge glow */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-orange-500/10 via-transparent to-orange-500/10" />
-
-              <div className="relative z-10 space-y-6">
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 8 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className="
-                    w-12 h-12 rounded-xl
-                    bg-orange-500/10
-                    flex items-center justify-center
-                    text-[#F54A00]
-                  "
-                >
-                  <Icon icon={card.icon} width={26} />
-                </motion.div>
-
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-2xl bg-orange-500/5 border border-orange-500/10 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+                  <Icon icon={card.icon} width={24} />
+                </div>
                 <div>
-                  <h3 className="font-semibold text-xl mb-2">{card.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
+                  <h3 className="font-bold text-lg text-white mb-3 group-hover:text-orange-500 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs text-neutral-400 leading-relaxed font-light">
                     {card.desc}
                   </p>
                 </div>
               </div>
-
-              {/* subtle animated bottom bar */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.4 }}
-                className="
-                  absolute bottom-0 left-0 h-[2px] w-full
-                  bg-gradient-to-r from-transparent via-orange-500 to-transparent
-                  origin-left
-                "
-              />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

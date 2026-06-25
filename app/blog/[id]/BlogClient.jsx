@@ -543,7 +543,7 @@ const BlogClient = ({ initialPost }) => {
                     <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <span className="text-[10px] font-black text-brand-red uppercase tracking-widest mb-3">{item.category}</span>
-                  <h3 className="text-xl font-bold text-white group-hover:text-brand-red transition-colors line-clamp-2 leading-snug">{item.title}</h3>
+                  <h2 className="text-xl font-bold text-white group-hover:text-brand-red transition-colors line-clamp-2 leading-snug">{item.title}</h2>
                 </Link>
               ))}
             </div>

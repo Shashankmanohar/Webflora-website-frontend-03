@@ -75,10 +75,18 @@ export default function HomeIntroSection() {
               <div className="lg:col-span-7 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 <Icon icon="solar:chart-square-bold-duotone" className="text-4xl text-orange-500" />
-                <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Why Businesses Need Custom Software</h3>
-                <p className="text-gray-400 font-light leading-relaxed text-sm md:text-base">
-                  Off-the-shelf software packages often lock you into rigid templates and expensive monthly subscription costs. Custom software allows you to build digital tools tailored precisely to your company's business goals. By automating manual processes, removing duplicate entries, and connecting databases, custom systems lower your overhead costs, prevent errors, and scale your throughput without adding extra staff.
-                </p>
+                <h2 className="text-2xl font-bold text-white uppercase tracking-wider font-display">Why Businesses Need Custom Software</h2>
+                <div className="space-y-4 text-gray-400 font-light leading-relaxed text-sm md:text-base">
+                  <p>
+                    Many businesses rely on generic software that cannot fully support their workflows, growth plans, or operational requirements.
+                  </p>
+                  <p>
+                    Custom software is designed specifically for your business processes, allowing you to automate repetitive tasks, improve productivity, reduce operational costs, integrate systems, and gain complete control over your technology infrastructure.
+                  </p>
+                  <p>
+                    Unlike subscription-based platforms, custom solutions provide long-term flexibility, scalability, and ownership.
+                  </p>
+                </div>
               </div>
 
               <div className="lg:col-span-5 p-8 md:p-12 rounded-none bg-zinc-950/40 border border-white/5 hover:border-red-500/20 transition-all duration-500 flex flex-col justify-center space-y-6 group relative overflow-hidden">

@@ -89,9 +89,15 @@ export default function TrustSignals({ hideStats = false }) {
           variants={containerVariants}
         >
           <div className="flex flex-col items-center text-center mb-16">
-            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
-              <ShieldCheck className="w-4 h-4 text-[#ff3c00]" />
-              <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
+                <ShieldCheck className="w-4.5 h-4.5 text-[#ff3c00]" />
+                <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-xl">
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+                <span className="text-orange-400 font-mono text-[9px] tracking-wider uppercase font-bold">MSME Registered: UDYAM-BR-26-0183379</span>
+              </div>
             </motion.div>
             <motion.h2 variants={itemVariants} className="text-2xl md:text-4xl font-display font-bold text-white tracking-tighter leading-none uppercase">
               Why Businesses <span className="text-[#ff3c00]">Choose Us</span>

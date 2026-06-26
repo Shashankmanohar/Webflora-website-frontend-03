@@ -42,7 +42,7 @@ export default function HomeIntroSection() {
           </h2>
           <div className="h-[2px] w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded mx-auto" />
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
-            Webflora Technologies is a leading software company in Patna, Bihar, helping businesses accelerate digital transformation through custom software development, website development, mobile applications, AI automation, and digital marketing solutions.
+            Webflora Technologies is a leading <Link href="/services/software-development-company-in-patna" className="text-orange-500 hover:underline font-medium">Software Company in Patna, Bihar</Link>, helping businesses accelerate digital transformation through <Link href="/services/software-development-company-in-patna" className="text-orange-500 hover:underline font-medium">custom software development</Link>, <Link href="/services/website-development-company-in-patna" className="text-orange-500 hover:underline font-medium">website development</Link>, <Link href="/services/mobile-app-development-company-in-patna" className="text-orange-500 hover:underline font-medium">mobile applications</Link>, <Link href="/services/ai-automation-company-in-patna" className="text-orange-500 hover:underline font-medium">AI automation</Link>, and digital marketing solutions.
           </p>
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
             We build scalable, secure, and high-performance digital products that help startups, SMEs, and enterprises improve efficiency, automate operations, and drive business growth.

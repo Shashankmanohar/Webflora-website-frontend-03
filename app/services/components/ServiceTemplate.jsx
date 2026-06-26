@@ -27,13 +27,13 @@ const ServiceTemplate = ({ data }) => {
       
       <div className="relative">
         <ProblemWrapper data={data} />
+        <BentoWhyChoose />
+        <BenefitsWrapper data={data} />
         <SubServicesWrapper data={data} />
         <SuitableForWrapper data={data} />
-        <ProcessWrapper data={data} />
         <IndustriesWrapper data={data} />
-        <BenefitsWrapper data={data} />
         <TechStackWrapper data={data} />
-        <BentoWhyChoose />
+        <ProcessWrapper data={data} />
         <PricingWrapper data={data} />
         <TestimonialWrapper />
         <WorkSection />
@@ -346,8 +346,12 @@ const TechStackWrapper = ({ data }) => {
     <section className="py-20 px-6 bg-[#030303] relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <FadeInUp>
-          <h2 className="text-3xl md:text-4xl font-black mb-24 tracking-tighter text-white">
-            OUR TECH <span className="text-gray-700">ARSENAL.</span>
+          <h2 className="text-3xl md:text-4xl font-black mb-24 tracking-tighter text-white uppercase">
+            {data.techStackTitle || (
+              <>
+                OUR TECH <span className="text-gray-700">ARSENAL.</span>
+              </>
+            )}
           </h2>
         </FadeInUp>
         
@@ -371,7 +375,7 @@ const SubServicesWrapper = ({ data }) => {
               Comprehensive Solutions
             </FadeInUp>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-              Features
+              {data.subServicesTitle || "Features"}
             </h2>
           </div>
           

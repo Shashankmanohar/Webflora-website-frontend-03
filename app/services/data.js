@@ -640,8 +640,10 @@ export const servicesData = {
   },
   "software-development-company-in-patna": {
     "title": "Custom Software Development Services in Patna",
-    "headline": "Enterprise Software Development Solutions",
-    "subtext": "Webflora Technologies is an MSME-registered (UDYAM-BR-26-0183379) professional custom software development company in Patna, Bihar. We build enterprise-grade CRM systems, scalable ERP software, automated billing engines, smart HR portals, and custom web applications. We leverage Python, Go, AWS, and secure databases to streamline business operations for enterprises in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India. Custom software systems start from ₹1,00,000.",
+    "headline": "Software Development Company in Patna",
+    "subServicesTitle": "Software Development Services",
+    "techStackTitle": "Technologies We Use",
+    "subtext": "Webflora Technologies is an MSME-registered (UDYAM-BR-26-0183379) professional custom software development company in Patna, Bihar. We build enterprise-grade CRM systems, scalable ERP software, automated billing engines, smart HR portals, and custom web applications. We leverage Python, Go, AWS, and secure databases to streamline business operations for enterprises in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India. Custom software systems start from ₹1,0,000.",
     "geoTitle": "Enterprise Software Development Solutions in Bihar",
     "geoContent": "As the most trusted custom software development company in Patna, Bihar, we specialize in localizing enterprise technology. Our solutions include GST-compliant billing engines, localized inventory alerts, and QR-based digital management systems. We serve manufacturing units, retail chains, and educational groups across Bihar with robust SaaS platforms.",
     "heroBadge": "Enterprise Solutions",
@@ -655,34 +657,44 @@ export const servicesData = {
     ],
     "subServices": [
       {
-        "title": "ERP System Development",
+        "title": "ERP Development",
         "icon": "lucide:server",
-        "desc": "Complete custom enterprise resource planning systems to automate inventory, warehouse logistics, payroll, and workflows."
+        "desc": "Streamline your business operations in Patna with custom ERP development that automates inventory, warehouse logistics, payroll, and workflows."
       },
       {
-        "title": "CRM Software Development",
+        "title": "CRM Development",
         "icon": "lucide:users",
-        "desc": "Customer relationship management platforms to capture digital leads, track sales pipelines, and automate follow-up emails."
+        "desc": "Deploy high-converting CRM systems to capture digital leads, track sales pipelines, and automate follow-ups for your Patna-based company."
       },
       {
-        "title": "Billing & Invoice Generator Software",
-        "icon": "lucide:receipt",
-        "desc": "Lightning-fast, GST-compliant billing software for wholesalers, distributors, and retail businesses in Patna and Bihar."
-      },
-      {
-        "title": "AI-Based Attendance System",
+        "title": "HRMS",
         "icon": "lucide:user-check",
-        "desc": "Next-generation smart attendance trackers using face recognition, automated geofencing, and AI validation."
+        "desc": "Advanced human resource management systems featuring biometric integrations, face-recognition attendance, and automated payroll systems in Bihar."
       },
       {
-        "title": "QR Code Attendance System",
-        "icon": "lucide:qr-code",
-        "desc": "Contactless, secure, and fast QR-based check-in systems designed specifically for local coaching institutes and offices."
+        "title": "Hospital Software",
+        "icon": "lucide:activity",
+        "desc": "Complete clinic and hospital management solutions to schedule appointments, manage patient files, automate billing, and streamline operations."
       },
       {
-        "title": "Custom Business Software Development",
-        "icon": "lucide:code",
-        "desc": "Fully customized software systems coded from scratch to address your exact organizational operational logic."
+        "title": "School ERP",
+        "icon": "lucide:graduation-cap",
+        "desc": "Comprehensive school and coaching institute management software to process admissions, manage fee billing, track attendance, and sync parent updates."
+      },
+      {
+        "title": "Inventory Software",
+        "icon": "lucide:package",
+        "desc": "Smart inventory tracking platforms with automated QR/barcode scanning, stock alerts, and multi-warehouse sync capabilities."
+      },
+      {
+        "title": "Billing Software",
+        "icon": "lucide:receipt",
+        "desc": "GST-compliant, ultra-fast billing and invoice generator engines designed specifically for distributors, wholesalers, and retail stores in Bihar."
+      },
+      {
+        "title": "AI Automation",
+        "icon": "lucide:bot",
+        "desc": "Integrate custom AI workflows, automated WhatsApp alerts, and intelligent chatbots to run your business operations 24/7 without manual bottlenecks."
       }
     ],
     "process": [
@@ -875,7 +887,8 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Custom Software Development in Patna Bihar | Webflora Technologies",
+    "seoTitle": "Software Development Company in Patna, Bihar | Webflora Technologies",
+    "seoDescription": "MSME-registered software development company in Patna, Bihar. ERP, CRM, AI automation, websites & mobile apps. 200+ projects delivered. Free consultation.",
     "pricing": [
       {
         "name": "SaaS Starter",

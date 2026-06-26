@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function SEOContentBlock({ 
   title = "Software Development Company in Patna, Bihar",
   paragraphs = [
     <>
-      <strong className="text-white font-medium">Webflora Technologies</strong> provides comprehensive digital solutions for businesses in Patna, Bihar, and across India. As a premier technology partner, our expertise spans across <strong className="text-gray-300">website development</strong>, <strong className="text-gray-300">ecommerce development</strong>, <strong className="text-gray-300">custom software</strong> engineering, and specialized <strong className="text-gray-300">ERP solutions</strong>.
+      <strong className="text-white font-medium">Webflora Technologies</strong> provides comprehensive digital solutions for businesses in Patna, Bihar, and across India. As a premier technology partner, our expertise spans across <Link href="/services/website-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">website development</Link>, ecommerce development, <Link href="/services/software-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">Custom Software Development</Link> engineering, and specialized <Link href="/services/software-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">ERP Development Company</Link> systems.
     </>,
     <>
-      Our specialized team builds scalable digital products designed for performance, automation, and business growth. Whether you need intuitive <strong className="text-gray-300">mobile app development</strong>, powerful <strong className="text-gray-300">CRM software</strong>, cutting-edge AI automation, or result-driven <strong className="text-gray-300">SEO services</strong>, we deliver engineered excellence tailored to your specific business requirements.
+      Our specialized team builds scalable digital products designed for performance, automation, and business growth. Whether you need intuitive <Link href="/services/mobile-app-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">mobile app development</Link>, powerful <Link href="/services/software-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">CRM Software Development</Link>, cutting-edge <Link href="/services/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI automation</Link>, or result-driven local SEO, we deliver engineered excellence tailored to your specific business requirements.
     </>
   ]
 }) {

@@ -25,9 +25,9 @@ export async function generateMetadata({ params }) {
       siteName: "Webflora Technologies",
       images: [
         {
-          url: `${baseUrl}/og-image.jpg`,
-          width: 1200,
-          height: 630,
+          url: `${baseUrl}/title-logo.png`,
+          width: 512,
+          height: 512,
         },
       ],
       locale: "en_IN",
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: industry.title,
       description: industry.subtext,
-      images: [`${baseUrl}/og-image.jpg`],
+      images: [`${baseUrl}/title-logo.png`],
     },
   };
 }

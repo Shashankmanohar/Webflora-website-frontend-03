@@ -29,19 +29,34 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata = {
   metadataBase: new URL("https://webfloratechnologies.com"),
-  title: "Software Company in Patna, Bihar, India | Webflora Technologies",
-  description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile apps, and digital marketing.",
+  title: "Software Company in Patna, Bihar | Webflora Technologies",
+  description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
   keywords: "software company in patna, software company in bihar, software company in india, website company in patna, mobile app company, digital marketing, AI automation, Webflora Technologies",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Software Company in Patna, Bihar, India | Webflora Technologies",
-    description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile apps, and digital marketing.",
+    title: "Software Company in Patna, Bihar | Webflora Technologies",
+    description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
     url: "https://webfloratechnologies.com",
     siteName: "Webflora Technologies",
+    images: [
+      {
+        url: "/title-logo.png",
+        width: 512,
+        height: 512,
+        alt: "Webflora Technologies - Software Company in Patna, Bihar",
+      },
+    ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Company in Patna, Bihar | Webflora Technologies",
+    description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
+    site: "@WebfloraTech",
+    images: ["/title-logo.png"],
   },
   icons: {
     icon: "/title-logo.png",

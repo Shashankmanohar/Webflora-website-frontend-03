@@ -28,9 +28,13 @@ const spaceGrotesk = Space_Grotesk({
 
 
 export const metadata = {
+  metadataBase: new URL("https://webfloratechnologies.com"),
   title: "Software Company in Patna, Bihar, India | Webflora Technologies",
   description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile apps, and digital marketing.",
   keywords: "software company in patna, software company in bihar, software company in india, website company in patna, mobile app company, digital marketing, AI automation, Webflora Technologies",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Software Company in Patna, Bihar, India | Webflora Technologies",
     description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile apps, and digital marketing.",

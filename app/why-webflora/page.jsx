@@ -5,6 +5,9 @@ import SafeIcon from "../services/components/client/SafeIcon";
 export const metadata = {
   title: "Why Webflora Technologies | Software Agency in Patna Bihar",
   description: "Learn why businesses choose Webflora over WordPress agencies and freelancers. Discover why we build with Next.js, React, and custom AI automation workflows.",
+  alternates: {
+    canonical: "/why-webflora",
+  },
 };
 
 export default function WhyWebfloraPage() {

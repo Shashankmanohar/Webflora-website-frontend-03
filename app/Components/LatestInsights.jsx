@@ -116,7 +116,9 @@ export default function LatestInsights() {
                 </h2>
                 
                 <p className="text-xs md:text-sm text-neutral-400 font-light leading-relaxed line-clamp-3">
-                  {blog.description || blog.excerpt || (blog.content ? blog.content.substring(0, 120) + "..." : "")}
+                  {(blog.description || blog.excerpt || "")
+                    ? (blog.description || blog.excerpt).replace(/<[^>]*>/g, "").trim()
+                    : (blog.content || "").replace(/<[^>]*>/g, "").substring(0, 120).trim() + ((blog.content || "").replace(/<[^>]*>/g, "").length > 120 ? "..." : "")}
                 </p>
               </div>
 

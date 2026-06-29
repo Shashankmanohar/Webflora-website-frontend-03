@@ -182,7 +182,7 @@ const BlogClient = ({ initialPost }) => {
 
                 "headline": post.title,
 
-                "description": post.description || post.excerpt || "Read the latest insights and updates from Webflora Technologies.",
+                "description": (post.description || post.excerpt || "Read the latest insights and updates from Webflora Technologies.").replace(/<[^>]*>/g, "").trim(),
 
                 "image": post.image || "https://webfloratechnologies.com/blog-image.jpg",
 

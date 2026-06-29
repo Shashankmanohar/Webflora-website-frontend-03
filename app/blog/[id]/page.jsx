@@ -22,10 +22,13 @@ export async function generateMetadata({ params }) {
     
     // Fallback description from content
     let description = post.description || post.excerpt;
-    if (!description && post.content) {
-       description = post.content.replace(/<[^>]+>/g, '').substring(0, 160).trim();
-       if (post.content.length > 160) description += '...';
-    } else if (!description) {
+    if (description) {
+       description = description.replace(/<[^>]+>/g, '').trim();
+    } else if (post.content) {
+       const cleanContent = post.content.replace(/<[^>]+>/g, '').trim();
+       description = cleanContent.substring(0, 160);
+       if (cleanContent.length > 160) description += '...';
+    } else {
        description = "Read the latest insights and updates from Webflora Technologies.";
     }
 

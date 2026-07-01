@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import FooterSection from "./Components/FooterSection";
 import Script from "next/script";
 import ChatbotLoader from "./Components/ChatbotLoader";
+import FloatingCTA from "./Components/FloatingCTA";
 
 
 /* Inter – Body / UI */
@@ -93,6 +94,7 @@ export default function RootLayout({ children }) {
         `}>
         {/* Banner and Nav */}
         <Navbar />
+        <FloatingCTA />
         <main id="main-content">
           {children}
         </main>

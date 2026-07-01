@@ -162,84 +162,55 @@ export default function WorkSection() {
               <motion.div
                 key={project._id || project.title}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover="hover"
                 onClick={() => router.push(`/case-studies/${project.slug}`)}
-                className="group relative aspect-[16/10] rounded-2xl md:rounded-[1.5rem] overflow-hidden cursor-pointer"
+                className="group flex flex-col rounded-2xl md:rounded-[1.5rem] bg-[#0c0c0e] border border-zinc-800/60 overflow-hidden cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(255,115,0,0.1)]"
               >
-                {/* Image */}
-                <motion.div
-                  className="absolute inset-0"
-                  variants={{
-                    rest: { scale: 1 },
-                    hover: {
-                      scale: 1.05,
-                      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
-                    },
-                  }}
-                >
-                  <Image
-                    src={project.image.startsWith('http') ? project.image : `${API_BASE_URL}/${project.image}`}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    loading="lazy"
-                  />
-                </motion.div>
-
-                {/* Glass overlay */}
-                <motion.div
-                  variants={{
-                    rest: { opacity: isMobile ? 1 : 0 },
-                    hover: {
-                      opacity: 1,
-                      transition: { duration: 0.5 },
-                    },
-                  }}
-                  className={`absolute inset-0 flex flex-col justify-end p-5 md:p-6 transition-all duration-500 ${isMobile
-                      ? "bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[1px]"
-                      : "bg-gradient-to-t from-black/95 via-black/40 to-transparent backdrop-blur-[2px]"
-                    }`}
-                >
-                  <motion.span
+                {/* Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0"
                     variants={{
-                      rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
-                      hover: { y: 0, opacity: 1 },
+                      rest: { scale: 1 },
+                      hover: {
+                        scale: 1.06,
+                        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                      },
                     }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-primary text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] mb-1.5"
                   >
+                    <Image
+                      src={project.image.startsWith('http') ? project.image : `${API_BASE_URL}/${project.image}`}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                  {/* Subtle Top Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                </div>
+
+                {/* Content Box (always visible with perfect readability) */}
+                <div className="p-6 flex flex-col flex-grow bg-gradient-to-b from-[#0c0c0e] to-zinc-950 relative">
+                  <span className="text-primary text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] mb-2 font-mono">
                     {project.category}
-                  </motion.span>
+                  </span>
 
-                  <motion.h2
-                    variants={{
-                      rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
-                      hover: { y: 0, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-display font-bold text-lg md:text-xl text-white mb-1.5 leading-tight line-clamp-2"
-                  >
+                  <h3 className="font-sans font-bold text-lg md:text-xl text-white mb-2 leading-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
                     {project.title}
-                  </motion.h2>
+                  </h3>
 
-                  <motion.p
-                    variants={{
-                      rest: { y: isMobile ? 0 : 30, opacity: isMobile ? 1 : 0 },
-                      hover: { y: 0, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-gray-400 text-xs mb-4 line-clamp-2 font-medium leading-relaxed"
-                  >
+                  <p className="text-zinc-400 text-xs mb-5 line-clamp-2 font-medium leading-relaxed">
                     {project.description}
-                  </motion.p>
+                  </p>
 
-                  <div className="flex items-center text-white font-black uppercase tracking-widest text-[9px] md:text-[10px] gap-2.5">
-                    <span className="pb-0.5 border-b border-primary/50">View Case Study</span>
+                  <div className="mt-auto flex items-center text-white font-bold uppercase tracking-wider text-[10px] gap-2">
+                    <span className="pb-0.5 border-b border-primary/40 group-hover:border-primary transition-colors duration-300">View Case Study</span>
                     <motion.div
                       variants={{
                         rest: { x: 0 },
@@ -247,19 +218,10 @@ export default function WorkSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <Icon icon="solar:arrow-right-linear" className="text-xs md:text-lg text-primary" />
+                      <Icon icon="solar:arrow-right-linear" className="text-sm text-primary" />
                     </motion.div>
                   </div>
-                </motion.div>
-
-                {/* Premium border glow */}
-                <motion.div
-                  variants={{
-                    rest: { opacity: isMobile ? 1 : 0 },
-                    hover: { opacity: 1 },
-                  }}
-                  className="absolute inset-0 rounded-2xl md:rounded-[2rem] ring-1 ring-primary/40 shadow-[0_0_60px_rgba(255,115,0,0.25)]"
-                />
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>

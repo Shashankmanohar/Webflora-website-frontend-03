@@ -89,14 +89,22 @@ export default function TrustSignals({ hideStats = false }) {
           variants={containerVariants}
         >
           <div className="flex flex-col items-center text-center mb-16">
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-3 mb-6">
-              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
-                <ShieldCheck className="w-4.5 h-4.5 text-[#ff3c00]" />
-                <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">The Webflora Advantage</span>
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-2.5 mb-8">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-[#121214] shadow-[0_2px_10px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <ShieldCheck className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                <span className="text-zinc-300 font-sans font-semibold tracking-wider text-[10px] uppercase">The Webflora Advantage</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-xl">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-orange-400 font-mono text-[9px] tracking-wider uppercase font-bold">MSME Registered: UDYAM-BR-26-0183379</span>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-[#121214] shadow-[0_2px_10px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0 shadow-[0_0_8px_rgba(249,115,22,0.6)]" />
+                <span className="text-zinc-300 font-sans font-semibold tracking-wider text-[10px] uppercase">MSME: UDYAM-BR-26-0183379</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-[#121214] shadow-[0_2px_10px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <span className="text-yellow-500 text-xs leading-none">★</span>
+                <span className="text-zinc-300 font-sans font-semibold tracking-wider text-[10px] uppercase">5.0 Google Score</span>
+              </div>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-[#121214] shadow-[0_2px_10px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                <span className="text-zinc-300 font-sans font-semibold tracking-wider text-[10px] uppercase">Response &lt; 2 Hours</span>
               </div>
             </motion.div>
             <motion.h2 variants={itemVariants} className="text-2xl md:text-4xl font-display font-bold text-white tracking-tighter leading-none uppercase">

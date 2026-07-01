@@ -29,10 +29,10 @@ export default function Hero() {
       </div>
 
       {/* Floating abstract code decorations (Desktop only) */}
-      <div className="absolute right-[8%] top-[25%] hidden xl:block opacity-20 animate-float-1 pointer-events-none text-white text-[70px] font-mono select-none" aria-hidden="true">
+      <div className="absolute right-[10%] top-[22%] hidden xl:block opacity-10 animate-float-1 pointer-events-none text-white text-[64px] font-mono select-none leading-none" aria-hidden="true">
         {"</>"}
       </div>
-      <div className="absolute left-[8%] bottom-[25%] hidden xl:block opacity-20 animate-float-2 pointer-events-none text-white text-[60px] font-mono select-none" aria-hidden="true">
+      <div className="absolute left-[10%] bottom-[22%] hidden xl:block opacity-10 animate-float-2 pointer-events-none text-white text-[54px] font-mono select-none leading-none" aria-hidden="true">
         {"{}"}
       </div>
 
@@ -84,10 +84,6 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Tagline branding statement */}
-        <p className="text-[10px] font-mono tracking-widest text-[#FF3B00]/70 uppercase">
-          "Anything that can be built, we build."
-        </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-1">

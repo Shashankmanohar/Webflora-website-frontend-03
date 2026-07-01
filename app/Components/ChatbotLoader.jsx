@@ -22,7 +22,20 @@ const CHATBOT_STYLE = `
   .prechat-input:focus { border-color: #ff3c00 !important; }
   .chat-input:focus    { border-color: #ff3c00 !important; }
   @media (max-width: 768px) {
-    .chatbot-launcher { bottom: 20px !important; right: 20px !important; }
+    .chatbot-launcher {
+      bottom: 20px !important;
+      right: 20px !important;
+      width: 48px !important;
+      height: 48px !important;
+      min-width: 48px !important;
+      min-height: 48px !important;
+      padding: 0px !important;
+      margin: 0px !important;
+    }
+    .chatbot-launcher svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
   }
 `;
 
@@ -44,7 +57,28 @@ function loadChatbot() {
     const observer = new MutationObserver((_, obs) => {
       const container = document.getElementById("ai-chatbot-root-container");
       if (container?.shadowRoot) {
-        injectChatbotStyle(container.shadowRoot);
+        const shadowRoot = container.shadowRoot;
+
+        // Create a persistent shadow observer that ensures our style is always the last sheet in the shadow root
+        const shadowObserver = new MutationObserver(() => {
+          let ourStyle = shadowRoot.getElementById("webflora-custom-chatbot-style");
+          if (!ourStyle) {
+            ourStyle = document.createElement("style");
+            ourStyle.id = "webflora-custom-chatbot-style";
+            ourStyle.textContent = CHATBOT_STYLE;
+            shadowRoot.appendChild(ourStyle);
+          } else if (shadowRoot.lastChild !== ourStyle) {
+            shadowRoot.appendChild(ourStyle); // move to end
+          }
+        });
+        shadowObserver.observe(shadowRoot, { childList: true });
+
+        // Initial injection
+        const ourStyle = document.createElement("style");
+        ourStyle.id = "webflora-custom-chatbot-style";
+        ourStyle.textContent = CHATBOT_STYLE;
+        shadowRoot.appendChild(ourStyle);
+
         obs.disconnect();
       }
     });
@@ -78,8 +112,45 @@ export default function ChatbotLoader() {
     // Set a 12-second timeout to load the chatbot if no interaction occurs
     timer = setTimeout(handleInteraction, 12000);
 
+    // Enforce 48px mobile size via continuous inline style override interval
+    const styleInterval = setInterval(() => {
+      const container = document.getElementById("ai-chatbot-root-container");
+      if (container?.shadowRoot) {
+        const launcher = container.shadowRoot.querySelector(".chatbot-launcher");
+        if (launcher) {
+          if (window.innerWidth <= 768) {
+            launcher.style.setProperty("width", "48px", "important");
+            launcher.style.setProperty("height", "48px", "important");
+            launcher.style.setProperty("min-width", "48px", "important");
+            launcher.style.setProperty("min-height", "48px", "important");
+            launcher.style.setProperty("padding", "0px", "important");
+            launcher.style.setProperty("margin", "0px", "important");
+            
+            const svg = launcher.querySelector("svg");
+            if (svg) {
+              svg.style.setProperty("width", "24px", "important");
+              svg.style.setProperty("height", "24px", "important");
+            }
+          } else {
+            launcher.style.removeProperty("width");
+            launcher.style.removeProperty("height");
+            launcher.style.removeProperty("min-width");
+            launcher.style.removeProperty("min-height");
+            launcher.style.removeProperty("padding");
+            launcher.style.removeProperty("margin");
+            const svg = launcher.querySelector("svg");
+            if (svg) {
+              svg.style.removeProperty("width");
+              svg.style.removeProperty("height");
+            }
+          }
+        }
+      }
+    }, 500);
+
     return () => {
       if (timer) clearTimeout(timer);
+      clearInterval(styleInterval);
       TRIGGER_EVENTS.forEach((e) =>
         window.removeEventListener(e, handleInteraction)
       );

@@ -74,12 +74,7 @@ export default function HomeSections({ faqComponent }) {
           loader={() => import("./WorkSection")}
         />
       </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
-          loader={() => import("./VegavanTeaser")}
-        />
-      </div>
+
 
       {/* Social proof */}
       <div className="content-auto">

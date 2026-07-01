@@ -156,7 +156,13 @@ export default function TechStackSection() {
       <div className="relative max-w-7xl mx-auto px-6 z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-xs text-orange-400 font-medium tracking-wide uppercase">
             ⚡ Engineered For Scale
           </div>
@@ -166,10 +172,16 @@ export default function TechStackSection() {
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
             We build with cutting-edge languages and cloud frameworks to deliver fast, secure, and search-optimized digital architectures.
           </p>
-        </div>
+        </motion.div>
 
         {/* Categories Tab Bar */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-16 max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-16 max-w-3xl mx-auto"
+        >
           {techCategories.map((category) => (
             <button
               key={category.id}
@@ -186,21 +198,25 @@ export default function TechStackSection() {
               {category.label}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bento Grid */}
         <motion.div
           layout
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredTech.map((tech) => (
+            {filteredTech.map((tech, index) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.4, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 key={tech.name}
                 whileHover={{ y: -6 }}
                 style={{

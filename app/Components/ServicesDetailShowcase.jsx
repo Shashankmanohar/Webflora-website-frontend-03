@@ -1,8 +1,8 @@
-"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   {
@@ -167,7 +167,13 @@ export default function ServicesDetailShowcase() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-12"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-white/10 bg-white/[0.02] backdrop-blur-md text-[10px] text-neutral-400 font-mono tracking-widest uppercase rounded-none">
             🚀 Complete Digital Suite
           </div>
@@ -178,7 +184,7 @@ export default function ServicesDetailShowcase() {
           <p className="text-gray-400 text-sm leading-relaxed font-light max-w-xl mx-auto">
             We build state-of-the-art websites, custom apps, enterprise systems, and AI workflows tailored precisely to your company's growth.
           </p>
-        </div>
+        </motion.div>
 
         {/* Desktop Interface */}
         <div className="hidden lg:grid lg:grid-cols-12 gap-6 items-stretch">
@@ -188,9 +194,11 @@ export default function ServicesDetailShowcase() {
             {services.map((item) => {
               const isActive = item.id === activeTab;
               return (
-                <button
+                <motion.button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   className={`group w-full text-left px-5 py-3.5 border transition-all duration-500 flex items-center gap-3.5 cursor-pointer rounded-none ${isActive
                       ? item.activeBg
                       : "bg-zinc-950/20 border-white/5 text-neutral-400 hover:text-white hover:bg-zinc-900/30 hover:border-white/10"
@@ -210,83 +218,92 @@ export default function ServicesDetailShowcase() {
                       {item.badge}
                     </span>
                   </div>
-                </button>
+                </motion.button>
               );
             })}
           </div>
 
           {/* Right: Active Service Content Card */}
           <div className="lg:col-span-8 pl-4">
-            <div className={`h-full p-8 md:p-10 bg-gradient-to-br ${currentService.color} border border-white/10 backdrop-blur-xl transition-all duration-700 flex flex-col justify-between group relative overflow-hidden rounded-none`}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className={`h-full p-8 md:p-10 bg-gradient-to-br ${currentService.color} border border-white/10 backdrop-blur-xl transition-all duration-700 flex flex-col justify-between group relative overflow-hidden rounded-none`}
+              >
 
-              <div className="space-y-6">
-                {/* Badge and Title */}
-                <div className="space-y-2">
-                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white/[0.04] border border-white/10 text-[10px] font-mono tracking-wider uppercase text-neutral-300 rounded-none`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                    {currentService.badge}
-                  </span>
-                  <Link
-                    href={currentService.href}
-                    className="block group-hover:translate-x-1 transition-transform duration-300"
-                  >
-                    <h2 className="text-2xl md:text-3xl font-black text-white hover:underline flex items-center gap-2 tracking-tight leading-none uppercase">
-                      {currentService.title}
-                      <Icon icon="solar:arrow-right-up-bold" className={`text-2xl ${currentService.textColor} opacity-60 group-hover:opacity-100 transition-opacity`} />
-                    </h2>
-                  </Link>
-                </div>
+                <div className="space-y-6">
+                  {/* Badge and Title */}
+                  <div className="space-y-2">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white/[0.04] border border-white/10 text-[10px] font-mono tracking-wider uppercase text-neutral-300 rounded-none`}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      {currentService.badge}
+                    </span>
+                    <Link
+                      href={currentService.href}
+                      className="block group-hover:translate-x-1 transition-transform duration-300"
+                    >
+                      <h2 className="text-2xl md:text-3xl font-black text-white hover:underline flex items-center gap-2 tracking-tight leading-none uppercase">
+                        {currentService.title}
+                        <Icon icon="solar:arrow-right-up-bold" className={`text-2xl ${currentService.textColor} opacity-60 group-hover:opacity-100 transition-opacity`} />
+                      </h2>
+                    </Link>
+                  </div>
 
-                {/* Description */}
-                <p className="text-neutral-300 font-light leading-relaxed text-sm max-w-2xl">
-                  {currentService.desc}
-                </p>
+                  {/* Description */}
+                  <p className="text-neutral-300 font-light leading-relaxed text-sm max-w-2xl">
+                    {currentService.desc}
+                  </p>
 
-                {/* Grid stats/KPIs */}
-                <div className="grid grid-cols-3 gap-3 pt-2">
-                  {currentService.stats.map((st, i) => (
-                    <div key={i} className="p-2.5 bg-white/[0.02] border border-white/5 text-center rounded-none">
-                      <span className="block text-xl font-black text-white tracking-tight">{st.val}</span>
-                      <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">{st.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Included Checklist */}
-                <div className="space-y-3 pt-5 border-t border-white/5">
-                  <h4 className="text-white font-mono text-[10px] uppercase tracking-widest">Included Capabilities</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {currentService.included.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5 group/item">
-                        <div className={`p-1 ${currentService.bulletColor} transition-transform duration-300 group-hover/item:scale-110 rounded-none`}>
-                          <Icon icon="solar:check-circle-bold" className="text-sm" />
-                        </div>
-                        <span className="text-neutral-300 text-xs font-medium">{feature}</span>
+                  {/* Grid stats/KPIs */}
+                  <div className="grid grid-cols-3 gap-3 pt-2">
+                    {currentService.stats.map((st, i) => (
+                      <div key={i} className="p-2.5 bg-white/[0.02] border border-white/5 text-center rounded-none">
+                        <span className="block text-xl font-black text-white tracking-tight">{st.val}</span>
+                        <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">{st.label}</span>
                       </div>
                     ))}
                   </div>
+
+                  {/* Included Checklist */}
+                  <div className="space-y-3 pt-5 border-t border-white/5">
+                    <h4 className="text-white font-mono text-[10px] uppercase tracking-widest">Included Capabilities</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {currentService.included.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2.5 group/item">
+                          <div className={`p-1 ${currentService.bulletColor} transition-transform duration-300 group-hover/item:scale-110 rounded-none`}>
+                            <Icon icon="solar:check-circle-bold" className="text-sm" />
+                          </div>
+                          <span className="text-neutral-300 text-xs font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Action Button */}
-              <div className="pt-6 flex items-center justify-between border-t border-white/5 mt-6">
-                <Link
-                  href={currentService.href}
-                  className="px-6 py-3 bg-white text-black font-extrabold uppercase tracking-wider text-[10px] transition-all duration-300 shadow-lg shadow-white/5 hover:scale-105 rounded-none hover:bg-neutral-200"
-                >
-                  Explore Details
-                </Link>
+                {/* Action Button */}
+                <div className="pt-6 flex items-center justify-between border-t border-white/5 mt-6">
+                  <Link
+                    href={currentService.href}
+                    className="px-6 py-3 bg-white text-black font-extrabold uppercase tracking-wider text-[10px] transition-all duration-300 shadow-lg shadow-white/5 hover:scale-105 rounded-none hover:bg-neutral-200"
+                  >
+                    Explore Details
+                  </Link>
 
-                <Link
-                  href="/contact"
-                  className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-400 hover:text-white transition-colors"
-                >
-                  Get Free Consultation
-                  <Icon icon="solar:arrow-right-linear" />
-                </Link>
-              </div>
+                  <Link
+                    href="/contact"
+                    className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-400 hover:text-white transition-colors"
+                  >
+                    Get Free Consultation
+                    <Icon icon="solar:arrow-right-linear" />
+                  </Link>
+                </div>
 
-            </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
         </div>

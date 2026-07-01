@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./Components/HeroSection";
+import ClientMarquee from "./Components/ClientMarquee";
 import StatsMarquee from "./Components/StatsMarquee";
 import HomeSections from "./Components/HomeSections";
 import HomeIntroSection from "./Components/HomeIntroSection";
@@ -45,6 +46,9 @@ export default function Page() {
     <>
       {/* ── Above the fold — statically server-rendered ── */}
       <Hero />
+
+      {/* Client Marquee - logo slider */}
+      <ClientMarquee />
 
       {/* ── SEO introduction section — statically server-rendered ── */}
       <HomeIntroSection />

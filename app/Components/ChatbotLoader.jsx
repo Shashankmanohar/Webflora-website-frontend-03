@@ -104,7 +104,7 @@ export default function ChatbotLoader() {
       loadChatbot();
     }
 
-    const TRIGGER_EVENTS = ["scroll", "mousemove", "touchstart", "click", "keydown"];
+    const TRIGGER_EVENTS = ["scroll", "touchstart", "click", "keydown"];
     TRIGGER_EVENTS.forEach((e) =>
       window.addEventListener(e, handleInteraction, { once: true, passive: true })
     );

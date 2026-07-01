@@ -84,50 +84,30 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 w-full text-center flex flex-col items-center space-y-4 md:space-y-5">
 
         {/* Trust Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-md"
-        >
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-md animate-hero-text">
           <span className="text-orange-500 text-xs">⭐</span>
           <span className="text-[10px] sm:text-xs tracking-wider text-gray-300 font-mono uppercase">
             Trusted Software Company in Patna
           </span>
-        </motion.div>
+        </div>
 
         {/* H1 Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl text-white"
-        >
+        <h1 className="font-display font-bold tracking-tight leading-[1.1] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl text-white animate-hero-text-delay-1">
           Software <br className="sm:hidden" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 font-black drop-shadow-[0_0_20px_rgba(249,115,22,0.15)] animate-pulse duration-3000">
             Company
           </span>{" "}
           <br className="hidden sm:inline" />
           <span className="text-white">in Patna, Bihar</span>
-        </motion.h1>
+        </h1>
 
         {/* Subtext description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-gray-400 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-3xl"
-        >
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-3xl animate-hero-text-delay-2">
           We are a full-service software company in Patna, Bihar, offering custom website development, mobile app development, performance digital marketing, and custom AI automation solutions that scale business growth across India.
-        </motion.p>
+        </p>
 
         {/* Core Services inline bullet points */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-gray-300 font-mono"
-        >
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-gray-300 font-mono animate-hero-text-delay-3">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> Software Development
           </span>
@@ -147,7 +127,7 @@ export default function Hero() {
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" /> AI Automation
           </span>
-        </motion.div>
+        </div>
 
 
         {/* CTAs */}
@@ -215,6 +195,34 @@ export default function Hero() {
         </motion.div>
 
       </div>
+
+      <style>{`
+        @keyframes heroFadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(15px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-hero-text {
+          animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-hero-text-delay-1 {
+          animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
+          opacity: 0;
+        }
+        .animate-hero-text-delay-2 {
+          animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+          opacity: 0;
+        }
+        .animate-hero-text-delay-3 {
+          animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
+          opacity: 0;
+        }
+      `}</style>
     </section>
   );
 }

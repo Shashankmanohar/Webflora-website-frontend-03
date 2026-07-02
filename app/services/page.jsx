@@ -8,6 +8,7 @@ import TestimonialSection from './components/TestimonialSection'
 import FaqSection from './components/FaqSection'
 import SEOContentBlock from '../Components/SEOContentBlock'
 import TrustSignals from '../Components/TrustSignals'
+import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from './components/ServiceTemplate'
 
 const page = () => {
   return (
@@ -19,6 +20,8 @@ const page = () => {
       <BusinessValue/>
       <WorkSection/>
       <TestimonialSection/>
+      <ServiceComparisonWrapper data={{ title: "Webflora Digital Solutions" }} />
+      <ServiceGlossaryWrapper data={{ title: "Webflora Digital Solutions" }} />
       <FaqSection/>
       {/* Service Schema */}
       <script

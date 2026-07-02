@@ -10,6 +10,7 @@ import ContactSection from "../../Components/ContactSection";
 import SEOContentBlock from "../../Components/SEOContentBlock";
 import SafeIcon from "../../services/components/client/SafeIcon";
 import { industriesData } from "../data";
+import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from "../../services/components/ServiceTemplate";
 
 const IndustryTemplate = ({ data }) => {
   return (
@@ -25,6 +26,8 @@ const IndustryTemplate = ({ data }) => {
         <BenefitsWrapper data={data} />
         <TechStackWrapper data={data} />
         <TestimonialWrapper />
+        <ServiceComparisonWrapper data={data} />
+        <ServiceGlossaryWrapper data={data} />
         <FaqSection faqs={data.faqs} title={`${data.title} Industry`} />
         <OtherIndustriesWrapper currentIndustry={data.title} />
         

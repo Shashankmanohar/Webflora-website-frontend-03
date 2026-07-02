@@ -1250,36 +1250,179 @@ const SuitableForWrapper = ({ data }) => {
   );
 };
 
-const ServiceComparisonWrapper = ({ data }) => {
+export const ServiceComparisonWrapper = ({ data }) => {
+  const getPageKey = (data) => {
+    if (!data || !data.title) return "website";
+    const titleLower = data.title.toLowerCase();
+    if (titleLower.includes("marketing") || titleLower.includes("seo") || titleLower.includes("digital")) return "marketing";
+    if (titleLower.includes("chatbot") || titleLower.includes("bot") || titleLower.includes("chat")) return "chatbot";
+    if (titleLower.includes("health")) return "healthcare";
+    if (titleLower.includes("educat") || titleLower.includes("school") || titleLower.includes("college")) return "education";
+    if (titleLower.includes("real estate") || titleLower.includes("property")) return "realestate";
+    if (titleLower.includes("next.js") || titleLower.includes("nextjs")) return "nextjs";
+    if (titleLower.includes("react")) return "react";
+    if (titleLower.includes("laravel")) return "laravel";
+    if (titleLower.includes("app") || titleLower.includes("mobile")) return "mobile";
+    if (titleLower.includes("ai") || titleLower.includes("automation")) return "ai";
+    if (titleLower.includes("software")) return "software";
+    return "website";
+  };
+
   const comparisonData = {
-    "website-development-company-in-patna": [
+    "marketing": [
+      { feature: "Lead Generation", custom: "Organic SEO mapping, high-intent user conversion funnels", standard: "Spam click buy templates, high paid-ad budget drain" },
+      { feature: "Analytics Tracking", custom: "Centralized pixel event logs, custom ROI dashboards", standard: "Bloated tags slowing site speed, inaccurate bounce reporting" },
+      { feature: "Long-term ROI", custom: "Compounding organic traffic rankings that persist over time", standard: "Traffic drops to absolute zero the minute ad budget stops" }
+    ],
+    "chatbot": [
+      { feature: "Intent Handling", custom: "Advanced RAG LLM prompts understanding natural language context", standard: "Rigid button-trees that freeze if customer types manually" },
+      { feature: "System Sync", custom: "Direct REST API database queries (track orders, book dates)", standard: "Basic email contact triggers that require manual support" },
+      { feature: "Session Memory", custom: "Context window variables remembering past visitor preferences", standard: "Fresh reset on every single request query sent" }
+    ],
+    "website": [
       { feature: "Tech Stack", custom: "Next.js, React, Tailwind CSS, Vercel/AWS", standard: "Generic PHP, heavy WordPress, cheap hosting templates" },
       { feature: "Performance", custom: "Under 1s load time, 95+ Core Web Vitals score", standard: "3s+ load time, bloated plugins, poor speed optimization" },
       { feature: "SEO & Rankings", custom: "Dynamic schemas, structured AEO glossary, metadata", standard: "Basic meta tags, no semantic structure, poor indexing" },
       { feature: "Ownership", custom: "100% source code ownership, zero monthly fees", standard: "Locked theme, platform dependencies, vendor fees" }
     ],
-    "mobile-app-development-company-in-patna": [
+    "mobile": [
       { feature: "Performance", custom: "Native UI rendering (Flutter/React Native), 60FPS smoothness", standard: "WebView wrappers, slow loading web frames" },
       { feature: "Offline Support", custom: "Local database caching, offline operation sync", standard: "Requires active internet for all basic screens" },
       { feature: "UX/UI Design", custom: "Custom micro-animations, tailored platform flows", standard: "Outdated material design templates" },
       { feature: "Security", custom: "Biometric auth, secure keychain storage, AES-256", standard: "Basic plaintext data, vulnerable endpoints" }
     ],
-    "software-development-company-in-patna": [
+    "software": [
       { feature: "Alignment", custom: "Built exactly around your custom business workflows", standard: "Forces business to adjust to rigid pre-built software" },
       { feature: "License Fees", custom: "One-time flat-rate cost, unlimited users", standard: "Per-user monthly subscription fees" },
       { feature: "Integrations", custom: "Direct custom API mapping to all internal databases", standard: "Closed ecosystem, locked database endpoints" },
       { feature: "Support", custom: "Direct technical support, SLAs, source code custody", standard: "Standard community forums, delayed ticket support" }
     ],
-    "ai-automation-company-in-patna": [
+    "ai": [
       { feature: "Integrations", custom: "Multi-platform mapping (n8n, custom Node.js, REST APIs)", standard: "Basic triggers (Zapier limits, rigid templates)" },
       { feature: "Operational Hours", custom: "24/7 autonomous cron loops, self-healing pipelines", standard: "Requires manual trigger monitoring" },
       { feature: "Security", custom: "Private host keys, encryption protocols, locked keys", standard: "Shared cloud credentials, security risks" },
       { feature: "AI Model Support", custom: "Multi-modal model mapping (GPT-4o, Claude 3.5, local LLMs)", standard: "Single API endpoint dependencies" }
+    ],
+    "healthcare": [
+      { feature: "Patient Data Safety", custom: "AES-256 local database encryption, HIPAA-compliant flows", standard: "Plaintext database logs on generic shared hosts" },
+      { feature: "Telehealth Streaming", custom: "WebRTC peer-to-peer real-time video connections", standard: "Laggy iframe plugins or third-party redirects" },
+      { feature: "Appointment Booking", custom: "Instant slot allocation with automated WhatsApp reminders", standard: "Manual email checks, high appointment no-shows" }
+    ],
+    "education": [
+      { feature: "Admissions Handling", custom: "Scale-tested intake architecture, zero-delay load balancing", standard: "Server timeouts and crashes during high-traffic weeks" },
+      { feature: "LMS Functionality", custom: "Custom dashboard widgets, offline assignment trackers", standard: "Heavy PDF downloads, confusing navigation templates" },
+      { feature: "Exam Integrity", custom: "Window blur detection, session recovery database states", standard: "No log files saved if student loses internet" }
+    ],
+    "realestate": [
+      { feature: "Property Search", custom: "ElasticSearch location indexing with filter presets", standard: "Slow database scans, page reloads for simple sorting" },
+      { feature: "Broker Alerts", custom: "Immediate WhatsApp lead sync to on-duty agents", standard: "Daily email digest, leads cold after 24 hours" },
+      { feature: "Interactive Tours", custom: "Speed-optimized next/image rendering, light media loads", standard: "Bloated raw files causing long startup page load lag" }
+    ],
+    "nextjs": [
+      { feature: "Speed & Scale", custom: "Static Site Generation (SSG), ISR dynamic edge caching", standard: "Client-side JS bundle parsing, slow device rendering" },
+      { feature: "Hydration", custom: "Optimized script imports, lazy-loading component folds", standard: "Heavy monolithic script blocks parsed on first paint" },
+      { feature: "SEO Indexability", custom: "Pre-rendered semantic HTML matching modern web crawlers", standard: "Indexers waiting on client-side API callback states" }
+    ],
+    "react": [
+      { feature: "User Interaction", custom: "Sub-millisecond dynamic DOM updates via custom Hooks", standard: "Monolithic browser re-renders creating UI stutter" },
+      { feature: "Component Reuse", custom: "Atomic component files sharing centralized state parameters", standard: "Duplicate HTML structures in legacy scripts" }
+    ],
+    "laravel": [
+      { feature: "Database Shield", custom: "Eloquent ORM database query shields, CSRF protection", standard: "Manual SQL strings vulnerable to script injections" },
+      { feature: "Job Processing", custom: "Redis queues handling heavy integrations in background", standard: "HTTP timeout crashes during concurrent data syncs" }
     ]
   };
 
-  const currentSlug = Object.keys(servicesData).find(key => servicesData[key].title === data.title) || "";
-  const rows = comparisonData[currentSlug] || comparisonData["website-development-company-in-patna"];
+  const headingData = {
+    "marketing": {
+      title: "Custom SEO Strategy",
+      vs: "Generic Ad Campaigns",
+      label: "Organic Growth vs. Paid Spending",
+      customCol: "Webflora SEO Strategy",
+      standardCol: "Traditional PPC/Ads"
+    },
+    "chatbot": {
+      title: "Cognitive AI Assistant",
+      vs: "Basic Button Autoresponders",
+      label: "Autonomous Agents vs. Static Logic",
+      customCol: "Webflora AI Agent",
+      standardCol: "Basic Scripted Bots"
+    },
+    "healthcare": {
+      title: "Compliant Patient Portals",
+      vs: "Generic Admin Templates",
+      label: "Secure Telehealth vs. Basic Forms",
+      customCol: "Webflora Clinic Portal",
+      standardCol: "Standard Forms"
+    },
+    "education": {
+      title: "Scale-Tested Student LMS",
+      vs: "Confusing PDF Templates",
+      label: "Integrated Portals vs. Monolithic Scripts",
+      customCol: "Webflora LMS Platform",
+      standardCol: "Generic Templates"
+    },
+    "realestate": {
+      title: "Elastic Listing Portals",
+      vs: "Slow Broker Catalogs",
+      label: "Instant Sync vs. Delayed Updates",
+      customCol: "Webflora Listing Engine",
+      standardCol: "Basic Database Templates"
+    },
+    "nextjs": {
+      title: "Next.js Static Generation",
+      vs: "Heavy CSR Frameworks",
+      label: "SSR Edge Scale vs. Bloated Bundles",
+      customCol: "Next.js Build",
+      standardCol: "Traditional SPA/CSR"
+    },
+    "react": {
+      title: "React Component Hook",
+      vs: "Raw Monolithic Markup",
+      label: "Virtual DOM vs. Monolithic Renders",
+      customCol: "React Hook UI",
+      standardCol: "Legacy HTML/JS"
+    },
+    "laravel": {
+      title: "Laravel PHP Framework",
+      vs: "Raw PHP / Basic CGI",
+      label: "Eloquent Security vs. Vulnerable Scripts",
+      customCol: "Laravel MVC Engine",
+      standardCol: "Raw Script Codes"
+    },
+    "website": {
+      title: "Custom Next.js Web",
+      vs: "Generic WordPress Theme",
+      label: "Tailored Speed vs. Bloated Code",
+      customCol: "Webflora Custom Web",
+      standardCol: "Bloated Templates"
+    },
+    "mobile": {
+      title: "Native Mobile App",
+      vs: "WebView App Wrappers",
+      label: "Optimized Core Performance vs. Fused Frames",
+      customCol: "Webflora Native App",
+      standardCol: "WebView Wrappers"
+    },
+    "software": {
+      title: "Custom Cloud Software",
+      vs: "Generic Multi-Tenant SaaS",
+      label: "Tailored Workflows vs. Rigid Subscriptions",
+      customCol: "Webflora Custom Build",
+      standardCol: "Standard SaaS Tools"
+    },
+    "ai": {
+      title: "AI Pipeline Automation",
+      vs: "Manual Integration Workflows",
+      label: "Self-Healing AI vs. Human Overhead",
+      customCol: "Webflora AI Pipeline",
+      standardCol: "Manual Tasks"
+    }
+  };
+
+  const pageKey = getPageKey(data);
+  const rows = comparisonData[pageKey] || comparisonData["website"];
+  const headers = headingData[pageKey] || headingData["website"];
 
   return (
     <section className="py-24 px-6 bg-[#030303] relative border-b border-white/5 overflow-hidden">
@@ -1289,10 +1432,10 @@ const ServiceComparisonWrapper = ({ data }) => {
             ⚔️ Architecture Battle
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-            Custom Build <span className="text-gray-600 font-outline">vs. Template SaaS</span>
+            {headers.title} <span className="text-gray-600 font-outline">vs. {headers.vs}</span>
           </h2>
           <p className="text-gray-500 text-sm mt-3 font-light">
-            Compare our engineered {data.title.toLowerCase()} against traditional generic solutions.
+            {headers.label}
           </p>
         </div>
 
@@ -1301,16 +1444,16 @@ const ServiceComparisonWrapper = ({ data }) => {
           <div className="block md:hidden space-y-6 divide-y divide-white/5">
             {rows.map((row, i) => (
               <div key={i} className={`pt-6 ${i === 0 ? 'pt-0' : ''} space-y-3`}>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-300 font-mono">{row.feature}</h4>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-300 font-mono">{row.feature}</h3>
                 <div className="p-4 rounded-xl bg-[#ff3b00]/5 border border-[#ff3b00]/20">
-                  <span className="text-[10px] font-bold text-[#ff3b00] uppercase tracking-widest block mb-1">★ Webflora Custom</span>
+                  <span className="text-[10px] font-bold text-[#ff3b00] uppercase tracking-widest block mb-1">★ {headers.customCol}</span>
                   <p className="text-xs sm:text-sm text-white font-medium flex items-start gap-2">
                     <Icon icon="solar:check-circle-bold" className="text-emerald-400 text-base shrink-0 mt-0.5" />
                     {row.custom}
                   </p>
                 </div>
                 <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                  <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest block mb-1">Generic / Traditional</span>
+                  <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest block mb-1">{headers.standardCol}</span>
                   <p className="text-xs text-neutral-400">
                     {row.standard}
                   </p>
@@ -1326,9 +1469,9 @@ const ServiceComparisonWrapper = ({ data }) => {
                 <tr className="border-b border-white/10 font-bold font-mono">
                   <th className="p-5 bg-white/[0.02] text-neutral-300 font-bold text-xs uppercase tracking-widest w-1/4">Feature</th>
                   <th className="p-5 bg-[#ff3b00]/10 border-x border-[#ff3b00]/20 text-white font-black text-xs uppercase tracking-widest text-center w-2/5">
-                    Webflora Custom Build
+                    {headers.customCol}
                   </th>
-                  <th className="p-5 bg-white/[0.01] text-neutral-500 font-bold text-xs uppercase tracking-widest text-center w-1/3">Traditional Templates</th>
+                  <th className="p-5 bg-white/[0.01] text-neutral-500 font-bold text-xs uppercase tracking-widest text-center w-1/3">{headers.standardCol}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -1352,32 +1495,84 @@ const ServiceComparisonWrapper = ({ data }) => {
   );
 };
 
-const ServiceGlossaryWrapper = ({ data }) => {
+export const ServiceGlossaryWrapper = ({ data }) => {
+  const getPageKey = (data) => {
+    if (!data || !data.title) return "website";
+    const titleLower = data.title.toLowerCase();
+    if (titleLower.includes("marketing") || titleLower.includes("seo") || titleLower.includes("digital")) return "marketing";
+    if (titleLower.includes("chatbot") || titleLower.includes("bot") || titleLower.includes("chat")) return "chatbot";
+    if (titleLower.includes("health")) return "healthcare";
+    if (titleLower.includes("educat") || titleLower.includes("school") || titleLower.includes("college")) return "education";
+    if (titleLower.includes("real estate") || titleLower.includes("property")) return "realestate";
+    if (titleLower.includes("next.js") || titleLower.includes("nextjs")) return "nextjs";
+    if (titleLower.includes("react")) return "react";
+    if (titleLower.includes("laravel")) return "laravel";
+    if (titleLower.includes("app") || titleLower.includes("mobile")) return "mobile";
+    if (titleLower.includes("ai") || titleLower.includes("automation")) return "ai";
+    if (titleLower.includes("software")) return "software";
+    return "website";
+  };
+
   const glossaryData = {
-    "website-development-company-in-patna": [
+    "marketing": [
+      { term: "Organic SEO", def: "Attracting customer clicks via high Google rankings without paying per visitor.", icon: "solar:map-arrow-square-bold-duotone" },
+      { term: "Conversion Attribution", def: "Analytical maps showing exactly which click triggered a sales booking transaction.", icon: "solar:database-bold-duotone" },
+      { term: "Keyword Funnel", def: "Grouping search phrases by buyer intent to target high-value commercial customers.", icon: "solar:filter-bold-duotone" }
+    ],
+    "chatbot": [
+      { term: "RAG Prompting", def: "Feeding clean local database info to LLMs so they reply with accurate business details.", icon: "solar:chat-round-bold-duotone" },
+      { term: "Cognitive Agent", def: "An automated helper script empowered to log items directly into CRM software tables.", icon: "solar:cpu-bolt-bold-duotone" },
+      { term: "Context Memory", def: "Storing active chat variables so the bot remembers the user's name and queries.", icon: "solar:database-bold-duotone" }
+    ],
+    "website": [
       { term: "Headless Architecture", def: "Decoupling the frontend user interface from the backend database for unmatched speed, scalability, and security.", icon: "solar:code-square-bold-duotone" },
       { term: "Core Web Vitals", def: "A set of specific Google metrics used to measure user experience, including loading performance, interactivity, and visual stability.", icon: "solar:database-bold-duotone" },
       { term: "Static Site Generation (SSG)", def: "Pre-rendering frontend pages into HTML files at build time to deliver instant loading speeds and serverless scale.", icon: "solar:cpu-bolt-bold-duotone" }
     ],
-    "mobile-app-development-company-in-patna": [
+    "mobile": [
       { term: "Cross-Platform Framework", def: "Single codebase framework (e.g. Flutter/React Native) compiled directly to native ARM code on both iOS and Android.", icon: "solar:code-square-bold-duotone" },
       { term: "API Integration", def: "Connecting the mobile application frontend to databases and secure third-party billing gates via secure REST/GraphQL endpoints.", icon: "solar:database-bold-duotone" },
       { term: "State Management", def: "Managing active app data states (user sessions, carts, filters) locally for instant, glitch-free screen renders.", icon: "solar:cpu-bolt-bold-duotone" }
     ],
-    "software-development-company-in-patna": [
+    "software": [
       { term: "Custom Software", def: "Applications engineered specifically to match your exact business guidelines, operating processes, and rules.", icon: "solar:code-square-bold-duotone" },
       { term: "ERP/CRM Systems", def: "Intelligent software modules used to manage inventory, tracking, finance, customer leads, and internal team logs.", icon: "solar:database-bold-duotone" },
       { term: "Legacy Migration", def: "Transitioning outdated, insecure databases or old desktop programs into secure, modern cloud-native systems.", icon: "solar:cpu-bolt-bold-duotone" }
     ],
-    "ai-automation-company-in-patna": [
+    "ai": [
       { term: "Workflow Pipeline", def: "Autonomous data sequences that trigger based on events (e.g. a new form submit) to update all systems instantly.", icon: "solar:code-square-bold-duotone" },
       { term: "LLM Orchestration", def: "Connecting advanced AI intelligence layers (GPT-4o, Claude) to verify emails, draft custom quotes, or answer customer leads.", icon: "solar:database-bold-duotone" },
       { term: "Self-Healing Workflows", def: "Logical exception-handling loops that retry database connections or swap APIs automatically if a service is down.", icon: "solar:cpu-bolt-bold-duotone" }
+    ],
+    "healthcare": [
+      { term: "Telehealth Interface", def: "Encrypted audio-visual protocols enabling doctors and patients to consult safely inside browser frames.", icon: "solar:video-library-bold-duotone" },
+      { term: "HIPAA-Compliance", def: "Technical safeguards (logs, encryption) to protect patient records against unauthorized database access.", icon: "solar:shield-keyhole-bold-duotone" },
+      { term: "Lab Report Bot", def: "Secure API scripts that read doctor approval flags and push PDF results directly to patient contacts.", icon: "solar:chat-round-bold-duotone" }
+    ],
+    "education": [
+      { term: "Learning Management (LMS)", def: "Unified student portal panels mapping lesson videos, progress marks, and exam tasks dynamically.", icon: "solar:bookmark-bold-duotone" },
+      { term: "Load-Balanced Intake", def: "Multi-cluster hosting setup preventing portal crashes during first-day class registration rushes.", icon: "solar:server-bold-duotone" },
+      { term: " Proctor Shield", def: "Client-side listener hooks logging focus shifts or page exits to maintain high quiz integrity standards.", icon: "solar:eye-bold-duotone" }
+    ],
+    "realestate": [
+      { term: "Elastic property search", def: "Database query indexes returning available listings instantly based on custom location parameters.", icon: "solar:map-arrow-square-bold-duotone" },
+      { term: "Instant Sync CRM", def: "Automatic broker alerts pushing full client requirements to staff phones the second a lead is captured.", icon: "solar:phone-calling-bold-duotone" },
+      { term: "Asset optimization", def: "Next-gen image formatting compiling home tour graphics to under 100KB for sub-second page paints.", icon: "solar:gallery-bold-duotone" }
+    ],
+    "nextjs": [
+      { term: "Static Generation (SSG)", def: "Pre-rendering frontend pages into HTML files at build time to deliver instant loading speeds.", icon: "solar:code-square-bold-duotone" },
+      { term: "Static Regeneration (ISR)", def: "Updating page assets in the background without requiring a complete Next.js project build run.", icon: "solar:database-bold-duotone" }
+    ],
+    "react": [
+      { term: "Virtual DOM", def: "Dynamic interface representation enabling the browser to apply paint updates in sub-milliseconds.", icon: "solar:cpu-bolt-bold-duotone" }
+    ],
+    "laravel": [
+      { term: "Eloquent ORM", def: "Clean active record syntax to query databases securely without raw SQL scripts.", icon: "solar:shield-keyhole-bold-duotone" }
     ]
   };
 
-  const currentSlug = Object.keys(servicesData).find(key => servicesData[key].title === data.title) || "";
-  const terms = glossaryData[currentSlug] || glossaryData["website-development-company-in-patna"];
+  const pageKey = getPageKey(data);
+  const terms = glossaryData[pageKey] || glossaryData["website"];
 
   return (
     <section className="py-24 px-6 bg-black relative border-b border-white/5 overflow-hidden">

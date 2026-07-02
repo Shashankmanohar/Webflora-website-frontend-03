@@ -6,6 +6,7 @@ import SafeIcon from "../../services/components/client/SafeIcon";
 import { FadeInUp, HoverScale } from "../../services/components/client/MotionWrappers";
 import ContactSection from "../../Components/ContactSection";
 import FaqSection from "../../services/components/FaqSection";
+import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from "../../services/components/ServiceTemplate";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -14,16 +15,17 @@ export async function generateMetadata({ params }) {
 
   const baseUrl = "https://webfloratechnologies.com";
   const url = `${baseUrl}/technology/${slug}`;
+  const shortDesc = tech.subtext.slice(0, 150) + "...";
 
   return {
     title: `${tech.title} | Webflora Technologies`,
-    description: tech.subtext,
+    description: shortDesc,
     alternates: {
       canonical: url,
     },
     openGraph: {
       title: tech.title,
-      description: tech.subtext,
+      description: shortDesc,
       url: url,
       siteName: "Webflora Technologies",
       locale: "en_IN",
@@ -149,12 +151,49 @@ export default async function TechPage({ params }) {
         </div>
       </section>
 
+      {/* AEO Comparison & Glossary */}
+      <ServiceComparisonWrapper data={data} />
+      <ServiceGlossaryWrapper data={data} />
+
       {/* FAQs Section */}
       <FaqSection faqs={data.faqs} title={data.title} />
 
       <ContactSection />
       
       {/* Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": `https://webfloratechnologies.com/technology/${slug}#webpage`,
+            "url": `https://webfloratechnologies.com/technology/${slug}`,
+            "name": data.title,
+            "headline": data.title,
+            "description": data.subtext.slice(0, 150) + "...",
+            "datePublished": "2026-01-01T00:00:00+05:30",
+            "dateModified": "2026-07-02T00:00:00+05:30",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Webflora Technologies",
+              "url": "https://webfloratechnologies.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://webfloratechnologies.com/title-logo.png"
+              }
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Shashank Manohar",
+              "url": "https://webfloratechnologies.com/#founder-shashank",
+              "sameAs": [
+                "https://www.linkedin.com/in/shashank-manohar-patna/"
+              ]
+            }
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

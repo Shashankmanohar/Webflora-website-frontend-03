@@ -53,7 +53,7 @@ const FeatureCard = ({ icon, title, text, index }) => {
           <Icon icon={icon} width={28} />
         </div>
         
-        <h4 className="text-2xl font-black tracking-tight text-white group-hover:text-[#FF3B00] transition-colors">{title}</h4>
+        <h3 id={`feature-card-${index}`} className="text-2xl font-black tracking-tight text-white group-hover:text-[#FF3B00] transition-colors">{title}</h3>
         <p className="text-neutral-400 text-base font-light leading-relaxed">{text}</p>
       </div>
     </motion.div>
@@ -154,11 +154,11 @@ export default function AIChatbotCompanyPage() {
         <div className="text-center relative">
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-20 bg-[#FF3B00]/40 blur-[100px] rounded-full opacity-30" />
           
-          <h1 className="text-5xl sm:text-7xl md:text-[6.5rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4">
+          <h1 id="hero-title" className="text-5xl sm:text-7xl md:text-[6.5rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4">
             AI CHATBOT
           </h1>
           
-          <h2 className="text-3xl sm:text-5xl md:text-[4.5rem] font-black tracking-tighter text-[#FF3B00] relative">
+          <h2 id="hero-subtitle" className="text-3xl sm:text-5xl md:text-[4.5rem] font-black tracking-tighter text-[#FF3B00] relative">
             COMPANY IN PATNA
             <span className="absolute -top-4 -right-6 text-xs font-mono font-medium tracking-widest text-white bg-[#FF3B00] px-2 py-1 rounded flex items-center gap-1 shadow-[0_0_20px_#FF3B00]">
               BIHAR <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
@@ -203,11 +203,11 @@ export default function AIChatbotCompanyPage() {
         {/* Info Panel 1: The Problem & Solution Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-40">
           <div className="lg:col-span-5">
-            <h3 className="text-[#FF3B00] font-mono font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2">
+            <h3 id="intelligence-engine-label" className="text-[#FF3B00] font-mono font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2">
               <div className="w-4 h-[1px] bg-[#FF3B00]" />
               The Intelligence Engine
             </h3>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[0.95] mb-8 text-white">
+            <h2 id="intelligence-engine-heading" className="text-4xl md:text-6xl font-black tracking-tight leading-[0.95] mb-8 text-white">
               Don't let inquiries fade into the night.
             </h2>
             <p className="text-neutral-400 text-lg font-light leading-relaxed mb-8">
@@ -255,7 +255,7 @@ export default function AIChatbotCompanyPage() {
 
         {/* Info Panel 2: The Detailed Advantage Matrix */}
         <div className="text-center mb-24">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">Master Your Conversations.</h2>
+          <h2 id="master-conversations-heading" className="text-3xl md:text-5xl font-black tracking-tighter text-white">Master Your Conversations.</h2>
           <p className="text-neutral-500 mt-4 max-w-2xl mx-auto font-light text-lg">Deep technical utility, distilled for operational dominance.</p>
         </div>
 
@@ -315,7 +315,7 @@ export default function AIChatbotCompanyPage() {
                 <span className="w-2 h-2 rounded-full bg-[#FF3B00] animate-pulse" />
                 Developer Core
               </div>
-              <h3 className="text-3xl font-black tracking-tight text-white mb-6">Deploy Instant Intelligence.</h3>
+              <h3 id="deploy-intelligence-heading" className="text-3xl font-black tracking-tight text-white mb-6">Deploy Instant Intelligence.</h3>
               
               <ul className="space-y-4 mb-8">
                 {[
@@ -367,7 +367,7 @@ export default function AIChatbotCompanyPage() {
           <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
             Universal Compatibility
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+          <h2 id="compatibility-heading" className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
             Deploy Across Your Entire Stack
           </h2>
           <p className="text-gray-500 text-sm mt-3 font-light max-w-xl mx-auto">
@@ -404,7 +404,7 @@ export default function AIChatbotCompanyPage() {
                 <div className="w-12 h-12 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00]">
                   <IconComp size={22} />
                 </div>
-                <h4 className="text-lg font-black text-white">{item.title}</h4>
+                <h3 id={`compatibility-card-${idx}`} className="text-lg font-black text-white">{item.title}</h3>
                 <p className="text-xs text-neutral-400 font-light leading-relaxed">{item.desc}</p>
               </div>
             );
@@ -431,7 +431,7 @@ export default function AIChatbotCompanyPage() {
           <div className="bg-black border border-white/10 p-12 md:p-24 rounded-[3rem] shadow-2xl relative z-10 overflow-hidden backdrop-blur-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent" />
             
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-8 relative z-10">Ready for autonomy?</h2>
+            <h2 id="ready-for-autonomy-heading" className="text-3xl md:text-5xl font-black tracking-tighter mb-8 relative z-10">Ready for autonomy?</h2>
             <p className="text-neutral-400 text-lg md:text-xl font-light max-w-xl mx-auto mb-12 relative z-10">
               Unlock the future of engagement. Add our conversational system to your workforce today and accelerate every operational metric you track.
             </p>
@@ -457,7 +457,7 @@ export default function AIChatbotCompanyPage() {
             <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
               SEO Optimization Hub
             </span>
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase leading-none">
+            <h2 id="seo-hub-heading" className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase leading-none">
               AI Chatbot Development Company in Patna, Bihar
             </h2>
             <p className="text-gray-500 text-sm mt-3 font-light">
@@ -467,7 +467,7 @@ export default function AIChatbotCompanyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-neutral-400 text-sm font-light leading-relaxed">
             <div className="space-y-6">
-              <h3 className="text-white font-bold text-lg">Why Choose a Patna-based AI Chatbot Developer?</h3>
+              <h3 id="why-choose-patna-chatbot" className="text-white font-bold text-lg">Why Choose a Patna-based AI Chatbot Developer?</h3>
               <p>
                 In today's fast-paced digital economy, businesses in Patna, Muzaffarpur, Gaya, and Bhagalpur require smart automation to handle customer queries instantly. As the premier <strong className="text-white">AI chatbot company in Patna, Bihar</strong>, Webflora Technologies designs intelligent conversational workflows that allow you to capture high-intent leads and resolve support tickets 24/7 without growing your support team overhead.
               </p>
@@ -477,7 +477,7 @@ export default function AIChatbotCompanyPage() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-white font-bold text-lg">Omnichannel Capabilities: Web, Mobile, and WhatsApp Integration</h3>
+              <h3 id="omnichannel-capabilities" className="text-white font-bold text-lg">Omnichannel Capabilities: Web, Mobile, and WhatsApp Integration</h3>
               <p>
                 We do not build generic button-based responders. We build advanced NLP systems backed by technologies like RAG (Retrieval-Augmented Generation) and custom LLM interfaces. This allows your virtual agent to absorb your training documents and respond with accurate answers.
               </p>
@@ -536,6 +536,41 @@ export default function AIChatbotCompanyPage() {
               "lowPrice": "4999",
               "highPrice": "19999",
               "offerCount": "3"
+            }
+          })
+        }}
+      />
+
+      {/* WebPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://webfloratechnologies.com/services/ai-chatbot-company-in-patna#webpage",
+            "url": "https://webfloratechnologies.com/services/ai-chatbot-company-in-patna",
+            "name": "AI Chatbot Company in Patna | AI Chatbot Development in Bihar",
+            "headline": "AI Chatbot Company in Patna | AI Chatbot Development in Bihar",
+            "description": "Webflora Technologies is the leading AI chatbot company in Patna, Bihar. We design and deploy custom intelligent NLP chatbots to automate customer support 24/7.",
+            "datePublished": "2026-01-01T00:00:00+05:30",
+            "dateModified": "2026-07-02T00:00:00+05:30",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Webflora Technologies",
+              "url": "https://webfloratechnologies.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://webfloratechnologies.com/title-logo.png"
+              }
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Shashank Manohar",
+              "url": "https://webfloratechnologies.com/#founder-shashank",
+              "sameAs": [
+                "https://www.linkedin.com/in/shashank-manohar-patna/"
+              ]
             }
           })
         }}

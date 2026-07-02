@@ -177,6 +177,7 @@ const PortfolioClient = ({ initialProject }) => {
                 "author": {
                   "@type": "Organization",
                   "name": "Webflora Technologies",
+                  "url": "https://webfloratechnologies.com",
                   "@id": "https://webfloratechnologies.com/#organization"
                 },
 
@@ -184,6 +185,7 @@ const PortfolioClient = ({ initialProject }) => {
                   "@type": "Organization",
 
                   "name": "Webflora Technologies",
+                  "url": "https://webfloratechnologies.com",
 
                   "logo": {
                     "@type": "ImageObject",

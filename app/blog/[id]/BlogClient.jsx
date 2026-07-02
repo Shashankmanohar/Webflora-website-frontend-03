@@ -189,6 +189,7 @@ const BlogClient = ({ initialPost }) => {
                 "author": {
                   "@type": "Organization",
                   "name": "Webflora Technologies",
+                  "url": "https://webfloratechnologies.com",
                   "@id": "https://webfloratechnologies.com/#organization"
                 },
 
@@ -196,6 +197,7 @@ const BlogClient = ({ initialPost }) => {
                   "@type": "Organization",
 
                   "name": "Webflora Technologies",
+                  "url": "https://webfloratechnologies.com",
 
                   "logo": {
                     "@type": "ImageObject",

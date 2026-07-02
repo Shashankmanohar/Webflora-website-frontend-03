@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import SafeIcon from "./client/SafeIcon";
+import { Icon } from "@iconify/react";
 
 // Client-side atomic components for performance
 import Starfield from "./client/Starfield";
@@ -38,6 +39,8 @@ const ServiceTemplate = ({ data }) => {
         <TestimonialWrapper />
         <WorkSection />
         <DetailedArticleWrapper data={data} />
+        <ServiceComparisonWrapper data={data} />
+        <ServiceGlossaryWrapper data={data} />
         <FaqSection faqs={data.faqs} title={data.title} />
         <OtherServicesWrapper currentService={data.title} />
         
@@ -1242,6 +1245,169 @@ const SuitableForWrapper = ({ data }) => {
             </FadeInUp>
           ))}
         </div>
+      </div>
+    </section>
+  );
+};
+
+const ServiceComparisonWrapper = ({ data }) => {
+  const comparisonData = {
+    "website-development-company-in-patna": [
+      { feature: "Tech Stack", custom: "Next.js, React, Tailwind CSS, Vercel/AWS", standard: "Generic PHP, heavy WordPress, cheap hosting templates" },
+      { feature: "Performance", custom: "Under 1s load time, 95+ Core Web Vitals score", standard: "3s+ load time, bloated plugins, poor speed optimization" },
+      { feature: "SEO & Rankings", custom: "Dynamic schemas, structured AEO glossary, metadata", standard: "Basic meta tags, no semantic structure, poor indexing" },
+      { feature: "Ownership", custom: "100% source code ownership, zero monthly fees", standard: "Locked theme, platform dependencies, vendor fees" }
+    ],
+    "mobile-app-development-company-in-patna": [
+      { feature: "Performance", custom: "Native UI rendering (Flutter/React Native), 60FPS smoothness", standard: "WebView wrappers, slow loading web frames" },
+      { feature: "Offline Support", custom: "Local database caching, offline operation sync", standard: "Requires active internet for all basic screens" },
+      { feature: "UX/UI Design", custom: "Custom micro-animations, tailored platform flows", standard: "Outdated material design templates" },
+      { feature: "Security", custom: "Biometric auth, secure keychain storage, AES-256", standard: "Basic plaintext data, vulnerable endpoints" }
+    ],
+    "software-development-company-in-patna": [
+      { feature: "Alignment", custom: "Built exactly around your custom business workflows", standard: "Forces business to adjust to rigid pre-built software" },
+      { feature: "License Fees", custom: "One-time flat-rate cost, unlimited users", standard: "Per-user monthly subscription fees" },
+      { feature: "Integrations", custom: "Direct custom API mapping to all internal databases", standard: "Closed ecosystem, locked database endpoints" },
+      { feature: "Support", custom: "Direct technical support, SLAs, source code custody", standard: "Standard community forums, delayed ticket support" }
+    ],
+    "ai-automation-company-in-patna": [
+      { feature: "Integrations", custom: "Multi-platform mapping (n8n, custom Node.js, REST APIs)", standard: "Basic triggers (Zapier limits, rigid templates)" },
+      { feature: "Operational Hours", custom: "24/7 autonomous cron loops, self-healing pipelines", standard: "Requires manual trigger monitoring" },
+      { feature: "Security", custom: "Private host keys, encryption protocols, locked keys", standard: "Shared cloud credentials, security risks" },
+      { feature: "AI Model Support", custom: "Multi-modal model mapping (GPT-4o, Claude 3.5, local LLMs)", standard: "Single API endpoint dependencies" }
+    ]
+  };
+
+  const currentSlug = Object.keys(servicesData).find(key => servicesData[key].title === data.title) || "";
+  const rows = comparisonData[currentSlug] || comparisonData["website-development-company-in-patna"];
+
+  return (
+    <section className="py-24 px-6 bg-[#030303] relative border-b border-white/5 overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+            ⚔️ Architecture Battle
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+            Custom Build <span className="text-gray-600 font-outline">vs. Template SaaS</span>
+          </h2>
+          <p className="text-gray-500 text-sm mt-3 font-light">
+            Compare our engineered {data.title.toLowerCase()} against traditional generic solutions.
+          </p>
+        </div>
+
+        <div className="w-full bg-neutral-950/80 backdrop-blur-xl border border-white/5 rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-5 md:p-0">
+          {/* Mobile Stacked View */}
+          <div className="block md:hidden space-y-6 divide-y divide-white/5">
+            {rows.map((row, i) => (
+              <div key={i} className={`pt-6 ${i === 0 ? 'pt-0' : ''} space-y-3`}>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-300 font-mono">{row.feature}</h4>
+                <div className="p-4 rounded-xl bg-[#ff3b00]/5 border border-[#ff3b00]/20">
+                  <span className="text-[10px] font-bold text-[#ff3b00] uppercase tracking-widest block mb-1">★ Webflora Custom</span>
+                  <p className="text-xs sm:text-sm text-white font-medium flex items-start gap-2">
+                    <Icon icon="solar:check-circle-bold" className="text-emerald-400 text-base shrink-0 mt-0.5" />
+                    {row.custom}
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                  <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest block mb-1">Generic / Traditional</span>
+                  <p className="text-xs text-neutral-400">
+                    {row.standard}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Table View */}
+          <div className="hidden md:block overflow-x-auto">
+            <table className="w-full text-left text-sm text-neutral-400 border-collapse">
+              <thead>
+                <tr className="border-b border-white/10 font-bold font-mono">
+                  <th className="p-5 bg-white/[0.02] text-neutral-300 font-bold text-xs uppercase tracking-widest w-1/4">Feature</th>
+                  <th className="p-5 bg-[#ff3b00]/10 border-x border-[#ff3b00]/20 text-white font-black text-xs uppercase tracking-widest text-center w-2/5">
+                    Webflora Custom Build
+                  </th>
+                  <th className="p-5 bg-white/[0.01] text-neutral-500 font-bold text-xs uppercase tracking-widest text-center w-1/3">Traditional Templates</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {rows.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-white/[0.01] transition-colors duration-200">
+                    <td className="p-5 font-semibold text-white font-mono text-xs uppercase tracking-wider">{row.feature}</td>
+                    <td className="p-5 border-x border-[#ff3b00]/10 bg-[#ff3b00]/[0.02] text-white font-medium text-center">
+                      <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-bold">
+                        <Icon icon="solar:check-circle-bold" /> {row.custom}
+                      </span>
+                    </td>
+                    <td className="p-5 text-neutral-500 text-center text-xs">{row.standard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ServiceGlossaryWrapper = ({ data }) => {
+  const glossaryData = {
+    "website-development-company-in-patna": [
+      { term: "Headless Architecture", def: "Decoupling the frontend user interface from the backend database for unmatched speed, scalability, and security.", icon: "solar:code-square-bold-duotone" },
+      { term: "Core Web Vitals", def: "A set of specific Google metrics used to measure user experience, including loading performance, interactivity, and visual stability.", icon: "solar:database-bold-duotone" },
+      { term: "Static Site Generation (SSG)", def: "Pre-rendering frontend pages into HTML files at build time to deliver instant loading speeds and serverless scale.", icon: "solar:cpu-bolt-bold-duotone" }
+    ],
+    "mobile-app-development-company-in-patna": [
+      { term: "Cross-Platform Framework", def: "Single codebase framework (e.g. Flutter/React Native) compiled directly to native ARM code on both iOS and Android.", icon: "solar:code-square-bold-duotone" },
+      { term: "API Integration", def: "Connecting the mobile application frontend to databases and secure third-party billing gates via secure REST/GraphQL endpoints.", icon: "solar:database-bold-duotone" },
+      { term: "State Management", def: "Managing active app data states (user sessions, carts, filters) locally for instant, glitch-free screen renders.", icon: "solar:cpu-bolt-bold-duotone" }
+    ],
+    "software-development-company-in-patna": [
+      { term: "Custom Software", def: "Applications engineered specifically to match your exact business guidelines, operating processes, and rules.", icon: "solar:code-square-bold-duotone" },
+      { term: "ERP/CRM Systems", def: "Intelligent software modules used to manage inventory, tracking, finance, customer leads, and internal team logs.", icon: "solar:database-bold-duotone" },
+      { term: "Legacy Migration", def: "Transitioning outdated, insecure databases or old desktop programs into secure, modern cloud-native systems.", icon: "solar:cpu-bolt-bold-duotone" }
+    ],
+    "ai-automation-company-in-patna": [
+      { term: "Workflow Pipeline", def: "Autonomous data sequences that trigger based on events (e.g. a new form submit) to update all systems instantly.", icon: "solar:code-square-bold-duotone" },
+      { term: "LLM Orchestration", def: "Connecting advanced AI intelligence layers (GPT-4o, Claude) to verify emails, draft custom quotes, or answer customer leads.", icon: "solar:database-bold-duotone" },
+      { term: "Self-Healing Workflows", def: "Logical exception-handling loops that retry database connections or swap APIs automatically if a service is down.", icon: "solar:cpu-bolt-bold-duotone" }
+    ]
+  };
+
+  const currentSlug = Object.keys(servicesData).find(key => servicesData[key].title === data.title) || "";
+  const terms = glossaryData[currentSlug] || glossaryData["website-development-company-in-patna"];
+
+  return (
+    <section className="py-24 px-6 bg-black relative border-b border-white/5 overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+            📚 Terminology Glossary
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+            {data.title} <span className="text-gray-600 font-outline">Glossary</span>
+          </h2>
+          <p className="text-gray-500 text-sm mt-3 font-light">
+            Understand key industry terms that drive premium digital systems and performance.
+          </p>
+        </div>
+
+        <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {terms.map((item, idx) => (
+            <div key={idx} className="p-6 rounded-[2rem] border border-white/5 bg-zinc-950/40 hover:border-[#ff3b00]/30 hover:bg-[#ff3b00]/5 transition-all duration-500 flex flex-col justify-start relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-5">
+                <Icon icon={item.icon} className="text-xl" />
+              </div>
+              <dt className="text-white font-bold text-lg tracking-tight mb-2">{item.term}</dt>
+              <dd className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
+                {item.def}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

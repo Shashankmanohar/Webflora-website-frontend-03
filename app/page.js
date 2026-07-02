@@ -10,22 +10,22 @@ import FaqSection from "./services/components/FaqSection";
 const homeFaqs = [
   {
     question: "Why is Webflora Technologies considered the top software development company in Patna?",
-    answer: "Webflora Technologies stands out due to our commitment to high-performance code, tailor-made designs, and transparent flat-rate pricing. We build secure, search-optimized web and mobile systems that scale alongside your company.",
+    answer: "Webflora Technologies is considered the top software company in Patna, Bihar, due to our dedication to high-performance custom code, premium tailor-made designs, and completely transparent flat-rate pricing. We design secure, search-optimized web systems and mobile applications that scale alongside your company, providing 100% source code ownership.",
     icon: "lucide:award"
   },
   {
     question: "What digital services do you provide?",
-    answer: "We offer a complete suite of tech services: custom enterprise software (ERP/CRM), high-converting website development, native and cross-platform mobile apps (Android & iOS), custom AI workflow automations, and targeted performance digital marketing.",
+    answer: "We provide a complete suite of premium digital services: custom enterprise software (ERP/CRM), high-converting website development, native and cross-platform mobile app development, custom AI workflows, and targeted performance digital marketing. Our Patna-based team designs each solution from scratch to match your specific business workflows and scale seamlessly.",
     icon: "lucide:layers"
   },
   {
     question: "Do you offer custom AI and automation integrations?",
-    answer: "Yes, we design smart workflow automations and custom AI pipelines using platforms like n8n and API frameworks (OpenAI, Claude). We help businesses eliminate manual bottlenecks and operate 24/7.",
+    answer: "Yes, we build custom workflow automations and advanced AI integration pipelines using platforms like n8n and modern LLM frameworks (OpenAI, Claude). Our automation solutions eliminate repetitive tasks, resolve manual bottlenecks, and enable your business to run efficiently 24/7 with zero downtime.",
     icon: "lucide:trending-up"
   },
   {
     question: "Why should my business choose Webflora Technologies over off-the-shelf software?",
-    answer: "We offer complete source code ownership, founder-led execution, and high-performance custom builds with zero monthly per-user licensing fees. This ensures your systems conform to your business rules, not the other way around.",
+    answer: "Choosing Webflora Technologies guarantees full source code ownership, founder-led engineering execution, and high-performance custom builds with zero recurring per-user monthly licensing fees. We ensure your custom software aligns perfectly with your specific business rules, avoiding the rigid constraints and high costs of off-the-shelf products.",
     icon: "lucide:check-circle"
   },
   {
@@ -52,19 +52,6 @@ export default function Page() {
 
       {/* ── SEO introduction section — statically server-rendered ── */}
       <HomeIntroSection />
-
-      {/* ── SEO text block — server-rendered for crawlers ── */}
-      <section className="py-24 bg-black border-y border-white/5 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
-            Driving Digital Transformation
-          </h2>
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-            Webflora Technologies is the premier software company in Patna, Bihar, offering top-tier website design, custom software applications, mobile apps, and digital marketing. We engineer custom solutions to automate your workflows, maximize your search engine rankings, and scale your business growth from Patna, Bihar, to all over India.
-          </p>
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
-      </section>
 
       {/* ── Marquee — static, no JS hydration needed ── */}
       <StatsMarquee />
@@ -161,7 +148,13 @@ export default function Page() {
             "@id": "https://webfloratechnologies.com/#website",
             "url": "https://webfloratechnologies.com",
             "name": "Webflora Technologies",
-            "publisher": { "@id": "https://webfloratechnologies.com/#organization" },
+            "description": "Leading custom software development and website company in Patna, Bihar.",
+            "publisher": { 
+              "@type": "Organization",
+              "@id": "https://webfloratechnologies.com/#organization",
+              "name": "Webflora Technologies",
+              "url": "https://webfloratechnologies.com"
+            },
             "potentialAction": {
               "@type": "SearchAction",
               "target": "https://webfloratechnologies.com/?s={search_term_string}",
@@ -212,7 +205,12 @@ export default function Page() {
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "Software Development Services",
-            "provider": { "@id": "https://webfloratechnologies.com/#organization" },
+            "provider": { 
+              "@type": "Organization",
+              "@id": "https://webfloratechnologies.com/#organization",
+              "name": "Webflora Technologies",
+              "url": "https://webfloratechnologies.com"
+            },
             "areaServed": { "@type": "Country", "name": "India" },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -235,10 +233,12 @@ export default function Page() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "description": "Frequently asked questions about web development, custom software, and digital services from Webflora Technologies.",
             "mainEntity": homeFaqs.map((faq) => ({
               "@type": "Question",
               "name": faq.question,
-              "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+              "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+              "dateCreated": "2024-05-19T00:00:00+05:30"
             }))
           })
         }}

@@ -115,7 +115,9 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                   <Icon icon={faq.icon || "lucide:help-circle"} className="text-lg md:text-xl" />
                 </div>
                 
-                <h3 className={`text-sm sm:text-base md:text-lg font-semibold flex-1 transition-colors ${
+                <h3 
+                  id={`faq-question-${faq.id}`}
+                  className={`text-sm sm:text-base md:text-lg font-semibold flex-1 transition-colors ${
                   expandedIndex === idx ? "text-white" : "text-gray-300 hover:text-white"
                 }`}>
                   {faq.question}
@@ -129,27 +131,26 @@ const FaqSection = ({ faqs: dynamicFaqs, title }) => {
                 </motion.div>
               </button>
               
-              <AnimatePresence>
-                {expandedIndex === idx && (
-                  <motion.div 
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <div className="px-6 md:px-8 pb-6 pt-2">
-                      <div className="h-[1px] w-full bg-gradient-to-r from-[#FF3B00]/30 to-transparent mb-5" />
-                      <p className="text-xs sm:text-sm text-gray-400 leading-relaxed font-light max-w-4xl mb-5">
-                        {faq.answer}
-                      </p>
-                      <button aria-label="Get Started with Webflora Technologies" className="flex items-center gap-2.5 px-6 py-3 rounded-lg border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] text-sm font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">
-                        Get Started
-                        <Icon icon="lucide:arrow-right" width={16} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div 
+                initial={false}
+                animate={{ 
+                  height: expandedIndex === idx ? "auto" : 0,
+                  opacity: expandedIndex === idx ? 1 : 0
+                }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 md:px-8 pb-6 pt-2">
+                  <div className="h-[1px] w-full bg-gradient-to-r from-[#FF3B00]/30 to-transparent mb-5" />
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed font-light max-w-4xl mb-5">
+                    {faq.answer}
+                  </p>
+                  <button aria-label="Get Started with Webflora Technologies" className="flex items-center gap-2.5 px-6 py-3 rounded-lg border border-[#FF3B00]/30 bg-[#FF3B00]/10 text-[#FF3B00] text-sm font-bold hover:bg-[#FF3B00] hover:text-black transition-all group">
+                    Get Started
+                    <Icon icon="lucide:arrow-right" width={16} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

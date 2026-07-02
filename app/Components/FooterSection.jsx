@@ -146,6 +146,8 @@ export default function FooterSection() {
                   }
                 }}
                 className="relative group"
+                toolname="subscribeNewsletter"
+                tooldescription="Subscribe to the Webflora Technologies newsletter with your email to receive project updates."
               >
                 <input
                   id="newsletter-email"
@@ -153,6 +155,7 @@ export default function FooterSection() {
                   type="email"
                   required
                   placeholder="Enter your email"
+                  toolparamdescription="The email address to subscribe to the newsletter."
                   className="w-full bg-white/5 border border-white/10 text-white text-sm rounded-lg py-3 px-4 outline-none focus:border-[#ff3b00]/50 focus:bg-white/10 focus:ring-1 focus:ring-[#ff3b00]/50 transition-all duration-300 placeholder:text-neutral-600 font-light"
                 />
                 <button
@@ -234,28 +237,28 @@ export default function FooterSection() {
               <h3 className="text-white text-sm font-medium tracking-widest uppercase opacity-80">
                 Contact
               </h3>
-              <ul className="flex flex-col space-y-4 text-sm text-neutral-400 font-light">
-                <li className="flex items-center gap-3">
+              <address className="not-italic flex flex-col space-y-4 text-sm text-neutral-400 font-light">
+                <div className="flex items-center gap-3">
                   <IconCircle icon="solar:letter-linear" />
                   <a href="mailto:hello@webfloratechnologies.com" className="hover:text-white transition-colors">
                     hello@webfloratechnologies.com
                   </a>
-                </li>
-                <li className="flex items-center gap-3">
+                </div>
+                <div className="flex items-center gap-3">
                   <IconCircle icon="solar:letter-linear" />
                   <a href="mailto:info@webfloratechnologies.com" className="hover:text-white transition-colors">
                     info@webfloratechnologies.com
                   </a>
-                </li>
-                <li className="flex items-start gap-3">
+                </div>
+                <div className="flex items-start gap-3">
                   <IconCircle icon="solar:map-point-linear" />
                   <span className="leading-snug">NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India</span>
-                </li>
-                <li className="flex items-center gap-3 whitespace-nowrap">
+                </div>
+                <div className="flex items-center gap-3 whitespace-nowrap">
                   <IconCircle icon="solar:phone-linear" />
                   +91 85408 14729
-                </li>
-              </ul>
+                </div>
+              </address>
 
               <div className="pt-4">
                 <h3 className="text-white text-sm font-medium tracking-widest uppercase opacity-80 mb-4">
@@ -285,7 +288,7 @@ export default function FooterSection() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-light text-neutral-500">
             <div className="flex items-center gap-2">
-              <span>© 2026 Webflora Technologies</span>
+              <span>© <time dateTime="2026">2026</time> Webflora Technologies</span>
               <span className="w-1 h-1 rounded-full bg-neutral-700" />
               <span>All systems operational</span>
             </div>

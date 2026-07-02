@@ -16,7 +16,7 @@ import LazySection from "./LazySection";
 export default function HomeSections({ faqComponent }) {
   return (
     <>
-      {/* Trust signals — appear just below the hero fold */}
+      {/* 1. Trust signals — appear just below the hero fold */}
       <div className="content-auto">
         <LazySection
           height="80px"
@@ -31,43 +31,15 @@ export default function HomeSections({ faqComponent }) {
         />
       </div>
 
-      {/* Mid-page sections */}
-      <div className="content-auto">
-        <LazySection
-          height="300px"
-          loader={() => import("./GrowthSection")}
-        />
-      </div>
+      {/* 2. Core Capabilities & Services */}
       <div className="content-auto">
         <LazySection
           height="600px"
           loader={() => import("./ServicesDetailShowcase")}
         />
       </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
-          loader={() => import("./TechStackSection")}
-        />
-      </div>
-      <div className="content-auto">
-        <LazySection
-          height="500px"
-          loader={() => import("./SectorsServedSection")}
-        />
-      </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
-          loader={() => import("./ProcessSection")}
-        />
-      </div>
-      <div className="content-auto">
-        <LazySection
-          height="400px"
-          loader={() => import("./ProductCard")}
-        />
-      </div>
+
+      {/* 3. Proof of Capability (Work / Portfolio) */}
       <div className="content-auto">
         <LazySection
           height="400px"
@@ -75,8 +47,39 @@ export default function HomeSections({ faqComponent }) {
         />
       </div>
 
+      {/* 4. Delivery & Process */}
+      <div className="content-auto">
+        <LazySection
+          height="400px"
+          loader={() => import("./ProcessSection")}
+        />
+      </div>
 
-      {/* Social proof */}
+      {/* 5. Tech Stack & Frameworks */}
+      <div className="content-auto">
+        <LazySection
+          height="400px"
+          loader={() => import("./TechStackSection")}
+        />
+      </div>
+
+      {/* 6. Industries & Sectors Served */}
+      <div className="content-auto">
+        <LazySection
+          height="500px"
+          loader={() => import("./SectorsServedSection")}
+        />
+      </div>
+
+      {/* 7. Growth & Performance Stats */}
+      <div className="content-auto">
+        <LazySection
+          height="300px"
+          loader={() => import("./GrowthSection")}
+        />
+      </div>
+
+      {/* 8. Deeper Social Proof (Testimonials & Google Reviews) */}
       <div className="content-auto">
         <LazySection
           height="450px"
@@ -90,7 +93,7 @@ export default function HomeSections({ faqComponent }) {
         />
       </div>
 
-      {/* CTA + FAQ + Contact */}
+      {/* 9. Value Teaser / Mid-page CTA */}
       <div className="content-auto">
         <LazySection
           height="300px"
@@ -98,9 +101,10 @@ export default function HomeSections({ faqComponent }) {
         />
       </div>
 
-      {/* Statically rendered SEO blocks passed from server component */}
+      {/* 10. FAQ Component (Statically rendered SEO blocks) */}
       {faqComponent}
 
+      {/* 11. Thought Leadership & Blogs */}
       <div className="content-auto">
         <LazySection
           height="500px"
@@ -108,6 +112,7 @@ export default function HomeSections({ faqComponent }) {
         />
       </div>
 
+      {/* 12. Final Action / Contact Form */}
       <div className="content-auto">
         <LazySection
           height="500px"

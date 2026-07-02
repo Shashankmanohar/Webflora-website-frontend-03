@@ -199,15 +199,18 @@ export default function ContactSection() {
                 }
               }}
               className="bg-neutral-900/90 backdrop-blur-xl p-8 md:p-10 rounded-3xl space-y-6"
+              toolname="sendContactMessage"
+              tooldescription="Submit a general contact message or project inquiry to Webflora Technologies."
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input name="name" label="Your Name" placeholder="John Doe" required />
+                <Input name="name" label="Your Name" placeholder="John Doe" required toolparamdescription="The full name of the contact person." />
                 <Input
                   name="email"
                   label="Email"
                   placeholder="john@company.com"
                   type="email"
                   required
+                  toolparamdescription="The email address to receive replies."
                 />
               </div>
 
@@ -225,6 +228,7 @@ export default function ContactSection() {
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors appearance-none"
                   style={{ outlineColor: BRAND }}
                   required
+                  toolparamdescription="The category of digital service needed (e.g. Web Development, Mobile App, etc.)."
                 >
                   <option className="bg-black">Web Development</option>
                   <option className="bg-black">Software Development</option>
@@ -250,6 +254,7 @@ export default function ContactSection() {
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors"
                   style={{ outlineColor: BRAND }}
                   required
+                  toolparamdescription="A detailed description of the project goals, requirements, and scope."
                 />
               </div>
 
@@ -279,7 +284,7 @@ export default function ContactSection() {
   );
 }
 
-function Input({ label, name, type = "text", placeholder, required = false }) {
+function Input({ label, name, type = "text", placeholder, required = false, ...props }) {
   const BRAND = "#ff3b00";
   const inputId = `contact-input-${name}`;
 
@@ -298,6 +303,7 @@ function Input({ label, name, type = "text", placeholder, required = false }) {
         type={type}
         placeholder={placeholder}
         required={required}
+        {...props}
         className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none transition-colors"
         style={{ outlineColor: BRAND }}
       />

@@ -131,21 +131,23 @@ export default function ContactPage() {
                   } catch (err) { alert("Link Error."); }
                 }}
                 className="space-y-6 md:space-y-8 flex-1"
+                toolname="initiateProjectProtocol"
+                tooldescription="Submit a comprehensive project inquiry or digital ecosystem development request to Webflora Technologies."
               >
                 <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                   <div className="space-y-2">
                     <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Subject Identity</label>
-                    <input name="name" required placeholder="NAME" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors placeholder:text-gray-800 font-bold text-sm md:text-base" />
+                    <input name="name" required placeholder="NAME" toolparamdescription="The full name of the inquiry sender." className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors placeholder:text-gray-800 font-bold text-sm md:text-base" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Neural Endpoint</label>
-                    <input name="email" type="email" required placeholder="EMAIL" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors placeholder:text-gray-800 font-bold text-sm md:text-base" />
+                    <input name="email" type="email" required placeholder="EMAIL" toolparamdescription="The email address endpoint for secured replies." className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors placeholder:text-gray-800 font-bold text-sm md:text-base" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Evolution Phase</label>
-                  <select name="service" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors appearance-none font-bold cursor-pointer text-sm md:text-base">
+                  <select name="service" toolparamdescription="The evolution phase or category of service requested (e.g. Digital Ecosystem Development, Architecture & Strategy, Visual Systems Design, Intelligent Automation)." className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors appearance-none font-bold cursor-pointer text-sm md:text-base">
                     <option className="bg-black text-white">Digital Ecosystem Development</option>
                     <option className="bg-black text-white">Architecture & Strategy</option>
                     <option className="bg-black text-white">Visual Systems Design</option>
@@ -155,7 +157,7 @@ export default function ContactPage() {
 
                 <div className="space-y-2">
                   <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Mission brief</label>
-                  <textarea name="message" required rows="4" placeholder="DESCRIBE YOUR VISION..." className="w-full bg-white/5 border border-white/10 p-4 md:p-6 text-white focus:outline-none focus:border-[#ff3b00] transition-colors placeholder:text-gray-800 font-bold resize-none rounded-xl md:rounded-2xl text-sm md:text-base" />
+                  <textarea name="message" required rows="4" placeholder="DESCRIBE YOUR VISION..." toolparamdescription="The detailed mission brief or project vision description." className="w-full bg-white/5 border border-white/10 p-4 md:p-6 text-white focus:outline-none focus:border-[#ff3b00] transition-colors placeholder:text-gray-800 font-bold resize-none rounded-xl md:rounded-2xl text-sm md:text-base" />
                 </div>
 
                 <div className="pt-4">

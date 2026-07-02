@@ -41,7 +41,7 @@ const BlogClient = ({ initialPost }) => {
     { name: "Digital Marketing", href: "/services/digital-marketing-agency-in-patna" },
     { name: "Software Development", href: "/services/software-development-company-in-patna" },
     { name: "AI & Automation", href: "/services/ai-automation-company-in-patna" },
-    { name: "Vegavan AI (SaaS)", href: "/vegavan-ai" },
+    { name: "AI Chatbots", href: "/services/ai-chatbot-company-in-patna" },
   ];
 
   const discussionRef = React.useRef(null);

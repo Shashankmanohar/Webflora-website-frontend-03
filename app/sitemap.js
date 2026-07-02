@@ -13,9 +13,9 @@ export default async function sitemap() {
     { route: "/case-studies", priority: 0.8 },
     { route: "/blog", priority: 0.8 },
     { route: "/career", priority: 0.7 },
-    { route: "/vegavan-ai", priority: 0.95 }, // Main SaaS page from the app
 
     // Core Service Pages
+    { route: "/services/ai-chatbot-company-in-patna", priority: 0.95 },
     { route: "/services/website-development-company-in-patna", priority: 0.95 },
     { route: "/services/mobile-app-development-company-in-patna", priority: 0.9 },
     { route: "/services/software-development-company-in-patna", priority: 0.9 },

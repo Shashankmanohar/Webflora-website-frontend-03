@@ -37,7 +37,7 @@ const navItems = [
     href: "/services",
     children: [
       { icon: Briefcase,    label: "All Services",      desc: "Browse all core services we offer.",        href: "/services" },
-      { icon: Bot,          label: "Vegavan AI",        desc: "Autonomous chat support.",        href: "/vegavan-ai",                                                   highlight: true },
+      { icon: Bot,          label: "AI Chatbots",        desc: "Autonomous support agents.",      href: "/services/ai-chatbot-company-in-patna",                         highlight: true },
       { icon: Bot,          label: "AI & Automation",   desc: "Custom n8n and workflow agents.",           href: "/services/ai-automation-company-in-patna" },
       { icon: Globe,        label: "Website Dev",        desc: "High-performance marketing sites.",         href: "/services/website-development-company-in-patna" },
       { icon: Smartphone,   label: "App Dev",            desc: "Native iOS & Android systems.",             href: "/services/mobile-app-development-company-in-patna" },

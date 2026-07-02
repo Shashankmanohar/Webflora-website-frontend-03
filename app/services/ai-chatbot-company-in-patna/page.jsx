@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, AnimatePresence, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import FaqSection from "../services/components/FaqSection";
+import FaqSection from "../components/FaqSection";
+import { ServiceComparisonWrapper } from "../components/ServiceTemplate";
+import { Zap, Users, Clock, Shield, Play, Code, Globe, Cpu, Smartphone } from "lucide-react";
 
 // ===============================
 // PREMIUM SUB-COMPONENTS
@@ -20,10 +22,10 @@ const FloatingElement = ({ children, duration = 6, delay = 0, className = "" }) 
   </motion.div>
 );
 
-const MetricBadge = ({ label, value, icon }) => (
+const MetricBadge = ({ label, value, icon: IconComponent }) => (
   <div className="flex items-center gap-3 bg-white/[0.03] backdrop-blur-xl border border-white/10 p-4 rounded-2xl hover:border-[#FF3B00]/40 transition-all group">
     <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
-      <Icon icon={icon} width={20} />
+      <IconComponent size={20} />
     </div>
     <div>
       <div className="text-xs text-neutral-500 font-bold tracking-wider uppercase">{label}</div>
@@ -111,7 +113,7 @@ const IntegrationVisual = () => {
           >
             {activeStep === 0 && "> Locating training materials... Found 14 documents."}
             {activeStep === 1 && "> Chunking tokens and indexing to Postgres vector pool..."}
-            {activeStep === 2 && "> Deployment SUCCEEDED. Vegavan AI now active via widget."}
+            {activeStep === 2 && "> Deployment SUCCEEDED. AI Chatbot now active via widget."}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -123,106 +125,75 @@ const IntegrationVisual = () => {
 // MAIN PAGE EXPORT
 // ===============================
 
-export default function VegavanCinemaPage() {
+export default function AIChatbotCompanyPage() {
   const mainRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: mainRef, offset: ["start start", "end end"] });
-  const springScroll = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-
-  // Background perspective parallax
-  const bgScale = useTransform(springScroll, [0, 0.2], [1, 1.2]);
-  const textY = useTransform(springScroll, [0, 0.3], [0, 200]);
 
   return (
     <main ref={mainRef} className="relative min-h-screen bg-black text-white selection:bg-[#FF3B00]">
       
       {/* Global Cinematic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <motion.div style={{ scale: bgScale }} className="absolute inset-0">
+        <div className="absolute inset-0">
           <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_center,_#ffffff_1px,transparent_1px)] [background-size:40px_40px]" />
           <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[120%] aspect-square bg-[radial-gradient(circle_at_center,_rgba(255,59,0,0.12)_0%,transparent_70%)] blur-[100px]" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#FF3B00]/5 rounded-full blur-[120px] animate-pulse" />
-        </motion.div>
+        </div>
       </div>
 
       {/* SECTION 1: CINEMATIC HERO */}
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-32 overflow-hidden">
         
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-3 bg-white/[0.03] border border-white/10 rounded-full px-5 py-2 backdrop-blur-md mb-12 shadow-2xl hover:border-[#FF3B00]/30 transition-all group cursor-pointer"
-        >
+        <div className="inline-flex items-center gap-3 bg-white/[0.03] border border-white/10 rounded-full px-5 py-2 backdrop-blur-md mb-12 shadow-2xl hover:border-[#FF3B00]/30 transition-all group cursor-pointer">
           <div className="flex -space-x-1.5">
              <div className="w-6 h-6 rounded-full border border-black bg-[#FF3B00]" />
              <div className="w-6 h-6 rounded-full border border-black bg-white flex items-center justify-center text-[10px] text-black font-bold">AI</div>
           </div>
           <span className="text-xs font-black tracking-[0.15em] uppercase text-neutral-300 group-hover:text-white">Version 2.0 Production Ready</span>
-        </motion.div>
+        </div>
 
-        <motion.div style={{ y: textY }} className="text-center relative">
+        <div className="text-center relative">
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-20 bg-[#FF3B00]/40 blur-[100px] rounded-full opacity-30" />
           
-          <motion.h1 
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl sm:text-7xl md:text-[6.5rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4"
-          >
-            VEGAVAN
-          </motion.h1>
+          <h1 className="text-5xl sm:text-7xl md:text-[6.5rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4">
+            AI CHATBOT
+          </h1>
           
-          <motion.h2 
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="text-3xl sm:text-5xl md:text-[4.5rem] font-black tracking-tighter text-[#FF3B00] relative"
-          >
-            INTELLIGENCE
+          <h2 className="text-3xl sm:text-5xl md:text-[4.5rem] font-black tracking-tighter text-[#FF3B00] relative">
+            COMPANY IN PATNA
             <span className="absolute -top-4 -right-6 text-xs font-mono font-medium tracking-widest text-white bg-[#FF3B00] px-2 py-1 rounded flex items-center gap-1 shadow-[0_0_20px_#FF3B00]">
-              LIVE <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+              BIHAR <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
             </span>
-          </motion.h2>
-        </motion.div>
+          </h2>
+        </div>
 
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-8 text-base md:text-xl text-neutral-400 max-w-3xl text-center font-light leading-relaxed"
-        >
-          Stop hiring operators for basic queries. <strong className="text-white font-medium">Instantly integrate autonomous NLP chatbots</strong> that absorb your exact documentation and output human-tier support 24/7.
-        </motion.p>
+        <p className="mt-8 text-base md:text-xl text-neutral-400 max-w-3xl text-center font-light leading-relaxed">
+          Partner with the leading <strong className="text-[#FF3B00]">AI Chatbot Company in Patna, Bihar</strong>. We design, train, and deploy advanced, custom intelligent conversational NLP chatbots like <strong className="text-white font-medium">Vegavan AI</strong> to automate customer interactions.
+        </p>
 
         {/* CTA Cluster */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex flex-col sm:flex-row items-center gap-6 mt-16 relative z-20"
-        >
+        <div className="flex flex-col sm:flex-row items-center gap-6 mt-16 relative z-20">
           <Link href="/contact" className="group relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#FF3B00] via-orange-500 to-yellow-500 rounded-2xl blur-md opacity-60 group-hover:opacity-100 transition duration-500 group-hover:scale-105" />
             <button className="relative bg-[#FF3B00] text-white px-12 py-6 rounded-2xl font-black text-lg flex items-center gap-4 overflow-hidden shadow-2xl transition-transform group-hover:-translate-y-1">
               Deploy Agent Now
-              <Icon icon="solar:bolt-bold" width={20} className="animate-pulse" />
+              <Zap size={20} className="animate-pulse" />
             </button>
           </Link>
           <button className="px-10 py-6 rounded-2xl border border-white/10 hover:border-white/30 bg-white/5 backdrop-blur font-bold text-white transition-all flex items-center gap-2">
-            <Icon icon="solar:play-circle-bold-duotone" width={24} className="text-[#FF3B00]" />
+            <Play size={24} className="text-[#FF3B00]" />
             View Ecosystem Demo
           </button>
-        </motion.div>
+        </div>
 
       </section>
 
       {/* SECTION 2: REAL-TIME METRICS MESH */}
       <div className="relative z-10 border-y border-white/[0.05] bg-[#050505]/80 backdrop-blur-2xl py-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
-          <MetricBadge label="Response Latency" value="< 180ms" icon="solar:flash-drive-bold-duotone" />
-          <MetricBadge label="Lead Extraction" value="92% Auto" icon="solar:users-group-rounded-bold-duotone" />
-          <MetricBadge label="Availability" value="24/7/365" icon="solar:clock-circle-bold-duotone" />
-          <MetricBadge label="Human Effort Saved" value="~40 Hrs/Wk" icon="solar:shield-star-bold-duotone" />
+          <MetricBadge label="Response Latency" value="< 180ms" icon={Zap} />
+          <MetricBadge label="Lead Extraction" value="92% Auto" icon={Users} />
+          <MetricBadge label="Availability" value="24/7/365" icon={Clock} />
+          <MetricBadge label="Human Effort Saved" value="~40 Hrs/Wk" icon={Shield} />
         </div>
       </div>
 
@@ -240,7 +211,7 @@ export default function VegavanCinemaPage() {
               Don't let inquiries fade into the night.
             </h2>
             <p className="text-neutral-400 text-lg font-light leading-relaxed mb-8">
-              Static forms kill conversion momentum. Vegavan turns cold, static website presence into a proactive closing engine by answering customer concerns the exact moment they occur.
+              Static forms kill conversion momentum. Webflora's AI chatbot development services in Patna, Bihar turn cold, static website presence into a proactive closing and sales engine by answering customer concerns the exact moment they occur.
             </p>
             <ul className="space-y-4 text-neutral-300">
               {[
@@ -390,6 +361,57 @@ export default function VegavanCinemaPage() {
         </motion.div>
       </section>
 
+      {/* SECTION 3.7: PLATFORM COMPATIBILITY INTEGRATIONS */}
+      <section className="relative z-10 max-w-6xl mx-auto px-6 pb-32">
+        <div className="text-center mb-16">
+          <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+            Universal Compatibility
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+            Deploy Across Your Entire Stack
+          </h2>
+          <p className="text-gray-500 text-sm mt-3 font-light max-w-xl mx-auto">
+            Our intelligent AI chatbot integrates natively into all major frameworks, CMS platforms, mobile systems, and custom software architectures.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              title: "Next.js & React",
+              icon: Code,
+              desc: "Deploy as a React Component or wrapper inside server-side or client-side rendered Next.js apps with minimal hydration footprint."
+            },
+            {
+              title: "WordPress & Shopify",
+              icon: Globe,
+              desc: "Paste our single-script loader directly into your theme header or Shopify custom liquid tags to launch on your storefront instantly."
+            },
+            {
+              title: "Mobile Apps & Flutter",
+              icon: Smartphone,
+              desc: "Embed via webviews or direct API endpoints within native iOS & Android applications built on React Native or Flutter."
+            },
+            {
+              title: "SaaS & ERP Software",
+              icon: Cpu,
+              desc: "Sync conversations directly inside internal admin dashboards, enterprise ERP portals, and custom SaaS software platforms."
+            }
+          ].map((item, idx) => {
+            const IconComp = item.icon;
+            return (
+              <div key={idx} className="bg-[#080808] border border-white/5 p-8 rounded-3xl flex flex-col gap-4 hover:border-[#FF3B00]/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00]">
+                  <IconComp size={22} />
+                </div>
+                <h4 className="text-lg font-black text-white">{item.title}</h4>
+                <p className="text-xs text-neutral-400 font-light leading-relaxed">{item.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* SECTION 4: ULTIMATE CTA */}
       <section className="relative z-10 py-24 px-6 overflow-hidden text-center flex justify-center items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF3B00]/5 to-transparent pointer-events-none" />
@@ -425,10 +447,52 @@ export default function VegavanCinemaPage() {
         </motion.div>
       </section>
 
+      {/* Comparison Section */}
+      <ServiceComparisonWrapper data={{ title: "chatbot" }} />
+
+      {/* SEO rich text content block */}
+      <section className="relative z-10 py-20 bg-[#050505] border-t border-white/5">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+              SEO Optimization Hub
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase leading-none">
+              AI Chatbot Development Company in Patna, Bihar
+            </h2>
+            <p className="text-gray-500 text-sm mt-3 font-light">
+              Elevating digital user experiences with context-aware, 24/7 autonomous support engines.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-neutral-400 text-sm font-light leading-relaxed">
+            <div className="space-y-6">
+              <h3 className="text-white font-bold text-lg">Why Choose a Patna-based AI Chatbot Developer?</h3>
+              <p>
+                In today's fast-paced digital economy, businesses in Patna, Muzaffarpur, Gaya, and Bhagalpur require smart automation to handle customer queries instantly. As the premier <strong className="text-white">AI chatbot company in Patna, Bihar</strong>, Webflora Technologies designs intelligent conversational workflows that allow you to capture high-intent leads and resolve support tickets 24/7 without growing your support team overhead.
+              </p>
+              <p>
+                Whether you run an educational institute, healthcare clinic, real estate office, or ecommerce store, our custom chatbots act as virtual assistants, speaking directly to your audience in their native language and guiding them through complex workflows.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-white font-bold text-lg">Omnichannel Capabilities: Web, Mobile, and WhatsApp Integration</h3>
+              <p>
+                We do not build generic button-based responders. We build advanced NLP systems backed by technologies like RAG (Retrieval-Augmented Generation) and custom LLM interfaces. This allows your virtual agent to absorb your training documents and respond with accurate answers.
+              </p>
+              <p>
+                Additionally, we specialize in <strong className="text-white">WhatsApp Business API integration in Patna</strong>, mapping chatbot pipelines to your WhatsApp numbers so users can query catalogs, track orders, or book appointments directly inside their favorite messaging app.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="relative z-10">
         <FaqSection 
-          title="Vegavan AI Chatbot" 
+          title="AI Chatbot Development" 
           faqs={vegavanFaqs} 
         />
       </section>
@@ -459,9 +523,9 @@ export default function VegavanCinemaPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": "Vegavan AI",
+            "name": "AI Chatbot Development Services",
             "image": "https://webfloratechnologies.com/webflora-logo.svg",
-            "description": "Vegavan AI is a custom-engineered autonomous conversational AI chatbot designed by Webflora Technologies. It operates as a 24/7 digital assistant, absorbing your exact business documents, PDFs, and website links to resolve customer queries instantly.",
+            "description": "Custom-engineered autonomous conversational AI chatbot design, development, and integration services in Patna, Bihar by Webflora Technologies.",
             "brand": {
               "@type": "Brand",
               "name": "Webflora Technologies"
@@ -482,23 +546,23 @@ export default function VegavanCinemaPage() {
 
 const vegavanFaqs = [
   {
-    question: "What is Vegavan AI?",
-    answer: "Vegavan AI is a custom-engineered autonomous conversational AI chatbot designed by Webflora Technologies. It operates as a 24/7 digital assistant, absorbing your exact business documents, PDFs, and website links to resolve customer queries instantly without manual intervention.",
+    question: "Who is the best AI Chatbot development company in Patna, Bihar?",
+    answer: "Webflora Technologies is the leading AI Chatbot development company in Patna, Bihar. We design, train, and deploy advanced, custom intelligent conversational AI chatbots (powered by our proprietary Vegavan AI engine) to help local and global businesses automate 90% of customer support and sales queries.",
     icon: "lucide:bot"
   },
   {
-    question: "How long does it take to train and deploy Vegavan AI?",
-    answer: "Training is near-instant. Once you sync your corporate documents or website URLs, the AI engine processes and vectorizes the data in seconds. The official deployment requires pasting a single line of script code, taking under 60 seconds to set up on WordPress, Next.js, Shopify, or custom HTML.",
+    question: "How can an AI Chatbot help businesses in Patna and Bihar?",
+    answer: "Our AI chatbots work 24/7/365 to handle customer queries, capture high-intent leads, book appointments, and support multilingual chats in 80+ languages. They allow schools, clinics, coaching centers, and ecommerce brands in Bihar to save over 40 hours of manual labor per week.",
     icon: "lucide:clock"
   },
   {
-    question: "Is patient or client data secure when using Vegavan AI?",
-    answer: "Yes, data privacy and security are priority. All conversations are handled through SSL encrypted transit channels, and customer data sits securely within restricted air-gapped database pools. It fully supports custom configurations to align with sensitive data safety compliance.",
+    question: "Is data privacy secured by your AI Chatbot company?",
+    answer: "Absolutely. Data security is our primary focus. All chat histories, customer details, and business training materials are handled over SSL-encrypted transit channels and reside in secure database environments, meeting all compliance standards.",
     icon: "lucide:shield-check"
   },
   {
-    question: "How does Vegavan AI capture sales leads?",
-    answer: "The chatbot is optimized to identify high-intent buying signals. At optimal engagement moments during natural conversation, it politely prompts the user for contact details (such as email, name, or phone number) and automatically syncs them to your sales CRM or email alerts.",
+    question: "Can the chatbot integrate with my existing website and CRM?",
+    answer: "Yes. Our AI chatbots are designed to install in under 60 seconds using a single script tag. They work seamlessly on Next.js, React, WordPress, Shopify, Webflow, and custom HTML dashboards, automatically syncing captured leads directly to your email or CRM.",
     icon: "lucide:users"
   }
 ];

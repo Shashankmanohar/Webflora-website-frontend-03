@@ -214,7 +214,7 @@ export default function FooterSection() {
                 title="Product"
                 links={[
                   { text: "Home", url: "/" },
-                  { text: "Vegavan AI", url: "/vegavan-ai" },
+                  { text: "AI Chatbots", url: "/services/ai-chatbot-company-in-patna" },
                   { text: "About us", url: "/about" },
                   { text: "Services", url: "/services" },
                   { text: "Case Studies", url: "/case-studies" },
@@ -327,7 +327,7 @@ function FooterColumn({ title, links, badgeIndex }) {
                   /
                 </span>
                 {text}
-                {text === "Vegavan AI" && (
+                {text === "AI Chatbots" && (
                   <span className="ml-2 text-[9px] font-black uppercase tracking-wider bg-[#ff3b00] text-white px-2 py-0.5 rounded">
                     SaaS
                   </span>

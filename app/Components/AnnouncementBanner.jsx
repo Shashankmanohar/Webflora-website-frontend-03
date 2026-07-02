@@ -45,7 +45,7 @@ export default function AnnouncementBanner() {
             <div className="md:hidden w-6" />
 
             <Link 
-              href="/vegavan-ai" 
+              href="/services/ai-chatbot-company-in-patna" 
               className="flex items-center gap-2 md:gap-4 cursor-pointer group"
             >
               <div className="hidden md:flex items-center gap-1.5">
@@ -60,11 +60,11 @@ export default function AnnouncementBanner() {
 
               <p className="text-xs md:text-sm text-white font-medium flex items-center gap-1.5 tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 font-bold">
-                  Announcing Our First SaaS:
+                  Announcing AI Services:
                 </span>
-                <span className="font-black text-[#FF3B00] group-hover:text-white transition-colors duration-300">Vegavan AI</span>
+                <span className="font-black text-[#FF3B00] group-hover:text-white transition-colors duration-300">AI Chatbot Development</span>
                 <span className="hidden sm:inline text-neutral-400">
-                  — Ultimate Conversational Intelligence.
+                  — Custom Conversational Systems in Patna.
                 </span>
               </p>
 

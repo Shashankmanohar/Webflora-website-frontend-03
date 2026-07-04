@@ -1589,20 +1589,20 @@ export const ServiceGlossaryWrapper = ({ data }) => {
           </p>
         </div>
 
-        <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {terms.map((item, idx) => (
             <div key={idx} className="p-6 rounded-[2rem] border border-white/5 bg-zinc-950/40 hover:border-[#ff3b00]/30 hover:bg-[#ff3b00]/5 transition-all duration-500 flex flex-col justify-start relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-5">
                 <Icon icon={item.icon} className="text-xl" />
               </div>
-              <dt className="text-white font-bold text-lg tracking-tight mb-2">{item.term}</dt>
-              <dd className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
+              <h3 className="text-white font-bold text-lg tracking-tight mb-2">{item.term}</h3>
+              <p className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
                 {item.def}
-              </dd>
+              </p>
             </div>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   );

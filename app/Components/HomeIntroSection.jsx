@@ -240,7 +240,7 @@ export default function HomeIntroSection() {
             <h3 id="custom-vs-off-the-shelf-software" className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
               Custom vs. Off-The-Shelf
             </h3>
-            <p className="text-gray-500 text-sm mt-3 font-light">
+            <p className="text-gray-400 text-sm mt-3 font-light">
               See why custom engineered software consistently delivers higher ROI and longevity compared to generic SaaS tools.
             </p>
           </div>
@@ -303,7 +303,7 @@ export default function HomeIntroSection() {
                         Custom Software (Webflora)
                       </div>
                     </th>
-                    <th className="p-5 bg-white/[0.01] text-neutral-500 font-bold text-xs uppercase tracking-widest text-center w-1/3">Off-The-Shelf SaaS</th>
+                    <th className="p-5 bg-white/[0.01] text-neutral-400 font-bold text-xs uppercase tracking-widest text-center w-1/3">Off-The-Shelf SaaS</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
@@ -314,7 +314,7 @@ export default function HomeIntroSection() {
                         <Icon icon="solar:check-circle-bold" /> Flat-rate fee, lifetime ownership, no monthly user licensing costs.
                       </span>
                     </td>
-                    <td className="p-5 text-neutral-500 text-center text-xs">
+                    <td className="p-5 text-neutral-400 text-center text-xs">
                       Recurring monthly subscription fees per user that scale up indefinitely.
                     </td>
                   </tr>
@@ -325,7 +325,7 @@ export default function HomeIntroSection() {
                         <Icon icon="solar:check-circle-bold" /> Infinite customizable expansion aligned perfectly with business growth.
                       </span>
                     </td>
-                    <td className="p-5 text-neutral-500 text-center text-xs">
+                    <td className="p-5 text-neutral-400 text-center text-xs">
                       Rigid platform limits, locked features, and expensive tier upgrades.
                     </td>
                   </tr>
@@ -336,7 +336,7 @@ export default function HomeIntroSection() {
                         <Icon icon="solar:check-circle-bold" /> Seamless custom API mapping to connect internal legacy and external systems.
                       </span>
                     </td>
-                    <td className="p-5 text-neutral-500 text-center text-xs">
+                    <td className="p-5 text-neutral-400 text-center text-xs">
                       Restricted predefined connectors, fragile middleware requirements.
                     </td>
                   </tr>
@@ -347,7 +347,7 @@ export default function HomeIntroSection() {
                         <Icon icon="solar:check-circle-bold" /> Complete source code ownership with custom closed network encryption.
                       </span>
                     </td>
-                    <td className="p-5 text-neutral-500 text-center text-xs">
+                    <td className="p-5 text-neutral-400 text-center text-xs">
                       Shared multi-tenant database servers, zero direct protocol control.
                     </td>
                   </tr>
@@ -366,45 +366,44 @@ export default function HomeIntroSection() {
             <h3 id="software-terminology-glossary" className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
               Digital Transformation Glossary
             </h3>
-            <p className="text-gray-500 text-sm mt-3 font-light">
+            <p className="text-gray-400 text-sm mt-3 font-light">
               Demystifying key technical terms that power modern high-performance enterprise automation.
             </p>
           </div>
-
-          <dl className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl border border-white/5 bg-zinc-950/40 hover:border-[#ff3b00]/30 hover:bg-[#ff3b00]/5 transition-all duration-500 flex flex-col justify-start relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-5">
                 <Icon icon="solar:code-square-bold-duotone" className="text-xl" />
               </div>
-              <dt className="text-white font-bold text-lg tracking-tight mb-2">Custom Software Development</dt>
-              <dd className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
+              <h3 className="text-white font-bold text-lg tracking-tight mb-2">Custom Software Development</h3>
+              <p className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
                 The process of designing, building, and deploying software applications tailored specifically to meet the unique requirements of a particular organization or user group.
-              </dd>
+              </p>
             </div>
-
+ 
             <div className="p-6 rounded-2xl border border-white/5 bg-zinc-950/40 hover:border-[#ff3b00]/30 hover:bg-[#ff3b00]/5 transition-all duration-500 flex flex-col justify-start relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-5">
                 <Icon icon="solar:database-bold-duotone" className="text-xl" />
               </div>
-              <dt className="text-white font-bold text-lg tracking-tight mb-2">Enterprise Resource Planning (ERP)</dt>
-              <dd className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
+              <h3 className="text-white font-bold text-lg tracking-tight mb-2">Enterprise Resource Planning (ERP)</h3>
+              <p className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
                 An integrated system designed to manage and automate core business operations such as supply chain, customer service, inventory, finance, and human resources.
-              </dd>
+              </p>
             </div>
-
+ 
             <div className="p-6 rounded-2xl border border-white/5 bg-zinc-950/40 hover:border-[#ff3b00]/30 hover:bg-[#ff3b00]/5 transition-all duration-500 flex flex-col justify-start relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#ff3b00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-5">
                 <Icon icon="solar:cpu-bolt-bold-duotone" className="text-xl" />
               </div>
-              <dt className="text-white font-bold text-lg tracking-tight mb-2">AI Workflow Automation</dt>
-              <dd className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
+              <h3 className="text-white font-bold text-lg tracking-tight mb-2">AI Workflow Automation</h3>
+              <p className="text-neutral-400 font-light text-xs sm:text-sm leading-relaxed">
                 The integration of artificial intelligence and machine learning pipelines into standard workflows to eliminate operational bottlenecks, reduce manual work, and operate systems 24/7.
-              </dd>
+              </p>
             </div>
-          </dl>
+          </div>
         </div>
 
       </div>

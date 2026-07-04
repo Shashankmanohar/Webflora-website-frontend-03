@@ -146,12 +146,13 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Evolution Phase</label>
-                  <select name="service" toolparamdescription="The evolution phase or category of service requested (e.g. Digital Ecosystem Development, Architecture & Strategy, Visual Systems Design, Intelligent Automation)." className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors appearance-none font-bold cursor-pointer text-sm md:text-base">
-                    <option className="bg-black text-white">Digital Ecosystem Development</option>
-                    <option className="bg-black text-white">Architecture & Strategy</option>
-                    <option className="bg-black text-white">Visual Systems Design</option>
-                    <option className="bg-black text-white">Intelligent Automation</option>
+                  <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Project Category</label>
+                  <select name="service" toolparamdescription="The category of service requested (e.g. Website Development, Mobile App Development, Software Development, AI Automation & Chatbots, Digital Marketing & SEO)." className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white focus:outline-none focus:border-[#ff3b00] transition-colors appearance-none font-bold cursor-pointer text-sm md:text-base">
+                    <option className="bg-black text-white">Website Development</option>
+                    <option className="bg-black text-white">Mobile App Development</option>
+                    <option className="bg-black text-white">Software Development</option>
+                    <option className="bg-black text-white">AI Automation & Chatbots</option>
+                    <option className="bg-black text-white">Digital Marketing & SEO</option>
                   </select>
                 </div>
 

@@ -65,7 +65,10 @@ export const metadata = {
     apple: "/title-logo.png",
   },
   verification: {
-    google: "Fv5XfPtCaUGzUYkoKxfONROTTTBp6pKHW93z5JgG78k",
+    google: [
+      "xDzlrPLpH4of46ZPCmVZzzZK82PAxOu7vAUZ_6yDLkI",
+      "Fv5XfPtCaUGzUYkoKxfONROTTTBp6pKHW93z5JgG78k"
+    ],
   },
 };
 

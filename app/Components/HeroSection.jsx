@@ -95,7 +95,7 @@ export default function Hero() {
           </Link>
 
           <Link
-            href="/contact?consultation=true"
+            href="/contact"
             className="px-8 py-3 w-full sm:w-auto cursor-pointer bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-white text-sm font-semibold tracking-wide text-center transition-all duration-300"
           >
             Get Free Consultation

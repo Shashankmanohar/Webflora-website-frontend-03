@@ -85,7 +85,7 @@ export default async function TechPage({ params }) {
               Start Tech Project
             </Link>
             <Link
-              href="/contact?consultation=true"
+              href="/contact"
               className="px-10 py-3.5 w-full sm:w-auto cursor-pointer bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-white text-sm font-semibold tracking-wide text-center transition-all duration-300"
             >
               Consult an Architect

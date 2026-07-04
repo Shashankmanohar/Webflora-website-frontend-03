@@ -123,8 +123,8 @@ export default function CaseStudiesPage() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-            Recent Projects <br />
-            <span className="text-gray-500 italic">and Success Stories</span>
+            Case Studies <br />
+            <span className="text-gray-500 italic">Recent Projects & Success Stories</span>
           </h1>
 
           <motion.p
@@ -232,7 +232,9 @@ export default function CaseStudiesPage() {
           title="Proven Digital Solutions & Success Stories"
           paragraphs={[
             <>Explore our portfolio of <strong className="text-white font-medium">high-performance web applications</strong>, enterprise software, and growth-driven marketing campaigns. As a leading technology partner in Patna, Bihar, we consistently deliver digital products that scale and generate measurable ROI for businesses across India.</>,
-            <>From complex <strong className="text-gray-300">ecommerce website development</strong> to intelligent AI automation workflows, our case studies demonstrate our commitment to engineering excellence, modern UI/UX, and technical SEO.</>
+            <>From complex <strong className="text-gray-300">ecommerce website development</strong> to intelligent AI automation workflows, our case studies demonstrate our commitment to engineering excellence, modern UI/UX, and technical SEO.</>,
+            <>Our development methodology integrates Agile workflows, strict quality assurance, and user-centric design principles. We work closely with business leaders to build robust software systems that not only solve current operational bottlenecks but are also engineered to scale alongside future company growth.</>,
+            <>By utilizing cutting-edge tech stacks such as Next.js, React, Node.js, and secure cloud infrastructures, we ensure that every application achieves lightning-fast load times, solid security compliance, and optimal search visibility to maximize return on investment.</>
           ]}
         />
       </div>

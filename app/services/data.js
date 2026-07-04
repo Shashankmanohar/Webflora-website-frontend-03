@@ -1,7 +1,7 @@
 export const servicesData = {
   "website-development-company-in-patna": {
     "title": "Website Development Services in Patna",
-    "headline": "Custom Website Development Services",
+    "headline": "Website Design Company in Patna",
     "subtext": "Webflora Technologies is the premier website development company in Patna, Bihar, delivering high-performance, SEO-friendly websites using Next.js, React, Tailwind CSS, and scalable cloud architectures. We build fast, responsive, and secure digital platforms that help startups, coaching institutes, and businesses in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India turn web traffic into revenue. Our custom solutions start from ₹25,000.",
     "geoTitle": "Premium Website Development Services in Bihar",
     "geoContent": "As the leading website development company in Patna, Bihar, Webflora Technologies is committed to elevating the regional digital ecosystem. We specialize in server-side rendered, lightning-fast web solutions custom-tailored for regional trade hubs. Whether you need a corporate portal or an ecommerce platform, we serve businesses in Patna, Muzaffarpur, Gaya, Bhagalpur, and across all of Bihar with local SEO-optimized systems.",
@@ -1225,7 +1225,7 @@ export const servicesData = {
   },
   "digital-marketing-agency-in-patna": {
     "title": "Performance Digital Marketing Services in Patna",
-    "headline": "SEO & Performance Marketing Services",
+    "headline": "Digital Marketing Company in Patna",
     "subtext": "Webflora Technologies is a premier performance-focused digital marketing company in Patna, Bihar. We deliver local SEO map optimization, ROI-driven Google Ads (PPC), hyper-targeted Meta/Instagram ad campaigns, social media growth, and conversion-optimized lead generation. We help retail, real estate, healthcare clinics, and coaching institutes in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and all over India scale their revenue. Growth plans start from ₹15,000/month.",
     "geoTitle": "SEO & Performance Marketing Services in Bihar",
     "geoContent": "As the most reliable digital marketing company in Bihar, we dominate localized search engines. We set up professional Google Business Profiles, target local keywords to secure Google's Local 3-Pack, and run geo-targeted advertisements that drive actual foot traffic and inbound phone inquiries to local offices in Patna, Muzaffarpur, Gaya, and beyond.",

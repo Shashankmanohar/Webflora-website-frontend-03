@@ -37,12 +37,12 @@ const navItems = [
     href: "/services",
     children: [
       { icon: Briefcase,    label: "All Services",      desc: "Browse all core services we offer.",        href: "/services" },
-      { icon: Bot,          label: "AI Chatbots",        desc: "Autonomous support agents.",      href: "/services/ai-chatbot-company-in-patna",                         highlight: true },
-      { icon: Bot,          label: "AI & Automation",   desc: "Custom n8n and workflow agents.",           href: "/services/ai-automation-company-in-patna" },
       { icon: Globe,        label: "Website Dev",        desc: "High-performance marketing sites.",         href: "/services/website-development-company-in-patna" },
+      { icon: Bot,          label: "AI & Automation",   desc: "Custom n8n and workflow agents.",           href: "/services/ai-automation-company-in-patna" },
       { icon: Smartphone,   label: "App Dev",            desc: "Native iOS & Android systems.",             href: "/services/mobile-app-development-company-in-patna" },
       { icon: Layers,       label: "Software Systems",   desc: "Enterprise cloud platforms & ERP.",         href: "/services/software-development-company-in-patna" },
       { icon: Share2,       label: "Digital Growth",     desc: "ROI-driven marketing campaigns.",           href: "/services/digital-marketing-agency-in-patna" },
+      { icon: Bot,          label: "AI Chatbots",        desc: "Autonomous support agents.",                href: "/services/ai-chatbot-company-in-patna",                         highlight: true, badge: "SaaS" },
       { icon: FileText,     label: "Case Studies",       desc: "Our verified customer stories.",            href: "/case-studies" },
     ],
   },
@@ -175,12 +175,17 @@ export default function Navbar() {
                             return (
                               <Link key={ci} href={child.href} role="menuitem">
                                 <div
-                                  className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 border border-transparent hover:border-white/5 hover:-translate-y-px hover:bg-white/[0.04] ${
+                                  className={`relative flex items-start gap-3 p-3 rounded-xl transition-all duration-200 border border-transparent hover:border-white/5 hover:-translate-y-px hover:bg-white/[0.04] ${
                                     child.highlight
                                       ? "bg-[#FF3B00]/5 border-[#FF3B00]/15 hover:bg-[#FF3B00]/10"
                                       : ""
                                   }`}
                                 >
+                                  {child.badge && (
+                                    <span className="absolute top-2 right-2.5 text-[8px] font-black uppercase tracking-wider bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/25 px-1.5 py-0.5 rounded">
+                                      {child.badge}
+                                    </span>
+                                  )}
                                   <div
                                     className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                                       child.highlight

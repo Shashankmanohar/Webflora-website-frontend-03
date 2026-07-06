@@ -2,7 +2,7 @@ export const servicesData = {
   "website-development-company-in-patna": {
     "title": "Website Design Services in Patna",
     "headline": "Website Design Company in Patna",
-    "subtext": "Webflora Technologies is the premier website design company and leading IT company in Patna, Bihar. As a top-rated website developer in Patna, we deliver high-performance, SEO-friendly websites using Next.js, React, Tailwind CSS, and scalable cloud architectures. We build fast, responsive, and secure digital platforms that help startups, coaching institutes, and businesses in Patna turn web traffic into revenue. Our custom solutions start from ₹25,000.",
+    "subtext": "Webflora Technologies is a premier web development company, website development company, and leading IT company in Patna, Bihar. We deliver high-performance website design, custom web design, and advanced web application layouts. We build fast, responsive, and secure e commerce websites and digital platforms that help startups, coaching institutes, and businesses in Patna turn web traffic into revenue. Our custom solutions start from ₹25,000.",
     "geoTitle": "Premium Website Design Services in Bihar",
     "geoContent": "As the leading website design company in Patna, Bihar, Webflora Technologies is committed to elevating the regional digital ecosystem. If you need a reliable website developer in Patna to build modern, server-side rendered, lightning-fast web solutions custom-tailored for regional trade hubs, we serve businesses in Patna, Muzaffarpur, Gaya, Bhagalpur, and across Bihar with local SEO-optimized systems.",
     "heroBadge": "Top Website Agency in Bihar",
@@ -297,8 +297,8 @@ export const servicesData = {
         {
           "title": "Website Developer in Patna",
           "paragraphs": [
-            "When searching for a dedicated website developer in Patna, you need a software professional who understands next-generation React frameworks, speed optimization, and custom software architecture. At Webflora Technologies, we have a specialized team of web developers who craft clean-coded digital products that stand out visually and rank organically on Google search.",
-            "Our web design and development team combines state-of-the-art backend technologies (Node.js, PostgreSQL) with sleek CSS layouts to build high-performance storefronts and apps. We ensure that every project we deliver receives meticulous code validation, fast loading speeds, and robust local search engine optimization."
+            "When searching for a dedicated web development company or website development company, you need a software professional who understands next-generation React frameworks, website design, and custom software architecture. At Webflora Technologies, we have a specialized team of web developers who craft clean-coded website development products that stand out visually and rank organically on Google search.",
+            "Our web design and development team combines state-of-the-art backend technologies with sleek web designing layouts to build high-performance e commerce websites and custom web application platforms. We ensure that every project we deliver receives meticulous code validation, fast loading speeds, and robust local search engine optimization."
           ]
         },
         {

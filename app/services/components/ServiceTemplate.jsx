@@ -28,7 +28,11 @@ const ServiceTemplate = ({ data }) => {
       
       <div className="relative">
         <ProblemWrapper data={data} />
-        <BentoWhyChoose />
+        <BentoWhyChoose 
+          title={data.whyChooseTitle} 
+          subtitle={data.whyChooseSubtitle} 
+          cards={data.whyChooseCards} 
+        />
         <BenefitsWrapper data={data} />
         <SubServicesWrapper data={data} />
         <SuitableForWrapper data={data} />

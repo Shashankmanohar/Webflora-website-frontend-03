@@ -69,7 +69,15 @@ const reveal = {
   },
 };
 
-export default function WhyChooseSection() {
+export default function WhyChooseSection({ title, subtitle, cards: customCards }) {
+  const displayCards = customCards || cards;
+  const displayTitle = title || (
+    <>
+      Why Choose <span className="text-[#FF3B00]">Webflora Technologies</span>
+    </>
+  );
+  const displaySubtitle = subtitle || "Businesses choose Webflora Technologies because we combine technology, strategy, and innovation to build solutions that drive measurable business growth. Our team focuses on creating scalable, secure, and high-performance digital products that deliver long-term value.";
+
   return (
     <section id="why-choose" className="py-24 bg-black text-white relative overflow-hidden border-t border-white/5">
       {/* Ambient background glow */}
@@ -91,10 +99,10 @@ export default function WhyChooseSection() {
             🤝 Trust & Reliability
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase leading-none font-display">
-            Why Choose <span className="text-[#FF3B00]">Webflora Technologies</span>
+            {displayTitle}
           </h2>
           <p className="text-neutral-400 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
-            Businesses choose Webflora Technologies because we combine technology, strategy, and innovation to build solutions that drive measurable business growth. Our team focuses on creating scalable, secure, and high-performance digital products that deliver long-term value.
+            {displaySubtitle}
           </p>
         </div>
 
@@ -115,7 +123,7 @@ export default function WhyChooseSection() {
 
         {/* Benefit Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {cards.map((card, i) => (
+          {displayCards.map((card, i) => (
             <motion.div
               key={i}
               variants={reveal}

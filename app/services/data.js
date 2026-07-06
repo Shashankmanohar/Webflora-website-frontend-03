@@ -339,6 +339,30 @@ export const servicesData = {
     "seoTitle": "Website Design Company in Patna | Webflora Technologies",
     "seoDescription": "Top website development company in Patna. Webflora Technologies designs fast, secure custom React/Next.js websites starting at ₹25,000. Request a free quote!",
     "seoKeywords": "it company in patna, website design company in patna, website developer in patna, best website design company in patna, website development company in patna, web designer in patna, web design services bihar",
+    "whyChooseTitle": "Why Choose Webflora for Website Design?",
+    "whyChooseSubtitle": "We construct clean, high-performance Next.js websites tailored specifically to elevate Patna's top businesses. No generic templates, just fast and rankable custom code.",
+    "whyChooseCards": [
+      {
+        "icon": "solar:bolt-linear",
+        "title": "Performance & Speed Optimized",
+        "desc": "Every site is custom-engineered using Next.js/React to achieve perfect Core Web Vitals (99+ score), ensuring sub-second page loads that prevent drop-offs."
+      },
+      {
+        "icon": "solar:ranking-linear",
+        "title": "Conversion-Centric UX",
+        "desc": "We design clean, modern layouts and call-to-actions tailored for local businesses, coaching centers, and retail stores in Patna, translating traffic into leads."
+      },
+      {
+        "icon": "solar:graph-up-linear",
+        "title": "Technical SEO & Schema",
+        "desc": "Built-in JSON-LD schemas, search-friendly URLs, meta tag optimization, and clean indexable code ensure your business ranks highly on Google search results."
+      },
+      {
+        "icon": "solar:shield-keyhole-linear",
+        "title": "Full Source Code Ownership",
+        "desc": "No proprietary locks or monthly site builder fees. You get 100% ownership of your Next.js frontend code and database structures."
+      }
+    ],
     "pricing": [
       {
         "name": "Startup Website",
@@ -626,6 +650,30 @@ export const servicesData = {
     },
     "seoTitle": "Mobile App Development in Patna | Android & iOS Apps | Webflora",
     "seoKeywords": "it company in patna, mobile app development in patna, android app developer in patna, ios app development patna, best mobile app development bihar",
+    "whyChooseTitle": "Why Choose Webflora for Mobile App Development?",
+    "whyChooseSubtitle": "We construct native-grade, high-performance Flutter and React Native mobile applications. Build once, deploy everywhere seamlessly.",
+    "whyChooseCards": [
+      {
+        "icon": "solar:bolt-linear",
+        "title": "Cross-Platform Efficiency",
+        "desc": "We build apps using Flutter and React Native, delivering native performance on both Android and iOS from a single, cost-efficient codebase."
+      },
+      {
+        "icon": "solar:cpu-linear",
+        "title": "Offline Sync & Realtime APIs",
+        "desc": "Integrating lightweight local databases and websockets to ensure your app stays functional offline and syncs data instantly when back online."
+      },
+      {
+        "icon": "solar:shield-keyhole-linear",
+        "title": "Secure Gateway Integration",
+        "desc": "We implement direct UPI, card, and wallet integrations using Razorpay and Paytm, securing transactions for Bihar's rising online businesses."
+      },
+      {
+        "icon": "solar:graph-up-linear",
+        "title": "App Store Optimization (ASO)",
+        "desc": "Our deployment process includes full optimization for search queries on Google Play and Apple App Store, boosting organic app downloads."
+      }
+    ],
     "pricing": [
       {
         "name": "MVP Mobile App",
@@ -916,6 +964,30 @@ export const servicesData = {
     "seoTitle": "Software Development Company in Patna, Bihar | Webflora Technologies",
     "seoKeywords": "it company in patna, software development company in patna, best software developer in bihar, erp development patna, crm software bihar",
     "seoDescription": "MSME-registered software development company in Patna, Bihar. ERP, CRM, AI automation, websites & mobile apps. 200+ projects delivered. Free consultation.",
+    "whyChooseTitle": "Why Choose Webflora for Custom Software?",
+    "whyChooseSubtitle": "We construct secure, enterprise-grade business management portals. Flat-rate pricing, 100% code ownership, and robust long-term maintenance SLAs.",
+    "whyChooseCards": [
+      {
+        "icon": "solar:cpu-linear",
+        "title": "Custom Business Logic",
+        "desc": "We build bespoke software tailored precisely to your unique operations—whether inventory trackers, multi-tenant billing, or customized school ERPs."
+      },
+      {
+        "icon": "solar:shield-keyhole-linear",
+        "title": "Secure Cloud Scalability",
+        "desc": "Leveraging AWS, private virtual networks, and database encryption to protect proprietary workflows and scale seamlessly as transaction volume grows."
+      },
+      {
+        "icon": "solar:graph-up-linear",
+        "title": "Real-Time Actionable Analytics",
+        "desc": "Rich dashboard reporting systems and CSV/PDF export capabilities help business owners in Bihar make data-driven, strategic choices."
+      },
+      {
+        "icon": "solar:settings-minimalistic-linear",
+        "title": "Dedicated Maintenance SLAs",
+        "desc": "Ongoing software maintenance, automated database backups, and prompt patch updates to ensure zero operational downtime."
+      }
+    ],
     "pricing": [
       {
         "name": "SaaS Starter",
@@ -1227,6 +1299,30 @@ export const servicesData = {
     },
     "seoTitle": "AI Automation Services in Patna | Chatbots & Workflows | Webflora",
     "seoKeywords": "it company in patna, ai automation company in patna, best chatbot developer in bihar, n8n workflow automation, ai agents patna",
+    "whyChooseTitle": "Why Choose Webflora for AI Automation?",
+    "whyChooseSubtitle": "We construct autonomous, serverless n8n workflows and custom LLM chatbots. Eliminate manual operational overhead at flat rates.",
+    "whyChooseCards": [
+      {
+        "icon": "solar:cpu-linear",
+        "title": "Autonomous n8n Workflows",
+        "desc": "We build workflow automation pipelines that sync lead databases, trigger WhatsApp alerts, and update spreadsheets, saving hundreds of hours."
+      },
+      {
+        "icon": "solar:chat-square-call-linear",
+        "title": "24/7 Intelligent Chatbots",
+        "desc": "Deploying LLM-powered virtual agents that handle customer FAQs, capture contact info, and book appointments automatically."
+      },
+      {
+        "icon": "solar:shield-keyhole-linear",
+        "title": "Zero Subscription Setup",
+        "desc": "We run automations on your own serverless cloud accounts, eliminating expensive recurring commercial subscription plans."
+      },
+      {
+        "icon": "solar:users-group-two-rounded-linear",
+        "title": "CRM & API Integration",
+        "desc": "Seamlessly connecting your website with popular CRMs, email servers, and SMS gateways to automate lead response cycles."
+      }
+    ],
     "pricing": [
       {
         "name": "AI Chatbot Starter",
@@ -1495,6 +1591,30 @@ export const servicesData = {
     },
     "seoTitle": "Digital Marketing Agency in Patna | SEO & Lead Gen | Webflora",
     "seoKeywords": "it company in patna, digital marketing agency in patna, seo services patna, social media marketing bihar, google ads expert patna",
+    "whyChooseTitle": "Why Choose Webflora for Digital Marketing?",
+    "whyChooseSubtitle": "We construct data-backed performance marketing campaigns. Maximize your return on ad spend (ROAS) and dominate regional organic listings.",
+    "whyChooseCards": [
+      {
+        "icon": "solar:graph-up-linear",
+        "title": "Hyper-Local SEO Domination",
+        "desc": "Optimizing your Google Business Profile and local keywords to put your clinic, coaching center, or resort at the top of Google Map Packs."
+      },
+      {
+        "icon": "solar:ranking-linear",
+        "title": "ROI-Driven Ad Campaigns",
+        "desc": "Running highly optimized Meta and Google search ads focused on actual lead acquisition costs rather than superficial impressions."
+      },
+      {
+        "icon": "solar:bolt-linear",
+        "title": "Actionable Conversion Audits",
+        "desc": "Continuous analysis of user heatmaps and web traffic patterns to optimize landing page structures and maximize phone inquiry rates."
+      },
+      {
+        "icon": "solar:chat-square-call-linear",
+        "title": "Transparent ROAS Reporting",
+        "desc": "Providing clear weekly dashboards outlining exact ad spend, lead counts, and return on ad spend (ROAS) metrics."
+      }
+    ],
     "pricing": [
       {
         "name": "Local Growth Plan",

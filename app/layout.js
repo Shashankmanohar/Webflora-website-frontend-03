@@ -114,53 +114,29 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://webfloratechnologies.com/#organization",
-                  "name": "Webflora Technologies",
-                  "url": "https://webfloratechnologies.com",
-                  "logo": "https://webfloratechnologies.com/webflora-logo.svg",
-                  "image": "https://webfloratechnologies.com/webflora-logo.svg",
-                  "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
-                  "telephone": "+918540814729",
-                  "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
-                    "addressLocality": "Patna",
-                    "addressRegion": "Bihar",
-                    "postalCode": "800016",
-                    "addressCountry": "IN"
-                  },
-                  "sameAs": [
-                    "https://www.linkedin.com/company/webfloratechnologies/",
-                    "https://www.instagram.com/webflora.technologies",
-                    "https://www.facebook.com/profile.php?id=61580014195502"
-                  ],
-                  "founder": [
-                    { "@type": "Person", "@id": "https://webfloratechnologies.com/#founder" },
-                    { "@type": "Person", "@id": "https://webfloratechnologies.com/#cofounder" }
-                  ]
-                },
-                {
-                  "@type": "WebSite",
-                  "@id": "https://webfloratechnologies.com/#website",
-                  "url": "https://webfloratechnologies.com",
-                  "name": "Webflora Technologies",
-                  "description": "Premium software, website, and mobile app development company in Patna, Bihar.",
-                  "publisher": {
-                    "@type": "Organization",
-                    "@id": "https://webfloratechnologies.com/#organization",
-                    "name": "Webflora Technologies",
-                    "url": "https://webfloratechnologies.com"
-                  },
-                  "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://webfloratechnologies.com/?s={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                  }
-                },
+              "@type": "Organization",
+              "@id": "https://webfloratechnologies.com/#organization",
+              "name": "Webflora Technologies",
+              "url": "https://webfloratechnologies.com",
+              "logo": "https://webfloratechnologies.com/webflora-logo.svg",
+              "image": "https://webfloratechnologies.com/webflora-logo.svg",
+              "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
+              "telephone": "+918540814729",
+              "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+                "addressLocality": "Patna",
+                "addressRegion": "Bihar",
+                "postalCode": "800016",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/webfloratechnologies/",
+                "https://www.instagram.com/webflora.technologies",
+                "https://www.facebook.com/profile.php?id=61580014195502"
+              ],
+              "founder": [
                 {
                   "@type": "Person",
                   "@id": "https://webfloratechnologies.com/#founder",
@@ -168,12 +144,6 @@ export default function RootLayout({ children }) {
                   "jobTitle": "Co-Founder & CEO",
                   "url": "https://webfloratechnologies.com/about",
                   "image": "https://webfloratechnologies.com/team/shashank.jpg",
-                  "worksFor": {
-                    "@type": "Organization",
-                    "@id": "https://webfloratechnologies.com/#organization",
-                    "name": "Webflora Technologies",
-                    "url": "https://webfloratechnologies.com"
-                  },
                   "sameAs": [
                     "https://www.linkedin.com/in/shashank-manohar-429a1b1b4/",
                     "https://www.instagram.com/shashank__arr?igsh=MXM3NmhvYzh5cWlkZQ=="
@@ -186,32 +156,35 @@ export default function RootLayout({ children }) {
                   "jobTitle": "Co-Founder & UI Designer",
                   "url": "https://webfloratechnologies.com/about",
                   "image": "https://webfloratechnologies.com/team/amitesh.jpg",
-                  "worksFor": {
-                    "@type": "Organization",
-                    "@id": "https://webfloratechnologies.com/#organization",
-                    "name": "Webflora Technologies",
-                    "url": "https://webfloratechnologies.com"
-                  },
                   "sameAs": [
                     "https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA=="
                   ]
-                },
-                {
-                  "@type": "WebPage",
-                  "@id": "https://webfloratechnologies.com/#webpage",
-                  "url": "https://webfloratechnologies.com",
-                  "name": "Website Development Company in Patna",
-                  "isPartOf": {
-                    "@id": "https://webfloratechnologies.com/#website"
-                  },
-                  "datePublished": "2024-05-19T00:00:00+05:30",
-                  "dateModified": "2026-07-02T09:00:00+05:30",
-                  "speakable": {
-                    "@type": "SpeakableSpecification",
-                    "cssSelector": ["#main-content h1", "#main-content p"]
-                  }
                 }
               ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://webfloratechnologies.com/#website",
+              "url": "https://webfloratechnologies.com",
+              "name": "Webflora Technologies",
+              "description": "Premium software, website, and mobile app development company in Patna, Bihar.",
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://webfloratechnologies.com/#organization",
+                "name": "Webflora Technologies",
+                "url": "https://webfloratechnologies.com"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://webfloratechnologies.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
             })
           }}
         />

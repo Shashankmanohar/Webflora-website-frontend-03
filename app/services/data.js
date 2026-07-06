@@ -337,7 +337,7 @@ export const servicesData = {
       ]
     },
     "seoTitle": "Website Design Company in Patna | Webflora Technologies",
-    "seoDescription": "Looking for the top website development company in Patna? Webflora Technologies designs fast, responsive, and secure custom React/Next.js websites starting at ₹25,000. Get high-converting corporate sites, online e-commerce stores, and local SEO-optimized business websites designed by expert developers in Bihar. Request a free quote!",
+    "seoDescription": "Top website development company in Patna. Webflora Technologies designs fast, secure custom React/Next.js websites starting at ₹25,000. Request a free quote!",
     "seoKeywords": "it company in patna, website design company in patna, website developer in patna, best website design company in patna, website development company in patna, web designer in patna, web design services bihar",
     "pricing": [
       {

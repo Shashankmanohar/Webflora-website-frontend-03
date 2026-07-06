@@ -220,7 +220,7 @@ const HeroWrapper = ({ data }) => {
           {/* Tech Stack Card */}
           {data.techStack && (
             <div className="animate-float-card-1 p-6 rounded-3xl bg-zinc-950/80 border border-white/5 backdrop-blur-xl shadow-2xl space-y-4">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-[#FF3B00] font-bold">Primary Tech Stack</h3>
+              <p className="text-xs font-mono uppercase tracking-widest text-[#FF3B00] font-bold">Primary Tech Stack</p>
               <div className="grid grid-cols-3 gap-3">
                 {data.techStack.map((tech, idx) => (
                   <div key={idx} className="flex flex-col items-center justify-center p-3 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FF3B00]/30 transition-all duration-300">

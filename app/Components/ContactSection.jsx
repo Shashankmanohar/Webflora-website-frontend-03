@@ -130,9 +130,9 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <h4 className="text-white font-bold mb-1">
+                  <h3 className="text-white font-bold mb-1">
                     {item.title}
-                  </h4>
+                  </h3>
                   {item.links ? (
                     <div className="flex flex-col gap-1">
                       {item.links.map((l, idx) => (

@@ -160,11 +160,11 @@ const TestimonialSection = () => {
                           {testimonial.avatar}
                         </div>
                         <div>
-                          <h4 className={`text-sm md:text-base font-display font-bold leading-none mb-1 ${
+                          <h3 className={`text-sm md:text-base font-display font-bold leading-none mb-1 ${
                             isActive ? "text-white" : "text-white/30"
                           }`}>
                             {testimonial.clientName}
-                          </h4>
+                          </h3>
                           <p className={`text-[8px] md:text-[9px] font-bold uppercase tracking-[0.3em] ${
                             isActive ? "text-primary" : "text-white/10"
                           }`}>

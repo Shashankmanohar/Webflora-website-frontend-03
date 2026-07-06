@@ -592,37 +592,37 @@ const IndustriesWrapper = ({ data }) => {
       return [
         {
           industry: "Coaching Institutes",
-          title: "Website Development for Coaching Institutes",
+          title: "Website Design for Coaching Institutes",
           desc: "We build custom educational portals for coaching centers, institutes, and individual educators. Our coaching site development features integrated online registration platforms, course catalog filter systems, student ranker achievement walls, downloadable syllabi, and local search optimization templates. This establishes credibility, automates registration tasks, and maximizes local student admissions.",
           icon: "solar:backpack-bold-duotone"
         },
         {
           industry: "Hospitals",
-          title: "Website Development for Hospitals",
+          title: "Website Design for Hospitals",
           desc: "Healthcare website designs require clarity, responsiveness, and accessibility. We construct hospital and clinic web platforms featuring doctor database directory panels, department service descriptions, online appointment request configurations, patient guidance instructions, and local clinical search optimization to help local patients connect with medical specialists.",
           icon: "solar:health-bold-duotone"
         },
         {
           industry: "Real Estate",
-          title: "Website Development for Real Estate",
+          title: "Website Design for Real Estate",
           desc: "We engineer property catalog websites for real estate agencies and brokers. Features include advanced property search filters, interactive mapping systems, detailed neighborhood information, virtual 360-degree tour integration, high-resolution layout carousels, and high-intent contact forms to capture buyer inquiries.",
           icon: "solar:home-bold-duotone"
         },
         {
           industry: "Schools",
-          title: "Website Development for Schools",
+          title: "Website Design for Schools",
           desc: "Educational website portals for schools, colleges, and trusts. We deliver custom websites equipped with admission notice boards, academic calendars, downloadable registration forms, photo galleries, student achievement records, and dedicated parent-teacher contact coordinates.",
           icon: "solar:square-academic-cap-bold-duotone"
         },
         {
           industry: "Restaurants",
-          title: "Website Development for Restaurants",
+          title: "Website Design for Restaurants",
           desc: "Bespoke digital menus and booking configurations for restaurants, cafes, and hotels. We build restaurant websites that feature interactive food menus, reservation scheduling forms, customer reviews, operational hours, and map directions to increase dining covers.",
           icon: "solar:cup-hot-bold-duotone"
         },
         {
           industry: "Manufacturing Companies",
-          title: "Website Development for Manufacturing Companies",
+          title: "Website Design for Manufacturing Companies",
           desc: "Industrial B2B website development to showcase production capabilities. We build manufacturing sites that present product catalogs, technical ISO certifications, custom Request for Quote (RFQ) forms, company capability statements, and factory facility galleries.",
           icon: "solar:settings-bold-duotone"
         }
@@ -913,9 +913,9 @@ const DetailedArticleWrapper = ({ data }) => {
                       <div className="h-[1px] bg-white/5 flex-grow" />
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight uppercase leading-tight group-hover:text-[#FF3B00] transition-colors duration-300">
+                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight uppercase leading-tight group-hover:text-[#FF3B00] transition-colors duration-300">
                       {section.title}
-                    </h3>
+                    </h2>
                     
                     <div className="text-neutral-400 font-light leading-relaxed text-base md:text-lg space-y-5">
                       {Array.isArray(section.paragraphs) ? (

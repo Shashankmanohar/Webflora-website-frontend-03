@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
 
   const baseUrl = "https://webfloratechnologies.com";
   const url = `${baseUrl}/services/${serviceSlug}`;
-  const shortDesc = (service.seoDescription || service.subtext).slice(0, 150) + "...";
+  const shortDesc = service.seoDescription || (service.subtext ? service.subtext.slice(0, 155) + "..." : "");
 
   return {
     title: service.seoTitle || `${service.title} Services | Webflora Technologies`,

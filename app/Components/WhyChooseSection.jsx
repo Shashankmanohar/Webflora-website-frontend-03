@@ -87,11 +87,11 @@ export default function WhyChooseSection() {
       >
         {/* Header / Intro */}
         <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/20 bg-orange-500/5 text-xs text-orange-400 font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF3B00]/20 bg-[#FF3B00]/5 text-xs text-[#FF3B00] font-bold uppercase tracking-wider">
             🤝 Trust & Reliability
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase leading-none font-display">
-            Why Choose <span className="text-orange-600">Webflora Technologies</span>
+            Why Choose <span className="text-[#FF3B00]">Webflora Technologies</span>
           </h2>
           <p className="text-neutral-400 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
             Businesses choose Webflora Technologies because we combine technology, strategy, and innovation to build solutions that drive measurable business growth. Our team focuses on creating scalable, secure, and high-performance digital products that deliver long-term value.
@@ -100,10 +100,10 @@ export default function WhyChooseSection() {
 
         {/* Real Proof Points / Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20 p-8 rounded-3xl bg-zinc-950/40 border border-white/5 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-600/[0.02] rounded-full blur-xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF3B00]/[0.02] rounded-full blur-xl pointer-events-none" />
           {stats.map((stat, i) => (
             <div key={i} className="text-center space-y-2">
-              <div className="text-3xl md:text-5xl font-black text-orange-500 font-display">
+              <div className="text-3xl md:text-5xl font-black text-[#FF3B00] font-display">
                 {stat.value}
               </div>
               <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-500">
@@ -120,14 +120,14 @@ export default function WhyChooseSection() {
               key={i}
               variants={reveal}
               whileHover={{ y: -6 }}
-              className="group relative p-6 rounded-3xl bg-zinc-950/40 border border-white/5 hover:border-orange-500/20 hover:bg-zinc-900/10 transition-all duration-300 flex flex-col justify-between"
+              className="group relative p-6 rounded-3xl bg-zinc-950/40 border border-white/5 hover:border-[#FF3B00]/20 hover:bg-zinc-900/10 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-orange-500/5 border border-orange-500/10 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/5 border border-[#FF3B00]/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 transition-transform">
                   <Icon icon={card.icon} width={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-white mb-3 group-hover:text-orange-500 transition-colors">
+                  <h3 className="font-bold text-lg text-white mb-3 group-hover:text-[#FF3B00] transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-xs text-neutral-400 leading-relaxed font-light">

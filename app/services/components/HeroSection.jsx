@@ -65,9 +65,9 @@ export default function HeroSection() {
             </div>
 
             <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight leading-[1.05]">
-              Digital Architecture <br />
+              IT Company in <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500">
-                Built For Value.
+                Patna, Bihar
               </span>
             </h1>
 

@@ -10,7 +10,39 @@ import SEOContentBlock from '../Components/SEOContentBlock'
 import TrustSignals from '../Components/TrustSignals'
 import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from './components/ServiceTemplate'
 
+export const metadata = {
+  title: "IT Company in Patna Bihar | Software & Web Services | Webflora",
+  description: "Looking for the top IT company in Patna, Bihar? Webflora Technologies provides premium custom software engineering, Next.js web design, mobile apps, and n8n AI workflow automations. Get a free quote!",
+  keywords: "it company in patna, best it company in bihar, software company in patna, website developer in patna, ai automation bihar",
+  alternates: {
+    canonical: "/services",
+  },
+};
+
 const page = () => {
+  const itCompanyFaqs = [
+    {
+      question: "Which is the leading IT company in Patna, Bihar?",
+      answer: "Webflora Technologies is the leading IT company in Patna, Bihar, specializing in custom enterprise software, Next.js web application design, cross-platform mobile apps, and automated workflows.",
+      icon: "lucide:building"
+    },
+    {
+      question: "What IT services do you provide in Bihar?",
+      answer: "We offer comprehensive IT services including custom software engineering (ERMs/CRMs), Next.js web design, mobile app development (Flutter/React Native), Google/Meta performance ads, local SEO, and AI/n8n process automation.",
+      icon: "lucide:code"
+    },
+    {
+      question: "How does Webflora price its IT projects?",
+      answer: "We focus on a flat, transparent pricing structure with zero platform lock-in. Website development packages start from ₹25,000, AI chatbots start from ₹35,000, and custom software builds start from ₹1,00,000. You retain 100% code ownership.",
+      icon: "lucide:wallet"
+    },
+    {
+      question: "Do you provide cloud hosting and post-launch support?",
+      answer: "Yes. We configure serverless cloud architectures on AWS and Vercel to minimize monthly hosting costs and provide long-term maintenance SLAs covering security patches, backups, and library updates.",
+      icon: "lucide:cloud"
+    }
+  ];
+
   return (
     <div>
       <HeroSection/>
@@ -22,7 +54,7 @@ const page = () => {
       <TestimonialSection/>
       <ServiceComparisonWrapper data={{ title: "Webflora Digital Solutions" }} />
       <ServiceGlossaryWrapper data={{ title: "Webflora Digital Solutions" }} />
-      <FaqSection/>
+      <FaqSection faqs={itCompanyFaqs} title="IT Company FAQs" />
       {/* Service Schema */}
       <script
         type="application/ld+json"
@@ -71,32 +103,14 @@ const page = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Do you provide all services together?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we offer comprehensive service bundles tailored to your needs. You can choose individual services or combine multiple services into a cohesive strategy. Our team ensures seamless integration across all services for maximum impact and efficiency."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is the timeline?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Project timelines vary based on scope and complexity. Typically, strategy and planning take 2-4 weeks, implementation spans 4-12 weeks, and optimization is ongoing."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you offer support?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Absolutely. We provide ongoing support including 24/7 email support, weekly strategy calls, and monthly performance reviews. Our dedicated account manager ensures your success."
-                }
+            "mainEntity": itCompanyFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
               }
-            ]
+            }))
           })
         }}
       />
@@ -104,8 +118,8 @@ const page = () => {
         <SEOContentBlock 
           title="Custom Software & Digital Services in India"
           paragraphs={[
-            <>At <strong className="text-white font-medium">Webflora Technologies</strong>, we offer an elite suite of digital services designed to empower your business. From creating high-converting <strong className="text-gray-300">ecommerce websites</strong> to developing scalable <strong className="text-gray-300">custom software</strong>, we ensure your technological infrastructure is robust and future-proof.</>,
-            <>Our specialized teams in Patna handle complex <strong className="text-gray-300">ERP solutions</strong>, <strong className="text-gray-300">mobile app development</strong>, <strong className="text-gray-300">CRM systems</strong>, and strategic <strong className="text-gray-300">SEO services</strong> to elevate your brand's digital presence and operational efficiency.</>
+            <React.Fragment key={0}>At <strong className="text-white font-medium">Webflora Technologies</strong>, we offer an elite suite of digital services designed to empower your business. From creating high-converting <strong className="text-gray-300">ecommerce websites</strong> to developing scalable <strong className="text-gray-300">custom software</strong>, we ensure your technological infrastructure is robust and future-proof.</React.Fragment>,
+            <React.Fragment key={1}>Our specialized teams in Patna handle complex <strong className="text-gray-300">ERP solutions</strong>, <strong className="text-gray-300">mobile app development</strong>, <strong className="text-gray-300">CRM systems</strong>, and strategic <strong className="text-gray-300">SEO services</strong> to elevate your brand's digital presence and operational efficiency.</React.Fragment>
           ]}
         />
       </div>

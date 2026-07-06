@@ -72,7 +72,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg font-light leading-relaxed max-w-xl">
-              We design and engineer bespoke software systems, high-converting Next.js websites, cross-platform mobile apps, and automated workflows optimized for Patna, Bihar, and global businesses.
+              As a premier <strong className="text-gray-300 font-medium">web development company</strong> and <strong className="text-gray-300 font-medium">website development company</strong>, we deliver custom <strong className="text-gray-300 font-medium">app software</strong>, high-converting <strong className="text-gray-300 font-medium">website design</strong> layouts, and modern <strong className="text-gray-300 font-medium">web application development</strong> solutions optimized to scale Patna, Bihar, and global businesses.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">

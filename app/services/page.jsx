@@ -13,7 +13,7 @@ import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from './components/S
 export const metadata = {
   title: "IT Company in Patna Bihar | Software & Web Services | Webflora",
   description: "Looking for the top IT company in Patna, Bihar? Webflora Technologies provides premium custom software engineering, Next.js web design, mobile apps, and n8n AI workflow automations. Get a free quote!",
-  keywords: "it company in patna, best it company in bihar, software company in patna, website developer in patna, ai automation bihar",
+  keywords: "web development company, website development company, website design, website development, web design, e commerce websites, web application development, app software, mobile app development company, it company in patna, software company in patna",
   alternates: {
     canonical: "/services",
   },
@@ -116,10 +116,10 @@ const page = () => {
       />
       <div className="content-auto">
         <SEOContentBlock 
-          title="Custom Software & Digital Services in India"
+          title="Custom Web Development & IT Solutions"
           paragraphs={[
-            <React.Fragment key={0}>At <strong className="text-white font-medium">Webflora Technologies</strong>, we offer an elite suite of digital services designed to empower your business. From creating high-converting <strong className="text-gray-300">ecommerce websites</strong> to developing scalable <strong className="text-gray-300">custom software</strong>, we ensure your technological infrastructure is robust and future-proof.</React.Fragment>,
-            <React.Fragment key={1}>Our specialized teams in Patna handle complex <strong className="text-gray-300">ERP solutions</strong>, <strong className="text-gray-300">mobile app development</strong>, <strong className="text-gray-300">CRM systems</strong>, and strategic <strong className="text-gray-300">SEO services</strong> to elevate your brand's digital presence and operational efficiency.</React.Fragment>
+            <React.Fragment key={0}>At <strong className="text-white font-medium">Webflora Technologies</strong>, we are a full-service <strong className="text-gray-300">web development company</strong> and <strong className="text-gray-300">website development company</strong>. We offer specialized <strong className="text-gray-300">website development services</strong> and premium <strong className="text-gray-300">web designing services</strong> designed to empower local enterprises in Bihar and brands across India.</React.Fragment>,
+            <React.Fragment key={1}>Our engineers build high-converting <strong className="text-gray-300">e commerce websites</strong>, scale custom <strong className="text-gray-300">web application development</strong>, and support businesses with professional <strong className="text-gray-300">mobile app development company</strong> solutions. If you are looking to start <strong className="text-gray-300">creating website for business</strong> growth, we deliver secure, optimized platforms to elevate your digital presence.</React.Fragment>
           ]}
         />
       </div>

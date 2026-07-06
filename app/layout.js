@@ -32,7 +32,7 @@ export const metadata = {
   metadataBase: new URL("https://webfloratechnologies.com"),
   title: "Software Company in Patna, Bihar | Webflora Technologies",
   description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
-  keywords: "software company in patna, software company in bihar, software company in india, website company in patna, mobile app company, digital marketing, AI automation, Webflora Technologies",
+  keywords: "web development company, website development company, website design, website development, web design, e commerce websites, web application development, app software, mobile app development company, software company in patna, software company in bihar, website company in patna, Webflora Technologies",
   alternates: {
     canonical: "/",
   },

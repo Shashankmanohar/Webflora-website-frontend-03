@@ -536,7 +536,27 @@ export default function AIChatbotCompanyPage() {
               "lowPrice": "4999",
               "highPrice": "19999",
               "offerCount": "3"
-            }
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "18"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Albert Newwel"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "We had an amazing experience working with Webflora Technologies. They built a highly scalable digital portal and automated systems, exactly the way we envisioned. Excellent service."
+              }
+            ]
           })
         }}
       />

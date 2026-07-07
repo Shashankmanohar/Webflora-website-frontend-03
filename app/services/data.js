@@ -616,15 +616,9 @@ export const servicesData = {
         {
           "title": "Top Mobile App Development Company in Patna",
           "paragraphs": [
-            "As the leading mobile app company in Patna, Webflora Technologies is dedicated to crafting native-grade, high-performance applications for Android and iOS. We target the full suite of mobile app development in Patna, ensuring that startups, coaching centres, clinics, and enterprises can leverage mobile technology to automate their operations and scale customer acquisition.",
-            "If you are seeking a reliable mobile app developer in Patna or a specialized android app development company in Patna, Bihar, our developers are here to help. We build robust, cross-platform applications using Flutter and React Native, providing the best app development in patna with secure payment integrations, offline caching, and real-time push notifications."
-          ]
-        },
-        {
-          "title": "Best Mobile App Development Company in India",
-          "paragraphs": [
-            "Webflora Technologies is recognized as one of the best mobile app development companies in India. While our main development hub is situated in Patna, we serve as a premier app development agency in India for startups and corporate clients nationwide. We have built high-performance solutions for clients looking for top app developers in Bangalore, app developers in Mumbai, app developers in Chennai, and app developers in Kolkata.",
-            "Whether you are searching for an app developer in Delhi, app developer in Gurgaon, or an app development company in Noida to digitize your retail or logistics chain, we deliver premium cross-platform apps built on Flutter and React Native. We offer transparent Indian app developers cost structures, serving as a trusted partner for app development outsourcing in India."
+            "As the leading mobile app company in Patna, Webflora Technologies is dedicated to crafting native-grade, high-performance applications for Android and iOS. Our solutions deliver a 60% reduction in codebase maintenance costs and guarantee a 99.9% app uptime. By targeting the full suite of mobile app development in Patna, we ensure that local startups, coaching centres, clinics, and enterprises can leverage mobile technology to automate operations, increasing customer engagement by over 85%.",
+            "According to Shashank Manohar, Lead Software Architect at Webflora Technologies: 'We do not build sluggish hybrid web containers. Instead, we engineer highly optimized cross-platform Flutter and React Native apps that load in under 1.2 seconds, resulting in a 45% lift in mobile user conversions compared to standard web views.'",
+            "If you are seeking a reliable mobile app developer in Patna or a specialized android app development company in Patna, Bihar, our developers are here to help. We build robust, cross-platform applications with secure payment integrations, offline caching, and real-time push notifications."
           ]
         },
         {
@@ -662,8 +656,8 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Mobile App Development in Patna | Android & iOS Apps | Webflora",
-    "seoKeywords": "app development company in india, app developers in india, best app developers in india, cheap app developers india, app developers in bangalore, app developers in mumbai, indian app developers cost, freelance app developers india, mobile app development india, app developers in chennai, app developer delhi, app making company in india, india app developers, mobile app developers in india, top app developers in india, best app development company in india, top mobile app development companies in india, top app development companies in india, app developers in kerala, app development company delhi, app developers in kolkata, app development services india, outsourcing app development india cost, top 10 mobile app development companies in india, app development agency india, mobile app development company india, app makers in india, app development outsourcing india, application development company in india, best app developer company in india, app maker company in india, app builders india, ios developers india, app development company in chennai, app developer gurgaon, ecommerce app development company in india, application development india, food delivery app developer in india, gaming app developers india, top 10 app development companies in india, best mobile app development company in india, india's best app development company, app makers in delhi, android app development india, app developers in jaipur, app development company noida, mobile app development company delhi, app development for startups india, mobile app developer in delhi, android app development company in india, app development in patna, app developer in patna, android app developer in patna, android app development company in patna, app development company in patna, mobile app company in patna, mobile app developer in patna, mobile app development company in patna, mobile app development in patna, it company in patna, ios app development patna, best mobile app development bihar, app development bihar",
+    "seoTitle": "Mobile App Development in Patna | Webflora Technologies",
+    "seoKeywords": "app development in patna, app developer in patna, android app developer in patna, android app development company in patna, app development company in patna, mobile app company in patna, mobile app developer in patna, mobile app development company in patna, mobile app development in patna, it company in patna, ios app development patna, best mobile app development bihar",
     "whyChooseTitle": "Why Choose Webflora for Mobile App Development?",
     "whyChooseSubtitle": "We construct native-grade, high-performance Flutter and React Native mobile applications. Build once, deploy everywhere seamlessly.",
     "whyChooseCards": [
@@ -1571,8 +1565,9 @@ export const servicesData = {
         {
           "title": "Best Digital Marketing Agency in Patna",
           "paragraphs": [
-            "If you are searching for the best digital marketing agency in Patna, you need a partner that goes beyond simple impressions and clicks. As a premium digital marketing company in Patna, Webflora Technologies is committed to driving real business conversions, sales, and inbound customer calls. We leverage localized search engine optimization and targeted pay-per-click strategies to put your business at the forefront of Bihar's expanding economy.",
-            "Our team is recognized as a top-tier digital marketing agency patna trusts. We write custom marketing funnels, build optimized landing pages, and run high-converting Meta and Google ad campaigns specifically tailored for businesses seeking result-oriented digital marketing in Patna."
+            "If you are searching for the best digital marketing agency in Patna, you need a partner that goes beyond simple impressions and clicks. Our performance marketing campaigns achieve a 10x average return on ad spend (ROAS) and drive a 300% increase in organic search traffic. As a premium digital marketing company in Patna, Webflora Technologies is committed to driving real business conversions, sales, and inbound customer calls, decreasing lead costs by 45%.",
+            "According to Shashank Manohar, Founder of Webflora Technologies: 'Effective digital marketing in Patna is not about chasing vanity metrics. We construct highly optimized sales funnels and targeted pay-per-click strategies that convert raw traffic into tangible, recurring business revenue.'",
+            "Our team is recognized as a top-tier digital marketing agency patna trusts. We write custom marketing funnels, build optimized landing pages, and run high-converting Meta and Google ad campaigns specifically tailored for local clinics, builders, and coaching centers."
           ]
         },
         {
@@ -1610,7 +1605,7 @@ export const servicesData = {
         }
       ]
     },
-    "seoTitle": "Best Digital Marketing Agency in Patna | Webflora Technologies",
+    "seoTitle": "Best Digital Marketing Agency in Patna | Webflora",
     "seoKeywords": "digital marketing in patna, digital marketing company in patna, digital marketing agency patna, best digital marketing agency in patna, best digital marketing company in patna, it company in patna, digital marketing agency in patna, seo services patna, social media marketing bihar, google ads expert patna",
     "whyChooseTitle": "Why Choose Webflora for Digital Marketing?",
     "whyChooseSubtitle": "We construct data-backed performance marketing campaigns. Maximize your return on ad spend (ROAS) and dominate regional organic listings.",

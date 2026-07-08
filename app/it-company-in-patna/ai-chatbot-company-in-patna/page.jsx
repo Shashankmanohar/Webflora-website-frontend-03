@@ -542,22 +542,61 @@ export default function AIChatbotCompanyPage() {
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "18"
+              "ratingValue": "5.0",
+              "reviewCount": "48"
             },
             "review": [
               {
                 "@type": "Review",
                 "author": {
                   "@type": "Person",
-                  "name": "Albert Newwel"
+                  "name": "Sahil Kumar"
                 },
                 "reviewRating": {
                   "@type": "Rating",
                   "ratingValue": "5",
                   "bestRating": "5"
                 },
-                "reviewBody": "We had an amazing experience working with Webflora Technologies. They built a highly scalable digital portal and automated systems, exactly the way we envisioned. Excellent service."
+                "reviewBody": "Our new website built by Webflora has been live for three months and not a single bug so far. Communication was clear and consistent throughout the entire project. Cannot recommend Webflora Technologies enough. Big thanks to the Webflora team."
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Balwant Kumar"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Webflora built our app with a level of polish you usually only see from big city studios. They were responsive on WhatsApp, email and calls whenever we needed answers. Cannot recommend Webflora Technologies enough. Grateful for your work Webflora."
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Sonu Kumar"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "We had an app idea sitting on paper for a year and Webflora turned it into a real product in months. Their team listened carefully to what we actually needed instead of pushing a template solution. A rare team that combines technical skill with genuine business understanding. Cheers to the entire Webflora crew."
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Ravindra Kumar"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Working with Webflora on our website was smooth from day one and the launch went without a hitch. They pushed back thoughtfully when we suggested something that would have hurt the product. Highly recommend Webflora to any business that takes quality seriously. Thank you team Webflora."
               }
             ]
           })

@@ -9,6 +9,7 @@ import FaqSection from './components/FaqSection'
 import SEOContentBlock from '../Components/SEOContentBlock'
 import TrustSignals from '../Components/TrustSignals'
 import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from './components/ServiceTemplate'
+import ClientMarquee from '../Components/ClientMarquee'
 
 export const metadata = {
   title: "IT Company in Patna Bihar | Software & Web Services | Webflora",
@@ -46,6 +47,7 @@ const page = () => {
   return (
     <div>
       <HeroSection/>
+      <ClientMarquee />
       <TrustSignals />
       <ProblemSection/>
       <OurCoreServices/>

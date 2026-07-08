@@ -1,5 +1,3 @@
-import ClientMarquee from "../Components/ClientMarquee";
-
 export const metadata = {
   title: "IT & Digital Services in Patna Bihar | Webflora Technologies",
   description: "Explore web development, app development, software development, AI automation, SEO, and digital marketing services offered by Webflora Technologies in Patna, Bihar.",
@@ -10,10 +8,5 @@ export const metadata = {
 };
 
 export default function ServicesLayout({ children }) {
-  return (
-    <>
-      {children}
-      <ClientMarquee />
-    </>
-  );
+  return <>{children}</>;
 }

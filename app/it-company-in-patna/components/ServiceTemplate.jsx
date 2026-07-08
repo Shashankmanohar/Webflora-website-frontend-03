@@ -18,6 +18,7 @@ import { servicesData } from "../data";
 
 import WorkSection from "../../Components/WorkSection";
 import BentoWhyChoose from "../../Components/WhyChooseSection";
+import ClientMarquee from "../../Components/ClientMarquee";
 
 const ServiceTemplate = ({ data }) => {
   return (
@@ -25,6 +26,7 @@ const ServiceTemplate = ({ data }) => {
       <ScrollProgressBar />
 
       <HeroWrapper data={data} />
+      <ClientMarquee />
       
       <div className="relative">
         <ProblemWrapper data={data} />

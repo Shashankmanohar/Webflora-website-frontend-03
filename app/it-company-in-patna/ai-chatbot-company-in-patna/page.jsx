@@ -7,6 +7,7 @@ import Link from "next/link";
 import FaqSection from "../components/FaqSection";
 import { ServiceComparisonWrapper } from "../components/ServiceTemplate";
 import { Zap, Users, Clock, Shield, Play, Code, Globe, Cpu, Smartphone } from "lucide-react";
+import ClientMarquee from "../../../Components/ClientMarquee";
 
 // ===============================
 // PREMIUM SUB-COMPONENTS
@@ -186,6 +187,8 @@ export default function AIChatbotCompanyPage() {
         </div>
 
       </section>
+
+      <ClientMarquee />
 
       {/* SECTION 2: REAL-TIME METRICS MESH */}
       <div className="relative z-10 border-y border-white/[0.05] bg-[#050505]/80 backdrop-blur-2xl py-16 overflow-hidden">

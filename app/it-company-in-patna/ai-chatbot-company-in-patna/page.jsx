@@ -7,7 +7,7 @@ import Link from "next/link";
 import FaqSection from "../components/FaqSection";
 import { ServiceComparisonWrapper } from "../components/ServiceTemplate";
 import { Zap, Users, Clock, Shield, Play, Code, Globe, Cpu, Smartphone } from "lucide-react";
-import ClientMarquee from "../../../Components/ClientMarquee";
+import ClientMarquee from "../../Components/ClientMarquee";
 
 // ===============================
 // PREMIUM SUB-COMPONENTS

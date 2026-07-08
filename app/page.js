@@ -4,7 +4,7 @@ import ClientMarquee from "./Components/ClientMarquee";
 import StatsMarquee from "./Components/StatsMarquee";
 import HomeSections from "./Components/HomeSections";
 import HomeIntroSection from "./Components/HomeIntroSection";
-import FaqSection from "./services/components/FaqSection";
+import FaqSection from "./it-company-in-patna/components/FaqSection";
 
 /* ── FAQ data (defined server-side, passed as prop to client component) ── */
 const homeFaqs = [

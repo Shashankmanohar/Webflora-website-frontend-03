@@ -7,7 +7,7 @@ export default async function sitemap() {
   const staticRoutes = [
     // Main Pages
     { route: "", priority: 1.0 },
-    { route: "/services", priority: 0.95 },
+    { route: "/it-company-in-patna", priority: 0.95 },
     { route: "/about", priority: 0.85 },
     { route: "/contact", priority: 0.85 },
     { route: "/case-studies", priority: 0.8 },
@@ -15,12 +15,12 @@ export default async function sitemap() {
     { route: "/career", priority: 0.7 },
 
     // Core Service Pages
-    { route: "/services/ai-chatbot-company-in-patna", priority: 0.95 },
-    { route: "/services/website-development-company-in-patna", priority: 0.95 },
-    { route: "/services/mobile-app-development-company-in-patna", priority: 0.9 },
-    { route: "/services/software-development-company-in-patna", priority: 0.9 },
-    { route: "/services/ai-automation-company-in-patna", priority: 0.95 },
-    { route: "/services/digital-marketing-agency-in-patna", priority: 0.9 },
+    { route: "/it-company-in-patna/ai-chatbot-company-in-patna", priority: 0.95 },
+    { route: "/it-company-in-patna/website-development-company-in-patna", priority: 0.95 },
+    { route: "/it-company-in-patna/mobile-app-development-company-in-patna", priority: 0.9 },
+    { route: "/it-company-in-patna/software-development-company-in-patna", priority: 0.9 },
+    { route: "/it-company-in-patna/ai-automation-company-in-patna", priority: 0.95 },
+    { route: "/it-company-in-patna/digital-marketing-agency-in-patna", priority: 0.9 },
 
     // Legal Pages
     { route: "/privacy-policy", priority: 0.2 },

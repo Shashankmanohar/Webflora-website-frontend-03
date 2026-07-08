@@ -2,9 +2,9 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { pricingGuidesData } from "../data";
-import SafeIcon from "../../services/components/client/SafeIcon";
+import SafeIcon from "../../it-company-in-patna/components/client/SafeIcon";
 import ContactSection from "../../Components/ContactSection";
-import FaqSection from "../../services/components/FaqSection";
+import FaqSection from "../../it-company-in-patna/components/FaqSection";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

@@ -1,6 +1,6 @@
 import React from "react";
 import ContactSection from "../Components/ContactSection";
-import SafeIcon from "../services/components/client/SafeIcon";
+import SafeIcon from "../it-company-in-patna/components/client/SafeIcon";
 
 export const metadata = {
   title: "Why Webflora Technologies | Software Agency in Patna Bihar",

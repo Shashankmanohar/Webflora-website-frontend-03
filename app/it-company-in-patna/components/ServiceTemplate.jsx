@@ -486,7 +486,7 @@ const OtherServicesWrapper = ({ currentService }) => {
                 delay={index * 0.1}
                 className={`${span} group relative`}
               >
-                <Link href={`/services/${service.slug}`} className="block h-full w-full">
+                <Link href={`/it-company-in-patna/${service.slug}`} className="block h-full w-full">
                   <div className={`relative h-full w-full p-8 rounded-[2.5rem] bg-neutral-900/30 border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-700 group-hover:border-white/20 group-hover:bg-neutral-900/50 flex flex-col justify-between`}>
                     
                     {/* Dynamic Background Gradient */}

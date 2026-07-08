@@ -83,7 +83,7 @@ export default function HomeSections({ faqComponent }) {
       <div className="content-auto">
         <LazySection
           height="450px"
-          loader={() => import("../services/components/TestimonialSection")}
+          loader={() => import("../it-company-in-patna/components/TestimonialSection")}
         />
       </div>
       <div className="content-auto">

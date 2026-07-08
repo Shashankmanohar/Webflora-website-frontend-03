@@ -1,16 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import Starfield from "../../services/components/client/Starfield";
-import GlowBlob from "../../services/components/client/GlowBlob";
-import { ScrollProgressBar, FadeInUp, HoverScale } from "../../services/components/client/MotionWrappers";
-import FaqSection from "../../services/components/FaqSection";
-import { BenefitsGrid, TechStackGrid } from "../../services/components/client/InteractiveGrids";
-import TestimonialWrapper from "../../services/components/client/TestimonialWrapper";
+import Starfield from "../../it-company-in-patna/components/client/Starfield";
+import GlowBlob from "../../it-company-in-patna/components/client/GlowBlob";
+import { ScrollProgressBar, FadeInUp, HoverScale } from "../../it-company-in-patna/components/client/MotionWrappers";
+import FaqSection from "../../it-company-in-patna/components/FaqSection";
+import { BenefitsGrid, TechStackGrid } from "../../it-company-in-patna/components/client/InteractiveGrids";
+import TestimonialWrapper from "../../it-company-in-patna/components/client/TestimonialWrapper";
 import ContactSection from "../../Components/ContactSection";
 import SEOContentBlock from "../../Components/SEOContentBlock";
-import SafeIcon from "../../services/components/client/SafeIcon";
+import SafeIcon from "../../it-company-in-patna/components/client/SafeIcon";
 import { industriesData } from "../data";
-import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from "../../services/components/ServiceTemplate";
+import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from "../../it-company-in-patna/components/ServiceTemplate";
 
 const IndustryTemplate = ({ data }) => {
   return (

@@ -2,10 +2,10 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { comparisonsData } from "../data";
-import SafeIcon from "../../services/components/client/SafeIcon";
-import { FadeInUp } from "../../services/components/client/MotionWrappers";
+import SafeIcon from "../../it-company-in-patna/components/client/SafeIcon";
+import { FadeInUp } from "../../it-company-in-patna/components/client/MotionWrappers";
 import ContactSection from "../../Components/ContactSection";
-import FaqSection from "../../services/components/FaqSection";
+import FaqSection from "../../it-company-in-patna/components/FaqSection";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

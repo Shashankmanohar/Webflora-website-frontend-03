@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   if (!service) return {};
 
   const baseUrl = "https://webfloratechnologies.com";
-  const url = `${baseUrl}/services/${serviceSlug}`;
+  const url = `${baseUrl}/it-company-in-patna/${serviceSlug}`;
   const shortDesc = service.seoDescription || (service.subtext ? service.subtext.slice(0, 155) + "..." : "");
 
   return {
@@ -62,8 +62,8 @@ export default async function ServicePage({ params }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": `https://webfloratechnologies.com/services/${serviceSlug}#webpage`,
-            "url": `https://webfloratechnologies.com/services/${serviceSlug}`,
+            "@id": `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}#webpage`,
+            "url": `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`,
             "name": data.title,
             "headline": data.title,
             "description": data.subtext.slice(0, 150) + "...",
@@ -136,14 +136,14 @@ export default async function ServicePage({ params }) {
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Services",
-                "item": "https://webfloratechnologies.com/services"
+                "name": "IT Company In Patna",
+                "item": "https://webfloratechnologies.com/it-company-in-patna"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": data.title,
-                "item": `https://webfloratechnologies.com/services/${serviceSlug}`
+                "item": `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`
               }
             ]
           })

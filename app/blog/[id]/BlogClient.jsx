@@ -36,12 +36,12 @@ const BlogClient = ({ initialPost }) => {
   const [showAllExpertise, setShowAllExpertise] = React.useState(false);
 
   const allExpertise = [
-    { name: "Website Development", href: "/services/website-development-company-in-patna" },
-    { name: "Mobile App Development", href: "/services/mobile-app-development-company-in-patna" },
-    { name: "Digital Marketing", href: "/services/digital-marketing-agency-in-patna" },
-    { name: "Software Development", href: "/services/software-development-company-in-patna" },
-    { name: "AI & Automation", href: "/services/ai-automation-company-in-patna" },
-    { name: "AI Chatbots", href: "/services/ai-chatbot-company-in-patna" },
+    { name: "Website Development", href: "/it-company-in-patna/website-development-company-in-patna" },
+    { name: "Mobile App Development", href: "/it-company-in-patna/mobile-app-development-company-in-patna" },
+    { name: "Digital Marketing", href: "/it-company-in-patna/digital-marketing-agency-in-patna" },
+    { name: "Software Development", href: "/it-company-in-patna/software-development-company-in-patna" },
+    { name: "AI & Automation", href: "/it-company-in-patna/ai-automation-company-in-patna" },
+    { name: "AI Chatbots", href: "/it-company-in-patna/ai-chatbot-company-in-patna" },
   ];
 
   const discussionRef = React.useRef(null);

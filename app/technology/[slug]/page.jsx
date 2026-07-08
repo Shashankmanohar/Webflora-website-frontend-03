@@ -2,11 +2,11 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { technologiesData } from "../data";
-import SafeIcon from "../../services/components/client/SafeIcon";
-import { FadeInUp, HoverScale } from "../../services/components/client/MotionWrappers";
+import SafeIcon from "../../it-company-in-patna/components/client/SafeIcon";
+import { FadeInUp, HoverScale } from "../../it-company-in-patna/components/client/MotionWrappers";
 import ContactSection from "../../Components/ContactSection";
-import FaqSection from "../../services/components/FaqSection";
-import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from "../../services/components/ServiceTemplate";
+import FaqSection from "../../it-company-in-patna/components/FaqSection";
+import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from "../../it-company-in-patna/components/ServiceTemplate";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

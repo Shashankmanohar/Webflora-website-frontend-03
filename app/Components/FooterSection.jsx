@@ -201,11 +201,11 @@ export default function FooterSection() {
               <FooterColumn
                 title="Services"
                 links={[
-                  { text: "Web Development", url: "/services/website-development-company-in-patna" },
-                  { text: "App Development", url: "/services/mobile-app-development-company-in-patna" },
-                  { text: "AI Automation", url: "/services/ai-automation-company-in-patna" },
-                  { text: "Software Development", url: "/services/software-development-company-in-patna" },
-                  { text: "Digital Marketing", url: "/services/digital-marketing-agency-in-patna" }
+                  { text: "Web Development", url: "/it-company-in-patna/website-development-company-in-patna" },
+                  { text: "App Development", url: "/it-company-in-patna/mobile-app-development-company-in-patna" },
+                  { text: "AI Automation", url: "/it-company-in-patna/ai-automation-company-in-patna" },
+                  { text: "Software Development", url: "/it-company-in-patna/software-development-company-in-patna" },
+                  { text: "Digital Marketing", url: "/it-company-in-patna/digital-marketing-agency-in-patna" }
                 ]}
               />
             </div>
@@ -214,9 +214,9 @@ export default function FooterSection() {
                 title="Product"
                 links={[
                   { text: "Home", url: "/" },
-                  { text: "AI Chatbots", url: "/services/ai-chatbot-company-in-patna" },
+                  { text: "AI Chatbots", url: "/it-company-in-patna/ai-chatbot-company-in-patna" },
                   { text: "About us", url: "/about" },
-                  { text: "Services", url: "/services" },
+                  { text: "Services", url: "/it-company-in-patna" },
                   { text: "Case Studies", url: "/case-studies" },
                   { text: "Blog", url: "/blog" }
                 ]}

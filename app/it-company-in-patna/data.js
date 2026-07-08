@@ -1034,15 +1034,15 @@ export const servicesData = {
     "relatedServices": [
       {
         "name": "Software Development",
-        "href": "/services/software-development-company-in-patna"
+        "href": "/it-company-in-patna/software-development-company-in-patna"
       },
       {
         "name": "Website Development",
-        "href": "/services/website-development-company-in-patna"
+        "href": "/it-company-in-patna/website-development-company-in-patna"
       },
       {
         "name": "Digital Marketing",
-        "href": "/services/digital-marketing-agency-in-patna"
+        "href": "/it-company-in-patna/digital-marketing-agency-in-patna"
       }
     ],
     "geoTitle": "Business AI Automation Services in Bihar",

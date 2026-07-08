@@ -568,8 +568,8 @@ export default function AIChatbotCompanyPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://webfloratechnologies.com/services/ai-chatbot-company-in-patna#webpage",
-            "url": "https://webfloratechnologies.com/services/ai-chatbot-company-in-patna",
+            "@id": "https://webfloratechnologies.com/it-company-in-patna/ai-chatbot-company-in-patna#webpage",
+            "url": "https://webfloratechnologies.com/it-company-in-patna/ai-chatbot-company-in-patna",
             "name": "AI Chatbot Company in Patna | AI Chatbot Development in Bihar",
             "headline": "AI Chatbot Company in Patna | AI Chatbot Development in Bihar",
             "description": "Webflora Technologies is the leading AI chatbot company in Patna, Bihar. We design and deploy custom intelligent NLP chatbots to automate customer support 24/7.",

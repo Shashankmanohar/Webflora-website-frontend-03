@@ -42,7 +42,7 @@ export default function HomeIntroSection() {
           </h2>
           <div className="h-[2px] w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded mx-auto" />
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
-            Webflora Technologies is the leading <Link href="/services/software-development-company-in-patna" className="text-orange-500 hover:underline font-medium">Software Company in Patna, Bihar</Link>. We assist businesses with <Link href="/services/software-development-company-in-patna" className="text-orange-500 hover:underline font-medium">custom software development</Link>, <Link href="/services/website-development-company-in-patna" className="text-orange-500 hover:underline font-medium">website development</Link>, <Link href="/services/mobile-app-development-company-in-patna" className="text-orange-500 hover:underline font-medium">mobile apps</Link>, and <Link href="/services/ai-automation-company-in-patna" className="text-orange-500 hover:underline font-medium">AI automation</Link> setups.
+            Webflora Technologies is the leading <Link href="/it-company-in-patna/software-development-company-in-patna" className="text-orange-500 hover:underline font-medium">Software Company in Patna, Bihar</Link>. We assist businesses with <Link href="/it-company-in-patna/software-development-company-in-patna" className="text-orange-500 hover:underline font-medium">custom software development</Link>, <Link href="/it-company-in-patna/website-development-company-in-patna" className="text-orange-500 hover:underline font-medium">website development</Link>, <Link href="/it-company-in-patna/mobile-app-development-company-in-patna" className="text-orange-500 hover:underline font-medium">mobile apps</Link>, and <Link href="/it-company-in-patna/ai-automation-company-in-patna" className="text-orange-500 hover:underline font-medium">AI automation</Link> setups.
           </p>
           <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
             We build fast, secure, and custom digital tools. These help local startups and enterprises save time, run better, and scale growth.
@@ -206,25 +206,25 @@ export default function HomeIntroSection() {
         {/* Quick Links */}
         <div className="pt-16 flex flex-wrap gap-3 justify-center">
           <Link
-            href="/services/website-development-company-in-patna"
+            href="/it-company-in-patna/website-development-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Web Development Patna
           </Link>
           <Link
-            href="/services/mobile-app-development-company-in-patna"
+            href="/it-company-in-patna/mobile-app-development-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Mobile Apps Patna
           </Link>
           <Link
-            href="/services/software-development-company-in-patna"
+            href="/it-company-in-patna/software-development-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             Software Solutions Patna
           </Link>
           <Link
-            href="/services/ai-automation-company-in-patna"
+            href="/it-company-in-patna/ai-automation-company-in-patna"
             className="text-xs px-4 py-2 rounded-none bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-neutral-300 hover:text-white transition-all font-mono uppercase tracking-wider"
           >
             AI & Automation Bihar

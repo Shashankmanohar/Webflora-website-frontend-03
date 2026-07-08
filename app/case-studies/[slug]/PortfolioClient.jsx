@@ -379,12 +379,12 @@ const PortfolioClient = ({ initialProject }) => {
               </div>
               <Link 
                 href={
-                  project.category?.toUpperCase() === "WEB" ? "/services/website-development-company-in-patna" :
-                  project.category?.toUpperCase() === "MOBILE" ? "/services/mobile-app-development-company-in-patna" :
-                  project.category?.toUpperCase() === "SOFTWARE" ? "/services/software-development-company-in-patna" :
-                  project.category?.toUpperCase() === "AI/ML" ? "/services/ai-automation-company-in-patna" :
-                  project.category?.toUpperCase() === "DIGITAL MARKETING" ? "/services/digital-marketing-agency-in-patna" :
-                  "/services"
+                  project.category?.toUpperCase() === "WEB" ? "/it-company-in-patna/website-development-company-in-patna" :
+                  project.category?.toUpperCase() === "MOBILE" ? "/it-company-in-patna/mobile-app-development-company-in-patna" :
+                  project.category?.toUpperCase() === "SOFTWARE" ? "/it-company-in-patna/software-development-company-in-patna" :
+                  project.category?.toUpperCase() === "AI/ML" ? "/it-company-in-patna/ai-automation-company-in-patna" :
+                  project.category?.toUpperCase() === "DIGITAL MARKETING" ? "/it-company-in-patna/digital-marketing-agency-in-patna" :
+                  "/it-company-in-patna"
                 }
                 className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-primary hover:border-primary text-white hover:text-white transition-all text-xs font-black uppercase tracking-wider rounded-xl flex items-center gap-2 flex-shrink-0 group shadow-lg"
               >
@@ -464,9 +464,9 @@ const PortfolioClient = ({ initialProject }) => {
                 <h5 className="text-[10px] font-bold uppercase tracking-widest text-neutral-700 px-2">Related Expertise</h5>
                 <div className="space-y-2">
                   {[
-                    { name: "Web Development", href: "/services/website-development-company-in-patna" },
-                    { name: "Mobile Apps", href: "/services/mobile-app-development-company-in-patna" },
-                    { name: "Digital Growth", href: "/services/digital-marketing-agency-in-patna" }
+                    { name: "Web Development", href: "/it-company-in-patna/website-development-company-in-patna" },
+                    { name: "Mobile Apps", href: "/it-company-in-patna/mobile-app-development-company-in-patna" },
+                    { name: "Digital Growth", href: "/it-company-in-patna/digital-marketing-agency-in-patna" }
                   ].map((service) => (
                     <Link key={service.name} href={service.href} className="group flex items-center justify-between p-5 rounded-2xl bg-transparent hover:bg-white/5 transition-all">
                       <span className="text-[11px] font-bold text-neutral-500 group-hover:text-white uppercase tracking-widest">{service.name}</span>

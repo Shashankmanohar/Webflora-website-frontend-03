@@ -45,7 +45,7 @@ export default function AnnouncementBanner() {
             <div className="md:hidden w-6" />
 
             <Link 
-              href="/services/ai-chatbot-company-in-patna" 
+              href="/it-company-in-patna/ai-chatbot-company-in-patna" 
               className="flex items-center gap-2 md:gap-4 cursor-pointer group"
             >
               <div className="hidden md:flex items-center gap-1.5">

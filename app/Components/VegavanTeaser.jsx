@@ -73,7 +73,7 @@ export default function VegavanTeaser() {
               </div>
             </div>
 
-            <Link href="/services/ai-chatbot-company-in-patna">
+            <Link href="/it-company-in-patna/ai-chatbot-company-in-patna">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

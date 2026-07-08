@@ -17,7 +17,7 @@ export default function ExpertiseSection() {
       title: "WEB DEVELOPMENT",
       desc: "Next-Gen Websites built with React, Next.js and Tailwind CSS.",
       tech: ["logos:react", "logos:nextjs-icon"],
-      href: "/services/website-development-company-in-patna",
+      href: "/it-company-in-patna/website-development-company-in-patna",
     },
     {
       index: "02",
@@ -25,7 +25,7 @@ export default function ExpertiseSection() {
       title: "SOFTWARE DEV",
       desc: "Custom enterprise CRM systems, ERPs, and backend portals.",
       tech: ["logos:nodejs-icon", "logos:python"],
-      href: "/services/software-development-company-in-patna",
+      href: "/it-company-in-patna/software-development-company-in-patna",
     },
     {
       index: "03",
@@ -33,7 +33,7 @@ export default function ExpertiseSection() {
       title: "MOBILE APPS",
       desc: "Native and Cross-platform iOS & Android apps.",
       tech: ["logos:flutter", "logos:apple"],
-      href: "/services/mobile-app-development-company-in-patna",
+      href: "/it-company-in-patna/mobile-app-development-company-in-patna",
     },
     {
       index: "04",
@@ -41,7 +41,7 @@ export default function ExpertiseSection() {
       title: "AI & AUTOMATION",
       desc: "Intelligent workflows and chatbots using n8n and OpenAI.",
       tech: ["logos:n8n", "logos:openai-icon"],
-      href: "/services/ai-automation-company-in-patna",
+      href: "/it-company-in-patna/ai-automation-company-in-patna",
     },
     {
       index: "05",
@@ -49,7 +49,7 @@ export default function ExpertiseSection() {
       title: "DIGITAL MARKETING",
       desc: "ROI-focused local SEO, Google Ads, and Meta campaigns.",
       tech: ["logos:google-ads", "logos:meta-icon"],
-      href: "/services/digital-marketing-agency-in-patna",
+      href: "/it-company-in-patna/digital-marketing-agency-in-patna",
     },
     {
       index: "06",
@@ -57,7 +57,7 @@ export default function ExpertiseSection() {
       title: "UI/UX DESIGN",
       desc: "Beautiful, functional interfaces designed in Figma.",
       tech: ["logos:figma"],
-      href: "/services",
+      href: "/it-company-in-patna",
     },
   ];
 
@@ -107,7 +107,7 @@ export default function ExpertiseSection() {
         </div>
 
         <button
-          onClick={() => router.push("/services")}
+          onClick={() => router.push("/it-company-in-patna")}
           className="group hidden md:flex items-center gap-2 uppercase text-sm tracking-widest font-semibold transition duration-200 hover:scale-110 cursor-pointer"
         >
           View All Services

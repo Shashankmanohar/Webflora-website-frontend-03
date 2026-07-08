@@ -30,7 +30,7 @@ const OurCoreServices = () => {
       subtitle: "Website Development Cost in Patna Starting Price",
       icon: "solar:monitor-smartphone-linear",
       badge: "Popular",
-      href: "/services/website-development-company-in-patna",
+      href: "/it-company-in-patna/website-development-company-in-patna",
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const OurCoreServices = () => {
       subtitle: "Software Development Cost in Patna Starting Price",
       icon: "solar:server-square-cloud-linear",
       badge: "Enterprise",
-      href: "/services/software-development-company-in-patna",
+      href: "/it-company-in-patna/software-development-company-in-patna",
     },
     {
       id: 3,
@@ -64,7 +64,7 @@ const OurCoreServices = () => {
       subtitle: "Mobile App Development Cost in Patna Starting Price",
       icon: "solar:smartphone-2-linear",
       badge: "Advanced",
-      href: "/services/mobile-app-development-company-in-patna",
+      href: "/it-company-in-patna/mobile-app-development-company-in-patna",
     },
     {
       id: 4,
@@ -81,7 +81,7 @@ const OurCoreServices = () => {
       subtitle: "Digital Marketing Cost in Patna Monthly Price",
       icon: "solar:graph-up-linear",
       badge: null,
-      href: "/services/digital-marketing-agency-in-patna",
+      href: "/it-company-in-patna/digital-marketing-agency-in-patna",
     },
     {
       id: 5,
@@ -98,7 +98,7 @@ const OurCoreServices = () => {
       subtitle: "AI & Automation Cost in Patna Starting Price",
       icon: "solar:bolt-circle-linear",
       badge: null,
-      href: "/services/ai-automation-company-in-patna",
+      href: "/it-company-in-patna/ai-automation-company-in-patna",
     },
   ];
 

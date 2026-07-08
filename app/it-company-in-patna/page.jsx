@@ -15,7 +15,7 @@ export const metadata = {
   description: "Looking for the top IT company in Patna, Bihar? Webflora Technologies provides premium custom software engineering, Next.js web design, mobile apps, and n8n AI workflow automations. Get a free quote!",
   keywords: "web development company, website development company, website design, website development, web design, e commerce websites, web application development, app software, mobile app development company, it company in patna, software company in patna",
   alternates: {
-    canonical: "/services",
+    canonical: "/it-company-in-patna",
   },
 };
 
@@ -90,8 +90,8 @@ const page = () => {
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Services",
-                "item": "https://webfloratechnologies.com/services"
+                "name": "IT Company In Patna",
+                "item": "https://webfloratechnologies.com/it-company-in-patna"
               }
             ]
           })

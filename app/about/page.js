@@ -11,7 +11,7 @@ import ContactSection from "../Components/ContactSection";
 import SEOContentBlock from "../Components/SEOContentBlock";
 import TrustSignals from "../Components/TrustSignals";
 import GoogleTrustBanner from "../Components/GoogleTrustBanner";
-import FaqSection from "../services/components/FaqSection";
+import FaqSection from "../it-company-in-patna/components/FaqSection";
 import GoogleReviewsSection from "../Components/GoogleReviewsSection";
 
 const container = {
@@ -157,7 +157,7 @@ export default function UltraAnimatedHero() {
             variants={item}
             className="flex flex-col md:flex-row items-center justify-center gap-4 pt-8"
           >
-            <Link href="/services">
+            <Link href="/it-company-in-patna">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
@@ -241,7 +241,7 @@ export default function UltraAnimatedHero() {
         title="Leading Technology Partner in Bihar"
         paragraphs={[
           <>Since our inception, <strong className="text-white font-medium">Webflora Technologies</strong> has been driven by a mission to engineer scalable, high-performance digital systems. We are not just a <strong className="text-gray-300">software development company in Patna</strong>; we are a dedicated team of technical founders and engineers who understand how to translate business goals into technological realities.</>,
-          <>Our commitment to excellence means we utilize enterprise-grade technologies to deliver custom <Link href="/services/website-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">web development</Link>, <Link href="/services/mobile-app-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">mobile applications</Link>, and <Link href="/services/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI automation</Link>. We serve businesses across Bihar and India, ensuring every product we ship is secure, optimized for SEO, and built for measurable business growth. Explore our <Link href="/services/ai-chatbot-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI Chatbot</Link> solutions or view our <Link href="/case-studies" className="text-[#FF3B00] hover:underline font-medium">case studies</Link> to see our engineering in action.</>
+          <>Our commitment to excellence means we utilize enterprise-grade technologies to deliver custom <Link href="/it-company-in-patna/website-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">web development</Link>, <Link href="/it-company-in-patna/mobile-app-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">mobile applications</Link>, and <Link href="/it-company-in-patna/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI automation</Link>. We serve businesses across Bihar and India, ensuring every product we ship is secure, optimized for SEO, and built for measurable business growth. Explore our <Link href="/it-company-in-patna/ai-chatbot-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI Chatbot</Link> solutions or view our <Link href="/case-studies" className="text-[#FF3B00] hover:underline font-medium">case studies</Link> to see our engineering in action.</>
         ]}
       />
 

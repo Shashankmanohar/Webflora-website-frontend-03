@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const clientLogos = [
   { name: "DBM", src: "/client-logo/DBM.png" },
@@ -14,6 +15,9 @@ const clientLogos = [
 ];
 
 export default function ClientMarquee() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <section className="bg-black py-6 md:py-10 border-y border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-3 md:mb-5 text-center">

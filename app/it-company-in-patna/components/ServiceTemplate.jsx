@@ -844,7 +844,7 @@ const IndustriesWrapper = ({ data }) => {
   );
 };
 
-const DetailedArticleWrapper = ({ data }) => {
+export const DetailedArticleWrapper = ({ data }) => {
   if (!data.detailedArticle) return null;
   const { title, sections } = data.detailedArticle;
 

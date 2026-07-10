@@ -62,14 +62,6 @@ export default function AllIndustriesPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
-        {/* Breadcrumbs */}
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-zinc-500 uppercase mb-8">
-          <Link href="/" className="hover:text-white transition-colors">Home</Link>
-          <Icon icon="solar:alt-arrow-right-linear" width={10} />
-          <span className="text-zinc-300">Industries</span>
-        </div>
-
         {/* Hero Section */}
         <div className="max-w-3xl mb-20 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-semibold tracking-wider text-neutral-400 uppercase">

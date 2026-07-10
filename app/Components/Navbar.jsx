@@ -36,14 +36,14 @@ const navItems = [
     label: "Services",
     href: "/it-company-in-patna",
     children: [
-      { icon: Briefcase,    label: "All Services",      desc: "Browse all core services we offer.",        href: "/it-company-in-patna" },
-      { icon: Globe,        label: "Website Dev",        desc: "High-performance marketing sites.",         href: "/it-company-in-patna/website-development-company-in-patna" },
-      { icon: Bot,          label: "AI & Automation",   desc: "Custom n8n and workflow agents.",           href: "/it-company-in-patna/ai-automation-company-in-patna" },
-      { icon: Smartphone,   label: "App Dev",            desc: "Native iOS & Android systems.",             href: "/it-company-in-patna/mobile-app-development-company-in-patna" },
-      { icon: Layers,       label: "Software Systems",   desc: "Enterprise cloud platforms & ERP.",         href: "/it-company-in-patna/software-development-company-in-patna" },
-      { icon: Share2,       label: "Digital Growth",     desc: "ROI-driven marketing campaigns.",           href: "/it-company-in-patna/digital-marketing-agency-in-patna" },
-      { icon: Bot,          label: "AI Chatbots",        desc: "Autonomous support agents.",                href: "/it-company-in-patna/ai-chatbot-company-in-patna",                         highlight: true, badge: "SaaS" },
-      { icon: FileText,     label: "Case Studies",       desc: "Our verified customer stories.",            href: "/case-studies" },
+      { icon: Briefcase, label: "All Services", desc: "Browse all core services we offer.", href: "/it-company-in-patna" },
+      { icon: Globe, label: "Website Dev", desc: "High-performance marketing sites.", href: "/it-company-in-patna/website-development-company-in-patna" },
+      { icon: Bot, label: "AI & Automation", desc: "Custom n8n and workflow agents.", href: "/it-company-in-patna/ai-automation-company-in-patna" },
+      { icon: Smartphone, label: "App Dev", desc: "Native iOS & Android systems.", href: "/it-company-in-patna/mobile-app-development-company-in-patna" },
+      { icon: Layers, label: "Software Systems", desc: "Enterprise cloud platforms & ERP.", href: "/it-company-in-patna/software-development-company-in-patna" },
+      { icon: Share2, label: "Digital Growth", desc: "ROI-driven marketing campaigns.", href: "/it-company-in-patna/digital-marketing-agency-in-patna" },
+      { icon: Bot, label: "AI Chatbots", desc: "Autonomous support agents.", href: "/it-company-in-patna/ai-chatbot-company-in-patna", highlight: true, badge: "SaaS" },
+      { icon: FileText, label: "Case Studies", desc: "Our verified customer stories.", href: "/case-studies" },
     ],
   },
   {
@@ -51,24 +51,39 @@ const navItems = [
     label: "Industries",
     href: "/industries",
     children: [
-      { icon: Building2,    label: "All Industries",     desc: "View all industries we cater to.",          href: "/industries" },
-      { icon: Heart,        label: "Healthcare",         desc: "Secure telemedicine & patient portals.",    href: "/industries/healthcare" },
-      { icon: GraduationCap,label: "Education",          desc: "Scalable LMS & online exam systems.",       href: "/industries/education" },
-      { icon: Home,         label: "Real Estate",        desc: "Stunning property portals & lead CRM.",     href: "/industries/real-estate" },
-      { icon: Factory,      label: "Manufacturing",      desc: "Custom inventory ERP & B2B portals.",       href: "/industries/manufacturing" },
-      { icon: ShoppingBag,  label: "Retail",             desc: "Fast e-commerce & unified checkout.",       href: "/industries/retail" },
+      { icon: Building2, label: "All Industries", desc: "View all industries we cater to.", href: "/industries" },
+      { icon: Heart, label: "Healthcare", desc: "Secure telemedicine & patient portals.", href: "/industries/healthcare" },
+      { icon: GraduationCap, label: "Education", desc: "Scalable LMS & online exam systems.", href: "/industries/education" },
+      { icon: Home, label: "Real Estate", desc: "Stunning property portals & lead CRM.", href: "/industries/real-estate" },
+      { icon: Factory, label: "Manufacturing", desc: "Custom inventory ERP & B2B portals.", href: "/industries/manufacturing" },
+      { icon: ShoppingBag, label: "Retail", desc: "Fast e-commerce & unified checkout.", href: "/industries/retail" },
     ],
   },
-  { icon: Info,     label: "About",   href: "/about" },
-  { icon: BookOpen, label: "Blog",    href: "/blog" },
-  { icon: Trophy,   label: "Career",  href: "/career" },
-  { icon: Phone,    label: "Contact", href: "/contact" },
+  {
+    icon: Globe,
+    label: "Locations",
+    href: "/locations",
+    children: [
+      { icon: Globe, label: "All Locations", desc: "Browse all cities we serve remotely.", href: "/locations" },
+      { icon: Globe, label: "Delhi NCR", desc: "Next.js dev & software in Delhi.", href: "/locations/delhi" },
+      { icon: Globe, label: "Mumbai", desc: "Corporate SaaS & web design in Mumbai.", href: "/locations/mumbai" },
+      { icon: Globe, label: "Bangalore", desc: "Tech stacks & ERP portals in Bangalore.", href: "/locations/bangalore" },
+      { icon: Globe, label: "Pune", desc: "Manufacturing ERP & websites in Pune.", href: "/locations/pune" },
+      { icon: Globe, label: "Hyderabad", desc: "Healthcare portals & SaaS in Hyderabad.", href: "/locations/hyderabad" },
+      { icon: Globe, label: "Chennai", desc: "Custom software & web design in Chennai.", href: "/locations/chennai" },
+      { icon: Globe, label: "Kolkata", desc: "Logistics systems & portals in Kolkata.", href: "/locations/kolkata" },
+    ],
+  },
+  { icon: Info, label: "About", href: "/about" },
+  { icon: BookOpen, label: "Blog", href: "/blog" },
+  { icon: Trophy, label: "Career", href: "/career" },
+  { icon: Phone, label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled,          setScrolled]          = useState(false);
-  const [mobileOpen,        setMobileOpen]        = useState(false);
-  const [activeDropdown,    setActiveDropdown]    = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
   const pathname = usePathname();
 
@@ -96,11 +111,10 @@ export default function Navbar() {
       {/* ── Desktop Floating Capsule Navbar — CSS only, zero Framer Motion ── */}
       <nav
         aria-label="Main navigation"
-        className={`fixed z-50 left-1/2 -translate-x-1/2 hidden lg:block transition-all duration-500 animate-nav-enter ${
-          scrolled
+        className={`fixed z-50 left-1/2 -translate-x-1/2 hidden lg:block transition-all duration-500 animate-nav-enter ${scrolled
             ? "top-4 w-[76%] bg-[#050505]/75 backdrop-blur-3xl border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] rounded-full"
             : "top-8 w-[82%] bg-black/35 backdrop-blur-2xl border border-white/5 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)] rounded-full"
-        }`}
+          }`}
       >
         {/* Top accent line */}
         <div className="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#FF3B00]/40 to-transparent blur-[1px]" />
@@ -140,16 +154,14 @@ export default function Navbar() {
                       aria-haspopup="true"
                       aria-expanded={activeDropdown === idx}
                       aria-label={`${item.label} — expand menu`}
-                      className={`flex items-center gap-1 hover:text-white transition-all duration-300 cursor-pointer relative py-2 px-4 focus:outline-none rounded-full ${
-                        isActive ? "text-white font-semibold" : ""
-                      }`}
+                      className={`flex items-center gap-1 hover:text-white transition-all duration-300 cursor-pointer relative py-2 px-4 focus:outline-none rounded-full ${isActive ? "text-white font-semibold" : ""
+                        }`}
                     >
                       {item.label}{" "}
                       <ChevronDown
                         size={13}
-                        className={`transition-transform duration-300 text-neutral-500 group-hover:text-white ${
-                          activeDropdown === idx ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 text-neutral-500 group-hover:text-white ${activeDropdown === idx ? "rotate-180" : ""
+                          }`}
                       />
                       {isActive && (
                         <span className="absolute inset-0 bg-white/[0.07] border border-white/[0.08] rounded-full -z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] transition-all duration-300" />
@@ -159,11 +171,10 @@ export default function Navbar() {
                     {/* Dropdown — CSS opacity + translate, no JS animation */}
                     <div
                       role="menu"
-                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[480px] z-[200] transition-all duration-200 origin-top ${
-                        activeDropdown === idx
+                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[480px] z-[200] transition-all duration-200 origin-top ${activeDropdown === idx
                           ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
                           : "opacity-0 scale-[0.97] translate-y-3 pointer-events-none"
-                      }`}
+                        }`}
                     >
                       <div className="bg-[#050505]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_40px_80px_rgba(0,0,0,0.95)] relative">
                         <div className="absolute top-[-5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 bg-[#050505] border-t border-l border-white/10 z-[199]" />
@@ -175,11 +186,10 @@ export default function Navbar() {
                             return (
                               <Link key={ci} href={child.href} role="menuitem">
                                 <div
-                                  className={`relative flex items-start gap-3 p-3 rounded-xl transition-all duration-200 border border-transparent hover:border-white/5 hover:-translate-y-px hover:bg-white/[0.04] ${
-                                    child.highlight
+                                  className={`relative flex items-start gap-3 p-3 rounded-xl transition-all duration-200 border border-transparent hover:border-white/5 hover:-translate-y-px hover:bg-white/[0.04] ${child.highlight
                                       ? "bg-[#FF3B00]/5 border-[#FF3B00]/15 hover:bg-[#FF3B00]/10"
                                       : ""
-                                  }`}
+                                    }`}
                                 >
                                   {child.badge && (
                                     <span className="absolute top-2 right-2.5 text-[8px] font-black uppercase tracking-wider bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/25 px-1.5 py-0.5 rounded">
@@ -187,19 +197,17 @@ export default function Navbar() {
                                     </span>
                                   )}
                                   <div
-                                    className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                                      child.highlight
+                                    className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${child.highlight
                                         ? "bg-[#FF3B00] text-white shadow-[0_0_15px_rgba(255,59,0,0.4)]"
                                         : "bg-white/5 text-neutral-400"
-                                    }`}
+                                      }`}
                                   >
                                     <ChildIcon size={14} />
                                   </div>
                                   <div className="text-left">
                                     <div
-                                      className={`text-[11px] font-bold uppercase tracking-wider ${
-                                        isChildUrlActive || child.highlight ? "text-white" : "text-neutral-200"
-                                      }`}
+                                      className={`text-[11px] font-bold uppercase tracking-wider ${isChildUrlActive || child.highlight ? "text-white" : "text-neutral-200"
+                                        }`}
                                     >
                                       {child.label}{" "}
                                     </div>
@@ -222,9 +230,8 @@ export default function Navbar() {
                 <Link
                   key={idx}
                   href={item.href}
-                  className={`hover:text-white transition-all duration-300 relative py-2 px-4 focus:outline-none rounded-full flex items-center justify-center ${
-                    isActive ? "text-white font-semibold" : ""
-                  }`}
+                  className={`hover:text-white transition-all duration-300 relative py-2 px-4 focus:outline-none rounded-full flex items-center justify-center ${isActive ? "text-white font-semibold" : ""
+                    }`}
                 >
                   {item.label}{" "}
                   {isActive && (
@@ -292,11 +299,10 @@ export default function Navbar() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
-        className={`fixed inset-0 top-16 bg-[#030303]/98 backdrop-blur-3xl z-40 lg:hidden overflow-y-auto px-6 py-8 flex flex-col justify-between transition-all duration-300 ${
-          mobileOpen
+        className={`fixed inset-0 top-16 bg-[#030303]/98 backdrop-blur-3xl z-40 lg:hidden overflow-y-auto px-6 py-8 flex flex-col justify-between transition-all duration-300 ${mobileOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
+          }`}
       >
         {/* Nav Items */}
         <div className="space-y-4">
@@ -329,9 +335,8 @@ export default function Navbar() {
 
                     {/* Submenu — CSS max-height collapse */}
                     <div
-                      className={`overflow-hidden transition-all duration-200 ${
-                        isSubOpen ? "max-h-[600px] opacity-100 mt-3" : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-200 ${isSubOpen ? "max-h-[600px] opacity-100 mt-3" : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="pl-4 space-y-2">
                         {item.children.map((child, ci) => {
@@ -340,9 +345,8 @@ export default function Navbar() {
                             <Link
                               key={ci}
                               href={child.href}
-                              className={`flex items-center gap-3 py-2 text-sm transition-colors ${
-                                isChildActive ? "text-white font-medium" : "text-neutral-400"
-                              }`}
+                              className={`flex items-center gap-3 py-2 text-sm transition-colors ${isChildActive ? "text-white font-medium" : "text-neutral-400"
+                                }`}
                             >
                               <child.icon
                                 size={14}
@@ -359,9 +363,8 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block py-2 text-base font-bold tracking-wider uppercase transition-colors ${
-                      isItemActive ? "text-[#FF3B00]" : "text-white hover:text-[#FF3B00]"
-                    }`}
+                    className={`block py-2 text-base font-bold tracking-wider uppercase transition-colors ${isItemActive ? "text-[#FF3B00]" : "text-white hover:text-[#FF3B00]"
+                      }`}
                   >
                     {item.label}
                   </Link>

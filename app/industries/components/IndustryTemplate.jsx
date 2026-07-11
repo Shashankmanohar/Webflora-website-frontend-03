@@ -272,9 +272,8 @@ const SubServicesWrapper = ({ data }) => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.subServices.map((service, index) => (
-              <FadeInUp key={index} delay={index * 0.05} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+            {data.subServices.map((service, index) => {
+              const CardContent = (
                 <div className="relative h-full p-8 rounded-[2rem] bg-neutral-900/40 border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-2">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF3B00]/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                   
@@ -282,11 +281,27 @@ const SubServicesWrapper = ({ data }) => {
                     <SafeIcon icon={service.icon} width={28} className="text-white group-hover:text-[#FF3B00] transition-colors duration-500" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#FF3B00] transition-colors">{service.title}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#FF3B00] transition-colors flex items-center gap-2">
+                    {service.title}
+                    {service.href && <SafeIcon icon="solar:arrow-right-up-linear" width={16} className="text-neutral-500 group-hover:text-[#FF3B00]" />}
+                  </h3>
                   <p className="text-gray-400 font-light leading-relaxed flex-grow">{service.desc}</p>
                 </div>
-              </FadeInUp>
-            ))}
+              );
+
+              return (
+                <FadeInUp key={index} delay={index * 0.05} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+                  {service.href ? (
+                    <Link href={service.href} className="block h-full">
+                      {CardContent}
+                    </Link>
+                  ) : (
+                    CardContent
+                  )}
+                </FadeInUp>
+              );
+            })}
           </div>
        </div>
     </section>

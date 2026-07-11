@@ -18,7 +18,7 @@ export const industriesData = {
     ],
     subServices: [
       { title: "Telemedicine Portals", icon: "lucide:video", desc: "Build secure virtual consultation platforms with integrated video calls, prescription management, and payment gateways." },
-      { title: "Clinic Management Software", icon: "lucide:activity", desc: "Streamline patient check-ins, doctor schedules, digital prescriptions, and billing in one unified interface." },
+      { title: "Clinic Management Software", icon: "lucide:activity", desc: "Streamline patient check-ins, doctor schedules, digital prescriptions, and billing in one unified interface.", href: "/electronic-health-records-software" },
       { title: "Patient Portals & Apps", icon: "lucide:user", desc: "Empower patients to book slots, view medical histories, and download lab results securely from any device." },
       { title: "WhatsApp Lab Report Delivery", icon: "lucide:message-square", desc: "Automate lab report delivery and appointment reminders directly to patients' WhatsApp numbers using secure APIs." },
       { title: "Medical SEO & Visibility", icon: "lucide:search", desc: "Optimize your clinic's Google Map listing and site search presence to attract local patients seeking medical services." }

@@ -100,17 +100,22 @@ export default function TeamSection() {
             <motion.div
               key={index}
               variants={item}
-              className="group relative h-[380px] rounded-[2rem] overflow-hidden border border-white/5 bg-[#080808] transition-all duration-500 hover:border-[#ff3c00]/30"
+              className="group relative h-[450px] rounded-[2rem] overflow-hidden border border-white/5 bg-[#080808] transition-all duration-500 hover:border-[#ff3c00]/30"
             >
               {/* Profile Image Overlay */}
-              <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-zinc-900 flex items-center justify-center">
-                   <span className="text-zinc-800 text-7xl font-black">{member.name.charAt(0)}</span>
-                </div>
-                {/* Once user provides images, they can be swapped here */}
-                {/* <Image src={member.image} alt={member.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" /> */}
+              {member.image === "/team/shashank.jpg" ? (
+                  <Image
+                    src="/FounderPhoto/founder1.webp"
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 grayscale group-hover:grayscale-0"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-zinc-900 flex items-center justify-center">
+                    <span className="text-zinc-800 text-7xl font-black">{member.name.charAt(0)}</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-              </div>
  
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">

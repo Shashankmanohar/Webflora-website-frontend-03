@@ -201,30 +201,21 @@ export default async function CityServicePage({ params }: Props) {
   // Structured schemas
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${url}#service`,
+    "@type": "Product",
+    "@id": `${url}#product`,
     "name": `${service.name} in ${city.name}`,
-    "serviceType": service.name,
+    "image": `${baseUrl}/title-logo.png`,
     "description": `Premium ${service.name.toLowerCase()} services serving ${city.name} remotely from Patna, Bihar.`,
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Webflora Technologies",
-      "@id": `${baseUrl}/#organization`
+    "brand": {
+      "@type": "Brand",
+      "name": "Webflora Technologies"
     },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": city.name
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": `${service.name} Catalog`,
-      "itemListElement": service.solutions.map((s, i) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": s
-        }
-      }))
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": service.pricing[0]?.price.replace(/[^0-9]/g, "") || "25000",
+      "highPrice": "500000",
+      "offerCount": service.solutions?.length ? String(service.solutions.length) : "3"
     },
     "aggregateRating": {
       "@type": "AggregateRating",

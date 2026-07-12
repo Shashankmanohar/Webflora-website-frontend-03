@@ -60,7 +60,10 @@ export const metadata = {
     images: ["/title-logo.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" }
+    ],
     shortcut: "/favicon.ico",
     apple: "/title-logo.png",
   },

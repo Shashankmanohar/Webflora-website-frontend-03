@@ -68,18 +68,13 @@ export default function FounderStorySection() {
               </h2>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 0.5, scale: 1 }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
-              className="hidden md:block"
-            >
-              <Icon
-                icon="solar:user-id-linear"
-                className="text-neutral-700 text-9xl"
+            <div className="relative w-48 h-60 md:w-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 shadow-2xl mt-6">
+              <img
+                src="/FounderPhoto/founder1.webp"
+                alt="Shashank Manohar - Founder & Lead Developer"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Right */}

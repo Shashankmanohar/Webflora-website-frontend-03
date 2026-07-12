@@ -30,7 +30,8 @@ const teamMembers = [
     name: "Shashank Manohar",
     role: "Founder & Lead Developer",
     bio: "A versatile Full-Stack, Mobile App, Blockchain, and Software Developer engineering scalable, secure decentralized architectures, high-performance web systems, and mobile applications.",
-    instagram: "https://www.instagram.com/shashank__arr?igsh=MXM3NmhvYzh5cWlkZQ==",
+    instagram: "https://www.instagram.com/shank__manohar",
+    linkedin: "https://www.linkedin.com/in/shashank-manohar-429a1b1b4/",
     image: "/FounderPhoto/founder1.webp",
   },
   {
@@ -38,7 +39,8 @@ const teamMembers = [
     role: "Co-Founder & UI Designer",
     bio: "UI/UX Design Expert, Frontend Developer, and Software Developer specializing in high-fidelity user interfaces, user experience design, and responsive, premium web applications.",
     instagram: "https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA==",
-    image: "/team/amitesh.jpg",
+    linkedin: "https://www.linkedin.com/in/amitesh-kumar-21a48b17a",
+    image: "/FounderPhoto/founder2.webp",
   },
 ];
 
@@ -90,11 +92,17 @@ export default function TeamSection() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 grayscale group-hover:grayscale-0"
                   />
                 ) : (
-                  <div className="w-full h-full bg-zinc-900 flex items-center justify-center">
-                    <span className="text-zinc-800 text-7xl font-black">{member.name.charAt(0)}</span>
+                  /* Premium glowing placeholder for Amitesh until photo is provided */
+                  <div className="w-full h-full bg-gradient-to-b from-[#ff3c00]/10 via-zinc-950 to-black flex flex-col items-center justify-center relative">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,59,0,0.05),transparent_60%)] pointer-events-none" />
+                    {/* Glowing Ring Avatar Placeholder */}
+                    <div className="w-24 h-24 rounded-full bg-zinc-900/80 border border-white/10 flex items-center justify-center relative group-hover:border-[#ff3c00]/50 group-hover:shadow-[0_0_30px_rgba(255,59,0,0.2)] transition-all duration-500 mb-4 overflow-hidden">
+                      <span className="text-white text-3xl font-black tracking-tight">{member.name.split(" ").map(n => n[0]).join("")}</span>
+                    </div>
+                    <span className="text-[10px] text-zinc-500 font-mono tracking-widest uppercase">Photo Upload Pending</span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
  
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
@@ -112,17 +120,26 @@ export default function TeamSection() {
                   {member.bio}
                 </p>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <a 
                     href={member.instagram} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label={`Follow ${member.name} on Instagram`}
-                    className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
+                    className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#ff3c00] hover:text-black hover:border-[#ff3c00] transition-all duration-300 text-neutral-400"
                   >
-                    <Instagram size={20} />
+                    <Instagram size={18} />
                   </a>
-                  <button className="flex-1 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#ff3c00] hover:text-black hover:border-[#ff3c00] transition-all duration-300">
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label={`Connect with ${member.name} on LinkedIn`}
+                    className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#ff3c00] hover:text-black hover:border-[#ff3c00] transition-all duration-300 text-neutral-400"
+                  >
+                    <Linkedin size={18} />
+                  </a>
+                  <button className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-[#ff3c00] hover:text-black hover:border-[#ff3c00] transition-all duration-300">
                     View Case Studies
                   </button>
                 </div>

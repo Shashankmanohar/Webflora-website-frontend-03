@@ -6,7 +6,6 @@ import FounderStorySection from "../Components/FounderStorySection";
 import MissionVisionSection from "../Components/MIssion&Vission";
 import AboutService from "../Components/AboutService";
 import AboutMissionandVision from "../Components/AboutMissionandVision";
-import TeamSection from "../Components/TeamSection";
 import ContactSection from "../Components/ContactSection";
 import SEOContentBlock from "../Components/SEOContentBlock";
 import TrustSignals from "../Components/TrustSignals";
@@ -232,9 +231,6 @@ export default function UltraAnimatedHero() {
 
       {/* About Mission and Vision */}
       <AboutMissionandVision />
-
-      {/* Team Section */}
-      <TeamSection />
 
       {/* SEO Content Block */}
       <SEOContentBlock 

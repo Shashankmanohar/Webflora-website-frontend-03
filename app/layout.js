@@ -144,11 +144,11 @@ export default function RootLayout({ children }) {
                   "@type": "Person",
                   "@id": "https://webfloratechnologies.com/#founder",
                   "name": "Shashank Manohar",
-                  "jobTitle": "Co-Founder & CEO",
+                  "jobTitle": "Co-Founder & CTO",
                   "url": "https://webfloratechnologies.com/about",
                   "image": "https://webfloratechnologies.com/team/shashank.jpg",
                   "sameAs": [
-                    "https://www.linkedin.com/in/shashank-manohar-429a1b1b4/",
+                    "https://www.linkedin.com/in/shashank-manohar-37204a278",
                     "https://www.instagram.com/shashank__arr?igsh=MXM3NmhvYzh5cWlkZQ=="
                   ]
                 },
@@ -156,10 +156,11 @@ export default function RootLayout({ children }) {
                   "@type": "Person",
                   "@id": "https://webfloratechnologies.com/#cofounder",
                   "name": "Amitesh Kumar",
-                  "jobTitle": "Co-Founder & UI Designer",
+                  "jobTitle": "Co-Founder & CEO",
                   "url": "https://webfloratechnologies.com/about",
-                  "image": "https://webfloratechnologies.com/team/amitesh.jpg",
+                  "image": "https://webfloratechnologies.com/FounderPhoto/co-founder.webp",
                   "sameAs": [
+                    "https://www.linkedin.com/in/amiteshkumarrr/",
                     "https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA=="
                   ]
                 }

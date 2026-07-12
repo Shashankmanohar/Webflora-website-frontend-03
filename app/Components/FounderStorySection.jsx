@@ -54,46 +54,110 @@ export default function FounderStorySection() {
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#ff3c00]/10 blur-[120px] rounded-full" />
 
         <div className="relative z-10 grid md:grid-cols-12 gap-12">
-          {/* Left */}
+          {/* Left - Founders Grid */}
           <motion.div
             variants={item}
-            className="md:col-span-5 flex flex-col justify-between"
+            className="md:col-span-6 flex flex-col justify-between"
           >
             <div>
               <span className="text-[#ff3c00] font-mono text-sm tracking-widest uppercase mb-2 block">
                 The Origin
               </span>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
-                Founder Story
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+                Founders' Story
               </h2>
             </div>
+ 
+            <div className="grid grid-cols-2 gap-6 mt-6">
+              {/* Shashank Manohar */}
+              <div className="space-y-3">
+                <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950">
+                  <img
+                    src="/FounderPhoto/founder1.webp"
+                    alt="Shashank Manohar - Founder & CTO"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-base">Shashank Manohar</h4>
+                  <p className="text-[#ff3c00] font-mono text-[10px] uppercase tracking-wider">Founder & CTO</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <a
+                      href="https://www.instagram.com/shank__manohar"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-[#ff3c00] transition-colors"
+                      aria-label="Shashank Manohar Instagram"
+                    >
+                      <Icon icon="mdi:instagram" width={20} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/shashank-manohar-37204a278"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-[#ff3c00] transition-colors"
+                      aria-label="Shashank Manohar LinkedIn"
+                    >
+                      <Icon icon="mdi:linkedin" width={20} />
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-            <div className="relative w-48 h-60 md:w-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 shadow-2xl mt-6">
-              <img
-                src="/FounderPhoto/founder1.webp"
-                alt="Shashank Manohar - Founder & Lead Developer"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-              />
+              {/* Amitesh Kumar */}
+              <div className="space-y-3">
+                <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950">
+                  <img
+                    src="/FounderPhoto/co-founder.webp"
+                    alt="Amitesh Kumar - Co-Founder & CEO"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-base">Amitesh Kumar</h4>
+                  <p className="text-[#ff3c00] font-mono text-[10px] uppercase tracking-wider">Co-Founder & CEO</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <a
+                      href="https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-[#ff3c00] transition-colors"
+                      aria-label="Amitesh Kumar Instagram"
+                    >
+                      <Icon icon="mdi:instagram" width={20} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/amiteshkumarrr/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-[#ff3c00] transition-colors"
+                      aria-label="Amitesh Kumar LinkedIn"
+                    >
+                      <Icon icon="mdi:linkedin" width={20} />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
-
+ 
           {/* Right */}
           <motion.div
             variants={container}
-            className="md:col-span-7 space-y-6 text-neutral-400 text-sm md:text-base leading-relaxed border-l border-white/10 pl-0 md:pl-12"
+            className="md:col-span-6 space-y-6 text-neutral-400 text-sm md:text-base leading-relaxed border-l border-white/10 pl-0 md:pl-12"
           >
             <motion.p variants={item}>
               Webflora Technologies was founded to address a real gap in how
-              businesses use technology. The founder recognized that many
+              businesses use technology. The founders recognized that many
               companies were losing growth opportunities because of outdated
               tools and manual workflows. Although technology was available,
               its strategic implementation was often missing.
             </motion.p>
-
+ 
             <motion.p variants={item}>
               Rather than moving to tier-1 metro hubs, the founders made a conscious decision to establish our primary engineering headquarters in Patna. Our goal is to lead high-value IT job creation in Bihar, proving that world-class software development and digital products can be designed and executed locally. By nurturing regional technical talent and offering high-end software development career opportunities, Webflora Technologies is building a robust foundation for software startups in Patna and actively strengthening the technology ecosystem of Patna.
             </motion.p>
-
+ 
             <motion.p variants={item}>
               The journey began with freelance execution focused on
               high-quality delivery and building client trust. Over time,

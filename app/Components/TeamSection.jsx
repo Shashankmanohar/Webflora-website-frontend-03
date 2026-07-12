@@ -31,7 +31,7 @@ const teamMembers = [
     role: "Founder & Lead Developer",
     bio: "A versatile Full-Stack, Mobile App, Blockchain, and Software Developer engineering scalable, secure decentralized architectures, high-performance web systems, and mobile applications.",
     instagram: "https://www.instagram.com/shashank__arr?igsh=MXM3NmhvYzh5cWlkZQ==",
-    image: "/team/shashank.jpg",
+    image: "/FounderPhoto/founder1.webp",
   },
   {
     name: "Amitesh Kumar",
@@ -39,27 +39,6 @@ const teamMembers = [
     bio: "UI/UX Design Expert, Frontend Developer, and Software Developer specializing in high-fidelity user interfaces, user experience design, and responsive, premium web applications.",
     instagram: "https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA==",
     image: "/team/amitesh.jpg",
-  },
-  {
-    name: "Aadarsh Kumar",
-    role: "Digital Marketer",
-    bio: "Expert in scaling brands through data-driven performance marketing and growth strategies. Certified Google Ads & Analytics Specialist focused on local SEO and ROAS optimization.",
-    instagram: "https://www.instagram.com/ad_prajapati30?igsh=djQ3azZsYWlhbGgy",
-    image: "/team/aadarsh.jpg",
-  },
-  {
-    name: "Nikhil Kumar",
-    role: "Digital Marketer",
-    bio: "Specializing in brand voice and community engagement across all digital platforms. Google-certified Content Strategist focused on building long-term organic authority.",
-    instagram: "https://www.instagram.com/ad_prajapati30?igsh=djQ3azZsYWlhbGgy",
-    image: "/team/nikhil.jpg",
-  },
-  {
-    name: "Ranjan Kumar",
-    role: "Video Editor",
-    bio: "Visual storyteller dedicated to creating cinematic and engaging video content for modern brands. Master's in Visual Communication with extensive creative portfolio.",
-    instagram: "https://www.instagram.com/sharp_._._abhishek?igsh=MTAwbmgwZzgyYXprOA==",
-    image: "/team/ranjan.jpg",
   },
 ];
 
@@ -94,7 +73,7 @@ export default function TeamSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto"
         >
           {teamMembers.map((member, index) => (
             <motion.div
@@ -103,7 +82,7 @@ export default function TeamSection() {
               className="group relative h-[450px] rounded-[2rem] overflow-hidden border border-white/5 bg-[#080808] transition-all duration-500 hover:border-[#ff3c00]/30"
             >
               {/* Profile Image Overlay */}
-              {member.image === "/team/shashank.jpg" ? (
+              {member.image === "/FounderPhoto/founder1.webp" ? (
                   <Image
                     src="/FounderPhoto/founder1.webp"
                     alt={member.name}

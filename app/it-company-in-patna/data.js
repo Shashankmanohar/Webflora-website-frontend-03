@@ -1,5 +1,8 @@
 export const servicesData = {
   "website-development-company-in-patna": {
+    "seoTitle": "Best Website Design & Development Company in Patna",
+    "seoDescription": "Webflora Technologies is the best website design company in Patna, Bihar. We offer professional web design, custom website development, and expert website designers.",
+    "seoKeywords": "website design company in patna, web design company in patna, best website development company in patna, web development company in patna, website development company in patna, best website company in patna, best website designer in patna, best web developer in patna, best web design company in patna, best web development company in patna, list of web design company in patna, web designer in patna, website designing company in patna",
     "title": "Website Design Services in Patna",
     "headline": "Website Design Company in Patna",
     "subtext": "Looking for the best web development company in Patna? Webflora Technologies is a premier website development company in Patna, Bihar. Our team of expert web developers in Patna and experienced web designers in Patna build custom, responsive, and secure digital platforms. Whether you need a web development company in patna, a website design company in patna, or a specialized ecommerce developer in patna, we build high-converting websites starting at ₹25,000.",
@@ -395,6 +398,9 @@ export const servicesData = {
     ]
   },
   "mobile-app-development-company-in-patna": {
+    "seoTitle": "Best Mobile App Development Company in Patna | iOS & Android",
+    "seoDescription": "Looking for the best mobile app development company in Patna? Webflora Technologies provides expert Android and iOS app developers in Patna, Bihar.",
+    "seoKeywords": "best mobile app development company in patna, mobile app development company in patna, app development company in patna, android app development in patna, iOS app developers in patna, react native developers patna, flutter app developers patna, app developers in patna, mobile app development services in patna",
     "title": "Mobile App Development Services in Patna",
     "headline": "Android & iOS App Development Services",
     "subtext": "Looking for the best app development company in Patna? Webflora Technologies is the leading mobile app development company in Patna, Bihar. Our team of expert app developers in Patna designs, builds, and deploys high-performance mobile apps for Android and iOS. Whether you need a mobile app developer in Patna, an android app developer in patna, or a mobile app development company in patna to scale your brand, we build custom solutions starting from ₹80,000.",
@@ -714,6 +720,9 @@ export const servicesData = {
     ]
   },
   "software-development-company-in-patna": {
+    "seoTitle": "Best Software Development Company in Patna | Custom ERP & CRM",
+    "seoDescription": "Looking for the best software development company in Patna? Webflora Technologies engineers custom ERP, CRM, and SaaS software remotely across Bihar.",
+    "seoKeywords": "best software development company in patna, software development company in patna, software company in patna, custom software development patna, custom ERP development patna, CRM software company in patna, IT company in patna, software developers in patna, business automation software patna, software development services in patna",
     "title": "Custom Software Development Services in Patna",
     "headline": "Software Development Company in Patna",
     "subServicesTitle": "Software Development Services",
@@ -1028,6 +1037,9 @@ export const servicesData = {
     ]
   },
   "ai-automation-company-in-patna": {
+    "seoTitle": "Best AI Automation & Chatbot Company in Patna Bihar",
+    "seoDescription": "Pioneering AI automation company in Patna. Webflora Technologies builds n8n chatbot workflows, WhatsApp automation, and custom LLM interfaces.",
+    "seoKeywords": "best ai automation company in patna, ai automation company in patna, ai chatbot development patna, chatbot services in patna, whatsapp automation company patna, n8n workflow automation patna, IT company in patna, artificial intelligence services bihar",
     "title": "AI Automation & Chatbot Services in Patna",
     "headline": "Business AI Automation Services",
     "subtext": "Webflora Technologies is the pioneering AI automation company and leading IT company in Patna, Bihar. We design and implement smart workflow automations, custom AI chatbots, OpenAI/Claude API integrations, n8n chatbot workflows, and automated CRM pipelines. We help companies in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India eliminate manual bottlenecks and operate 24/7. Our custom automation workflows start from ₹35,000.",
@@ -1363,6 +1375,9 @@ export const servicesData = {
     ]
   },
   "digital-marketing-agency-in-patna": {
+    "seoTitle": "Best Digital Marketing Company in Patna | Performance SEO Agency",
+    "seoDescription": "Looking for the best digital marketing agency in Patna? Webflora Technologies offers performance SEO, local map optimization, Google Ads, and Meta marketing.",
+    "seoKeywords": "best digital marketing company in patna, digital marketing agency in patna, SEO company in patna, search engine optimization patna, performance marketing agency patna, local SEO company in patna, google ads agency patna, social media marketing patna, digital marketing services in patna",
     "title": "Performance Digital Marketing Services in Patna",
     "headline": "Digital Marketing Company in Patna",
     "subtext": "Looking for the best digital marketing agency in Patna? Webflora Technologies is a premier performance-focused digital marketing company in Patna, Bihar. We deliver result-oriented digital marketing in Patna, including local SEO map optimization, ROI-driven Google Ads (PPC), targeted Meta campaigns, and conversion-optimized lead generation. Work with the top digital marketing agency patna trusts to scale your business. Growth plans start from ₹15,000/month.",
@@ -1663,6 +1678,9 @@ export const servicesData = {
     ]
   },
   "software-company-in-bihar": {
+    "seoTitle": "Best Software Company in Bihar | Webflora Technologies",
+    "seoDescription": "Looking for the top software company in Bihar? Webflora Technologies provides enterprise software development, ERP, CRM, and cloud engineering across Bihar.",
+    "seoKeywords": "best software company in bihar, software company in bihar, software development company in bihar, IT company in bihar, custom software development bihar, software developers in bihar, ERP development bihar",
     "title": "Software Development Company in Bihar",
     "headline": "Custom Software Engineering Services in Bihar",
     "subtext": "Webflora Technologies is the leading software company in Bihar, delivering custom ERPs, scalable SaaS platforms, and enterprise cloud software solutions. We build secure, reliable, and high-performance business applications that streamline workflows for colleges, hospitals, and manufacturing units throughout Gaya, Muzaffarpur, Patna, and all of Bihar. Custom software solutions start from ₹1,0,000.",
@@ -1940,6 +1958,9 @@ export const servicesData = {
     ]
   },
   "digital-marketing-agency-in-bihar": {
+    "seoTitle": "Best Digital Marketing Agency in Bihar | Performance marketing",
+    "seoDescription": "Looking for the best digital marketing agency in Bihar? Webflora Technologies provides local SEO, Google Business Profile scaling, Google Ads, and Meta Ads in Bihar.",
+    "seoKeywords": "best digital marketing agency in bihar, digital marketing agency in bihar, digital marketing company in bihar, SEO company in bihar, local SEO agency bihar, google ads agency bihar, marketing company bihar",
     "title": "Digital Marketing Agency in Bihar",
     "headline": "SEO & Performance Marketing Services in Bihar",
     "subtext": "Webflora Technologies is a premier performance-focused digital marketing agency and full-service IT company in Patna, Bihar. We deliver local SEO, ROI-driven Google Ads (PPC), target-rich Meta campaigns, and conversion-optimized lead generation strategies to help retail brands, healthcare clinics, real estate firms, and educational institutes throughout Gaya, Muzaffarpur, Patna, and Bihar scale their revenue. Marketing packages start from ₹15,000/month.",

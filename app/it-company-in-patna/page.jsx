@@ -12,9 +12,9 @@ import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from './components/S
 import ClientMarquee from '../Components/ClientMarquee'
 
 export const metadata = {
-  title: "IT Company in Patna Bihar | Software & Web Services | Webflora",
-  description: "Looking for the top IT company in Patna, Bihar? Webflora Technologies provides premium custom software engineering, Next.js web design, mobile apps, and n8n AI workflow automations. Get a free quote!",
-  keywords: "web development company, website development company, website design, website development, web design, e commerce websites, web application development, app software, mobile app development company, it company in patna, software company in patna",
+  title: "Best IT Company in Patna Bihar | Webflora Technologies",
+  description: "Webflora Technologies is the best IT company in Patna, Bihar, offering high-performance website development, custom software engineering, mobile apps, and SEO services. Get a free quote!",
+  keywords: "best website development company in patna, website development company in patna, best software development company in patna, software company in patna, best IT company in patna, IT company in patna, best web design company in patna, website design company in patna, web developer in patna, mobile app development company in patna, digital marketing agency in patna",
   alternates: {
     canonical: "/it-company-in-patna",
   },

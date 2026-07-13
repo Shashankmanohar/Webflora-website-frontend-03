@@ -37,10 +37,14 @@ export async function generateMetadata({ params }: Props) {
   const url = `${baseUrl}/locations/${citySlug}`;
   const title = `Software & Digital Solutions Company in ${city.name} | Webflora Technologies`;
   const description = `Looking for top-tier digital transformation in ${city.name}? Webflora Technologies provides website development, mobile apps, and custom software systems remotely across India from our Patna HQ.`;
+  const keywords = citySlug === "patna"
+    ? "IT company in Patna, software company in Patna, web development company in Patna, website design company in Patna, digital marketing agency in Patna, software development Bihar, Webflora Technologies Patna"
+    : `IT company in ${city.name}, software company in ${city.name}, web development company in ${city.name}, website design company in ${city.name}, digital marketing agency in ${city.name}, Webflora Technologies ${city.name}`;
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: url,
     },

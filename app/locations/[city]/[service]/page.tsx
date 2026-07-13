@@ -46,12 +46,42 @@ export async function generateMetadata({ params }: Props) {
 
   const baseUrl = "https://webfloratechnologies.com";
   const url = `${baseUrl}/locations/${citySlug}/${serviceSlug}`;
-  const title = `${service.headline} in ${city.name} | Webflora Technologies`;
-  const description = `Looking for the best ${service.name.toLowerCase()} in ${city.name}? Webflora Technologies engineers premium Next.js apps and software remotely from our Patna HQ. Request a quote!`;
+  let title = `${service.headline} in ${city.name} | Webflora Technologies`;
+  let description = `Looking for the best ${service.name.toLowerCase()} in ${city.name}? Webflora Technologies engineers premium Next.js apps and software remotely from our Patna HQ. Request a quote!`;
+
+  if (citySlug === "patna") {
+    if (serviceSlug === "website-development") {
+      title = "Best Website Design & Development Company in Patna | Webflora";
+      description = "Looking for the best website design company in Patna? Webflora Technologies is the top web development company in Patna, Bihar, offering expert website designers and custom Next.js developers.";
+    } else if (serviceSlug === "web-design") {
+      title = "Best Website Design Company in Patna | Professional Web Designers";
+      description = "Webflora Technologies is the best website design company in Patna, Bihar. We design premium UI/UX, responsive layouts, and custom web graphics.";
+    }
+  }
+
+  let keywords = "";
+  if (citySlug === "patna") {
+    if (serviceSlug === "website-development") {
+      keywords = "website design company in patna, web design company in patna, best website development company in patna, web development company in patna, website development company in patna, best website company in patna, best website designer in patna, best web developer in patna, best web design company in patna, best web development company in patna, list of web design company in patna, web designer in patna, website designing company in patna";
+    } else if (serviceSlug === "web-design") {
+      keywords = "website design company in patna, web design company in patna, best website designer in patna, best website design company in patna, web designer in patna, list of web design company in patna, best web design agency in patna, UI UX designer in patna, creative website design patna";
+    } else if (serviceSlug === "software-development") {
+      keywords = "best software development company in patna, software development company in patna, software company in patna, custom software development patna, custom ERP development patna, CRM software company in patna, IT company in patna";
+    } else if (serviceSlug === "app-development") {
+      keywords = "best mobile app development company in patna, mobile app development company in patna, android app development in patna, iOS app developers in patna, app development company in patna, react native developers patna, flutter app developers patna";
+    } else if (serviceSlug === "digital-marketing" || serviceSlug === "seo-services") {
+      keywords = "best digital marketing company in patna, digital marketing agency in patna, SEO company in patna, search engine optimization patna, performance marketing agency patna, local SEO company in patna, social media marketing patna";
+    } else {
+      keywords = `best ${service.name.toLowerCase()} in patna, ${service.name} company in patna, ${service.name} services in patna, Patna ${service.name.toLowerCase()}`;
+    }
+  } else {
+    keywords = `best ${service.name.toLowerCase()} in ${city.name}, ${service.name} company in ${city.name}, ${service.name} services in ${city.name}, ${city.name} ${service.name.toLowerCase()}`;
+  }
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: url,
     },

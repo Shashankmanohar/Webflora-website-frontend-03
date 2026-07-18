@@ -130,8 +130,9 @@ export default function GoogleReviewsSection() {
               },
               "reviewRating": {
                 "@type": "Rating",
-                "ratingValue": review.rating.toString(),
-                "bestRating": "5"
+                "ratingValue": Number(review.rating),
+                "bestRating": 5,
+                "worstRating": 1
               },
               "reviewBody": review.feedback
             })

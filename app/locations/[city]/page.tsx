@@ -203,8 +203,10 @@ export default async function CityLandingPage({ params }: Props) {
     "description": `Webflora Technologies provides website development, mobile apps, and custom software systems remotely to ${city.name} from our headquarters in Patna, Bihar.`,
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "48"
+      "ratingValue": 5.0,
+      "bestRating": 5,
+      "worstRating": 1,
+      "reviewCount": 48
     },
     "review": [
       {
@@ -215,8 +217,9 @@ export default async function CityLandingPage({ params }: Props) {
         },
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
         },
         "reviewBody": "Our new website built by Webflora has been live for three months and not a single bug so far. Communication was clear and consistent throughout the entire project. Cannot recommend Webflora Technologies enough."
       },
@@ -228,8 +231,9 @@ export default async function CityLandingPage({ params }: Props) {
         },
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
         },
         "reviewBody": "Webflora built our app with a level of polish you usually only see from big city studios. They were responsive on WhatsApp, email and calls whenever we needed answers."
       },
@@ -241,8 +245,9 @@ export default async function CityLandingPage({ params }: Props) {
         },
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
         },
         "reviewBody": "We had an app idea sitting on paper for a year and Webflora turned it into a real product in months. Their team listened carefully to what we actually needed instead of pushing a template solution."
       }

@@ -38,7 +38,7 @@ const MetricBadge = ({ label, value, icon: IconComponent }) => (
 const FeatureCard = ({ icon, title, text, index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  
+
   return (
     <motion.div
       ref={ref}
@@ -49,11 +49,11 @@ const FeatureCard = ({ icon, title, text, index }) => {
     >
       <div className="bg-[#080808] p-8 md:p-10 rounded-[2rem] h-full flex flex-col items-start gap-5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF3B00]/5 blur-[50px] rounded-full transition-all duration-500 group-hover:bg-[#FF3B00]/10" />
-        
+
         <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all duration-500">
           <Icon icon={icon} width={28} />
         </div>
-        
+
         <h3 id={`feature-card-${index}`} className="text-2xl font-black tracking-tight text-white group-hover:text-[#FF3B00] transition-colors">{title}</h3>
         <p className="text-neutral-400 text-base font-light leading-relaxed">{text}</p>
       </div>
@@ -64,7 +64,7 @@ const FeatureCard = ({ icon, title, text, index }) => {
 // Interactive Mockup For "How it works"
 const IntegrationVisual = () => {
   const [activeStep, setActiveStep] = useState(0);
-  
+
   const steps = [
     { icon: "solar:upload-bold", label: "Input Data", desc: "Upload PDF or Link" },
     { icon: "solar:cpu-bold", label: "Processing", desc: "Vectorizing data..." },
@@ -88,11 +88,11 @@ const IntegrationVisual = () => {
         </div>
         <div className="text-[10px] font-mono text-neutral-500 uppercase">Pipeline Monitoring</div>
       </div>
-      
+
       <div className="flex items-center justify-between gap-4">
         {steps.map((step, i) => (
           <div key={i} className="flex flex-col items-center text-center gap-3 flex-1">
-            <motion.div 
+            <motion.div
               animate={activeStep === i ? { scale: 1.1, borderColor: "#FF3B00" } : { scale: 1, borderColor: "rgba(255,255,255,0.1)" }}
               className={`w-12 h-12 rounded-full border flex items-center justify-center bg-black text-xl transition-all duration-500 ${activeStep === i ? "text-[#FF3B00] shadow-[0_0_15px_rgba(255,59,0,0.3)]" : "text-neutral-600"}`}
             >
@@ -102,7 +102,7 @@ const IntegrationVisual = () => {
           </div>
         ))}
       </div>
-      
+
       <div className="h-24 bg-black/50 rounded-xl border border-white/5 p-4 font-mono text-xs overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
@@ -131,7 +131,7 @@ export default function AIChatbotCompanyPage() {
 
   return (
     <main ref={mainRef} className="relative min-h-screen bg-black text-white selection:bg-[#FF3B00]">
-      
+
       {/* Global Cinematic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0">
@@ -143,22 +143,22 @@ export default function AIChatbotCompanyPage() {
 
       {/* SECTION 1: CINEMATIC HERO */}
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-32 overflow-hidden">
-        
+
         <div className="inline-flex items-center gap-3 bg-white/[0.03] border border-white/10 rounded-full px-5 py-2 backdrop-blur-md mb-12 shadow-2xl hover:border-[#FF3B00]/30 transition-all group cursor-pointer">
           <div className="flex -space-x-1.5">
-             <div className="w-6 h-6 rounded-full border border-black bg-[#FF3B00]" />
-             <div className="w-6 h-6 rounded-full border border-black bg-white flex items-center justify-center text-[10px] text-black font-bold">AI</div>
+            <div className="w-6 h-6 rounded-full border border-black bg-[#FF3B00]" />
+            <div className="w-6 h-6 rounded-full border border-black bg-white flex items-center justify-center text-[10px] text-black font-bold">AI</div>
           </div>
           <span className="text-xs font-black tracking-[0.15em] uppercase text-neutral-300 group-hover:text-white">Version 2.0 Production Ready</span>
         </div>
 
         <div className="text-center relative">
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-20 bg-[#FF3B00]/40 blur-[100px] rounded-full opacity-30" />
-          
+
           <h1 id="hero-title" className="text-5xl sm:text-7xl md:text-[6.5rem] font-black font-display leading-[0.8] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-600 mb-4">
             AI CHATBOT
           </h1>
-          
+
           <h2 id="hero-subtitle" className="text-3xl sm:text-5xl md:text-[4.5rem] font-black tracking-tighter text-[#FF3B00] relative">
             COMPANY IN PATNA
             <span className="absolute -top-4 -right-6 text-xs font-mono font-medium tracking-widest text-white bg-[#FF3B00] px-2 py-1 rounded flex items-center gap-1 shadow-[0_0_20px_#FF3B00]">
@@ -202,7 +202,7 @@ export default function AIChatbotCompanyPage() {
 
       {/* SECTION 3: COMPREHENSIVE INFORMATION ARCHITECTURE */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28">
-        
+
         {/* Info Panel 1: The Problem & Solution Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-40">
           <div className="lg:col-span-5">
@@ -231,16 +231,16 @@ export default function AIChatbotCompanyPage() {
               ))}
             </ul>
           </div>
-          
+
           {/* VISUAL BLOCK */}
           <div className="lg:col-span-7 relative">
             <div className="absolute inset-0 bg-[#FF3B00]/10 blur-[100px] rounded-full pointer-events-none" />
             <FloatingElement>
               <IntegrationVisual />
             </FloatingElement>
-            
+
             {/* Floating Stats Overlays */}
-            <motion.div 
+            <motion.div
               initial={{ x: 20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -263,55 +263,55 @@ export default function AIChatbotCompanyPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <FeatureCard 
-            icon="solar:magic-stick-bold-duotone" 
-            title="Train Easily On Your Data" 
-            text="Plug and play documentation sync. Upload standard PDFs, .docx, or scrape external URLs. The agent absorbs it all instantly." 
-            index={0} 
+          <FeatureCard
+            icon="solar:magic-stick-bold-duotone"
+            title="Train Easily On Your Data"
+            text="Plug and play documentation sync. Upload standard PDFs, .docx, or scrape external URLs. The agent absorbs it all instantly."
+            index={0}
           />
-          <FeatureCard 
-            icon="solar:user-plus-bold-duotone" 
-            title="Automated Lead Capture" 
-            text="Intelligently requests emails, names, and phone numbers at peak conversational engagement points and pushes them directly to CRM." 
-            index={1} 
+          <FeatureCard
+            icon="solar:user-plus-bold-duotone"
+            title="Automated Lead Capture"
+            text="Intelligently requests emails, names, and phone numbers at peak conversational engagement points and pushes them directly to CRM."
+            index={1}
           />
-          <FeatureCard 
-            icon="solar:earth-bold-duotone" 
-            title="80+ Global Languages" 
-            text="Native translation layer. A French visitor will get answers in French, while an English one gets English. Break all geographical barriers." 
-            index={2} 
+          <FeatureCard
+            icon="solar:earth-bold-duotone"
+            title="80+ Global Languages"
+            text="Native translation layer. A French visitor will get answers in French, while an English one gets English. Break all geographical barriers."
+            index={2}
           />
-          <FeatureCard 
-            icon="solar:code-square-bold-duotone" 
-            title="Single-Script Install" 
-            text="Deploy in 60 seconds. Works natively on WordPress, Next.js, React, Shopify, Webflow, or hardcoded HTML dashboards." 
-            index={3} 
+          <FeatureCard
+            icon="solar:code-square-bold-duotone"
+            title="Single-Script Install"
+            text="Deploy in 60 seconds. Works natively on WordPress, Next.js, React, Shopify, Webflow, or hardcoded HTML dashboards."
+            index={3}
           />
-          <FeatureCard 
-            icon="solar:chart-square-bold-duotone" 
-            title="Insight Visualization" 
-            text="Dashboard displaying customer pain points, popular queries, and real-time interaction heatmaps to adapt your products." 
-            index={4} 
+          <FeatureCard
+            icon="solar:chart-square-bold-duotone"
+            title="Insight Visualization"
+            text="Dashboard displaying customer pain points, popular queries, and real-time interaction heatmaps to adapt your products."
+            index={4}
           />
-          <FeatureCard 
-            icon="solar:shield-warning-bold-duotone" 
-            title="Military Tier Security" 
-            text="Full transit layer encryption with strict privacy safeguards. Data resides in air-gapped containers with full admin overrides." 
-            index={5} 
+          <FeatureCard
+            icon="solar:shield-warning-bold-duotone"
+            title="Military Tier Security"
+            text="Full transit layer encryption with strict privacy safeguards. Data resides in air-gapped containers with full admin overrides."
+            index={5}
           />
         </div>
       </section>
 
       {/* SECTION 3.5: ONE CLICK INSTALLATION DEMO */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pb-32">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="bg-[#080808] border border-white/10 rounded-[2.5rem] overflow-hidden shadow-3xl"
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-            
+
             {/* Content Left */}
             <div className="md:col-span-5 p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5">
               <div className="flex items-center gap-2 text-[#FF3B00] text-xs font-mono font-black tracking-widest uppercase mb-4">
@@ -319,7 +319,7 @@ export default function AIChatbotCompanyPage() {
                 Developer Core
               </div>
               <h3 id="deploy-intelligence-heading" className="text-3xl font-black tracking-tight text-white mb-6">Deploy Instant Intelligence.</h3>
-              
+
               <ul className="space-y-4 mb-8">
                 {[
                   { i: "solar:plug-circle-bold", t: "100% Zero-Config Setup" },
@@ -337,7 +337,7 @@ export default function AIChatbotCompanyPage() {
                 Embed in your main templates and instantly receive notifications when the agent secures a qualified sales lead.
               </p>
             </div>
-            
+
             {/* The Code Area */}
             <div className="md:col-span-7 bg-black p-8 md:p-12 flex items-center">
               <div className="w-full flex flex-col font-mono text-[11px] md:text-sm leading-relaxed">
@@ -359,7 +359,7 @@ export default function AIChatbotCompanyPage() {
                 </pre>
               </div>
             </div>
-            
+
           </div>
         </motion.div>
       </section>
@@ -418,7 +418,7 @@ export default function AIChatbotCompanyPage() {
       {/* SECTION 4: ULTIMATE CTA */}
       <section className="relative z-10 py-24 px-6 overflow-hidden text-center flex justify-center items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF3B00]/5 to-transparent pointer-events-none" />
-        
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -433,7 +433,7 @@ export default function AIChatbotCompanyPage() {
 
           <div className="bg-black border border-white/10 p-12 md:p-24 rounded-[3rem] shadow-2xl relative z-10 overflow-hidden backdrop-blur-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent" />
-            
+
             <h2 id="ready-for-autonomy-heading" className="text-3xl md:text-5xl font-black tracking-tighter mb-8 relative z-10">Ready for autonomy?</h2>
             <p className="text-neutral-400 text-lg md:text-xl font-light max-w-xl mx-auto mb-12 relative z-10">
               Unlock the future of engagement. Add our conversational system to your workforce today and accelerate every operational metric you track.
@@ -494,9 +494,9 @@ export default function AIChatbotCompanyPage() {
 
       {/* FAQ Section */}
       <section className="relative z-10">
-        <FaqSection 
-          title="AI Chatbot Development" 
-          faqs={vegavanFaqs} 
+        <FaqSection
+          title="AI Chatbot Development"
+          faqs={vegavanFaqs}
         />
       </section>
 
@@ -536,14 +536,16 @@ export default function AIChatbotCompanyPage() {
             "offers": {
               "@type": "AggregateOffer",
               "priceCurrency": "INR",
-              "lowPrice": "4999",
-              "highPrice": "19999",
-              "offerCount": "3"
+              "lowPrice": 4999,
+              "highPrice": 19999,
+              "offerCount": 3
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "48"
+              "ratingValue": 5.0,
+              "bestRating": 5,
+              "worstRating": 1,
+              "reviewCount": 48
             },
             "review": [
               {
@@ -554,8 +556,9 @@ export default function AIChatbotCompanyPage() {
                 },
                 "reviewRating": {
                   "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
                 },
                 "reviewBody": "Our new website built by Webflora has been live for three months and not a single bug so far. Communication was clear and consistent throughout the entire project. Cannot recommend Webflora Technologies enough. Big thanks to the Webflora team."
               },
@@ -567,8 +570,9 @@ export default function AIChatbotCompanyPage() {
                 },
                 "reviewRating": {
                   "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
                 },
                 "reviewBody": "Webflora built our app with a level of polish you usually only see from big city studios. They were responsive on WhatsApp, email and calls whenever we needed answers. Cannot recommend Webflora Technologies enough. Grateful for your work Webflora."
               },
@@ -580,8 +584,9 @@ export default function AIChatbotCompanyPage() {
                 },
                 "reviewRating": {
                   "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
                 },
                 "reviewBody": "We had an app idea sitting on paper for a year and Webflora turned it into a real product in months. Their team listened carefully to what we actually needed instead of pushing a template solution. A rare team that combines technical skill with genuine business understanding. Cheers to the entire Webflora crew."
               },
@@ -593,8 +598,9 @@ export default function AIChatbotCompanyPage() {
                 },
                 "reviewRating": {
                   "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
                 },
                 "reviewBody": "Working with Webflora on our website was smooth from day one and the launch went without a hitch. They pushed back thoughtfully when we suggested something that would have hurt the product. Highly recommend Webflora to any business that takes quality seriously. Thank you team Webflora."
               }

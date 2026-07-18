@@ -25,7 +25,7 @@ interface Props {
 
 export async function generateStaticParams() {
   const paths: { city: string; service: string }[] = [];
-  
+
   Object.keys(citiesData).forEach((city) => {
     Object.keys(servicesData).forEach((service) => {
       paths.push({
@@ -56,6 +56,15 @@ export async function generateMetadata({ params }: Props) {
     } else if (serviceSlug === "web-design") {
       title = "Best Website Design Company in Patna | Professional Web Designers";
       description = "Webflora Technologies is the best website design company in Patna, Bihar. We design premium UI/UX, responsive layouts, and custom web graphics.";
+    } else if (serviceSlug === "app-development") {
+      title = "Best Mobile App Development Company in Patna | Webflora";
+      description = "Looking for the best mobile app development company in Patna? Webflora Technologies is the top app development agency in Patna, Bihar, specializing in custom Android, iOS, React Native, and Flutter apps.";
+    } else if (serviceSlug === "digital-marketing") {
+      title = "Best Digital Marketing Company in Patna | Webflora";
+      description = "Looking for the best digital marketing company in Patna? Webflora Technologies is the top digital marketing agency in Patna, Bihar, offering expert SEO, SMM, PPC, and performance marketing.";
+    } else if (serviceSlug === "seo-services") {
+      title = "Best SEO Company in Patna | Professional SEO Agency";
+      description = "Looking for the best SEO company in Patna? Webflora Technologies is the top SEO agency in Patna, Bihar, specializing in local SEO, technical SEO audits, and link building services.";
     }
   }
 
@@ -66,11 +75,17 @@ export async function generateMetadata({ params }: Props) {
     } else if (serviceSlug === "web-design") {
       keywords = "website design company in patna, web design company in patna, best website designer in patna, best website design company in patna, web designer in patna, list of web design company in patna, best web design agency in patna, UI UX designer in patna, creative website design patna";
     } else if (serviceSlug === "software-development") {
-      keywords = "best software development company in patna, software development company in patna, software company in patna, custom software development patna, custom ERP development patna, CRM software company in patna, IT company in patna";
+      keywords = "best software development company in patna, software development company in patna, software company in patna, custom software development patna, custom ERP development patna, CRM software company in patna, enterprise application company, IT company in patna";
     } else if (serviceSlug === "app-development") {
       keywords = "best mobile app development company in patna, mobile app development company in patna, android app development in patna, iOS app developers in patna, app development company in patna, react native developers patna, flutter app developers patna";
-    } else if (serviceSlug === "digital-marketing" || serviceSlug === "seo-services") {
-      keywords = "best digital marketing company in patna, digital marketing agency in patna, SEO company in patna, search engine optimization patna, performance marketing agency patna, local SEO company in patna, social media marketing patna";
+    } else if (serviceSlug === "crm-development") {
+      keywords = "best crm development company in patna, crm software development patna, crm company in patna, crm company, business management software, custom crm developers patna, sales pipeline tracking software patna, lead management system patna, IT company in patna";
+    } else if (serviceSlug === "erp-development") {
+      keywords = "best erp development company in patna, erp software company in patna, enterprise application company, accounting software, GST billing software patna, enterprise resource planning patna, custom erp development patna, IT company in patna";
+    } else if (serviceSlug === "digital-marketing") {
+      keywords = "digital marketing company in patna, digital marketing in patna, digital marketing agency patna, top 10 digital marketing company in patna, best digital marketing agency in patna, best digital marketing company in patna, best digital marketing in patna, best digital marketing services in patna, best seo company in patna, best seo in patna, seo company in patna, search engine optimization patna, performance marketing agency patna, local SEO company in patna, social media marketing patna";
+    } else if (serviceSlug === "seo-services") {
+      keywords = "best seo company in patna, best seo in patna, best seo services in patna, seo agency in patna, seo agency patna, seo company in patna, seo company patna, seo in patna, seo patna, seo service provider in patna, search engine optimization patna, local SEO company in patna, IT company in patna";
     } else {
       keywords = `best ${service.name.toLowerCase()} in patna, ${service.name} company in patna, ${service.name} services in patna, Patna ${service.name.toLowerCase()}`;
     }
@@ -243,14 +258,16 @@ export default async function CityServicePage({ params }: Props) {
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
-      "lowPrice": service.pricing[0]?.price.replace(/[^0-9]/g, "") || "25000",
-      "highPrice": "500000",
-      "offerCount": service.solutions?.length ? String(service.solutions.length) : "3"
+      "lowPrice": Number(service.pricing[0]?.price.replace(/[^0-9]/g, "") || 25000),
+      "highPrice": 500000,
+      "offerCount": service.solutions?.length || 3
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "48"
+      "ratingValue": 5.0,
+      "bestRating": 5,
+      "worstRating": 1,
+      "reviewCount": 48
     },
     "review": [
       {
@@ -261,8 +278,9 @@ export default async function CityServicePage({ params }: Props) {
         },
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
         },
         "reviewBody": "Our new website built by Webflora has been live for three months and not a single bug so far. Communication was clear and consistent throughout the entire project. Cannot recommend Webflora Technologies enough."
       },
@@ -274,8 +292,9 @@ export default async function CityServicePage({ params }: Props) {
         },
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
         },
         "reviewBody": "Webflora built our app with a level of polish you usually only see from big city studios. They were responsive on WhatsApp, email and calls whenever we needed answers."
       },
@@ -287,8 +306,9 @@ export default async function CityServicePage({ params }: Props) {
         },
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
         },
         "reviewBody": "We had an app idea sitting on paper for a year and Webflora turned it into a real product in months. Their team listened carefully to what we actually needed instead of pushing a template solution."
       }
@@ -339,11 +359,20 @@ export default async function CityServicePage({ params }: Props) {
     }))
   };
 
+  let heroTitle = `${service.name} Company in`;
+  if (city.slug === "patna" && service.slug === "app-development") {
+    heroTitle = "Best Mobile App Development Company in";
+  } else if (city.slug === "patna" && service.slug === "digital-marketing") {
+    heroTitle = "Best Digital Marketing Company in";
+  } else if (city.slug === "patna" && service.slug === "seo-services") {
+    heroTitle = "Best SEO Company in";
+  }
+
   return (
     <div className="bg-black text-white selection:bg-[#FF3B00] selection:text-white min-h-screen">
-      <LocationHero 
+      <LocationHero
         badge={`${service.name} Expert in ${city.name}`}
-        title={`${service.name} Company in`}
+        title={heroTitle}
         gradientTitle={city.name}
         description={`Accelerate growth with our custom-engineered ${service.name.toLowerCase()} systems. Designed for extreme page speeds and built-in search rank indexes.`}
         stats={[
@@ -362,7 +391,7 @@ export default async function CityServicePage({ params }: Props) {
       <section className="py-24 px-6 bg-black border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,59,0,0.02),transparent_40%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-[0.25em] block mb-4">
               Strategic Partnership
@@ -497,13 +526,13 @@ export default async function CityServicePage({ params }: Props) {
                 desc: "We use modern technologies that make your digital products easier to scale, maintain, and upgrade."
               }
             ].map((reason, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="relative p-6 rounded-2xl border border-white/[0.06] bg-zinc-950/40 hover:border-[#FF3B00]/40 hover:bg-zinc-900/30 hover:shadow-[0_0_25px_rgba(255,59,0,0.08)] transition-all duration-300 group flex flex-col justify-between overflow-hidden"
               >
                 {/* Subtle Hover Glow Inside Card */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#FF3B00]/10 to-transparent blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                
+
                 <div className="space-y-4">
                   {/* Icon container */}
                   <div className="p-3 rounded-xl bg-zinc-900/80 border border-white/5 text-zinc-400 group-hover:text-white group-hover:bg-[#FF3B00]/10 group-hover:border-[#FF3B00]/30 transition-all duration-300 w-fit">
@@ -540,9 +569,9 @@ export default async function CityServicePage({ params }: Props) {
       <RelatedServices citySlug={city.slug} currentServiceSlug={service.slug} />
       <RelatedCities currentCitySlug={city.slug} serviceSlug={service.slug} />
 
-      <CTA 
-        title={`Kickstart ${service.name} in ${city.name}`} 
-        subtitle={`Let's construct a type-safe, ultra-fast Next.js layout or custom software database built to scale. Get a free proposal from our team.`} 
+      <CTA
+        title={`Kickstart ${service.name} in ${city.name}`}
+        subtitle={`Let's construct a type-safe, ultra-fast Next.js layout or custom software database built to scale. Get a free proposal from our team.`}
       />
 
       <ContactForm />

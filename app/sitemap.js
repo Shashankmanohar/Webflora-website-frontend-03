@@ -1,4 +1,10 @@
 import API_BASE_URL from "./config";
+import { citiesData } from "../data/cities";
+import { servicesData } from "../data/services";
+import { industriesData } from "./industries/data";
+import { technologiesData } from "./technology/data";
+import { pricingGuidesData } from "./pricing-guides/data";
+import { comparisonsData } from "./compare/data";
 
 export default async function sitemap() {
   const baseUrl = "https://webfloratechnologies.com";
@@ -13,6 +19,10 @@ export default async function sitemap() {
     { route: "/case-studies", priority: 0.8 },
     { route: "/blog", priority: 0.8 },
     { route: "/career", priority: 0.7 },
+    { route: "/why-webflora", priority: 0.8 },
+    { route: "/locations", priority: 0.85 },
+    { route: "/industries", priority: 0.8 },
+    { route: "/electronic-health-records-software", priority: 0.8 },
 
     // Core Service Pages
     { route: "/it-company-in-patna/ai-chatbot-company-in-patna", priority: 0.95 },
@@ -39,6 +49,58 @@ export default async function sitemap() {
           ? "monthly"
           : "yearly",
     priority: item.priority,
+  }));
+
+  // Dynamic Locations & Location Services
+  const cityRoutes = Object.keys(citiesData).map((city) => ({
+    url: `${baseUrl}/locations/${city}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
+  const locationServiceRoutes = [];
+  Object.keys(citiesData).forEach((city) => {
+    Object.keys(servicesData).forEach((service) => {
+      locationServiceRoutes.push({
+        url: `${baseUrl}/locations/${city}/${service}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: "weekly",
+        priority: 0.8,
+      });
+    });
+  });
+
+  // Dynamic Industries
+  const industryRoutes = Object.keys(industriesData).map((industry) => ({
+    url: `${baseUrl}/industries/${industry}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  // Dynamic Technologies
+  const techRoutes = Object.keys(technologiesData).map((slug) => ({
+    url: `${baseUrl}/technology/${slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  // Dynamic Pricing Guides
+  const pricingGuideRoutes = Object.keys(pricingGuidesData).map((slug) => ({
+    url: `${baseUrl}/pricing-guides/${slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  // Dynamic Comparisons
+  const compareRoutes = Object.keys(comparisonsData).map((slug) => ({
+    url: `${baseUrl}/compare/${slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "weekly",
+    priority: 0.8,
   }));
 
   // Fetch dynamic routes (Blogs & Case Studies)
@@ -85,5 +147,15 @@ export default async function sitemap() {
     };
   }) : [];
 
-  return [...staticRoutes, ...blogRoutes, ...caseStudyRoutes];
+  return [
+    ...staticRoutes,
+    ...cityRoutes,
+    ...locationServiceRoutes,
+    ...industryRoutes,
+    ...techRoutes,
+    ...pricingGuideRoutes,
+    ...compareRoutes,
+    ...blogRoutes,
+    ...caseStudyRoutes,
+  ];
 }

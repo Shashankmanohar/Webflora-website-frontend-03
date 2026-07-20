@@ -7,7 +7,7 @@ export const pricingGuidesData = {
     factors: [
       { name: "Basic Business Profile", price: "₹25,000 - ₹35,000", details: "Includes 5-7 pages built on Next.js, contact forms, responsive mobile layouts, and local SEO keywords." },
       { name: "Custom E-Commerce Store", price: "₹45,000 - ₹85,000", details: "Includes dynamic product listings, checkout cart, UPI payment gateways, GST invoice billing, and admin panels." },
-      { name: "Custom SaaS Portal", price: "₹1,00,000+", details: "Includes custom user database roles, subscription integrations, custom API pipelines, and interactive UI dashboards." }
+      { name: "Custom SaaS Portal", price: "₹1,20,000+", details: "Includes custom user database roles, subscription integrations, custom API pipelines, and interactive UI dashboards." }
     ],
     pricingFactors: [
       { title: "Hosting & Server Sizing", desc: "Basic hosting ranges from ₹3K to ₹8K/year. Serverless setups (Vercel/Netlify) can have zero monthly hosting costs for early-stage traffic." },

@@ -195,7 +195,7 @@ export default function HomeIntroSection() {
                 </div>
                 <div className="flex justify-between border-t border-white/10 pt-2 text-sm font-mono text-gray-400">
                   <span>Custom ERP</span>
-                  <span className="text-white font-bold">₹1,00,000+</span>
+                  <span className="text-white font-bold">₹1,20,000+</span>
                 </div>
               </div>
             </div>

@@ -379,7 +379,8 @@ export const servicesData = {
           "Sub-1s Page Loading Speed",
           "1 Month Post-Launch Support"
         ],
-        "popular": false
+        "popular": false,
+        "timeline": "7-21 Days"
       },
       {
         "name": "Custom E-Commerce",
@@ -393,7 +394,8 @@ export const servicesData = {
           "Advanced SEO & Speed Optimized",
           "3 Months Support SLA"
         ],
-        "popular": true
+        "popular": true,
+        "timeline": "15-30 Days"
       }
     ]
   },
@@ -701,7 +703,8 @@ export const servicesData = {
           "App Store & Google Play Setup",
           "30 Days Launch Warranty"
         ],
-        "popular": false
+        "popular": false,
+        "timeline": "20-45 Days"
       },
       {
         "name": "Custom Enterprise App",
@@ -715,7 +718,8 @@ export const servicesData = {
           "AWS VPS Backend Configuration",
           "6 Months Maintenance Contract"
         ],
-        "popular": true
+        "popular": true,
+        "timeline": "35-60 Days"
       }
     ]
   },
@@ -727,7 +731,7 @@ export const servicesData = {
     "headline": "Software Development Company in Patna",
     "subServicesTitle": "Software Development Services",
     "techStackTitle": "Technologies We Use",
-    "subtext": "Webflora Technologies is an MSME-registered (UDYAM-BR-26-0183379) professional custom software development company and premier IT company in Patna, Bihar. We build enterprise-grade CRM systems, scalable ERP software, automated billing engines, smart HR portals, and custom web applications. We leverage Python, Go, AWS, and secure databases to streamline business operations for enterprises in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India. Custom software systems start from ₹1,0,000.",
+    "subtext": "Webflora Technologies is an MSME-registered (UDYAM-BR-26-0183379) professional custom software development company and premier IT company in Patna, Bihar. We build enterprise-grade CRM systems, scalable ERP software, automated billing engines, smart HR portals, and custom web applications. We leverage Python, Go, AWS, and secure databases to streamline business operations for enterprises in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India. Custom software systems start from ₹1,20,000.",
     "geoTitle": "Enterprise Software Development Solutions in Bihar",
     "geoContent": "As the most trusted custom software development company in Patna, Bihar, we specialize in localizing enterprise technology. Our solutions include GST-compliant billing engines, localized inventory alerts, and QR-based digital management systems. We serve manufacturing units, retail chains, and educational groups across Bihar with robust SaaS platforms.",
     "heroBadge": "Enterprise Solutions",
@@ -889,7 +893,7 @@ export const servicesData = {
     "faqs": [
       {
         "question": "How much does custom software development cost in Patna?",
-        "answer": "Custom software systems designed by Webflora Technologies start from ₹1,0,000. The ultimate pricing depends on system architecture complexity, active user counts, security standards, and third-party integrations.",
+        "answer": "Custom software systems designed by Webflora Technologies start from ₹1,20,000. The ultimate pricing depends on system architecture complexity, active user counts, security standards, and third-party integrations.",
         "icon": "lucide:indian-rupee"
       },
       {
@@ -972,7 +976,7 @@ export const servicesData = {
         {
           "title": "Transparent Pricing Structure & Code Ownership ROI",
           "paragraphs": [
-            "We believe in absolute transparency. Custom software is an investment that pays for itself. Instead of charging monthly per-user licensing fees that scale up as your company grows, we charge a flat one-time development fee starting from ₹1,00,000.",
+            "We believe in absolute transparency. Custom software is an investment that pays for itself. Instead of charging monthly per-user licensing fees that scale up as your company grows, we charge a flat one-time development fee starting from ₹1,20,000.",
             "This ensures you own the source code, keep your recurring costs close to zero, and maximize your return on investment (ROI)."
           ]
         }
@@ -1018,7 +1022,8 @@ export const servicesData = {
           "Standard Payment Webhook/Stripe",
           "3 Months System SLA"
         ],
-        "popular": false
+        "popular": false,
+        "timeline": "15-30 Days"
       },
       {
         "name": "Custom Enterprise Suite",
@@ -1032,7 +1037,8 @@ export const servicesData = {
           "Dedicated Staging Environments",
           "12 Months Maintenance SLA"
         ],
-        "popular": true
+        "popular": true,
+        "timeline": "30-60 Days"
       }
     ]
   },
@@ -1042,7 +1048,7 @@ export const servicesData = {
     "seoKeywords": "best ai automation company in patna, ai automation company in patna, ai chatbot development patna, chatbot services in patna, whatsapp automation company patna, n8n workflow automation patna, IT company in patna, artificial intelligence services bihar",
     "title": "AI Automation & Chatbot Services in Patna",
     "headline": "Business AI Automation Services",
-    "subtext": "Webflora Technologies is the pioneering AI automation company and leading IT company in Patna, Bihar. We design and implement smart workflow automations, custom AI chatbots, OpenAI/Claude API integrations, n8n chatbot workflows, and automated CRM pipelines. We help companies in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India eliminate manual bottlenecks and operate 24/7. Our custom automation workflows start from ₹35,000.",
+    "subtext": "Webflora Technologies is the pioneering AI automation company and leading IT company in Patna, Bihar. We design and implement smart workflow automations, custom AI chatbots, OpenAI/Claude API integrations, n8n chatbot workflows, and automated CRM pipelines. We help companies in Patna, Muzaffarpur, Gaya, Bhagalpur, Bihar, and across India eliminate manual bottlenecks and operate 24/7. Our custom automation workflows start from ₹45,000.",
     "relatedServices": [
       {
         "name": "Software Development",
@@ -1097,7 +1103,7 @@ export const servicesData = {
       {
         "title": "n8n Automation Solutions",
         "icon": "lucide:settings",
-        "desc": "Custom, high-efficiency API integrations and automated backend workflows designed using n8n for rapid data routing starting from ₹35,000."
+        "desc": "Custom, high-efficiency API integrations and automated backend workflows designed using n8n for rapid data routing starting from ₹45,000."
       }
     ],
     "process": [
@@ -1199,7 +1205,7 @@ export const servicesData = {
     "faqs": [
       {
         "question": "How much does AI automation implementation cost in Patna?",
-        "answer": "At Webflora Technologies, custom n8n workflow integrations and AI chatbot automations start from ₹35,000. Custom enterprise solutions involving custom LLM fine-tuning or heavy data parsing are quoted after thorough process mapping.",
+        "answer": "At Webflora Technologies, custom n8n workflow integrations and AI chatbot automations start from ₹45,000. Custom enterprise solutions involving custom LLM fine-tuning or heavy data parsing are quoted after thorough process mapping.",
         "icon": "lucide:brain-circuit"
       },
       {
@@ -1312,7 +1318,7 @@ export const servicesData = {
         {
           "title": "Transparent Pricing Structure & ROI Strategy",
           "paragraphs": [
-            "Custom n8n and AI chatbot implementations start from ₹35,000. Unlike commercial automation systems that charge expensive monthly subscription fees based on task volume, our serverless solutions run on your own cloud accounts. This minimizes operational overhead, ensuring a high return on investment (ROI) that pays for itself in labor savings."
+            "Custom n8n and AI chatbot implementations start from ₹45,000. Unlike commercial automation systems that charge expensive monthly subscription fees based on task volume, our serverless solutions run on your own cloud accounts. This minimizes operational overhead, ensuring a high return on investment (ROI) that pays for itself in labor savings."
           ]
         }
       ]
@@ -1356,7 +1362,8 @@ export const servicesData = {
           "Basic Analytics Dashboard",
           "30 Days Tweak Guarantee"
         ],
-        "popular": false
+        "popular": false,
+        "timeline": "10-20 Days"
       },
       {
         "name": "Enterprise AI Agent",
@@ -1370,7 +1377,8 @@ export const servicesData = {
           "Ongoing Conversation Audits",
           "Priority SLA Maintenance Support"
         ],
-        "popular": true
+        "popular": true,
+        "timeline": "20-40 Days"
       }
     ]
   },
@@ -1673,7 +1681,8 @@ export const servicesData = {
           "Technical Schema Audit Fixes",
           "Bi-Weekly Performance Calls"
         ],
-        "popular": true
+        "popular": true,
+        "timeline": "Ongoing"
       }
     ]
   },
@@ -1683,7 +1692,7 @@ export const servicesData = {
     "seoKeywords": "best software company in bihar, software company in bihar, software development company in bihar, IT company in bihar, custom software development bihar, software developers in bihar, ERP development bihar",
     "title": "Software Development Company in Bihar",
     "headline": "Custom Software Engineering Services in Bihar",
-    "subtext": "Webflora Technologies is the leading software company in Bihar, delivering custom ERPs, scalable SaaS platforms, and enterprise cloud software solutions. We build secure, reliable, and high-performance business applications that streamline workflows for colleges, hospitals, and manufacturing units throughout Gaya, Muzaffarpur, Patna, and all of Bihar. Custom software solutions start from ₹1,0,000.",
+    "subtext": "Webflora Technologies is the leading software company in Bihar, delivering custom ERPs, scalable SaaS platforms, and enterprise cloud software solutions. We build secure, reliable, and high-performance business applications that streamline workflows for colleges, hospitals, and manufacturing units throughout Gaya, Muzaffarpur, Patna, and all of Bihar. Custom software solutions start from ₹1,20,000.",
     "geoTitle": "Enterprise Software Development for Bihar's Growth",
     "geoContent": "As a registered MSME agency, we are dedicated to digitizing businesses across Bihar. From Gaya and Bhagalpur to Muzaffarpur and Patna, we deliver custom cloud architectures and workflow automations that eliminate human error and scale output.",
     "heroBadge": "Enterprise Solutions",
@@ -1835,7 +1844,7 @@ export const servicesData = {
     "faqs": [
       {
         "question": "How much does custom software development cost in Patna?",
-        "answer": "Custom software systems designed by Webflora Technologies start from ₹1,0,000. The ultimate pricing depends on system architecture complexity, active user counts, security standards, and third-party integrations.",
+        "answer": "Custom software systems designed by Webflora Technologies start from ₹1,20,000. The ultimate pricing depends on system architecture complexity, active user counts, security standards, and third-party integrations.",
         "icon": "lucide:indian-rupee"
       },
       {
@@ -1918,7 +1927,7 @@ export const servicesData = {
         {
           "title": "Transparent Pricing Structure & Code Ownership ROI",
           "paragraphs": [
-            "We believe in absolute transparency. Custom software is an investment that pays for itself. Instead of charging monthly per-user licensing fees that scale up as your company grows, we charge a flat one-time development fee starting from ₹1,00,000.",
+            "We believe in absolute transparency. Custom software is an investment that pays for itself. Instead of charging monthly per-user licensing fees that scale up as your company grows, we charge a flat one-time development fee starting from ₹1,20,000.",
             "This ensures you own the source code, keep your recurring costs close to zero, and maximize your return on investment (ROI)."
           ]
         }
@@ -2201,7 +2210,7 @@ export const servicesData = {
       {
         "name": "Bihar Local Visibility",
         "subtitle": "Lead generation for local hubs",
-        "price": "₹12,000",
+        "price": "₹15,000",
         "period": "per month",
         "features": [
           "Patna & Bihar Local Maps Setup",
@@ -2210,7 +2219,8 @@ export const servicesData = {
           "Local Citation Cataloging",
           "Bi-Weekly Traffic Reports"
         ],
-        "popular": false
+        "popular": false,
+        "timeline": "Ongoing"
       },
       {
         "name": "Pan-India Scale Plan",
@@ -2224,7 +2234,8 @@ export const servicesData = {
           "High-Authority Backlink Setup",
           "Weekly Performance Reviews"
         ],
-        "popular": true
+        "popular": true,
+        "timeline": "Ongoing"
       }
     ]
   }

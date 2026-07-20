@@ -9,6 +9,21 @@ const nextConfig = {
   // Disabling experimental compiler which might be causing slow renders on Windows
   reactCompiler: false, 
   
+  async redirects() {
+    return [
+      {
+        source: '/services',
+        destination: '/it-company-in-patna',
+        permanent: true,
+      },
+      {
+        source: '/services/:path*',
+        destination: '/it-company-in-patna/:path*',
+        permanent: true,
+      },
+    ];
+  }, 
+  
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "@iconify/react"],
   },

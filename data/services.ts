@@ -10,7 +10,7 @@ export interface ServiceData {
   benefits: { title: string; description: string; icon: string; stat: string; statLabel: string }[];
   process: { title: string; desc: string }[];
   techStack: { name: string; icon: string }[];
-  pricing: { name: string; subtitle: string; price: string; period: string; features: string[]; popular: boolean }[];
+  pricing: { name: string; subtitle: string; price: string; period: string; features: string[]; popular: boolean; timeline?: string }[];
   faqs: { question: string; answer: string }[];
 }
 
@@ -76,7 +76,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Sub-1s Page Loading Speed",
           "1 Month Post-Launch Support"
         ],
-        popular: false
+        popular: false,
+        timeline: "7-21 Days"
       },
       {
         name: "Custom E-Commerce",
@@ -90,7 +91,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Advanced SEO & Speed Optimized",
           "3 Months Support SLA"
         ],
-        popular: true
+        popular: true,
+        timeline: "15-30 Days"
       }
     ],
     faqs: [
@@ -153,7 +155,8 @@ export const servicesData: Record<string, ServiceData> = {
         price: "₹18,000",
         period: "one-time",
         features: ["Bespoke Layout Mockups", "Full Desktop & Mobile Grid Design", "Interactive User Flows", "UI Assets Handover"],
-        popular: false
+        popular: false,
+        timeline: "5-10 Days"
       },
       {
         name: "Enterprise Brand System",
@@ -167,7 +170,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Desktop & Mobile Responsive Grid",
           "Full Assets Handover"
         ],
-        popular: true
+        popular: true,
+        timeline: "10-20 Days"
       }
     ],
     faqs: [
@@ -237,7 +241,8 @@ export const servicesData: Record<string, ServiceData> = {
           "App Store & Google Play Setup",
           "30 Days Launch Warranty"
         ],
-        popular: false
+        popular: false,
+        timeline: "20-45 Days"
       },
       {
         name: "Custom Enterprise App",
@@ -251,7 +256,8 @@ export const servicesData: Record<string, ServiceData> = {
           "AWS VPS Backend Configuration",
           "6 Months Maintenance Contract"
         ],
-        popular: true
+        popular: true,
+        timeline: "35-60 Days"
       }
     ],
     faqs: [
@@ -320,7 +326,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Standard Payment Webhook/Stripe",
           "3 Months System SLA"
         ],
-        popular: false
+        popular: false,
+        timeline: "15-30 Days"
       },
       {
         name: "Custom Enterprise Suite",
@@ -334,7 +341,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Dedicated Staging Environments",
           "12 Months Maintenance SLA"
         ],
-        popular: true
+        popular: true,
+        timeline: "30-60 Days"
       }
     ],
     faqs: [
@@ -403,7 +411,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Basic Analytics Dashboard",
           "30 Days Tweak Guarantee"
         ],
-        popular: false
+        popular: false,
+        timeline: "10-20 Days"
       },
       {
         name: "Enterprise AI Agent",
@@ -417,7 +426,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Ongoing Conversation Audits",
           "Priority SLA Maintenance Support"
         ],
-        popular: true
+        popular: true,
+        timeline: "20-40 Days"
       }
     ],
     faqs: [
@@ -480,7 +490,8 @@ export const servicesData: Record<string, ServiceData> = {
         price: "₹1,50,000",
         period: "starting cost",
         features: ["Inventory Tracking & Alerts", "GST-Compliant Invoicing", "Employee Payroll Module", "Admin Analytics Desk"],
-        popular: false
+        popular: false,
+        timeline: "15-30 Days"
       },
       {
         name: "Enterprise Custom Suite",
@@ -494,7 +505,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Custom Financial Analytics Desk",
           "12 Months Maintenance SLA"
         ],
-        popular: true
+        popular: true,
+        timeline: "30-60 Days"
       }
     ],
     faqs: [
@@ -557,7 +569,8 @@ export const servicesData: Record<string, ServiceData> = {
         price: "₹95,000",
         period: "starting cost",
         features: ["Automated Lead Import", "Deal Stage Dashboard", "Staff Action Trackers", "Custom Email/SMS Reminders"],
-        popular: false
+        popular: false,
+        timeline: "15-30 Days"
       },
       {
         name: "Enterprise Custom CRM",
@@ -571,7 +584,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Advanced Customer Service Desk",
           "Dedicated Server Deployment"
         ],
-        popular: true
+        popular: true,
+        timeline: "30-60 Days"
       }
     ],
     faqs: [
@@ -631,10 +645,11 @@ export const servicesData: Record<string, ServiceData> = {
       {
         name: "Bihar Local Visibility",
         subtitle: "Lead generation for local hubs",
-        price: "₹12,000",
+        price: "₹15,000",
         period: "per month",
         features: ["Patna & Bihar Local Maps Setup", "Local Competitor Keyword Audit", "Hindi & English Ad Creatives", "Local Citation Cataloging", "Bi-Weekly Traffic Reports"],
-        popular: false
+        popular: false,
+        timeline: "Ongoing"
       },
       {
         name: "Pan-India Scale Plan",
@@ -648,7 +663,8 @@ export const servicesData: Record<string, ServiceData> = {
           "High-Authority Backlink Setup",
           "Weekly Performance Reviews"
         ],
-        popular: true
+        popular: true,
+        timeline: "Ongoing"
       }
     ],
     faqs: [
@@ -711,7 +727,8 @@ export const servicesData: Record<string, ServiceData> = {
         price: "₹30,000",
         period: "per month",
         features: ["Technical SEO Code Alignment", "Google Maps Optimization", "Weekly Keyword Rank Updates", "Monthly Audit Reports"],
-        popular: false
+        popular: false,
+        timeline: "Ongoing"
       },
       {
         name: "National Enterprise SEO",
@@ -725,7 +742,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Competitor Share-of-Voice Audit",
           "Dedicated SEO Account Manager"
         ],
-        popular: true
+        popular: true,
+        timeline: "Ongoing"
       }
     ],
     faqs: [
@@ -788,7 +806,8 @@ export const servicesData: Record<string, ServiceData> = {
         price: "₹35,000",
         period: "starting cost",
         features: ["User Journey Flowcharting", "Responsive Screen Visuals", "Custom Graphic Assets Package", "Interactive Figma Prototype"],
-        popular: false
+        popular: false,
+        timeline: "7-15 Days"
       },
       {
         name: "Complete Design System",
@@ -802,7 +821,8 @@ export const servicesData: Record<string, ServiceData> = {
           "User Testing & Feedback Cycles",
           "Unlimited Developer Handover Support"
         ],
-        popular: true
+        popular: true,
+        timeline: "15-30 Days"
       }
     ],
     faqs: [
@@ -862,10 +882,11 @@ export const servicesData: Record<string, ServiceData> = {
       {
         name: "Workflow Auto Sync",
         subtitle: "Cross-platform data automations",
-        price: "₹35,000",
+        price: "₹45,000",
         period: "one-time setup",
         features: ["3 Core App Automations", "WhatsApp Cloud Alert Sync", "Automated Sheet Logging", "Full Error Catching Setup"],
-        popular: false
+        popular: false,
+        timeline: "10-25 Days"
       },
       {
         name: "Enterprise Workflow Suite",
@@ -879,7 +900,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Advanced Error Notification Paths",
           "3 Months SLA Support"
         ],
-        popular: true
+        popular: true,
+        timeline: "20-40 Days"
       }
     ],
     faqs: [
@@ -942,7 +964,8 @@ export const servicesData: Record<string, ServiceData> = {
         price: "₹65,000",
         period: "starting cost",
         features: ["Serverless Architecture Setup", "Auto Database Backup Setup", "SSL & Firewall Deployment", "Infrastructure Audits"],
-        popular: false
+        popular: false,
+        timeline: "10-20 Days"
       },
       {
         name: "Devops Cluster Setup",
@@ -956,7 +979,8 @@ export const servicesData: Record<string, ServiceData> = {
           "Zero-Downtime Migration Services",
           "24/7 Server Log Auditing SLA"
         ],
-        popular: true
+        popular: true,
+        timeline: "20-45 Days"
       }
     ],
     faqs: [

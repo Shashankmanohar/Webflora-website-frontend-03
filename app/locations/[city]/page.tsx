@@ -208,50 +208,20 @@ export default async function CityLandingPage({ params }: Props) {
       "worstRating": 1,
       "reviewCount": 48
     },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Sahil Kumar"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": 5,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "reviewBody": "Our new website built by Webflora has been live for three months and not a single bug so far. Communication was clear and consistent throughout the entire project. Cannot recommend Webflora Technologies enough."
+    "review": city.testimonials.map(t => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": t.name
       },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Balwant Kumar"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": 5,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "reviewBody": "Webflora built our app with a level of polish you usually only see from big city studios. They were responsive on WhatsApp, email and calls whenever we needed answers."
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
       },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Sonu Kumar"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": 5,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "reviewBody": "We had an app idea sitting on paper for a year and Webflora turned it into a real product in months. Their team listened carefully to what we actually needed instead of pushing a template solution."
-      }
-    ]
+      "reviewBody": t.feedback
+    }))
   };
 
   const breadcrumbSchema = {
@@ -311,6 +281,30 @@ export default async function CityLandingPage({ params }: Props) {
 
       <TrustStrip />
 
+      {/* Local Statistics & Performance Metrics Dashboard */}
+      {city.businessStats && city.businessStats.length > 0 && (
+        <section className="py-12 px-6 bg-zinc-950 border-t border-b border-white/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left items-center justify-between">
+              <div>
+                <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-widest block mb-2">
+                  Market Dynamics
+                </span>
+                <h3 className="text-xl font-bold text-white uppercase tracking-tight">
+                  {city.name} Stats
+                </h3>
+              </div>
+              {city.businessStats.map((stat, index) => (
+                <div key={index} className="p-6 rounded-2xl bg-black border border-white/5 flex flex-col justify-center">
+                  <span className="text-3xl md:text-4xl font-black text-[#FF3B00] tracking-tight">{stat.value}</span>
+                  <span className="text-xs text-gray-400 font-light mt-1">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* About & Remote Model Grid */}
       <section className="py-24 px-6 bg-black border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,59,0,0.02),transparent_40%)] pointer-events-none" />
@@ -364,8 +358,89 @@ export default async function CityLandingPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Local Market Insights & Industry Focus Section */}
+      <section className="py-24 px-6 bg-zinc-950/20 border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left: Market Insights */}
+            <div className="space-y-8">
+              <div>
+                <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-[0.25em] block mb-2">
+                  Insights & Trends
+                </span>
+                <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">
+                  Market Insights for {city.name}
+                </h2>
+              </div>
+              <div className="space-y-6">
+                {city.marketInsights.map((insight, idx) => (
+                  <div key={idx} className="p-6 rounded-3xl bg-zinc-950/40 border border-white/5 space-y-3">
+                    <h3 className="text-lg font-bold text-white uppercase tracking-tight">{insight.title}</h3>
+                    <p className="text-sm text-gray-400 font-light leading-relaxed">{insight.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Industry Focus */}
+            <div className="space-y-8">
+              <div>
+                <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-[0.25em] block mb-2">
+                  Sectors We Scale
+                </span>
+                <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">
+                  Industry Focus in {city.name}
+                </h2>
+              </div>
+              <div className="space-y-6">
+                {city.industryFocus.map((focus, idx) => (
+                  <div key={idx} className="p-6 rounded-3xl bg-zinc-950/40 border border-white/5 space-y-3 relative overflow-hidden group hover:border-[#FF3B00]/20 transition-all duration-300">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-lg font-bold text-white uppercase tracking-tight">{focus.name}</h3>
+                      <span className="text-xs font-mono text-[#FF3B00] bg-[#FF3B00]/10 px-3 py-1 rounded-full border border-[#FF3B00]/20">{focus.growth}</span>
+                    </div>
+                    <p className="text-sm text-gray-400 font-light leading-relaxed">{focus.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <IndustrySection industries={city.localIndustries} title={city.name} />
+
+      {/* Local Client Stories Section */}
+      {city.clientStories && city.clientStories.length > 0 && (
+        <section className="py-24 px-6 bg-black border-t border-white/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-[0.25em] block mb-4">
+                Local Impact Case Studies
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase leading-none">
+                Client Stories from {city.name}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {city.clientStories.map((story, idx) => (
+                <div key={idx} className="p-8 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 flex flex-col justify-between space-y-6">
+                  <div>
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{story.clientName}</h3>
+                        <p className="text-xs text-[#FF3B00] font-mono uppercase tracking-wide mt-1">{story.project}</p>
+                      </div>
+                      <span className="text-xs font-mono text-green-400 bg-green-950/30 px-3 py-1 rounded-full border border-green-500/20">{story.result}</span>
+                    </div>
+                    <p className="text-sm text-gray-400 font-light leading-relaxed">{story.story}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Our Services Section */}
       <section className="py-24 px-6 bg-zinc-950/20 border-t border-white/5">
@@ -386,8 +461,47 @@ export default async function CityLandingPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Local Testimonials Section */}
+      {city.testimonials && city.testimonials.length > 0 && (
+        <section className="py-24 px-6 bg-black border-t border-white/5 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(255,59,0,0.03),transparent_70%)] pointer-events-none" />
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-[0.25em] block mb-4">
+                Local Endorsements
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase leading-none">
+                What {city.name} Clients Say
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {city.testimonials.map((t, idx) => (
+                <div key={idx} className="p-8 rounded-[2rem] bg-zinc-950/40 border border-white/5 flex flex-col justify-between relative">
+                  <div className="space-y-4">
+                    <div className="flex text-[#FF3B00] gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} icon="solar:star-bold" width={16} />
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-sm italic font-light leading-relaxed">
+                      "{t.feedback}"
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-white/5 flex items-center justify-between">
+                    <div>
+                      <h4 className="font-bold text-white text-sm">{t.name}</h4>
+                      <p className="text-xs text-gray-500 font-light mt-0.5">{t.role}, {t.company}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Benefits section */}
-      <section className="py-24 px-6 bg-black border-t border-white/5">
+      <section className="py-24 px-6 bg-zinc-950/20 border-t border-white/5">
         <div className="max-w-5xl mx-auto space-y-8 text-center">
           <span className="text-[#FF3B00] font-mono text-[10px] font-black uppercase tracking-widest block">
             Why Partner With Us

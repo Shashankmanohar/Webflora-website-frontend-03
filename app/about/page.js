@@ -333,7 +333,7 @@ const aboutFaqs = [
   },
   {
     question: "How much does custom software development cost?",
-    answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,00,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
+    answer: "Software development costs depend on project scope, complexity, and features. Small systems may start around ₹1,20,000, while larger enterprise solutions with complex integrations require a customized quote based on specific ROI goals.",
     icon: "lucide:indian-rupee"
   },
   {

@@ -34,7 +34,7 @@ const page = () => {
     },
     {
       question: "How does Webflora price its IT projects?",
-      answer: "We focus on a flat, transparent pricing structure with zero platform lock-in. Website development packages start from ₹25,000, AI chatbots start from ₹35,000, and custom software builds start from ₹1,00,000. You retain 100% code ownership.",
+      answer: "We focus on a flat, transparent pricing structure with zero platform lock-in. Website development packages start from ₹25,000, AI chatbots start from ₹45,000, and custom software builds start from ₹1,20,000. You retain 100% code ownership.",
       icon: "lucide:wallet"
     },
     {

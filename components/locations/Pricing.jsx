@@ -31,7 +31,20 @@ export default function Pricing({ pricing }) {
 
               <div>
                 <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-1">{plan.name}</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-6">{plan.subtitle}</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">{plan.subtitle}</p>
+                {plan.timeline && (
+                  <div className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-6">
+                    <Icon
+                      icon="solar:clock-circle-linear"
+                      width={12}
+                      height={12}
+                      className="text-[#FF3B00] flex-shrink-0"
+                    />
+                    <span className="text-gray-300 text-[10px] font-semibold uppercase tracking-wider">
+                      {plan.timeline}
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-baseline gap-2 mb-8">
                   <span className="text-4xl font-black text-white">{plan.price}</span>
                   <span className="text-xs text-gray-500 uppercase tracking-widest">{plan.period}</span>

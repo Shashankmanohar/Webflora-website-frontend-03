@@ -4,7 +4,7 @@ export const industriesData = {
   "healthcare": {
     title: "Healthcare",
     headline: "Transforming Patient Care Through Digital Innovation",
-    subtext: "Webflora Technologies builds compliant, high-performance digital solutions for clinics, hospitals, and telemedicine platforms. We design secure patient portals, appointment scheduling engines, and automated health record workflows starting from ₹35,000.",
+    subtext: "Webflora Technologies builds compliant, high-performance digital solutions for clinics, hospitals, and telemedicine platforms. We design secure patient portals, appointment scheduling engines, and automated health record workflows starting from ₹45,000.",
     geoTitle: "Advanced Digital Healthcare Solutions in Patna & Bihar",
     geoContent: "We help healthcare providers, diagnostics labs, and clinics in Patna, Muzaffarpur, Gaya, and across Bihar establish secure and localized digital ecosystems. From WhatsApp-based lab report delivery to smart appointment management, we digitize medical practices.",
     heroBadge: "Smart Healthcare Systems",
@@ -198,7 +198,7 @@ export const industriesData = {
   "real-estate": {
     title: "Real Estate",
     headline: "Unlocking Premium Real Estate Client Portals",
-    subtext: "Webflora Technologies builds conversion-focused property listing websites, CRM integrations, interactive local maps, and WhatsApp-driven lead qualification engines starting from ₹35,000.",
+    subtext: "Webflora Technologies builds conversion-focused property listing websites, CRM integrations, interactive local maps, and WhatsApp-driven lead qualification engines starting from ₹45,000.",
     geoTitle: "High-Intent Property Portals in Patna & Bihar",
     geoContent: "We help property developers, real estate agencies, and builders across Patna, Muzaffarpur, Gaya, and Bihar showcase residential and commercial projects with virtual tours, interactive location benefits, and direct lead capturing.",
     heroBadge: "High-Converting Property Portals",
@@ -392,7 +392,7 @@ export const industriesData = {
   "retail": {
     title: "Retail",
     headline: "Unifying Retail Sales & Modern E-Commerce Platforms",
-    subtext: "Webflora Technologies builds high-converting e-commerce web applications, offline-to-online POS systems, and automated customer marketing flows starting from ₹35,000.",
+    subtext: "Webflora Technologies builds high-converting e-commerce web applications, offline-to-online POS systems, and automated customer marketing flows starting from ₹45,000.",
     geoTitle: "Scalable E-Commerce & Retail Solutions in Patna & Bihar",
     geoContent: "We help retail brands, wholesalers, and supermarkets in Patna, Muzaffarpur, Gaya, and across Bihar establish highly fast online storefronts. We integrate local shipping carriers, GST calculations, and custom discount engines.",
     heroBadge: "Modern E-Commerce Storefronts",
@@ -405,7 +405,7 @@ export const industriesData = {
       "Lack of direct marketing integrations to capture abandoned carts and return buyers"
     ],
     subServices: [
-      { title: "Next.js E-Commerce Sites", icon: "lucide:shopping-bag", desc: "Build sub-second loading online storefronts with React, static rendering, and conversion-focused checkout starting from ₹35,000." },
+      { title: "Next.js E-Commerce Sites", icon: "lucide:shopping-bag", desc: "Build sub-second loading online storefronts with React, static rendering, and conversion-focused checkout starting from ₹45,000." },
       { title: "Wholesale B2B Stores", icon: "lucide:store", desc: "Design wholesale portals where retail partners buy in bulk, calculate volume discounts, and download GST invoices." },
       { title: "POS & Inventory Sync", icon: "lucide:refresh-cw", desc: "Sync physical shop sales with your online database to keep stock levels accurate in real time." },
       { title: "UPI & Payment Integration", icon: "lucide:wallet", desc: "Integrate quick-checkout options supporting Paytm, GooglePay, credit cards, and cash-on-delivery options." },
@@ -586,7 +586,7 @@ export const industriesData = {
   "ecommerce": {
     title: "E-Commerce",
     headline: "Powering Modern, High-Conversion Online Storefronts",
-    subtext: "Webflora Technologies engineers lightning-fast e-commerce applications, Shopify/WooCommerce API syncs, automated multi-channel inventories, and fast-checkout flows starting from ₹35,000.",
+    subtext: "Webflora Technologies engineers lightning-fast e-commerce applications, Shopify/WooCommerce API syncs, automated multi-channel inventories, and fast-checkout flows starting from ₹45,000.",
     geoTitle: "Scalable E-Commerce Web Development in Patna & Bihar",
     geoContent: "We help retail brands, direct-to-consumer (D2C) startups, and wholesalers across Patna, Bihar, and India establish custom online storefronts. From automated WhatsApp tracking to UPI checkouts, we build optimized sales engines.",
     heroBadge: "Custom E-Commerce Storefronts",

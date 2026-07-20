@@ -23,6 +23,7 @@ export default async function sitemap() {
     { route: "/locations", priority: 0.85 },
     { route: "/industries", priority: 0.8 },
     { route: "/electronic-health-records-software", priority: 0.8 },
+    { route: "/faq", priority: 0.8 },
 
     // Core Service Pages
     { route: "/it-company-in-patna/ai-chatbot-company-in-patna", priority: 0.95 },

@@ -10,6 +10,7 @@ const clientLogos = [
   { name: "Edugen World School", src: "/client-logo/Edugen-world-school.png" },
   { name: "Feedrani", src: "/client-logo/feedrani-logo.png" },
   { name: "Krisivarsha", src: "/client-logo/Krisivarsha-logo.png" },
+  { name: "RGMS", src: "/client-logo/RGMS-logo.jpeg" },
   { name: "Team Excellent", src: "/client-logo/Team-excellentlogo.webp" },
   { name: "Best For Everyone", src: "/client-logo/best-for-everyone.png" },
   { name: "Heo Sahyog", src: "/client-logo/heo-sahyog.png" },

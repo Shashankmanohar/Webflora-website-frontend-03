@@ -86,46 +86,48 @@ export default function Hero() {
 
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-1">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-2">
           <Link
             href="/contact"
-            className="px-8 py-3 w-full sm:w-auto cursor-pointer bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-sm font-semibold tracking-wide text-center transition-all duration-300 shadow-lg shadow-orange-500/20"
+            className="px-8 py-3.5 w-full sm:w-auto cursor-pointer bg-gradient-to-r from-[#FF3B00] via-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-sm font-bold tracking-wide text-center rounded-full transition-all duration-300 shadow-[0_0_25px_rgba(255,59,0,0.35)] hover:scale-105 hover:shadow-[0_0_35px_rgba(255,59,0,0.5)] flex items-center justify-center gap-2"
           >
-            Start Your Project
+            <span>Start Your Project</span>
+            <span className="text-lg leading-none">→</span>
           </Link>
 
           <Link
             href="/contact"
-            className="px-8 py-3 w-full sm:w-auto cursor-pointer bg-white/5 border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/5 text-white text-sm font-semibold tracking-wide text-center transition-all duration-300"
+            className="px-8 py-3.5 w-full sm:w-auto cursor-pointer bg-white/5 border border-white/10 hover:border-[#FF3B00]/50 hover:bg-[#FF3B00]/10 text-white text-sm font-semibold tracking-wide text-center rounded-full transition-all duration-300 backdrop-blur-md hover:scale-105"
           >
             Get Free Consultation
           </Link>
 
           <Link
             href="#work"
-            className="text-gray-400 hover:text-white text-sm font-medium transition-colors py-2 flex items-center gap-1"
+            className="text-gray-400 hover:text-white text-sm font-medium transition-colors py-2 flex items-center gap-1.5 group"
           >
-            View Work <span className="text-orange-500 font-bold">→</span>
+            <span>View Work</span>
+            <span className="text-[#FF3B00] font-bold group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl pt-6 border-t border-white/10">
-          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
-            <p className="text-white text-xl md:text-2xl font-bold tracking-tight">200+</p>
-            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Projects Delivered</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 w-full max-w-4xl pt-8 border-t border-white/10">
+          <div className="p-4 rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-[#FF3B00]/30 transition-all">
+            <p className="text-white text-2xl md:text-3xl font-black tracking-tight font-mono">200+</p>
+            <p className="text-gray-400 text-[10px] font-mono uppercase tracking-wider mt-1 font-semibold">Projects Delivered</p>
           </div>
-          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
-            <p className="text-white text-xl md:text-2xl font-bold tracking-tight">150+</p>
-            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Clients Served</p>
+          <div className="p-4 rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-[#FF3B00]/30 transition-all">
+            <p className="text-white text-2xl md:text-3xl font-black tracking-tight font-mono">150+</p>
+            <p className="text-gray-400 text-[10px] font-mono uppercase tracking-wider mt-1 font-semibold">Clients Served</p>
           </div>
-          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
-            <p className="text-white text-xl md:text-2xl font-bold tracking-tight">5+</p>
-            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Years Experience</p>
+          <div className="p-4 rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-[#FF3B00]/30 transition-all">
+            <p className="text-white text-2xl md:text-3xl font-black tracking-tight font-mono">5+</p>
+            <p className="text-gray-400 text-[10px] font-mono uppercase tracking-wider mt-1 font-semibold">Years Experience</p>
           </div>
-          <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-sm">
-            <p className="text-[#FF3B00] text-xl md:text-2xl font-bold tracking-tight">99%</p>
-            <p className="text-gray-500 text-[9px] md:text-[10px] font-mono uppercase tracking-wider mt-0.5">Satisfaction</p>
+          <div className="p-4 rounded-2xl bg-gradient-to-b from-[#FF3B00]/10 to-white/[0.01] border border-[#FF3B00]/20 backdrop-blur-md hover:border-[#FF3B00]/50 transition-all">
+            <p className="text-[#FF3B00] text-2xl md:text-3xl font-black tracking-tight font-mono">99%</p>
+            <p className="text-gray-300 text-[10px] font-mono uppercase tracking-wider mt-1 font-semibold">Client Satisfaction</p>
           </div>
         </div>
 

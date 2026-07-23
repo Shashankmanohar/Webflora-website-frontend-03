@@ -312,6 +312,13 @@ export default function AdminDashboard() {
             count={inquiries.length}
           />
           <SidebarLink
+            icon={<Clock size={20} className="text-orange-500" />}
+            label="Attendance Leads"
+            active={activeTab === "attendance"}
+            onClick={() => setActiveTab("attendance")}
+            count={inquiries.filter(i => (i.service && i.service.toLowerCase().includes("attendance")) || (i.message && i.message.toLowerCase().includes("attendance"))).length}
+          />
+          <SidebarLink
             icon={<Briefcase size={20} />}
             label="Career Forms"
             active={activeTab === "careers"}
@@ -438,6 +445,31 @@ export default function AdminDashboard() {
                   ))}
                 </motion.div>
               )}
+              {activeTab === "attendance" && (
+                <motion.div
+                  key="att"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-4"
+                >
+                  <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-2xl flex items-center justify-between text-xs text-orange-400 font-bold mb-4">
+                    <span>Attendance Software Leads & Popup Form Submissions ({inquiries.filter(i => (i.service && i.service.toLowerCase().includes("attendance")) || (i.message && i.message.toLowerCase().includes("attendance"))).length})</span>
+                    <span className="font-mono">Auto-synced with MongoDB</span>
+                  </div>
+                  {inquiries
+                    .filter(i => 
+                      (i.name && i.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                      (i.phone && i.phone.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                      (i.service && i.service.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                      (i.message && i.message.toLowerCase().includes(searchTerm.toLowerCase()))
+                    )
+                    .filter(i => (i.service && i.service.toLowerCase().includes("attendance")) || (i.message && i.message.toLowerCase().includes("attendance")))
+                    .map((inq) => (
+                      <InquiryCard key={inq._id} data={inq} onDelete={handleDeleteInquiry} isAttendanceLead={true} />
+                    ))}
+                </motion.div>
+              )}
               {activeTab === "careers" && (
                 <motion.div
                   key="car"
@@ -562,37 +594,69 @@ function SidebarLink({ icon, label, active, onClick, count }) {
   );
 }
 
-function InquiryCard({ data, onDelete }) {
+function InquiryCard({ data, onDelete, isAttendanceLead }) {
+  const cleanPhone = data.phone ? data.phone.replace(/[^0-9]/g, "") : "";
+
   return (
-    <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl hover:border-brand-red/30 transition-colors group relative">
+    <div className={`bg-zinc-900/50 border ${isAttendanceLead ? 'border-orange-500/30 bg-orange-950/10' : 'border-white/10'} p-6 rounded-2xl hover:border-brand-red/30 transition-colors group relative shadow-lg`}>
       <button
         onClick={() => onDelete(data._id)}
         className="absolute top-6 right-6 text-gray-600 hover:text-red-500 transition-colors p-2 opacity-0 group-hover:opacity-100"
       >
         <Trash2 size={18} />
       </button>
+
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-bold mb-1">{data.name}</h3>
-          <p className="text-brand-red text-sm font-bold uppercase tracking-widest">{data.service}</p>
+          <div className="flex items-center gap-2">
+            <h3 className="text-xl font-bold">{data.name}</h3>
+            {isAttendanceLead && (
+              <span className="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-[10px] px-2 py-0.5 rounded-full font-mono font-bold">
+                ATTENDANCE POPUP LEAD
+              </span>
+            )}
+          </div>
+          <p className="text-brand-red text-sm font-bold uppercase tracking-widest mt-0.5">{data.service}</p>
         </div>
         <div className="flex items-center gap-2 bg-zinc-800 px-3 py-1.5 rounded-full mr-10">
           <Clock size={14} className="text-gray-400" />
           <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
-            {new Date(data.createdAt).toLocaleDateString('en-IN')}
+            {new Date(data.createdAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}
           </span>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 mb-4">
-        <div>
-          <p className="text-gray-500 text-[10px] font-bold uppercase mb-1">Email</p>
-          <p className="text-sm font-medium">{data.email}</p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        {data.phone && (
+          <div>
+            <p className="text-gray-500 text-[10px] font-bold uppercase mb-1">Phone / WhatsApp Number</p>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-mono font-bold text-emerald-400">{data.phone}</span>
+              {cleanPhone && (
+                <a
+                  href={`https://wa.me/${cleanPhone.length === 10 ? '91' + cleanPhone : cleanPhone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 bg-emerald-600/20 hover:bg-emerald-600 text-emerald-400 hover:text-white border border-emerald-500/40 rounded-full text-[11px] font-bold transition-all flex items-center gap-1"
+                >
+                  <Icon icon="logos:whatsapp-icon" width="14" />
+                  Chat on WhatsApp
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
+        {data.email && (
+          <div>
+            <p className="text-gray-500 text-[10px] font-bold uppercase mb-1">Email Address</p>
+            <p className="text-sm font-medium">{data.email}</p>
+          </div>
+        )}
       </div>
 
       <div className="bg-black/40 p-4 rounded-xl border border-white/5">
-        <p className="text-gray-500 text-[10px] font-bold uppercase mb-2">Message</p>
+        <p className="text-gray-500 text-[10px] font-bold uppercase mb-2">Requirement / Message</p>
         <p className="text-sm text-gray-300 leading-relaxed italic">"{data.message}"</p>
       </div>
     </div>

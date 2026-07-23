@@ -215,6 +215,8 @@ export default function FooterSection() {
                 links={[
                   { text: "Home", url: "/" },
                   { text: "AI Chatbots", url: "/it-company-in-patna/ai-chatbot-company-in-patna" },
+                  { text: "Attendance Software", url: "/attendance-management-software" },
+                  { text: "EHR Software", url: "/electronic-health-records-software" },
                   { text: "About us", url: "/about" },
                   { text: "Services", url: "/it-company-in-patna" },
                   { text: "Case Studies", url: "/case-studies" },

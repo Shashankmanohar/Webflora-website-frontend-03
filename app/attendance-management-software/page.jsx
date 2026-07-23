@@ -1114,28 +1114,34 @@ export default function AttendanceSoftwarePage() {
         </div>
       </section>
 
-      {/* Bottom CTA Banner */}
-      <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto">
-        <div className="relative p-[1px] rounded-[3rem] bg-gradient-to-r from-[#FF3B00] via-white/20 to-orange-500 overflow-hidden shadow-2xl">
-          <div className="bg-[#080808] rounded-[3rem] p-10 md:p-16 text-center space-y-6 relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#FF3B00]/10 blur-[100px] rounded-full pointer-events-none" />
+      {/* Bottom CTA Banner — Premium Compact Responsive Layout */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div className="relative p-[1px] rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-[#FF3B00] via-white/20 to-orange-500 overflow-hidden shadow-2xl">
+          <div className="bg-[#080808] rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-center space-y-5 relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#FF3B00]/15 blur-[90px] rounded-full pointer-events-none" />
 
-            <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug">
               Ready to Automate Your Attendance System?
             </h2>
 
-            <p className="text-neutral-400 text-base md:text-lg font-light max-w-2xl mx-auto">
+            <p className="text-neutral-300 text-xs sm:text-base font-light max-w-xl mx-auto leading-relaxed">
               Get a customized attendance management software tailored for your workforce size, hardware setup, and budget.
             </p>
 
-            <div className="flex justify-center pt-4">
+            <div className="flex justify-center pt-2">
               <button
                 onClick={() => openQuoteModal("All 8 Hybrid Attendance Systems")}
-                className="group flex items-center justify-center gap-3 px-10 py-5 bg-[#FF3B00] hover:bg-[#ff4d1a] text-white rounded-full font-bold text-base tracking-wide transition-all shadow-[0_0_50px_rgba(255,59,0,0.5)] hover:scale-105 cursor-pointer"
+                className="w-full sm:w-auto group flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-9 sm:py-4 bg-[#FF3B00] hover:bg-[#ff4d1a] text-white rounded-2xl sm:rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-[0_0_40px_rgba(255,59,0,0.4)] hover:scale-105 cursor-pointer"
               >
-                <span>REQUEST CUSTOM QUOTE & DEMO</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <span>Get Custom Quote & Live Demo</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[10px] sm:text-xs font-mono text-neutral-400 pt-3 border-t border-white/10 max-w-lg mx-auto">
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Free Technical Demo</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> 24-Hour Custom Proposal</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Zero Per-User Fees</span>
             </div>
           </div>
         </div>

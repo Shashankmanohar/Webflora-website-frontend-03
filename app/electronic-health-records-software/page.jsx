@@ -23,6 +23,7 @@ import {
 import SafeIcon from "../it-company-in-patna/components/client/SafeIcon";
 import ClientMarquee from "../Components/ClientMarquee";
 import FaqSection from "../it-company-in-patna/components/FaqSection";
+import WhyChooseSection from "../Components/WhyChooseSection";
 
 // Floating decorative background blobs
 const FloatingElement = ({ children, duration = 6, delay = 0, className = "" }) => (
@@ -394,6 +395,58 @@ export default function EHRSoftwarePage() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <WhyChooseSection
+        title={
+          <>
+            Why Choose <span className="text-[#FF3B00]">Webflora Technologies</span> For EHR Software
+          </>
+        }
+        subtitle="Healthcare providers choose Webflora because we combine enterprise HIPAA security, AI voice charting, and tailor-made clinical workflows with 100% code ownership and zero monthly per-user SaaS fees."
+        cards={[
+          {
+            icon: "solar:shield-check-bold",
+            title: "100% HIPAA & Data Security",
+            desc: "Protect sensitive PHI with AES-256 database encryption, role-based access control, multi-factor authentication, and granular audit logs complying with international data privacy standards."
+          },
+          {
+            icon: "solar:wallet-money-bold",
+            title: "Zero Monthly SaaS License Fees",
+            desc: "Eliminate expensive per-doctor monthly subscriptions. Gain 100% full source code ownership with a transparent one-time investment and zero recurring per-user fees."
+          },
+          {
+            icon: "solar:microphone-3-bold",
+            title: "AI Voice-to-Text Dictation",
+            desc: "Cut clinical charting time in half. Integrated Whisper AI speech-to-text dictation allows doctors to speak prescriptions and clinical notes directly into patient records with real-time accuracy."
+          },
+          {
+            icon: "solar:structure-bold",
+            title: "Seamless Lab & Pharmacy Sync",
+            desc: "Connect your EHR system directly with external laboratories, diagnostic imaging equipment (DICOM/PACS), and in-house pharmacy modules for automated order processing."
+          },
+          {
+            icon: "solar:card-send-bold",
+            title: "Integrated Billing & Claims",
+            desc: "Accelerate revenue cycles with automated CPT/ICD-10 coding support, patient copay tracking, insurance claims workflows, and integrated GST-compliant invoicing."
+          },
+          {
+            icon: "solar:tuning-square-2-bold",
+            title: "Custom Specialty Workflows",
+            desc: "Built around your exact clinical operations—whether for pediatrics, mental health, cardiology, orthopedics, or multi-specialty hospital chains with custom flowsheets."
+          },
+          {
+            icon: "solar:smartphone-rotate-2-bold",
+            title: "Mobile & Caregiver Apps",
+            desc: "Empower doctors, home care assistants, and field nurses with responsive mobile access to update patient charts, record vitals, and issue e-prescriptions on-the-go."
+          },
+          {
+            icon: "solar:server-bold",
+            title: "Private Cloud Data Sovereignty",
+            desc: "Deploy on your own AWS or Azure cloud infrastructure. Maintain 100% control over patient databases, automated daily backups, and sub-second query speeds."
+          }
+        ]}
+      />
+
       {/* Comparison Section: Legacy vs Custom */}
       <section className="relative z-10 py-24 px-6 bg-black">
         <div className="max-w-5xl mx-auto space-y-16">
@@ -518,6 +571,112 @@ export default function EHRSoftwarePage() {
         </div>
       </section>
 
+      {/* Client Reviews / Testimonials Section */}
+      <section className="relative z-10 py-24 px-6 bg-[#030303]/80 border-t border-white/5">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <span className="text-[#FF3B00] font-black uppercase tracking-[0.3em] text-xs">
+              Client Feedback & Reviews
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+              Trusted By Leading Healthcare Providers
+            </h2>
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto font-light">
+              See how hospitals, specialty clinics, and diagnostic networks transform patient care and operational efficiency with Webflora EHR software.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-[2rem] bg-neutral-950 border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF3B00]/5 blur-2xl rounded-full" />
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-amber-400 gap-1 text-sm">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+                    2+ Hours Saved Daily
+                  </span>
+                </div>
+                
+                <p className="text-neutral-300 text-sm font-light leading-relaxed">
+                  "Webflora Technologies replaced our legacy EMR system with a fully customized, HIPAA-compliant electronic health records platform. Our doctors now save over 2 hours every day using the built-in AI voice dictation. Best of all, we completely eliminated monthly per-user licensing fees."
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-white/5 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-base text-[#FF3B00] font-bold">
+                  DR
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-sm">Dr. Rajeshwar Prasad</h3>
+                  <p className="text-xs text-neutral-400 font-light">Medical Director, Sunrise Hospital</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[2rem] bg-neutral-950 border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF3B00]/5 blur-2xl rounded-full" />
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-amber-400 gap-1 text-sm">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+                    100% Paperless OPD
+                  </span>
+                </div>
+
+                <p className="text-neutral-300 text-sm font-light leading-relaxed">
+                  "The custom medical billing and digital prescription system Webflora built for our clinic is incredible. Patient records sync instantly across our OPD desks, lab report portals, and WhatsApp notification gateways. Highly recommended healthcare developers!"
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-white/5 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-base text-[#FF3B00] font-bold">
+                  AS
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-sm">Dr. Ananya Sen</h3>
+                  <p className="text-xs text-neutral-400 font-light">Lead Gynecologist, Apex Clinic</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[2rem] bg-neutral-950 border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF3B00]/5 blur-2xl rounded-full" />
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-amber-400 gap-1 text-sm">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+                    Zero SaaS Lock-in
+                  </span>
+                </div>
+
+                <p className="text-neutral-300 text-sm font-light leading-relaxed">
+                  "Webflora engineered a secure, cloud-based EHR and home care module for our lab technicians and visiting nurses. Vitals and diagnostic reports stream directly into patient charts with AES-256 encryption. Smooth execution and outstanding support."
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-white/5 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-base text-[#FF3B00] font-bold">
+                  VV
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-sm">Vikash Verma</h3>
+                  <p className="text-xs text-neutral-400 font-light">Operations Head, Bihar Diagnostics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* GEO Targeted Section */}
       <section className="relative z-10 py-20 px-6 bg-black border-y border-white/5">
         <div className="max-w-4xl mx-auto space-y-8 text-center">
@@ -526,12 +685,75 @@ export default function EHRSoftwarePage() {
             Deploying Advanced Medical Software in Patna & Bihar
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed font-light font-sans">
-            We help healthcare setups, diagnostic labs, and medical practitioners in Patna, Muzaffarpur, Gaya, Bhagalpur, and Darbhanga establish secure and compliant digital records systems. Whether you operate a private clinic near **PMCH**, **IGIMS**, **AIIMS Patna**, or **NMCH**, or coordinate a multi-location healthcare network in Bihar, our customized <strong className="text-white font-medium">electronic medical record systems</strong> and <strong className="text-white font-medium">home care software</strong> will streamline your operational workflow.
+            As a leading <Link href="/it-company-in-patna" className="text-white hover:text-[#FF3B00] underline font-medium transition-colors">IT company in Patna</Link>, we help healthcare setups, diagnostic labs, and medical practitioners in Patna, Muzaffarpur, Gaya, Bhagalpur, and Darbhanga establish secure and compliant digital records systems. Whether you operate a private clinic near PMCH, IGIMS, AIIMS Patna, or NMCH, or coordinate a multi-location <Link href="/industries/healthcare" className="text-white hover:text-[#FF3B00] underline font-medium transition-colors">healthcare network in Bihar</Link>, our customized <Link href="/it-company-in-patna/software-development-company-in-patna" className="text-white hover:text-[#FF3B00] underline font-medium transition-colors">custom electronic medical record systems</Link>, <Link href="/it-company-in-patna/mobile-app-development-company-in-patna" className="text-white hover:text-[#FF3B00] underline font-medium transition-colors">mobile patient apps</Link>, and <Link href="/attendance-management-software" className="text-white hover:text-[#FF3B00] underline font-medium transition-colors">hospital staff attendance software</Link> will streamline your operational workflow. Learn more about <Link href="/why-webflora" className="text-white hover:text-[#FF3B00] underline font-medium transition-colors">why clients choose Webflora</Link> for enterprise engineering.
           </p>
           <div className="inline-flex gap-3 text-xs bg-neutral-900/60 border border-white/5 px-4 py-2 rounded-xl text-neutral-400 font-mono">
             <span>HQ Location: Patna, Bihar</span>
             <span>•</span>
             <span>MSME Reg: UDYAM-BR-26-0183379</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Internal Solutions */}
+      <section className="relative z-10 py-16 px-6 bg-black border-b border-white/5">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <div className="text-center space-y-3">
+            <span className="text-[#FF3B00] font-black uppercase tracking-[0.3em] text-xs">Connected Ecosystem</span>
+            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight">Explore Related Healthcare & Enterprise Solutions</h2>
+            <p className="text-neutral-400 text-sm font-light max-w-2xl mx-auto">
+              Discover how our custom software engineering powers hospitals, clinics, and enterprises across India.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/industries/healthcare"
+              className="p-5 rounded-2xl bg-neutral-950 border border-white/5 hover:border-[#FF3B00]/30 transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="font-bold text-white group-hover:text-[#FF3B00] transition-colors text-sm flex items-center justify-between">
+                  Healthcare Software <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-[#FF3B00]" />
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 font-light">Custom hospital management, clinic portals & telemetry systems.</p>
+              </div>
+            </Link>
+
+            <Link
+              href="/it-company-in-patna/software-development-company-in-patna"
+              className="p-5 rounded-2xl bg-neutral-950 border border-white/5 hover:border-[#FF3B00]/30 transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="font-bold text-white group-hover:text-[#FF3B00] transition-colors text-sm flex items-center justify-between">
+                  Software Development <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-[#FF3B00]" />
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 font-light">Bespoke web & cloud software engineering in Patna & Bihar.</p>
+              </div>
+            </Link>
+
+            <Link
+              href="/attendance-management-software"
+              className="p-5 rounded-2xl bg-neutral-950 border border-white/5 hover:border-[#FF3B00]/30 transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="font-bold text-white group-hover:text-[#FF3B00] transition-colors text-sm flex items-center justify-between">
+                  Staff Attendance Systems <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-[#FF3B00]" />
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 font-light">Biometric & facial recognition attendance for medical staff.</p>
+              </div>
+            </Link>
+
+            <Link
+              href="/it-company-in-patna/mobile-app-development-company-in-patna"
+              className="p-5 rounded-2xl bg-neutral-950 border border-white/5 hover:border-[#FF3B00]/30 transition-all group flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="font-bold text-white group-hover:text-[#FF3B00] transition-colors text-sm flex items-center justify-between">
+                  Mobile Patient Apps <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-[#FF3B00]" />
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 font-light">iOS & Android mobile apps for appointment booking & vitals.</p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

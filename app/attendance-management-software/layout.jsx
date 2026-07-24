@@ -1,28 +1,40 @@
 import Script from "next/script";
 
 export const metadata = {
-  title: "Attendance Management Software in Patna, Bihar | AI Camera, QR & Biometric HRMS",
-  description: "Top Attendance Management Software Company in Patna, Bihar. Webflora builds custom AI camera face recognition, dynamic QR, biometric hardware sync, geofenced GPS, and WhatsApp bot attendance systems with automated payroll.",
+  title: "Attendance Management System & Software in Patna | Face Recognition & Biometric SaaS",
+  description: "Best Attendance Management Software & Face Recognition System in Patna, Bihar. Webflora provides custom SaaS attendance, AI face scanning machines, eSSL biometric software, dynamic QR code attendance, and WhatsApp tracking systems with automated payroll.",
   keywords: [
+    "saas attendance",
+    "attendance management system",
+    "face recognition attendance system",
     "attendance management software",
-    "attendance software in patna",
-    "ai camera attendance system",
-    "cctv facial recognition attendance software bihar",
-    "qr code attendance software",
-    "biometric attendance software patna",
-    "manual attendance sheet software",
-    "geofenced gps attendance mobile app",
-    "whatsapp attendance bot software",
-    "hrms payroll attendance software india",
-    "coaching institute attendance software patna",
-    "factory worker shift roster attendance software"
+    "face attendance machine",
+    "essl biometric software",
+    "face scanning attendance system",
+    "real time biometric software",
+    "e time track lite",
+    "attendance manager software",
+    "attendance software",
+    "qr code attendance system",
+    "rfid attendance system",
+    "face attendance system",
+    "time attendance software",
+    "attendance tracking software",
+    "time attendance system",
+    "employee attendance system",
+    "online attendance management system",
+    "online attendance system",
+    "free attendance management system",
+    "attendance tracking system",
+    "time and attendance system",
+    "attendance software in patna"
   ].join(", "),
   alternates: {
     canonical: "https://webfloratechnologies.com/attendance-management-software",
   },
   openGraph: {
-    title: "Attendance Management Software in Patna, Bihar | AI Camera, QR & Biometrics",
-    description: "Enterprise Attendance Management Software with AI face recognition, dynamic QR codes, biometric hardware sync, and Tally/Zoho payroll integration.",
+    title: "Attendance Management System | Face Recognition & Biometric SaaS Software",
+    description: "Enterprise Attendance Management Software & Online System with AI face scanning, eSSL biometric software sync, dynamic QR codes, and automated payroll integration.",
     url: "https://webfloratechnologies.com/attendance-management-software",
     siteName: "Webflora Technologies",
     locale: "en_IN",
@@ -38,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Attendance Management Software in Patna | AI Camera & Biometrics",
-    description: "Webflora Technologies builds custom attendance management software featuring AI CCTV face recognition, dynamic QR scanning, manual desk sheets, and instant WhatsApp alerts.",
+    title: "Attendance Management System | AI Face Recognition & Biometrics",
+    description: "Webflora Technologies builds custom attendance tracking software featuring AI CCTV face recognition, dynamic QR scanning, eSSL biometric hardware sync, and instant WhatsApp alerts.",
     images: ["https://webfloratechnologies.com/title-logo.png"],
   }
 };
@@ -51,7 +63,7 @@ const jsonLdSchema = {
     {
       "@type": "SoftwareApplication",
       "@id": "https://webfloratechnologies.com/attendance-management-software#software",
-      "name": "Webflora AI & Hybrid Attendance Management Software",
+      "name": "Webflora AI Face Recognition & Online Attendance Management System",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web, Android, iOS, Windows, Linux",
       "author": {
@@ -59,7 +71,7 @@ const jsonLdSchema = {
         "name": "Webflora Technologies",
         "url": "https://webfloratechnologies.com"
       },
-      "description": "Enterprise attendance management software supporting 8 distinct punch modes including AI camera face scanning, dynamic QR codes, biometrics, RFID, GPS geofencing, WhatsApp bots, and manual desk logging.",
+      "description": "Enterprise online attendance management system supporting 8 distinct punch modes including face recognition attendance system, dynamic QR code attendance, eSSL biometric software sync, RFID, GPS geofencing, WhatsApp bots, and manual desk sheet logging.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -73,7 +85,7 @@ const jsonLdSchema = {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "128"
+        "reviewCount": "142"
       }
     },
     {
@@ -117,34 +129,34 @@ const jsonLdSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Can the AI Camera Attendance System work with existing CCTV cameras?",
+          "name": "Why choose Webflora for your attendance management system?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! Webflora's AI face recognition software connects directly to existing IP CCTV camera RTSP video streams (Hikvision, Dahua, CP Plus, etc.) without requiring proprietary hardware machines."
+            "text": "Webflora offers an 8-in-1 hybrid attendance system combining AI CCTV face recognition, dynamic QR codes, eSSL biometric software integration, and field GPS tracking. We provide flat-rate software options with 100% source code ownership, zero per-user SaaS tax, offline edge sync, and local on-site support in Patna, Bihar."
           }
         },
         {
           "@type": "Question",
-          "name": "How does the Dynamic QR Code system prevent proxy attendance?",
+          "name": "Can Webflora integrate with eSSL biometric software and e time track lite?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Webflora generates dynamic, rotating QR codes refreshed every 15 seconds, enforced with GPS geofencing and unique device UUID binding to eliminate screenshot sharing and proxy punches."
+            "text": "Yes! Webflora connects seamlessly with eSSL biometric software, Real Time biometric software, e time track lite, ZKTeco, Matrix, and other hardware devices, centralizing all physical fingerprint punches into a single online cloud dashboard."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the best attendance management software company in Patna, Bihar?",
+          "name": "How does the face recognition attendance system stop buddy punching and proxy punches?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Webflora Technologies is the leading custom attendance software developer in Patna, Bihar, offering AI CCTV face recognition, dynamic QR, biometric reader sync, and Tally/Zoho payroll integration."
+            "text": "Our face scanning attendance system uses 3D ISO-certified liveness detection to verify real human presence in 0.5 seconds, preventing photos, videos, or mobile screen spoofing."
           }
         },
         {
           "@type": "Question",
-          "name": "Can the software function offline during internet outages?",
+          "name": "What is the difference between custom attendance software and subscription SaaS attendance?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, Webflora attendance software features an offline edge engine that stores encrypted punch logs locally on premise devices and auto-syncs with the cloud database once internet connectivity is restored."
+            "text": "While traditional SaaS attendance forces companies to pay monthly fees per employee forever, Webflora offers both flexible cloud SaaS plans and flat-rate custom software development where you own the full source code without recurring license costs."
           }
         }
       ]
@@ -164,3 +176,4 @@ export default function AttendanceLayout({ children }) {
     </>
   );
 }
+

@@ -41,7 +41,11 @@ import {
   MessageSquare,
   X,
   Send,
-  PhoneCall
+  PhoneCall,
+  Award,
+  HelpCircle,
+  BarChart3,
+  HeartHandshake
 } from "lucide-react";
 import ClientMarquee from "../Components/ClientMarquee";
 import SEOContentBlock from "../Components/SEOContentBlock";
@@ -54,13 +58,13 @@ const AttendanceSimulator = () => {
   const [scanResult, setScanResult] = useState(null);
   const [qrCounter, setQrCounter] = useState(15);
   const [manualRows, setManualRows] = useState([
-    { id: "EMP-101", name: "Anish Verma", dept: "Engineering", status: "Present", time: "09:14 AM", mode: "AI Face" },
-    { id: "EMP-102", name: "Priya Sharma", dept: "Marketing", status: "Present", time: "09:22 AM", mode: "QR Mobile" },
-    { id: "EMP-103", name: "Vikram Kumar", dept: "Operations", status: "On Leave", time: "-", mode: "Admin Sync" },
-    { id: "EMP-104", name: "Sneha Patel", dept: "Design", status: "Late", time: "09:48 AM", mode: "Manual Log" },
+    { id: "EMP-101", name: "Anish Verma", dept: "Engineering", status: "Present", time: "09:14 AM", mode: "Face Scan" },
+    { id: "EMP-102", name: "Priya Sharma", dept: "Marketing", status: "Present", time: "09:22 AM", mode: "Dynamic QR" },
+    { id: "EMP-103", name: "Vikram Kumar", dept: "Operations", status: "On Leave", time: "-", mode: "Admin Desk" },
+    { id: "EMP-104", name: "Sneha Patel", dept: "Design", status: "Late", time: "09:48 AM", mode: "eSSL Hardware" },
   ]);
 
-  // QR Timer simulation
+  // Dynamic QR Timer simulation
   useEffect(() => {
     const timer = setInterval(() => {
       setQrCounter((prev) => (prev > 1 ? prev - 1 : 15));
@@ -101,7 +105,7 @@ const AttendanceSimulator = () => {
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
           </div>
-          <span className="text-xs font-mono text-neutral-400">Webflora Multi-Mode Kiosk</span>
+          <span className="text-xs font-mono text-neutral-400">Webflora Attendance Kiosk</span>
         </div>
         <div className="text-[10px] font-mono text-emerald-400 flex items-center gap-1.5 font-semibold">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -119,7 +123,7 @@ const AttendanceSimulator = () => {
               : "text-neutral-400 hover:text-white"
           }`}
         >
-          <Camera size={13} /> AI Camera
+          <Camera size={13} /> Face Scan
         </button>
         <button
           onClick={() => setActiveTab("qr-code")}
@@ -139,7 +143,7 @@ const AttendanceSimulator = () => {
               : "text-neutral-400 hover:text-white"
           }`}
         >
-          <ClipboardList size={13} /> Manual Desk
+          <ClipboardList size={13} /> Desk Sheet
         </button>
         <button
           onClick={() => setActiveTab("biometric")}
@@ -149,7 +153,7 @@ const AttendanceSimulator = () => {
               : "text-neutral-400 hover:text-white"
           }`}
         >
-          <Fingerprint size={13} /> Biometric
+          <Fingerprint size={13} /> eSSL Biometric
         </button>
       </div>
 
@@ -159,8 +163,8 @@ const AttendanceSimulator = () => {
         {activeTab === "ai-camera" && (
           <div className="space-y-3">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-neutral-400 font-mono">CCTV RTSP Stream: Main Gate Kiosk</span>
-              <span className="text-emerald-400 font-mono font-bold text-[10px]">99.8% ACCURACY</span>
+              <span className="text-neutral-400 font-mono">CCTV Stream: Office Entrance</span>
+              <span className="text-emerald-400 font-mono font-bold text-[10px]">99.8% MATCH</span>
             </div>
 
             <div className="relative aspect-video rounded-xl bg-neutral-900/90 border border-white/10 overflow-hidden flex flex-col items-center justify-center p-3">
@@ -182,11 +186,11 @@ const AttendanceSimulator = () => {
               >
                 {isScanning ? (
                   <>
-                    <RefreshCw className="animate-spin" size={12} /> Matching Face Vector...
+                    <RefreshCw className="animate-spin" size={12} /> Scanning Face...
                   </>
                 ) : (
                   <>
-                    <Camera size={12} /> Test Face Punch-In
+                    <Camera size={12} /> Test Face Punch
                   </>
                 )}
               </button>
@@ -200,10 +204,10 @@ const AttendanceSimulator = () => {
               >
                 <div className="flex justify-between text-white font-bold">
                   <span>{scanResult.name}</span>
-                  <span className="text-emerald-400 font-mono">{scanResult.match} Match</span>
+                  <span className="text-emerald-400 font-mono">{scanResult.match} Verified</span>
                 </div>
                 <div className="text-neutral-400 font-mono text-[10px]">
-                  Time: <span className="text-white">{scanResult.timestamp}</span> | Status: <span className="text-emerald-400 font-bold">PUNCH SUCCESS</span>
+                  Time: <span className="text-white">{scanResult.timestamp}</span> | Status: <span className="text-emerald-400 font-bold">PRESENT</span>
                 </div>
               </motion.div>
             )}
@@ -217,9 +221,9 @@ const AttendanceSimulator = () => {
               <QrCode size={95} className="text-black" />
             </div>
             <div>
-              <div className="text-xs font-bold text-white">Dynamic Rotating QR Scanner</div>
+              <div className="text-xs font-bold text-white">Dynamic Rotating QR Code</div>
               <div className="text-[11px] text-neutral-400 mt-1">
-                Refreshes in <span className="text-[#FF3B00] font-mono font-bold">{qrCounter}s</span> | Geofence: <span className="text-emerald-400 font-mono font-bold">12m Inside Campus</span>
+                Refreshes in <span className="text-[#FF3B00] font-mono font-bold">{qrCounter}s</span> | Geofence: <span className="text-emerald-400 font-mono font-bold">Inside Campus</span>
               </div>
             </div>
           </div>
@@ -229,7 +233,7 @@ const AttendanceSimulator = () => {
         {activeTab === "manual" && (
           <div className="space-y-2.5 text-xs">
             <div className="flex justify-between items-center text-neutral-400 text-[11px]">
-              <span>Admin Desk Attendance Sheet</span>
+              <span>Admin Desk Attendance Manager</span>
               <span>Click status to toggle</span>
             </div>
             <div className="space-y-1.5">
@@ -245,7 +249,7 @@ const AttendanceSimulator = () => {
                       row.status === "Present"
                         ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                         : row.status === "Late"
-                        ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                        ? "bg-amber-400/10 text-amber-400 border border-amber-400/20"
                         : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
                     }`}
                   >
@@ -264,9 +268,9 @@ const AttendanceSimulator = () => {
               <Fingerprint size={36} />
             </div>
             <div>
-              <div className="font-bold text-white text-sm">Biometric Fingerprint & RFID Card Reader</div>
+              <div className="font-bold text-white text-sm">eSSL Biometric & Hardware Sync</div>
               <p className="text-neutral-400 text-[11px] mt-1">
-                Hardware Sync: eSSL, ZKTeco, Matrix, Realtime | Status: <span className="text-emerald-400 font-mono font-bold">CONNECTED</span>
+                Works with eSSL, e time track lite, ZKTeco | Status: <span className="text-emerald-400 font-mono font-bold">CONNECTED</span>
               </p>
             </div>
           </div>
@@ -311,14 +315,14 @@ const FAQItem = ({ question, answer }) => {
   );
 };
 
-// Main Component
+// Main Page Component
 export default function AttendanceSoftwarePage() {
   const mainRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedSystem, setSelectedSystem] = useState("AI Camera & CCTV Face System");
-  const [formStatus, setFormStatus] = useState(null); // 'submitting', 'success', 'error'
+  const [selectedSystem, setSelectedSystem] = useState("AI Face Recognition Attendance System");
+  const [formStatus, setFormStatus] = useState(null);
 
-  const openQuoteModal = (systemName = "AI Camera & CCTV Face System") => {
+  const openQuoteModal = (systemName = "AI Face Recognition Attendance System") => {
     setSelectedSystem(systemName);
     setFormStatus(null);
     setIsModalOpen(true);
@@ -359,7 +363,7 @@ export default function AttendanceSoftwarePage() {
   return (
     <main ref={mainRef} className="relative min-h-screen bg-black text-white selection:bg-[#FF3B00] overflow-x-hidden">
       
-      {/* Global Background ambient glow */}
+      {/* Background Ambient Glow */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="creative-grid-bg" />
         <div className="creative-grid-dots" />
@@ -367,48 +371,48 @@ export default function AttendanceSoftwarePage() {
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-[radial-gradient(circle_at_center,_rgba(255,59,0,0.12)_0%,transparent_70%)] blur-[100px]" />
       </div>
 
-      {/* Hero Section — Clean 100% Viewport Fit Layout */}
+      {/* HERO SECTION: Ultra Simple & Direct */}
       <section className="relative z-10 min-h-[100dvh] lg:min-h-screen flex flex-col justify-center px-4 sm:px-6 pt-20 pb-6 lg:pt-24 lg:pb-12 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-center">
           
-          {/* Left Column: Clean Typography & CTAs */}
-          <div className="lg:col-span-7 space-y-3 sm:space-y-5 text-left">
+          {/* Left Column */}
+          <div className="lg:col-span-7 space-y-4 text-left">
             
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/10 rounded-full px-3 py-1 backdrop-blur-md">
               <div className="w-2 h-2 rounded-full bg-[#FF3B00] animate-pulse" />
               <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-neutral-200 uppercase">
-                ATTENDANCE & HRMS SOFTWARE PLATFORM
+                SIMPLE & ACCURATE ATTENDANCE SOFTWARE
               </span>
             </div>
             
-            {/* Clean 2-Line Headline */}
+            {/* Simple Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight sm:leading-[1.15] text-white">
               Smart Attendance <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-[#FF3B00] font-extrabold">
-                Management Software
+                Management System
               </span>
             </h1>
 
-            {/* Concise Sub-headline Pill Tags */}
+            {/* Keyword Pills */}
             <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono">
               <span className="bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1.5">
-                <Camera size={12} className="text-[#FF3B00]" /> AI CCTV Face
+                <Camera size={12} className="text-[#FF3B00]" /> Face Recognition System
               </span>
               <span className="bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1.5">
-                <QrCode size={12} className="text-[#FF3B00]" /> Dynamic QR
+                <QrCode size={12} className="text-[#FF3B00]" /> Dynamic QR Attendance
               </span>
               <span className="bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1.5">
-                <ClipboardList size={12} className="text-[#FF3B00]" /> Manual Sheet
+                <Fingerprint size={12} className="text-[#FF3B00]" /> eSSL Biometric Software Sync
               </span>
               <span className="bg-white/5 border border-white/10 text-neutral-300 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1.5">
-                <Fingerprint size={12} className="text-[#FF3B00]" /> Biometrics & RFID
+                <Smartphone size={12} className="text-[#FF3B00]" /> Online Attendance System
               </span>
             </div>
             
-            {/* Subtitle Description */}
-            <p className="text-neutral-400 text-xs sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl">
-              Eliminate proxy attendance, manual register errors, and payroll delays. We build tailored software supporting 8 distinct attendance modes: AI camera facial recognition, dynamic QR scanning, manual desk sheets, biometrics, RFID, field GPS geofencing, WhatsApp bots, and Wi-Fi auto-check-in.
+            {/* Simple Subtitle */}
+            <p className="text-neutral-300 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl">
+              Track employee and student attendance easily. Use AI face cameras, dynamic QR codes, <strong>eSSL biometric software</strong>, RFID cards, or mobile GPS — all managed in one simple <strong>attendance management system</strong>.
             </p>
             
             {/* Action Buttons */}
@@ -417,33 +421,33 @@ export default function AttendanceSoftwarePage() {
                 onClick={() => openQuoteModal("All 8 Hybrid Attendance Systems")}
                 className="group flex items-center justify-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3.5 bg-[#FF3B00] hover:bg-[#ff4d1a] text-white rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all shadow-[0_0_30px_rgba(255,59,0,0.35)] hover:scale-105 cursor-pointer"
               >
-                <span>Schedule Live Demo</span>
+                <span>Get Free Demo</span>
                 <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <a 
-                href="#features" 
+                href="#why-choose" 
                 className="flex items-center justify-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white rounded-full font-semibold text-xs sm:text-sm tracking-wide transition-all backdrop-blur-md hover:scale-105"
               >
-                Explore 8 Systems
+                Why Choose Us
               </a>
             </div>
 
             {/* Micro Trust Indicators */}
             <div className="pt-3 sm:pt-4 border-t border-white/10 flex flex-wrap gap-4 sm:gap-6 text-[10px] sm:text-xs text-neutral-400 font-mono">
               <div className="flex items-center gap-1.5">
-                <Shield className="text-emerald-400" size={14} /> 99.8% AI Face Match
+                <Shield className="text-emerald-400" size={14} /> 99.8% Face Accuracy
               </div>
               <div className="flex items-center gap-1.5">
-                <Database className="text-[#FF3B00]" size={14} /> Zero Proxy Leakage
+                <Database className="text-[#FF3B00]" size={14} /> Works Offline
               </div>
               <div className="flex items-center gap-1.5">
-                <Cpu className="text-blue-400" size={14} /> Instant Payroll Sync
+                <Cpu className="text-blue-400" size={14} /> 1-Click Payroll Sync
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Clean Interactive Simulator Kiosk (Desktop Only) */}
+          {/* Right Column: Kiosk Demo */}
           <div className="hidden lg:block lg:col-span-5 relative w-full">
             <div className="absolute -inset-4 bg-gradient-to-r from-[#FF3B00]/20 to-orange-500/10 rounded-[3rem] opacity-20 blur-3xl" />
             <AttendanceSimulator />
@@ -452,19 +456,19 @@ export default function AttendanceSoftwarePage() {
         </div>
       </section>
 
-      {/* Client Logo Marquee */}
+      {/* Client Marquee */}
       <ClientMarquee />
 
-      {/* 8 Complete Attendance Systems Breakdown Grid */}
+      {/* 8 SIMPLE PUNCH MODES */}
       <section id="features" className="relative z-10 py-24 px-6 border-y border-white/5 bg-[#030303]/60">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4">
-            <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">8 Distinct Technologies</span>
+            <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">Attendance Methods</span>
             <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-              Types of Attendance Systems We Provide
+              8 Simple Ways to Track Attendance
             </h2>
             <p className="text-neutral-400 text-base md:text-lg max-w-3xl mx-auto font-light">
-              Choose or combine any of these attendance tracking technologies into a unified enterprise HRMS & payroll software.
+              Choose one or combine any of these simple attendance tracking methods into one dashboard.
             </p>
           </div>
 
@@ -476,24 +480,24 @@ export default function AttendanceSoftwarePage() {
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <Camera size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">1. AI Camera & CCTV Face System</h3>
+                  <h3 className="text-xl font-bold text-white">1. Face Recognition System</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    CCTV Stream AI
+                    Uses CCTV Cameras
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Uses existing IP CCTV cameras to detect and match faces in under 0.5 seconds with ISO-certified anti-spoofing liveness checks.
+                    Scans faces automatically as staff walk through the door using your existing CCTV cameras in 0.5 seconds.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> 30-face group scanning</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Photo & video spoof block</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Fast 0.5-second face scan</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Stops photo & video spoofing</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("AI Camera & CCTV Face System")}
+                    onClick={() => openQuoteModal("Face Recognition System")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -509,22 +513,22 @@ export default function AttendanceSoftwarePage() {
                   </div>
                   <h3 className="text-xl font-bold text-white">2. Dynamic QR Code System</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Zero Hardware Cost
+                    Zero Extra Machine Cost
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Contactless mobile phone scan using dynamic rotating QR codes refreshed every 15 seconds to eliminate screenshot sharing.
+                    Display a rotating QR code on screen. Students and employees scan it with their phone camera to check in.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Geofence location check</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Works on any smartphone</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Refreshes every 15 seconds</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Prevents screenshot sharing</li>
                   </ul>
                   <button
                     onClick={() => openQuoteModal("Dynamic QR Code System")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -538,24 +542,24 @@ export default function AttendanceSoftwarePage() {
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <ClipboardList size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">3. Manual & Web Desk Portal</h3>
+                  <h3 className="text-xl font-bold text-white">3. Admin Desk Sheet Portal</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Admin Overrides
+                    Super Admin Desk
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Single-click supervisor attendance logging, shift roster creation, late-reason notes, and automated leave request synchronization.
+                    Simple web desk portal for HR supervisors to mark bulk attendance, approve leaves, and view daily logs in one click.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> One-click bulk sheet entry</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> 1-click bulk updates</li>
                     <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Complete audit trail logs</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("Manual & Web Desk Portal")}
+                    onClick={() => openQuoteModal("Admin Desk Sheet Portal")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -569,151 +573,148 @@ export default function AttendanceSoftwarePage() {
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <Fingerprint size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">4. Biometric Fingerprint Reader</h3>
+                  <h3 className="text-xl font-bold text-white">4. eSSL Biometric Software Sync</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Hardware Reader Sync
+                    Hardware Machine Sync
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Direct software integration with standalone biometric hardware readers (eSSL, ZKTeco, Matrix, Realtime) with offline storage.
+                    Connects directly with your existing fingerprint machines like <strong>eSSL biometric software</strong>, <strong>e time track lite</strong>, and ZKTeco.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Hardware SDK integration</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Automatic cloud auto-sync</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> eSSL & e time track lite sync</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Real-time device cloud sync</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("Biometric Fingerprint Reader")}
+                    onClick={() => openQuoteModal("eSSL Biometric Software Sync")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* System 5: RFID & NFC Cards */}
+            {/* System 5: RFID Cards */}
             <div className="relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent transition-all duration-500 shadow-2xl group">
               <div className="bg-[#080808] p-8 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden">
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <CreditCard size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">5. RFID & NFC Card Badges</h3>
+                  <h3 className="text-xl font-bold text-white">5. RFID Card Badges</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Tap-and-Go Kiosks
+                    Turnstile Gate Tap
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Proximity RFID card & NFC badge reader integration for turnstiles, barrier gates, and high-volume corporate entry gates.
+                    Super fast 0.2-second card swipe for office turnstiles, building gates, and employee smart ID badges.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> High-speed turnstile gate sync</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Employee ID card integration</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Turnstile gate integration</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> 0.2-second card tap speed</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("RFID & NFC Card Badges")}
+                    onClick={() => openQuoteModal("RFID Card Badges")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* System 6: Field GPS Geofence */}
+            {/* System 6: Field GPS */}
             <div className="relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent transition-all duration-500 shadow-2xl group">
               <div className="bg-[#080808] p-8 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden">
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <MapPin size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">6. Geofenced GPS & Mobile Selfie</h3>
+                  <h3 className="text-xl font-bold text-white">6. Geofenced Mobile GPS App</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Field Force Tracking
+                    For Field Sales Teams
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Designed for remote workers and field sales executives with real-time GPS location validation, live route logs, and selfie timestamps.
+                    Tracks field sales reps and traveling staff with accurate 5-meter GPS location checks and selfie timestamps.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> ±5m GPS radius validation</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Client site visit timestamps</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> 5m accurate GPS radius</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Live route & selfie logs</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("Geofenced GPS & Mobile Selfie")}
+                    onClick={() => openQuoteModal("Geofenced Mobile GPS App")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* System 7: WhatsApp & Slack Bot */}
+            {/* System 7: WhatsApp Bot */}
             <div className="relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent transition-all duration-500 shadow-2xl group">
               <div className="bg-[#080808] p-8 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden">
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <MessageSquare size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">7. WhatsApp & Slack Check Bot</h3>
+                  <h3 className="text-xl font-bold text-white">7. WhatsApp Check-In Bot</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Instant Messaging
+                    No App Needed
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Employees send a simple WhatsApp or Slack command (`#punchin`) to log attendance instantly with auto GPS location confirmation. Powered by Webflora's{" "}
-                    <Link href="/it-company-in-patna/ai-chatbot-company-in-patna" className="text-[#FF3B00] hover:underline font-semibold">
-                      AI Chatbot Engine
-                    </Link>.
+                    Staff simply send a text or location pin on WhatsApp to punch in instantly. Powered by Webflora&apos;s AI chatbot.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Automated WhatsApp HR bot</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Zero app installation required</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Easy WhatsApp punch</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Instant parent alerts</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("WhatsApp & Slack Check Bot")}
+                    onClick={() => openQuoteModal("WhatsApp Check-In Bot")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* System 8: Wi-Fi & Bluetooth Beacon */}
+            {/* System 8: Wi-Fi Auto */}
             <div className="relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent transition-all duration-500 shadow-2xl group">
               <div className="bg-[#080808] p-8 rounded-[2rem] h-full flex flex-col justify-between relative overflow-hidden">
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center text-[#FF3B00] group-hover:scale-110 group-hover:bg-[#FF3B00] group-hover:text-white transition-all">
                     <Wifi size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">8. Wi-Fi & Bluetooth Beacon</h3>
+                  <h3 className="text-xl font-bold text-white">8. Wi-Fi Auto Check-In</h3>
                   <span className="inline-block text-[10px] bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-2.5 py-0.5 rounded-full font-mono font-bold">
-                    Zero-Touch Auto-Check
+                    Hands-Free Check
                   </span>
                   <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                    Automated background check-in when an employee's smartphone connects to the office Wi-Fi network or BLE Bluetooth beacon.
+                    Automatically logs check-in the moment an employee&apos;s mobile device connects to your office Wi-Fi network.
                   </p>
                 </div>
                 <div>
                   <ul className="space-y-2 mt-6 pt-4 border-t border-white/5 text-xs text-neutral-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Automatic office Wi-Fi punch</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Zero action needed from staff</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Automatic Wi-Fi check-in</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-[#FF3B00]" /> Completely hands-free</li>
                   </ul>
                   <button
-                    onClick={() => openQuoteModal("Wi-Fi & Bluetooth Beacon Auto-Check")}
+                    onClick={() => openQuoteModal("Wi-Fi Auto Check-In")}
                     className="w-full mt-5 py-2.5 bg-[#FF3B00]/10 hover:bg-[#FF3B00] text-[#FF3B00] hover:text-white border border-[#FF3B00]/30 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md cursor-pointer"
                   >
-                    <span>Get Instant Quote</span>
+                    <span>Get Free Quote</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -724,327 +725,265 @@ export default function AttendanceSoftwarePage() {
         </div>
       </section>
 
-      {/* Advanced Capabilities */}
-      <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#080808] p-8 rounded-3xl border border-white/10 space-y-4">
+      {/* WHY CHOOSE WEBFLORA: Simple & Direct */}
+      <section id="why-choose" className="relative z-10 py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF3B00]/20 bg-[#FF3B00]/5 text-xs text-[#FF3B00] font-bold uppercase tracking-wider font-mono">
+            🤝 Trust & Reliability
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+            Why Choose <span className="text-[#FF3B00]">Webflora Technologies</span>?
+          </h2>
+          <p className="text-neutral-300 text-base sm:text-lg font-light leading-relaxed max-w-3xl mx-auto">
+            We make attendance tracking easy, accurate, and affordable for offices, coaching centers, and factories in Patna and across Bihar.
+          </p>
+        </div>
+
+        {/* 4 Stat Highlights */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 p-8 rounded-3xl bg-[#080808] border border-white/10 relative overflow-hidden shadow-2xl">
+          <div className="text-center space-y-2">
+            <div className="text-3xl md:text-5xl font-extrabold text-[#FF3B00] font-mono">
+              99.8%
+            </div>
+            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-400">
+              No Fake Punches
+            </div>
+          </div>
+
+          <div className="text-center space-y-2">
+            <div className="text-3xl md:text-5xl font-extrabold text-emerald-400 font-mono">
+              0.5s
+            </div>
+            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-400">
+              Fast Face Matching
+            </div>
+          </div>
+
+          <div className="text-center space-y-2">
+            <div className="text-3xl md:text-5xl font-extrabold text-blue-400 font-mono">
+              8-in-1
+            </div>
+            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-400">
+              All Modes Included
+            </div>
+          </div>
+
+          <div className="text-center space-y-2">
+            <div className="text-3xl md:text-5xl font-extrabold text-amber-400 font-mono">
+              ₹0
+            </div>
+            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-neutral-400">
+              Zero Monthly Fees Option
+            </div>
+          </div>
+        </div>
+
+        {/* 8 Benefit Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
+              <Layers size={24} />
+            </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              All-in-One System
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Track office staff, factory workers, and field sales teams inside a single simple software.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
+              <ShieldCheck size={24} />
+            </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              No Fake Punches
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Smart face matching stops employees from punching in for absent coworkers using photos or screens.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
+              <DollarSign size={24} />
+            </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              Zero Monthly Fees Option
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Pay once for custom software development with full source code ownership. No forced monthly fees.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
+              <Fingerprint size={24} />
+            </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              Use Existing Hardware
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Connect your current eSSL or ZKTeco fingerprint machines directly into our software.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
             <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
               <Server size={24} />
             </div>
-            <h3 className="text-xl font-bold text-white">Offline Mode & Local Storage</h3>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              Works Offline
+            </h3>
             <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              Never worry about internet outages. Attendance logs store locally on the premise server and auto-sync with the cloud once restored.
+              If the internet drops, punches save locally on device and update automatically when connected again.
             </p>
           </div>
 
-          <div className="bg-[#080808] p-8 rounded-3xl border border-white/10 space-y-4">
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
+              <BarChart3 size={24} />
+            </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              1-Click Payroll Math
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Late marks, overtime, and monthly salary deductions calculate automatically in minutes.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
             <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
               <Bell size={24} />
             </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              Instant WhatsApp Alerts
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Send automatic WhatsApp alerts to parents when students arrive, or to managers when staff check in late.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-7 rounded-3xl border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
+              <HeartHandshake size={24} />
+            </div>
+            <h3 className="text-lg font-bold text-white group-hover:text-[#FF3B00] transition-colors">
+              Local Support in Patna
+            </h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Our tech team in Patna provides on-site camera setup, team training, and fast support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Simple Capabilities */}
+      <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-[#080808] p-8 rounded-3xl border border-white/10 space-y-3">
+            <Server className="text-[#FF3B00]" size={28} />
+            <h3 className="text-xl font-bold text-white">Offline Storage</h3>
+            <p className="text-neutral-400 text-xs leading-relaxed font-light">
+              Never worry about internet outages. Attendance logs store locally and auto-sync to cloud when online.
+            </p>
+          </div>
+
+          <div className="bg-[#080808] p-8 rounded-3xl border border-white/10 space-y-3">
+            <Bell className="text-[#FF3B00]" size={28} />
             <h3 className="text-xl font-bold text-white">WhatsApp & SMS Alerts</h3>
             <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              Trigger instant automated alerts to parents when students arrive at coaching centers, or to HR managers for employee delays.
+              Automated entrance messages to parents and instant late check-in alerts to HR managers.
             </p>
           </div>
 
-          <div className="bg-[#080808] p-8 rounded-3xl border border-white/10 space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00]">
-              <Lock size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-white">AES-256 Encrypted Security</h3>
+          <div className="bg-[#080808] p-8 rounded-3xl border border-white/10 space-y-3">
+            <Lock className="text-[#FF3B00]" size={28} />
+            <h3 className="text-xl font-bold text-white">100% Private & Safe</h3>
             <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              Facial features are stored as encrypted mathematical vector embeddings, ensuring 100% DPDP privacy compliance.
+              We convert face features into encrypted numbers without storing actual face photos.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Case Studies Showcase Section */}
-      <section className="relative z-10 py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">
-            Proven Client Results
-          </span>
-          <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-            Our Attendance Software Case Studies
-          </h2>
-          <p className="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto font-light">
-            Real enterprise case studies demonstrating how Webflora solved proxy attendance, multi-shift bottlenecks, and payroll delays.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Case Study 1: Education */}
-          <div className="bg-[#080808] rounded-3xl border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-[#FF3B00]/40 transition-all duration-300 shadow-2xl group relative overflow-hidden">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-3 py-1 rounded-full uppercase">
-                  Education & Institutes
-                </span>
-                <span className="text-xs font-bold text-neutral-400">Patna, Bihar</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-white group-hover:text-[#FF3B00] transition-colors leading-snug">
-                AI Face & QR Attendance for 15,000+ Students
-              </h3>
-
-              <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                Re-architected legacy registers across 12 institute branches into an AI CCTV facial recognition & dynamic QR kiosk system connected directly to automated WhatsApp parent alerts.
-              </p>
-
-              <div className="pt-4 border-t border-white/5 space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Proxy Attendance</span>
-                  <span className="text-emerald-400 font-mono font-bold">Reduced by 99.8%</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">WhatsApp Notification Speed</span>
-                  <span className="text-white font-mono font-bold">&lt; 2 Seconds</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Student Gate Punch Speed</span>
-                  <span className="text-[#FF3B00] font-mono font-bold">0.5s / Student</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => openQuoteModal("Education AI Face & QR Attendance System")}
-              className="w-full py-3 bg-white/5 hover:bg-[#FF3B00] text-white border border-white/10 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer"
-            >
-              <span>Request Custom Proposal for Institute</span>
-              <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
-          {/* Case Study 2: Manufacturing */}
-          <div className="bg-[#080808] rounded-3xl border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-[#FF3B00]/40 transition-all duration-300 shadow-2xl group relative overflow-hidden">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-3 py-1 rounded-full uppercase">
-                  Factories & Mills
-                </span>
-                <span className="text-xs font-bold text-neutral-400">Industrial Zone</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-white group-hover:text-[#FF3B00] transition-colors leading-snug">
-                Biometric & Multi-Shift Roster Sync for 3,500 Workers
-              </h3>
-
-              <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                Integrated eSSL biometric hardware readers with an automated rotational shift engine, overtime calculation rules, and offline edge storage for 4 manufacturing plant floors.
-              </p>
-
-              <div className="pt-4 border-t border-white/5 space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Monthly Wage Leakage Saved</span>
-                  <span className="text-emerald-400 font-mono font-bold">₹1,80,000 / Mo</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Payroll Calculation Time</span>
-                  <span className="text-white font-mono font-bold">5 Days ➔ 10 Mins</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Offline Edge Auto-Sync</span>
-                  <span className="text-[#FF3B00] font-mono font-bold">100% Reliable</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => openQuoteModal("Biometric & Multi-Shift Factory System")}
-              className="w-full py-3 bg-white/5 hover:bg-[#FF3B00] text-white border border-white/10 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer"
-            >
-              <span>Request Factory & Plant Proposal</span>
-              <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
-          {/* Case Study 3: Corporate Sales */}
-          <div className="bg-[#080808] rounded-3xl border border-white/10 p-8 flex flex-col justify-between space-y-6 hover:border-[#FF3B00]/40 transition-all duration-300 shadow-2xl group relative overflow-hidden">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold bg-[#FF3B00]/10 text-[#FF3B00] border border-[#FF3B00]/20 px-3 py-1 rounded-full uppercase">
-                  Field Sales & Corporate
-                </span>
-                <span className="text-xs font-bold text-neutral-400">Multi-City Staff</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-white group-hover:text-[#FF3B00] transition-colors leading-snug">
-                Geofenced Mobile GPS & Selfie Punch for 450+ Sales Execs
-              </h3>
-
-              <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                Deployed mobile GPS geofenced check-in app with ±5m radius location validation, selfie timestamps, live route logs, and automated client meeting reports.
-              </p>
-
-              <div className="pt-4 border-t border-white/5 space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Verified Client Site Visits</span>
-                  <span className="text-emerald-400 font-mono font-bold">450+ Execs Daily</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Field Productivity Surge</span>
-                  <span className="text-white font-mono font-bold">+ 34% Growth</span>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-neutral-400">Travel Allowance Auditing</span>
-                  <span className="text-[#FF3B00] font-mono font-bold">100% Automated</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => openQuoteModal("Geofenced Mobile GPS Field Force App")}
-              className="w-full py-3 bg-white/5 hover:bg-[#FF3B00] text-white border border-white/10 hover:border-[#FF3B00] rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer"
-            >
-              <span>Request Field Force Proposal</span>
-              <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Solutions Grid */}
-      <section className="relative z-10 py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">Industry Solutions</span>
-          <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-            Tailored For Every Workforce Structure
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-[#080808] p-6 rounded-2xl border border-white/10 space-y-3">
-            <Building className="text-[#FF3B00]" size={28} />
-            <h3 className="text-lg font-bold text-white">Corporate Offices</h3>
-            <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              Turnstile CCTV face entry, shift rosters, flexi-hours tracking, and automated salary slip generation.
-            </p>
-          </div>
-
-          <div className="bg-[#080808] p-6 rounded-2xl border border-white/10 space-y-3">
-            <Users className="text-[#FF3B00]" size={28} />
-            <h3 className="text-lg font-bold text-white">Schools & Institutes</h3>
-            <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              Dynamic QR code student check-in, batch registers, and instant WhatsApp parent updates on entry/exit.
-            </p>
-          </div>
-
-          <div className="bg-[#080808] p-6 rounded-2xl border border-white/10 space-y-3">
-            <Layers className="text-[#FF3B00]" size={28} />
-            <h3 className="text-lg font-bold text-white">Factories & Mills</h3>
-            <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              Multi-shift rosters, overtime calculation, night shift allowances, and biometric hardware sync.
-            </p>
-          </div>
-
-          <div className="bg-[#080808] p-6 rounded-2xl border border-white/10 space-y-3">
-            <MapPin className="text-[#FF3B00]" size={28} />
-            <h3 className="text-lg font-bold text-white">Field Sales Force</h3>
-            <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              GPS geofenced mobile check-in, real-time client site visit timestamps, and live route tracking.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO & GEO System Comparison Matrix Table (For Google Featured Snippets & AI Citations) */}
+      {/* Specs Comparison Table */}
       <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">
-            Technical Specs Matrix (SEO & GEO)
+            Specs Matrix
           </span>
           <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-            8 Attendance Modes Comparison Matrix
+            Compare Attendance Channels
           </h2>
-          <p className="text-neutral-400 text-xs sm:text-sm font-light">
-            Compare security levels, punch speeds, hardware dependencies, and ideal use cases across all 8 attendance software modes.
-          </p>
         </div>
 
         <div className="overflow-x-auto rounded-2xl border border-white/10 bg-[#080808]">
           <table className="w-full text-left text-xs text-neutral-300">
             <thead className="bg-neutral-900 border-b border-white/10 text-white font-bold uppercase text-[10px] tracking-wider">
               <tr>
-                <th className="p-4">Punch Mode</th>
+                <th className="p-4">Punch Method</th>
                 <th className="p-4">Hardware Required</th>
-                <th className="p-4">Proxy Prevention</th>
-                <th className="p-4">Punch Speed</th>
+                <th className="p-4">Accuracy</th>
+                <th className="p-4">Speed</th>
                 <th className="p-4">Best Used For</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <Camera size={14} className="text-[#FF3B00]" /> 1. AI CCTV Face Match
-                </td>
+                <td className="p-4 font-bold text-white">Face Recognition System</td>
                 <td className="p-4">Existing IP CCTV Cameras</td>
-                <td className="p-4 text-emerald-400 font-bold">99.8% (ISO Liveness)</td>
-                <td className="p-4 font-mono">&lt; 0.5s / Face</td>
+                <td className="p-4 text-emerald-400 font-bold">99.8%</td>
+                <td className="p-4 font-mono">0.5s</td>
                 <td className="p-4">Schools, Office Gates, Colleges</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <QrCode size={14} className="text-[#FF3B00]" /> 2. Dynamic QR Code
-                </td>
-                <td className="p-4">Smartphone / Tablet Screen</td>
-                <td className="p-4 text-emerald-400 font-bold">100% (Geofence + Rotating)</td>
-                <td className="p-4 font-mono">1.0s / Scan</td>
+                <td className="p-4 font-bold text-white">Dynamic QR Code System</td>
+                <td className="p-4">Smartphone / Display Screen</td>
+                <td className="p-4 text-emerald-400 font-bold">100%</td>
+                <td className="p-4 font-mono">1.0s</td>
                 <td className="p-4">Classrooms, Small Offices, Desks</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <ClipboardList size={14} className="text-[#FF3B00]" /> 3. Manual Desk Sheet
-                </td>
+                <td className="p-4 font-bold text-white">Admin Desk Sheet Portal</td>
                 <td className="p-4">Web Admin Portal</td>
-                <td className="p-4 text-amber-400 font-bold">Supervisor Overrides</td>
-                <td className="p-4 font-mono">1-Click Bulk</td>
-                <td className="p-4">HR Super-Admins, Exception Logs</td>
+                <td className="p-4 text-amber-400 font-bold">Admin Overrides</td>
+                <td className="p-4 font-mono">Instant Bulk</td>
+                <td className="p-4">HR Super-Admins, Log Adjustments</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <Fingerprint size={14} className="text-[#FF3B00]" /> 4. Biometric Fingerprint
-                </td>
-                <td className="p-4">eSSL / ZKTeco Machines</td>
-                <td className="p-4 text-emerald-400 font-bold">99.5% Finger Match</td>
-                <td className="p-4 font-mono">0.8s / Finger</td>
+                <td className="p-4 font-bold text-white">eSSL Biometric Software Sync</td>
+                <td className="p-4">eSSL / ZKTeco Devices</td>
+                <td className="p-4 text-emerald-400 font-bold">99.5%</td>
+                <td className="p-4 font-mono">0.8s</td>
                 <td className="p-4">Factories, Plant Floors, Mills</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <CreditCard size={14} className="text-[#FF3B00]" /> 5. RFID / NFC Badges
-                </td>
+                <td className="p-4 font-bold text-white">RFID Card Badges</td>
                 <td className="p-4">Proximity Readers / Turnstiles</td>
-                <td className="p-4 text-neutral-400 font-bold">High Access Speed</td>
-                <td className="p-4 font-mono font-bold text-emerald-400">0.2s / Tap</td>
-                <td className="p-4">Turnstile Barrier Gates, IT Parks</td>
+                <td className="p-4 text-neutral-400 font-bold">High Speed Tap</td>
+                <td className="p-4 font-mono text-emerald-400">0.2s</td>
+                <td className="p-4">Turnstile Gates, IT Parks</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <MapPin size={14} className="text-[#FF3B00]" /> 6. GPS Geofenced Mobile
-                </td>
-                <td className="p-4">Android / iOS App</td>
-                <td className="p-4 text-emerald-400 font-bold">±5m Radius Validation</td>
+                <td className="p-4 font-bold text-white">Geofenced Mobile GPS App</td>
+                <td className="p-4">Android / iOS Smartphone</td>
+                <td className="p-4 text-emerald-400 font-bold">5m Radius</td>
                 <td className="p-4 font-mono">Instant GPS</td>
-                <td className="p-4">Field Sales Force, Remote Staff</td>
+                <td className="p-4">Field Sales Teams, Remote Staff</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <MessageSquare size={14} className="text-[#FF3B00]" /> 7. WhatsApp / Slack Bot
-                </td>
-                <td className="p-4">WhatsApp Business API</td>
-                <td className="p-4 text-emerald-400 font-bold">Mobile UUID + Location</td>
-                <td className="p-4 font-mono">2.0s Bot Response</td>
-                <td className="p-4">Work-from-Home, Remote Consultants</td>
+                <td className="p-4 font-bold text-white">WhatsApp Check-In Bot</td>
+                <td className="p-4">WhatsApp App</td>
+                <td className="p-4 text-emerald-400 font-bold">Mobile UUID</td>
+                <td className="p-4 font-mono">2.0s Bot</td>
+                <td className="p-4">Remote Staff, Quick Check-in</td>
               </tr>
               <tr className="hover:bg-white/[0.02]">
-                <td className="p-4 font-bold text-white flex items-center gap-2">
-                  <Wifi size={14} className="text-[#FF3B00]" /> 8. Wi-Fi & Beacon Auto
-                </td>
-                <td className="p-4">Office Wi-Fi / BLE Beacon</td>
-                <td className="p-4 text-emerald-400 font-bold">Zero-Touch Range Match</td>
-                <td className="p-4 font-mono text-emerald-400">Auto-Punch</td>
+                <td className="p-4 font-bold text-white">Wi-Fi Auto Check-In</td>
+                <td className="p-4">Office Wi-Fi Router</td>
+                <td className="p-4 text-emerald-400 font-bold">Wi-Fi Range</td>
+                <td className="p-4 font-mono text-emerald-400">Auto</td>
                 <td className="p-4">Executive Cabins, Open Offices</td>
               </tr>
             </tbody>
@@ -1052,20 +991,20 @@ export default function AttendanceSoftwarePage() {
         </div>
       </section>
 
-      {/* SEO Content Block (High-Intent Patna & Bihar Keyword Authority) */}
+      {/* SEO Content Block */}
       <SEOContentBlock
-        title="Attendance Management Software Development Company in Patna, Bihar"
+        title="Attendance Management Software Development in Patna, Bihar"
         paragraphs={[
           <>
-            <strong className="text-white font-semibold">Webflora Technologies</strong> is Patna&apos;s leading <Link href="/it-company-in-patna/software-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">software development company</Link> engineering state-of-the-art attendance management software, HRMS portals, and automated payroll systems. Our software empowers enterprise offices, coaching institutes, schools, manufacturing units, and field sales teams across Patna, Bihar, and India to eliminate proxy attendance and save hundreds of administrative hours monthly.
+            <strong className="text-white font-semibold">Webflora Technologies</strong> is Patna&apos;s leading <Link href="/it-company-in-patna/software-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">software development company</Link> building custom <strong className="text-white font-semibold">attendance management software</strong>, HRMS platforms, and payroll systems for offices, coaching institutes, and factories across Bihar.
           </>,
           <>
-            Whether you require an <Link href="/it-company-in-patna/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI camera face recognition system</Link> running on existing CCTV streams, dynamic rotating QR code check-in kiosks for 15,000+ students, biometric hardware machine integrations (eSSL, ZKTeco), or geofenced GPS mobile tracking apps, Webflora delivers 100% DPDP data privacy compliant custom software with zero monthly per-user fees and full source code ownership.
+            We build custom solutions featuring <Link href="/it-company-in-patna/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI face recognition</Link> on CCTV cameras, dynamic <strong className="text-white font-semibold">QR code attendance systems</strong>, direct integration with <strong className="text-white font-semibold">eSSL biometric software</strong> and <strong className="text-white font-semibold">e time track lite</strong>, and mobile GPS tracking with zero forced monthly subscription fees.
           </>
         ]}
       />
 
-      {/* FAQ Section */}
+      {/* Simple FAQs */}
       <section className="relative z-10 py-24 px-6 max-w-4xl mx-auto border-t border-white/5">
         <div className="text-center mb-16 space-y-4">
           <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">Got Questions?</span>
@@ -1076,173 +1015,48 @@ export default function AttendanceSoftwarePage() {
 
         <div className="space-y-2">
           <FAQItem
-            question="1. Can the AI Camera Attendance System work with our existing CCTV cameras?"
-            answer="Yes! Our AI face recognition software connects directly to your existing IP CCTV camera RTSP video streams (Hikvision, Dahua, CP Plus, etc.). You don't need to purchase proprietary facial recognition hardware machines."
+            question="1. Can the AI Face Recognition System work with our existing CCTV cameras?"
+            answer="Yes! Our face scanning software connects directly to your existing CCTV camera video streams (Hikvision, Dahua, CP Plus). You don't need to buy extra face scanning machines."
           />
           <FAQItem
-            question="2. How does the Dynamic QR Code system prevent proxy attendance and screenshot sharing?"
-            answer="Our system generates dynamic, rotating QR codes that automatically refresh every 15 seconds. Additionally, we enforce GPS geofence radius checks and bind the device to the employee's unique smartphone hardware UUID."
+            question="2. Can Webflora connect with our current eSSL biometric fingerprint machines?"
+            answer="Yes. We provide direct connectors for eSSL biometric software, Real Time biometric software, e time track lite, and ZKTeco machines. All punches sync live into one central dashboard."
           />
           <FAQItem
-            question="3. What types of attendance systems can be integrated into one software?"
-            answer="All 8 types! You can combine AI camera facial recognition at main building gates, RFID smart cards at turnstiles, dynamic QR codes in classrooms, mobile GPS for field force staff, biometric fingerprint hardware, WhatsApp bots, and manual desk logging for super-admins inside one unified Webflora HRMS dashboard."
+            question="3. How does the Dynamic QR Code system stop proxy attendance?"
+            answer="Our system displays a rotating QR code on screen that refreshes every 15 seconds. Combined with mobile phone binding and GPS location checks, screenshot sharing and fake punches are completely blocked."
           />
           <FAQItem
-            question="4. What happens if the internet connection goes down at our office or coaching institute?"
-            answer="The software includes an offline edge engine. Attendance logs are stored locally on the local server/device with encrypted timestamps and automatically sync to the cloud database as soon as connectivity resumes."
+            question="4. Is there a free demo available?"
+            answer="Yes! We provide a free live demo and trial environment so you can test our software before deciding."
           />
           <FAQItem
-            question="5. How does the software handle rotational shifts, night shifts, and overtime?"
-            answer="Our automated shift roster engine supports rotational shifts, split shifts, night shift allowances, configurable grace periods, late-mark penalty rules, and automatic overtime calculations."
+            question="5. What is the difference between subscription SaaS and custom software?"
+            answer="Subscription SaaS charges monthly fees per employee forever. With Webflora's custom software development option, you pay once, get full source code ownership, and pay zero monthly fees."
           />
           <FAQItem
-            question="6. Can Webflora integrate the attendance software with our existing Payroll or HRMS?"
-            answer="Yes, our attendance engine offers REST APIs and ready connectors for Tally Prime, Zoho Payroll, Razorpay Payroll, Keka, ERPNext, and custom HRMS databases to automate salary, overtime, and leave deductions."
+            question="6. What happens if the internet connection goes down?"
+            answer="Attendance records store safely on your local device or server and automatically sync to the cloud as soon as internet connectivity returns."
           />
           <FAQItem
-            question="7. Is employee facial data secure and compliant with data privacy laws?"
-            answer="Facial features are converted into encrypted mathematical vector embeddings (512-bit embeddings) stored with AES-256 encryption. We never store raw face images, ensuring 100% compliance with India's DPDP data privacy regulations."
-          />
-          <FAQItem
-            question="8. How does GPS Geofencing work for remote or field sales executives?"
-            answer="Field employees check in using our mobile app. The system validates their exact GPS coordinates against pre-assigned client locations or office perimeters (within a 5-meter radius accuracy) and logs verified visit timestamps."
-          />
-          <FAQItem
-            question="9. Can parents receive automated attendance updates for students at coaching institutes or schools?"
-            answer="Yes, we build direct WhatsApp API and SMS gateway integrations that send instant automated entry/exit alerts to parents the moment a student scans their QR code or walks past the AI face scanner gate."
-          />
-          <FAQItem
-            question="10. How does manual attendance logging work for supervisors and HR managers?"
-            answer="Super-admins can perform single-click bulk updates, record field duty reasons, approve leave requests, adjust shift rosters, and maintain complete audit trail logs for transparency."
-          />
-          <FAQItem
-            question="11. Can we use biometric fingerprint hardware alongside AI camera attendance?"
-            answer="Yes, we integrate legacy fingerprint readers (eSSL, ZKTeco, Matrix, Realtime) into the central dashboard so staff using biometric machines sync in real time alongside AI camera and mobile app users."
-          />
-          <FAQItem
-            question="12. How fast can Webflora deploy custom attendance management software for our company?"
-            answer="Cloud SaaS setups can be deployed in 24 to 48 hours. Custom enterprise builds with hardware integrations, custom payroll rules, and ERP connections are delivered within 5 to 7 business days."
-          />
-          <FAQItem
-            question="13. Is there a monthly per-user licensing fee or do we own the software?"
-            answer="We offer both models! You can choose flat-rate custom software development with 100% source code ownership and zero monthly per-user licensing fees, or our hosted cloud SaaS plan."
-          />
-          <FAQItem
-            question="14. How does the WhatsApp Attendance Bot work for staff check-ins?"
-            answer="Employees send a simple text command (`#punchin` or location pin) to your company's verified WhatsApp bot number. The bot verifies their registered mobile number & GPS location, logging their punch instantly."
-          />
-          <FAQItem
-            question="15. What report formats are exported for HR and monthly payroll auditing?"
-            answer="You can generate instant automated reports in Excel, CSV, PDF, and interactive visual charts detailing monthly attendance summaries, late marks, half-days, leave balances, and net working hours."
+            question="7. How does the system calculate monthly payroll?"
+            answer="Late marks, overtime, shift allowances, and leave balances calculate automatically and export directly to Tally Prime or Excel in minutes."
           />
         </div>
       </section>
 
-      {/* Related Software & Internal Links Section */}
-      <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-white/5">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">Explore Related Products</span>
-          <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-            Related Custom Software & Enterprise Solutions
-          </h2>
-          <p className="text-neutral-400 text-xs md:text-sm font-light">
-            Discover Webflora's full ecosystem of enterprise software development, AI solutions, and specialized management tools.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-xs">
-          <Link
-            href="/it-company-in-patna/ai-chatbot-company-in-patna"
-            className="p-6 bg-[#080808] hover:bg-neutral-900/80 border border-white/10 hover:border-[#FF3B00]/40 rounded-2xl transition-all duration-300 group space-y-2 block"
-          >
-            <div className="flex justify-between items-center text-white font-bold">
-              <span>AI Chatbot & Automation</span>
-              <ArrowRight size={14} className="text-[#FF3B00] group-hover:translate-x-1 transition-transform" />
-            </div>
-            <p className="text-neutral-400 text-[11px] font-light">
-              Build custom WhatsApp bots and AI assistants for instant customer support, lead capture, and automated notifications.
-            </p>
-          </Link>
-
-          <Link
-            href="/electronic-health-records-software"
-            className="p-6 bg-[#080808] hover:bg-neutral-900/80 border border-white/10 hover:border-[#FF3B00]/40 rounded-2xl transition-all duration-300 group space-y-2 block"
-          >
-            <div className="flex justify-between items-center text-white font-bold">
-              <span>Electronic Health Records (EHR)</span>
-              <ArrowRight size={14} className="text-[#FF3B00] group-hover:translate-x-1 transition-transform" />
-            </div>
-            <p className="text-neutral-400 text-[11px] font-light">
-              NABH-compliant healthcare software for hospitals, clinics, patient records, doctor OPD schedules, and pharmacy billing.
-            </p>
-          </Link>
-
-          <Link
-            href="/it-company-in-patna"
-            className="p-6 bg-[#080808] hover:bg-neutral-900/80 border border-white/10 hover:border-[#FF3B00]/40 rounded-2xl transition-all duration-300 group space-y-2 block"
-          >
-            <div className="flex justify-between items-center text-white font-bold">
-              <span>IT & Custom Software Company</span>
-              <ArrowRight size={14} className="text-[#FF3B00] group-hover:translate-x-1 transition-transform" />
-            </div>
-            <p className="text-neutral-400 text-[11px] font-light">
-              Top-rated IT software development company building scalable web apps, mobile apps, ERPs, and cloud solutions.
-            </p>
-          </Link>
-
-          <Link
-            href="/industries"
-            className="p-6 bg-[#080808] hover:bg-neutral-900/80 border border-white/10 hover:border-[#FF3B00]/40 rounded-2xl transition-all duration-300 group space-y-2 block"
-          >
-            <div className="flex justify-between items-center text-white font-bold">
-              <span>Industries We Serve</span>
-              <ArrowRight size={14} className="text-[#FF3B00] group-hover:translate-x-1 transition-transform" />
-            </div>
-            <p className="text-neutral-400 text-[11px] font-light">
-              Tailored software solutions for education, healthcare, real estate, manufacturing, retail, and corporate sectors.
-            </p>
-          </Link>
-
-          <Link
-            href="/technology"
-            className="p-6 bg-[#080808] hover:bg-neutral-900/80 border border-white/10 hover:border-[#FF3B00]/40 rounded-2xl transition-all duration-300 group space-y-2 block"
-          >
-            <div className="flex justify-between items-center text-white font-bold">
-              <span>Tech Stack & Architecture</span>
-              <ArrowRight size={14} className="text-[#FF3B00] group-hover:translate-x-1 transition-transform" />
-            </div>
-            <p className="text-neutral-400 text-[11px] font-light">
-              Explore our modern technology stack including Next.js, Node.js, React, AI/ML models, OpenCV, and AWS cloud infrastructure.
-            </p>
-          </Link>
-
-          <Link
-            href="/contact"
-            className="p-6 bg-[#080808] hover:bg-neutral-900/80 border border-white/10 hover:border-[#FF3B00]/40 rounded-2xl transition-all duration-300 group space-y-2 block"
-          >
-            <div className="flex justify-between items-center text-white font-bold">
-              <span>Get Technical Consultation</span>
-              <ArrowRight size={14} className="text-[#FF3B00] group-hover:translate-x-1 transition-transform" />
-            </div>
-            <p className="text-neutral-400 text-[11px] font-light">
-              Speak directly with our senior software architects to plan your custom software requirements and project roadmap.
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      {/* Bottom CTA Banner — Premium Compact Responsive Layout */}
+      {/* Bottom CTA Banner */}
       <section className="relative z-10 py-16 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="relative p-[1px] rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-[#FF3B00] via-white/20 to-orange-500 overflow-hidden shadow-2xl">
           <div className="bg-[#080808] rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-center space-y-5 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#FF3B00]/15 blur-[90px] rounded-full pointer-events-none" />
 
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug">
-              Ready to Automate Your Attendance System?
+              Ready to Simplify Your Attendance Tracking?
             </h2>
 
             <p className="text-neutral-300 text-xs sm:text-base font-light max-w-xl mx-auto leading-relaxed">
-              Get a customized attendance management software tailored for your workforce size, hardware setup, and budget.
+              Get a custom attendance software quote tailored for your team size and budget.
             </p>
 
             <div className="flex justify-center pt-2">
@@ -1250,21 +1064,21 @@ export default function AttendanceSoftwarePage() {
                 onClick={() => openQuoteModal("All 8 Hybrid Attendance Systems")}
                 className="w-full sm:w-auto group flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-9 sm:py-4 bg-[#FF3B00] hover:bg-[#ff4d1a] text-white rounded-2xl sm:rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-[0_0_40px_rgba(255,59,0,0.4)] hover:scale-105 cursor-pointer"
               >
-                <span>Get Custom Quote & Live Demo</span>
+                <span>Get Free Demo & Custom Quote</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[10px] sm:text-xs font-mono text-neutral-400 pt-3 border-t border-white/10 max-w-lg mx-auto">
-              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Free Technical Demo</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> 24-Hour Custom Proposal</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Zero Per-User Fees</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Free Demo</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Fast Setup</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-400" /> Zero Monthly Fees Option</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3-FIELD POPUP FORM MODAL (Name, Number, Message) */}
+      {/* POPUP FORM MODAL */}
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
@@ -1283,7 +1097,7 @@ export default function AttendanceSoftwarePage() {
 
               <div className="space-y-1">
                 <span className="text-[#FF3B00] font-bold uppercase tracking-wider text-[10px] font-mono">
-                  INSTANT QUOTE & DEMO CALLBACK
+                  FREE DEMO & QUOTE CALLBACK
                 </span>
                 <h3 className="text-xl font-bold text-white">
                   Request Custom Proposal
@@ -1299,7 +1113,7 @@ export default function AttendanceSoftwarePage() {
                   <CheckCircle2 size={36} className="text-emerald-400 mx-auto" />
                   <h4 className="text-lg font-bold text-white">Inquiry Submitted!</h4>
                   <p className="text-xs text-neutral-300 leading-relaxed">
-                    Thank you! Our attendance software team will call/WhatsApp you shortly with custom pricing.
+                    Thank you! Our team will call or WhatsApp you shortly with demo details.
                   </p>
                   <button
                     onClick={() => setIsModalOpen(false)}
@@ -1310,7 +1124,6 @@ export default function AttendanceSoftwarePage() {
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4 text-xs">
-                  {/* FIELD 1: NAME */}
                   <div>
                     <label className="block text-neutral-300 font-bold mb-1.5 uppercase tracking-wider text-[10px]">
                       Your Name *
@@ -1324,7 +1137,6 @@ export default function AttendanceSoftwarePage() {
                     />
                   </div>
 
-                  {/* FIELD 2: NUMBER */}
                   <div>
                     <label className="block text-neutral-300 font-bold mb-1.5 uppercase tracking-wider text-[10px]">
                       Phone / WhatsApp Number *
@@ -1338,7 +1150,6 @@ export default function AttendanceSoftwarePage() {
                     />
                   </div>
 
-                  {/* FIELD 3: MESSAGE */}
                   <div>
                     <label className="block text-neutral-300 font-bold mb-1.5 uppercase tracking-wider text-[10px]">
                       Message / Requirement *
@@ -1347,14 +1158,14 @@ export default function AttendanceSoftwarePage() {
                       name="message"
                       rows="3"
                       required
-                      placeholder="Mention your estimated staff/student count, location, or custom software requirements..."
+                      placeholder="Tell us your staff count or hardware setup..."
                       className="w-full bg-neutral-900 border border-white/10 text-white rounded-xl p-3 focus:outline-none focus:border-[#FF3B00] transition-colors"
                     ></textarea>
                   </div>
 
                   {formStatus === "error" && (
                     <div className="p-3 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[11px] rounded-xl flex items-center gap-2">
-                      <AlertCircle size={15} /> Failed to submit inquiry. Please check your connection.
+                      <AlertCircle size={15} /> Failed to submit. Please try again.
                     </div>
                   )}
 
@@ -1365,7 +1176,7 @@ export default function AttendanceSoftwarePage() {
                   >
                     {formStatus === "submitting" ? (
                       <>
-                        <RefreshCw className="animate-spin" size={14} /> Submitting Request...
+                        <RefreshCw className="animate-spin" size={14} /> Submitting...
                       </>
                     ) : (
                       <>

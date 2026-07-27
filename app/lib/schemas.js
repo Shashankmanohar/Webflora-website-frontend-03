@@ -192,11 +192,12 @@ export function buildServiceSchema({ name, serviceType, description, providerUrl
 }
 
 // 8. SoftwareApplication Schema
-export function buildSoftwareApplicationSchema({ name, operatingSystem = "All", applicationCategory = "BusinessApplication", offers, aggregateRating, description }) {
+export function buildSoftwareApplicationSchema({ name, operatingSystem = "All", applicationCategory = "BusinessApplication", offers, aggregateRating, description, image, url = BASE_URL }) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": name,
+    "image": image || COMPANY_INFO.image,
     "operatingSystem": operatingSystem,
     "applicationCategory": applicationCategory,
     "description": description,
@@ -205,39 +206,43 @@ export function buildSoftwareApplicationSchema({ name, operatingSystem = "All", 
       "name": COMPANY_INFO.name,
       "url": BASE_URL
     },
-    ...(offers && { "offers": buildOfferSchema(offers) }),
+    ...(offers && { "offers": buildOfferSchema({ ...(typeof offers === "object" ? offers : {}), url }) }),
     ...(aggregateRating && { "aggregateRating": buildAggregateRatingSchema(aggregateRating) })
   };
 }
 
 // 9. Product Schema
-export function buildProductSchema({ name, description, image, offers, aggregateRating, category = "Software" }) {
+export function buildProductSchema({ name, description, image, offers, aggregateRating, category = "Software", url = BASE_URL }) {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": name,
+    "image": image || COMPANY_INFO.image,
     "description": description,
     "category": category,
     "brand": {
       "@type": "Brand",
       "name": COMPANY_INFO.name
     },
-    ...(image && { "image": image }),
-    ...(offers && { "offers": buildOfferSchema(offers) }),
+    "offers": buildOfferSchema({ ...(typeof offers === "object" ? offers : {}), url }),
     ...(aggregateRating && { "aggregateRating": buildAggregateRatingSchema(aggregateRating) })
   };
 }
 
 // 10. Offer Schema
-export function buildOfferSchema({ price, priceCurrency = "INR", priceValidUntil = "2026-12-31", availability = "https://schema.org/InStock", url = BASE_URL }) {
+export function buildOfferSchema(offerData = {}) {
+  const { price, priceCurrency = "INR", priceValidUntil = "2026-12-31", availability = "https://schema.org/InStock", url = BASE_URL } = offerData || {};
+  const cleanedPrice = (price !== undefined && price !== null && !isNaN(Number(String(price).replace(/[^0-9.]/g, ''))))
+    ? String(price).replace(/[^0-9.]/g, '')
+    : "0";
   return {
     "@context": "https://schema.org",
     "@type": "Offer",
-    "price": price || "Contact for Quote",
-    "priceCurrency": priceCurrency,
+    "price": cleanedPrice,
+    "priceCurrency": priceCurrency || "INR",
     "priceValidUntil": priceValidUntil,
     "availability": availability,
-    "url": url,
+    "url": url || BASE_URL,
     "seller": {
       "@type": "Organization",
       "name": COMPANY_INFO.name

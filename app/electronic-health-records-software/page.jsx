@@ -807,14 +807,18 @@ export default function EHRSoftwarePage() {
               operatingSystem: "Web, Cloud, Windows, Linux, iOS, Android",
               applicationCategory: "HealthApplication",
               description: "Custom-coded HIPAA compliant EMR and EHR databases, medical billing software, and voice dictation systems built with Next.js & React.",
-              offers: { price: "150000", priceCurrency: "INR" },
+              image: "https://webfloratechnologies.com/title-logo.png",
+              url: "https://webfloratechnologies.com/electronic-health-records-software",
+              offers: { price: "150000", priceCurrency: "INR", url: "https://webfloratechnologies.com/electronic-health-records-software" },
               aggregateRating: { ratingValue: 4.95, reviewCount: 88 }
             }),
             buildProductSchema({
               name: "Custom EHR & EMR Healthcare Software",
               description: "HIPAA compliant electronic medical record management software for clinics, hospitals, and diagnostic labs.",
               category: "Healthcare SaaS & Custom Software",
-              offers: { price: "150000", priceCurrency: "INR" },
+              image: "https://webfloratechnologies.com/title-logo.png",
+              url: "https://webfloratechnologies.com/electronic-health-records-software",
+              offers: { price: "150000", priceCurrency: "INR", url: "https://webfloratechnologies.com/electronic-health-records-software" },
               aggregateRating: { ratingValue: 4.95, reviewCount: 88 }
             }),
             buildServiceSchema({

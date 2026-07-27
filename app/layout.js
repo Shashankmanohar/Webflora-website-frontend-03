@@ -6,6 +6,7 @@ import FooterSection from "./Components/FooterSection";
 import Script from "next/script";
 import ChatbotLoader from "./Components/ChatbotLoader";
 import FloatingCTA from "./Components/FloatingCTA";
+import { buildOrganizationSchema, buildWebSiteSchema, buildSiteNavigationElementSchema } from "./lib/schemas";
 
 
 /* Inter – Body / UI */
@@ -115,81 +116,11 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://webfloratechnologies.com/#organization",
-              "name": "Webflora Technologies",
-              "url": "https://webfloratechnologies.com",
-              "logo": "https://webfloratechnologies.com/webflora-logo.svg",
-              "image": "https://webfloratechnologies.com/webflora-logo.svg",
-              "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
-              "telephone": "+918540814729",
-              "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
-                "addressLocality": "Patna",
-                "addressRegion": "Bihar",
-                "postalCode": "800016",
-                "addressCountry": "IN"
-              },
-              "sameAs": [
-                "https://www.linkedin.com/company/webfloratechnologies/",
-                "https://www.instagram.com/webflora.technologies",
-                "https://www.facebook.com/profile.php?id=61580014195502"
-              ],
-              "founder": [
-                {
-                  "@type": "Person",
-                  "@id": "https://webfloratechnologies.com/#founder",
-                  "name": "Shashank Manohar",
-                  "jobTitle": "Co-Founder & CTO",
-                  "url": "https://webfloratechnologies.com/about",
-                  "image": "https://webfloratechnologies.com/team/shashank.jpg",
-                  "sameAs": [
-                    "https://www.linkedin.com/in/shashank-manohar-37204a278",
-                    "https://www.instagram.com/shashank__arr?igsh=MXM3NmhvYzh5cWlkZQ=="
-                  ]
-                },
-                {
-                  "@type": "Person",
-                  "@id": "https://webfloratechnologies.com/#cofounder",
-                  "name": "Amitesh Kumar",
-                  "jobTitle": "Co-Founder & CEO",
-                  "url": "https://webfloratechnologies.com/about",
-                  "image": "https://webfloratechnologies.com/FounderPhoto/co-founder.webp",
-                  "sameAs": [
-                    "https://www.linkedin.com/in/amiteshkumarrr/",
-                    "https://www.instagram.com/amitesh.kumarr?igsh=MXNqdTZ5aTRmbXc0eA=="
-                  ]
-                }
-              ]
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "https://webfloratechnologies.com/#website",
-              "url": "https://webfloratechnologies.com",
-              "name": "Webflora Technologies",
-              "description": "Premium software, website, and mobile app development company in Patna, Bihar.",
-              "publisher": {
-                "@type": "Organization",
-                "@id": "https://webfloratechnologies.com/#organization",
-                "name": "Webflora Technologies",
-                "url": "https://webfloratechnologies.com"
-              },
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://webfloratechnologies.com/?s={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })
+            __html: JSON.stringify([
+              buildOrganizationSchema(),
+              buildWebSiteSchema(),
+              buildSiteNavigationElementSchema()
+            ])
           }}
         />
 

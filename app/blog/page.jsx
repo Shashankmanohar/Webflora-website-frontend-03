@@ -9,6 +9,12 @@ import API_BASE_URL from "../config";
 import ContactSection from "../Components/ContactSection";
 import SEOContentBlock from "../Components/SEOContentBlock";
 import TrustSignals from "../Components/TrustSignals";
+import {
+  buildCollectionPageSchema,
+  buildItemListSchema,
+  buildBreadcrumbListSchema,
+  buildWebPageSchema
+} from "../lib/schemas";
 
 // Mock categories - you can also fetch these from unique categories in your blogs
 const BlogPage = () => {
@@ -375,39 +381,27 @@ const BlogPage = () => {
         {/* Contact Section */}
         <ContactSection />
 
+        {/* JSON-LD Schemas */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Blog",
-              "name": "Webflora Technologies Blog",
-              "description": "Insights, guides, and news about software development, AI, and digital marketing from Webflora Technologies.",
-              "url": "https://webfloratechnologies.com/blog"
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://webfloratechnologies.com"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Blog",
-                  "item": "https://webfloratechnologies.com/blog"
-                }
-              ]
-            })
+            __html: JSON.stringify([
+              buildCollectionPageSchema({
+                name: "Webflora Technologies Blog",
+                description: "Insights, guides, and news about software development, AI, and digital marketing from Webflora Technologies.",
+                url: "https://webfloratechnologies.com/blog",
+                items: blogs.map(b => ({ name: b.title, url: `/blog/${b.slug || b._id}` }))
+              }),
+              buildWebPageSchema({
+                name: "Blog | Webflora Technologies Insights & Guides",
+                description: "Insights, guides, and news about software development, AI, and digital marketing.",
+                url: "https://webfloratechnologies.com/blog"
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "Blog", url: "/blog" }
+              ])
+            ])
           }}
         />
       </div>

@@ -20,6 +20,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import API_BASE_URL from "../../config";
+import {
+  buildBlogPostingSchema,
+  buildArticleSchema,
+  buildPersonSchema,
+  buildImageObjectSchema,
+  buildBreadcrumbListSchema,
+  buildWebPageSchema
+} from "../../lib/schemas";
 
 const BlogClient = ({ initialPost }) => {
   const { id: slug } = useParams();
@@ -803,6 +811,48 @@ const BlogClient = ({ initialPost }) => {
           </>
         )}
       </AnimatePresence>
+
+      {/* Blog Post JSON-LD Schemas */}
+      {post && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              buildBlogPostingSchema({
+                title: post.title,
+                description: post.content?.substring(0, 160) || post.title,
+                url: `https://webfloratechnologies.com/blog/${slug}`,
+                image: post.coverImage || "https://webfloratechnologies.com/title-logo.png",
+                datePublished: post.createdAt,
+                dateModified: post.updatedAt || post.createdAt,
+                authorName: post.author || "Webflora Engineering"
+              }),
+              buildArticleSchema({
+                title: post.title,
+                description: post.content?.substring(0, 160) || post.title,
+                url: `https://webfloratechnologies.com/blog/${slug}`,
+                image: post.coverImage,
+                datePublished: post.createdAt,
+                authorName: post.author || "Webflora Engineering"
+              }),
+              buildWebPageSchema({
+                name: post.title,
+                description: post.content?.substring(0, 160) || post.title,
+                url: `https://webfloratechnologies.com/blog/${slug}`
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "Blog", url: "/blog" },
+                { name: post.title, url: `/blog/${slug}` }
+              ]),
+              buildImageObjectSchema({
+                url: post.coverImage || "https://webfloratechnologies.com/title-logo.png",
+                caption: post.title
+              })
+            ])
+          }}
+        />
+      )}
     </main>
   );
 };

@@ -4,6 +4,12 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactSection from "../Components/ContactSection";
+import {
+  buildFAQPageSchema,
+  buildQAPageSchema,
+  buildBreadcrumbListSchema,
+  buildWebPageSchema
+} from "../lib/schemas";
 
 const faqData = {
   website: {
@@ -572,6 +578,31 @@ export default function FaqPage() {
       </section>
 
       <ContactSection />
+
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            buildFAQPageSchema(
+              Object.values(faqData).flatMap(cat => cat.faqs)
+            ),
+            buildQAPageSchema({
+              mainQuestion: "How much does a website or custom software cost in Patna, Bihar?",
+              acceptedAnswer: "Webflora Technologies provides flat-rate custom website development starting from ₹25,000 and enterprise custom software systems starting from ₹1,00,000 with 100% source code ownership and zero monthly per-user licensing fees."
+            }),
+            buildWebPageSchema({
+              name: "Frequently Asked Questions (FAQ) | Webflora Technologies",
+              description: "Answers to common questions about custom software, website design, mobile apps, AI automation, and digital marketing services in Patna, Bihar.",
+              url: "https://webfloratechnologies.com/faq"
+            }),
+            buildBreadcrumbListSchema([
+              { name: "Home", url: "/" },
+              { name: "FAQ", url: "/faq" }
+            ])
+          ])
+        }}
+      />
     </main>
   );
 }

@@ -12,6 +12,15 @@ import TrustSignals from "../Components/TrustSignals";
 import GoogleTrustBanner from "../Components/GoogleTrustBanner";
 import FaqSection from "../it-company-in-patna/components/FaqSection";
 import GoogleReviewsSection from "../Components/GoogleReviewsSection";
+import {
+  buildAboutPageSchema,
+  buildWebPageSchema,
+  buildPersonSchema,
+  buildImageGallerySchema,
+  buildFAQPageSchema,
+  buildBreadcrumbListSchema,
+  COMPANY_INFO
+} from "../lib/schemas";
 
 const container = {
   hidden: { opacity: 0 },
@@ -251,59 +260,32 @@ export default function UltraAnimatedHero() {
       <ContactSection />
 
       {/* JSON-LD Schemas */}
+      {/* About Page JSON-LD Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "About Webflora Technologies",
-            "description": "Learn about Webflora Technologies, a leading software development and digital solutions company based in Patna, Bihar.",
-            "url": "https://webfloratechnologies.com/about",
-            "publisher": {
-              "@id": "https://webfloratechnologies.com/#organization"
-            }
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://webfloratechnologies.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "About Us",
-                "item": "https://webfloratechnologies.com/about"
-              }
-            ]
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": aboutFaqs.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })
+          __html: JSON.stringify([
+            buildAboutPageSchema(),
+            buildWebPageSchema({
+              name: "About Webflora Technologies",
+              description: "Learn about Webflora Technologies, Patna's premier software engineering agency led by co-founders Shashank Manohar & Amitesh Kumar.",
+              url: "https://webfloratechnologies.com/about"
+            }),
+            COMPANY_INFO.founders.map(f => buildPersonSchema(f)),
+            buildImageGallerySchema({
+              name: "Webflora Team & Office Showcase",
+              description: "Photos of Webflora Technologies engineering headquarters and executive team in Patna.",
+              images: [
+                "https://webfloratechnologies.com/team/shashank.jpg",
+                "https://webfloratechnologies.com/FounderPhoto/co-founder.webp"
+              ]
+            }),
+            buildBreadcrumbListSchema([
+              { name: "Home", url: "/" },
+              { name: "About Us", url: "/about" }
+            ]),
+            buildFAQPageSchema(aboutFaqs)
+          ])
         }}
       />
     </>

@@ -4,6 +4,16 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import API_BASE_URL from "../config";
+import {
+  buildContactPageSchema,
+  buildLocalBusinessSchema,
+  buildWebPageSchema,
+  buildBreadcrumbListSchema,
+  buildPostalAddressSchema,
+  buildGeoCoordinatesSchema,
+  buildContactPointSchema,
+  buildOpeningHoursSpecificationSchema
+} from "../lib/schemas";
 
 const BRAND = "#ff3b00";
 
@@ -349,6 +359,32 @@ export default function ContactPage() {
 
         </div>
       </div>
+
+      {/* Contact Page JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            buildContactPageSchema(),
+            buildWebPageSchema({
+              name: "Contact Webflora Technologies | Software & Web Agency Patna",
+              description: "Contact Webflora Technologies for website development, mobile app development, AI automation, software development, and digital marketing services in Patna Bihar.",
+              url: "https://webfloratechnologies.com/contact"
+            }),
+            buildBreadcrumbListSchema([
+              { name: "Home", url: "/" },
+              { name: "Contact Us", url: "/contact" }
+            ]),
+            {
+              ...buildLocalBusinessSchema(),
+              address: buildPostalAddressSchema(),
+              geo: buildGeoCoordinatesSchema(),
+              contactPoint: [buildContactPointSchema()],
+              openingHoursSpecification: [buildOpeningHoursSpecificationSchema()]
+            }
+          ])
+        }}
+      />
     </main>
   );
 }

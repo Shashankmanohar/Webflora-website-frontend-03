@@ -9,6 +9,13 @@ import { useRouter } from "next/navigation";
 import API_BASE_URL from "../config";
 import SEOContentBlock from "../Components/SEOContentBlock";
 import TrustSignals from "../Components/TrustSignals";
+import {
+  buildCollectionPageSchema,
+  buildItemListSchema,
+  buildImageGallerySchema,
+  buildBreadcrumbListSchema,
+  buildWebPageSchema
+} from "../lib/schemas";
 
 // --- Premium Component: Starfield ---
 function Starfield() {
@@ -239,39 +246,32 @@ export default function CaseStudiesPage() {
         />
       </div>
 
+      {/* JSON-LD Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Case Studies - Webflora Technologies",
-            "description": "View our portfolio of custom software, web development, and digital marketing success stories.",
-            "url": "https://webfloratechnologies.com/case-studies"
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://webfloratechnologies.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Case Studies",
-                "item": "https://webfloratechnologies.com/case-studies"
-              }
-            ]
-          })
+          __html: JSON.stringify([
+            buildCollectionPageSchema({
+              name: "Case Studies - Webflora Technologies",
+              description: "View our portfolio of custom software, web development, and digital marketing success stories.",
+              url: "https://webfloratechnologies.com/case-studies",
+              items: projects.map(p => ({ name: p.title, url: `/case-studies/${p.slug || p._id}` }))
+            }),
+            buildWebPageSchema({
+              name: "Case Studies & Software Engineering Portfolio",
+              description: "Explore enterprise projects, mobile applications, and web platforms created by Webflora Technologies.",
+              url: "https://webfloratechnologies.com/case-studies"
+            }),
+            buildImageGallerySchema({
+              name: "Webflora Portfolio Showcase",
+              description: "Screenshots of client applications, web systems, and mobile software built by Webflora Technologies.",
+              images: projects.map(p => p.image).filter(Boolean)
+            }),
+            buildBreadcrumbListSchema([
+              { name: "Home", url: "/" },
+              { name: "Case Studies", url: "/case-studies" }
+            ])
+          ])
         }}
       />
 

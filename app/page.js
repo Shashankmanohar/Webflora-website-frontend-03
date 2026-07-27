@@ -5,6 +5,19 @@ import StatsMarquee from "./Components/StatsMarquee";
 import HomeSections from "./Components/HomeSections";
 import HomeIntroSection from "./Components/HomeIntroSection";
 import FaqSection from "./it-company-in-patna/components/FaqSection";
+import {
+  buildOrganizationSchema,
+  buildLocalBusinessSchema,
+  buildProfessionalServiceSchema,
+  buildWebSiteSchema,
+  buildWebPageSchema,
+  buildServiceSchema,
+  buildFAQPageSchema,
+  buildBreadcrumbListSchema,
+  buildItemListSchema,
+  buildAggregateRatingSchema,
+  buildReviewSchema
+} from "./lib/schemas";
 
 /* ── FAQ data (defined server-side, passed as prop to client component) ── */
 const homeFaqs = [
@@ -65,200 +78,43 @@ export default function Page() {
       />
 
       {/* ── JSON-LD Schemas — server-rendered for SEO ── */}
-
-      {/* MAIN ORGANIZATION SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": ["Organization", "ProfessionalService"],
-            "@id": "https://webfloratechnologies.com/#organization",
-            "name": "Webflora Technologies",
-            "url": "https://webfloratechnologies.com",
-            "logo": "https://webfloratechnologies.com/webflora-logo.svg",
-            "image": "https://webfloratechnologies.com/webflora-logo.svg",
-            "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile app development, performance digital marketing, and AI automation solutions.",
-            "telephone": "+918540814729",
-            "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
-            "identifier": {
-              "@type": "PropertyValue",
-              "name": "Udyam Registration Number",
-              "value": "UDYAM-BR-26-0183379"
+          __html: JSON.stringify([
+            buildOrganizationSchema(),
+            buildLocalBusinessSchema(),
+            buildProfessionalServiceSchema(),
+            buildWebSiteSchema(),
+            buildWebPageSchema({
+              name: "Software Company in Patna, Bihar | Webflora Technologies",
+              description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
+              url: "https://webfloratechnologies.com"
+            }),
+            buildServiceSchema({
+              name: "Software Development Services",
+              serviceType: "Custom Software & Web Development",
+              description: "High-performance custom software, website, mobile app development, and AI automation workflows."
+            }),
+            buildFAQPageSchema(homeFaqs),
+            buildBreadcrumbListSchema([{ name: "Home", url: "/" }]),
+            buildItemListSchema([
+              { name: "Website Development Patna", url: "/website-development-patna" },
+              { name: "Mobile App Development Patna", url: "/mobile-app-development-patna" },
+              { name: "Software Development Patna", url: "/software-company-patna" },
+              { name: "AI Automation Patna", url: "/ai-chatbot-development-patna" },
+              { name: "Digital Marketing Patna", url: "/digital-marketing-patna" }
+            ]),
+            {
+              ...buildLocalBusinessSchema(),
+              aggregateRating: buildAggregateRatingSchema({ ratingValue: 4.9, reviewCount: 68 })
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
-              "addressLocality": "Patna",
-              "addressRegion": "Bihar",
-              "postalCode": "800016",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "25.594095",
-              "longitude": "85.137566"
-            },
-            "areaServed": { "@type": "Country", "name": "India" },
-            "sameAs": [
-              "https://www.linkedin.com/company/webfloratechnologies/",
-              "https://www.instagram.com/webflora.technologies",
-              "https://www.facebook.com/profile.php?id=61580014195502"
-            ],
-            "founder": [
-              { "@type": "Person", "name": "Shashank Manohar" },
-              { "@type": "Person", "name": "Amitesh Kumar" }
-            ],
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+918540814729",
-                "contactType": "customer support",
-                "areaServed": "IN",
-                "availableLanguage": ["English", "Hindi"]
-              },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+918863081255",
-                "contactType": "technical support",
-                "areaServed": "IN",
-                "availableLanguage": ["English", "Hindi"]
-              }
-            ],
-            "knowsAbout": [
-              "website company", "software company", "mobile app company",
-              "digital marketing", "AI automation", "Web Development",
-              "Website Development", "Mobile App Development",
-              "AI Automation Services", "SEO Services", "Digital Marketing Services",
-              "Custom Software Development", "ERP Software Development",
-              "React Development", "Next.js Development", "Node.js Development",
-              "UI UX Design", "Software Development", "Ecommerce Development"
-            ]
-          })
-        }}
-      />
-
-      {/* WEBSITE SCHEMA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "@id": "https://webfloratechnologies.com/#website",
-            "url": "https://webfloratechnologies.com",
-            "name": "Webflora Technologies",
-            "description": "Leading custom software development and website company in Patna, Bihar.",
-            "publisher": { 
-              "@type": "Organization",
-              "@id": "https://webfloratechnologies.com/#organization",
-              "name": "Webflora Technologies",
-              "url": "https://webfloratechnologies.com"
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://webfloratechnologies.com/?s={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          })
-        }}
-      />
-
-      {/* LOCAL BUSINESS SCHEMA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "@id": "https://webfloratechnologies.com/#localbusiness",
-            "name": "Webflora Technologies",
-            "description": "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software development, website development, mobile app development, digital marketing, and AI automation workflows.",
-            "image": "https://webfloratechnologies.com/webflora-logo.svg",
-            "url": "https://webfloratechnologies.com",
-            "telephone": "+918540814729",
-            "email": ["hello@webfloratechnologies.com", "info@webfloratechnologies.com"],
-            "priceRange": "$$",
-            "openingHours": "Mo-Sa 09:00-19:00",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
-              "addressLocality": "Patna",
-              "addressRegion": "Bihar",
-              "postalCode": "800016",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "25.594095",
-              "longitude": "85.137566"
-            }
-          })
-        }}
-      />
-
-      {/* SERVICE SCHEMA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Software Development Services",
-            "provider": { 
-              "@type": "Organization",
-              "@id": "https://webfloratechnologies.com/#organization",
-              "name": "Webflora Technologies",
-              "url": "https://webfloratechnologies.com"
-            },
-            "areaServed": { "@type": "Country", "name": "India" },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Digital Services",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Company Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Company Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Company Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } }
-              ]
-            }
-          })
-        }}
-      />
-      {/* FAQ SCHEMA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "description": "Frequently asked questions about web development, custom software, and digital services from Webflora Technologies.",
-            "mainEntity": homeFaqs.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
-              "dateCreated": "2024-05-19T00:00:00+05:30"
-            }))
-          })
-        }}
-      />
-      {/* BREADCRUMB SCHEMA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://webfloratechnologies.com"
-              }
-            ]
-          })
+            buildReviewSchema({
+              authorName: "Anand Prakash",
+              reviewRating: 5,
+              reviewBody: "Webflora Technologies delivered an outstanding web solution for our enterprise. Highly recommended engineering team in Bihar!"
+            })
+          ])
         }}
       />
     </>

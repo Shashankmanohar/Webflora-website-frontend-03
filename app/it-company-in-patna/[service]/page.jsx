@@ -2,6 +2,14 @@ import React from "react";
 import ServiceTemplate from "../components/ServiceTemplate";
 import { servicesData } from "../data";
 import { notFound } from "next/navigation";
+import {
+  buildServiceSchema,
+  buildWebPageSchema,
+  buildBreadcrumbListSchema,
+  buildFAQPageSchema,
+  buildItemListSchema,
+  buildOfferSchema
+} from "../../lib/schemas";
 
 export async function generateMetadata({ params }) {
   const { service: serviceSlug } = await params;
@@ -55,119 +63,33 @@ export default async function ServicePage({ params }) {
     <>
       <ServiceTemplate data={data} />
       
-      {/* WebPage Schema to satisfy Article / Headline / Author validations */}
+      {/* Service Subpage JSON-LD Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "@id": `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}#webpage`,
-            "url": `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`,
-            "name": data.title,
-            "headline": data.title,
-            "description": data.subtext.slice(0, 150) + "...",
-            "datePublished": "2026-01-01T00:00:00+05:30",
-            "dateModified": "2026-07-02T00:00:00+05:30",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Webflora Technologies",
-              "url": "https://webfloratechnologies.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://webfloratechnologies.com/title-logo.png"
-              }
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Shashank Manohar",
-              "url": "https://webfloratechnologies.com/#founder-shashank",
-              "sameAs": [
-                "https://www.linkedin.com/in/shashank-manohar-patna/"
-              ]
-            }
-          })
+          __html: JSON.stringify([
+            buildServiceSchema({
+              name: data.title,
+              serviceType: data.title,
+              description: data.subtext
+            }),
+            buildWebPageSchema({
+              name: data.title,
+              description: data.subtext.slice(0, 150) + "...",
+              url: `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`
+            }),
+            buildBreadcrumbListSchema([
+              { name: "Home", url: "/" },
+              { name: "IT Company In Patna", url: "/it-company-in-patna" },
+              { name: data.title, url: `/it-company-in-patna/${serviceSlug}` }
+            ]),
+            buildItemListSchema(
+              (data.solutions || []).map(s => ({ name: s, url: `/it-company-in-patna/${serviceSlug}` }))
+            ),
+            ...(data.faqs ? [buildFAQPageSchema(data.faqs)] : [])
+          ])
         }}
       />
-      
-      {/* Service Schema for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": data.title,
-            "serviceType": data.title,
-            "description": data.subtext,
-            "provider": {
-              "@type": "ProfessionalService",
-              "name": "Webflora Technologies",
-              "@id": "https://webfloratechnologies.com/#organization"
-            },
-            "areaServed": "India",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": `${data.title} Catalog`,
-              "itemListElement": data.solutions.map((s, i) => ({
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": s
-                }
-              }))
-            }
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://webfloratechnologies.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "IT Company In Patna",
-                "item": "https://webfloratechnologies.com/it-company-in-patna"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": data.title,
-                "item": `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`
-              }
-            ]
-          })
-        }}
-      />
-      {data.faqs && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": data.faqs.map(faq => ({
-                "@type": "Question",
-                "name": faq.question,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": faq.answer
-                }
-              }))
-            })
-          }}
-        />
-      )}
     </>
   );
 }

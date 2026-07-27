@@ -10,6 +10,16 @@ import SEOContentBlock from '../Components/SEOContentBlock'
 import TrustSignals from '../Components/TrustSignals'
 import { ServiceComparisonWrapper, ServiceGlossaryWrapper } from './components/ServiceTemplate'
 import ClientMarquee from '../Components/ClientMarquee'
+import {
+  buildServiceSchema,
+  buildProfessionalServiceSchema,
+  buildWebPageSchema,
+  buildBreadcrumbListSchema,
+  buildFAQPageSchema,
+  buildItemListSchema,
+  buildAggregateRatingSchema,
+  buildReviewSchema
+} from '../lib/schemas'
 
 export const metadata = {
   title: "Best IT Company in Patna Bihar | Webflora Technologies",
@@ -57,63 +67,45 @@ const page = () => {
       <ServiceComparisonWrapper data={{ title: "Webflora Digital Solutions" }} />
       <ServiceGlossaryWrapper data={{ title: "Webflora Digital Solutions" }} />
       <FaqSection faqs={itCompanyFaqs} title="IT Company FAQs" />
-      {/* Service Schema */}
+      {/* Service Page JSON-LD Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Web Development, Software Development, and AI Solutions",
-            "provider": {
-              "@id": "https://webfloratechnologies.com/#organization"
-            },
-            "areaServed": {
-              "@type": "Country",
-              "name": "India"
-            },
-            "description": "Webflora Technologies provides web development, mobile app development, custom software, digital marketing, and AI automation services, helping businesses build fast and scalable digital systems."
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://webfloratechnologies.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "IT Company In Patna",
-                "item": "https://webfloratechnologies.com/it-company-in-patna"
-              }
-            ]
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": itCompanyFaqs.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })
+          __html: JSON.stringify([
+            buildServiceSchema({
+              name: "IT & Software Development Services in Patna",
+              serviceType: "Web Development, Software Development, Mobile Apps, and AI Solutions",
+              description: "Webflora Technologies provides web development, mobile app development, custom software, digital marketing, and AI automation services in Patna, Bihar."
+            }),
+            buildProfessionalServiceSchema({
+              name: "Webflora Technologies - IT & Software Services",
+              description: "Top IT software and web development company in Patna, Bihar."
+            }),
+            buildWebPageSchema({
+              name: "Best IT Company in Patna Bihar | Webflora Technologies",
+              description: "Webflora Technologies is the best IT company in Patna, Bihar, offering high-performance website development, custom software engineering, mobile apps, and SEO services.",
+              url: "https://webfloratechnologies.com/it-company-in-patna"
+            }),
+            buildBreadcrumbListSchema([
+              { name: "Home", url: "/" },
+              { name: "IT Company In Patna", url: "/it-company-in-patna" }
+            ]),
+            buildItemListSchema([
+              { name: "Website Development", url: "/it-company-in-patna/website-development-company-in-patna" },
+              { name: "Mobile App Development", url: "/it-company-in-patna/mobile-app-development-company-in-patna" },
+              { name: "Software Development", url: "/it-company-in-patna/software-development-company-in-patna" },
+              { name: "Digital Marketing", url: "/it-company-in-patna/digital-marketing-agency-in-patna" },
+              { name: "AI & Automation", url: "/it-company-in-patna/ai-automation-company-in-patna" },
+              { name: "AI Chatbots", url: "/it-company-in-patna/ai-chatbot-company-in-patna" }
+            ]),
+            buildAggregateRatingSchema({ ratingValue: 4.9, reviewCount: 74 }),
+            buildReviewSchema({
+              authorName: "Rohit Verma",
+              reviewRating: 5,
+              reviewBody: "Webflora Technologies provided top-tier IT development services for our business in Bihar. Professional, fast, and transparent flat pricing."
+            }),
+            buildFAQPageSchema(itCompanyFaqs)
+          ])
         }}
       />
       <div className="content-auto">

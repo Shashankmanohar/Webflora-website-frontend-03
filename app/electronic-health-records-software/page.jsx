@@ -32,7 +32,8 @@ import {
   buildBreadcrumbListSchema,
   buildFAQPageSchema,
   buildAggregateRatingSchema,
-  buildReviewSchema
+  buildReviewSchema,
+  toGraphSchema
 } from "../lib/schemas";
 
 // Floating decorative background blobs
@@ -801,47 +802,49 @@ export default function EHRSoftwarePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildSoftwareApplicationSchema({
-              name: "Webflora Custom EHR & EMR Electronic Health Records Software",
-              operatingSystem: "Web, Cloud, Windows, Linux, iOS, Android",
-              applicationCategory: "HealthApplication",
-              description: "Custom-coded HIPAA compliant EMR and EHR databases, medical billing software, and voice dictation systems built with Next.js & React.",
-              image: "https://webfloratechnologies.com/title-logo.png",
-              url: "https://webfloratechnologies.com/electronic-health-records-software",
-              offers: { price: "150000", priceCurrency: "INR", url: "https://webfloratechnologies.com/electronic-health-records-software" },
-              aggregateRating: { ratingValue: 4.95, reviewCount: 88 }
-            }),
-            buildProductSchema({
-              name: "Custom EHR & EMR Healthcare Software",
-              description: "HIPAA compliant electronic medical record management software for clinics, hospitals, and diagnostic labs.",
-              category: "Healthcare SaaS & Custom Software",
-              image: "https://webfloratechnologies.com/title-logo.png",
-              url: "https://webfloratechnologies.com/electronic-health-records-software",
-              offers: { price: "150000", priceCurrency: "INR", url: "https://webfloratechnologies.com/electronic-health-records-software" },
-              aggregateRating: { ratingValue: 4.95, reviewCount: 88 }
-            }),
-            buildServiceSchema({
-              name: "Healthcare Software Engineering & EHR Development",
-              serviceType: "Custom Healthcare EMR/EHR Solutions",
-              description: "HIPAA-compliant EHR database architecture, patient portal development, and DICOM image integrations."
-            }),
-            buildWebPageSchema({
-              name: "Electronic Health Records Software Solutions",
-              description: "Custom HIPAA-compliant Electronic Health Records (EHR) and EMR software solutions engineered by Webflora Technologies.",
-              url: "https://webfloratechnologies.com/electronic-health-records-software"
-            }),
-            buildBreadcrumbListSchema([
-              { name: "Home", url: "/" },
-              { name: "EHR Software", url: "/electronic-health-records-software" }
-            ]),
-            buildReviewSchema({
-              authorName: "Dr. Rajesh V. Verma",
-              reviewRating: 5,
-              reviewBody: "Webflora built our custom hospital EMR system with voice transcription and HIPAA security. Flawless execution and support!"
-            }),
-            buildFAQPageSchema(ehrFaqs)
-          ])
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildSoftwareApplicationSchema({
+                name: "Webflora Custom EHR & EMR Electronic Health Records Software",
+                operatingSystem: "Web, Cloud, Windows, Linux, iOS, Android",
+                applicationCategory: "HealthApplication",
+                description: "Custom-coded HIPAA compliant EMR and EHR databases, medical billing software, and voice dictation systems built with Next.js & React.",
+                image: "https://webfloratechnologies.com/title-logo.png",
+                url: "https://webfloratechnologies.com/electronic-health-records-software",
+                offers: { price: "150000", priceCurrency: "INR", url: "https://webfloratechnologies.com/electronic-health-records-software" },
+                aggregateRating: { ratingValue: 4.95, reviewCount: 88 }
+              }),
+              buildProductSchema({
+                name: "Custom EHR & EMR Healthcare Software",
+                description: "HIPAA compliant electronic medical record management software for clinics, hospitals, and diagnostic labs.",
+                category: "Healthcare SaaS & Custom Software",
+                image: "https://webfloratechnologies.com/title-logo.png",
+                url: "https://webfloratechnologies.com/electronic-health-records-software",
+                offers: { price: "150000", priceCurrency: "INR", url: "https://webfloratechnologies.com/electronic-health-records-software" },
+                aggregateRating: { ratingValue: 4.95, reviewCount: 88 }
+              }),
+              buildServiceSchema({
+                name: "Healthcare Software Engineering & EHR Development",
+                serviceType: "Custom Healthcare EMR/EHR Solutions",
+                description: "HIPAA-compliant EHR database architecture, patient portal development, and DICOM image integrations."
+              }),
+              buildWebPageSchema({
+                name: "Electronic Health Records Software Solutions",
+                description: "Custom HIPAA-compliant Electronic Health Records (EHR) and EMR software solutions engineered by Webflora Technologies.",
+                url: "https://webfloratechnologies.com/electronic-health-records-software"
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "EHR Software", url: "/electronic-health-records-software" }
+              ]),
+              buildReviewSchema({
+                authorName: "Dr. Rajesh V. Verma",
+                reviewRating: 5,
+                reviewBody: "Webflora built our custom hospital EMR system with voice transcription and HIPAA security. Flawless execution and support!"
+              }),
+              buildFAQPageSchema(ehrFaqs)
+            ])
+          )
         }}
       />
     </main>

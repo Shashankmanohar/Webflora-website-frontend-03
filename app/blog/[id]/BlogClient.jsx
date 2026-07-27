@@ -26,7 +26,8 @@ import {
   buildPersonSchema,
   buildImageObjectSchema,
   buildBreadcrumbListSchema,
-  buildWebPageSchema
+  buildWebPageSchema,
+  toGraphSchema
 } from "../../lib/schemas";
 
 const BlogClient = ({ initialPost }) => {
@@ -817,39 +818,41 @@ const BlogClient = ({ initialPost }) => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              buildBlogPostingSchema({
-                title: post.title,
-                description: post.content?.substring(0, 160) || post.title,
-                url: `https://webfloratechnologies.com/blog/${slug}`,
-                image: post.coverImage || "https://webfloratechnologies.com/title-logo.png",
-                datePublished: post.createdAt,
-                dateModified: post.updatedAt || post.createdAt,
-                authorName: post.author || "Webflora Engineering"
-              }),
-              buildArticleSchema({
-                title: post.title,
-                description: post.content?.substring(0, 160) || post.title,
-                url: `https://webfloratechnologies.com/blog/${slug}`,
-                image: post.coverImage,
-                datePublished: post.createdAt,
-                authorName: post.author || "Webflora Engineering"
-              }),
-              buildWebPageSchema({
-                name: post.title,
-                description: post.content?.substring(0, 160) || post.title,
-                url: `https://webfloratechnologies.com/blog/${slug}`
-              }),
-              buildBreadcrumbListSchema([
-                { name: "Home", url: "/" },
-                { name: "Blog", url: "/blog" },
-                { name: post.title, url: `/blog/${slug}` }
-              ]),
-              buildImageObjectSchema({
-                url: post.coverImage || "https://webfloratechnologies.com/title-logo.png",
-                caption: post.title
-              })
-            ])
+            __html: JSON.stringify(
+              toGraphSchema([
+                buildBlogPostingSchema({
+                  title: post.title,
+                  description: post.content?.substring(0, 160) || post.title,
+                  url: `https://webfloratechnologies.com/blog/${slug}`,
+                  image: post.coverImage || "https://webfloratechnologies.com/title-logo.png",
+                  datePublished: post.createdAt,
+                  dateModified: post.updatedAt || post.createdAt,
+                  authorName: post.author || "Webflora Engineering"
+                }),
+                buildArticleSchema({
+                  title: post.title,
+                  description: post.content?.substring(0, 160) || post.title,
+                  url: `https://webfloratechnologies.com/blog/${slug}`,
+                  image: post.coverImage,
+                  datePublished: post.createdAt,
+                  authorName: post.author || "Webflora Engineering"
+                }),
+                buildWebPageSchema({
+                  name: post.title,
+                  description: post.content?.substring(0, 160) || post.title,
+                  url: `https://webfloratechnologies.com/blog/${slug}`
+                }),
+                buildBreadcrumbListSchema([
+                  { name: "Home", url: "/" },
+                  { name: "Blog", url: "/blog" },
+                  { name: post.title, url: `/blog/${slug}` }
+                ]),
+                buildImageObjectSchema({
+                  url: post.coverImage || "https://webfloratechnologies.com/title-logo.png",
+                  caption: post.title
+                })
+              ])
+            )
           }}
         />
       )}

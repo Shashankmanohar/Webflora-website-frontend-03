@@ -16,7 +16,8 @@ import {
   buildBreadcrumbListSchema,
   buildItemListSchema,
   buildAggregateRatingSchema,
-  buildReviewSchema
+  buildReviewSchema,
+  toGraphSchema
 } from "./lib/schemas";
 
 /* ── FAQ data (defined server-side, passed as prop to client component) ── */
@@ -81,40 +82,42 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildOrganizationSchema(),
-            buildLocalBusinessSchema(),
-            buildProfessionalServiceSchema(),
-            buildWebSiteSchema(),
-            buildWebPageSchema({
-              name: "Software Company in Patna, Bihar | Webflora Technologies",
-              description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
-              url: "https://webfloratechnologies.com"
-            }),
-            buildServiceSchema({
-              name: "Software Development Services",
-              serviceType: "Custom Software & Web Development",
-              description: "High-performance custom software, website, mobile app development, and AI automation workflows."
-            }),
-            buildFAQPageSchema(homeFaqs),
-            buildBreadcrumbListSchema([{ name: "Home", url: "/" }]),
-            buildItemListSchema([
-              { name: "Website Development Patna", url: "/website-development-patna" },
-              { name: "Mobile App Development Patna", url: "/mobile-app-development-patna" },
-              { name: "Software Development Patna", url: "/software-company-patna" },
-              { name: "AI Automation Patna", url: "/ai-chatbot-development-patna" },
-              { name: "Digital Marketing Patna", url: "/digital-marketing-patna" }
-            ]),
-            {
-              ...buildLocalBusinessSchema(),
-              aggregateRating: buildAggregateRatingSchema({ ratingValue: 4.9, reviewCount: 68 })
-            },
-            buildReviewSchema({
-              authorName: "Anand Prakash",
-              reviewRating: 5,
-              reviewBody: "Webflora Technologies delivered an outstanding web solution for our enterprise. Highly recommended engineering team in Bihar!"
-            })
-          ])
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildOrganizationSchema(),
+              buildLocalBusinessSchema(),
+              buildProfessionalServiceSchema(),
+              buildWebSiteSchema(),
+              buildWebPageSchema({
+                name: "Software Company in Patna, Bihar | Webflora Technologies",
+                description: "Webflora Technologies is the leading software company in Patna, Bihar, offering custom software, website development, mobile apps, and digital marketing.",
+                url: "https://webfloratechnologies.com"
+              }),
+              buildServiceSchema({
+                name: "Software Development Services",
+                serviceType: "Custom Software & Web Development",
+                description: "High-performance custom software, website, mobile app development, and AI automation workflows."
+              }),
+              buildFAQPageSchema(homeFaqs),
+              buildBreadcrumbListSchema([{ name: "Home", url: "/" }]),
+              buildItemListSchema([
+                { name: "Website Development Patna", url: "/website-development-patna" },
+                { name: "Mobile App Development Patna", url: "/mobile-app-development-patna" },
+                { name: "Software Development Patna", url: "/software-company-patna" },
+                { name: "AI Automation Patna", url: "/ai-chatbot-development-patna" },
+                { name: "Digital Marketing Patna", url: "/digital-marketing-patna" }
+              ]),
+              {
+                ...buildLocalBusinessSchema(),
+                aggregateRating: buildAggregateRatingSchema({ ratingValue: 4.9, reviewCount: 68 })
+              },
+              buildReviewSchema({
+                authorName: "Anand Prakash",
+                reviewRating: 5,
+                reviewBody: "Webflora Technologies delivered an outstanding web solution for our enterprise. Highly recommended engineering team in Bihar!"
+              })
+            ])
+          )
         }}
       />
     </>

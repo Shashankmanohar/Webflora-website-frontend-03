@@ -8,7 +8,8 @@ import {
   buildBreadcrumbListSchema,
   buildFAQPageSchema,
   buildItemListSchema,
-  buildOfferSchema
+  buildOfferSchema,
+  toGraphSchema
 } from "../../lib/schemas";
 
 export async function generateMetadata({ params }) {
@@ -67,27 +68,29 @@ export default async function ServicePage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildServiceSchema({
-              name: data.title,
-              serviceType: data.title,
-              description: data.subtext
-            }),
-            buildWebPageSchema({
-              name: data.title,
-              description: data.subtext.slice(0, 150) + "...",
-              url: `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`
-            }),
-            buildBreadcrumbListSchema([
-              { name: "Home", url: "/" },
-              { name: "IT Company In Patna", url: "/it-company-in-patna" },
-              { name: data.title, url: `/it-company-in-patna/${serviceSlug}` }
-            ]),
-            buildItemListSchema(
-              (data.solutions || []).map(s => ({ name: s, url: `/it-company-in-patna/${serviceSlug}` }))
-            ),
-            ...(data.faqs ? [buildFAQPageSchema(data.faqs)] : [])
-          ])
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildServiceSchema({
+                name: data.title,
+                serviceType: data.title,
+                description: data.subtext
+              }),
+              buildWebPageSchema({
+                name: data.title,
+                description: data.subtext.slice(0, 150) + "...",
+                url: `https://webfloratechnologies.com/it-company-in-patna/${serviceSlug}`
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "IT Company In Patna", url: "/it-company-in-patna" },
+                { name: data.title, url: `/it-company-in-patna/${serviceSlug}` }
+              ]),
+              buildItemListSchema(
+                (data.solutions || []).map(s => ({ name: s, url: `/it-company-in-patna/${serviceSlug}` }))
+              ),
+              ...(data.faqs ? [buildFAQPageSchema(data.faqs)] : [])
+            ])
+          )
         }}
       />
     </>

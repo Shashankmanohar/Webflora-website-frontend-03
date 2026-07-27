@@ -13,7 +13,8 @@ import {
   buildCollectionPageSchema,
   buildItemListSchema,
   buildBreadcrumbListSchema,
-  buildWebPageSchema
+  buildWebPageSchema,
+  toGraphSchema
 } from "../lib/schemas";
 
 // Mock categories - you can also fetch these from unique categories in your blogs
@@ -385,23 +386,25 @@ const BlogPage = () => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              buildCollectionPageSchema({
-                name: "Webflora Technologies Blog",
-                description: "Insights, guides, and news about software development, AI, and digital marketing from Webflora Technologies.",
-                url: "https://webfloratechnologies.com/blog",
-                items: blogs.map(b => ({ name: b.title, url: `/blog/${b.slug || b._id}` }))
-              }),
-              buildWebPageSchema({
-                name: "Blog | Webflora Technologies Insights & Guides",
-                description: "Insights, guides, and news about software development, AI, and digital marketing.",
-                url: "https://webfloratechnologies.com/blog"
-              }),
-              buildBreadcrumbListSchema([
-                { name: "Home", url: "/" },
-                { name: "Blog", url: "/blog" }
+            __html: JSON.stringify(
+              toGraphSchema([
+                buildCollectionPageSchema({
+                  name: "Webflora Technologies Blog",
+                  description: "Insights, guides, and news about software development, AI, and digital marketing from Webflora Technologies.",
+                  url: "https://webfloratechnologies.com/blog",
+                  items: blogs.map(b => ({ name: b.title, url: `/blog/${b.slug || b._id}` }))
+                }),
+                buildWebPageSchema({
+                  name: "Blog | Webflora Technologies Insights & Guides",
+                  description: "Insights, guides, and news about software development, AI, and digital marketing.",
+                  url: "https://webfloratechnologies.com/blog"
+                }),
+                buildBreadcrumbListSchema([
+                  { name: "Home", url: "/" },
+                  { name: "Blog", url: "/blog" }
+                ])
               ])
-            ])
+            )
           }}
         />
       </div>

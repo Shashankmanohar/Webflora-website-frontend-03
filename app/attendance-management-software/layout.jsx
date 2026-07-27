@@ -7,7 +7,8 @@ import {
   buildReviewSchema,
   buildBreadcrumbListSchema,
   buildFAQPageSchema,
-  buildWebPageSchema
+  buildWebPageSchema,
+  toGraphSchema
 } from "../lib/schemas";
 
 export const metadata = {
@@ -126,7 +127,7 @@ export default function AttendanceLayout({ children }) {
       <Script
         id="attendance-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toGraphSchema(jsonLdSchema)) }}
       />
       {children}
     </>

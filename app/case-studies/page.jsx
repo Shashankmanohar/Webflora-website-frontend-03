@@ -14,7 +14,8 @@ import {
   buildItemListSchema,
   buildImageGallerySchema,
   buildBreadcrumbListSchema,
-  buildWebPageSchema
+  buildWebPageSchema,
+  toGraphSchema
 } from "../lib/schemas";
 
 // --- Premium Component: Starfield ---
@@ -250,28 +251,30 @@ export default function CaseStudiesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildCollectionPageSchema({
-              name: "Case Studies - Webflora Technologies",
-              description: "View our portfolio of custom software, web development, and digital marketing success stories.",
-              url: "https://webfloratechnologies.com/case-studies",
-              items: projects.map(p => ({ name: p.title, url: `/case-studies/${p.slug || p._id}` }))
-            }),
-            buildWebPageSchema({
-              name: "Case Studies & Software Engineering Portfolio",
-              description: "Explore enterprise projects, mobile applications, and web platforms created by Webflora Technologies.",
-              url: "https://webfloratechnologies.com/case-studies"
-            }),
-            buildImageGallerySchema({
-              name: "Webflora Portfolio Showcase",
-              description: "Screenshots of client applications, web systems, and mobile software built by Webflora Technologies.",
-              images: projects.map(p => p.image).filter(Boolean)
-            }),
-            buildBreadcrumbListSchema([
-              { name: "Home", url: "/" },
-              { name: "Case Studies", url: "/case-studies" }
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildCollectionPageSchema({
+                name: "Case Studies - Webflora Technologies",
+                description: "View our portfolio of custom software, web development, and digital marketing success stories.",
+                url: "https://webfloratechnologies.com/case-studies",
+                items: projects.map(p => ({ name: p.title, url: `/case-studies/${p.slug || p._id}` }))
+              }),
+              buildWebPageSchema({
+                name: "Case Studies & Software Engineering Portfolio",
+                description: "Explore enterprise projects, mobile applications, and web platforms created by Webflora Technologies.",
+                url: "https://webfloratechnologies.com/case-studies"
+              }),
+              buildImageGallerySchema({
+                name: "Webflora Portfolio Showcase",
+                description: "Screenshots of client applications, web systems, and mobile software built by Webflora Technologies.",
+                images: projects.map(p => p.image).filter(Boolean)
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "Case Studies", url: "/case-studies" }
+              ])
             ])
-          ])
+          )
         }}
       />
 

@@ -6,7 +6,7 @@ import FooterSection from "./Components/FooterSection";
 import Script from "next/script";
 import ChatbotLoader from "./Components/ChatbotLoader";
 import FloatingCTA from "./Components/FloatingCTA";
-import { buildOrganizationSchema, buildWebSiteSchema, buildSiteNavigationElementSchema } from "./lib/schemas";
+import { buildOrganizationSchema, buildWebSiteSchema, buildSiteNavigationElementSchema, toGraphSchema } from "./lib/schemas";
 
 
 /* Inter – Body / UI */
@@ -116,11 +116,13 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              buildOrganizationSchema(),
-              buildWebSiteSchema(),
-              buildSiteNavigationElementSchema()
-            ])
+            __html: JSON.stringify(
+              toGraphSchema([
+                buildOrganizationSchema(),
+                buildWebSiteSchema(),
+                buildSiteNavigationElementSchema()
+              ])
+            )
           }}
         />
 

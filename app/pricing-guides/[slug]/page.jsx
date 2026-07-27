@@ -10,7 +10,8 @@ import {
   buildItemListSchema,
   buildFAQPageSchema,
   buildBreadcrumbListSchema,
-  buildWebPageSchema
+  buildWebPageSchema,
+  toGraphSchema
 } from "../../lib/schemas";
 
 export async function generateMetadata({ params }) {
@@ -146,27 +147,29 @@ export default async function PricingGuidePage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildHowToSchema({
-              name: data.title,
-              description: data.subtext,
-              steps: data.pricingFactors.map((f, i) => ({ name: f.title, text: f.desc }))
-            }),
-            buildItemListSchema(
-              data.factors.map(f => ({ name: `${f.name}: ${f.price}`, url: `/pricing-guides/${slug}` }))
-            ),
-            buildWebPageSchema({
-              name: data.title,
-              description: data.subtext,
-              url: `https://webfloratechnologies.com/pricing-guides/${slug}`
-            }),
-            buildBreadcrumbListSchema([
-              { name: "Home", url: "/" },
-              { name: "Pricing Guides", url: "/pricing-guides" },
-              { name: data.title, url: `/pricing-guides/${slug}` }
-            ]),
-            buildFAQPageSchema(data.faqs || [])
-          ])
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildHowToSchema({
+                name: data.title,
+                description: data.subtext,
+                steps: data.pricingFactors.map((f, i) => ({ name: f.title, text: f.desc }))
+              }),
+              buildItemListSchema(
+                data.factors.map(f => ({ name: `${f.name}: ${f.price}`, url: `/pricing-guides/${slug}` }))
+              ),
+              buildWebPageSchema({
+                name: data.title,
+                description: data.subtext,
+                url: `https://webfloratechnologies.com/pricing-guides/${slug}`
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "Pricing Guides", url: "/pricing-guides" },
+                { name: data.title, url: `/pricing-guides/${slug}` }
+              ]),
+              buildFAQPageSchema(data.faqs || [])
+            ])
+          )
         }}
       />
     </div>

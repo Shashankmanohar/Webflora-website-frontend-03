@@ -12,7 +12,8 @@ import {
   buildPostalAddressSchema,
   buildGeoCoordinatesSchema,
   buildContactPointSchema,
-  buildOpeningHoursSpecificationSchema
+  buildOpeningHoursSpecificationSchema,
+  toGraphSchema
 } from "../lib/schemas";
 
 const BRAND = "#ff3b00";
@@ -364,25 +365,27 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildContactPageSchema(),
-            buildWebPageSchema({
-              name: "Contact Webflora Technologies | Software & Web Agency Patna",
-              description: "Contact Webflora Technologies for website development, mobile app development, AI automation, software development, and digital marketing services in Patna Bihar.",
-              url: "https://webfloratechnologies.com/contact"
-            }),
-            buildBreadcrumbListSchema([
-              { name: "Home", url: "/" },
-              { name: "Contact Us", url: "/contact" }
-            ]),
-            {
-              ...buildLocalBusinessSchema(),
-              address: buildPostalAddressSchema(),
-              geo: buildGeoCoordinatesSchema(),
-              contactPoint: [buildContactPointSchema()],
-              openingHoursSpecification: [buildOpeningHoursSpecificationSchema()]
-            }
-          ])
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildContactPageSchema(),
+              buildWebPageSchema({
+                name: "Contact Webflora Technologies | Software & Web Agency Patna",
+                description: "Contact Webflora Technologies for website development, mobile app development, AI automation, software development, and digital marketing services in Patna Bihar.",
+                url: "https://webfloratechnologies.com/contact"
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "Contact Us", url: "/contact" }
+              ]),
+              {
+                ...buildLocalBusinessSchema(),
+                address: buildPostalAddressSchema(),
+                geo: buildGeoCoordinatesSchema(),
+                contactPoint: [buildContactPointSchema()],
+                openingHoursSpecification: [buildOpeningHoursSpecificationSchema()]
+              }
+            ])
+          )
         }}
       />
     </main>

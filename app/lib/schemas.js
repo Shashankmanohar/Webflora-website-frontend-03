@@ -643,22 +643,34 @@ export function buildSpeakableSpecificationSchema({ cssSelector = [".article-tit
 }
 
 /**
+ * Converts array of schema objects into a single valid Google-compliant @graph JSON-LD object.
+ */
+export function toGraphSchema(schemas) {
+  const list = (Array.isArray(schemas) ? schemas : [schemas]).flat(Infinity).filter(Boolean);
+  const graph = list.map(item => {
+    if (!item) return null;
+    const { "@context": _, ...rest } = item;
+    return rest;
+  }).filter(Boolean);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph
+  };
+}
+
+/**
  * Next.js Helper Component for injecting Schema JSON-LD
  */
 export function JsonLd({ data }) {
   if (!data) return null;
-  const json = Array.isArray(data) ? data : [data];
   return (
-    <>
-      {json.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema)
-          }}
-        />
-      ))}
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(toGraphSchema(data))
+      }}
+    />
   );
 }
+

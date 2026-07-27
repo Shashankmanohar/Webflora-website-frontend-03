@@ -19,7 +19,8 @@ import {
   buildImageGallerySchema,
   buildFAQPageSchema,
   buildBreadcrumbListSchema,
-  COMPANY_INFO
+  COMPANY_INFO,
+  toGraphSchema
 } from "../lib/schemas";
 
 const container = {
@@ -264,28 +265,30 @@ export default function UltraAnimatedHero() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            buildAboutPageSchema(),
-            buildWebPageSchema({
-              name: "About Webflora Technologies",
-              description: "Learn about Webflora Technologies, Patna's premier software engineering agency led by co-founders Shashank Manohar & Amitesh Kumar.",
-              url: "https://webfloratechnologies.com/about"
-            }),
-            COMPANY_INFO.founders.map(f => buildPersonSchema(f)),
-            buildImageGallerySchema({
-              name: "Webflora Team & Office Showcase",
-              description: "Photos of Webflora Technologies engineering headquarters and executive team in Patna.",
-              images: [
-                "https://webfloratechnologies.com/team/shashank.jpg",
-                "https://webfloratechnologies.com/FounderPhoto/co-founder.webp"
-              ]
-            }),
-            buildBreadcrumbListSchema([
-              { name: "Home", url: "/" },
-              { name: "About Us", url: "/about" }
-            ]),
-            buildFAQPageSchema(aboutFaqs)
-          ])
+          __html: JSON.stringify(
+            toGraphSchema([
+              buildAboutPageSchema(),
+              buildWebPageSchema({
+                name: "About Webflora Technologies",
+                description: "Learn about Webflora Technologies, Patna's premier software engineering agency led by co-founders Shashank Manohar & Amitesh Kumar.",
+                url: "https://webfloratechnologies.com/about"
+              }),
+              COMPANY_INFO.founders.map(f => buildPersonSchema(f)),
+              buildImageGallerySchema({
+                name: "Webflora Team & Office Showcase",
+                description: "Photos of Webflora Technologies engineering headquarters and executive team in Patna.",
+                images: [
+                  "https://webfloratechnologies.com/team/shashank.jpg",
+                  "https://webfloratechnologies.com/FounderPhoto/co-founder.webp"
+                ]
+              }),
+              buildBreadcrumbListSchema([
+                { name: "Home", url: "/" },
+                { name: "About Us", url: "/about" }
+              ]),
+              buildFAQPageSchema(aboutFaqs)
+            ])
+          )
         }}
       />
     </>

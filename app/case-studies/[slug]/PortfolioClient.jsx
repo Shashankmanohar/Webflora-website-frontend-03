@@ -23,7 +23,8 @@ import {
   buildImageObjectSchema,
   buildVideoObjectSchema,
   buildBreadcrumbListSchema,
-  buildWebPageSchema
+  buildWebPageSchema,
+  toGraphSchema
 } from "../../lib/schemas";
 
 const PortfolioClient = ({ initialProject }) => {
@@ -591,45 +592,47 @@ const PortfolioClient = ({ initialProject }) => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              buildCreativeWorkSchema({
-                name: project.title,
-                description: project.description || project.summary,
-                author: "Webflora Technologies",
-                image: project.image,
-                url: `https://webfloratechnologies.com/case-studies/${slug}`
-              }),
-              buildProjectSchema({
-                name: project.title,
-                description: project.description || project.summary,
-                category: project.category || "Software Development",
-                client: project.clientName || "Client Partner",
-                image: project.image,
-                url: `https://webfloratechnologies.com/case-studies/${slug}`
-              }),
-              buildWebPageSchema({
-                name: `${project.title} | Case Study`,
-                description: project.description || project.summary,
-                url: `https://webfloratechnologies.com/case-studies/${slug}`
-              }),
-              buildBreadcrumbListSchema([
-                { name: "Home", url: "/" },
-                { name: "Case Studies", url: "/case-studies" },
-                { name: project.title, url: `/case-studies/${slug}` }
-              ]),
-              buildImageObjectSchema({
-                url: project.image || "https://webfloratechnologies.com/title-logo.png",
-                caption: project.title
-              }),
-              ...(project.videoUrl ? [
-                buildVideoObjectSchema({
-                  name: `${project.title} - Video Demo`,
-                  description: `Demo video for ${project.title}`,
-                  thumbnailUrl: project.image || "https://webfloratechnologies.com/title-logo.png",
-                  embedUrl: project.videoUrl
-                })
-              ] : [])
-            ])
+            __html: JSON.stringify(
+              toGraphSchema([
+                buildCreativeWorkSchema({
+                  name: project.title,
+                  description: project.description || project.summary,
+                  author: "Webflora Technologies",
+                  image: project.image,
+                  url: `https://webfloratechnologies.com/case-studies/${slug}`
+                }),
+                buildProjectSchema({
+                  name: project.title,
+                  description: project.description || project.summary,
+                  category: project.category || "Software Development",
+                  client: project.clientName || "Client Partner",
+                  image: project.image,
+                  url: `https://webfloratechnologies.com/case-studies/${slug}`
+                }),
+                buildWebPageSchema({
+                  name: `${project.title} | Case Study`,
+                  description: project.description || project.summary,
+                  url: `https://webfloratechnologies.com/case-studies/${slug}`
+                }),
+                buildBreadcrumbListSchema([
+                  { name: "Home", url: "/" },
+                  { name: "Case Studies", url: "/case-studies" },
+                  { name: project.title, url: `/case-studies/${slug}` }
+                ]),
+                buildImageObjectSchema({
+                  url: project.image || "https://webfloratechnologies.com/title-logo.png",
+                  caption: project.title
+                }),
+                ...(project.videoUrl ? [
+                  buildVideoObjectSchema({
+                    name: `${project.title} - Video Demo`,
+                    description: `Demo video for ${project.title}`,
+                    thumbnailUrl: project.image || "https://webfloratechnologies.com/title-logo.png",
+                    embedUrl: project.videoUrl
+                  })
+                ] : [])
+              ])
+            )
           }}
         />
       )}

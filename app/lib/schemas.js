@@ -408,25 +408,38 @@ export function buildReviewSchema({ authorName, reviewRating = 5, reviewBody, it
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": reviewRating,
-      "bestRating": 5
+      "bestRating": 5,
+      "worstRating": 1
     },
     "reviewBody": reviewBody,
     "itemReviewed": itemReviewed || {
       "@type": "LocalBusiness",
-      "name": COMPANY_INFO.name
+      "name": COMPANY_INFO.name,
+      "image": COMPANY_INFO.image,
+      "telephone": COMPANY_INFO.telephone,
+      "url": BASE_URL,
+      "address": buildPostalAddressSchema()
     }
   };
 }
 
 // 19. AggregateRating Schema
-export function buildAggregateRatingSchema({ ratingValue = 4.9, reviewCount = 50, bestRating = 5, worstRating = 1 }) {
+export function buildAggregateRatingSchema({ ratingValue = 4.9, reviewCount = 50, bestRating = 5, worstRating = 1, itemReviewed }) {
   return {
     "@context": "https://schema.org",
     "@type": "AggregateRating",
     "ratingValue": ratingValue,
     "reviewCount": reviewCount,
     "bestRating": bestRating,
-    "worstRating": worstRating
+    "worstRating": worstRating,
+    "itemReviewed": itemReviewed || {
+      "@type": "LocalBusiness",
+      "name": COMPANY_INFO.name,
+      "image": COMPANY_INFO.image,
+      "telephone": COMPANY_INFO.telephone,
+      "url": BASE_URL,
+      "address": buildPostalAddressSchema()
+    }
   };
 }
 

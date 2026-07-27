@@ -231,7 +231,7 @@ export function buildProductSchema({ name, description, image, offers, aggregate
 
 // 10. Offer Schema
 export function buildOfferSchema(offerData = {}) {
-  const { price, priceCurrency = "INR", priceValidUntil = "2026-12-31", availability = "https://schema.org/InStock", url = BASE_URL } = offerData || {};
+  const { price, priceCurrency = "INR", priceValidUntil = "2026-12-31", validFrom = "2024-01-01", availability = "https://schema.org/InStock", url = BASE_URL } = offerData || {};
   const cleanedPrice = (price !== undefined && price !== null && !isNaN(Number(String(price).replace(/[^0-9.]/g, ''))))
     ? String(price).replace(/[^0-9.]/g, '')
     : "0";
@@ -241,8 +241,41 @@ export function buildOfferSchema(offerData = {}) {
     "price": cleanedPrice,
     "priceCurrency": priceCurrency || "INR",
     "priceValidUntil": priceValidUntil,
+    "validFrom": validFrom,
     "availability": availability,
     "url": url || BASE_URL,
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": priceCurrency || "INR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    },
     "seller": {
       "@type": "Organization",
       "name": COMPANY_INFO.name

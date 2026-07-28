@@ -180,6 +180,7 @@ export default function ContactSection() {
                   email: formData.get("email"),
                   service: formData.get("service"),
                   message: formData.get("message"),
+                  website: formData.get("website") || "",
                 };
 
                 try {
@@ -188,11 +189,12 @@ export default function ContactSection() {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data),
                   });
+                  const resData = await res.json();
                   if (res.ok) {
-                    alert("Message sent successfully!");
+                    alert(resData.message || "Message sent successfully!");
                     e.target.reset();
                   } else {
-                    alert("Failed to send message.");
+                    alert(resData.message || "Failed to send message.");
                   }
                 } catch (err) {
                   alert("Server connection error.");
@@ -202,6 +204,15 @@ export default function ContactSection() {
               toolname="sendContactMessage"
               tooldescription="Submit a general contact message or project inquiry to Webflora Technologies."
             >
+              {/* Anti-spam Honeypot input (hidden from real users, populated by bots) */}
+              <input
+                type="text"
+                name="website"
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden pointer-events-none opacity-0 absolute -left-[9999px]"
+              />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input name="name" label="Your Name" placeholder="John Doe" required toolparamdescription="The full name of the contact person." />
                 <Input

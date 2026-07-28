@@ -335,6 +335,7 @@ export default function AttendanceSoftwarePage() {
     const name = formData.get("name");
     const phone = formData.get("phone");
     const message = formData.get("message");
+    const website = formData.get("website") || "";
 
     try {
       const res = await fetch(`${API_BASE_URL}/api/public/inquiry`, {
@@ -346,6 +347,7 @@ export default function AttendanceSoftwarePage() {
           email: "",
           service: `Attendance Software - ${selectedSystem}`,
           message: message,
+          website: website,
         }),
       });
 
@@ -1124,6 +1126,15 @@ export default function AttendanceSoftwarePage() {
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4 text-xs">
+                  {/* Anti-spam Honeypot input */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex="-1"
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden pointer-events-none opacity-0 absolute -left-[9999px]"
+                  />
                   <div>
                     <label className="block text-neutral-300 font-bold mb-1.5 uppercase tracking-wider text-[10px]">
                       Your Name *

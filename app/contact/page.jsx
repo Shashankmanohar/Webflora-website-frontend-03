@@ -135,9 +135,12 @@ export default function ContactPage() {
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify(data),
                     });
+                    const resData = await res.json();
                     if (res.ok) {
-                      alert("Transmission Secured.");
+                      alert(resData.message || "Transmission Secured.");
                       e.target.reset();
+                    } else {
+                      alert(resData.message || "Submission rejected.");
                     }
                   } catch (err) { alert("Link Error."); }
                 }}
@@ -145,6 +148,15 @@ export default function ContactPage() {
                 toolname="initiateProjectProtocol"
                 tooldescription="Submit a comprehensive project inquiry or digital ecosystem development request to Webflora Technologies."
               >
+                {/* Anti-spam Honeypot input */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden pointer-events-none opacity-0 absolute -left-[9999px]"
+                />
                 <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                   <div className="space-y-2">
                     <label className="text-[8px] md:text-[9px] font-black tracking-[0.3em] text-gray-600 uppercase">Subject Identity</label>

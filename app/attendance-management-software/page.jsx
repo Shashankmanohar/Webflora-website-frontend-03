@@ -414,7 +414,7 @@ export default function AttendanceSoftwarePage() {
             
             {/* Simple Subtitle */}
             <p className="text-neutral-300 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl">
-              Track employee and student attendance easily. Use AI face cameras, dynamic QR codes, <strong>eSSL biometric software</strong>, RFID cards, or mobile GPS — all managed in one simple <strong>attendance management system</strong>.
+              Track employee and student attendance easily with Webflora&apos;s <Link href="/software-company-patna" className="text-[#FF3B00] hover:underline font-medium">custom software development</Link>. Use <Link href="/ai-chatbot-development-patna" className="text-white hover:text-[#FF3B00] underline decoration-orange-500/50">AI face recognition</Link>, dynamic QR codes, <strong>eSSL biometric software</strong>, RFID cards, or <Link href="/mobile-app-development-patna" className="text-white hover:text-[#FF3B00] underline decoration-orange-500/50">mobile GPS tracking</Link> — all managed in one central <strong>attendance management system</strong>.
             </p>
             
             {/* Action Buttons */}
@@ -998,13 +998,161 @@ export default function AttendanceSoftwarePage() {
         title="Attendance Management Software Development in Patna, Bihar"
         paragraphs={[
           <>
-            <strong className="text-white font-semibold">Webflora Technologies</strong> is Patna&apos;s leading <Link href="/it-company-in-patna/software-development-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">software development company</Link> building custom <strong className="text-white font-semibold">attendance management software</strong>, HRMS platforms, and payroll systems for offices, coaching institutes, and factories across Bihar.
+            <strong className="text-white font-semibold">Webflora Technologies</strong> is Patna&apos;s leading <Link href="/software-company-patna" className="text-[#FF3B00] hover:underline font-medium">software development company in Patna</Link> building custom <strong className="text-white font-semibold">attendance management software</strong>, HRMS platforms, and payroll systems for offices, coaching institutes, schools, and factories across Bihar.
           </>,
           <>
-            We build custom solutions featuring <Link href="/it-company-in-patna/ai-automation-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">AI face recognition</Link> on CCTV cameras, dynamic <strong className="text-white font-semibold">QR code attendance systems</strong>, direct integration with <strong className="text-white font-semibold">eSSL biometric software</strong> and <strong className="text-white font-semibold">e time track lite</strong>, and mobile GPS tracking with zero forced monthly subscription fees.
+            Our team at <Link href="/it-company-in-patna" className="text-[#FF3B00] hover:underline font-medium">Webflora IT Company Patna</Link> develops solutions featuring <Link href="/ai-chatbot-development-patna" className="text-[#FF3B00] hover:underline font-medium">AI face recognition automation</Link> on CCTV cameras, dynamic <strong className="text-white font-semibold">QR code attendance systems</strong>, <Link href="/mobile-app-development-patna" className="text-[#FF3B00] hover:underline font-medium">mobile app development</Link> with GPS geofencing, and direct sync with <strong className="text-white font-semibold">eSSL biometric software</strong> and <strong className="text-white font-semibold">e time track lite</strong> with zero monthly fees.
+          </>,
+          <>
+            Explore our specialized enterprise tech platforms like <Link href="/electronic-health-records-software" className="text-[#FF3B00] hover:underline font-medium">Electronic Health Records (EHR) Software</Link> and modern <Link href="/website-development-patna" className="text-[#FF3B00] hover:underline font-medium">website development in Patna</Link> tailored for growth.
           </>
         ]}
       />
+
+      {/* Internal Navigation Links Hub */}
+      <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span className="text-[#FF3B00] font-bold uppercase tracking-[0.2em] text-xs">
+            Webflora Ecosystem
+          </span>
+          <h2 className="text-[22px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+            Explore Related Software & Digital Solutions
+          </h2>
+          <p className="text-neutral-400 text-xs sm:text-sm font-light">
+            Discover Webflora&apos;s full suite of enterprise software, mobile applications, and AI platforms.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <Link
+            href="/software-company-patna"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <Cpu size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              Software Company Patna
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              Custom ERP, HRMS, CRM, and cloud business software development.
+            </p>
+          </Link>
+
+          <Link
+            href="/electronic-health-records-software"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <ShieldCheck size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              EHR Healthcare Software
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              Electronic Health Records and hospital management systems.
+            </p>
+          </Link>
+
+          <Link
+            href="/ai-chatbot-development-patna"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <Sparkles size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              AI & Chatbot Solutions
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              AI vision, facial recognition, and automated WhatsApp chatbots.
+            </p>
+          </Link>
+
+          <Link
+            href="/mobile-app-development-patna"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <Smartphone size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              Mobile App Development
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              Native Android & iOS apps with real-time GPS tracking.
+            </p>
+          </Link>
+
+          <Link
+            href="/website-development-patna"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <Layers size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              Website Development
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              High-speed, SEO-optimized web applications & corporate sites.
+            </p>
+          </Link>
+
+          <Link
+            href="/digital-marketing-patna"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <TrendingUp size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              Digital Marketing & SEO
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              Performance SEO, lead generation, and Google Ads management.
+            </p>
+          </Link>
+
+          <Link
+            href="/it-company-in-patna"
+            className="group p-6 rounded-2xl bg-[#080808] border border-white/10 hover:border-[#FF3B00]/40 transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white transition-colors">
+              <Building size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              IT Company in Patna
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              Leading IT infrastructure, cloud, and digital services in Bihar.
+            </p>
+          </Link>
+
+          <Link
+            href="/contact"
+            className="group p-6 rounded-2xl bg-[#080808] border border-[#FF3B00]/30 hover:border-[#FF3B00] transition-all duration-300 space-y-3 hover:translate-y-[-2px]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#FF3B00] flex items-center justify-center text-white">
+              <PhoneCall size={20} />
+            </div>
+            <h3 className="text-base font-bold text-white group-hover:text-[#FF3B00] transition-colors flex items-center justify-between">
+              Contact Tech Support
+              <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </h3>
+            <p className="text-neutral-400 text-xs font-light leading-relaxed">
+              Talk to our software engineers in Patna for custom proposals.
+            </p>
+          </Link>
+        </div>
+      </section>
 
       {/* Simple FAQs */}
       <section className="relative z-10 py-24 px-6 max-w-4xl mx-auto border-t border-white/5">

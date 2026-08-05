@@ -1,13 +1,13 @@
 export const servicesData = {
   "website-development-company-in-patna": {
-    "seoTitle": "Best Website Design & Development Company in Patna",
-    "seoDescription": "Webflora Technologies is the best website design company in Patna, Bihar. We offer professional web design, custom website development, and expert website designers.",
-    "seoKeywords": "website design company in patna, web design company in patna, best website development company in patna, web development company in patna, website development company in patna, best website company in patna, best website designer in patna, best web developer in patna, best web design company in patna, best web development company in patna, list of web design company in patna, web designer in patna, website designing company in patna",
+    "seoTitle": "Best Website Design Company in Patna | Webflora Technologies",
+    "seoDescription": "MSME-registered website development company in Patna, Bihar. We design fast, secure custom React/Next.js websites starting at ₹14,999. Get a free quote!",
+    "seoKeywords": "website development company in patna, website developer in patna, website design company in patna, website company in patna, web designer in patna, best website design company in patna, best website developer in patna, best website development company in patna, best website company in patna, best website development company in patna, e commerce website developer in patna, ecommerce developer in patna, ecommerce developer patna, web design company in patna, web development company in patna, web development in patna, website company patna, website development in patna, website development company, website design, website developer, web designer, it company in patna, web design services bihar, custom website development cost patna, e-commerce web designer patna, Next.js developer Patna, coaching institute website Patna, responsive web design Patna, web development company in Bihar",
     "title": "Website Design Services in Patna",
     "headline": "Website Design Company in Patna",
-    "subtext": "Looking for the best web development company in Patna? Webflora Technologies is a premier website development company in Patna, Bihar. Our team of expert web developers in Patna and experienced web designers in Patna build custom, responsive, and secure digital platforms. Whether you need a web development company in patna, a website design company in patna, or a specialized ecommerce developer in patna, we build high-converting websites starting at ₹25,000.",
+    "subtext": "Webflora Technologies is an MSME-registered (UDYAM-BR-26-0183379) professional website development company and premier IT company in Patna, Bihar. We build custom Next.js/React websites that load in milliseconds and rank organically on search results, starting from ₹14,999.",
     "geoTitle": "Premium Website Design Services in Bihar",
-    "geoContent": "As the leading website design company in Patna, Bihar, Webflora Technologies is committed to elevating the regional digital ecosystem. If you need a reliable website developer in Patna to build modern, server-side rendered, lightning-fast web solutions custom-tailored for regional trade hubs, we serve businesses in Patna, Muzaffarpur, Gaya, Bhagalpur, and across Bihar with local SEO-optimized systems.",
+    "geoContent": "As the leading website design company in Patna, Bihar, Webflora Technologies is committed to elevating the regional digital ecosystem. We serve businesses in Patna, Danapur, Kankarbagh, Boring Road, Bailey Road, Rajendra Nagar, Phulwari Sharif, Gaya, Muzaffarpur, Bhagalpur, and across Bihar with local SEO-optimized systems.",
     "heroBadge": "Top Website Agency in Bihar",
     "problemTitle": "Website Performance Challenges",
     "problems": [
@@ -19,253 +19,367 @@ export const servicesData = {
     ],
     "subServices": [
       {
-        "title": "Custom Website Design",
-        "icon": "lucide:globe",
-        "desc": "Tailored business website development with scalable Next.js architecture and premium UI/UX starting from ₹25,000."
+        "title": "Business Website Development",
+        "icon": "lucide:briefcase",
+        "desc": "Establish digital authority and capture leads with customized corporate websites tailored for Patna agencies and CAs."
       },
       {
-        "title": "Ecommerce Website Design",
+        "title": "Ecommerce Website Development",
         "icon": "lucide:shopping-cart",
-        "desc": "High-converting online stores built on React and Node.js with secure checkout, payment gateways, GST-compliant billing, and full inventory management."
+        "desc": "Launch secure online stores with Razorpay, inventory control panels, dynamic categories, and automated invoicing structures."
       },
       {
-        "title": "Responsive Web Design",
-        "icon": "lucide:smartphone",
-        "desc": "Mobile-first websites designed by expert UI/UX designers to look breathtaking on all modern mobile screens, tablets, and desktops."
+        "title": "Corporate Website Development",
+        "icon": "lucide:building",
+        "desc": "Build robust, high-traffic portals equipped with role-based permissions and custom CRM systems for large-scale operations."
       },
       {
-        "title": "SEO-Friendly Websites",
-        "icon": "lucide:search",
-        "desc": "Websites engineered with semantic HTML, rich JSON-LD schemas, and speed optimization for top Google search visibility in Patna and Bihar."
+        "title": "Portfolio Website",
+        "icon": "lucide:image",
+        "desc": "High-impact visual portfolios designed specifically for architects, designers, and photographers in Patna to showcase credentials."
       },
       {
-        "title": "Website Redesign Services",
+        "title": "Startup Website",
+        "icon": "lucide:rocket",
+        "desc": "Lightweight, ultra-fast landing pages with interactive GSAP animations to launch your MVP and pitch to investors."
+      },
+      {
+        "title": "School Website",
+        "icon": "lucide:graduation-cap",
+        "desc": "Custom school portals equipped with notice boards, fee structures, academic calendars, and admissions inquiry tools."
+      },
+      {
+        "title": "College Website",
+        "icon": "lucide:book-open",
+        "desc": "Comprehensive educational web platforms featuring syllabus downloads, department catalogs, and online exam portals."
+      },
+      {
+        "title": "Hospital Website",
+        "icon": "lucide:activity",
+        "desc": "Doctor directories, department indices, clinic appointment managers, and emergency alerts optimized for local patients."
+      },
+      {
+        "title": "Restaurant Website",
+        "icon": "lucide:cup-hot",
+        "desc": "Digital food menus, table reservation calendars, customer review highlights, and map directions to maximize dining covers."
+      },
+      {
+        "title": "Hotel Website",
+        "icon": "lucide:bed",
+        "desc": "Commission-free booking engines, room tours, rate managers, and local tourist guides to drive direct bookings."
+      },
+      {
+        "title": "Real Estate Website",
+        "icon": "lucide:home",
+        "desc": "Bespoke property filters, map search panels, floor plan downloads, and site-visit schedulers for local builders."
+      },
+      {
+        "title": "NGO Website",
+        "icon": "lucide:heart",
+        "desc": "Interactive mission statements, transparent donation gateways, volunteer portals, and downloadable impact reports."
+      },
+      {
+        "title": "Landing Page Development",
+        "icon": "lucide:target",
+        "desc": "High-converting, single-page landing pages optimized for Google/Meta Ads campaigns to capture leads and drive ROI."
+      },
+      {
+        "title": "CMS Development",
+        "icon": "lucide:layout",
+        "desc": "Integrate headless CMS tools like Sanity.io or custom dashboards to update text and media files without coding."
+      },
+      {
+        "title": "Website Redesign",
         "icon": "lucide:refresh-cw",
-        "desc": "Re-engineer legacy or outdated sites with modern React systems, clean code, and sub-second page loads to lower bounce rates."
+        "desc": "Migrate sluggish legacy websites to high-speed Next.js/React stacks, optimizing mobile responsiveness and speed."
       },
       {
-        "title": "Custom Web Applications",
-        "icon": "lucide:app-window",
-        "desc": "Advanced SaaS portals and cloud-based custom software tailored to automate your unique business workflows and operations."
+        "title": "Website Maintenance",
+        "icon": "lucide:settings",
+        "desc": "Monthly maintenance plans covering automated cloud backups, security updates, library fixes, and minor text edits."
+      },
+      {
+        "title": "Website Speed Optimization",
+        "icon": "lucide:zap",
+        "desc": "Tweak assets, lazy load scripts, minimize payloads, and configure edge CDN to guarantee perfect Core Web Vitals."
+      },
+      {
+        "title": "SEO-Friendly Website Development",
+        "icon": "lucide:search",
+        "desc": "Semantic HTML, dynamic XML sitemaps, search-friendly URLs, and JSON-LD schema integration to rank on top of SERPs."
+      },
+      {
+        "title": "AI Integrated Websites",
+        "icon": "lucide:bot",
+        "desc": "Embed AI conversational chatbots, smart semantic search bars, and automated lead capture pipelines into your web structure."
       }
     ],
     "process": [
       {
         "title": "Requirement Analysis",
-        "desc": "We research your market competitors and define your core commercial business goals."
+        "desc": "We analyze your business model, target audience, and primary competitors to draft structural layouts."
+      },
+      {
+        "title": "Planning",
+        "desc": "We define the sitemap architecture, select target keywords, and outline the technical features."
       },
       {
         "title": "UI/UX Design",
-        "desc": "Crafting high-converting, premium wireframes and visual systems aligned with your brand identity by expert designers."
+        "desc": "We design modern layout concepts, presenting them to you for revisions until it matches your brand identity."
       },
       {
-        "title": "Frontend Development",
-        "desc": "Engineering ultra-fast, responsive web interfaces using React, Next.js, and sleek CSS animations."
+        "title": "Development",
+        "desc": "Our developers write clean, responsive code using Next.js/React, building animations and setting up APIs."
       },
       {
-        "title": "Backend Integration",
-        "desc": "Building highly secure REST APIs, robust databases (PostgreSQL/MongoDB), and third-party integrations."
+        "title": "Testing",
+        "desc": "We run cross-browser validations, responsive audits, API error handling, and speed load checks."
       },
       {
         "title": "SEO Optimization",
-        "desc": "Injecting dynamic JSON-LD schemas, meta keywords, and Core Web Vitals optimization to rank on Google."
+        "desc": "We configure metadata, dynamic XML sitemaps, and inject structured JSON-LD schemas."
       },
       {
-        "title": "Testing & Deployment",
-        "desc": "Rigorous quality assurance testing for security and performance before launching onto secure Vercel or AWS cloud."
+        "title": "Deployment",
+        "desc": "We launch the website on secure cloud servers like Vercel or AWS VPS and configure custom domains."
       },
       {
-        "title": "Maintenance & Support",
-        "desc": "Ongoing security patches, updates, backups, and cloud scalability support to keep your site 100% active."
+        "title": "Support",
+        "desc": "We provide a post-launch support window to manage security patches, backups, and content updates."
       }
     ],
     "industries": [
-      "Coaching Institutes",
-      "Ecommerce & Retail",
-      "Healthcare & Clinics",
-      "Startups & SaaS",
+      "Education",
+      "Healthcare",
+      "Restaurants",
+      "Hotels",
       "Real Estate",
-      "Schools & Colleges",
-      "Local Businesses"
+      "Builders",
+      "Ecommerce",
+      "Retail",
+      "Manufacturing",
+      "NGOs",
+      "Startups",
+      "Coaching Institutes"
     ],
     "solutions": [
-      "Lightning-fast Next.js & React architecture for instant loading speed",
-      "Mobile-first responsive web design with premium, custom UI/UX",
-      "Custom ecommerce website design company systems with payment gates",
-      "SEO, dynamic JSON-LD schema & Core Web Vitals optimization",
-      "Scalable headless CMS & secure admin control dashboards"
+      "Custom Next.js & React frontend builds",
+      "Headless CMS and Admin Dashboards",
+      "Secure payment gateway integrations",
+      "Automated database pipelines (Postgres/Mongo)",
+      "Technical Local SEO and JSON-LD schemas"
     ],
     "suitableFor": [
       {
-        "title": "Schools & Colleges",
-        "icon": "lucide:graduation-cap",
-        "reason": "Manage online admissions, post notices, host photo galleries, and show student achievements."
-      },
-      {
-        "title": "Hospitals & Clinics",
-        "icon": "lucide:activity",
-        "reason": "Publish physician lists, service schedules, patient guidelines, and health packages."
-      },
-      {
-        "title": "Restaurants & Cafes",
-        "icon": "lucide:utensils",
-        "reason": "Feature custom interactive digital menus, manage online table reservations, and take takeaway bookings."
-      },
-      {
-        "title": "Manufacturing & Factories",
-        "icon": "lucide:factory",
-        "reason": "Showcase industrial capacity, certifications, product catalogs, and capture global B2B leads."
-      },
-      {
-        "title": "Startups & SaaS",
-        "icon": "lucide:rocket",
-        "reason": "Launch high-converting landing pages, interactive product demos, and validation MVPs."
-      },
-      {
-        "title": "NGOs & Trusts",
-        "icon": "lucide:heart",
-        "reason": "Accept secure online donations, display current campaigns, and publish transparent impact updates."
-      },
-      {
         "title": "Coaching Institutes",
-        "icon": "lucide:book-open",
-        "reason": "Process digital registrations, showcase top rankers, and provide contact channels for parents."
+        "icon": "lucide:graduation-cap",
+        "reason": "Showcase topper achievements, manage batch announcements, and capture online admission leads."
+      },
+      {
+        "title": "Hospital Networks",
+        "icon": "lucide:hospital",
+        "reason": "Secure patient booking portals, doctor directories, and clinical service details."
+      },
+      {
+        "title": "Real Estate Developers",
+        "icon": "lucide:building-2",
+        "reason": "Display layout maps, floor plan sheets, project locations, and capture digital buyers."
+      },
+      {
+        "title": "Ecommerce Retailers",
+        "icon": "lucide:shopping-bag",
+        "reason": "Display dynamic product grids, accept instant UPI payments, and generate automatic billing invoices."
+      },
+      {
+        "title": "Local Businesses & Shops",
+        "icon": "lucide:store",
+        "reason": "Establish online authority, highlight business hours, and connect with local customers via WhatsApp."
+      },
+      {
+        "title": "B2B Manufacturing Brands",
+        "icon": "lucide:factory",
+        "reason": "Display capability statements, list ISO certifications, and collect custom quote queries."
       }
     ],
     "benefits": [
       {
-        "title": "Speed Optimization",
-        "description": "Achieve 90+ Google Lighthouse and Core Web Vitals scores with static generation, server-side rendering, and asset caching.",
+        "title": "Sub-Second Load Times",
+        "description": "Next.js static site generation guarantees pages load under 1s, preventing drop-offs.",
         "icon": "lucide:zap",
-        "stat": "99.9%",
-        "statLabel": "Uptime Guaranteed",
-        "metric": "Core Web Vitals",
+        "stat": "<1.0s",
+        "statLabel": "Page Load Speed",
+        "metric": "Web Vitals",
         "color": "from-[#FF3B00]/20 to-red-600/5"
       },
       {
-        "title": "SEO Excellence",
-        "description": "Built-in local SEO architecture to rank high in Patna and Bihar Google maps and search results, driving organic search traffic.",
-        "icon": "lucide:search",
-        "stat": "150%",
-        "statLabel": "Traffic Increase",
-        "metric": "Search Ranking",
+        "title": "Mobile Responsive UI",
+        "description": "Fluid css frameworks ensure layouts look premium on mobile phones and wide desktop screens.",
+        "icon": "lucide:smartphone",
+        "stat": "100%",
+        "statLabel": "Mobile Friendly",
+        "metric": "Fluid Layouts",
         "color": "from-cyan-600/20 to-blue-600/5"
       },
       {
-        "title": "Conversion Focus",
-        "description": "Strategically placed call-to-actions (CTAs) and interactive elements designed by professional UI designers to double your business leads.",
-        "icon": "lucide:trending-up",
-        "stat": "45%",
-        "statLabel": "Conversion Lift",
-        "metric": "ROI Driven",
+        "title": "Code Ownership",
+        "description": "Zero locks or recurring template builder fees. You own 100% of the repository and source assets.",
+        "icon": "lucide:code-2",
+        "stat": "100%",
+        "statLabel": "IP Transfer",
+        "metric": "Full Ownership",
         "color": "from-purple-600/20 to-violet-600/5"
       }
     ],
     "faqs": [
       {
         "question": "How much does a website cost in Patna?",
-        "answer": "At Webflora Technologies, our custom basic website package starts from ₹25,000. E-commerce systems, custom portals, and enterprise-grade web applications are priced based on the number of features, API integrations, database complexity, and design requirements.",
-        "icon": "lucide:wallet"
+        "answer": "Our custom basic website packages start from ₹14,999. E-commerce stores start from ₹59,999, and custom enterprise portals are quoted dynamically based on requirements.",
+        "icon": "lucide:indian-rupee"
       },
       {
-        "question": "Which is the best website company in Bihar?",
-        "answer": "Webflora Technologies is considered a top-rated website design company in Bihar. We are an MSME-registered (UDYAM-BR-26-0183379) professional agency offering custom, sub-second loading Next.js and React web architectures with zero slow templates, solid local SEO, and full source code ownership.",
-        "icon": "lucide:award"
+        "question": "How long does website development take?",
+        "answer": "A basic site takes 5–7 days. Corporate websites take 2–3 weeks, and custom e-commerce stores or complex apps require 4–8 weeks.",
+        "icon": "lucide:clock"
       },
       {
-        "question": "How long does website design take?",
-        "answer": "A standard corporate or landing page typically takes 2 to 4 weeks. E-commerce platforms and custom database portals generally take 4 to 8 weeks, while complex enterprise web systems may span 8 to 12 weeks from planning to final deployment.",
-        "icon": "lucide:calendar"
-      },
-      {
-        "question": "Do you build SEO-friendly websites?",
-        "answer": "Yes, all our websites are engineered with technical SEO best practices. This includes semantic HTML5 layouts, optimized meta tags, automated XML sitemaps, JSON-LD schema markup, fast loading speeds, and responsive design to rank on Google.",
-        "icon": "lucide:search"
-      },
-      {
-        "question": "Do you provide maintenance?",
-        "answer": "Yes, we offer monthly and annual maintenance support. This covers regular off-site backups, security patching, library updates, content revisions, server health monitoring, and minor feature additions to keep your system active.",
-        "icon": "lucide:shield-check"
-      },
-      {
-        "question": "Can I rank my business on Google?",
-        "answer": "Yes. By building a fast, structured, mobile-responsive website and integrating localized keyword targeting, schema markup, and optimized business profiles, you can rank your business on Google Search and Maps.",
-        "icon": "lucide:trending-up"
-      },
-      {
-        "question": "What technologies do you use?",
-        "answer": "We build using Next.js, React, Tailwind CSS, Node.js, Express, Python, PostgreSQL, MongoDB, and AWS to deliver high-performance, robust, and secure web solutions.",
+        "question": "Do you use WordPress or custom development?",
+        "answer": "We write custom code using Next.js, React.js, and Node.js. This guarantees faster speeds, better security, and better Google rankings.",
         "icon": "lucide:code"
       },
       {
-        "question": "Will my website look good on mobile?",
-        "answer": "Yes. Every website we build is 100% mobile-responsive, utilizing flexible grid frameworks so that layout elements render perfectly on all devices, from small smartphones to wide desktop monitors.",
-        "icon": "lucide:smartphone"
-      },
-      {
-        "question": "Do I get complete ownership of the source code?",
-        "answer": "Yes, we provide full source code ownership and repository access once the project is completed and final payments are cleared.",
-        "icon": "lucide:key"
-      },
-      {
-        "question": "Do you provide domain registration and cloud hosting?",
-        "answer": "Yes, we assist in domain registration and set up cloud hosting on secure providers like AWS, Vercel, Hostinger, or custom VPS containers depending on your project needs.",
+        "question": "Do you build websites in Next.js?",
+        "answer": "Yes, Next.js is our primary framework. It provides unmatched performance, Server-Side Rendering (SSR) for search bots, and perfect Core Web Vitals.",
         "icon": "lucide:globe"
       },
       {
-        "question": "Can you redesign my existing website?",
-        "answer": "Yes, we redesign legacy websites to update old UI/UX layouts, improve page loading speed, update security configurations, and implement mobile-first styling.",
-        "icon": "lucide:refresh-cw"
+        "question": "Will my website be SEO-friendly?",
+        "answer": "Yes, every site is search-engine optimized from day one, including custom meta tags, search-friendly URLs, XML sitemaps, and JSON-LD schemas.",
+        "icon": "lucide:search"
       },
       {
-        "question": "Do you develop e-commerce websites with payment gateways?",
-        "answer": "Yes, we build secure, fully-featured e-commerce stores with payment gateway integrations (Razorpay, Stripe), product catalogs, secure checkout steps, and admin inventory dashboards.",
-        "icon": "lucide:shopping-cart"
-      },
-      {
-        "question": "What is the difference between custom development and WordPress?",
-        "answer": "Custom React/Next.js development provides faster load speeds, better security, lower server costs, and unlimited layout flexibility. WordPress is a generic template platform that is easier for non-technical edits but suffers from slower speeds and plugin security risks.",
-        "icon": "lucide:layers"
-      },
-      {
-        "question": "Do you write content for the website?",
-        "answer": "We can assist with SEO copywriting, keyword optimization, and professional content creation tailored to your industry to help improve search rankings.",
-        "icon": "lucide:file-text"
-      },
-      {
-        "question": "Can you integrate third-party APIs into my site?",
-        "answer": "Yes, we can integrate any third-party REST or GraphQL APIs, such as CRM systems, SMS gateways, WhatsApp APIs, payment portals, and ERP pipelines.",
-        "icon": "lucide:link"
-      },
-      {
-        "question": "How do you measure website loading speed?",
-        "answer": "We optimize our builds to pass Google Core Web Vitals and target 90+ performance scores on tools like Google PageSpeed Insights and Lighthouse.",
-        "icon": "lucide:activity"
-      },
-      {
-        "question": "What is schema markup and why is it important?",
-        "answer": "Schema markup (JSON-LD) is structured data added to your HTML to help search engines understand your content better, allowing you to show rich snippets and rank on Google.",
-        "icon": "lucide:hash"
-      },
-      {
-        "question": "Can I update content on my website on my own?",
-        "answer": "Yes, we build easy-to-use custom admin panels or integrate headless Content Management Systems (CMS) like Sanity or Strapi so you can edit text, images, and blogs.",
+        "question": "Can I update the website content myself?",
+        "answer": "Yes, we integrate user-friendly headless CMS tools so you can update blogs, products, pricing, and text blocks without editing code.",
         "icon": "lucide:edit"
       },
       {
-        "question": "Do you provide SSL certificates?",
-        "answer": "Yes, we configure free SSL certificates (Let's Encrypt) to secure connection protocols (HTTPS) and safeguard user data.",
+        "question": "Do you provide hosting?",
+        "answer": "Yes, we deploy your site on secure cloud platforms like Vercel, AWS, or Hostinger VPS with automated SSL and CDN configurations.",
+        "icon": "lucide:server"
+      },
+      {
+        "question": "Do you provide domain registration?",
+        "answer": "Yes, we assist you in purchasing and linking custom domains, configuring DNS zones and nameservers.",
+        "icon": "lucide:link"
+      },
+      {
+        "question": "Do you offer maintenance?",
+        "answer": "Yes, we offer monthly and annual maintenance packages covering cloud backups, security patches, library updates, and content additions.",
+        "icon": "lucide:settings"
+      },
+      {
+        "question": "Can you redesign my old website?",
+        "answer": "Yes, we migrate slow, outdated websites to React/Next.js, redesigning the UI layout to match modern conversion standards.",
+        "icon": "lucide:refresh-cw"
+      },
+      {
+        "question": "Will my website be mobile-friendly?",
+        "answer": "Yes, we build using mobile-first responsive design, ensuring that text, navigation grids, and media files render perfectly on any screen size.",
+        "icon": "lucide:smartphone"
+      },
+      {
+        "question": "Do you build ecommerce websites?",
+        "answer": "Yes, we develop custom e-commerce stores with payment gateways (Razorpay, UPI), shopping carts, order tracking, and invoice portals.",
+        "icon": "lucide:shopping-bag"
+      },
+      {
+        "question": "Do you provide AI chatbot integration?",
+        "answer": "Yes, we integrate intelligent AI chatbots to capture and qualify sales leads 24/7, sync customer data, and trigger notifications.",
+        "icon": "lucide:bot"
+      },
+      {
+        "question": "Are there any monthly or yearly hidden charges?",
+        "answer": "No, we maintain complete pricing transparency. You only pay for annual domain renewal and hosting directly to the service providers.",
+        "icon": "lucide:dollar-sign"
+      },
+      {
+        "question": "Do I get full ownership of the source code?",
+        "answer": "Yes, once the final project payment is cleared, we transfer full repository rights and source code ownership directly to you.",
+        "icon": "lucide:key"
+      },
+      {
+        "question": "How do you track website performance?",
+        "answer": "We integrate Google Analytics 4 and Google Search Console dashboards into every website, helping you monitor traffic and user clicks.",
+        "icon": "lucide:bar-chart"
+      },
+      {
+        "question": "Can you integrate third-party APIs?",
+        "answer": "Yes, we connect websites to WhatsApp notifications, SMS alerts, Zoho/HubSpot CRMs, Google Sheets, and shipping APIs (Shiprocket).",
+        "icon": "lucide:cpu"
+      },
+      {
+        "question": "What is your payment structure?",
+        "answer": "Our standard payment structure is milestone-based: 40% upfront advance to start design, 40% upon frontend design approval, and 20% right before launch.",
+        "icon": "lucide:credit-card"
+      },
+      {
+        "question": "What materials do you need to start development?",
+        "answer": "We require your company profile details, logo files, images of your team/work (optional), detailed service descriptions, and layout preferences.",
+        "icon": "lucide:file-text"
+      },
+      {
+        "question": "Do you sign a Non-Disclosure Agreement (NDA)?",
+        "answer": "Yes, we are happy to sign an NDA before you share custom business workflows, database schemas, or proprietary software ideas.",
+        "icon": "lucide:shield"
+      },
+      {
+        "question": "Will my website have an SSL certificate?",
+        "answer": "Yes, we set up secure SSL protocols on your hosting servers, securing your customer data and improving rankings.",
         "icon": "lucide:lock"
       },
       {
-        "question": "Do you develop websites for startups?",
-        "answer": "Yes, we work closely with startups to design and deploy MVPs (Minimum Viable Products), high-converting landing pages, and interactive product prototypes.",
-        "icon": "lucide:rocket"
+        "question": "Can you build custom portals for coaching institutes?",
+        "answer": "Yes, we design educational systems with online admissions, topper showcases, syllabus downloads, and notice boards.",
+        "icon": "lucide:graduation-cap"
       },
       {
-        "question": "What information do you need from me to start?",
-        "answer": "We need your company profile, branding assets (logo, colors), project objectives, site layout preferences, and reference websites that you like.",
-        "icon": "lucide:info"
+        "question": "Do you optimize image files for faster loading?",
+        "answer": "Yes, we configure lazy loading, next-gen formatting (WebP), and asset caching to minimize page sizes.",
+        "icon": "lucide:image"
+      },
+      {
+        "question": "What database engines do you use?",
+        "answer": "We use secure database engines like PostgreSQL, MongoDB, or MySQL depending on the data structures required.",
+        "icon": "lucide:database"
+      },
+      {
+        "question": "Will I have custom email addresses?",
+        "answer": "Yes, we assist you in setting up business emails (like info@yourcompany.com) on Google Workspace or hosting platforms.",
+        "icon": "lucide:mail"
+      },
+      {
+        "question": "Can you integrate automatic GST invoicing?",
+        "answer": "Yes, for e-commerce platforms, we set up automated invoicing systems that calculate GST rates and generate invoice PDFs.",
+        "icon": "lucide:receipt"
+      },
+      {
+        "question": "Do you provide dynamic search features?",
+        "answer": "Yes, we build advanced filtering and AI-based predictive search boxes to help users locate pages and products in milliseconds.",
+        "icon": "lucide:search"
+      },
+      {
+        "question": "Can I host the website on my own cloud accounts?",
+        "answer": "Yes, we can deploy the frontend and backend directly to your own Vercel, AWS, or VPS accounts for complete control.",
+        "icon": "lucide:cloud"
+      },
+      {
+        "question": "Do you support multi-language websites?",
+        "answer": "Yes, we can construct websites with multi-language setups to target diverse regional user demographics.",
+        "icon": "lucide:languages"
+      },
+      {
+        "question": "Do you write custom content for the website?",
+        "answer": "Yes, our SEO copywriting team can write conversion-optimized copy, headings, and SEO descriptions for your business.",
+        "icon": "lucide:edit"
       }
     ],
     "techStack": [
@@ -274,128 +388,196 @@ export const servicesData = {
         "icon": "logos:nextjs-icon"
       },
       {
-        "name": "React",
+        "name": "React.js",
         "icon": "logos:react"
-      },
-      {
-        "name": "Tailwind",
-        "icon": "logos:tailwindcss-icon"
       },
       {
         "name": "TypeScript",
         "icon": "logos:typescript-icon"
       },
       {
+        "name": "Tailwind",
+        "icon": "logos:tailwindcss-icon"
+      },
+      {
         "name": "Node.js",
         "icon": "logos:nodejs-icon"
       },
       {
+        "name": "MongoDB",
+        "icon": "logos:mongodb-icon"
+      },
+      {
         "name": "PostgreSQL",
         "icon": "logos:postgresql"
+      },
+      {
+        "name": "AWS",
+        "icon": "logos:aws"
       }
     ],
     "detailedArticle": {
-      "title": "Governance, Security & SLA Support",
+      "title": "Speed, SEO, Sizing & Local Search Optimization Guide",
       "sections": [
         {
-          "title": "Best Website Development Company in Patna",
+          "title": "Why Next.js & Modern Frameworks Outperform WordPress in Patna",
           "paragraphs": [
-            "When searching for the best web design company in Patna or a dedicated website developer in Patna, you need a partner that understands modern next-generation web architectures. Webflora Technologies is recognized as the best web development company in Patna, Bihar. We serve local scaling brands with clean-coded, custom Next.js/React websites that load in milliseconds and rank organically on search results.",
-            "As the top website company in Patna, we handle everything from corporate landing pages to complex enterprise portals. If you need a certified web designer in Patna or a skilled ecommerce developer patna trusts to set up high-converting online stores, our team provides scalable web development in patna with built-in speed tuning and search engine schema integrations."
+            "In Patna's rapidly expanding commercial markets, having a search-visible website is no longer optional. Unfortunately, many local agencies still build websites using slow WordPress templates or outdated PHP scripts. These setups run heavy server databases, loading pages in 4–6 seconds, which causes search ranking drops and drives potential customers directly to competitors.",
+            "At Webflora Technologies, we write custom code using Next.js and React.js. Next.js implements Server-Side Rendering (SSR) and Static Site Generation (SSG). This compiles pages into lightweight HTML files on the cloud edge CDN before a user even requests them. Our websites achieve load times under 1 second, pass Google's Core Web Vitals, and offer search bots crawlable layouts, helping our clients outrank slow competitors in Boring Road and Kankarbagh."
           ]
         },
         {
-          "title": "IT Company in Patna",
+          "title": "Understanding Website Development Costs in Patna, Bihar",
           "paragraphs": [
-            "As a full-service IT company in Patna, Webflora Technologies provides comprehensive technological solutions that help local enterprises digitize, streamline, and automate their operations. From custom software integrations to responsive website platforms, we support scaling corporate brands in Bihar with reliable technical execution.",
-            "Our team consists of expert software engineers and designers dedicated to building high-performance systems. We make sure that your business transitions into the digital space securely and successfully, backed by our robust maintenance SLAs and local cloud server expertise."
+            "Custom website engineering pricing is determined by technical requirements, layout complexity, and database specifications rather than flat templates. A basic 5-page startup landing page requiring zero backend routing will naturally carry a different cost than an enterprise e-commerce portal handling hundreds of products.",
+            "Key factors influencing development costs include UI/UX animation needs (using Three.js or GSAP), multi-tenant administrator control panels, booking scheduler engines, secure payment gateways, direct CRM synchronization, and specialized AI lead scores. We provide complete pricing transparency, flat-rate development fees starting from ₹14,999, and transfer 100% source code ownership to you, keeping your ongoing licensing costs close to zero."
           ]
         },
         {
-          "title": "Why Businesses Need a Professional Website Design Strategy",
+          "title": "Key Features & AI Integrations Driving Digital ROI",
           "paragraphs": [
-            "In today's digital economy, your website is the digital storefront of your business. It is often the very first point of contact for potential customers. A slow, poorly-designed, or non-responsive website immediately damages your credibility and turns away visitors. On the other hand, a modern, fast-loading, and professionally designed website builds instant trust, establishes your brand authority, and serves as a 24/7 lead generation engine.",
-            "As consumer search behavior continues to shift to mobile devices, businesses in Patna, Bihar, and across India must have highly optimized web platforms. By offering intuitive navigation, clear call-to-actions, and localized SEO, a professional website transforms casual search traffic into high-intent sales inquiries."
+            "A premium website must be a 24/7 client-acquisition engine. We integrate advanced features that turn search visitors into sales calls. Every build features one-click WhatsApp chat buttons, custom interactive contact forms, secure file upload panels, and localized Google Maps widgets to build regional consumer trust.",
+            "Furthermore, we integrate AI capabilities directly into your web structures. This includes smart AI chatbots that query your knowledge bases and qualify leads 24/7, predictive semantic AI search bars, and automated AI lead capture workflows that score and forward inquiries directly to your team's CRM dashboards."
           ]
         },
         {
-          "title": "Advanced Security & Data Privacy Standards We Implement",
+          "title": "Local SEO & Location-Based Search Domination",
           "paragraphs": [
-            "Security is core to our build process. We leverage static site generation (SSG) which makes our frontend code serverless and virtually immune to standard database hacking attacks. We also configure SSL certificates, secure authentication layers (such as OTP login), role-based permissions, and implement regular security patches to keep your databases safe.",
-            "All server endpoints are hidden behind security proxies, and user input is heavily sanitized on both frontend and backend to completely prevent injection threats."
-          ]
-        },
-        {
-          "title": "Post-Launch System Maintenance & SLA Support",
-          "paragraphs": [
-            "Websites are living systems that require regular care. Our comprehensive maintenance services cover regular database backups, automated security scans, platform version updates, content changes, and technical support. This ensures your website operates at 100% uptime with zero downtime, protecting your business operations."
-          ]
-        },
-        {
-          "title": "Transparent Pricing Structure & Code Ownership ROI",
-          "paragraphs": [
-            "Our custom basic website packages start from a transparent ₹25,000, while complex custom web applications are quoted based on specific feature requirements. By choosing our custom code, you gain complete source code ownership and host it on your own serverless cloud accounts. This keeps your recurring licensing fees close to zero, providing a high return on investment (ROI) that helps your business scale sustainably."
+            "Ranking at the top of Google searches requires structured technical localization. We embed customized JSON-LD schema markup, optimize local citation references, structure headings properly, and list physical location coordinates naturally inside your HTML.",
+            "Our optimization targets regional search hubs across Patna (including Danapur, Boring Road, Bailey Road, Kankarbagh, Rajendra Nagar, Ashok Rajpath, Phulwari Sharif) and major commercial centers in Bihar (such as Muzaffarpur, Gaya, Bhagalpur, Hajipur). This ensures that when local buyers search for your services in Bihar, your custom React website ranks on Page 1."
           ]
         }
       ]
     },
-    "seoTitle": "Website Design Company in Patna | Webflora Technologies",
-    "seoDescription": "Top website development company in Patna. Webflora Technologies designs fast, secure custom React/Next.js websites starting at ₹25,000. Request a free quote!",
-    "seoKeywords": "website development company in patna, website developer in patna, website design company in patna, website company in patna, web designer in patna, best web design company in patna, best web developer in patna, best web development company in patna, best website company in patna, best website development company in patna, e commerce website developer in patna, ecommerce developer in patna, ecommerce developer patna, web design company in patna, web development company in patna, web development in patna, website company patna, website development in patna, website development company, website design, website developer, web designer, it company in patna",
     "whyChooseTitle": "Why Choose Webflora for Website Design?",
-    "whyChooseSubtitle": "We construct clean, high-performance Next.js websites tailored specifically to elevate Patna's top businesses. No generic templates, just fast and rankable custom code.",
+    "whyChooseSubtitle": "We construct secure, custom-coded React/Next.js websites to elevate Patna's top brands. No slow generic templates, just high-performance engineering.",
     "whyChooseCards": [
       {
-        "icon": "solar:bolt-linear",
-        "title": "Performance & Speed Optimized",
-        "desc": "Every site is custom-engineered using Next.js/React to achieve perfect Core Web Vitals (99+ score), ensuring sub-second page loads that prevent drop-offs."
+        "icon": "solar:code-linear",
+        "title": "Custom Website Development",
+        "desc": "Clean, hand-crafted code tailored to your exact business operations with zero bloated page builders."
+      },
+      {
+        "icon": "solar:cpu-linear",
+        "title": "Modern Tech Stack",
+        "desc": "We build using Next.js, React.js, Node.js, and secure databases, ensuring a future-proof framework."
       },
       {
         "icon": "solar:ranking-linear",
-        "title": "Conversion-Centric UX",
-        "desc": "We design clean, modern layouts and call-to-actions tailored for local businesses, coaching centers, and retail stores in Patna, translating traffic into leads."
+        "title": "SEO-Ready Websites",
+        "desc": "Built-in JSON-LD schemas, semantic tags, and search-friendly URLs to index on top search positions."
       },
       {
-        "icon": "solar:graph-up-linear",
-        "title": "Technical SEO & Schema",
-        "desc": "Built-in JSON-LD schemas, search-friendly URLs, meta tag optimization, and clean indexable code ensure your business ranks highly on Google search results."
+        "icon": "solar:bot-linear",
+        "title": "AI Ready Platforms",
+        "desc": "Easily integrate intelligent chatbots, semantic searches, and automated workflows."
+      },
+      {
+        "icon": "solar:bolt-linear",
+        "title": "Lightning Fast Performance",
+        "desc": "Static site generation and edge CDN delivery ensure sub-1 second loading speeds."
+      },
+      {
+        "icon": "solar:smartphone-linear",
+        "title": "100% Mobile Responsive",
+        "desc": "Fluid grids designed mobile-first to render beautifully across all smartphone viewports."
+      },
+      {
+        "icon": "solar:wallet-linear",
+        "title": "Affordable Flat Rates",
+        "desc": "High-performance custom web development starting from ₹14,999 with zero hidden licensing fees."
       },
       {
         "icon": "solar:shield-keyhole-linear",
-        "title": "Full Source Code Ownership",
-        "desc": "No proprietary locks or monthly site builder fees. You get 100% ownership of your Next.js frontend code and database structures."
+        "title": "Secure Cloud Architecture",
+        "desc": "AWS hosting, database encryption, SSL protocols, and serverless backends immune to standard hacks."
+      },
+      {
+        "icon": "solar:settings-minimalistic-linear",
+        "title": "Dedicated Maintenance SLAs",
+        "desc": "Post-launch support, library updates, automated daily cloud backups, and uptime guarantees."
       }
     ],
     "pricing": [
       {
-        "name": "Startup Website",
-        "subtitle": "Best for local business presence",
-        "price": "₹25,000",
+        "name": "Starter Website",
+        "subtitle": "Perfect for startups & local businesses",
+        "price": "₹14,999+",
         "period": "one-time cost",
         "features": [
-          "Responsive React/Next.js Layout",
-          "5 Core Pages + Contact Form",
-          "Standard Local SEO Setup",
-          "Sub-1s Page Loading Speed",
-          "1 Month Post-Launch Support"
+          "Up to 5 Pages",
+          "Custom UI Design",
+          "Mobile Responsive",
+          "Contact Form Integration",
+          "WhatsApp Chat Integration",
+          "Basic Local SEO Setup",
+          "SSL Certificate Install",
+          "Google Maps Integration",
+          "1 Month Free Support"
         ],
         "popular": false,
-        "timeline": "7-21 Days"
+        "timeline": "5-7 Days"
       },
       {
-        "name": "Custom E-Commerce",
-        "subtitle": "Fully featured online storefront",
-        "price": "₹75,000+",
-        "period": "based on features",
+        "name": "Business Website",
+        "subtitle": "Ideal for growing businesses",
+        "price": "₹29,999+",
+        "period": "one-time cost",
         "features": [
-          "Bespoke Product Catalog & Checkout",
-          "Razorpay / Stripe Payment Gate",
-          "Admin Dashboard & Inventory Control",
-          "Advanced SEO & Speed Optimized",
-          "3 Months Support SLA"
+          "Up to 15 Pages",
+          "Premium UI/UX Design",
+          "CMS (Blog Management)",
+          "Advanced On-Page SEO",
+          "Speed & Core Web Vitals Optimization",
+          "JSON-LD Schema Markup",
+          "Custom Inquiry Forms",
+          "Google Analytics & Search Console",
+          "Social Media Integration",
+          "3 Months Free Support"
         ],
         "popular": true,
-        "timeline": "15-30 Days"
+        "timeline": "2-3 Weeks"
+      },
+      {
+        "name": "E-commerce Website",
+        "subtitle": "Sell products online securely",
+        "price": "₹59,999+",
+        "period": "one-time cost",
+        "features": [
+          "Unlimited Products listing",
+          "Product Categories & Filters",
+          "Shopping Cart & Checkout",
+          "Razorpay / Stripe Gate Sync",
+          "Admin Order Management Panel",
+          "Customer Accounts & Logins",
+          "Basic Inventory Management",
+          "Discount Coupon System",
+          "SEO-Friendly Product Pages",
+          "6 Months Free Support"
+        ],
+        "popular": false,
+        "timeline": "3-5 Weeks"
+      },
+      {
+        "name": "Enterprise Website",
+        "subtitle": "For portals & custom web applications",
+        "price": "Starting from ₹99,999",
+        "period": "custom scope",
+        "features": [
+          "Custom Bespoke Design",
+          "Next.js Frontend Development",
+          "Node.js API Backend",
+          "Admin Dashboard Portal",
+          "CRM/ERP Systems Integration",
+          "Advanced API Integration",
+          "Multi-user Role Permissions",
+          "AI Chatbot Integration",
+          "Advanced Security & Hardening",
+          "High-Performance Optimization",
+          "12 Months Maintenance Support"
+        ],
+        "popular": false,
+        "timeline": "4-8 Weeks"
       }
     ]
   },
@@ -1011,34 +1193,82 @@ export const servicesData = {
     ],
     "pricing": [
       {
-        "name": "SaaS Starter",
-        "subtitle": "Bespoke web application build",
-        "price": "₹1,20,000",
+        "name": "Startup Software",
+        "subtitle": "Best for MVPs & small businesses",
+        "price": "₹39,999+",
         "period": "one-time cost",
         "features": [
-          "Next.js Dashboard UI Portal",
-          "Database Integration (Postgre/Mongo)",
-          "Auth and User Roles Controls",
-          "Standard Payment Webhook/Stripe",
-          "3 Months System SLA"
+          "Up to 10 Custom Screens",
+          "Next.js Frontend UI Layout",
+          "Node.js & Express API Backend",
+          "MongoDB Database Integration",
+          "JWT Secure Authentication",
+          "Basic Admin Dashboard",
+          "Responsive Mobile Design",
+          "Basic Third-Party API Sync",
+          "1 Month Free Support"
         ],
         "popular": false,
-        "timeline": "15-30 Days"
+        "timeline": "15-25 Days"
       },
       {
-        "name": "Custom Enterprise Suite",
-        "subtitle": "Full CRM / ERP workflow software",
-        "price": "₹2,50,000+",
-        "period": "custom scope",
+        "name": "Business Software",
+        "subtitle": "For growing brands & workflows",
+        "price": "₹79,999+",
+        "period": "one-time cost",
         "features": [
-          "Bespoke Cloud Pipeline Structure",
-          "Multi-Tenant Database Scaling",
-          "Autonomous Automation (n8n APIs)",
-          "Dedicated Staging Environments",
-          "12 Months Maintenance SLA"
+          "Everything in Startup Package",
+          "Custom Analytics Dashboard",
+          "Role-Based Access Control",
+          "Automated Reports & CSV Exports",
+          "Payment Gateway Integration",
+          "Email & SMS Alert Sync",
+          "Secure Cloud File Uploads",
+          "Vercel / VPS Cloud Deployment",
+          "API Swagger Documentation",
+          "3 Months Free Support"
+        ],
+        "popular": false,
+        "timeline": "25-45 Days"
+      },
+      {
+        "name": "Enterprise Software",
+        "subtitle": "Complete automation & scaling",
+        "price": "₹1,49,999+",
+        "period": "one-time cost",
+        "features": [
+          "Everything in Business Package",
+          "Custom ERP / CRM Core Modules",
+          "Advanced Inventory Management",
+          "HRMS & Biometric Payroll",
+          "Multi-Branch Administration",
+          "Advanced Analytics Reports",
+          "AI Automation Workflow (n8n)",
+          "Third-Party API Integrations",
+          "Dedicated Project Manager",
+          "6 Months Free Support"
         ],
         "popular": true,
-        "timeline": "30-60 Days"
+        "timeline": "45-75 Days"
+      },
+      {
+        "name": "Custom Enterprise Solution",
+        "subtitle": "Complex custom SaaS systems",
+        "price": "₹2,49,999+",
+        "period": "custom scope",
+        "features": [
+          "Multi-Tenant Cloud Architectures",
+          "AI Chatbots & Intelligent Agents",
+          "Autonomous Workflow Engines",
+          "Scalable Microservices Setup",
+          "AWS / Azure DevOps Pipelines",
+          "Production CI/CD Pipelines",
+          "Dedicated Development Team",
+          "Priority 24/7 Phone Support",
+          "12 Months Maintenance"
+        ],
+        "popular": false,
+        "timeline": "Custom scope"
       }
     ]
   },
@@ -2099,32 +2329,82 @@ export const servicesData = {
     "seoKeywords": "it company in patna, software development company in bihar, custom software bihar, web application development",
     "pricing": [
       {
-        "name": "MSME ERP Starter",
-        "subtitle": "Bespoke database solutions for Bihar",
-        "price": "₹95,000",
+        "name": "Startup Software",
+        "subtitle": "Best for MVPs & small businesses",
+        "price": "₹39,999+",
         "period": "one-time cost",
         "features": [
-          "Next.js Inventory & Billing Panel",
-          "Safe Database Sync (PostgreSQL)",
-          "Role-Based User Permissions",
-          "Automated WhatsApp Alert Setup",
-          "1 Year Basic Bug Support"
+          "Up to 10 Custom Screens",
+          "Next.js Frontend UI Layout",
+          "Node.js & Express API Backend",
+          "MongoDB Database Integration",
+          "JWT Secure Authentication",
+          "Basic Admin Dashboard",
+          "Responsive Mobile Design",
+          "Basic Third-Party API Sync",
+          "1 Month Free Support"
         ],
-        "popular": false
+        "popular": false,
+        "timeline": "15-25 Days"
       },
       {
-        "name": "Enterprise Cloud Portal",
-        "subtitle": "Robust cloud platforms for MSMEs",
-        "price": "₹2,20,000+",
+        "name": "Business Software",
+        "subtitle": "For growing brands & workflows",
+        "price": "₹79,999+",
+        "period": "one-time cost",
+        "features": [
+          "Everything in Startup Package",
+          "Custom Analytics Dashboard",
+          "Role-Based Access Control",
+          "Automated Reports & CSV Exports",
+          "Payment Gateway Integration",
+          "Email & SMS Alert Sync",
+          "Secure Cloud File Uploads",
+          "Vercel / VPS Cloud Deployment",
+          "API Swagger Documentation",
+          "3 Months Free Support"
+        ],
+        "popular": false,
+        "timeline": "25-45 Days"
+      },
+      {
+        "name": "Enterprise Software",
+        "subtitle": "Complete automation & scaling",
+        "price": "₹1,49,999+",
+        "period": "one-time cost",
+        "features": [
+          "Everything in Business Package",
+          "Custom ERP / CRM Core Modules",
+          "Advanced Inventory Management",
+          "HRMS & Biometric Payroll",
+          "Multi-Branch Administration",
+          "Advanced Analytics Reports",
+          "AI Automation Workflow (n8n)",
+          "Third-Party API Integrations",
+          "Dedicated Project Manager",
+          "6 Months Free Support"
+        ],
+        "popular": true,
+        "timeline": "45-75 Days"
+      },
+      {
+        "name": "Custom Enterprise Solution",
+        "subtitle": "Complex custom SaaS systems",
+        "price": "₹2,49,999+",
         "period": "custom scope",
         "features": [
-          "Scalable AWS Cloud Infrastructure",
-          "High-Traffic Database Architectures",
-          "Custom Automated Billing Engines",
-          "Multi-Tenant User Accounts",
-          "Full Source Code Transfer"
+          "Multi-Tenant Cloud Architectures",
+          "AI Chatbots & Intelligent Agents",
+          "Autonomous Workflow Engines",
+          "Scalable Microservices Setup",
+          "AWS / Azure DevOps Pipelines",
+          "Production CI/CD Pipelines",
+          "Dedicated Development Team",
+          "Priority 24/7 Phone Support",
+          "12 Months Maintenance"
         ],
-        "popular": true
+        "popular": false,
+        "timeline": "Custom scope"
       }
     ]
   },

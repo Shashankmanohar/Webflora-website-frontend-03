@@ -1383,101 +1383,125 @@ export const servicesData = {
     ]
   },
   "digital-marketing-agency-in-patna": {
-    "seoTitle": "Best Digital Marketing Company in Patna | Performance SEO Agency",
-    "seoDescription": "Looking for the best digital marketing agency in Patna? Webflora Technologies offers performance SEO, local map optimization, Google Ads, and Meta marketing.",
-    "seoKeywords": "best digital marketing company in patna, digital marketing agency in patna, SEO company in patna, search engine optimization patna, performance marketing agency patna, local SEO company in patna, google ads agency patna, social media marketing patna, digital marketing services in patna",
+    "seoTitle": "Best Digital Marketing Company in Patna | SEO, Google Ads & SMM",
+    "seoDescription": "Webflora Technologies is a digital marketing company in Patna offering SEO, Google Ads, Meta Ads, social media marketing, content marketing, and lead generation services.",
+    "seoKeywords": "best digital marketing company in patna, digital marketing company in patna, best digital marketing agency in patna, digital marketing agency in patna, digital marketing agency patna, digital marketing services in patna, SEO Company in Patna, SEO Services in Patna, Google Ads Agency in Patna, PPC Services Patna, Meta Ads Agency, Facebook Ads Agency, Instagram Marketing, Social Media Marketing Company in Patna, Local SEO Services Patna, Online Marketing Company Patna, Internet Marketing Company Patna, Performance Marketing Agency Patna, Lead Generation Company Patna, Content Marketing Agency Patna, Email Marketing Services Patna, Digital Marketing Company in Bihar",
     "title": "Performance Digital Marketing Services in Patna",
     "headline": "Digital Marketing Company in Patna",
-    "subtext": "Looking for the best digital marketing agency in Patna? Webflora Technologies is a premier performance-focused digital marketing company in Patna, Bihar. We deliver result-oriented digital marketing in Patna, including local SEO map optimization, ROI-driven Google Ads (PPC), targeted Meta campaigns, and conversion-optimized lead generation. Work with the top digital marketing agency patna trusts to scale your business. Growth plans start from ₹15,000/month.",
+    "subtext": "Drive high-intent inquiries, verified student admissions, real estate bookings, and online sales with ROI-driven campaigns managed by the premier digital marketing agency in Patna. We help coachings, clinics, real estate builders, and local brands scale their revenue starting from ₹8,999/month.",
     "geoTitle": "SEO & Performance Marketing Services in Bihar",
-    "geoContent": "As the most reliable digital marketing company in Bihar, we dominate localized search engines. We set up professional Google Business Profiles, target local keywords to secure Google's Local 3-Pack, and run geo-targeted advertisements that drive actual foot traffic and inbound phone inquiries to local offices in Patna, Muzaffarpur, Gaya, and beyond.",
-    "heroBadge": "Digital Growth",
+    "geoContent": "As the most reliable digital marketing company in Bihar, we dominate localized search engines. We optimize Google Business Profiles and target local search terms to rank you in Google's Local 3-Pack, serving Patna, Muzaffarpur, Gaya, Bhagalpur, and all of Bihar.",
+    "heroBadge": "ROI Performance",
     "problemTitle": "Market Invisibility",
     "problems": [
-      "Complete digital invisibility on Google searches and local map results in Patna and Bihar",
+      "Complete digital invisibility on Google searches and local map results across Patna and Bihar",
+      "High paid ad spend on Meta and Google showing high clicks but zero verified business conversions",
       "Inconsistent social media posts and poor creative designs that fail to engage audiences",
-      "Extremely high ad spend on Google or Meta with little to no actual leads or customer sales",
-      "Low audience engagement and lack of high-authority backlink profiles",
-      "Inability to track absolute return on ad spend (ROAS) or trace where customer calls originate"
+      "Lack of clean conversion-tracking pixel setups, GTM tags, or lead CRM attribution",
+      "Slow loading WordPress landing pages that cause high mobile user drop-offs and poor Quality Scores"
     ],
     "subServices": [
       {
-        "title": "Search Engine Optimization (SEO)",
+        "title": "SEO Services",
         "icon": "lucide:search",
-        "desc": "Dominate local search lists in Bihar and rank on Google page 1 for high-intent business terms."
+        "desc": "Technical, On-page, Off-page, and AI SEO (AEO & GEO) targeting rank positions."
+      },
+      {
+        "title": "Local SEO & Map Pack",
+        "icon": "lucide:map-pin",
+        "desc": "Rank in Google Maps Local 3-Pack and capture nearby search walk-ins and phone calls."
+      },
+      {
+        "title": "Google Ads (PPC)",
+        "icon": "lucide:mouse-pointer-click",
+        "desc": "Laser-targeted Google search, display, and YouTube video ads driving immediate conversions."
+      },
+      {
+        "title": "Meta Ads Management",
+        "icon": "lucide:share-2",
+        "desc": "High-ROAS Facebook and Instagram ads with custom visual creatives and catalog sales."
       },
       {
         "title": "Social Media Marketing",
-        "icon": "lucide:share-2",
-        "desc": "Grow your community and aesthetic brand appeal on Instagram, Facebook, and LinkedIn with premium graphic assets."
+        "icon": "lucide:instagram",
+        "desc": "Brand management, content calendars, and reels production for viral brand outreach."
       },
       {
-        "title": "Google Ads (PPC Advertising)",
-        "icon": "lucide:mouse-pointer-click",
-        "desc": "Generate instant, high-intent phone inquiries and leads with laser-targeted search campaigns."
-      },
-      {
-        "title": "Lead Generation Strategies",
-        "icon": "lucide:target",
-        "desc": "Hyper-targeted marketing campaigns optimized by our UI designers to bring high-quality sales leads."
-      },
-      {
-        "title": "Content Marketing",
-        "icon": "lucide:file-text",
-        "desc": "High-value blog content, infographics, and copywriting engineered to build topical authority and drive organic traffic."
-      },
-      {
-        "title": "Website Performance Optimization",
+        "title": "Website Design (Next.js)",
         "icon": "lucide:zap",
-        "desc": "Optimize landing pages, CTA buttons, and load speeds to maximize return on ad spend (ROAS) and lower acquisition costs."
+        "desc": "Sub-second Next.js pages integrated with Node.js and MongoDB to maximize marketing CPL."
       }
     ],
     "process": [
       {
-        "title": "Market Research & Audit",
-        "desc": "Analyzing your current brand presence and competitor landscape."
+        "title": "Business Analysis",
+        "desc": "Understanding your sales margins, target customer profile, and primary commercial goals."
       },
       {
-        "title": "Strategy Formulation",
-        "desc": "Creating a customized roadmap across SEO, Paid Ads, and Content."
+        "title": "Competitor Research",
+        "desc": "Auditing competitors' rankings, paid advertisements, and social presence to map gaps."
       },
       {
-        "title": "Campaign Execution",
-        "desc": "Launching data-driven marketing campaigns targeted at high-intent users."
+        "title": "Keyword Research",
+        "desc": "Finding transactional search queries used by local buyers to construct targeted keyword groups."
       },
       {
-        "title": "Conversion Optimization",
-        "desc": "A/B testing ad creatives and landing pages to lower cost-per-acquisition (CPA)."
+        "title": "SEO Audit",
+        "desc": "Checking sitemaps, speed, and responsiveness to identify technical errors and fix schemas."
       },
       {
-        "title": "Analytics & Reporting",
-        "desc": "Transparent tracking of ROAS, lead volume, and brand growth."
+        "title": "Campaign Setup",
+        "desc": "Creating ad accounts, connecting GTM/Pixels, and building Next.js landing pages."
+      },
+      {
+        "title": "Content Creation",
+        "desc": "Designing ad graphics, writing copywriting, scripting Reels, and planning calendars."
+      },
+      {
+        "title": "Optimization",
+        "desc": "Monitoring performance daily, adjusting bids, A/B testing, and lowering CPA."
+      },
+      {
+        "title": "Monthly Reporting",
+        "desc": "Delivering transparent performance dashboards tracking spends, clicks, and actual sales."
       }
     ],
     "industries": [
-      "Local Businesses",
-      "Real Estate",
+      "Schools",
       "Coaching Institutes",
-      "Healthcare",
-      "Ecommerce"
+      "Hospitals",
+      "Restaurants",
+      "Hotels",
+      "Real Estate",
+      "Builders",
+      "Ecommerce",
+      "Doctors",
+      "Dentists",
+      "Fashion",
+      "Manufacturing"
     ],
     "solutions": [
-      "Performance-driven paid advertising",
-      "Strategic content creation & curation",
-      "Community management & growth",
-      "Influencer partnership strategy",
-      "Detailed performance analytics"
+      "Custom Next.js performance landing pages to maximize conversion",
+      "Structured local map pack and review acquisition campaigns",
+      "Laser-targeted search, shopping, and display PPC campaigns",
+      "High-ROAS Advantage+ demographic social media ads",
+      "Scripting, storyboard, and editing support for Reels and Shorts"
     ],
     "suitableFor": [
       {
-        "title": "Local Clinics & Doctors",
+        "title": "Schools & Colleges",
         "icon": "lucide:activity",
-        "reason": "Rank #1 on Google maps for searches like 'best clinic near me' and drive organic phone calls."
+        "reason": "Rank local searches and drive enrollment queries with neighborhood targeting."
       },
       {
-        "title": "Coaching Centres",
+        "title": "Coaching Institutes",
         "icon": "lucide:graduation-cap",
         "reason": "Run conversion-focused Meta/Google Ads to acquire local student admissions for new batches."
+      },
+      {
+        "title": "Hospitals & Clinics",
+        "icon": "lucide:heart-pulse",
+        "reason": "OPD queries optimization and local medical reputation tracking."
       },
       {
         "title": "Real Estate Developers",
@@ -1487,10 +1511,10 @@ export const servicesData = {
       {
         "title": "D2C Brands",
         "icon": "lucide:shopping-bag",
-        "reason": "Scale digital sales on Instagram/Facebook with retargeting pixels and high-ROAS lookalike campaigns."
+        "reason": "Scale digital sales on Instagram/Facebook with retargeting pixels and high-ROAS catalogs."
       },
       {
-        "title": "Hotels & Banquet Halls",
+        "title": "Hotels & Banquets",
         "icon": "lucide:calendar",
         "reason": "Dominate local event planning searches and capture bulk bookings for weddings and conferences."
       }
@@ -1498,67 +1522,172 @@ export const servicesData = {
     "benefits": [
       {
         "title": "Brand Authority",
-        "description": "Establish your brand as a leader in your industry with high-quality, strategic content.",
+        "description": "Establish your brand as a market leader with high-quality, localized content and social presence.",
         "icon": "lucide:award",
-        "stat": "500%",
-        "statLabel": "Reach Increase",
-        "metric": "Brand Awareness",
+        "stat": "5x",
+        "statLabel": "Search Growth",
+        "metric": "Brand Authority",
         "color": "from-[#FF3B00]/20 to-red-600/5"
       },
       {
         "title": "Performance Ads",
-        "description": "ROI-focused ad campaigns that target the right audience with the right message.",
+        "description": "ROI-focused Google and Meta campaigns designed to acquire customers, not just impressions.",
         "icon": "lucide:pie-chart",
         "stat": "10x",
         "statLabel": "Average ROAS",
-        "metric": "Paid Growth",
+        "metric": "Paid Channels",
         "color": "from-cyan-600/20 to-blue-600/5"
       },
       {
-        "title": "Community Loyalty",
-        "description": "Build a loyal following that advocates for your brand and drives organic growth.",
-        "icon": "lucide:heart",
-        "stat": "85%",
-        "statLabel": "Engagement Rate",
-        "metric": "Community Trust",
+        "title": "Page Conversions",
+        "description": "Sub-second Next.js pages that raise your ad Quality Score and increase leads count.",
+        "icon": "lucide:zap",
+        "stat": "45%",
+        "statLabel": "Lower CPL",
+        "metric": "Lead Conversions",
         "color": "from-purple-600/20 to-violet-600/5"
       }
     ],
     "faqs": [
       {
-        "question": "How much do digital marketing services cost in Patna Bihar?",
-        "answer": "At Webflora Technologies, our customized performance marketing and local SEO growth plans start from ₹15,000 per month. The pricing depends on target ad budget, keyword competition, and campaign complexity.",
+        "question": "Which is the best digital marketing company in Patna?",
+        "answer": "Webflora Technologies is recognized as the best digital marketing company in Patna, Bihar. We focus on performance-driven metrics (leads, phone calls, sales) rather than vanity views. We build custom Next.js landing pages to guarantee fast speeds and high conversions.",
+        "icon": "lucide:award"
+      },
+      {
+        "question": "How much does digital marketing cost in Patna?",
+        "answer": "Our monthly marketing and SEO packages start at ₹8,999/month for local shops. Performance marketing packages (handling Meta and Google Ads, graphics, reels, and custom landing pages) range from ₹18,999 to ₹34,999/month, depending on keyword competition and target territory.",
         "icon": "lucide:wallet"
       },
       {
-        "question": "How long does local SEO take to show organic results?",
-        "answer": "Local SEO map ranking and organic search engine listings usually take 2 to 4 months to yield substantial traffic and phone calls in Patna, Bihar, depending on industry search competition.",
+        "question": "How long does SEO take to show results?",
+        "answer": "Organic search engine optimization is a long-term asset. While technical audit fixes can show improvement within weeks, ranking for competitive terms on the first page of Google typically requires 3 to 6 months of consistent on-page optimization, blogging, and local citations.",
         "icon": "lucide:timer"
       },
       {
-        "question": "Which is better: SEO or paid ads?",
-        "answer": "Both have benefits. SEO is long-term growth, while paid ads provide quick results. A combination ensures maximum ROAS and lead generation.",
+        "question": "Is Google Ads better than SEO?",
+        "answer": "Google Ads delivers immediate leads by placing you at the top of search pages instantly, making it ideal for quick inquiries. SEO builds long-term organic rankings, driving zero-cost leads over time. We recommend combining both channels for optimal growth.",
         "icon": "lucide:balance"
       },
       {
         "question": "Do you provide social media marketing?",
-        "answer": "Yes, we manage social media platforms to increase brand awareness, community engagement, and paid social campaigns.",
+        "answer": "Yes. We manage business profiles on Instagram, Facebook, LinkedIn, X, and YouTube. Our services include monthly content calendar schedules, custom graphic designs, copy editing, and scripting/producing short-form Reels.",
         "icon": "lucide:share-2"
       },
       {
-        "question": "How do you generate leads?",
-        "answer": "We use a mix of local SEO, Google ads, content marketing, and conversion optimization strategies to attract high-intent potential customers.",
-        "icon": "lucide:magnet"
+        "question": "Can you rank my website locally in Patna?",
+        "answer": "Yes. We optimize your Google Business Profile, target specific neighborhood keywords (e.g., Boring Road or Kankarbagh), build local business citations, and implement review collection campaigns to place you in Google's Local 3-Pack.",
+        "icon": "lucide:map-pin"
       },
       {
-        "question": "Can digital marketing work for small businesses?",
-        "answer": "Absolutely. Digital marketing is highly effective for small businesses to increase visibility and dominate their local geographic area.",
-        "icon": "lucide:trending-up"
+        "question": "What is the difference between Webflora and other agencies?",
+        "answer": "Most agencies use slow, standard WordPress templates and report vanity impressions. Webflora writes custom React and Next.js code to ensure sub-second speeds, integrates advanced conversion tracking, and focuses exclusively on business revenue and ROAS.",
+        "icon": "lucide:check-circle"
+      },
+      {
+        "question": "Do you manage our ad budgets directly?",
+        "answer": "No. To maintain complete transparency, you add your payment method directly inside your Google Ads or Meta Ads billing profile. The ad networks bill you directly, while we charge a flat monthly fee to run the campaigns.",
+        "icon": "lucide:credit-card"
+      },
+      {
+        "question": "What is conversion rate optimization (CRO)?",
+        "answer": "CRO involves adjusting your landing page layout, fields, and CTAs to increase the percentage of site visitors who complete a form or make a purchase.",
+        "icon": "lucide:zap"
+      },
+      {
+        "question": "Do you edit Instagram Reels and YouTube Shorts?",
+        "answer": "Yes. Our packages include scripting, storyboard guidance, editing, caption formatting, and audio pairing for short-form video marketing.",
+        "icon": "lucide:video"
+      },
+      {
+        "question": "What is a Next.js landing page and why do I need it?",
+        "answer": "Next.js is a modern development framework. We use it to build landing pages that load in milliseconds, improving user experience, raising ad quality scores, and reducing cost-per-click.",
+        "icon": "lucide:cpu"
+      },
+      {
+        "question": "Do you provide copywriting services?",
+        "answer": "Yes. Our team writes ad copies, website contents, SEO blog posts, newsletter emails, and social media captions.",
+        "icon": "lucide:edit-3"
+      },
+      {
+        "question": "What is online reputation management (ORM)?",
+        "answer": "ORM focuses on monitoring search results, building positive Google reviews, and addressing public complaints to protect your brand image.",
+        "icon": "lucide:shield"
+      },
+      {
+        "question": "How often will we receive reports?",
+        "answer": "We provide weekly dashboard snapshots and detailed monthly reports tracking impressions, clicks, leads, and calculated ad costs.",
+        "icon": "lucide:bar-chart-2"
+      },
+      {
+        "question": "What is local citations in SEO?",
+        "answer": "Citations are online directory listings (like Justdial, Sulekha, Indiamart) containing your Name, Address, and Phone number. Consistency across listings builds trust with Google's search algorithms.",
+        "icon": "lucide:list"
+      },
+      {
+        "question": "Do you sign a Non-Disclosure Agreement (NDA)?",
+        "answer": "Yes. We sign NDAs to protect your business strategies, customer lists, and proprietary tools.",
+        "icon": "lucide:file-text"
+      },
+      {
+        "question": "What industries do you serve?",
+        "answer": "We serve schools, coaching academies, clinics, builders, hotels, restaurants, e-commerce stores, and corporate offices.",
+        "icon": "lucide:building"
+      },
+      {
+        "question": "What is Google Tag Manager (GTM)?",
+        "answer": "GTM is a system that allows us to inject tracking pixels and measure specific actions (like form submissions or button clicks) without modifying core website code.",
+        "icon": "lucide:tag"
+      },
+      {
+        "question": "What is email marketing?",
+        "answer": "Email marketing uses structured newsletters and promotional sequences to keep customer lists engaged, increasing repeat business.",
+        "icon": "lucide:mail"
+      },
+      {
+        "question": "Can you integrate CRM tools?",
+        "answer": "Yes. We connect your lead forms to CRMs like Zoho, HubSpot, or Salesforce using API bridges to instantly sync lead data.",
+        "icon": "lucide:database"
+      },
+      {
+        "question": "What is search matches in Google Ads?",
+        "answer": "It defines how close a user's search query must be to your keyword to trigger your ad (exact match, phrase match, broad match). We manage these matches to prevent wasted ad budget.",
+        "icon": "lucide:search"
+      },
+      {
+        "question": "Can you rebuild an existing slow website?",
+        "answer": "Yes. We migrate old websites to custom React/Next.js platforms to improve loading times and conversion metrics.",
+        "icon": "lucide:refresh-cw"
+      },
+      {
+        "question": "What is GA4?",
+        "answer": "Google Analytics 4 is the modern web analytics platform. We set it up to monitor user demographics, traffic channels, and overall site behaviors.",
+        "icon": "lucide:line-chart"
+      },
+      {
+        "question": "What is WhatsApp marketing?",
+        "answer": "WhatsApp marketing broadcasts messages and updates directly to customer phones via official business API channels.",
+        "icon": "lucide:message-square"
+      },
+      {
+        "question": "How do we start?",
+        "answer": "You can request a free growth audit, after which we will host a strategy call, choose a monthly package, and launch your campaign setup within 7 days.",
+        "icon": "lucide:play"
+      },
+      {
+        "question": "Are there any contract lock-in periods?",
+        "answer": "No. We work on flexible monthly agreements. You can pause or modify your plan at any time with a 15-day notice.",
+        "icon": "lucide:clock"
+      },
+      {
+        "question": "Do you offer graphic design?",
+        "answer": "Yes. We design all graphics, banners, and carousels for your social accounts and active ads.",
+        "icon": "lucide:palette"
       }
     ],
     "techStack": [
       {
-        "name": "Meta",
+        "name": "Meta Ads Manager",
         "icon": "logos:meta-icon"
       },
       {
@@ -1570,119 +1699,152 @@ export const servicesData = {
         "icon": "logos:youtube-icon"
       },
       {
-        "name": "HubSpot",
-        "icon": "logos:hubspot"
+        "name": "Semrush",
+        "icon": "logos:semrush"
       },
       {
-        "name": "Canva",
-        "icon": "simple-icons:canva"
-      },
-      {
-        "name": "Analytics",
+        "name": "Analytics (GA4)",
         "icon": "logos:google-analytics"
+      },
+      {
+        "name": "Next.js",
+        "icon": "logos:nextjs-icon"
       }
     ],
     "detailedArticle": {
-      "title": "Governance, Security & SLA Support",
+      "title": "Patna Digital Growth Guide",
       "sections": [
         {
-          "title": "Best Digital Marketing Agency in Patna",
+          "title": "Dominating Patna's Local Markets",
           "paragraphs": [
-            "If you are searching for the best digital marketing agency in Patna, you need a partner that goes beyond simple impressions and clicks. Our performance marketing campaigns achieve a 10x average return on ad spend (ROAS) and drive a 300% increase in organic search traffic. As a premium digital marketing company in Patna, Webflora Technologies is committed to driving real business conversions, sales, and inbound customer calls, decreasing lead costs by 45%.",
-            "According to Shashank Manohar, Founder of Webflora Technologies: 'Effective digital marketing in Patna is not about chasing vanity metrics. We construct highly optimized sales funnels and targeted pay-per-click strategies that convert raw traffic into tangible, recurring business revenue.'",
-            "Our team is recognized as a top-tier digital marketing agency patna trusts. We write custom marketing funnels, build optimized landing pages, and run high-converting Meta and Google ad campaigns specifically tailored for local clinics, builders, and coaching centers."
+            "Patna is rapidly transitioning into a competitive commercial, educational, and startup hub in Bihar. From active local markets in Boring Road, Bailey Road, and Kankarbagh to scaling JEE/NEET coachings, medical clinics, and real estate developers, local businesses need more than just generic social media postings. They need a data-driven digital marketing company in Patna that delivers performance-focused campaigns to capture local traffic and convert it into cash flow.",
+            "At Webflora Technologies, we do not focus on vanity metrics like 'likes' or 'impressions.' Instead, we focus on what matters most: your bottom-line revenue. Whether it is securing your listing in Google's Local 3-Pack, ranking for competitive regional keywords, or running high-converting ads on Meta and Google, we build comprehensive systems designed to scale your business."
           ]
         },
         {
-          "title": "Why Businesses Need a Performance-Focused Marketing Strategy",
+          "title": "Comprehensive SEO & Google Maps Strategy",
           "paragraphs": [
-            "Digital visibility is the primary driver of modern business customer acquisition. Simply posting on social media is not enough; you need a structured SEO and performance advertising strategy. By optimizing search engine maps (Google Local Pack) and running hyper-targeted Meta/Google Ads, you generate high-intent sales inquiries from your target demographic.",
-            "A data-driven marketing strategy focuses on actual customer acquisition costs (CAC) and absolute return on ad spend (ROAS), turning marketing budgets into measurable revenue growth."
+            "Organic search visibility is the most valuable asset your business can own. When you rank organically for transactional search queries, you generate high-intent traffic without paying a single rupee per click. As a leading SEO company in Patna, we specialize in search engine optimization that ranks your website on the first page of Google. Our technical SEO team audits your site's structure, fixes crawl errors, and sets up XML sitemaps.",
+            "Local search visibility is vital for brick-and-mortar storefronts in Bihar. We deliver targeted local SEO services Patna businesses use to dominate Google Maps. We optimize your Google Business Profile (GBP), coordinate Name, Address, and Phone (NAP) citations across regional directories, target localized keywords, and implement automated review generation strategies."
           ]
         },
         {
-          "title": "IT Company in Patna",
+          "title": "PPC & Social Media Advertising",
           "paragraphs": [
-            "As a full-service IT company in Patna, Webflora Technologies provides comprehensive technological solutions that help local enterprises digitize, streamline, and automate their operations. From custom software integrations to responsive website platforms, we support scaling corporate brands in Bihar with reliable technical execution.",
-            "Our team consists of expert software engineers and designers dedicated to building high-performance systems. We make sure that your business transitions into the digital space securely and successfully, backed by our robust maintenance SLAs and local cloud server expertise."
+            "Capture buyers at the exact moment they search for your services. We operate as a premier google ads agency in Patna, building high-performance search campaigns, visual banner displays, and YouTube video promotions. By targeting high-intent keywords, refining match types, and establishing dynamic remarketing funnels, our certified specialists deliver customized PPC services Patna clients rely on to get immediate lead registrations and sales.",
+            "Reach your target audience based on demographics, interests, and online behaviors. We function as a specialized meta ads agency and facebook ads agency, designing eye-catching creatives and persuasive copy for Instagram and Facebook. We run catalog-linked ads, lead generation forms with automatic CRM sync, and Advantage+ shopping campaigns to capture customers during their daily social browsing."
           ]
         },
         {
-          "title": "Advanced Security & Brand Privacy Standards",
+          "title": "Next.js & Web Performance ROI",
           "paragraphs": [
-            "We handle your official ad accounts, pixel trackers, and customer lead databases with extreme care. We utilize secure Business Manager access levels with two-factor authentication (2FA) enforced on all administrator accounts. All gathered lead data is encrypted and synced directly to your private CRM database, fully complying with modern data privacy standards.",
-            "We also implement active spam-filtering on lead forms to prevent unauthorized entries and protect your campaign statistics."
-          ]
-        },
-        {
-          "title": "Ongoing Campaign Maintenance & Performance Monitoring SLA",
-          "paragraphs": [
-            "Ad algorithms and search trends change daily. Our ongoing marketing management covers daily bid optimization, ad creative A/B testing, keyword search trend audits, monthly SEO rank tracking, and transparent performance reporting. This ensures your campaigns adapt in real time to yield the lowest cost per acquisition."
-          ]
-        },
-        {
-          "title": "Transparent Pricing Models & ROI Commitment",
-          "paragraphs": [
-            "Our digital marketing and performance SEO packages start from ₹15,000 per month, structured transparently based on target keywords and ad budgets. We focus entirely on driving high-intent phone calls, leads, and sales, providing a clear path to scale your business sustainably."
+            "At Webflora Technologies, we believe that digital marketing and high-performance web development are inseparable. You can spend thousands of rupees on Google and Meta Ads, but if you direct that traffic to a slow, non-responsive, or poorly structured website, your visitors will leave immediately. Slow loading speeds destroy conversion rates, lower your Google Ads Quality Score (which increases your cost-per-click), and penalize your organic SEO rankings.",
+            "We build custom frontend interfaces using React and Next.js. Next.js enables static site generation (SSG) and server-side rendering (SSR), allowing your landing pages to load in less than a second. On the backend, we run secure, highly concurrent API architectures using Node.js and Express, connected to scalable MongoDB databases. By pairing ROI-driven marketing campaigns with custom Next.js web applications, we create a seamless customer acquisition system that maximizes your conversion rate and drops your cost-per-lead."
           ]
         }
       ]
     },
-    "seoTitle": "Best Digital Marketing Agency in Patna | Webflora",
-    "seoKeywords": "digital marketing in patna, digital marketing company in patna, digital marketing agency patna, best digital marketing agency in patna, best digital marketing company in patna, it company in patna, digital marketing agency in patna, seo services patna, social media marketing bihar, google ads expert patna",
-    "whyChooseTitle": "Why Choose Webflora for Digital Marketing?",
-    "whyChooseSubtitle": "We construct data-backed performance marketing campaigns. Maximize your return on ad spend (ROAS) and dominate regional organic listings.",
+    "whyChooseTitle": "Why We're the Best Digital Marketing Company in Patna",
+    "whyChooseSubtitle": "We build performance-driven campaigns using modern technology to optimize customer acquisition costs.",
     "whyChooseCards": [
       {
-        "icon": "solar:graph-up-linear",
-        "title": "Hyper-Local SEO Domination",
-        "desc": "Optimizing your Google Business Profile and local keywords to put your clinic, coaching center, or resort at the top of Google Map Packs."
+        "icon": "solar:map-pin-linear",
+        "title": "Local Expertise",
+        "desc": "Deep understanding of Patna's neighborhoods (Boring Road, Kankarbagh, Bailey Road) and local consumer behaviors."
       },
       {
-        "icon": "solar:ranking-linear",
-        "title": "ROI-Driven Ad Campaigns",
-        "desc": "Running highly optimized Meta and Google search ads focused on actual lead acquisition costs rather than superficial impressions."
+        "icon": "solar:graph-up-linear",
+        "title": "ROI-Focused Campaigns",
+        "desc": "Zero interest in vanity metrics. We measure campaigns based on inbound inquiries, calls, and sales."
+      },
+      {
+        "icon": "solar:document-text-linear",
+        "title": "Transparent Reporting",
+        "desc": "Weekly and monthly performance dashboards tracking ad spends, lead quantities, and ROAS directly."
+      },
+      {
+        "icon": "solar:cpu-linear",
+        "title": "AI-Powered Strategies",
+        "desc": "Leveraging smart bidding models, AEO, GEO, and automated workflow pipelines for maximum performance."
       },
       {
         "icon": "solar:bolt-linear",
-        "title": "Actionable Conversion Audits",
-        "desc": "Continuous analysis of user heatmaps and web traffic patterns to optimize landing page structures and maximize phone inquiry rates."
+        "title": "Modern Tech Stack",
+        "desc": "Bespoke Next.js, React, Node.js, and MongoDB setup for fast pages that convert clicks into leads."
       },
       {
-        "icon": "solar:chat-square-call-linear",
-        "title": "Transparent ROAS Reporting",
-        "desc": "Providing clear weekly dashboards outlining exact ad spend, lead counts, and return on ad spend (ROAS) metrics."
+        "icon": "solar:user-linear",
+        "title": "Dedicated Account Manager",
+        "desc": "A single point of contact coordinating strategy, reviews, and progress tracking for your brand."
+      },
+      {
+        "icon": "solar:card-linear",
+        "title": "No Hidden Charges",
+        "desc": "Flat monthly management pricing. Direct billing from Google/Meta ensuring 100% budget transparency."
       }
     ],
     "pricing": [
       {
-        "name": "Local Growth Plan",
-        "subtitle": "Boost local search views & maps",
-        "price": "₹15,000",
+        "name": "Starter Package",
+        "subtitle": "Small Local Shops, CAs",
+        "price": "₹8,999",
         "period": "per month",
         "features": [
-          "Google Maps Ranking Optimization",
-          "Keyword Auditing & Metadata Setup",
-          "10 High-Authority Local Citations",
-          "On-Page SEO Technical Fixes",
-          "Monthly Search Traffic Reports"
+          "Google Maps Optimization",
+          "Up to 10 Local Keywords",
+          "Facebook Page Setup",
+          "Monthly Performance Reports",
+          "On-Page SEO Basics"
         ],
         "popular": false
       },
       {
-        "name": "National Scale Plan",
-        "subtitle": "Rank for competitive terms across India",
-        "price": "₹35,000+",
+        "name": "Growth Package",
+        "subtitle": "Coaching Centres, Clinics",
+        "price": "₹18,999",
         "period": "per month",
         "features": [
-          "Competitive National Keyword Analysis",
-          "Bespoke SEO Link-Building Campaigns",
-          "Content Optimization Copywriting",
-          "Technical Schema Audit Fixes",
-          "Bi-Weekly Performance Calls"
+          "Google Maps Optimization",
+          "Up to 25 Regional Keywords",
+          "Meta Ads Management (FB & IG)",
+          "Google Ads Management (Search)",
+          "12 Custom Posts + 2 Reels/mo",
+          "1 Next.js Landing Page",
+          "Weekly Performance Reports"
         ],
-        "popular": true,
-        "timeline": "Ongoing"
+        "popular": true
+      },
+      {
+        "name": "Business Package",
+        "subtitle": "Real Estate Builders, Brands",
+        "price": "₹34,999",
+        "period": "per month",
+        "features": [
+          "Google Maps Optimization",
+          "Up to 50 National Keywords",
+          "Meta Ads Management (Advantage+)",
+          "Google Ads (Search & Display)",
+          "24 Custom Posts + 6 Reels/mo",
+          "1 Custom Next.js Funnel",
+          "Detailed Weekly Analysis Reports"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Enterprise Solution",
+        "subtitle": "National Startups, Enterprise",
+        "price": "Custom",
+        "period": "per month",
+        "features": [
+          "Google Maps Optimization",
+          "Unlimited Keywords",
+          "Dedicated Funnel Management",
+          "Full PMax & YouTube Campaigns",
+          "Daily Custom Creatives",
+          "Custom Multi-Step Web App",
+          "Real-time Dashboard Sync"
+        ],
+        "popular": false
       }
     ]
   },

@@ -363,7 +363,6 @@ const TechStackWrapper = ({ data }) => {
             )}
           </h2>
         </FadeInUp>
-        
         <TechStackGrid techStack={data.techStack} />
       </div>
     </section>
@@ -374,44 +373,50 @@ const SubServicesWrapper = ({ data }) => {
   if (!data.subServices || data.subServices.length === 0) return null;
 
   return (
-    <section className="py-24 px-6 bg-[#030303] relative border-y border-white/5 overflow-hidden">
+    <section className="py-20 px-6 bg-[#030303] relative border-y border-white/5 overflow-hidden">
        {/* Subtle background overlay */}
        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full bg-grid-pattern opacity-[0.01] pointer-events-none" />
 
-       <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-20 text-center">
-            <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+       <div className="max-w-6xl mx-auto relative z-10">
+          <div className="mb-12 text-center">
+            <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-3 block text-xs">
               Comprehensive Solutions
             </FadeInUp>
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight uppercase leading-none">
               {data.subServicesTitle || "Features"}
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center">
             {data.subServices.map((service, index) => (
-              <FadeInUp key={index} delay={index * 0.05} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl pointer-events-none" />
-                <div className="relative h-full p-8 rounded-[2rem] bg-zinc-950/40 border border-white/5 backdrop-blur-sm hover:border-[#FF3B00]/20 hover:bg-zinc-900/10 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-2">
+              <FadeInUp key={index} delay={index * 0.05} className="group relative max-w-[310px] w-full mx-auto flex">
+                {/* Outer Glowing Border wrapper */}
+                <div className="relative p-[1.2px] rounded-[1.5rem] bg-gradient-to-b from-white/10 via-transparent to-white/5 group-hover:from-[#FF3B00]/30 group-hover:to-transparent transition-all duration-700 flex flex-col w-full">
                   
-                  {/* Neon Top Accent Line */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FF3B00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  {/* Glow Behind Card */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[1.5rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
                   
-                  {/* Glowing Icon Container */}
-                  <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-white/10 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(255,59,0,0.0)] group-hover:shadow-[0_0_30px_rgba(255,59,0,0.25)] group-hover:border-[#FF3B00]/40 transition-all duration-500 group-hover:scale-110">
-                    <SafeIcon icon={service.icon} width={26} className="text-white group-hover:text-[#FF3B00] transition-colors duration-500" />
-                  </div>
-                  
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-[#FF3B00] transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed flex-grow">
-                    {service.desc}
-                  </p>
-                  
-                  <div className="mt-8 flex items-center gap-2 text-xs font-bold text-white/40 group-hover:text-white transition-colors cursor-pointer w-fit uppercase tracking-widest">
-                    <span>Learn More</span>
-                    <SafeIcon icon="solar:arrow-right-line-duotone" width={14} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="relative h-full p-5 md:p-6 rounded-[1.5rem] bg-zinc-950/40 border border-white/5 backdrop-blur-sm hover:border-[#FF3B00]/10 hover:bg-zinc-900/10 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-1">
+                    
+                    {/* Neon Top Accent Line */}
+                    <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FF3B00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                    
+                    {/* Smaller Icon Container */}
+                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(255,59,0,0.0)] group-hover:shadow-[0_0_25px_rgba(255,59,0,0.2)] group-hover:border-[#FF3B00]/30 transition-all duration-500 group-hover:scale-105">
+                      <SafeIcon icon={service.icon} width={18} className="text-white group-hover:text-[#FF3B00] transition-colors duration-500" />
+                    </div>
+                    
+                    <h3 className="text-base md:text-lg font-black text-white mb-2 tracking-tight group-hover:text-[#FF3B00] transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-neutral-400 font-light leading-relaxed flex-grow">
+                      {service.desc}
+                    </p>
+                    
+                    <div className="mt-6 flex items-center gap-1.5 text-[10px] font-bold text-white/40 group-hover:text-white transition-colors cursor-pointer w-fit uppercase tracking-widest">
+                      <span>Learn More</span>
+                      <SafeIcon icon="solar:arrow-right-line-duotone" width={12} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </FadeInUp>
@@ -545,40 +550,46 @@ const ProcessWrapper = ({ data }) => {
   if (!data.process || data.process.length === 0) return null;
 
   return (
-    <section className="py-24 px-6 bg-[#050505] relative border-y border-white/5 overflow-hidden">
+    <section className="py-20 px-6 bg-[#050505] relative border-y border-white/5 overflow-hidden">
        {/* Ambient glow backdrop */}
        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#FF3B00]/[0.01] rounded-full blur-3xl pointer-events-none" />
 
-       <div className="max-w-4xl mx-auto relative z-10">
-          <div className="mb-20 text-center">
-            <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+       <div className="max-w-3xl mx-auto relative z-10">
+          <div className="mb-12 text-center">
+            <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-3 block text-xs">
               How We Work
             </FadeInUp>
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight uppercase leading-none">
               Development Process
             </h2>
           </div>
           
-          <div className="relative space-y-8 pl-4 md:pl-16">
+          <div className="relative space-y-6 pl-4 md:pl-12">
             {/* Connecting Timeline Vertical Line */}
-            <div className="absolute left-[36px] md:left-[68px] top-8 bottom-8 w-[1px] bg-gradient-to-b from-[#FF3B00] via-orange-500/10 to-transparent pointer-events-none" />
+            <div className="absolute left-[32px] md:left-[70px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-[#FF3B00] via-orange-500/10 to-transparent pointer-events-none" />
 
             {data.process.map((step, index) => (
-              <FadeInUp key={index} delay={index * 0.05} className="group relative flex gap-6 md:gap-10">
+              <FadeInUp key={index} delay={index * 0.05} className="group relative flex gap-4 md:gap-8 items-start">
                 
                 {/* Timeline Number Node */}
-                <div className="relative z-10 flex-shrink-0 w-10 h-10 md:w-16 md:h-16 rounded-full bg-zinc-950 border border-white/10 flex items-center justify-center text-sm md:text-xl font-mono text-[#FF3B00] font-bold shadow-[0_0_15px_rgba(0,0,0,0.8)] group-hover:scale-110 group-hover:border-[#FF3B00] group-hover:shadow-[0_0_20px_rgba(255,59,0,0.2)] transition-all duration-500">
+                <div className="relative z-10 flex-shrink-0 w-8 h-8 md:w-11 md:h-11 rounded-full bg-zinc-950 border border-white/10 flex items-center justify-center text-xs md:text-base font-mono text-[#FF3B00] font-bold shadow-[0_0_15px_rgba(0,0,0,0.8)] group-hover:scale-105 group-hover:border-[#FF3B00] group-hover:shadow-[0_0_20px_rgba(255,59,0,0.2)] transition-all duration-500">
                   {index + 1}
                 </div>
 
-                {/* Content Block */}
-                <div className="flex-grow p-6 md:p-8 rounded-[2rem] bg-zinc-950/40 border border-white/5 backdrop-blur-sm hover:border-[#FF3B00]/20 hover:bg-zinc-900/10 transition-all duration-500">
-                  <h3 className="text-lg md:text-2xl font-bold text-white mb-2 group-hover:text-[#FF3B00] transition-colors duration-300">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">
-                    {step.desc}
-                  </p>
+                {/* Content Block Wrapper with Glowing border */}
+                <div className="relative p-[1.2px] rounded-[1.5rem] bg-gradient-to-b from-white/10 via-transparent to-white/5 group-hover:from-[#FF3B00]/30 group-hover:to-transparent transition-all duration-700 flex flex-col flex-grow">
+                  
+                  {/* Glow Behind Card */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[1.5rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
+                  
+                  <div className="relative p-5 md:p-6 rounded-[1.5rem] bg-zinc-950/40 border border-white/5 backdrop-blur-sm hover:border-[#FF3B00]/10 hover:bg-zinc-900/10 transition-all duration-500 overflow-hidden">
+                    <h3 className="text-base md:text-lg font-black text-white mb-1.5 group-hover:text-[#FF3B00] transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-neutral-400 font-light leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
 
               </FadeInUp>
@@ -849,7 +860,7 @@ export const DetailedArticleWrapper = ({ data }) => {
   const { title, sections } = data.detailedArticle;
 
   return (
-    <section className="py-28 px-6 bg-[#030303] relative border-y border-white/5 overflow-hidden">
+    <section className="py-20 px-6 bg-[#030303] relative border-y border-white/5 overflow-hidden">
       {/* Dynamic Background Grids & Ambient Glows */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#FF3B00]/5 rounded-full blur-3xl" />
@@ -857,129 +868,139 @@ export const DetailedArticleWrapper = ({ data }) => {
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Sidebar Navigation - Modern Sticky Anchor Nav */}
           <div className="hidden lg:block lg:col-span-4 sticky top-28">
-            <div className="p-8 rounded-3xl bg-zinc-950/80 border border-white/5 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF3B00]/30 to-transparent" />
-              
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B00] animate-pulse" />
-                  Documentation
+            <div className="relative p-[1.2px] rounded-[1.5rem] bg-gradient-to-b from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent transition-all duration-700 flex flex-col group w-full">
+              {/* Glow Behind Card */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[1.5rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
+
+              <div className="relative p-5 rounded-[1.5rem] bg-zinc-950/80 backdrop-blur-xl border border-white/5 overflow-hidden transition-all duration-500">
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF3B00]/30 to-transparent" />
+                
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white/5 border border-white/10 rounded-full text-[8px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                    <span className="w-1 h-1 rounded-full bg-[#FF3B00] animate-pulse" />
+                    Documentation
+                  </div>
+                  
+                  <h3 className="text-lg font-black text-white tracking-tight uppercase leading-tight">
+                    {title || "Overview Guide"}
+                  </h3>
+                  
+                  <div className="h-[1px] bg-white/5 w-full" />
+                  
+                  <nav className="space-y-0.5">
+                    {sections.map((section, idx) => {
+                      const slug = `article-sec-${idx}`;
+                      return (
+                        <a
+                          key={idx}
+                          href={`#${slug}`}
+                          className="group/item flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-300 border-l-2 border-transparent hover:border-[#FF3B00]"
+                        >
+                          <span className="text-[9px] font-mono text-neutral-600 group-hover/item:text-[#FF3B00] transition-colors">
+                            0{idx + 1}
+                          </span>
+                          <span className="line-clamp-1">{section.title}</span>
+                        </a>
+                      );
+                    })}
+                  </nav>
                 </div>
-                
-                <h3 className="text-2xl font-black text-white tracking-tight uppercase leading-tight">
-                  {title || "Overview Guide"}
-                </h3>
-                
-                <div className="h-[1px] bg-white/5 w-full" />
-                
-                <nav className="space-y-1">
-                  {sections.map((section, idx) => {
-                    const slug = `article-sec-${idx}`;
-                    return (
-                      <a
-                        key={idx}
-                        href={`#${slug}`}
-                        className="group/item flex items-center gap-3 py-2 px-3 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-300 border-l-2 border-transparent hover:border-[#FF3B00]"
-                      >
-                        <span className="text-[10px] font-mono text-neutral-600 group-hover/item:text-[#FF3B00] transition-colors">
-                          0{idx + 1}
-                        </span>
-                        <span className="line-clamp-1">{section.title}</span>
-                      </a>
-                    );
-                  })}
-                </nav>
               </div>
             </div>
           </div>
 
           {/* Main Article Content - High-end Modern Typography Layout */}
-          <div className="col-span-1 lg:col-span-8 space-y-16">
+          <div className="col-span-1 lg:col-span-8 space-y-8">
             {sections.map((section, idx) => {
               const slug = `article-sec-${idx}`;
               return (
                 <div 
                   key={idx} 
                   id={slug} 
-                  className="scroll-mt-28 p-8 md:p-12 rounded-[2.5rem] bg-zinc-950/40 border border-white/5 hover:border-white/10 backdrop-blur-sm transition-all duration-500 relative group overflow-hidden"
+                  className="scroll-mt-24 relative p-[1.2px] rounded-[1.5rem] bg-gradient-to-b from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent transition-all duration-700 flex flex-col group w-full"
                 >
-                  {/* Visual Glow on Hover */}
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-[#FF3B00]/5 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                  
-                  <div className="space-y-6 relative z-10">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono text-[#FF3B00] bg-[#FF3B00]/10 px-2.5 py-1 rounded-lg font-bold tracking-wider">
-                        CHAPTER 0{idx + 1}
-                      </span>
-                      <div className="h-[1px] bg-white/5 flex-grow" />
-                    </div>
+                  {/* Glow Behind Card */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[1.5rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
 
-                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight uppercase leading-tight group-hover:text-[#FF3B00] transition-colors duration-300">
-                      {section.title}
-                    </h2>
+                  <div className="relative p-5 md:p-8 rounded-[1.5rem] bg-[#080808]/95 border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500">
+                    {/* Visual Glow on Hover */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FF3B00]/5 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                     
-                    <div className="text-neutral-400 font-light leading-relaxed text-base md:text-lg space-y-5">
-                      {Array.isArray(section.paragraphs) ? (
-                        section.paragraphs.map((p, pi) => {
-                          const isNumbered = /^\d+\.\s/.test(p);
-                          const isBullet = /^-\s/.test(p);
+                    <div className="space-y-4 relative z-10">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[9px] font-mono text-[#FF3B00] bg-[#FF3B00]/10 px-2 py-0.5 rounded font-bold tracking-wider">
+                          CHAPTER 0{idx + 1}
+                        </span>
+                        <div className="h-[1px] bg-white/5 flex-grow" />
+                      </div>
 
-                          if (isNumbered) {
-                            const cleanText = p.replace(/^\d+\.\s/, "");
-                            const titlePart = cleanText.split(":")[0];
-                            const descPart = cleanText.split(":")[1];
+                      <h2 className="text-xl md:text-2xl font-black text-white tracking-tight uppercase leading-tight group-hover:text-[#FF3B00] transition-colors duration-300">
+                        {section.title}
+                      </h2>
+                      
+                      <div className="text-neutral-400 font-light leading-relaxed text-xs md:text-sm space-y-4">
+                        {Array.isArray(section.paragraphs) ? (
+                          section.paragraphs.map((p, pi) => {
+                            const isNumbered = /^\d+\.\s/.test(p);
+                            const isBullet = /^-\s/.test(p);
 
-                            return (
-                              <div key={pi} className="flex gap-4 items-start bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
-                                <span className="w-8 h-8 rounded-full bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-xs font-mono text-[#FF3B00] font-bold shrink-0">
-                                  {pi}
-                                </span>
-                                <div className="space-y-1">
-                                  {descPart ? (
-                                    <>
-                                      <h4 className="text-white font-bold text-base tracking-tight">{titlePart}</h4>
-                                      <p className="text-sm text-neutral-400 font-light leading-relaxed">{descPart.trim()}</p>
-                                    </>
-                                  ) : (
-                                    <p className="text-sm md:text-base font-light leading-relaxed">{cleanText}</p>
-                                  )}
+                            if (isNumbered) {
+                              const cleanText = p.replace(/^\d+\.\s/, "");
+                              const titlePart = cleanText.split(":")[0];
+                              const descPart = cleanText.split(":")[1];
+
+                              return (
+                                <div key={pi} className="flex gap-3.5 items-start bg-white/[0.01] border border-white/5 p-4 rounded-xl">
+                                  <span className="w-6 h-6 rounded-full bg-[#FF3B00]/10 border border-[#FF3B00]/20 flex items-center justify-center text-[10px] font-mono text-[#FF3B00] font-bold shrink-0">
+                                    {pi}
+                                  </span>
+                                  <div className="space-y-1">
+                                    {descPart ? (
+                                      <>
+                                        <h4 className="text-white font-bold text-xs md:text-sm tracking-tight">{titlePart}</h4>
+                                        <p className="text-[11px] md:text-xs text-neutral-400 font-light leading-relaxed">{descPart.trim()}</p>
+                                      </>
+                                    ) : (
+                                      <p className="text-xs md:text-sm font-light leading-relaxed">{cleanText}</p>
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                            );
-                          }
+                              );
+                            }
 
-                          if (isBullet) {
-                            const cleanText = p.replace(/^-\s/, "");
-                            const titlePart = cleanText.split(":")[0];
-                            const descPart = cleanText.split(":")[1];
+                            if (isBullet) {
+                              const cleanText = p.replace(/^-\s/, "");
+                              const titlePart = cleanText.split(":")[0];
+                              const descPart = cleanText.split(":")[1];
 
-                            return (
-                              <div key={pi} className="flex gap-4 items-start">
-                                <span className="w-2 h-2 rounded-full bg-[#FF3B00] mt-2.5 shrink-0" />
-                                <div className="space-y-1">
-                                  {descPart ? (
-                                    <>
-                                      <span className="text-white font-bold tracking-tight">{titlePart}:</span>
-                                      <span className="text-neutral-400 font-light pl-1">{descPart.trim()}</span>
-                                    </>
-                                  ) : (
-                                    <span className="text-neutral-400 font-light">{cleanText}</span>
-                                  )}
+                              return (
+                                <div key={pi} className="flex gap-3 items-start">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B00] mt-2 shrink-0" />
+                                  <div className="space-y-1">
+                                    {descPart ? (
+                                      <>
+                                        <span className="text-white font-bold tracking-tight">{titlePart}:</span>
+                                        <span className="text-neutral-400 font-light pl-1">{descPart.trim()}</span>
+                                      </>
+                                    ) : (
+                                      <span className="text-neutral-400 font-light">{cleanText}</span>
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                            );
-                          }
+                              );
+                            }
 
-                          return <p key={pi} className="font-light leading-relaxed">{p}</p>;
-                        })
-                      ) : (
-                        <p className="font-light leading-relaxed">{section.content}</p>
-                      )}
+                            return <p key={pi} className="font-light leading-relaxed">{p}</p>;
+                          })
+                        ) : (
+                          <p className="font-light leading-relaxed">{section.content}</p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1157,56 +1178,120 @@ const PricingWrapper = ({ data }) => {
 
   const packages = data.pricing || getPricingPackages(data.title);
 
+  // Dynamically set grid column styling based on packages length
+  const gridLayout = 
+    packages.length === 4 
+      ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl" 
+      : packages.length === 3 
+        ? "grid-cols-1 md:grid-cols-3 max-w-6xl" 
+        : "grid-cols-1 md:grid-cols-2 max-w-4xl";
+
   return (
-    <section className="py-24 px-6 bg-[#050505] relative border-y border-white/5 overflow-hidden">
-      <div className="max-w-5xl mx-auto relative z-10 text-center">
-        <div className="mb-16">
-          <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+    <section className="py-24 px-6 bg-[#030303] relative border-y border-white/5 overflow-hidden">
+      {/* Background ambient light */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#FF3B00]/5 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10 text-center">
+        <div className="mb-14">
+          <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-3 block text-xs">
             Simple & Transparent
           </FadeInUp>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-            Pricing
+          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight uppercase leading-none">
+            Pricing Plans
           </h2>
+          <p className="text-gray-400 text-xs md:text-sm font-light max-w-lg mx-auto mt-3 leading-relaxed">
+            Select the perfect package custom-tailored for your growth milestones. No hidden fees.
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+        <div className={`grid gap-5 mx-auto items-stretch justify-center text-left py-4 ${gridLayout}`}>
           {packages.map((pkg) => (
             <div 
               key={pkg.name}
-              className={`p-8 rounded-[2.5rem] bg-zinc-950/80 border backdrop-blur-xl relative overflow-hidden group hover:border-[#FF3B00]/40 transition-all duration-500 ${
+              className={`relative p-[1.5px] rounded-[2rem] bg-gradient-to-b transition-all duration-700 shadow-2xl flex flex-col group max-w-[285px] w-full mx-auto ${
                 pkg.popular 
-                  ? "border-[#FF3B00]/20 shadow-[0_0_50px_rgba(255,59,0,0.1)]" 
-                  : "border-white/5 hover:border-[#FF3B00]/30"
+                  ? "from-[#FF3B00] via-[#FF3B00]/10 to-transparent scale-[1.01] md:scale-[1.03] z-10 shadow-[0_0_50px_rgba(255,59,0,0.12)] border-[#FF3B00]/20" 
+                  : "from-white/10 via-transparent to-white/5 hover:from-[#FF3B00]/30 hover:to-transparent hover:-translate-y-1"
               }`}
             >
+              {/* Mesh Gradient / Ambient glow inside card */}
+              <div 
+                className={`absolute inset-0 rounded-[2rem] pointer-events-none transition-opacity duration-700 blur-[50px] ${
+                  pkg.popular 
+                    ? "bg-[#FF3B00]/10 opacity-100" 
+                    : "bg-[#FF3B00]/5 opacity-0 group-hover:opacity-100"
+                }`} 
+                aria-hidden="true" 
+              />
+
+              {/* Glowing decorative border line at the top */}
               {pkg.popular && (
-                <div className="absolute top-0 right-0 px-4 py-1.5 bg-[#FF3B00] text-black text-[9px] font-black uppercase tracking-widest rounded-bl-2xl">
-                  POPULAR
-                </div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent blur-[1px] opacity-75 z-20 pointer-events-none" />
               )}
-              <h3 className="text-xl font-bold text-white mb-2">{pkg.name}</h3>
-              <p className="text-xs text-[#FF3B00] font-mono uppercase tracking-wider mb-6">{pkg.subtitle}</p>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl font-black text-white">{pkg.price}</span>
-                <span className="text-xs text-neutral-500 font-mono">{pkg.period}</span>
+
+              <div className="relative flex flex-col h-full bg-[#080808]/95 rounded-[2rem] p-5 md:p-6 backdrop-blur-3xl border border-white/5 overflow-hidden transition-all duration-500">
+                
+                {/* Header Row (Name & Badge) */}
+                <div className="flex justify-between items-start gap-3 mb-4">
+                  <div className="space-y-1 min-w-0">
+                    <h3 className="text-lg font-black text-white tracking-tight uppercase leading-none truncate">
+                      {pkg.name}
+                    </h3>
+                    <p className="text-[9px] text-[#FF3B00] font-mono uppercase tracking-wider font-bold truncate">
+                      {pkg.subtitle}
+                    </p>
+                  </div>
+                  {pkg.popular && (
+                    <div className="flex items-center gap-1.5 px-2 py-0.5 bg-gradient-to-r from-[#FF3B00]/20 to-orange-500/10 border border-[#FF3B00]/40 rounded-full text-[#FF3B00] text-[8px] font-black uppercase tracking-widest whitespace-nowrap flex-shrink-0">
+                      <span className="w-1 h-1 rounded-full bg-[#FF3B00] animate-pulse" />
+                      Popular
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex items-baseline gap-1 pb-4 mb-4 border-b border-white/5">
+                  <span className="text-3xl font-black text-white tracking-tight">
+                    {pkg.price}
+                  </span>
+                  {pkg.period && (
+                    <span className="text-[10px] text-neutral-500 font-mono font-semibold">
+                      /{pkg.period.replace("per ", "")}
+                    </span>
+                  )}
+                </div>
+
+                <ul className="space-y-2.5 text-xs md:text-sm text-neutral-400 font-light flex-grow mb-6">
+                  {pkg.features.map((feat) => (
+                    <li key={feat} className="flex items-start gap-2.5 leading-relaxed group/item">
+                      <div className={`w-3.5 h-3.5 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 transition-all duration-300 ${
+                        pkg.popular 
+                          ? "bg-[#FF3B00]/20 border border-[#FF3B00]/40 text-[#FF3B00]" 
+                          : "bg-white/5 border border-white/10 text-neutral-500 group-hover:border-[#FF3B00]/40 group-hover:bg-[#FF3B00]/10 group-hover:text-[#FF3B00]"
+                      }`}>
+                        <Icon icon="lucide:check" width={8} className="stroke-[3]" />
+                      </div>
+                      <span className="group-hover:text-white transition-colors duration-300">{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto">
+                  <Link 
+                    href="/contact" 
+                    className={`group/btn flex items-center justify-center gap-1.5 w-full py-3 rounded-xl font-bold uppercase tracking-wider text-[10px] transition-all duration-500 ${
+                      pkg.popular
+                        ? "bg-gradient-to-r from-[#FF3B00] to-orange-500 hover:from-orange-600 hover:to-[#FF3B00] text-white shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-[1.01]"
+                        : "bg-white/5 border border-white/10 hover:border-[#FF3B00]/40 hover:bg-[#FF3B00]/5 text-white hover:scale-[1.01]"
+                    }`}
+                  >
+                    {pkg.popular ? "Request Quote" : "Get Started"}
+                    <Icon icon="lucide:arrow-right" width={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
-              <ul className="space-y-3 text-sm text-neutral-400 font-light mb-8">
-                {pkg.features.map((feat) => (
-                  <li key={feat} className="flex items-center gap-2">
-                    <span className="text-[#FF3B00]">✓</span> {feat}
-                  </li>
-                ))}
-              </ul>
-              <Link 
-                href="/contact" 
-                className={`block text-center w-full py-4 rounded-2xl font-bold uppercase tracking-wider text-xs transition-all duration-300 ${
-                  pkg.popular
-                    ? "bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg shadow-orange-500/20"
-                    : "bg-white/5 border border-white/10 hover:border-[#FF3B00] hover:bg-orange-500/5 text-white"
-                }`}
-              >
-                {pkg.popular ? "Request Quote" : "Get Started"}
-              </Link>
             </div>
           ))}
         </div>
@@ -1219,34 +1304,49 @@ const SuitableForWrapper = ({ data }) => {
   if (!data.suitableFor || data.suitableFor.length === 0) return null;
 
   return (
-    <section className="py-24 px-6 bg-black relative border-b border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-20 text-center">
-          <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-4 block text-xs">
+    <section className="py-20 px-6 bg-black relative border-b border-white/5 overflow-hidden">
+      {/* Subtle ambient light */}
+      <div className="absolute inset-0 pointer-events-none animate-pulse duration-[8000ms]" aria-hidden="true">
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-[#FF3B00]/5 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10 text-center">
+        <div className="mb-12 text-center">
+          <FadeInUp className="text-[#FF3B00] font-black uppercase tracking-[0.25em] mb-3 block text-xs">
             Target Audience
           </FadeInUp>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-            WHO SHOULD CHOOSE <span className="text-gray-600 font-outline">THIS SERVICE?</span>
+          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight uppercase leading-none">
+            Who Should Choose <span className="text-gray-600 font-outline">This Service?</span>
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center">
           {data.suitableFor.map((item, index) => (
-            <FadeInUp key={index} delay={index * 0.05} className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl pointer-events-none" />
-              <div className="relative h-full p-8 rounded-[2rem] bg-zinc-950/40 border border-white/5 backdrop-blur-sm hover:border-[#FF3B00]/20 hover:bg-zinc-900/10 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-2">
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FF3B00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+            <FadeInUp key={index} delay={index * 0.05} className="group relative max-w-[310px] w-full mx-auto flex">
+              {/* Outer Glowing Border wrapper */}
+              <div className="relative p-[1.2px] rounded-[1.5rem] bg-gradient-to-b from-white/10 via-transparent to-white/5 group-hover:from-[#FF3B00]/30 group-hover:to-transparent transition-all duration-700 flex flex-col w-full">
                 
-                <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-white/10 flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110">
-                  <SafeIcon icon={item.icon} width={26} className="text-white group-hover:text-[#FF3B00] transition-colors" />
+                {/* Glow Behind Card */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#FF3B00]/5 to-transparent rounded-[1.5rem] opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
+                
+                <div className="relative h-full p-5 md:p-6 rounded-[1.5rem] bg-zinc-950/40 backdrop-blur-sm border border-white/5 hover:border-[#FF3B00]/10 hover:bg-zinc-900/10 transition-all duration-500 overflow-hidden flex flex-col group-hover:-translate-y-1">
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FF3B00] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  
+                  {/* Smaller Icon Container */}
+                  <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-105 group-hover:border-[#FF3B00]/30">
+                    <SafeIcon icon={item.icon} width={18} className="text-white group-hover:text-[#FF3B00] transition-colors" />
+                  </div>
+                  
+                  {/* Tighter title */}
+                  <h3 className="text-base md:text-lg font-black text-white mb-2 tracking-tight group-hover:text-[#FF3B00] transition-colors">
+                    {item.title}
+                  </h3>
+                  
+                  {/* Snugger text */}
+                  <p className="text-xs md:text-sm text-neutral-400 font-light leading-relaxed flex-grow">
+                    {item.reason}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-[#FF3B00] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed flex-grow">
-                  {item.reason}
-                </p>
               </div>
             </FadeInUp>
           ))}
